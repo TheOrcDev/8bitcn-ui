@@ -4,7 +4,9 @@
   "type": "registry:component",
   "title": "8-bit Input",
   "description": "A simple 8-bit input component",
-  "registryDependencies": ["input"],
+  "registryDependencies": [
+    "input"
+  ],
   "files": [
     {
       "path": "components/ui/8bit/input.tsx",

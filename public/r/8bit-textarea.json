@@ -4,7 +4,9 @@
   "type": "registry:component",
   "title": "8-bit Textarea",
   "description": "A simple 8-bit textarea component",
-  "registryDependencies": ["textarea"],
+  "registryDependencies": [
+    "textarea"
+  ],
   "files": [
     {
       "path": "components/ui/8bit/textarea.tsx",

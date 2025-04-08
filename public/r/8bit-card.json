@@ -4,7 +4,9 @@
   "type": "registry:component",
   "title": "8-bit Card",
   "description": "A simple 8-bit card component",
-  "registryDependencies": ["card"],
+  "registryDependencies": [
+    "card"
+  ],
   "files": [
     {
       "path": "components/ui/8bit/card.tsx",
