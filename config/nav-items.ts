@@ -48,6 +48,11 @@ export const navItems = {
           url: "/components/label",
         },
         {
+          title: "Switch",
+          url: "/components/switch",
+          new: true,
+        },
+        {
           title: "Textarea",
           url: "/components/textarea",
         },

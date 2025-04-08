@@ -114,6 +114,20 @@
           "target": "components/ui/8bit/checkbox.tsx"
         }
       ]
+    },
+    {
+      "name": "8bit-switch",
+      "type": "registry:component",
+      "title": "8-bit Switch",
+      "description": "A simple 8-bit switch component",
+      "registryDependencies": ["switch"],
+      "files": [
+        {
+          "path": "components/ui/8bit/switch.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/switch.tsx"
+        }
+      ]
     }
   ]
 }
