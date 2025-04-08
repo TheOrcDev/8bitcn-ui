@@ -37,7 +37,7 @@ function Checkbox({ className, font, ...props }: BitCheckboxProps) {
     <div className={cn("relative flex items-center justify-center", className)}>
       <ShadcnCheckbox
         className={cn(
-          "rounded-none size-5 ring-0 border-none bg-input data-[state=checked]:bg-primary data-[state=checked]:text-background",
+          "rounded-none size-5 ring-0 border-none",
           font !== "normal" && pressStart.className,
           className
         )}
