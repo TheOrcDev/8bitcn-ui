@@ -31,6 +31,10 @@ export const navItems = {
           url: "/components/card",
         },
         {
+          title: "Checkbox",
+          url: "/components/checkbox",
+        },
+        {
           title: "Input",
           url: "/components/input",
         },
@@ -45,10 +49,6 @@ export const navItems = {
         {
           title: "Textarea",
           url: "/components/textarea",
-        },
-        {
-          title: "Checkbox",
-          url: "/components/checkbox",
         },
       ],
     },
