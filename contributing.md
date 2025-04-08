@@ -49,10 +49,6 @@ git checkout -b my-new-branch
 pnpm i
 ```
 
-### Run a workspace
-
-You can use the `pnpm --filter=[WORKSPACE]` command to start the development process for a workspace.
-
 #### Examples
 
 1. To run the `8bitcn.com` website:
