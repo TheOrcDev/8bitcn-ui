@@ -33,6 +33,7 @@ export const navItems = {
         {
           title: "Checkbox",
           url: "/components/checkbox",
+          new: true,
         },
         {
           title: "Input",
