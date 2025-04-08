@@ -15,6 +15,7 @@ import {
   DrawerTitle,
 } from "./ui/drawer";
 import { Button } from "./ui/button";
+import { Badge } from "./ui/8bit/badge";
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -48,10 +49,11 @@ export default function MobileNav() {
                 <Link
                   href={item.url}
                   key={item.title}
-                  className="text-xl font-extralight text-muted-foreground"
+                  className="text-xl font-extralight text-muted-foreground flex items-center gap-5"
                   onClick={() => setOpen(false)}
                 >
                   {item.title}
+                  {item.new && <Badge className="text-xs">New</Badge>}
                 </Link>
               ))}
             </div>
