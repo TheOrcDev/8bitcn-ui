@@ -17,10 +17,10 @@ export const badgeVariants = cva("", {
       retro: pressStart.className,
     },
     variant: {
-      default: "bg-foreground",
-      destructive: "bg-foreground",
-      outline: "bg-foreground",
-      secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+      default: "bg-primary border-primary",
+      destructive: "bg-destructive border-destructive",
+      outline: "bg-background border-background",
+      secondary: "bg-secondary border-secondary",
     },
   },
   defaultVariants: {
@@ -37,8 +37,10 @@ export interface BitButtonProps
 function Badge({ children, ...props }: BitButtonProps) {
   const { variant, className, font } = props;
 
+  const color = badgeVariants({ variant, font });
+
   return (
-    <div className={cn("relative", className)}>
+    <div className={cn("relative inline-flex", className)}>
       <ShadcnBadge
         {...props}
         className={cn(
@@ -51,8 +53,12 @@ function Badge({ children, ...props }: BitButtonProps) {
         {children}
       </ShadcnBadge>
 
-      <div className="absolute top-1.5 bottom-1.5 -left-1.5 h-1/2 w-1.5 bg-primary" />
-      <div className="absolute top-1.5 bottom-1.5 -right-1.5 h-1/2 w-1.5 bg-primary" />
+      <div
+        className={`absolute top-1.5 bottom-1.5 -left-1.5 h-1/2 w-1.5 border ${color}`}
+      />
+      <div
+        className={`absolute top-1.5 bottom-1.5 -right-1.5 h-1/2 w-1.5 border ${color}`}
+      />
     </div>
   );
 }

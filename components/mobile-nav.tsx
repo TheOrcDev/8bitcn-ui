@@ -53,7 +53,7 @@ export default function MobileNav() {
                   onClick={() => setOpen(false)}
                 >
                   {item.title}
-                  {item.new && <Badge className="text-xs">New</Badge>}
+                  {item.new && <Badge>New</Badge>}
                 </Link>
               ))}
             </div>
