@@ -1,53 +1,56 @@
 export const navItems = {
-    header: [
+  header: [
+    {
+      label: "Components",
+      href: "/components/button",
+    },
+    {
+      label: "Docs",
+      href: "/docs",
+    },
+    {
+      label: "About",
+      href: "/about",
+    },
+  ],
+  navMain: [
+    {
+      title: "Components",
+      url: "/components/button",
+      items: [
         {
-            label: "Components",
-            href: "/components/button",
+          title: "Badge",
+          url: "/components/badge",
         },
         {
-            label: "Docs",
-            href: "/docs",
+          title: "Button",
+          url: "/components/button",
         },
         {
-            label: "About",
-            href: "/about",
+          title: "Card",
+          url: "/components/card",
         },
-    ],
-    navMain: [
         {
-            title: "Components",
-            // TODO: Add components page later
-            url: "/components/button",
-            items: [
-                {
-                    title: "Badge",
-                    url: "/components/badge",
-                },
-                {
-                    title: "Button",
-                    url: "/components/button",
-                },
-                {
-                    title: "Card",
-                    url: "/components/card",
-                },
-                {
-                    title: "Input",
-                    url: "/components/input",
-                },
-                {
-                    title: "Select",
-                    url: "/components/select",
-                },
-                {
-                    title: "Label",
-                    url: "/components/label",
-                },
-                {
-                    title: "Textarea",
-                    url: "/components/textarea",
-                },
-            ],
+          title: "Input",
+          url: "/components/input",
         },
-    ],
+        {
+          title: "Select",
+          url: "/components/select",
+        },
+        {
+          title: "Label",
+          url: "/components/label",
+        },
+        {
+          title: "Textarea",
+          url: "/components/textarea",
+        },
+        {
+          title: "Checkbox",
+          url: "/components/checkbox",
+        },
+      ],
+    },
+  ],
 };

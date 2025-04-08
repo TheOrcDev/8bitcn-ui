@@ -100,6 +100,20 @@
           "target": "components/ui/8bit/label.tsx"
         }
       ]
+    },
+    {
+      "name": "8bit-checkbox",
+      "type": "registry:component",
+      "title": "8-bit Checkbox",
+      "description": "A simple 8-bit checkbox component",
+      "registryDependencies": ["checkbox"],
+      "files": [
+        {
+          "path": "components/ui/8bit/checkbox.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/checkbox.tsx"
+        }
+      ]
     }
   ]
 }
