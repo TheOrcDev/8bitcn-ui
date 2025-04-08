@@ -1,9 +1,13 @@
 import * as React from "react";
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
-import { Checkbox as ShadcnCheckbox } from "@/components/ui/checkbox";
-import { cn } from "@/lib/utils";
+
 import { Press_Start_2P } from "next/font/google";
+
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { cva, VariantProps } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
+import { Checkbox as ShadcnCheckbox } from "@/components/ui/checkbox";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
@@ -30,22 +34,22 @@ export interface BitCheckboxProps
 
 function Checkbox({ className, font, ...props }: BitCheckboxProps) {
   return (
-    <div className="relative">
+    <div className={cn("relative flex items-center justify-center", className)}>
       <ShadcnCheckbox
         className={cn(
-          "rounded-none h-5 w-5 border-none bg-input data-[state=checked]:bg-foreground",
+          "rounded-none size-5 ring-0 border-none bg-input data-[state=checked]:bg-primary data-[state=checked]:text-background",
           font !== "normal" && pressStart.className,
           className
         )}
         {...props}
       />
-      
-      <div className="absolute top-0 left-0 w-full h-1 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute bottom-0 w-full h-1 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute top-1 -left-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute bottom-1 -left-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute top-1 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute bottom-1 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
+
+      <div className="absolute -top-1 left-0 w-full h-1 bg-foreground dark:bg-ring" />
+      <div className="absolute -bottom-1 w-full h-1 bg-foreground dark:bg-ring" />
+      <div className="absolute top-0 -left-1 w-1 h-1/2 bg-foreground dark:bg-ring" />
+      <div className="absolute bottom-0 -left-1 w-1 h-1/2 bg-foreground dark:bg-ring" />
+      <div className="absolute top-0 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring" />
+      <div className="absolute bottom-0 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring" />
     </div>
   );
 }

@@ -1,9 +1,11 @@
 import { Checkbox } from "@/components/ui/8bit/checkbox";
-import { OpenInV0Button } from "../open-in-v0-button";
-import CopyCommandButton from "../copy-command-button";
-import InstallationCommands from "../installation-commands";
 import { Separator } from "@/components/ui/separator";
+import { Label } from "@/components/ui/8bit/label";
+
 import CodeSnippet from "../code-snippet";
+import InstallationCommands from "../installation-commands";
+import CopyCommandButton from "../copy-command-button";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export default function CheckboxPage() {
   return (
@@ -33,12 +35,9 @@ export default function CheckboxPage() {
         <div className="flex items-center justify-center min-h-[400px] relative">
           <div className="flex items-center space-x-2">
             <Checkbox id="terms" />
-            <label
-              htmlFor="terms"
-              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            >
+            <Label htmlFor="terms" className="text-xs">
               Accept terms and conditions
-            </label>
+            </Label>
           </div>
         </div>
       </div>
