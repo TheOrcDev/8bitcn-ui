@@ -52,7 +52,7 @@ function Button({ children, ...props }: BitButtonProps) {
       className={cn(
         "rounded-none active:translate-y-1 transition-transform relative",
         font !== "normal" && pressStart.className,
-        className
+        className,
       )}
       size={size}
       variant={variant}

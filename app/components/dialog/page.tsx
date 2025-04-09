@@ -1,37 +1,37 @@
-import { Button } from "@/components/ui/8bit/button";
+import { DialogDemo } from "@/components/ui/8bit/dialog";
 import { OpenInV0Button } from "../open-in-v0-button";
 import CopyCommandButton from "../copy-command-button";
 import InstallationCommands from "../installation-commands";
 import { Separator } from "@/components/ui/separator";
 import CodeSnippet from "../code-snippet";
 
-export default function ButtonPage() {
+export default function DialogPage() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
         <h1 className="text-3xl font-bold">Dialog</h1>
         <CopyCommandButton
-          copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-button.json`}
-          command={"pnpm dlx shadcn@canary add 8bit-button"}
+          copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-dialog.json`}
+          command={"pnpm dlx shadcn@canary add 8bit-dialog"}
         />
       </div>
 
       <p className="text-muted-foreground">
-        Displays a button or a component that looks like a 8-bit button.
+        Displays a dialog or a component that looks like a 8-bit dialog.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit button component
+            A simple 8-bit dialog component
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-button" className="w-fit" />
+            <OpenInV0Button name="8bit-dialog" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
-          <Button>Button</Button>
+          <DialogDemo></DialogDemo>
         </div>
       </div>
 
