@@ -1,23 +1,22 @@
 import {
   Dialog as ShadcnDialog,
   DialogContent as ShadcnDialogContent,
-  DialogDescription as ShadcnDialogDescription,
   DialogFooter as ShadcnDialogFooter,
   DialogHeader as ShadcnDialogHeader,
   DialogTitle as ShadcnDialogTitle,
   DialogTrigger as ShadcnDialogTrigger,
+  DialogDescription as ShadcnDialogDescription,
 } from "@/components/ui/dialog";
+import { Press_Start_2P } from "next/font/google";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
 
-// for demo
-import { Button } from "@/components/ui/8bit/button";
-import { Input } from "@/components/ui/8bit/input";
-import { Label } from "@/components/ui/8bit/label";
+const pressStart = Press_Start_2P({
+  weight: ["400"],
+  subsets: ["latin"],
+});
 
 const Dialog = ShadcnDialog;
-
-const DialogContent = ShadcnDialogContent;
-
-const DialogTitle = ShadcnDialogTitle;
 
 const DialogTrigger = ShadcnDialogTrigger;
 
@@ -25,37 +24,85 @@ const DialogHeader = ShadcnDialogHeader;
 
 const DialogFooter = ShadcnDialogFooter;
 
-export function DialogDemo() {
+const DialogDescription = ShadcnDialogDescription;
+
+export interface BitDialogProps
+  extends React.ComponentProps<"div">,
+    VariantProps<typeof dialogContentVariants> {}
+
+function DialogTitle({ ...props }: BitDialogProps) {
+  const { className, font } = props;
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline">Edit Profile</Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
-          <ShadcnDialogDescription>
-            Make changes to your profile here. Click save when you're done.
-          </ShadcnDialogDescription>
-        </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <Input id="name" value="Pedro Duarte" className="col-span-3" />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input id="username" value="@peduarte" className="col-span-3" />
-          </div>
-        </div>
-        <DialogFooter>
-          <Button type="submit">Save changes</Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+    <ShadcnDialogTitle
+      data-slot="card-header"
+      className={cn(font !== "normal" && pressStart.className, className)}
+      {...props}
+    />
   );
 }
+
+export const dialogContentVariants = cva("", {
+  variants: {
+    font: {
+      normal: "",
+      retro: pressStart.className,
+    },
+  },
+  defaultVariants: {
+    font: "retro",
+  },
+});
+
+function DialogContent({
+  className,
+  children,
+  font,
+  ...props
+}: BitDialogProps) {
+  return (
+    <ShadcnDialogContent
+      className={cn(
+        "bg-card rounded-none border-none",
+        font !== "normal" && pressStart.className,
+        className,
+      )}
+      {...props}
+    >
+      {children}
+      <div
+        className="absolute top-0 left-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute top-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+    </ShadcnDialogContent>
+  );
+}
+
+export {
+  Dialog,
+  DialogTrigger,
+  DialogHeader,
+  DialogFooter,
+  DialogDescription,
+  DialogTitle,
+  DialogContent,
+};

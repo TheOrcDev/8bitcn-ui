@@ -1,4 +1,22 @@
-import { DialogDemo } from "@/components/ui/8bit/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/8bit/dialog";
+import { Button } from "@/components/ui/8bit/button";
+import { Input } from "@/components/ui/8bit/input";
+import { Label } from "@/components/ui/8bit/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/8bit/select";
 import { OpenInV0Button } from "../open-in-v0-button";
 import CopyCommandButton from "../copy-command-button";
 import InstallationCommands from "../installation-commands";
@@ -30,9 +48,39 @@ export default function DialogPage() {
             <OpenInV0Button name="8bit-dialog" className="w-fit" />
           </div>
         </div>
-        <div className="flex items-center justify-center min-h-[400px] relative">
-          <DialogDemo></DialogDemo>
-        </div>
+        <div className="flex items-center justify-center min-h-[400px] relative"></div>{" "}
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="outline">Edit Profile</Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Edit profile</DialogTitle>
+              <DialogDescription>
+                Make changes to your profile here. Click save when you're done.
+              </DialogDescription>
+            </DialogHeader>
+
+            <Label>Name</Label>
+            <Input placeholder="Project name" className="max-w-72" />
+
+            <Label>Framework</Label>
+            <Select>
+              <SelectTrigger>
+                <SelectValue placeholder="Framework" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="next">Next.js</SelectItem>
+                <SelectItem value="svelte">SvelteKit</SelectItem>
+                <SelectItem value="astro">Astro</SelectItem>
+                <SelectItem value="nuxt">Nuxt.js</SelectItem>
+              </SelectContent>
+            </Select>
+            <DialogFooter>
+              <Button type="submit">Save changes</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </div>
 
       <h3 className="text-lg font-bold">Installation</h3>

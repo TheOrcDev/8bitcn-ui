@@ -18,7 +18,7 @@ const pressStart = Press_Start_2P({
   subsets: ["latin"],
 });
 
-export const inputVariants = cva("", {
+export const cardVariants = cva("", {
   variants: {
     font: {
       normal: "",
@@ -32,7 +32,7 @@ export const inputVariants = cva("", {
 
 export interface BitCardProps
   extends React.ComponentProps<"div">,
-    VariantProps<typeof inputVariants> {
+    VariantProps<typeof cardVariants> {
   asChild?: boolean;
 }
 
@@ -46,7 +46,7 @@ function Card({ ...props }: BitCardProps) {
         className={cn(
           "rounded-none",
           font !== "normal" && pressStart.className,
-          className
+          className,
         )}
         {...props}
       />
