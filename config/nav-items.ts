@@ -61,6 +61,11 @@ export const navItems = {
           title: "Textarea",
           url: "/components/textarea",
         },
+        {
+          title: "Alert",
+          url: "/components/alert",
+          new: true,
+        },
       ],
     },
   ],
