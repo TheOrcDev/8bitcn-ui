@@ -87,7 +87,20 @@
         }
       ]
     },
-
+    {
+      "name": "8bit-popover",
+      "type": "registry:component",
+      "title": "8-bit Popover",
+      "description": "A simple 8-bit popover component",
+      "registryDependencies": ["popover"],
+      "files": [
+        {
+          "path": "components/ui/8bit/popover.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/popover.tsx"
+        }
+      ]
+    },
     {
       "name": "8bit-select",
       "type": "registry:component",
