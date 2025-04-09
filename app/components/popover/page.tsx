@@ -11,13 +11,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/8bit/popover";
-import { cn } from "@/lib/utils";
-import { Press_Start_2P } from "next/font/google";
-
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 export default function PopoverPage() {
   return (
@@ -49,23 +42,11 @@ export default function PopoverPage() {
             <PopoverTrigger asChild>
               <Button variant="outline">Open popover</Button>
             </PopoverTrigger>
-            <PopoverContent className="w-80" data-side="bottom">
+            <PopoverContent className="w-80">
               <div className="grid gap-4">
                 <div className="space-y-2">
-                  <h4
-                    className={cn(
-                      pressStart.className,
-                      "font-medium leading-none",
-                    )}
-                  >
-                    Dimensions
-                  </h4>
-                  <p
-                    className={cn(
-                      pressStart.className,
-                      "text-sm text-muted-foreground",
-                    )}
-                  >
+                  <h4 className="font-medium leading-none">Dimensions</h4>
+                  <p className="text-sm text-muted-foreground">
                     Set the dimensions for the layer.
                   </p>
                 </div>
