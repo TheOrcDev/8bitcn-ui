@@ -19,6 +19,11 @@ export const navItems = {
       url: "/components/button",
       items: [
         {
+          title: "Alert",
+          url: "/components/alert",
+          new: true,
+        },
+        {
           title: "Badge",
           url: "/components/badge",
         },
