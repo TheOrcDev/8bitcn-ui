@@ -63,7 +63,7 @@ export default function DialogPage() {
               </DialogHeader>
 
               <Label>Name</Label>
-              <Input placeholder="Project name" className="max-w-72" />
+              <Input placeholder="Project name"  />
 
               <Label>Framework</Label>
               <Select>
