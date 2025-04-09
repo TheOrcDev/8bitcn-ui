@@ -1,17 +1,23 @@
-import { Button } from "@/components/ui/8bit/button";
-import { OpenInV0Button } from "../open-in-v0-button";
+import CodeSnippet from "../code-snippet";
 import CopyCommandButton from "../copy-command-button";
 import InstallationCommands from "../installation-commands";
-import { Separator } from "@/components/ui/separator";
-import CodeSnippet from "../code-snippet";
-
+import { Button } from "@/components/ui/8bit/button";
 import { Input } from "@/components/ui/8bit/input";
 import { Label } from "@/components/ui/8bit/label";
+import { OpenInV0Button } from "../open-in-v0-button";
+import { Separator } from "@/components/ui/separator";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/8bit/popover";
+import { cn } from "@/lib/utils";
+import { Press_Start_2P } from "next/font/google";
+
+const pressStart = Press_Start_2P({
+  weight: ["400"],
+  subsets: ["latin"],
+});
 
 export default function PopoverPage() {
   return (
@@ -43,11 +49,23 @@ export default function PopoverPage() {
             <PopoverTrigger asChild>
               <Button variant="outline">Open popover</Button>
             </PopoverTrigger>
-            <PopoverContent className="w-80">
+            <PopoverContent className="w-80" data-side="bottom">
               <div className="grid gap-4">
                 <div className="space-y-2">
-                  <h4 className="font-medium leading-none">Dimensions</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <h4
+                    className={cn(
+                      pressStart.className,
+                      "font-medium leading-none",
+                    )}
+                  >
+                    Dimensions
+                  </h4>
+                  <p
+                    className={cn(
+                      pressStart.className,
+                      "text-sm text-muted-foreground",
+                    )}
+                  >
                     Set the dimensions for the layer.
                   </p>
                 </div>
