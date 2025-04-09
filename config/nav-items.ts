@@ -41,6 +41,11 @@ export const navItems = {
           new: true,
         },
         {
+          title: "Dialog",
+          url: "/components/dialog",
+          new: true,
+        },
+        {
           title: "Input",
           url: "/components/input",
         },

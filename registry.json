@@ -74,6 +74,21 @@
       ]
     },
     {
+      "name": "8bit-dialog",
+      "type": "registry:component",
+      "title": "8-bit Dialog",
+      "description": "A simple 8-bit dialog component",
+      "registryDependencies": ["dialog"],
+      "files": [
+        {
+          "path": "components/ui/8bit/dialog.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/dialog.tsx"
+        }
+      ]
+    },
+
+    {
       "name": "8bit-select",
       "type": "registry:component",
       "title": "8-bit Select",
