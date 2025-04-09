@@ -112,8 +112,7 @@ export default function PopoverPage() {
       <CodeSnippet>{`<Popover>
   <PopoverTrigger>Open</PopoverTrigger>
   <PopoverContent>Place content for the popover here.</PopoverContent>
-</Popover>
-        `}</CodeSnippet>
+</Popover>`}</CodeSnippet>
     </div>
   );
 }
