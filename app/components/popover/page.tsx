@@ -31,7 +31,7 @@ export default function PopoverPage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays a popover or a component that looks like a 8-bit button.
+        Displays rich content in a portal, triggered by a button.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">

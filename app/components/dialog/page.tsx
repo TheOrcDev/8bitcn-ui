@@ -35,7 +35,8 @@ export default function DialogPage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays a dialog or a component that looks like a 8-bit dialog.
+        A window overlaid on either the primary window or another dialog window,
+        rendering the content underneath inert.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
@@ -63,7 +64,7 @@ export default function DialogPage() {
               </DialogHeader>
 
               <Label>Name</Label>
-              <Input placeholder="Project name"  />
+              <Input placeholder="Project name" />
 
               <Label>Framework</Label>
               <Select>
