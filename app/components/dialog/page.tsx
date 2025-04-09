@@ -48,39 +48,41 @@ export default function DialogPage() {
             <OpenInV0Button name="8bit-dialog" className="w-fit" />
           </div>
         </div>
-        <div className="flex items-center justify-center min-h-[400px] relative"></div>{" "}
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="outline">Edit Profile</Button>
-          </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px]">
-            <DialogHeader>
-              <DialogTitle>Edit profile</DialogTitle>
-              <DialogDescription>
-                Make changes to your profile here. Click save when you're done.
-              </DialogDescription>
-            </DialogHeader>
+        <div className="flex items-center justify-center min-h-[400px] relative">
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="outline">Open Dialog</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px]">
+              <DialogHeader>
+                <DialogTitle>Edit profile</DialogTitle>
+                <DialogDescription className="text-xs">
+                  Make changes to your profile here. Click save when you're
+                  done.
+                </DialogDescription>
+              </DialogHeader>
 
-            <Label>Name</Label>
-            <Input placeholder="Project name" className="max-w-72" />
+              <Label>Name</Label>
+              <Input placeholder="Project name" className="max-w-72" />
 
-            <Label>Framework</Label>
-            <Select>
-              <SelectTrigger>
-                <SelectValue placeholder="Framework" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="next">Next.js</SelectItem>
-                <SelectItem value="svelte">SvelteKit</SelectItem>
-                <SelectItem value="astro">Astro</SelectItem>
-                <SelectItem value="nuxt">Nuxt.js</SelectItem>
-              </SelectContent>
-            </Select>
-            <DialogFooter>
-              <Button type="submit">Save changes</Button>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
+              <Label>Framework</Label>
+              <Select>
+                <SelectTrigger>
+                  <SelectValue placeholder="Framework" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="next">Next.js</SelectItem>
+                  <SelectItem value="svelte">SvelteKit</SelectItem>
+                  <SelectItem value="astro">Astro</SelectItem>
+                  <SelectItem value="nuxt">Nuxt.js</SelectItem>
+                </SelectContent>
+              </Select>
+              <DialogFooter>
+                <Button size="sm">Save changes</Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        </div>
       </div>
 
       <h3 className="text-lg font-bold">Installation</h3>
@@ -95,9 +97,50 @@ export default function DialogPage() {
 
       <Separator />
 
-      <CodeSnippet>{`import { Button } from "@/components/ui/8bit/button"`}</CodeSnippet>
+      <CodeSnippet>{`import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/8bit/dialog";
+`}</CodeSnippet>
 
-      <CodeSnippet>{`<Button variant="outline">Button</Button>`}</CodeSnippet>
+      <CodeSnippet>{`<Dialog>
+  <DialogTrigger asChild>
+    <Button variant="outline">Open Dialog</Button>
+  </DialogTrigger>
+  <DialogContent className="sm:max-w-[425px]">
+    <DialogHeader>
+      <DialogTitle>Edit profile</DialogTitle>
+      <DialogDescription className="text-xs">
+        Make changes to your profile here. Click save when you're
+        done.
+      </DialogDescription>
+    </DialogHeader>
+
+    <Label>Name</Label>
+    <Input placeholder="Project name" className="max-w-72" />
+
+    <Label>Framework</Label>
+    <Select>
+      <SelectTrigger>
+        <SelectValue placeholder="Framework" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="next">Next.js</SelectItem>
+        <SelectItem value="svelte">SvelteKit</SelectItem>
+        <SelectItem value="astro">Astro</SelectItem>
+        <SelectItem value="nuxt">Nuxt.js</SelectItem>
+      </SelectContent>
+    </Select>
+    <DialogFooter>
+      <Button size="sm">Save changes</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>`}</CodeSnippet>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import {
   DialogHeader as ShadcnDialogHeader,
   DialogTitle as ShadcnDialogTitle,
   DialogTrigger as ShadcnDialogTrigger,
+  DialogClose as ShadcnDialogClose,
   DialogDescription as ShadcnDialogDescription,
 } from "@/components/ui/dialog";
 import { Press_Start_2P } from "next/font/google";
@@ -22,9 +23,11 @@ const DialogTrigger = ShadcnDialogTrigger;
 
 const DialogHeader = ShadcnDialogHeader;
 
-const DialogFooter = ShadcnDialogFooter;
-
 const DialogDescription = ShadcnDialogDescription;
+
+const DialogClose = ShadcnDialogClose;
+
+const DialogFooter = ShadcnDialogFooter;
 
 export interface BitDialogProps
   extends React.ComponentProps<"div">,
@@ -62,7 +65,7 @@ function DialogContent({
   return (
     <ShadcnDialogContent
       className={cn(
-        "bg-card rounded-none border-none",
+        "bg-card rounded-none border-none data-[state=closed]:fade-out data-[state=closed]:fade-out data-[state=open]:fade-in data-[state=open]:fade-in",
         font !== "normal" && pressStart.className,
         className,
       )}
@@ -105,4 +108,5 @@ export {
   DialogDescription,
   DialogTitle,
   DialogContent,
+  DialogClose,
 };
