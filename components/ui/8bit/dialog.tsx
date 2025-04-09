@@ -37,7 +37,6 @@ function DialogTitle({ ...props }: BitDialogProps) {
   const { className, font } = props;
   return (
     <ShadcnDialogTitle
-      data-slot="card-header"
       className={cn(font !== "normal" && pressStart.className, className)}
       {...props}
     />
@@ -65,7 +64,7 @@ function DialogContent({
   return (
     <ShadcnDialogContent
       className={cn(
-        "bg-card rounded-none border-none data-[state=closed]:fade-out data-[state=closed]:fade-out data-[state=open]:fade-in data-[state=open]:fade-in",
+        "bg-card rounded-none border-none data-[state=closed]:fade-out data-[state=open]:fade-in",
         font !== "normal" && pressStart.className,
         className,
       )}

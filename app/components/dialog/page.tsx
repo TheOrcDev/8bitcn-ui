@@ -57,7 +57,7 @@ export default function DialogPage() {
               <DialogHeader>
                 <DialogTitle>Edit profile</DialogTitle>
                 <DialogDescription className="text-xs">
-                  Make changes to your profile here. Click save when you&aposre
+                  Make changes to your profile here. Click save when you&apos;re
                   done.
                 </DialogDescription>
               </DialogHeader>
