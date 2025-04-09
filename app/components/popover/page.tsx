@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/8bit/input";
 import { Label } from "@/components/ui/8bit/label";
 import { OpenInV0Button } from "../open-in-v0-button";
 import { Separator } from "@/components/ui/separator";
+
 import {
   Popover,
   PopoverContent,
@@ -102,9 +103,17 @@ export default function PopoverPage() {
 
       <Separator />
 
-      <CodeSnippet>{`import { Button } from "@/components/ui/8bit/popover"`}</CodeSnippet>
+      <CodeSnippet>{`import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/8bit/popover";`}</CodeSnippet>
 
-      <CodeSnippet>{`<Button variant="outline">Button</Button>`}</CodeSnippet>
+      <CodeSnippet>{`<Popover>
+  <PopoverTrigger>Open</PopoverTrigger>
+  <PopoverContent>Place content for the popover here.</PopoverContent>
+</Popover>
+        `}</CodeSnippet>
     </div>
   );
 }
