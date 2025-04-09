@@ -58,6 +58,11 @@ export const navItems = {
           url: "/components/label",
         },
         {
+          title: "Popover",
+          url: "/components/popover",
+          new: true,
+        },
+        {
           title: "Switch",
           url: "/components/switch",
           new: true,
