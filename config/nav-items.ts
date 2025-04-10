@@ -48,7 +48,7 @@ export const navItems = {
         },
         {
           title: "Dropdown Menu",
-          url: "/components/dropdown-menu",
+          url: "/docs/components/dropdown-menu",
           new: true,
         },
         {

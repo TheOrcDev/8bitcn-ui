@@ -1,8 +1,4 @@
-import { OpenInV0Button } from "../open-in-v0-button";
-import CopyCommandButton from "../copy-command-button";
-import InstallationCommands from "../installation-commands";
 import { Separator } from "@/components/ui/separator";
-import CodeSnippet from "../code-snippet";
 import { Button } from "@/components/ui/8bit/button";
 import {
   DropdownMenu,
@@ -18,6 +14,10 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/8bit/dropdown-menu";
+import CopyCommandButton from "@/app/docs/components/copy-command-button";
+import { OpenInV0Button } from "@/app/docs/components/open-in-v0-button";
+import InstallationCommands from "@/app/docs/components/installation-commands";
+import CodeSnippet from "@/app/docs/components/code-snippet";
 
 export default function DropdownMenuPage() {
   return (
