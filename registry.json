@@ -200,6 +200,20 @@
       ]
     },
     {
+      "name": "8bit-avatar",
+      "type": "registry:component",
+      "title": "8-bit Avatar",
+      "description": "A simple 8-bit avatar component",
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "components/ui/8bit/avatar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/avatar.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-skeleton",
       "type": "registry:component",
       "title": "8-bit Skeleton",
