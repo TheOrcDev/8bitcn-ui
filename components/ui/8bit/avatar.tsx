@@ -40,14 +40,14 @@ export interface BitAvatarFallbackProps
     VariantProps<typeof avatarVariants> {}
 
 const Avatar = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Root>,
+  React.ComponentRef<typeof AvatarPrimitive.Root>,
   BitAvatarProps
 >(({ className = "", font, ...props }, ref) => (
   <div className={cn("relative", className)}>
     <AvatarPrimitive.Root
       ref={ref}
       className={cn(
-        "relative flex h-10 w-10 shrink-0 overflow-hidden rounded-none",
+        "relative flex size-10 shrink-0 overflow-hidden rounded-none",
         font !== "normal" && pressStart.className,
         className
       )}
@@ -64,7 +64,7 @@ const Avatar = React.forwardRef<
 Avatar.displayName = AvatarPrimitive.Root.displayName;
 
 const AvatarImage = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Image>,
+  React.ComponentRef<typeof AvatarPrimitive.Image>,
   BitAvatarImageProps
 >(({ className, font, pixelated = false, ...props }, ref) => (
   <AvatarPrimitive.Image
@@ -92,7 +92,7 @@ const AvatarImage = React.forwardRef<
 AvatarImage.displayName = AvatarPrimitive.Image.displayName;
 
 const AvatarFallback = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Fallback>,
+  React.ComponentRef<typeof AvatarPrimitive.Fallback>,
   BitAvatarFallbackProps
 >(({ className, font, ...props }, ref) => (
   <AvatarPrimitive.Fallback

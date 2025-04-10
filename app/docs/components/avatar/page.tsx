@@ -97,7 +97,7 @@ export default function AvatarPage() {
 </Avatar>`}</CodeSnippet>
 
       <h4 className="font-medium mt-4">Custom Sizes</h4>
-      <CodeSnippet>{`<Avatar className="h-16 w-16">
+      <CodeSnippet>{`<Avatar className="size-16">
   <AvatarImage src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@shadcn" />
   <AvatarFallback>CN</AvatarFallback>
 </Avatar>
@@ -107,7 +107,7 @@ export default function AvatarPage() {
 </Avatar>`}</CodeSnippet>
 
       <h4 className="font-medium mt-4">8-bit image</h4>
-      <CodeSnippet>{`<Avatar className="h-16 w-16">
+      <CodeSnippet>{`<Avatar className="size-16">
   <AvatarImage pixelated={true} src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@shadcn" />
   <AvatarFallback>CN</AvatarFallback>
 </Avatar>`}</CodeSnippet>
