@@ -20,6 +20,11 @@ export const navItems = {
           new: true,
         },
         {
+          title: "Avatar",
+          url: "/docs/components/avatar",
+          new: true,
+        },
+        {
           title: "Badge",
           url: "/docs/components/badge",
         },
