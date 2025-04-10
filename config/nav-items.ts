@@ -50,6 +50,11 @@ export const navItems = {
           url: "/docs/components/select",
         },
         {
+          title: "Skeleton",
+          url: "/docs/components/skeleton",
+          new: true,
+        },
+        {
           title: "Label",
           url: "/docs/components/label",
         },
