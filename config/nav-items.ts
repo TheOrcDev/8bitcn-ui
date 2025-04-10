@@ -46,6 +46,11 @@ export const navItems = {
           new: true,
         },
         {
+          title: "Dropdown Menu",
+          url: "/components/dropdown-menu",
+          new: true,
+        },
+        {
           title: "Input",
           url: "/components/input",
         },
