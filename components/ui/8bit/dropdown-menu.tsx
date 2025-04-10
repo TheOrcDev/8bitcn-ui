@@ -1,5 +1,6 @@
 import { cva, VariantProps } from "class-variance-authority";
 import { Button } from "@/components/ui/8bit/button";
+import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { cn } from "@/lib/utils";
 import {
   DropdownMenu as ShadcnDropdownMenu,
@@ -24,19 +25,13 @@ const DropdownMenuPortal = ShadcnDropdownMenuPortal;
 
 const DropdownMenuTrigger = ShadcnDropdownMenuTrigger;
 
-const DropdownMenuContent = ShadcnDropdownMenuContent;
-
 const DropdownMenuGroup = ShadcnDropdownMenuGroup;
 
 const DropdownMenuLabel = ShadcnDropdownMenuLabel;
 
-const DropdownMenuItem = ShadcnDropdownMenuItem;
-
 const DropdownMenuSeparator = ShadcnDropdownMenuSeparator;
 
 const DropdownMenuSubTrigger = ShadcnDropdownMenuSubTrigger;
-
-const DropdownMenuSubContent = ShadcnDropdownMenuSubContent;
 
 const DropdownMenuShortcut = ShadcnDropdownMenuShortcut;
 
@@ -47,6 +42,127 @@ const pressStart = Press_Start_2P({
   subsets: ["latin"],
 });
 
+function DropdownMenuItem({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof DropdownMenuPrimitive.Item>) {
+  return (
+    <ShadcnDropdownMenuItem
+      className={cn(
+        "hover:ring-2 focus:ring-2 focus:ring-foreground hover:ring-foreground dark:hover:ring-ring dark:active:ring-ring rounded-none",
+      )}
+      {...props}
+    >
+      {children}
+    </ShadcnDropdownMenuItem>
+  );
+}
+
+export const dropDownVariants = cva("", {
+  variants: {
+    font: {
+      normal: "",
+      retro: pressStart.className,
+    },
+  },
+  defaultVariants: {
+    font: "retro",
+  },
+});
+
+function DropdownMenuSubContent({
+  children,
+  className,
+  font,
+  ...props
+}: BitDropownMenuContentProps) {
+  return (
+    <ShadcnDropdownMenuSubContent
+      {...props}
+      className={cn(
+        "bg-popover py-2",
+        font !== "normal" && pressStart.className,
+        className,
+      )}
+    >
+      {children}
+      <div
+        className="absolute top-0 left-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute left-0 bottom-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute top-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+    </ShadcnDropdownMenuSubContent>
+  );
+}
+
+export interface BitDropownMenuContentProps
+  extends React.ComponentProps<"div">,
+    VariantProps<typeof dropDownVariants> {}
+
+function DropdownMenuContent({
+  children,
+  font,
+  className,
+  ...props
+}: BitDropownMenuContentProps) {
+  return (
+    <ShadcnDropdownMenuContent
+      className={cn(
+        "bg-popover py-2",
+        font !== "normal" && pressStart.className,
+        className,
+      )}
+      {...props}
+    >
+      {children}
+      <div
+        className="absolute top-0 left-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute left-0 bottom-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute top-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
+        aria-hidden="true"
+      />
+    </ShadcnDropdownMenuContent>
+  );
+}
+
 function DropdownMenuDemo({}) {
   return (
     <div>
@@ -54,7 +170,7 @@ function DropdownMenuDemo({}) {
         <DropdownMenuTrigger asChild>
           <Button variant="outline">Open</Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56">
+        <DropdownMenuContent className="text-xs w-56 rounded-none overflow-clip">
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
