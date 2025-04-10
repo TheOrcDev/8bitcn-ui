@@ -53,7 +53,7 @@ export default function Page() {
           The command above will add the Button component to your project. You
           can then import it like this:
         </p>
-        <CodeSnippet>{`import { Button } from "@/components/ui/button"
+        <CodeSnippet>{`import { Button } from "@/components/ui/8bit/button"
  
 export default function Home() {
   return (
