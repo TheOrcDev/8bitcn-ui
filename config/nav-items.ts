@@ -1,16 +1,12 @@
 export const navItems = {
   header: [
     {
-      label: "Components",
-      href: "/components/alert",
-    },
-    {
       label: "Docs",
       href: "/docs",
     },
     {
-      label: "About",
-      href: "/about",
+      label: "Components",
+      href: "/docs/components/alert",
     },
   ],
   navMain: [
@@ -20,56 +16,56 @@ export const navItems = {
       items: [
         {
           title: "Alert",
-          url: "/components/alert",
+          url: "/docs/components/alert",
           new: true,
         },
         {
           title: "Badge",
-          url: "/components/badge",
+          url: "/docs/components/badge",
         },
         {
           title: "Button",
-          url: "/components/button",
+          url: "/docs/components/button",
         },
         {
           title: "Card",
-          url: "/components/card",
+          url: "/docs/components/card",
         },
         {
           title: "Checkbox",
-          url: "/components/checkbox",
+          url: "/docs/components/checkbox",
           new: true,
         },
         {
           title: "Dialog",
-          url: "/components/dialog",
+          url: "/docs/components/dialog",
           new: true,
         },
         {
           title: "Input",
-          url: "/components/input",
+          url: "/docs/components/input",
         },
         {
           title: "Select",
-          url: "/components/select",
+          url: "/docs/components/select",
         },
         {
           title: "Label",
-          url: "/components/label",
+          url: "/docs/components/label",
         },
         {
           title: "Popover",
-          url: "/components/popover",
+          url: "/docs/components/popover",
           new: true,
         },
         {
           title: "Switch",
-          url: "/components/switch",
+          url: "/docs/components/switch",
           new: true,
         },
         {
           title: "Textarea",
-          url: "/components/textarea",
+          url: "/docs/components/textarea",
         },
       ],
     },
