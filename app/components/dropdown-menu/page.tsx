@@ -25,8 +25,8 @@ export default function DropdownMenuPage() {
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
         <h1 className="text-3xl font-bold">Dropdown Menu</h1>
         <CopyCommandButton
-          copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-button.json`}
-          command={"pnpm dlx shadcn@canary add 8bit-button"}
+          copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-dropdown-menu.json`}
+          command={"pnpm dlx shadcn@canary add 8bit-dropdown-menu"}
         />
       </div>
 
@@ -42,7 +42,7 @@ export default function DropdownMenuPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-button" className="w-fit" />
+            <OpenInV0Button name="8bit-dropdown-menu" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
@@ -116,9 +116,76 @@ export default function DropdownMenuPage() {
 
       <Separator />
 
-      <CodeSnippet>{`import { Button } from "@/components/ui/8bit/dropdown-menu"`}</CodeSnippet>
+      <CodeSnippet>{`import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/8bit/dropdown-menu";`}</CodeSnippet>
 
-      <CodeSnippet>{`<Button variant="outline">Button</Button>`}</CodeSnippet>
+      <CodeSnippet>{`<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button variant="outline">Open</Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent className="text-xs w-56 rounded-none overflow-clip">
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuGroup>
+      <DropdownMenuItem>
+        Profile
+        <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+      </DropdownMenuItem>
+      <DropdownMenuItem>
+        Billing
+        <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+      </DropdownMenuItem>
+      <DropdownMenuItem>
+        Settings
+        <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+      </DropdownMenuItem>
+      <DropdownMenuItem>
+        Keyboard shortcuts
+        <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
+      </DropdownMenuItem>
+    </DropdownMenuGroup>
+    <DropdownMenuSeparator />
+    <DropdownMenuGroup>
+      <DropdownMenuItem>Team</DropdownMenuItem>
+      <DropdownMenuSub>
+        <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
+        <DropdownMenuPortal>
+          <DropdownMenuSubContent>
+            <DropdownMenuItem>Email</DropdownMenuItem>
+            <DropdownMenuItem>Message</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>More...</DropdownMenuItem>
+          </DropdownMenuSubContent>
+        </DropdownMenuPortal>
+      </DropdownMenuSub>
+      <DropdownMenuItem>
+        New Team
+        <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
+      </DropdownMenuItem>
+    </DropdownMenuGroup>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>GitHub</DropdownMenuItem>
+    <DropdownMenuItem>Support</DropdownMenuItem>
+    <DropdownMenuItem disabled>API</DropdownMenuItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>
+      Log out
+      <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+    </DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>`}</CodeSnippet>
     </div>
   );
 }

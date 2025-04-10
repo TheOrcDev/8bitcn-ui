@@ -90,7 +90,7 @@
     {
       "name": "8bit-dropdown-menu",
       "type": "registry:component",
-      "title": "8-bit Dialog",
+      "title": "8-bit Dropdown Menu",
       "description": "A simple 8-bit dropdown-menu component",
       "registryDependencies": ["dropdown-menu"],
       "files": [
