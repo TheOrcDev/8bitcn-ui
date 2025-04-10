@@ -88,6 +88,20 @@
       ]
     },
     {
+      "name": "8bit-dropdown-menu",
+      "type": "registry:component",
+      "title": "8-bit Dialog",
+      "description": "A simple 8-bit dropdown-menu component",
+      "registryDependencies": ["dropdown-menu"],
+      "files": [
+        {
+          "path": "components/ui/8bit/dropdown-menu.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-popover",
       "type": "registry:component",
       "title": "8-bit Popover",

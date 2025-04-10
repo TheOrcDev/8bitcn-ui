@@ -31,8 +31,6 @@ const DropdownMenuLabel = ShadcnDropdownMenuLabel;
 
 const DropdownMenuSeparator = ShadcnDropdownMenuSeparator;
 
-const DropdownMenuSubTrigger = ShadcnDropdownMenuSubTrigger;
-
 const DropdownMenuShortcut = ShadcnDropdownMenuShortcut;
 
 const DropdownMenuSub = ShadcnDropdownMenuSub;
@@ -42,6 +40,24 @@ const pressStart = Press_Start_2P({
   subsets: ["latin"],
 });
 
+function DropdownMenuSubTrigger({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof DropdownMenuPrimitive.DropdownMenuSubTrigger>) {
+  return (
+    <ShadcnDropdownMenuSubTrigger
+      className={cn(
+        "hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none border-dotted border-y-4 border-transparent focus:border-foreground hover:border-foreground dark:focus:border-ring bg-transparent data-[state=open]:bg-transparent data-[state=open]:border-foreground dark:data-[state=open]:border-ring",
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </ShadcnDropdownMenuSubTrigger>
+  );
+}
+
 function DropdownMenuItem({
   className,
   children,
@@ -50,7 +66,8 @@ function DropdownMenuItem({
   return (
     <ShadcnDropdownMenuItem
       className={cn(
-        "hover:ring-2 focus:ring-2 focus:ring-foreground hover:ring-foreground dark:hover:ring-ring dark:active:ring-ring rounded-none",
+        "hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none border-dotted border-y-4 border-transparent focus:border-foreground hover:border-foreground dark:focus:border-ring bg-transparent",
+        className,
       )}
       {...props}
     >
