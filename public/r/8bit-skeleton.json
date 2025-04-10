@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "8bit-skeleton",
+  "type": "registry:component",
+  "title": "8-bit Skeleton",
+  "description": "A simple 8-bit skeleton component",
+  "registryDependencies": [
+    "skeleton"
+  ],
+  "files": [
+    {
+      "path": "components/ui/8bit/skeleton.tsx",
+      "content": "import { cva, VariantProps } from \"class-variance-authority\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nimport { Press_Start_2P } from \"next/font/google\";\r\n\r\nimport { Skeleton as ShadcnSkeleton } from \"@/components/ui/skeleton\";\r\n\r\nconst pressStart = Press_Start_2P({\r\n  weight: [\"400\"],\r\n  subsets: [\"latin\"],\r\n});\r\n\r\nexport interface BitSkeletonProp extends React.ComponentProps<\"div\"> {}\r\n\r\nfunction Skeleton({ children, ...props }: BitSkeletonProp) {\r\n  const { className } = props;\r\n\r\n  return (\r\n    <div className={cn(\"relative animate-pulse\", className)}>\r\n      <ShadcnSkeleton\r\n        {...props}\r\n        className={cn(\r\n          \"rounded-none border-none bg-accent\",\r\n          pressStart.className,\r\n          className\r\n        )}\r\n      ></ShadcnSkeleton>\r\n\r\n      <div className=\"opacity-60\">\r\n        <div className=\"absolute -top-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-ring\" />\r\n        <div className=\"absolute -top-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-ring\" />\r\n      </div>\r\n      <div className=\"opacity-60\">\r\n        <div className=\"absolute -bottom-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-ring\" />\r\n        <div className=\"absolute -bottom-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-ring\" />\r\n      </div>\r\n      <div className=\"absolute top-0 left-0 size-1.5 bg-foreground/60 dark:bg-ring/60\" />\r\n      <div className=\"absolute top-0 right-0 size-1.5 bg-foreground/60 dark:bg-ring/60\" />\r\n      <div className=\"absolute bottom-0 left-0 size-1.5 bg-foreground/60 dark:bg-ring/60\" />\r\n      <div className=\"absolute bottom-0 right-0 size-1.5 bg-foreground/60 dark:bg-ring/60\" />\r\n      <div className=\"opacity-60\">\r\n        <div className=\"absolute top-1 -left-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring\" />\r\n        <div className=\"absolute bottom-1 -left-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring\" />\r\n      </div>\r\n      <div className=\"opacity-60\">\r\n        <div className=\"absolute top-1 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring\" />\r\n        <div className=\"absolute bottom-1 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring\" />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport { Skeleton };\r\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/skeleton.tsx"
+    }
+  ]
+}

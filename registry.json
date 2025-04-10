@@ -198,6 +198,20 @@
           "target": "components/ui/8bit/tooltip.tsx"
         }
       ]
+    },
+    {
+      "name": "8bit-skeleton",
+      "type": "registry:component",
+      "title": "8-bit Skeleton",
+      "description": "A simple 8-bit skeleton component",
+      "registryDependencies": ["skeleton"],
+      "files": [
+        {
+          "path": "components/ui/8bit/skeleton.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/skeleton.tsx"
+        }
+      ]
     }
   ]
 }
