@@ -49,7 +49,7 @@ export default function AvatarPage() {
                 <AvatarImage
                   src="/images/pixelized-8bitcnorc.jpg"
                   alt="@shadcn"
-                  pixelated
+                  variant="retro"
                 />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
@@ -108,7 +108,7 @@ export default function AvatarPage() {
 
       <h4 className="font-medium mt-4">8-bit image</h4>
       <CodeSnippet>{`<Avatar">
-  <AvatarImage pixelated={true} src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@shadcn" />
+  <AvatarImage variant="8bit" src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@shadcn" />
   <AvatarFallback>CN</AvatarFallback>
 </Avatar>`}</CodeSnippet>
     </div>
