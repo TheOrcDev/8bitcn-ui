@@ -38,12 +38,20 @@ export default function AvatarPage() {
         <div className="flex items-center justify-center min-h-[400px] relative">
           <div className="flex flex-col items-center gap-6">
             <div className="flex gap-4">
-              <Avatar>
+              <Avatar variant="pixel">
                 <AvatarImage
                   src="/images/pixelized-8bitcnorc.jpg"
                   alt="@8bitcn"
                 />
-                <AvatarFallback>CN</AvatarFallback>
+                <AvatarFallback>8B</AvatarFallback>
+              </Avatar>
+
+              <Avatar variant="default">
+                <AvatarImage
+                  src="/images/pixelized-8bitcnorc.jpg"
+                  alt="@8bitcn"
+                />
+                <AvatarFallback>8B</AvatarFallback>
               </Avatar>
 
               <Avatar>
@@ -77,12 +85,13 @@ export default function AvatarPage() {
 
       <Separator />
 
-      <h4 className="font-medium mt-4">With Font Options</h4>
-      <CodeSnippet>{`<Avatar font="retro">
-  <AvatarFallback>8B</AvatarFallback>
+      <h4 className="font-medium mt-4">Variants</h4>
+      <CodeSnippet>{`<Avatar variant="pixel">
+  <AvatarImage src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@8bitcn" />
+  <AvatarFallback>CN</AvatarFallback>
 </Avatar>
 
-<Avatar font="normal">
+<Avatar variant="default">
   <AvatarFallback>AB</AvatarFallback>
 </Avatar>`}</CodeSnippet>
 
