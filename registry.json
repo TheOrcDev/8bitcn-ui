@@ -1,245 +1,259 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "8bit",
-  "homepage": "https://8bitcn.com",
-  "items": [
-    {
-      "name": "8bit-button",
-      "type": "registry:component",
-      "title": "8-bit Button",
-      "description": "A simple 8-bit button component",
-      "registryDependencies": ["button"],
-      "files": [
-        {
-          "path": "components/ui/8bit/button.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/button.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-input",
-      "type": "registry:component",
-      "title": "8-bit Input",
-      "description": "A simple 8-bit input component",
-      "registryDependencies": ["input"],
-      "files": [
-        {
-          "path": "components/ui/8bit/input.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/input.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-badge",
-      "type": "registry:component",
-      "title": "8-bit Badge",
-      "description": "A simple 8-bit badge component",
-      "registryDependencies": ["badge"],
-      "files": [
-        {
-          "path": "components/ui/8bit/badge.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/badge.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-textarea",
-      "type": "registry:component",
-      "title": "8-bit Textarea",
-      "description": "A simple 8-bit textarea component",
-      "registryDependencies": ["textarea"],
-      "files": [
-        {
-          "path": "components/ui/8bit/textarea.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/textarea.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-card",
-      "type": "registry:component",
-      "title": "8-bit Card",
-      "description": "A simple 8-bit card component",
-      "registryDependencies": ["card"],
-      "files": [
-        {
-          "path": "components/ui/8bit/card.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/card.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-dialog",
-      "type": "registry:component",
-      "title": "8-bit Dialog",
-      "description": "A simple 8-bit dialog component",
-      "registryDependencies": ["dialog"],
-      "files": [
-        {
-          "path": "components/ui/8bit/dialog.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/dialog.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-dropdown-menu",
-      "type": "registry:component",
-      "title": "8-bit Dropdown Menu",
-      "description": "A simple 8-bit dropdown-menu component",
-      "registryDependencies": ["dropdown-menu"],
-      "files": [
-        {
-          "path": "components/ui/8bit/dropdown-menu.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/dropdown-menu.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-popover",
-      "type": "registry:component",
-      "title": "8-bit Popover",
-      "description": "A simple 8-bit popover component",
-      "registryDependencies": ["popover"],
-      "files": [
-        {
-          "path": "components/ui/8bit/popover.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/popover.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-select",
-      "type": "registry:component",
-      "title": "8-bit Select",
-      "description": "A simple 8-bit select component",
-      "registryDependencies": ["select"],
-      "files": [
-        {
-          "path": "components/ui/8bit/select.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/select.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-label",
-      "type": "registry:component",
-      "title": "8-bit Label",
-      "description": "A simple 8-bit label component",
-      "registryDependencies": ["label"],
-      "files": [
-        {
-          "path": "components/ui/8bit/label.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/label.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-checkbox",
-      "type": "registry:component",
-      "title": "8-bit Checkbox",
-      "description": "A simple 8-bit checkbox component",
-      "registryDependencies": ["checkbox"],
-      "files": [
-        {
-          "path": "components/ui/8bit/checkbox.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/checkbox.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-switch",
-      "type": "registry:component",
-      "title": "8-bit Switch",
-      "description": "A simple 8-bit switch component",
-      "registryDependencies": ["switch"],
-      "files": [
-        {
-          "path": "components/ui/8bit/switch.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/switch.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-alert",
-      "type": "registry:component",
-      "title": "8-bit Alert",
-      "description": "A simple 8-bit switch component",
-      "registryDependencies": ["alert"],
-      "files": [
-        {
-          "path": "components/ui/8bit/alert.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/alert.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-tooltip",
-      "type": "registry:component",
-      "title": "8-bit Tooltip",
-      "description": "A simple 8-bit tooltip component",
-      "registryDependencies": ["tooltip"],
-      "files": [
-        {
-          "path": "components/ui/8bit/tooltip.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/tooltip.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-tooltip",
-      "type": "registry:component",
-      "title": "8-bit Tooltip",
-      "description": "A simple 8-bit tooltip component",
-      "registryDependencies": ["tooltip"],
-      "files": [
-        {
-          "path": "components/ui/8bit/tooltip.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/tooltip.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-avatar",
-      "type": "registry:component",
-      "title": "8-bit Avatar",
-      "description": "A simple 8-bit avatar component",
-      "registryDependencies": ["avatar"],
-      "files": [
-        {
-          "path": "components/ui/8bit/avatar.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/avatar.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-skeleton",
-      "type": "registry:component",
-      "title": "8-bit Skeleton",
-      "description": "A simple 8-bit skeleton component",
-      "registryDependencies": ["skeleton"],
-      "files": [
-        {
-          "path": "components/ui/8bit/skeleton.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/skeleton.tsx"
-        }
-      ]
-    }
-  ]
+	"$schema": "https://ui.shadcn.com/schema/registry.json",
+	"name": "8bit",
+	"homepage": "https://8bitcn.com",
+	"items": [
+		{
+			"name": "8bit-button",
+			"type": "registry:component",
+			"title": "8-bit Button",
+			"description": "A simple 8-bit button component",
+			"registryDependencies": ["button"],
+			"files": [
+				{
+					"path": "components/ui/8bit/button.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/button.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-input",
+			"type": "registry:component",
+			"title": "8-bit Input",
+			"description": "A simple 8-bit input component",
+			"registryDependencies": ["input"],
+			"files": [
+				{
+					"path": "components/ui/8bit/input.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/input.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-badge",
+			"type": "registry:component",
+			"title": "8-bit Badge",
+			"description": "A simple 8-bit badge component",
+			"registryDependencies": ["badge"],
+			"files": [
+				{
+					"path": "components/ui/8bit/badge.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/badge.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-textarea",
+			"type": "registry:component",
+			"title": "8-bit Textarea",
+			"description": "A simple 8-bit textarea component",
+			"registryDependencies": ["textarea"],
+			"files": [
+				{
+					"path": "components/ui/8bit/textarea.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/textarea.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-card",
+			"type": "registry:component",
+			"title": "8-bit Card",
+			"description": "A simple 8-bit card component",
+			"registryDependencies": ["card"],
+			"files": [
+				{
+					"path": "components/ui/8bit/card.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/card.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-dialog",
+			"type": "registry:component",
+			"title": "8-bit Dialog",
+			"description": "A simple 8-bit dialog component",
+			"registryDependencies": ["dialog"],
+			"files": [
+				{
+					"path": "components/ui/8bit/dialog.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/dialog.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-dropdown-menu",
+			"type": "registry:component",
+			"title": "8-bit Dropdown Menu",
+			"description": "A simple 8-bit dropdown-menu component",
+			"registryDependencies": ["dropdown-menu"],
+			"files": [
+				{
+					"path": "components/ui/8bit/dropdown-menu.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/dropdown-menu.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-popover",
+			"type": "registry:component",
+			"title": "8-bit Popover",
+			"description": "A simple 8-bit popover component",
+			"registryDependencies": ["popover"],
+			"files": [
+				{
+					"path": "components/ui/8bit/popover.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/popover.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-select",
+			"type": "registry:component",
+			"title": "8-bit Select",
+			"description": "A simple 8-bit select component",
+			"registryDependencies": ["select"],
+			"files": [
+				{
+					"path": "components/ui/8bit/select.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/select.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-label",
+			"type": "registry:component",
+			"title": "8-bit Label",
+			"description": "A simple 8-bit label component",
+			"registryDependencies": ["label"],
+			"files": [
+				{
+					"path": "components/ui/8bit/label.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/label.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-checkbox",
+			"type": "registry:component",
+			"title": "8-bit Checkbox",
+			"description": "A simple 8-bit checkbox component",
+			"registryDependencies": ["checkbox"],
+			"files": [
+				{
+					"path": "components/ui/8bit/checkbox.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/checkbox.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-switch",
+			"type": "registry:component",
+			"title": "8-bit Switch",
+			"description": "A simple 8-bit switch component",
+			"registryDependencies": ["switch"],
+			"files": [
+				{
+					"path": "components/ui/8bit/switch.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/switch.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-alert",
+			"type": "registry:component",
+			"title": "8-bit Alert",
+			"description": "A simple 8-bit switch component",
+			"registryDependencies": ["alert"],
+			"files": [
+				{
+					"path": "components/ui/8bit/alert.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/alert.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-tooltip",
+			"type": "registry:component",
+			"title": "8-bit Tooltip",
+			"description": "A simple 8-bit tooltip component",
+			"registryDependencies": ["tooltip"],
+			"files": [
+				{
+					"path": "components/ui/8bit/tooltip.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/tooltip.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-tooltip",
+			"type": "registry:component",
+			"title": "8-bit Tooltip",
+			"description": "A simple 8-bit tooltip component",
+			"registryDependencies": ["tooltip"],
+			"files": [
+				{
+					"path": "components/ui/8bit/tooltip.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/tooltip.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-avatar",
+			"type": "registry:component",
+			"title": "8-bit Avatar",
+			"description": "A simple 8-bit avatar component",
+			"registryDependencies": ["avatar"],
+			"files": [
+				{
+					"path": "components/ui/8bit/avatar.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/avatar.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-skeleton",
+			"type": "registry:component",
+			"title": "8-bit Skeleton",
+			"description": "A simple 8-bit skeleton component",
+			"registryDependencies": ["skeleton"],
+			"files": [
+				{
+					"path": "components/ui/8bit/skeleton.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/skeleton.tsx"
+				}
+			]
+		},
+		{
+			"name": "8bit-breadcrumb",
+			"type": "registry:component",
+			"title": "8-bit Breadcrumb",
+			"description": "A simple 8-bit breadcrumb component",
+			"registryDependencies": ["breadcrumb"],
+			"files": [
+				{
+					"path": "components/ui/8bit/breadcrumb.tsx",
+					"type": "registry:component",
+					"target": "components/ui/8bit/breadcrumb.tsx"
+				}
+			]
+		}
+	]
 }
