@@ -39,72 +39,71 @@ export interface BitAvatarFallbackProps
   extends React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>,
     VariantProps<typeof avatarVariants> {}
 
-const Avatar = React.forwardRef<
-  React.ComponentRef<typeof AvatarPrimitive.Root>,
-  BitAvatarProps
->(({ className = "", font, ...props }, ref) => (
-  <div className={cn("relative", className)}>
-    <AvatarPrimitive.Root
-      ref={ref}
+function Avatar({ className = "", font, ...props }: BitAvatarProps) {
+  return (
+    <div className={cn("relative", className)}>
+      <AvatarPrimitive.Root
+        data-slot="avatar"
+        className={cn(
+          "relative flex size-16 shrink-0 overflow-hidden rounded-none",
+          font !== "normal" && pressStart.className,
+          className
+        )}
+        {...props}
+      />
+      <div className="absolute top-0 left-0 w-full h-1 bg-foreground dark:bg-ring pointer-events-none" />
+      <div className="absolute bottom-0 w-full h-1 bg-foreground dark:bg-ring pointer-events-none" />
+      <div className="absolute top-1 -left-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
+      <div className="absolute bottom-1 -left-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
+      <div className="absolute top-1 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
+      <div className="absolute bottom-1 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
+    </div>
+  );
+}
+
+function AvatarImage({
+  className,
+  font,
+  pixelated = false,
+  ...props
+}: BitAvatarImageProps) {
+  return (
+    <AvatarPrimitive.Image
+      data-slot="avatar-image"
       className={cn(
-        "relative flex size-10 shrink-0 overflow-hidden rounded-none",
+        "aspect-square h-full w-full",
+        pixelated && [
+          "image-rendering-pixelated",
+          "contrast-125 brightness-110 saturate-150",
+        ],
+        font !== "normal" && pressStart.className,
+        className
+      )}
+      style={
+        pixelated
+          ? {
+              imageRendering: "pixelated",
+              filter: "contrast(1.25) brightness(1.1) saturate(1.5)",
+            }
+          : undefined
+      }
+      {...props}
+    />
+  );
+}
+
+function AvatarFallback({ className, font, ...props }: BitAvatarFallbackProps) {
+  return (
+    <AvatarPrimitive.Fallback
+      data-slot="avatar-fallback"
+      className={cn(
+        "flex h-full w-full items-center justify-center bg-muted",
         font !== "normal" && pressStart.className,
         className
       )}
       {...props}
     />
-    <div className="absolute top-0 left-0 w-full h-1 bg-foreground dark:bg-ring pointer-events-none" />
-    <div className="absolute bottom-0 w-full h-1 bg-foreground dark:bg-ring pointer-events-none" />
-    <div className="absolute top-1 -left-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-    <div className="absolute bottom-1 -left-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-    <div className="absolute top-1 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-    <div className="absolute bottom-1 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-  </div>
-));
-Avatar.displayName = AvatarPrimitive.Root.displayName;
-
-const AvatarImage = React.forwardRef<
-  React.ComponentRef<typeof AvatarPrimitive.Image>,
-  BitAvatarImageProps
->(({ className, font, pixelated = false, ...props }, ref) => (
-  <AvatarPrimitive.Image
-    ref={ref}
-    className={cn(
-      "aspect-square h-full w-full",
-      pixelated && [
-        "image-rendering-pixelated",
-        "contrast-125 brightness-110 saturate-150",
-      ],
-      font !== "normal" && pressStart.className,
-      className
-    )}
-    style={
-      pixelated
-        ? {
-            imageRendering: "pixelated",
-            filter: "contrast(1.25) brightness(1.1) saturate(1.5)",
-          }
-        : undefined
-    }
-    {...props}
-  />
-));
-AvatarImage.displayName = AvatarPrimitive.Image.displayName;
-
-const AvatarFallback = React.forwardRef<
-  React.ComponentRef<typeof AvatarPrimitive.Fallback>,
-  BitAvatarFallbackProps
->(({ className, font, ...props }, ref) => (
-  <AvatarPrimitive.Fallback
-    ref={ref}
-    className={cn(
-      "flex h-full w-full items-center justify-center bg-muted",
-      font !== "normal" && pressStart.className,
-      className
-    )}
-    {...props}
-  />
-));
-AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
+  );
+}
 
 export { Avatar, AvatarImage, AvatarFallback };

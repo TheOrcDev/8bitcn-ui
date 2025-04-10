@@ -38,14 +38,14 @@ export default function AvatarPage() {
         <div className="flex items-center justify-center min-h-[400px] relative">
           <div className="flex flex-col items-center gap-6">
             <div className="flex gap-4">
-              <Avatar className="size-16">
+              <Avatar>
                 <AvatarImage
                   src="/images/pixelized-8bitcnorc.jpg"
                   alt="@shadcn"
                 />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
-              <Avatar className="size-16">
+              <Avatar>
                 <AvatarImage
                   src="/images/pixelized-8bitcnorc.jpg"
                   alt="@shadcn"
@@ -53,12 +53,12 @@ export default function AvatarPage() {
                 />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
-              <Avatar className="size-16">
+              <Avatar>
                 <AvatarFallback>8B</AvatarFallback>
               </Avatar>
             </div>
             <p className="text-sm text-muted-foreground mt-2">
-              With image and fallback
+              With image, pixelated and fallback!
             </p>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function AvatarPage() {
 </Avatar>`}</CodeSnippet>
 
       <h4 className="font-medium mt-4">Custom Sizes</h4>
-      <CodeSnippet>{`<Avatar className="size-16">
+      <CodeSnippet>{`<Avatar className="size-20">
   <AvatarImage src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@shadcn" />
   <AvatarFallback>CN</AvatarFallback>
 </Avatar>
@@ -107,7 +107,7 @@ export default function AvatarPage() {
 </Avatar>`}</CodeSnippet>
 
       <h4 className="font-medium mt-4">8-bit image</h4>
-      <CodeSnippet>{`<Avatar className="size-16">
+      <CodeSnippet>{`<Avatar">
   <AvatarImage pixelated={true} src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@shadcn" />
   <AvatarFallback>CN</AvatarFallback>
 </Avatar>`}</CodeSnippet>
