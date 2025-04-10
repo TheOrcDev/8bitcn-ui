@@ -41,25 +41,15 @@ export default function AvatarPage() {
               <Avatar>
                 <AvatarImage
                   src="/images/pixelized-8bitcnorc.jpg"
-                  alt="@shadcn"
+                  alt="@8bitcn"
                 />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
-              <Avatar>
-                <AvatarImage
-                  src="/images/pixelized-8bitcnorc.jpg"
-                  alt="@shadcn"
-                  variant="retro"
-                />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
+
               <Avatar>
                 <AvatarFallback>8B</AvatarFallback>
               </Avatar>
             </div>
-            <p className="text-sm text-muted-foreground mt-2">
-              With image, pixelated and fallback!
-            </p>
           </div>
         </div>
       </div>
@@ -79,7 +69,7 @@ export default function AvatarPage() {
       <CodeSnippet>{`import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/8bit/avatar"`}</CodeSnippet>
 
       <CodeSnippet>{`<Avatar>
-  <AvatarImage src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@shadcn" />
+  <AvatarImage src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@8bitcn" />
   <AvatarFallback>CN</AvatarFallback>
 </Avatar>`}</CodeSnippet>
 
@@ -98,18 +88,12 @@ export default function AvatarPage() {
 
       <h4 className="font-medium mt-4">Custom Sizes</h4>
       <CodeSnippet>{`<Avatar className="size-20">
-  <AvatarImage src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@shadcn" />
+  <AvatarImage src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@8bitcn" />
   <AvatarFallback>CN</AvatarFallback>
 </Avatar>
 
-<Avatar className="h-6 w-6">
+<Avatar className="size-6">
   <AvatarFallback>8B</AvatarFallback>
-</Avatar>`}</CodeSnippet>
-
-      <h4 className="font-medium mt-4">8-bit image</h4>
-      <CodeSnippet>{`<Avatar">
-  <AvatarImage variant="8bit" src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@shadcn" />
-  <AvatarFallback>CN</AvatarFallback>
 </Avatar>`}</CodeSnippet>
     </div>
   );

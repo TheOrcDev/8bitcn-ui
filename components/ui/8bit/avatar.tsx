@@ -1,4 +1,5 @@
 "use client";
+
 import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import { cn } from "@/lib/utils";
@@ -13,7 +14,7 @@ const pressStart = Press_Start_2P({
 export const avatarVariants = cva("", {
   variants: {
     font: {
-      default: "",
+      normal: "",
       retro: pressStart.className,
     },
     variant: {
@@ -48,8 +49,8 @@ function Avatar({ className = "", font, variant, ...props }: BitAvatarProps) {
       <AvatarPrimitive.Root
         data-slot="avatar"
         className={cn(
-          "relative flex size-16 shrink-0 overflow-hidden rounded-none",
-          font === "retro" && pressStart.className,
+          "relative flex size-10 shrink-0 overflow-hidden rounded-none text-xs",
+          font !== "normal" && pressStart.className,
           variant === "retro" && "image-rendering-pixelated",
           className
         )}
