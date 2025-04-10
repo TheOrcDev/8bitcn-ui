@@ -2,7 +2,7 @@ export const navItems = {
   header: [
     {
       label: "Components",
-      href: "/components/button",
+      href: "/components/alert",
     },
     {
       label: "Docs",
