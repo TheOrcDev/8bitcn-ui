@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "Build your retro library - 8bitcn/ui",
   description: "A collection of 8-bit styled components for your next project.",
   openGraph: {
-    images: "/images/8bitcn-orc.jpg",
+    images: "/images/pixelized-8bitcnorc.jpg",
   },
 };
 
