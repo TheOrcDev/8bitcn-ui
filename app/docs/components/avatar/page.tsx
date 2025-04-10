@@ -39,15 +39,12 @@ export default function AvatarPage() {
           <div className="flex flex-col items-center gap-6">
             <div className="flex gap-4">
               <Avatar className="size-16">
-                <AvatarImage
-                  src="https://github.com/shadcn.png"
-                  alt="@shadcn"
-                />
+                <AvatarImage src="/images/8bitcn-orc.jpg" alt="@shadcn" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
               <Avatar className="size-16">
                 <AvatarImage
-                  src="https://github.com/shadcn.png"
+                  src="/images/8bitcn-orc.jpg"
                   alt="@shadcn"
                   pixelated
                 />
@@ -79,7 +76,7 @@ export default function AvatarPage() {
       <CodeSnippet>{`import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/8bit/avatar"`}</CodeSnippet>
 
       <CodeSnippet>{`<Avatar>
-  <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+  <AvatarImage src="https://8bitcn.com/images/8bitcn-orc.jpg" alt="@shadcn" />
   <AvatarFallback>CN</AvatarFallback>
 </Avatar>`}</CodeSnippet>
 
@@ -98,7 +95,7 @@ export default function AvatarPage() {
 
       <h4 className="font-medium mt-4">Custom Sizes</h4>
       <CodeSnippet>{`<Avatar className="h-16 w-16">
-  <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+  <AvatarImage src="https://8bitcn.com/images/8bitcn-orc.jpg" alt="@shadcn" />
   <AvatarFallback>CN</AvatarFallback>
 </Avatar>
 
@@ -108,7 +105,7 @@ export default function AvatarPage() {
 
       <h4 className="font-medium mt-4">8-bit image</h4>
       <CodeSnippet>{`<Avatar className="h-16 w-16">
-  <AvatarImage pixelated={true} src="https://github.com/shadcn.png" alt="@shadcn" />
+  <AvatarImage pixelated={true} src="https://8bitcn.com/images/8bitcn-orc.jpg" alt="@shadcn" />
   <AvatarFallback>CN</AvatarFallback>
 </Avatar>`}</CodeSnippet>
     </div>
