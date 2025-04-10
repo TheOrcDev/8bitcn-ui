@@ -69,7 +69,7 @@ export const navItems = {
         },
         {
           title: "Tooltip",
-          url: "/components/tooltip",
+          url: "/docs/components/tooltip",
           new: true,
         },
       ],
