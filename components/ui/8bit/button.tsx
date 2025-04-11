@@ -39,7 +39,8 @@ export const buttonVariants = cva("", {
 export interface BitButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean
+  asChild?: boolean;
+  ref?: React.Ref<HTMLButtonElement>;
 }
 
 function Button({ children, ...props }: BitButtonProps) {
