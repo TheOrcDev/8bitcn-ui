@@ -107,26 +107,6 @@ const ChevronDown = () => {
 export default function BreadcrumbPageNext() {
 	return (
 		<div className="flex flex-col gap-4">
-			<Breadcrumb>
-				<BreadcrumbList>
-					<BreadcrumbItem>
-						<BreadcrumbLink asChild>
-							<Link href="/">Home</Link>
-						</BreadcrumbLink>
-					</BreadcrumbItem>
-					<BreadcrumbSeparator />
-					<BreadcrumbItem>
-						<BreadcrumbLink asChild>
-							<Link href="/components">Components</Link>
-						</BreadcrumbLink>
-					</BreadcrumbItem>
-					<BreadcrumbSeparator />
-					<BreadcrumbItem>
-						<BreadcrumbPage>Breadcrumb</BreadcrumbPage>
-					</BreadcrumbItem>
-				</BreadcrumbList>
-			</Breadcrumb>
-
 			<div className="flex flex-col md:flex-row items-center justify-between gap-2">
 				<h1 className="text-3xl font-bold">Breadcrumb</h1>
 				<CopyCommandButton
