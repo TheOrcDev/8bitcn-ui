@@ -4,7 +4,6 @@ import * as React from "react";
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
-import { ArrowLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/8bit/button";
 
@@ -77,10 +76,12 @@ const Carousel = React.forwardRef<
     }, []);
 
     const scrollPrev = React.useCallback(() => {
+      console.log("scrolled prev");
       api?.scrollPrev();
     }, [api]);
 
     const scrollNext = React.useCallback(() => {
+      console.log("scrolled next");
       api?.scrollNext();
     }, [api]);
 
@@ -205,9 +206,9 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute  h-6 w-6 rounded-none",
+        "absolute h-6 w-6 rounded-none translate-none",
         orientation === "horizontal"
-          ? "-left-12 top-1/2 -translate-y-1/2"
+          ? "-left-12 top-1/2 "
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
         className,
       )}
@@ -215,7 +216,32 @@ const CarouselPrevious = React.forwardRef<
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft className="h-4 w-4" />
+      <svg
+        width="50"
+        height="50"
+        viewBox="0 0 256 256"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        color="currentColor"
+        aria-label="arrow-left"
+      >
+        <rect x="64" y="120" width="14" height="14" rx="1"></rect>
+        <rect x="96" y="120" width="14" height="14" rx="1"></rect>
+        <rect x="80" y="120" width="14" height="14" rx="1"></rect>
+        <rect x="112" y="120" width="14" height="14" rx="1"></rect>
+        <rect x="144" y="120" width="14" height="14" rx="1"></rect>
+        <rect x="160" y="120" width="14" height="14" rx="1"></rect>
+        <rect x="80" y="104" width="14" height="14" rx="1"></rect>
+        <rect x="96" y="88" width="14" height="14" rx="1"></rect>
+        <rect x="112" y="72" width="14" height="14" rx="1"></rect>
+        <rect x="80" y="136" width="14" height="14" rx="1"></rect>
+        <rect x="96" y="152" width="14" height="14" rx="1"></rect>
+        <rect x="112" y="168" width="14" height="14" rx="1"></rect>
+        <rect x="176" y="120" width="14" height="14" rx="1"></rect>
+        <rect x="128" y="120" width="14" height="14" rx="1"></rect>
+      </svg>
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -253,7 +279,6 @@ const CarouselNext = React.forwardRef<
         stroke="currentColor"
         strokeWidth="0.25"
         color="currentColor"
-        className="raster-icon"
         aria-label="arrow-right"
       >
         <rect x="64" y="120" width="14" height="14" rx="1"></rect>
