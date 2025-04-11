@@ -28,7 +28,7 @@ export default function MobileNav() {
         </Button>
       </DrawerTrigger>
       <DrawerContent className="h-3/4">
-        <DrawerHeader>
+        <DrawerHeader className="overflow-y-auto">
           <div className="flex flex-col gap-2">
             {navItems.header.map((item) => (
               <Link
@@ -43,7 +43,7 @@ export default function MobileNav() {
           </div>
 
           {navItems.navMain.map((navItem) => (
-            <div key={navItem.title} className="flex flex-col gap-2 pt-4">
+            <div key={navItem.title} className="flex flex-col gap-2 py-10">
               <DrawerTitle className="text-xl">{navItem.title}</DrawerTitle>
               {navItem.items.map((item) => (
                 <Link
