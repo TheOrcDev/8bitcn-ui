@@ -11,7 +11,7 @@ function Label({
   ...props
 }: React.ComponentProps<typeof LabelPrimitive.Root>) {
   return (
-    <div className={cn("relative flex items-center justify-center space-x-4", className)}>
+    <div className={cn("relative flex items-center justify-center space-x-2", className)}>
       <Checkbox />
       <LabelPrimitive.Root
         data-slot="label"
