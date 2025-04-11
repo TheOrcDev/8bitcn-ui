@@ -26,7 +26,7 @@ export default function CodeSnippet({
   };
 
   return (
-    <div className="rounded-lg overflow-hidden border border-zinc-800">
+    <div className="rounded-lg overflow-hidden border border-zinc-800 break-all">
       <div className="bg-[#121212] text-white flex justify-between px-2 pl-4 py-2">
         <pre className="text-sm flex items-center">
           <code className="text-white whitespace-pre-wrap">{children}</code>

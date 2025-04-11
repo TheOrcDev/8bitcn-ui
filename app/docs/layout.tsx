@@ -15,7 +15,7 @@ export default function Layout({ children }: LayoutProps) {
         <SidebarTrigger className="md:hidden" />
       </SidebarProvider>
 
-      <div className="flex-1 px-4 py-4">{children}</div>
+      <div className="flex-1 px-4 py-4 max-w-full">{children}</div>
     </main>
   );
 }
