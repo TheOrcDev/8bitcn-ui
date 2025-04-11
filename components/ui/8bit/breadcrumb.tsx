@@ -80,28 +80,18 @@ const ChevronRight = () => {
 	);
 };
 
-function Breadcrumb({ children, ...props }: BitBreadcrumbNavigationProps) {
+function Breadcrumb({ ...props }: BitBreadcrumbNavigationProps) {
 	const { variant, className, font } = props;
 
 	return (
-		<div
+		<ShadcnBreadcrumb
+			{...props}
 			className={cn(
-				"mb-4 flex items-center space-x-1 text-sm leading-none text-muted-foreground",
+				breadcrumbVariants({ variant }),
+				font !== "normal" && pressStart.className,
 				className
 			)}
-		>
-			<ShadcnBreadcrumb
-				{...props}
-				className={cn(
-					"relative rounded-none border-none bg-background",
-					breadcrumbVariants({ variant }),
-					font !== "normal" && pressStart.className,
-					className
-				)}
-			>
-				{children}
-			</ShadcnBreadcrumb>
-		</div>
+		/>
 	);
 }
 
