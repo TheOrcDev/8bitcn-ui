@@ -1,15 +1,16 @@
-import { Button } from "@/components/ui/8bit/button";
+import { Button } from "@/components/ui/8bit/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/8bit/tooltip";
-import { OpenInV0Button } from "../open-in-v0-button";
-import CopyCommandButton from "../copy-command-button";
-import InstallationCommands from "../installation-commands";
-import { Separator } from "@/components/ui/separator";
-import CodeSnippet from "../code-snippet";
+} from "@/components/ui/8bit/tooltip"
+import { Separator } from "@/components/ui/separator"
+
+import CodeSnippet from "../code-snippet"
+import CopyCommandButton from "../copy-command-button"
+import InstallationCommands from "../installation-commands"
+import { OpenInV0Button } from "../open-in-v0-button"
 
 export default function TooltipPage() {
   return (
@@ -85,5 +86,5 @@ export default function TooltipPage() {
 </TooltipProvider>`}
       </CodeSnippet>
     </div>
-  );
+  )
 }

@@ -1,9 +1,10 @@
-import { Textarea } from "@/components/ui/8bit/textarea";
-import { OpenInV0Button } from "../open-in-v0-button";
-import CopyCommandButton from "../copy-command-button";
-import InstallationCommands from "../installation-commands";
-import { Separator } from "@/components/ui/separator";
-import CodeSnippet from "../code-snippet";
+import { Textarea } from "@/components/ui/8bit/textarea"
+import { Separator } from "@/components/ui/separator"
+
+import CodeSnippet from "../code-snippet"
+import CopyCommandButton from "../copy-command-button"
+import InstallationCommands from "../installation-commands"
+import { OpenInV0Button } from "../open-in-v0-button"
 
 export default function TextareaPage() {
   return (
@@ -51,5 +52,5 @@ export default function TextareaPage() {
 
       <CodeSnippet>{`<Textarea />`}</CodeSnippet>
     </div>
-  );
+  )
 }

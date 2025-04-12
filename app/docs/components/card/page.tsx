@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/8bit/button"
 import {
   Card,
   CardContent,
@@ -5,22 +6,22 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/8bit/card";
-import { OpenInV0Button } from "../open-in-v0-button";
-import CopyCommandButton from "../copy-command-button";
-import { Input } from "@/components/ui/8bit/input";
-import { Button } from "@/components/ui/8bit/button";
+} from "@/components/ui/8bit/card"
+import { Input } from "@/components/ui/8bit/input"
+import { Label } from "@/components/ui/8bit/label"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/8bit/select";
-import { Label } from "@/components/ui/8bit/label";
-import InstallationCommands from "../installation-commands";
-import { Separator } from "@/components/ui/separator";
-import CodeSnippet from "../code-snippet";
+} from "@/components/ui/8bit/select"
+import { Separator } from "@/components/ui/separator"
+
+import CodeSnippet from "../code-snippet"
+import CopyCommandButton from "../copy-command-button"
+import InstallationCommands from "../installation-commands"
+import { OpenInV0Button } from "../open-in-v0-button"
 
 export default function TextareaPage() {
   return (
@@ -116,5 +117,5 @@ export default function TextareaPage() {
 </Card>`}
       </CodeSnippet>
     </div>
-  );
+  )
 }

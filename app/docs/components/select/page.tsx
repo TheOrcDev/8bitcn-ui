@@ -1,15 +1,16 @@
 import {
   Select,
-  SelectTrigger,
-  SelectValue,
   SelectContent,
   SelectItem,
-} from "@/components/ui/8bit/select";
-import { OpenInV0Button } from "../open-in-v0-button";
-import CopyCommandButton from "../copy-command-button";
-import InstallationCommands from "../installation-commands";
-import { Separator } from "@/components/ui/separator";
-import CodeSnippet from "../code-snippet";
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/8bit/select"
+import { Separator } from "@/components/ui/separator"
+
+import CodeSnippet from "../code-snippet"
+import CopyCommandButton from "../copy-command-button"
+import InstallationCommands from "../installation-commands"
+import { OpenInV0Button } from "../open-in-v0-button"
 
 export default function SelectPage() {
   return (
@@ -83,5 +84,5 @@ export default function SelectPage() {
 </Select>`}
       </CodeSnippet>
     </div>
-  );
+  )
 }

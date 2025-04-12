@@ -1,21 +1,21 @@
-import { OpenInV0Button } from "../open-in-v0-button";
-import CopyCommandButton from "../copy-command-button";
-import { Separator } from "@/components/ui/separator";
-import InstallationCommands from "../installation-commands";
-import CodeSnippet from "../code-snippet";
-import { Button } from "@/components/ui/8bit/button";
 import {
-    AlertDialog,
-    AlertDialogAction,
-    AlertDialogCancel,
-    AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogTitle,
-    AlertDialogTrigger,
-  } from "@/components/ui/8bit/alert-dialog"
-  
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/8bit/alert-dialog"
+import { Button } from "@/components/ui/8bit/button"
+import { Separator } from "@/components/ui/separator"
+
+import CodeSnippet from "../code-snippet"
+import CopyCommandButton from "../copy-command-button"
+import InstallationCommands from "../installation-commands"
+import { OpenInV0Button } from "../open-in-v0-button"
 
 export default function AlertDialogPage() {
   return (
@@ -29,7 +29,8 @@ export default function AlertDialogPage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays a Alert Dialog or a component that looks like a 8-bit Alert Dialog.
+        Displays a Alert Dialog or a component that looks like a 8-bit Alert
+        Dialog.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
@@ -43,22 +44,24 @@ export default function AlertDialogPage() {
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
-         <AlertDialog>
-            <AlertDialogTrigger><Button variant="outline">Open</Button></AlertDialogTrigger>
+          <AlertDialog>
+            <AlertDialogTrigger>
+              <Button variant="outline">Open</Button>
+            </AlertDialogTrigger>
             <AlertDialogContent>
-                <AlertDialogHeader>
+              <AlertDialogHeader>
                 <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
                 <AlertDialogDescription>
-                    This action cannot be undone. This will permanently delete your account
-                    and remove your data from our servers.
+                  This action cannot be undone. This will permanently delete
+                  your account and remove your data from our servers.
                 </AlertDialogDescription>
-                </AlertDialogHeader>
-                <AlertDialogFooter>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
                 <AlertDialogCancel>Cancel</AlertDialogCancel>
                 <AlertDialogAction>Continue</AlertDialogAction>
-                </AlertDialogFooter>
-           </AlertDialogContent>
-         </AlertDialog>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </div>
       </div>
 
@@ -66,14 +69,16 @@ export default function AlertDialogPage() {
 
       <Separator />
 
-      <InstallationCommands packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-alert-dialog.json`} />
+      <InstallationCommands
+        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-alert-dialog.json`}
+      />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 
       <Separator />
 
       <CodeSnippet>
-{`import {
+        {`import {
     AlertDialog,
     AlertDialogAction,
     AlertDialogCancel,
@@ -87,7 +92,7 @@ export default function AlertDialogPage() {
       </CodeSnippet>
 
       <CodeSnippet>
-{`<AlertDialog>
+        {`<AlertDialog>
   <AlertDialogTrigger><Button variant="outline">Open</Button></AlertDialogTrigger>
   <AlertDialogContent>
     <AlertDialogHeader>
@@ -103,7 +108,8 @@ export default function AlertDialogPage() {
     </AlertDialogFooter>
   </AlertDialogContent>
 </AlertDialog>
-`}   </CodeSnippet>
-  </div>
-  );
+`}{" "}
+      </CodeSnippet>
+    </div>
+  )
 }

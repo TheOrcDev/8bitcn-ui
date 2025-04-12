@@ -1,9 +1,10 @@
-import { Input } from "@/components/ui/8bit/input";
-import { OpenInV0Button } from "../open-in-v0-button";
-import CopyCommandButton from "../copy-command-button";
-import InstallationCommands from "../installation-commands";
-import { Separator } from "@/components/ui/separator";
-import CodeSnippet from "../code-snippet";
+import { Input } from "@/components/ui/8bit/input"
+import { Separator } from "@/components/ui/separator"
+
+import CodeSnippet from "../code-snippet"
+import CopyCommandButton from "../copy-command-button"
+import InstallationCommands from "../installation-commands"
+import { OpenInV0Button } from "../open-in-v0-button"
 
 export default function InputPage() {
   return (
@@ -51,5 +52,5 @@ export default function InputPage() {
 
       <CodeSnippet>{`<Input placeholder="Enter text" />`}</CodeSnippet>
     </div>
-  );
+  )
 }

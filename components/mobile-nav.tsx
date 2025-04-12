@@ -1,24 +1,23 @@
-"use client";
+"use client"
 
-import React, { useState } from "react";
-import Link from "next/link";
+import React, { useState } from "react"
+import Link from "next/link"
+import { Menu } from "lucide-react"
 
-import { Menu } from "lucide-react";
+import { navItems } from "@/config/nav-items"
 
-import { navItems } from "@/config/nav-items";
-
+import { Badge } from "./ui/8bit/badge"
+import { Button } from "./ui/button"
 import {
   Drawer,
   DrawerContent,
   DrawerHeader,
-  DrawerTrigger,
   DrawerTitle,
-} from "./ui/drawer";
-import { Button } from "./ui/button";
-import { Badge } from "./ui/8bit/badge";
+  DrawerTrigger,
+} from "./ui/drawer"
 
 export default function MobileNav() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
@@ -61,5 +60,5 @@ export default function MobileNav() {
         </DrawerHeader>
       </DrawerContent>
     </Drawer>
-  );
+  )
 }

@@ -1,15 +1,15 @@
-import type React from "react";
-import * as AvatarPrimitive from "@radix-ui/react-avatar";
-import { cva } from "class-variance-authority";
-import { forwardRef } from "react";
+import type React from "react"
+import { forwardRef } from "react"
+import { Press_Start_2P } from "next/font/google"
+import * as AvatarPrimitive from "@radix-ui/react-avatar"
+import { cva } from "class-variance-authority"
 
-import { cn } from "@/lib/utils";
-import { Press_Start_2P } from "next/font/google";
+import { cn } from "@/lib/utils"
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-});
+})
 
 export const avatarVariants = cva("", {
   variants: {
@@ -27,16 +27,16 @@ export const avatarVariants = cva("", {
     font: "retro",
     variant: "pixel",
   },
-});
+})
 
 const Avatar = forwardRef<
   React.ComponentRef<typeof AvatarPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> & {
-    font?: "normal" | "retro";
-    variant?: "default" | "retro" | "pixel";
+    font?: "normal" | "retro"
+    variant?: "default" | "retro" | "pixel"
   }
 >(({ className = "", font, variant = "pixel", ...props }, ref) => {
-  const isPixel = variant === "pixel";
+  const isPixel = variant === "pixel"
 
   return (
     <div className={cn("relative size-max", className)}>
@@ -121,14 +121,14 @@ const Avatar = forwardRef<
         </>
       )}
     </div>
-  );
-});
-Avatar.displayName = AvatarPrimitive.Root.displayName;
+  )
+})
+Avatar.displayName = AvatarPrimitive.Root.displayName
 
 interface BitAvatarImageProps
   extends React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image> {
-  font?: "normal" | "retro";
-  variant?: "default" | "retro" | "pixel";
+  font?: "normal" | "retro"
+  variant?: "default" | "retro" | "pixel"
 }
 
 const AvatarImage = forwardRef<
@@ -146,9 +146,9 @@ const AvatarImage = forwardRef<
       )}
       {...props}
     />
-  );
-});
-AvatarImage.displayName = AvatarPrimitive.Image.displayName;
+  )
+})
+AvatarImage.displayName = AvatarPrimitive.Image.displayName
 
 const AvatarFallback = forwardRef<
   React.ComponentRef<typeof AvatarPrimitive.Fallback>,
@@ -163,7 +163,7 @@ const AvatarFallback = forwardRef<
     )}
     {...props}
   />
-));
-AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
+))
+AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 
-export { Avatar, AvatarImage, AvatarFallback };
+export { Avatar, AvatarImage, AvatarFallback }

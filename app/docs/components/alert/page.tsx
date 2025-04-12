@@ -1,13 +1,10 @@
-import { OpenInV0Button } from "../open-in-v0-button";
-import CopyCommandButton from "../copy-command-button";
-import { Separator } from "@/components/ui/separator";
-import InstallationCommands from "../installation-commands";
-import CodeSnippet from "../code-snippet";
-import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-} from "@/components/ui/8bit/alert";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/8bit/alert"
+import { Separator } from "@/components/ui/separator"
+
+import CodeSnippet from "../code-snippet"
+import CopyCommandButton from "../copy-command-button"
+import InstallationCommands from "../installation-commands"
+import { OpenInV0Button } from "../open-in-v0-button"
 
 export default function AlertPage() {
   return (
@@ -65,5 +62,5 @@ export default function AlertPage() {
   </AlertDescription>
 </Alert>`}</CodeSnippet>
     </div>
-  );
+  )
 }

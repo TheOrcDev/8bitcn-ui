@@ -13,11 +13,11 @@ If you need any help, feel free to reach out to [@theorcdev](https://twitter.com
 
 ## Structure
 
-| Path               | Description                              |
-| ------------------ | ------------------------------           |
-| `/app`             | The Next.js application for the website. |
-| `/components`      | The React components for the website.    |
-| `/registry.json`   | The registry for the components.         |
+| Path             | Description                              |
+| ---------------- | ---------------------------------------- |
+| `/app`           | The Next.js application for the website. |
+| `/components`    | The React components for the website.    |
+| `/registry.json` | The registry for the components.         |
 
 ## Development
 
@@ -59,7 +59,7 @@ pnpm dev
 
 ## Components
 
-We use a registry system for developing components. You can find the source code for the components under `app/components/ui/8bit`. 
+We use a registry system for developing components. You can find the source code for the components under `app/components/ui/8bit`.
 
 ```bash
 app

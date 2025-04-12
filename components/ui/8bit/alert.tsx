@@ -1,18 +1,17 @@
-import { cva, VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import { Press_Start_2P } from "next/font/google"
+import { cva, VariantProps } from "class-variance-authority"
 
-import { Press_Start_2P } from "next/font/google";
-
+import { cn } from "@/lib/utils"
 import {
   Alert as ShadcnAlert,
   AlertDescription as ShadcnAlertDescription,
   AlertTitle as ShadcnAlertTitle,
-} from "@/components/ui/alert";
+} from "@/components/ui/alert"
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-});
+})
 
 export const alertVariants = cva("", {
   variants: {
@@ -29,14 +28,14 @@ export const alertVariants = cva("", {
   defaultVariants: {
     variant: "default",
   },
-});
+})
 
 export interface BitAlertProps
   extends React.ComponentProps<"div">,
     VariantProps<typeof alertVariants> {}
 
 function Alert({ children, ...props }: BitAlertProps) {
-  const { variant, className, font } = props;
+  const { variant, className, font } = props
 
   return (
     <div className={cn("relative", className)}>
@@ -65,7 +64,7 @@ function Alert({ children, ...props }: BitAlertProps) {
       <div className="absolute top-1 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
       <div className="absolute bottom-1 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
     </div>
-  );
+  )
 }
 
 function AlertTitle({
@@ -77,7 +76,7 @@ function AlertTitle({
       className={cn("line-clamp-1 font-medium tracking-tight", className)}
       {...props}
     />
-  );
+  )
 }
 
 function AlertDescription({
@@ -92,7 +91,7 @@ function AlertDescription({
       )}
       {...props}
     />
-  );
+  )
 }
 
-export { Alert, AlertTitle, AlertDescription };
+export { Alert, AlertTitle, AlertDescription }

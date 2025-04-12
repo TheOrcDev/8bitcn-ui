@@ -1,27 +1,25 @@
-import { cva, VariantProps } from "class-variance-authority";
-import * as SelectPrimitive from "@radix-ui/react-select";
+import { Press_Start_2P } from "next/font/google"
+import * as SelectPrimitive from "@radix-ui/react-select"
+import { cva, VariantProps } from "class-variance-authority"
 
-import { cn } from "@/lib/utils";
-
+import { cn } from "@/lib/utils"
 import {
   Select as ShadcnSelect,
   SelectContent as ShadcnSelectContent,
+  SelectGroup as ShadcnSelectGroup,
   SelectItem as ShadcnSelectItem,
+  SelectLabel as ShadcnSelectLabel,
+  SelectScrollDownButton as ShadcnSelectScrollDownButton,
+  SelectScrollUpButton as ShadcnSelectScrollUpButton,
+  SelectSeparator as ShadcnSelectSeparator,
   SelectTrigger as ShadcnSelectTrigger,
   SelectValue as ShadcnSelectValue,
-  SelectGroup as ShadcnSelectGroup,
-  SelectLabel as ShadcnSelectLabel,
-  SelectSeparator as ShadcnSelectSeparator,
-  SelectScrollUpButton as ShadcnSelectScrollUpButton,
-  SelectScrollDownButton as ShadcnSelectScrollDownButton,
-} from "@/components/ui/select";
-
-import { Press_Start_2P } from "next/font/google";
+} from "@/components/ui/select"
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-});
+})
 
 export const inputVariants = cva("", {
   variants: {
@@ -33,49 +31,49 @@ export const inputVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-});
+})
 
 export interface BitSelectProps
   extends React.SelectHTMLAttributes<HTMLSelectElement>,
     VariantProps<typeof inputVariants> {
-  asChild?: boolean;
+  asChild?: boolean
 }
 
 function Select({ ...props }: React.ComponentProps<typeof ShadcnSelect>) {
-  return <ShadcnSelect {...props} />;
+  return <ShadcnSelect {...props} />
 }
 
 function SelectGroup({
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Group>) {
-  return <ShadcnSelectGroup {...props} />;
+  return <ShadcnSelectGroup {...props} />
 }
 
 interface BitSelectValueProps
   extends React.ComponentProps<typeof SelectPrimitive.Value>,
     VariantProps<typeof inputVariants> {
-  asChild?: boolean;
+  asChild?: boolean
 }
 
 function SelectValue({ ...props }: BitSelectValueProps) {
-  const { font } = props;
+  const { font } = props
 
   return (
     <ShadcnSelectValue
       className={cn(font !== "normal" && pressStart.className)}
       {...props}
     />
-  );
+  )
 }
 
 interface BitSelectTriggerProps
   extends React.ComponentProps<typeof SelectPrimitive.Trigger>,
     VariantProps<typeof inputVariants> {
-  asChild?: boolean;
+  asChild?: boolean
 }
 
 function SelectTrigger({ children, ...props }: BitSelectTriggerProps) {
-  const { className, font } = props;
+  const { className, font } = props
 
   return (
     <div
@@ -99,13 +97,13 @@ function SelectTrigger({ children, ...props }: BitSelectTriggerProps) {
       <div className="absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring" />
       <div className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring" />
     </div>
-  );
+  )
 }
 
 export interface BitSelectContentProps
   extends React.ComponentProps<typeof SelectPrimitive.Content>,
     VariantProps<typeof inputVariants> {
-  asChild?: boolean;
+  asChild?: boolean
 }
 
 function SelectContent({
@@ -113,7 +111,7 @@ function SelectContent({
   children,
   ...props
 }: BitSelectContentProps) {
-  const { font } = props;
+  const { font } = props
 
   return (
     <ShadcnSelectContent
@@ -126,14 +124,14 @@ function SelectContent({
     >
       {children}
     </ShadcnSelectContent>
-  );
+  )
 }
 
 function SelectLabel({
   className,
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Label>) {
-  return <ShadcnSelectLabel className={cn(className)} {...props} />;
+  return <ShadcnSelectLabel className={cn(className)} {...props} />
 }
 
 function SelectItem({
@@ -145,28 +143,28 @@ function SelectItem({
     <ShadcnSelectItem className={cn(className)} {...props}>
       {children}
     </ShadcnSelectItem>
-  );
+  )
 }
 
 function SelectSeparator({
   className,
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Separator>) {
-  return <ShadcnSelectSeparator className={cn(className)} {...props} />;
+  return <ShadcnSelectSeparator className={cn(className)} {...props} />
 }
 
 function SelectScrollUpButton({
   className,
   ...props
 }: React.ComponentProps<typeof ShadcnSelectScrollUpButton>) {
-  return <ShadcnSelectScrollUpButton className={cn(className)} {...props} />;
+  return <ShadcnSelectScrollUpButton className={cn(className)} {...props} />
 }
 
 function SelectScrollDownButton({
   className,
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.ScrollDownButton>) {
-  return <ShadcnSelectScrollDownButton className={cn(className)} {...props} />;
+  return <ShadcnSelectScrollDownButton className={cn(className)} {...props} />
 }
 
 export {
@@ -180,4 +178,4 @@ export {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-};
+}

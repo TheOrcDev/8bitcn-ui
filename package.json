@@ -41,14 +41,22 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
+    "@ianvs/prettier-plugin-sort-imports": "github:ianvs/prettier-plugin-sort-imports",
     "@tailwindcss/postcss": "^4.1.3",
     "@types/node": "^22.14.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.2",
     "eslint": "^9.24.0",
     "eslint-config-next": "15.3.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.6",
     "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
+    "prettier": "^3.5.3",
     "tailwindcss": "^4.1.3",
     "typescript": "^5.8.3"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx,json,css,md}": "prettier --write"
   }
 }

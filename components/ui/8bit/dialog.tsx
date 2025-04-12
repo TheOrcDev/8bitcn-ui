@@ -1,46 +1,47 @@
+import { Press_Start_2P } from "next/font/google"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
 import {
   Dialog as ShadcnDialog,
+  DialogClose as ShadcnDialogClose,
   DialogContent as ShadcnDialogContent,
+  DialogDescription as ShadcnDialogDescription,
   DialogFooter as ShadcnDialogFooter,
   DialogHeader as ShadcnDialogHeader,
   DialogTitle as ShadcnDialogTitle,
   DialogTrigger as ShadcnDialogTrigger,
-  DialogClose as ShadcnDialogClose,
-  DialogDescription as ShadcnDialogDescription,
-} from "@/components/ui/dialog";
-import { Press_Start_2P } from "next/font/google";
-import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+} from "@/components/ui/dialog"
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-});
+})
 
-const Dialog = ShadcnDialog;
+const Dialog = ShadcnDialog
 
-const DialogTrigger = ShadcnDialogTrigger;
+const DialogTrigger = ShadcnDialogTrigger
 
-const DialogHeader = ShadcnDialogHeader;
+const DialogHeader = ShadcnDialogHeader
 
-const DialogDescription = ShadcnDialogDescription;
+const DialogDescription = ShadcnDialogDescription
 
-const DialogClose = ShadcnDialogClose;
+const DialogClose = ShadcnDialogClose
 
-const DialogFooter = ShadcnDialogFooter;
+const DialogFooter = ShadcnDialogFooter
 
 export interface BitDialogProps
   extends React.ComponentProps<"div">,
     VariantProps<typeof dialogContentVariants> {}
 
 function DialogTitle({ ...props }: BitDialogProps) {
-  const { className, font } = props;
+  const { className, font } = props
   return (
     <ShadcnDialogTitle
       className={cn(font !== "normal" && pressStart.className, className)}
       {...props}
     />
-  );
+  )
 }
 
 export const dialogContentVariants = cva("", {
@@ -53,7 +54,7 @@ export const dialogContentVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-});
+})
 
 function DialogContent({
   className,
@@ -66,7 +67,7 @@ function DialogContent({
       className={cn(
         "bg-card rounded-none border-none data-[state=closed]:fade-out data-[state=open]:fade-in",
         font !== "normal" && pressStart.className,
-        className,
+        className
       )}
       {...props}
     >
@@ -96,7 +97,7 @@ function DialogContent({
         aria-hidden="true"
       />
     </ShadcnDialogContent>
-  );
+  )
 }
 
 export {
@@ -108,4 +109,4 @@ export {
   DialogTitle,
   DialogContent,
   DialogClose,
-};
+}

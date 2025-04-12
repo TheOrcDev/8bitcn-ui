@@ -1,12 +1,12 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
-import { navItems } from "@/config/nav-items";
-import { pressStart } from "@/config/fonts";
+import { pressStart } from "@/config/fonts"
+import { navItems } from "@/config/nav-items"
+import { Button } from "@/components/ui/button"
+import { ModeSwitcher } from "@/components/mode-switcher"
 
-import { Button } from "@/components/ui/button";
-import { ModeSwitcher } from "@/components/mode-switcher";
-import MobileNav from "./mobile-nav";
+import MobileNav from "./mobile-nav"
 
 export function SiteHeader() {
   return (
@@ -51,5 +51,5 @@ export function SiteHeader() {
         </div>
       </div>
     </header>
-  );
+  )
 }

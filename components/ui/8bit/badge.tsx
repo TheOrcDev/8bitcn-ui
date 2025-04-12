@@ -1,14 +1,13 @@
-import { cva, VariantProps } from "class-variance-authority";
+import { Press_Start_2P } from "next/font/google"
+import { cva, VariantProps } from "class-variance-authority"
 
-import { Badge as ShadcnBadge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
-
-import { Press_Start_2P } from "next/font/google";
+import { cn } from "@/lib/utils"
+import { Badge as ShadcnBadge } from "@/components/ui/badge"
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-});
+})
 
 export const badgeVariants = cva("", {
   variants: {
@@ -26,18 +25,18 @@ export const badgeVariants = cva("", {
   defaultVariants: {
     variant: "default",
   },
-});
+})
 
 export interface BitButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof badgeVariants> {
-  asChild?: boolean;
+  asChild?: boolean
 }
 
 function Badge({ children, ...props }: BitButtonProps) {
-  const { variant, className, font } = props;
+  const { variant, className, font } = props
 
-  const color = badgeVariants({ variant, font });
+  const color = badgeVariants({ variant, font })
 
   return (
     <div className={cn("relative inline-flex", className)}>
@@ -60,7 +59,7 @@ function Badge({ children, ...props }: BitButtonProps) {
         className={`absolute top-1.5 bottom-1.5 -right-1.5 h-1/2 w-1.5 border ${color}`}
       />
     </div>
-  );
+  )
 }
 
-export { Badge };
+export { Badge }

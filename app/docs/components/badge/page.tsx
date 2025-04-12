@@ -1,9 +1,10 @@
-import { Badge } from "@/components/ui/8bit/badge";
-import { OpenInV0Button } from "../open-in-v0-button";
-import CopyCommandButton from "../copy-command-button";
-import { Separator } from "@/components/ui/separator";
-import InstallationCommands from "../installation-commands";
-import CodeSnippet from "../code-snippet";
+import { Badge } from "@/components/ui/8bit/badge"
+import { Separator } from "@/components/ui/separator"
+
+import CodeSnippet from "../code-snippet"
+import CopyCommandButton from "../copy-command-button"
+import InstallationCommands from "../installation-commands"
+import { OpenInV0Button } from "../open-in-v0-button"
 
 export default function BadgePage() {
   return (
@@ -51,5 +52,5 @@ export default function BadgePage() {
 
       <CodeSnippet>{`<Badge>Badge</Badge>`}</CodeSnippet>
     </div>
-  );
+  )
 }

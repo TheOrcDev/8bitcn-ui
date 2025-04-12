@@ -1,10 +1,8 @@
-import { AppSidebar } from "@/components/app-sidebar";
-import { SidebarTrigger } from "@/components/ui/sidebar";
-
-import { SidebarProvider } from "@/components/ui/sidebar";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/app-sidebar"
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 export default function Layout({ children }: LayoutProps) {
@@ -17,5 +15,5 @@ export default function Layout({ children }: LayoutProps) {
 
       <div className="flex-1 px-4 py-4 max-w-full">{children}</div>
     </main>
-  );
+  )
 }

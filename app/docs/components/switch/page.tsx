@@ -1,10 +1,11 @@
-import { Switch } from "@/components/ui/8bit/switch";
-import { OpenInV0Button } from "../open-in-v0-button";
-import CopyCommandButton from "../copy-command-button";
-import InstallationCommands from "../installation-commands";
-import { Separator } from "@/components/ui/separator";
-import CodeSnippet from "../code-snippet";
-import { Label } from "@/components/ui/8bit/label";
+import { Label } from "@/components/ui/8bit/label"
+import { Switch } from "@/components/ui/8bit/switch"
+import { Separator } from "@/components/ui/separator"
+
+import CodeSnippet from "../code-snippet"
+import CopyCommandButton from "../copy-command-button"
+import InstallationCommands from "../installation-commands"
+import { OpenInV0Button } from "../open-in-v0-button"
 
 export default function SwitchPage() {
   return (
@@ -53,5 +54,5 @@ export default function SwitchPage() {
 
       <CodeSnippet>{`<Switch />`}</CodeSnippet>
     </div>
-  );
+  )
 }

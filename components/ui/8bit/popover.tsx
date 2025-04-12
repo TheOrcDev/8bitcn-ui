@@ -1,23 +1,24 @@
+import { Press_Start_2P } from "next/font/google"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
 import {
   Popover as ShadcnPopover,
-  PopoverContent as ShadcnPopoverContent,
   PopoverAnchor as ShadcnPopoverAnchor,
+  PopoverContent as ShadcnPopoverContent,
   PopoverTrigger as ShadcnPopoverTrigger,
-} from "@/components/ui/popover";
-import { Press_Start_2P } from "next/font/google";
-import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+} from "@/components/ui/popover"
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-});
+})
 
-const Popover = ShadcnPopover;
+const Popover = ShadcnPopover
 
-const PopoverTrigger = ShadcnPopoverTrigger;
+const PopoverTrigger = ShadcnPopoverTrigger
 
-const PopoverAnchor = ShadcnPopoverAnchor;
+const PopoverAnchor = ShadcnPopoverAnchor
 
 export const popOverVariants = cva("", {
   variants: {
@@ -29,7 +30,7 @@ export const popOverVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-});
+})
 
 export interface BitPopoverProps
   extends React.ComponentProps<"div">,
@@ -46,7 +47,7 @@ function PopoverContent({
       className={cn(
         "relative bg-card",
         font !== "normal" && pressStart.className,
-        className,
+        className
       )}
       {...props}
     >
@@ -76,7 +77,7 @@ function PopoverContent({
         aria-hidden="true"
       />
     </ShadcnPopoverContent>
-  );
+  )
 }
 
-export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor };
+export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor }

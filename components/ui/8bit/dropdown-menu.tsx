@@ -1,6 +1,8 @@
-import { cva, VariantProps } from "class-variance-authority";
-import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import { cn } from "@/lib/utils";
+import { Press_Start_2P } from "next/font/google"
+import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
+import { cva, VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
 import {
   DropdownMenu as ShadcnDropdownMenu,
   DropdownMenuContent as ShadcnDropdownMenuContent,
@@ -14,30 +16,28 @@ import {
   DropdownMenuSubContent as ShadcnDropdownMenuSubContent,
   DropdownMenuSubTrigger as ShadcnDropdownMenuSubTrigger,
   DropdownMenuTrigger as ShadcnDropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu"
 
-import { Press_Start_2P } from "next/font/google";
+const DropdownMenu = ShadcnDropdownMenu
 
-const DropdownMenu = ShadcnDropdownMenu;
+const DropdownMenuPortal = ShadcnDropdownMenuPortal
 
-const DropdownMenuPortal = ShadcnDropdownMenuPortal;
+const DropdownMenuTrigger = ShadcnDropdownMenuTrigger
 
-const DropdownMenuTrigger = ShadcnDropdownMenuTrigger;
+const DropdownMenuGroup = ShadcnDropdownMenuGroup
 
-const DropdownMenuGroup = ShadcnDropdownMenuGroup;
+const DropdownMenuLabel = ShadcnDropdownMenuLabel
 
-const DropdownMenuLabel = ShadcnDropdownMenuLabel;
+const DropdownMenuSeparator = ShadcnDropdownMenuSeparator
 
-const DropdownMenuSeparator = ShadcnDropdownMenuSeparator;
+const DropdownMenuShortcut = ShadcnDropdownMenuShortcut
 
-const DropdownMenuShortcut = ShadcnDropdownMenuShortcut;
-
-const DropdownMenuSub = ShadcnDropdownMenuSub;
+const DropdownMenuSub = ShadcnDropdownMenuSub
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-});
+})
 
 function DropdownMenuSubTrigger({
   className,
@@ -54,7 +54,7 @@ function DropdownMenuSubTrigger({
     >
       {children}
     </ShadcnDropdownMenuSubTrigger>
-  );
+  )
 }
 
 function DropdownMenuItem({
@@ -72,7 +72,7 @@ function DropdownMenuItem({
     >
       {children}
     </ShadcnDropdownMenuItem>
-  );
+  )
 }
 
 export const dropDownVariants = cva("", {
@@ -85,7 +85,7 @@ export const dropDownVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-});
+})
 
 function DropdownMenuSubContent({
   children,
@@ -128,7 +128,7 @@ function DropdownMenuSubContent({
         aria-hidden="true"
       />
     </ShadcnDropdownMenuSubContent>
-  );
+  )
 }
 
 export interface BitDropownMenuContentProps
@@ -176,7 +176,7 @@ function DropdownMenuContent({
         aria-hidden="true"
       />
     </ShadcnDropdownMenuContent>
-  );
+  )
 }
 
 export {
@@ -192,4 +192,4 @@ export {
   DropdownMenuSubContent,
   DropdownMenuShortcut,
   DropdownMenuSub,
-};
+}

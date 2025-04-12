@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import * as SwitchPrimitive from "@radix-ui/react-switch";
+import * as React from "react"
+import * as SwitchPrimitive from "@radix-ui/react-switch"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 function Switch({
   className,
@@ -33,7 +33,7 @@ function Switch({
       <div className="absolute top-0 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
       <div className="absolute bottom-0 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
     </SwitchPrimitive.Root>
-  );
+  )
 }
 
-export { Switch };
+export { Switch }

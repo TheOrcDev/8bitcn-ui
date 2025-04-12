@@ -1,14 +1,13 @@
-import { cva, VariantProps } from "class-variance-authority";
+import { Press_Start_2P } from "next/font/google"
+import { cva, VariantProps } from "class-variance-authority"
 
-import { Input as ShadcnInput } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
-
-import { Press_Start_2P } from "next/font/google";
+import { cn } from "@/lib/utils"
+import { Input as ShadcnInput } from "@/components/ui/input"
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-});
+})
 
 export const inputVariants = cva("", {
   variants: {
@@ -20,16 +19,16 @@ export const inputVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-});
+})
 
 export interface BitInputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
     VariantProps<typeof inputVariants> {
-  asChild?: boolean;
+  asChild?: boolean
 }
 
 function Input({ ...props }: BitInputProps) {
-  const { className, font } = props;
+  const { className, font } = props
 
   return (
     <div className={cn("relative w-full", className)}>
@@ -49,7 +48,7 @@ function Input({ ...props }: BitInputProps) {
       <div className="absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
       <div className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
     </div>
-  );
+  )
 }
 
-export { Input };
+export { Input }

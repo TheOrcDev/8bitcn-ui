@@ -1,23 +1,22 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 
-import { SidebarMenuItem } from "./ui/sidebar";
-import { SidebarMenuButton } from "./ui/sidebar";
-import { Badge } from "./ui/8bit/badge";
+import { Badge } from "./ui/8bit/badge"
+import { SidebarMenuButton, SidebarMenuItem } from "./ui/sidebar"
 
 type SidebarItemProps = {
   item: {
-    title: string;
-    url: string;
-    new?: boolean;
-  };
-};
+    title: string
+    url: string
+    new?: boolean
+  }
+}
 
 export default function SidebarItem({ item }: SidebarItemProps) {
-  const pathname = usePathname();
-  const isActive = pathname === item.url;
+  const pathname = usePathname()
+  const isActive = pathname === item.url
 
   return (
     <SidebarMenuItem key={item.title}>
@@ -28,5 +27,5 @@ export default function SidebarItem({ item }: SidebarItemProps) {
         </Link>
       </SidebarMenuButton>
     </SidebarMenuItem>
-  );
+  )
 }

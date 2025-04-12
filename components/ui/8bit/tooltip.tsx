@@ -1,17 +1,16 @@
 "use client"
 
 import type * as React from "react"
+import { Press_Start_2P } from "next/font/google"
 import { cva, type VariantProps } from "class-variance-authority"
 
+import { cn } from "@/lib/utils"
 import {
   Tooltip as ShadcnTooltip,
   TooltipContent as ShadcnTooltipContent,
   TooltipProvider as ShadcnTooltipProvider,
   TooltipTrigger as ShadcnTooltipTrigger,
 } from "@/components/ui/tooltip"
-import { cn } from "@/lib/utils"
-
-import { Press_Start_2P } from "next/font/google"
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
@@ -102,7 +101,11 @@ function TooltipTrigger({
   ...props
 }: React.ComponentPropsWithoutRef<typeof ShadcnTooltipTrigger>) {
   return (
-    <ShadcnTooltipTrigger data-slot="tooltip-trigger" asChild={asChild} {...props}>
+    <ShadcnTooltipTrigger
+      data-slot="tooltip-trigger"
+      asChild={asChild}
+      {...props}
+    >
       {children}
     </ShadcnTooltipTrigger>
   )

@@ -1,7 +1,6 @@
-import * as React from "react";
+import * as React from "react"
 
-import { navItems } from "@/config/nav-items";
-
+import { navItems } from "@/config/nav-items"
 import {
   Sidebar,
   SidebarContent,
@@ -9,8 +8,9 @@ import {
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarMenu,
-} from "@/components/ui/sidebar";
-import SidebarItem from "./sidebar-item";
+} from "@/components/ui/sidebar"
+
+import SidebarItem from "./sidebar-item"
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -30,5 +30,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         ))}
       </SidebarContent>
     </Sidebar>
-  );
+  )
 }

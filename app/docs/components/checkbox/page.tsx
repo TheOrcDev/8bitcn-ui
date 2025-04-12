@@ -1,11 +1,11 @@
-import { Checkbox } from "@/components/ui/8bit/checkbox";
-import { Separator } from "@/components/ui/separator";
-import { Label } from "@/components/ui/8bit/label";
+import { Checkbox } from "@/components/ui/8bit/checkbox"
+import { Label } from "@/components/ui/8bit/label"
+import { Separator } from "@/components/ui/separator"
 
-import CodeSnippet from "../code-snippet";
-import InstallationCommands from "../installation-commands";
-import CopyCommandButton from "../copy-command-button";
-import { OpenInV0Button } from "../open-in-v0-button";
+import CodeSnippet from "../code-snippet"
+import CopyCommandButton from "../copy-command-button"
+import InstallationCommands from "../installation-commands"
+import { OpenInV0Button } from "../open-in-v0-button"
 
 export default function CheckboxPage() {
   return (
@@ -58,5 +58,5 @@ export default function CheckboxPage() {
 
       <CodeSnippet>{`<Checkbox />`}</CodeSnippet>
     </div>
-  );
+  )
 }

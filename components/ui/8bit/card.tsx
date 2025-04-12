@@ -1,22 +1,21 @@
-import { cva, VariantProps } from "class-variance-authority";
+import { Press_Start_2P } from "next/font/google"
+import { cva, VariantProps } from "class-variance-authority"
 
+import { cn } from "@/lib/utils"
 import {
   Card as ShadcnCard,
+  CardAction as ShadcnCardAction,
   CardContent as ShadcnCardContent,
   CardDescription as ShadcnCardDescription,
   CardFooter as ShadcnCardFooter,
   CardHeader as ShadcnCardHeader,
   CardTitle as ShadcnCardTitle,
-  CardAction as ShadcnCardAction,
-} from "@/components/ui/card";
-import { cn } from "@/lib/utils";
-
-import { Press_Start_2P } from "next/font/google";
+} from "@/components/ui/card"
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-});
+})
 
 export const cardVariants = cva("", {
   variants: {
@@ -28,16 +27,16 @@ export const cardVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-});
+})
 
 export interface BitCardProps
   extends React.ComponentProps<"div">,
     VariantProps<typeof cardVariants> {
-  asChild?: boolean;
+  asChild?: boolean
 }
 
 function Card({ ...props }: BitCardProps) {
-  const { className, font } = props;
+  const { className, font } = props
 
   return (
     <div className={cn("relative", className)}>
@@ -46,7 +45,7 @@ function Card({ ...props }: BitCardProps) {
         className={cn(
           "rounded-none",
           font !== "normal" && pressStart.className,
-          className,
+          className
         )}
         {...props}
       />
@@ -58,11 +57,11 @@ function Card({ ...props }: BitCardProps) {
       <div className="absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
       <div className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
     </div>
-  );
+  )
 }
 
 function CardHeader({ ...props }: BitCardProps) {
-  const { className, font } = props;
+  const { className, font } = props
 
   return (
     <ShadcnCardHeader
@@ -70,33 +69,33 @@ function CardHeader({ ...props }: BitCardProps) {
       className={cn(font !== "normal" && pressStart.className, className)}
       {...props}
     />
-  );
+  )
 }
 
 function CardTitle({ ...props }: BitCardProps) {
-  const { className, font } = props;
+  const { className, font } = props
 
   return (
     <ShadcnCardTitle
       className={cn(font !== "normal" && pressStart.className, className)}
       {...props}
     />
-  );
+  )
 }
 
 function CardDescription({ ...props }: BitCardProps) {
-  const { className, font } = props;
+  const { className, font } = props
 
   return (
     <ShadcnCardDescription
       className={cn(font !== "normal" && pressStart.className, className)}
       {...props}
     />
-  );
+  )
 }
 
 function CardAction({ ...props }: BitCardProps) {
-  const { className, font } = props;
+  const { className, font } = props
 
   return (
     <ShadcnCardAction
@@ -104,11 +103,11 @@ function CardAction({ ...props }: BitCardProps) {
       className={cn(font !== "normal" && pressStart.className, className)}
       {...props}
     />
-  );
+  )
 }
 
 function CardContent({ ...props }: BitCardProps) {
-  const { className, font } = props;
+  const { className, font } = props
 
   return (
     <ShadcnCardContent
@@ -116,11 +115,11 @@ function CardContent({ ...props }: BitCardProps) {
       className={cn(font !== "normal" && pressStart.className, className)}
       {...props}
     />
-  );
+  )
 }
 
 function CardFooter({ ...props }: BitCardProps) {
-  const { className, font } = props;
+  const { className, font } = props
 
   return (
     <ShadcnCardFooter
@@ -128,7 +127,7 @@ function CardFooter({ ...props }: BitCardProps) {
       className={cn(font !== "normal" && pressStart.className, className)}
       {...props}
     />
-  );
+  )
 }
 
 export {
@@ -139,4 +138,4 @@ export {
   CardAction,
   CardDescription,
   CardContent,
-};
+}

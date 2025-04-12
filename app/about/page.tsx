@@ -4,5 +4,5 @@ export default function Page() {
       <h1 className="text-2xl font-bold">About</h1>
       <p>Coming soon...</p>
     </div>
-  );
+  )
 }

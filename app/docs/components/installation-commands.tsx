@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import { Check, Clipboard } from "lucide-react";
-import { toast } from "sonner";
+import { useState } from "react"
+import { Check, Clipboard } from "lucide-react"
+import { toast } from "sonner"
 
-import { Tabs, TabsContent, TabsTrigger, TabsList } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { Button } from "@/components/ui/button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 interface InstallationCommandsProps {
-  packageUrl: string;
+  packageUrl: string
 }
 
 export default function InstallationCommands({
@@ -16,18 +16,18 @@ export default function InstallationCommands({
 }: InstallationCommandsProps) {
   const [command, setCommand] = useState(
     `pnpm dlx shadcn@canary add ${packageUrl}`
-  );
-  const [copied, setCopied] = useState(false);
+  )
+  const [copied, setCopied] = useState(false)
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(command);
-    setCopied(true);
-    toast.success("Command copied to clipboard");
+    navigator.clipboard.writeText(command)
+    setCopied(true)
+    toast.success("Command copied to clipboard")
 
     setTimeout(() => {
-      setCopied(false);
-    }, 3000);
-  };
+      setCopied(false)
+    }, 3000)
+  }
 
   return (
     <div className="rounded-lg overflow-hidden border border-zinc-800">
@@ -113,5 +113,5 @@ export default function InstallationCommands({
         </Tabs>
       </div>
     </div>
-  );
+  )
 }

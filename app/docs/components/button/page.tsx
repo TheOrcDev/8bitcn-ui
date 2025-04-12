@@ -1,9 +1,10 @@
-import { Button } from "@/components/ui/8bit/button";
-import { OpenInV0Button } from "../open-in-v0-button";
-import CopyCommandButton from "../copy-command-button";
-import InstallationCommands from "../installation-commands";
-import { Separator } from "@/components/ui/separator";
-import CodeSnippet from "../code-snippet";
+import { Button } from "@/components/ui/8bit/button"
+import { Separator } from "@/components/ui/separator"
+
+import CodeSnippet from "../code-snippet"
+import CopyCommandButton from "../copy-command-button"
+import InstallationCommands from "../installation-commands"
+import { OpenInV0Button } from "../open-in-v0-button"
 
 export default function ButtonPage() {
   return (
@@ -51,5 +52,5 @@ export default function ButtonPage() {
 
       <CodeSnippet>{`<Button variant="outline">Button</Button>`}</CodeSnippet>
     </div>
-  );
+  )
 }

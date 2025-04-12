@@ -1,10 +1,7 @@
-import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-} from "@/components/ui/8bit/alert";
-import { Separator } from "@/components/ui/separator";
-import CodeSnippet from "./components/code-snippet";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/8bit/alert"
+import { Separator } from "@/components/ui/separator"
+
+import CodeSnippet from "./components/code-snippet"
 
 export default function Page() {
   return (
@@ -64,5 +61,5 @@ export default function Home() {
 }`}</CodeSnippet>
       </div>
     </div>
-  );
+  )
 }

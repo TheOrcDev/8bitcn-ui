@@ -1,13 +1,14 @@
-import { OpenInV0Button } from "../open-in-v0-button";
-import CopyCommandButton from "../copy-command-button";
-import { Separator } from "@/components/ui/separator";
-import InstallationCommands from "../installation-commands";
-import CodeSnippet from "../code-snippet";
 import {
   Avatar,
-  AvatarImage,
   AvatarFallback,
-} from "@/components/ui/8bit/avatar";
+  AvatarImage,
+} from "@/components/ui/8bit/avatar"
+import { Separator } from "@/components/ui/separator"
+
+import CodeSnippet from "../code-snippet"
+import CopyCommandButton from "../copy-command-button"
+import InstallationCommands from "../installation-commands"
+import { OpenInV0Button } from "../open-in-v0-button"
 
 export default function AvatarPage() {
   return (
@@ -105,5 +106,5 @@ export default function AvatarPage() {
   <AvatarFallback>8B</AvatarFallback>
 </Avatar>`}</CodeSnippet>
     </div>
-  );
+  )
 }
