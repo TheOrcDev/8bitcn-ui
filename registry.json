@@ -186,6 +186,20 @@
       ]
     },
     {
+      "name": "8bit-alert-dialog",
+      "type": "registry:component",
+      "title": "8-bit Alert Dialog",
+      "description": "A simple 8-bit Alert Dialog component",
+      "registryDependencies": ["alert-dialog"],
+      "files": [
+        {
+          "path": "components/ui/8bit/alert-dialog.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/alert-dialog.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-tooltip",
       "type": "registry:component",
       "title": "8-bit Tooltip",

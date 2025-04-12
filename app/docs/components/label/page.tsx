@@ -4,6 +4,7 @@ import CopyCommandButton from "../copy-command-button";
 import InstallationCommands from "../installation-commands";
 import { Separator } from "@/components/ui/separator";
 import CodeSnippet from "../code-snippet";
+import { Checkbox } from "@/components/ui/8bit/checkbox";
 
 export default function LabelPage() {
   return (
@@ -30,8 +31,11 @@ export default function LabelPage() {
             <OpenInV0Button name="8bit-label" className="w-fit" />
           </div>
         </div>
-        <div className="flex items-center justify-center min-h-[400px] relative">
-          <Label>Label</Label>
+        <div className="flex items-center justify-center min-h-[400px] relative space-x-2">
+        <Checkbox id="terms" />
+            <Label htmlFor="terms" className="text-xs">
+            Accept terms and conditions
+        </Label>
         </div>
       </div>
 

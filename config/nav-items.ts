@@ -20,6 +20,11 @@ export const navItems = {
           new: true,
         },
         {
+          title: "Alert Dialog",
+          url: "/docs/components/alert-dialog",
+          new: true,
+        },
+        {
           title: "Avatar",
           url: "/docs/components/avatar",
           new: true,
