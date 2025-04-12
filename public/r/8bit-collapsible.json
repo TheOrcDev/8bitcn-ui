@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "8bit-collapsible",
+  "type": "registry:component",
+  "title": "8-bit Collapsible",
+  "description": "A simple 8-bit collapsible component",
+  "registryDependencies": [
+    "collapsible"
+  ],
+  "files": [
+    {
+      "path": "components/ui/8bit/collapsible.tsx",
+      "content": "\"use client\";\r\n\r\nimport * as CollapsiblePrimitive from \"@radix-ui/react-collapsible\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nimport {\r\n  Collapsible as ShadcnCollapsible,\r\n  CollapsibleContent as ShadcnCollapsibleContent,\r\n  CollapsibleTrigger as ShadcnCollapsibleTrigger,\r\n} from \"@radix-ui/react-collapsible\";\r\n\r\nimport { Press_Start_2P } from \"next/font/google\";\r\n\r\nconst pressStart = Press_Start_2P({\r\n  weight: [\"400\"],\r\n  subsets: [\"latin\"],\r\n});\r\n\r\nexport interface BitCollapsibleProps\r\n  extends React.ComponentProps<typeof CollapsiblePrimitive.Root> {\r\n  asChild?: boolean;\r\n}\r\n\r\nfunction Collapsible({ children, ...props }: BitCollapsibleProps) {\r\n  const { className } = props;\r\n\r\n  return (\r\n    <div className={cn(\"relative\", className)}>\r\n      <ShadcnCollapsible\r\n        {...props}\r\n        className={cn(className, pressStart.className)}\r\n      >\r\n        {children}\r\n      </ShadcnCollapsible>\r\n    </div>\r\n  );\r\n}\r\n\r\nfunction CollapsibleTrigger({\r\n  children,\r\n  ...props\r\n}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleTrigger>) {\r\n  const { className } = props;\r\n  return (\r\n    <ShadcnCollapsibleTrigger\r\n      data-slot=\"collapsible-trigger\"\r\n      className={cn(className, pressStart.className)}\r\n      {...props}\r\n    >\r\n      {children}\r\n    </ShadcnCollapsibleTrigger>\r\n  );\r\n}\r\n\r\nfunction CollapsibleContent({\r\n  children,\r\n  ...props\r\n}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleContent>) {\r\n  const { className } = props;\r\n  return (\r\n    <ShadcnCollapsibleContent\r\n      data-slot=\"collapsible-content\"\r\n      className={cn(className, pressStart.className)}\r\n      {...props}\r\n    >\r\n      {children}\r\n    </ShadcnCollapsibleContent>\r\n  );\r\n}\r\n\r\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent };\r\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/collapsible.tsx"
+    }
+  ]
+}
