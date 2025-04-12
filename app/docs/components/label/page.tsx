@@ -32,8 +32,10 @@ export default function LabelPage() {
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative space-x-2">
-          <Checkbox/>
-          <Label>Label</Label>
+        <Checkbox id="terms" />
+            <Label htmlFor="terms" className="text-xs">
+            Accept terms and conditions
+        </Label>
         </div>
       </div>
 
