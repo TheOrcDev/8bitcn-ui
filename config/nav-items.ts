@@ -89,6 +89,11 @@ export const navItems = {
           new: true,
         },
         {
+          title: "Progress",
+          url: "/docs/components/progress",
+          new: true,
+        },
+        {
           title: "Switch",
           url: "/docs/components/switch",
           new: true,
@@ -105,4 +110,4 @@ export const navItems = {
       ],
     },
   ],
-};
+}

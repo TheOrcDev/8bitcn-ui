@@ -282,6 +282,20 @@
           "target": "components/ui/8bit/collapsible.tsx"
         }
       ]
+    },
+    {
+      "name": "8bit-progress",
+      "type": "registry:component",
+      "title": "8-bit Progress",
+      "description": "A simple 8-bit progress component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/progress.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/progress.tsx"
+        }
+      ]
     }
   ]
 }
