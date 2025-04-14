@@ -1,21 +1,21 @@
-"use client";
+"use client"
 
-import { OpenInV0Button } from "../open-in-v0-button";
-import CopyCommandButton from "../copy-command-button";
-import { Separator } from "@/components/ui/separator";
-import InstallationCommands from "../installation-commands";
-import CodeSnippet from "../code-snippet";
+import React from "react"
 
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/8bit/collapsible";
+} from "@/components/ui/8bit/collapsible"
+import { Separator } from "@/components/ui/8bit/separator"
 
-import React from "react";
+import CodeSnippet from "../code-snippet"
+import CopyCommandButton from "../copy-command-button"
+import InstallationCommands from "../installation-commands"
+import { OpenInV0Button } from "../open-in-v0-button"
 
 export default function CollapsiblePage() {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false)
 
   return (
     <div className="flex flex-col gap-4">
@@ -221,5 +221,5 @@ export default function CollapsiblePage() {
 </Collapsible>
 `}</CodeSnippet>
     </div>
-  );
+  )
 }

@@ -13,7 +13,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/8bit/dropdown-menu"
-import { Separator } from "@/components/ui/separator"
+import { Separator } from "@/components/ui/8bit/separator"
 import CodeSnippet from "@/app/docs/components/code-snippet"
 import CopyCommandButton from "@/app/docs/components/copy-command-button"
 import InstallationCommands from "@/app/docs/components/installation-commands"
