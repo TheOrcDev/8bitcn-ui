@@ -1,3 +1,5 @@
+import { Code } from "lucide-react"
+
 import { Separator } from "@/components/ui/separator"
 
 import CodeSnippet from "../code-snippet"
@@ -57,6 +59,31 @@ export default function CarouselPage() {
         </div>
       </div>
 
+      <p className="text-muted-foreground">Example</p>
+
+      <CodeSnippet>{`// 33% of the carousel width.
+<Carousel>
+  <CarouselContent>
+    <CarouselItem className="basis-1/3">...</CarouselItem>
+    <CarouselItem className="basis-1/3">...</CarouselItem>
+    <CarouselItem className="basis-1/3">...</CarouselItem>
+  </CarouselContent>
+</Carousel>
+`}</CodeSnippet>
+
+      <p className="text-muted-foreground">Responsive</p>
+      <CodeSnippet>
+        {`
+// 50% on small screens and 33% on larger screens.
+<Carousel>
+  <CarouselContent>
+    <CarouselItem className="md:basis-1/2 lg:basis-1/3">...</CarouselItem>
+    <CarouselItem className="md:basis-1/2 lg:basis-1/3">...</CarouselItem>
+    <CarouselItem className="md:basis-1/2 lg:basis-1/3">...</CarouselItem>
+  </CarouselContent>
+</Carousel>`}
+      </CodeSnippet>
+
       <p className="text-muted-foreground">
         Use the <code>orientation</code> prop to set the orientation of the
         carousel.
@@ -73,6 +100,39 @@ export default function CarouselPage() {
         </div>
       </div>
 
+      <p className="text-muted-foreground">Orientation example</p>
+
+      <CodeSnippet>
+        {`<Carousel orientation="vertical | horizontal">
+  <CarouselContent>
+    <CarouselItem>...</CarouselItem>
+    <CarouselItem>...</CarouselItem>
+    <CarouselItem>...</CarouselItem>
+  </CarouselContent>
+</Carousel>`}
+      </CodeSnippet>
+
+      <p>
+        You can pass options to the carousel using the opts prop. See the Embla
+        Carousel docs for more information.{" "}
+      </p>
+
+      <CodeSnippet>
+        {`<Carousel
+  opts={{
+    align: "start",
+    loop: true,
+  }}
+>
+  <CarouselContent>
+    <CarouselItem>...</CarouselItem>
+    <CarouselItem>...</CarouselItem>
+    <CarouselItem>...</CarouselItem>
+  </CarouselContent>
+</Carousel>
+`}
+      </CodeSnippet>
+
       <h3 className="text-lg font-bold">Installation</h3>
 
       <Separator />
@@ -85,9 +145,24 @@ export default function CarouselPage() {
 
       <Separator />
 
-      <CodeSnippet>{`import { Button } from "@/components/ui/8bit/carousel"`}</CodeSnippet>
+      <CodeSnippet>{`import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"`}</CodeSnippet>
 
-      <CodeSnippet>{`<Button variant="outline">Button</Button>`}</CodeSnippet>
+      <CodeSnippet>{`<Carousel>
+  <CarouselContent>
+    <CarouselItem>...</CarouselItem>
+    <CarouselItem>...</CarouselItem>
+    <CarouselItem>...</CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>
+`}</CodeSnippet>
     </div>
   )
 }
