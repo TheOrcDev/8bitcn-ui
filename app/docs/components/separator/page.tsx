@@ -17,7 +17,7 @@ export default function SeparatorPage() {
       </div>
 
       <p className="text-muted-foreground">
-        Visually or semantically separates content.
+        Displays a separator or a component that looks like a 8-bit separator.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
@@ -34,7 +34,7 @@ export default function SeparatorPage() {
           <div>
             <div className="space-y-1">
               <h4 className="text-sm font-medium leading-none">
-                Radix Primitives
+                8bit-separator
               </h4>
               <p className="text-sm text-muted-foreground">
                 An open-source UI component library.
