@@ -26,8 +26,12 @@ const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
 })
+export interface ComboBoxItem {
+  value: string
+  label: string
+}
 
-const number = [
+const number: ComboBoxItem[] = [
   {
     value: "1",
     label: "Number 1",
@@ -54,10 +58,12 @@ export interface ComboBoxProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof comboBoxVariants> {
   asChild?: boolean
+  options?: ComboBoxItem[]
+  placeholder?: string
   ref?: React.Ref<HTMLButtonElement>
 }
 export function Combobox({ ...props }: ComboBoxProps) {
-  const { font, className } = props
+  const { font, className, options = number, placeholder } = props
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
 
@@ -89,8 +95,8 @@ export function Combobox({ ...props }: ComboBoxProps) {
               )}
             >
               {value
-                ? number.find((number) => number.value === value)?.label
-                : "Select Number..."}
+                ? options.find((option) => option.value === value)?.label
+                : placeholder}
             </span>
             <ChevronDownIcon
               className="w-12 h-12"
@@ -128,13 +134,13 @@ export function Combobox({ ...props }: ComboBoxProps) {
           <CommandList>
             <CommandEmpty>No Values found.</CommandEmpty>
             <CommandGroup>
-              {number.map((number) => (
+              {options.map((option) => (
                 <CommandItem
                   className="text-[12px] hover:bg-white/30 bg-transparent rounded-none border-dotted border-y-4 border-transparent 
                   hover:border-ring focus:border-foreground focus:bg-transparent data-[selected]:bg-transparent
                   dark:focus:border-ring dark:data-[selected]:bg-transparent"
-                  key={number.value}
-                  value={number.value}
+                  key={option.value}
+                  value={option.value}
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? "" : currentValue)
                     setOpen(false)
@@ -143,14 +149,14 @@ export function Combobox({ ...props }: ComboBoxProps) {
                   <CheckIcon
                     className={cn(
                       "mr-2 w-4 h-4",
-                      value === number.value ? "opacity-100" : "opacity-0"
+                      value === option.value ? "opacity-100" : "opacity-0"
                     )}
                     size={16}
                     strokeWidth={0.25}
                     radius={1}
                   />
 
-                  {number.label}
+                  {option.label}
                 </CommandItem>
               ))}
             </CommandGroup>
