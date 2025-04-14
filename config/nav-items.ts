@@ -66,6 +66,11 @@ export const navItems = {
           url: "/docs/components/dropdown-menu",
         },
         {
+          title: "Hover Card",
+          url: "/docs/components/hover-card",
+          new: true,
+        },
+        {
           title: "Input",
           url: "/docs/components/input",
         },

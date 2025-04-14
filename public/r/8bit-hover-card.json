@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "8bit-hover-card",
+  "type": "registry:component",
+  "title": "8-bit Hover Card",
+  "description": "A simple 8-bit hover card component",
+  "registryDependencies": [
+    "hover-card"
+  ],
+  "files": [
+    {
+      "path": "components/ui/8bit/hover-card.tsx",
+      "content": "import { Press_Start_2P } from \"next/font/google\"\r\nimport * as HoverCardPrimitive from \"@radix-ui/react-hover-card\"\r\nimport { cva, VariantProps } from \"class-variance-authority\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\nimport {\r\n  HoverCard as ShadcnHoverCard,\r\n  HoverCardContent as ShadcnHoverCardContent,\r\n  HoverCardTrigger as ShadcnHoverCardTrigger,\r\n} from \"@/components/ui/hover-card\"\r\n\r\nconst pressStart = Press_Start_2P({\r\n  weight: [\"400\"],\r\n  subsets: [\"latin\"],\r\n})\r\n\r\nexport const hoverCardVariants = cva(\"\", {\r\n  variants: {\r\n    font: {\r\n      normal: \"\",\r\n      retro: pressStart.className,\r\n    },\r\n  },\r\n  defaultVariants: {\r\n    font: \"retro\",\r\n  },\r\n})\r\n\r\nexport interface BitHoverCardProps\r\n  extends React.ComponentProps<typeof HoverCardPrimitive.Content>,\r\n    VariantProps<typeof hoverCardVariants> {}\r\n\r\nfunction HoverCard({\r\n  ...props\r\n}: React.ComponentProps<typeof HoverCardPrimitive.Root>) {\r\n  return <ShadcnHoverCard {...props} />\r\n}\r\n\r\nfunction HoverCardTrigger({\r\n  className,\r\n  asChild = true,\r\n  ...props\r\n}: React.ComponentProps<typeof HoverCardPrimitive.Trigger>) {\r\n  return (\r\n    <ShadcnHoverCardTrigger\r\n      className={cn(className)}\r\n      asChild={asChild}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nfunction HoverCardContent({\r\n  children,\r\n  className,\r\n  font,\r\n  ...props\r\n}: BitHoverCardProps) {\r\n  return (\r\n    <ShadcnHoverCardContent\r\n      className={cn(\r\n        \"relative\",\r\n        hoverCardVariants({\r\n          font,\r\n          className,\r\n        })\r\n      )}\r\n      {...props}\r\n    >\r\n      {children}\r\n      <div\r\n        className=\"absolute top-0 left-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none\"\r\n        aria-hidden=\"true\"\r\n      />\r\n      <div\r\n        className=\"absolute bottom-0 left-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none\"\r\n        aria-hidden=\"true\"\r\n      />\r\n      <div\r\n        className=\"absolute top-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none\"\r\n        aria-hidden=\"true\"\r\n      />\r\n      <div\r\n        className=\"absolute bottom-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none\"\r\n        aria-hidden=\"true\"\r\n      />\r\n      <div\r\n        className=\"absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none\"\r\n        aria-hidden=\"true\"\r\n      />\r\n      <div\r\n        className=\"absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none\"\r\n        aria-hidden=\"true\"\r\n      />\r\n    </ShadcnHoverCardContent>\r\n  )\r\n}\r\n\r\nexport { HoverCard, HoverCardTrigger, HoverCardContent }\r\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/hover-card.tsx"
+    }
+  ]
+}
