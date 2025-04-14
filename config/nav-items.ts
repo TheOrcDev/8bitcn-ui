@@ -17,7 +17,6 @@ export const navItems = {
         {
           title: "Alert",
           url: "/docs/components/alert",
-          new: true,
         },
         {
           title: "Alert Dialog",
@@ -27,7 +26,6 @@ export const navItems = {
         {
           title: "Avatar",
           url: "/docs/components/avatar",
-          new: true,
         },
         {
           title: "Badge",
@@ -36,7 +34,6 @@ export const navItems = {
         {
           title: "Breadcrumb",
           url: "/docs/components/breadcrumb",
-          new: true,
         },
         {
           title: "Button",
@@ -47,9 +44,13 @@ export const navItems = {
           url: "/docs/components/card",
         },
         {
+          title: "Carousel",
+          url: "/docs/components/carousel",
+          new: true,
+        },
+        {
           title: "Checkbox",
           url: "/docs/components/checkbox",
-          new: true,
         },
         {
           title: "Collapsible",
@@ -59,12 +60,10 @@ export const navItems = {
         {
           title: "Dialog",
           url: "/docs/components/dialog",
-          new: true,
         },
         {
           title: "Dropdown Menu",
           url: "/docs/components/dropdown-menu",
-          new: true,
         },
         {
           title: "Input",
@@ -91,7 +90,6 @@ export const navItems = {
         {
           title: "Popover",
           url: "/docs/components/popover",
-          new: true,
         },
         {
           title: "Progress",
@@ -101,7 +99,6 @@ export const navItems = {
         {
           title: "Switch",
           url: "/docs/components/switch",
-          new: true,
         },
         {
           title: "Textarea",
@@ -110,7 +107,6 @@ export const navItems = {
         {
           title: "Tooltip",
           url: "/docs/components/tooltip",
-          new: true,
         },
       ],
     },
