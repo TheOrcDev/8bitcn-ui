@@ -32,6 +32,20 @@
       ]
     },
     {
+      "name": "8bit-input-otp",
+      "type": "registry:component",
+      "title": "8-bit Input-OTP",
+      "description": "A simple 8-bit input-otp component",
+      "registryDependencies": ["input-otp"],
+      "files": [
+        {
+          "path": "components/ui/8bit/input-otp.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/input-otp.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-badge",
       "type": "registry:component",
       "title": "8-bit Badge",
