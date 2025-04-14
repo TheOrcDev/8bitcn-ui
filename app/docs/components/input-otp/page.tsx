@@ -1,6 +1,5 @@
 "use client"
 
-import { Input } from "@/components/ui/8bit/input"
 import {
   InputOTP,
   InputOTPGroup,
