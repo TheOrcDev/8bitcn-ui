@@ -8,7 +8,7 @@ import {
   CarouselDemo,
   CarouselSpacing,
   OrientationVertical,
-} from "./_demos/carousel-size"
+} from "./_demos/carousel"
 
 export default function CarouselPage() {
   return (
