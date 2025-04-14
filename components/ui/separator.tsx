@@ -5,6 +5,12 @@ import * as SeparatorPrimitive from "@radix-ui/react-separator"
 
 import { cn } from "@/lib/utils"
 
+// .border02 {
+//   height: 1px;
+//   background - image: linear - gradient(90deg, #000, #000 75 %, transparent 75 %, transparent 100 %);bg-primary
+//   background - size: 20px 1px;
+//   border: none;
+// }
 function Separator({
   className,
   orientation = "horizontal",
@@ -17,7 +23,7 @@ function Separator({
       decorative={decorative}
       orientation={orientation}
       className={cn(
-        "bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px",
+        "data-[orientation=horizontal]:bg-[length:16px_2px]  data-[orientation=horizontal]:bg-[linear-gradient(90deg,var(--primary),var(--primary)_75%,transparent_75%,transparent_100%)] shrink-0 data-[orientation=horizontal]:h-1 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1 data-[orientation=vertical]:bg-[length:2px_16px] data-[orientation=vertical]:bg-[linear-gradient(0deg,var(--primary),var(--primary)_75%,transparent_75%,transparent_100%)]",
         className
       )}
       {...props}

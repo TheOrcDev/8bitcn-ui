@@ -256,6 +256,20 @@
       ]
     },
     {
+      "name": "8bit-separator",
+      "type": "registry:component",
+      "title": "8-bit separator",
+      "description": "A simple 8-bit separator component",
+      "registryDependencies": ["separator"],
+      "files": [
+        {
+          "path": "components/ui/8bit/separator.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/separator.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-breadcrumb",
       "type": "registry:component",
       "title": "8-bit Breadcrumb",
