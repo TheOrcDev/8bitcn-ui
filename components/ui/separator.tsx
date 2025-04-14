@@ -5,12 +5,6 @@ import * as SeparatorPrimitive from "@radix-ui/react-separator"
 
 import { cn } from "@/lib/utils"
 
-// .border02 {
-//   height: 1px;
-//   background - image: linear - gradient(90deg, #000, #000 75 %, transparent 75 %, transparent 100 %);bg-primary
-//   background - size: 20px 1px;
-//   border: none;
-// }
 function Separator({
   className,
   orientation = "horizontal",
