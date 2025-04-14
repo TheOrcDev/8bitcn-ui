@@ -55,7 +55,7 @@ export interface ComboBoxProps
   asChild?: boolean
   ref?: React.Ref<HTMLButtonElement>
 }
-export function Combobox({ children, ...props }: ComboBoxProps) {
+export function Combobox({ ...props }: ComboBoxProps) {
   const { font, className } = props
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
