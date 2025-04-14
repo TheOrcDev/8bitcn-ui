@@ -1,3 +1,5 @@
+import { url } from "inspector"
+
 export const navItems = {
   header: [
     {
@@ -107,6 +109,11 @@ export const navItems = {
         {
           title: "Tooltip",
           url: "/docs/components/tooltip",
+        },
+        {
+          title: "Combo Box",
+          url: "/docs/components/combo-box",
+          new: true,
         },
       ],
     },
