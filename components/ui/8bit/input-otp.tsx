@@ -84,7 +84,7 @@ export const InputOTPSlot = ({
         index={index}
         {...props}
         className={cn(
-          "data-[active=true]:bg-transparent data-[active=true]:text-foreground size-full text-center text-xl tracking-widest caret-transparent border-none bg-background outline-none",
+          "size-full text-center text-xl tracking-widest z-0 ring-0",
           font !== "normal" && pressStart.className,
           className
         )}
