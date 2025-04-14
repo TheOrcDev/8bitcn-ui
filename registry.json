@@ -310,6 +310,20 @@
           "target": "components/ui/8bit/progress.tsx"
         }
       ]
+    },
+    {
+      "name": "8bit-combo-box",
+      "type": "registry:component",
+      "title": "8-bit Combo Box",
+      "description": "Combo Box component with 8-bit style",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/combo-box.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/combo-box.tsx"
+        }
+      ]
     }
   ]
 }
