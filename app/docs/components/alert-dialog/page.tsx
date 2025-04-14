@@ -10,7 +10,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/8bit/alert-dialog"
 import { Button } from "@/components/ui/8bit/button"
-import { Separator } from "@/components/ui/8bit/separator"
+import { Separator } from "@/components/ui/separator"
 
 import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"

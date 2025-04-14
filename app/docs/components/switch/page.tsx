@@ -1,6 +1,6 @@
 import { Label } from "@/components/ui/8bit/label"
-import { Separator } from "@/components/ui/8bit/separator"
 import { Switch } from "@/components/ui/8bit/switch"
+import { Separator } from "@/components/ui/separator"
 
 import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"

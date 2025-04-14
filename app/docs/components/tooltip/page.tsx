@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/8bit/button"
-import { Separator } from "@/components/ui/8bit/separator"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/8bit/tooltip"
+import { Separator } from "@/components/ui/separator"
 
 import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"

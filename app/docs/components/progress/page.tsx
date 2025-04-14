@@ -1,5 +1,5 @@
 import { Progress } from "@/components/ui/8bit/progress"
-import { Separator } from "@/components/ui/8bit/separator"
+import { Separator } from "@/components/ui/separator"
 
 import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
