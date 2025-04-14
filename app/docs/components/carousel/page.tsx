@@ -1,5 +1,3 @@
-import { Code } from "lucide-react"
-
 import { Separator } from "@/components/ui/separator"
 
 import CodeSnippet from "../code-snippet"
