@@ -74,6 +74,20 @@
       ]
     },
     {
+      "name": "8bit-carousel",
+      "type": "registry:component",
+      "title": "8-bit Card",
+      "description": "A simple 8-bit carousel component",
+      "registryDependencies": ["carousel"],
+      "files": [
+        {
+          "path": "components/ui/8bit/carousel.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/carousel.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-dialog",
       "type": "registry:component",
       "title": "8-bit Dialog",
