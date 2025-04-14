@@ -130,6 +130,20 @@
       ]
     },
     {
+      "name": "8bit-hover-card",
+      "type": "registry:component",
+      "title": "8-bit Hover Card",
+      "description": "A simple 8-bit hover card component",
+      "registryDependencies": ["hover-card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/hover-card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/hover-card.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-popover",
       "type": "registry:component",
       "title": "8-bit Popover",
