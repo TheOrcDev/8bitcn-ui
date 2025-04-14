@@ -27,19 +27,41 @@ export const inputVariants = cva("", {
 })
 
 interface SharedProps
-  extends React.HTMLAttributes<HTMLElement>,
+  extends React.ComponentProps<"div">,
     VariantProps<typeof inputVariants> {
   className?: string
   children?: React.ReactNode
 }
 
-export const InputOTP = ({ className, font, ...props }: SharedProps) => {
+interface InputOTPProps {
+  maxLength: number
+  value?: string
+  onChange?: (value: string) => unknown
+  children?: React.ReactNode
+  className?: string
+  font?: "normal" | "retro"
+}
+
+export const InputOTP = ({
+  className,
+  font,
+  maxLength,
+  value,
+  onChange,
+  children,
+  ...otherProps
+}: InputOTPProps) => {
   return (
     <div className={cn("relative w-fit", className)}>
       <ShadcnInputOTP
-        {...props}
+        maxLength={maxLength}
+        value={value}
+        onChange={onChange}
+        {...otherProps}
         className={cn(font !== "normal" && pressStart.className, className)}
-      />
+      >
+        {children}
+      </ShadcnInputOTP>
     </div>
   )
 }
@@ -53,16 +75,16 @@ export const InputOTPGroup = ({ className, ...props }: SharedProps) => {
 export const InputOTPSlot = ({
   className,
   font,
-  index,
+  index = 0,
   ...props
 }: SharedProps & { index?: number }) => {
   return (
-    <div className="relative w-12 h-12">
+    <div className="relative size-12">
       <ShadcnInputOTPSlot
         index={index}
         {...props}
         className={cn(
-          "w-full h-full text-center text-xl tracking-widest caret-transparent border-none bg-background",
+          "data-[active=true]:bg-transparent data-[active=true]:text-foreground size-full text-center text-xl tracking-widest caret-transparent border-none bg-background outline-none",
           font !== "normal" && pressStart.className,
           className
         )}
