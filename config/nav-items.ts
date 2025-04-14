@@ -71,6 +71,11 @@ export const navItems = {
           url: "/docs/components/input",
         },
         {
+          title: "Input OTP",
+          url: "/docs/components/input-otp",
+          new: true,
+        },
+        {
           title: "Select",
           url: "/docs/components/select",
         },
