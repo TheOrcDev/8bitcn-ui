@@ -1,4 +1,4 @@
-"use client"
+import { Metadata } from "next"
 
 import { Button } from "@/components/ui/8bit/button"
 import {
@@ -12,6 +12,12 @@ import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
+
+export const metadata: Metadata = {
+  title: "8bit Hover Card",
+  description:
+    "Displays a hover card or a component that looks like a 8-bit hover card.",
+}
 
 const HoverCardPage = () => {
   return (

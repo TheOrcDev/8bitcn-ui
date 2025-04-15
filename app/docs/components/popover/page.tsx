@@ -1,3 +1,5 @@
+import { Metadata } from "next"
+
 import { Button } from "@/components/ui/8bit/button"
 import { Input } from "@/components/ui/8bit/input"
 import { Label } from "@/components/ui/8bit/label"
@@ -12,6 +14,11 @@ import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
+
+export const metadata: Metadata = {
+  title: "8bit Popover",
+  description: "Displays rich content in a portal, triggered by a button.",
+}
 
 export default function PopoverPage() {
   return (

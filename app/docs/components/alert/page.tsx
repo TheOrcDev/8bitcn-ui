@@ -1,3 +1,5 @@
+import { Metadata } from "next"
+
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/8bit/alert"
 import { Separator } from "@/components/ui/separator"
 
@@ -5,6 +7,12 @@ import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
+
+export const metadata: Metadata = {
+  title: "8bit Alert",
+  description:
+    "Displays an alert or a component that looks like a 8-bit alert.",
+}
 
 export default function AlertPage() {
   return (

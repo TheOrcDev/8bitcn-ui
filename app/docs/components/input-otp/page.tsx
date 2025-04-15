@@ -1,4 +1,4 @@
-"use client"
+import { Metadata } from "next"
 
 import {
   InputOTP,
@@ -12,6 +12,12 @@ import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
+
+export const metadata: Metadata = {
+  title: "8bit OTP Input",
+  description:
+    "Displays a retro 8-bit style OTP input or a component that looks like a 8-bit OTP input.",
+}
 
 const InputOTPPage = () => {
   return (

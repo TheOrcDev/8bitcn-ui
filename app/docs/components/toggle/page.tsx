@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { Bold, Italic, Underline } from "lucide-react"
 
 import { Toggle } from "@/components/ui/8bit/toggle"
@@ -7,6 +8,12 @@ import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
+
+export const metadata: Metadata = {
+  title: "8bit Toggle",
+  description:
+    "Displays a toggle or a component that looks like a 8-bit toggle.",
+}
 
 export default function TogglePage() {
   return (

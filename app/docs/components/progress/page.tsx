@@ -1,3 +1,5 @@
+import { Metadata } from "next"
+
 import { Progress } from "@/components/ui/8bit/progress"
 import { Separator } from "@/components/ui/separator"
 
@@ -5,6 +7,12 @@ import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
+
+export const metadata: Metadata = {
+  title: "8bit Progress",
+  description:
+    "Displays a progress or a component that looks like a 8-bit progress.",
+}
 
 export default function ProgressPage() {
   return (

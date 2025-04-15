@@ -6,6 +6,7 @@ import "./globals.css"
 import { Analytics } from "@vercel/analytics/react"
 import { Toaster } from "sonner"
 
+import { sharedMetaData } from "@/lib/metadata"
 import SiteFooter from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -21,11 +22,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Build your retro library - 8bitcn/ui",
-  description: "A collection of 8-bit styled components for your next project.",
-  openGraph: {
-    images: "/images/pixelized-8bitcnorc.jpg",
-  },
+  ...sharedMetaData,
 }
 
 export default function RootLayout({

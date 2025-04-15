@@ -1,3 +1,5 @@
+import { Metadata } from "next"
+
 import { Separator } from "@/components/ui/separator"
 
 import CodeSnippet from "../code-snippet"
@@ -9,6 +11,12 @@ import {
   CarouselSpacing,
   OrientationVertical,
 } from "./_demos/carousel"
+
+export const metadata: Metadata = {
+  title: "8bit Carousel",
+  description:
+    "Displays a carousel or a component that looks like a 8-bit carousel.",
+}
 
 export default function CarouselPage() {
   return (
