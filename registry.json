@@ -172,6 +172,20 @@
       ]
     },
     {
+      "name": "8bit-sheet",
+      "type": "registry:component",
+      "title": "8-bit sheet",
+      "description": "A simple 8-bit sheet component",
+      "registryDependencies": ["sheet"],
+      "files": [
+        {
+          "path": "components/ui/8bit/sheet.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/sheet.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-label",
       "type": "registry:component",
       "title": "8-bit Label",

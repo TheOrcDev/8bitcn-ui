@@ -84,6 +84,11 @@ export const navItems = {
           url: "/docs/components/select",
         },
         {
+          title: "Sheet",
+          url: "/docs/components/sheet",
+          new: true,
+        },
+        {
           title: "Skeleton",
           url: "/docs/components/skeleton",
           new: true,
