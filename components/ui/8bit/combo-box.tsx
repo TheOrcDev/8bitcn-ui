@@ -82,7 +82,6 @@ export function Combobox({ ...props }: ComboBoxProps) {
           <div className="absolute top-2 -left-1.5 h-[20px] w-1.5 bg-foreground dark:bg-ring" />
           <div className="absolute top-2 -right-1.5 h-[20px] w-1.5 bg-foreground dark:bg-ring" />
           <Button
-            variant="outline"
             role="combobox"
             aria-expanded={open}
             className="w-full justify-between relative -z-1 bg-background"
@@ -110,7 +109,7 @@ export function Combobox({ ...props }: ComboBoxProps) {
 
       <PopoverContent
         className={cn(
-          "w-[240px] h-[180px] top-4 p-0 rounded-none active:translate-y-1 transition-transform relative",
+          "w-[240px] h-[180px] top-4 p-0 rounded-none relative",
           font !== "normal" && pressStart.className,
           className
         )}
