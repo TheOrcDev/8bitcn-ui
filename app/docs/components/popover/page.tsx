@@ -20,7 +20,7 @@ export default function PopoverPage() {
         <h1 className="text-3xl font-bold">Popover</h1>
         <CopyCommandButton
           copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-popover.json`}
-          command={"pnpm dlx shadcn@canary add 8bit-button"}
+          command={"pnpm dlx shadcn@canary add 8bit-popover"}
         />
       </div>
 
