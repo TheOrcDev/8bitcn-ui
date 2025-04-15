@@ -103,6 +103,11 @@ export const navItems = {
           url: "/docs/components/textarea",
         },
         {
+          title: "Toggle",
+          url: "/docs/components/toggle",
+          new: true,
+        },
+        {
           title: "Tooltip",
           url: "/docs/components/tooltip",
           new: true,
