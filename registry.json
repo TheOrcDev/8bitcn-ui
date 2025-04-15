@@ -32,6 +32,20 @@
       ]
     },
     {
+      "name": "8bit-input-otp",
+      "type": "registry:component",
+      "title": "8-bit Input-OTP",
+      "description": "A simple 8-bit input-otp component",
+      "registryDependencies": ["input-otp"],
+      "files": [
+        {
+          "path": "components/ui/8bit/input-otp.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/input-otp.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-badge",
       "type": "registry:component",
       "title": "8-bit Badge",
@@ -60,6 +74,20 @@
       ]
     },
     {
+      "name": "8bit-calendar",
+      "type": "registry:component",
+      "title": "8-bit Calendar",
+      "description": "A simple 8-bit calendar component",
+      "registryDependencies": ["calendar"],
+      "files": [
+        {
+          "path": "components/ui/8bit/calendar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/calendar.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-card",
       "type": "registry:component",
       "title": "8-bit Card",
@@ -70,6 +98,20 @@
           "path": "components/ui/8bit/card.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "8bit-carousel",
+      "type": "registry:component",
+      "title": "8-bit Card",
+      "description": "A simple 8-bit carousel component",
+      "registryDependencies": ["carousel"],
+      "files": [
+        {
+          "path": "components/ui/8bit/carousel.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/carousel.tsx"
         }
       ]
     },
@@ -102,6 +144,20 @@
       ]
     },
     {
+      "name": "8bit-hover-card",
+      "type": "registry:component",
+      "title": "8-bit Hover Card",
+      "description": "A simple 8-bit hover card component",
+      "registryDependencies": ["hover-card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/hover-card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/hover-card.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-popover",
       "type": "registry:component",
       "title": "8-bit Popover",
@@ -126,6 +182,20 @@
           "path": "components/ui/8bit/select.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "8bit-sheet",
+      "type": "registry:component",
+      "title": "8-bit sheet",
+      "description": "A simple 8-bit sheet component",
+      "registryDependencies": ["sheet"],
+      "files": [
+        {
+          "path": "components/ui/8bit/sheet.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/sheet.tsx"
         }
       ]
     },
@@ -294,6 +364,20 @@
           "path": "components/ui/8bit/progress.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "8bit-toggle",
+      "type": "registry:component",
+      "title": "8-bit Toggle",
+      "description": "A simple 8-bit toggle component",
+      "registryDependencies": ["toggle"],
+      "files": [
+        {
+          "path": "components/ui/8bit/toggle.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/toggle.tsx"
         }
       ]
     }
