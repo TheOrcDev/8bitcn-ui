@@ -74,6 +74,20 @@
       ]
     },
     {
+      "name": "8bit-calendar",
+      "type": "registry:component",
+      "title": "8-bit Calendar",
+      "description": "A simple 8-bit calendar component",
+      "registryDependencies": ["calendar"],
+      "files": [
+        {
+          "path": "components/ui/8bit/calendar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/calendar.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-card",
       "type": "registry:component",
       "title": "8-bit Card",

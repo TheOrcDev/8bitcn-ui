@@ -40,6 +40,11 @@ export const navItems = {
           url: "/docs/components/button",
         },
         {
+          title: "Calendar",
+          url: "/docs/components/calendar",
+          new: true,
+        },
+        {
           title: "Card",
           url: "/docs/components/card",
         },
