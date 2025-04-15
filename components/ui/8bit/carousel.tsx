@@ -207,9 +207,9 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute h-6 w-6 rounded-none",
+        "absolute h-5 w-5 rounded-none aspect-square px-1 py-4 md:py-5 md:px-2",
         orientation === "horizontal"
-          ? "top-1/2 -left-10 -translate-y-1/2 active:-translate-y-1"
+          ? "top-1/2 -left-10 md:-left-14 -translate-y-1/2 active:-translate-y-1"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
@@ -261,9 +261,9 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute  h-6 w-6 rounded-none",
+        "absolute  h-6 w-6 rounded-none aspect-square px-1 py-4 md:py-5 md:px-2",
         orientation === "horizontal"
-          ? "top-1/2 -right-10 -translate-y-1/2 active:-translate-y-1"
+          ? "top-1/2 -right-10 md:-right-14 -translate-y-1/2 active:-translate-y-1"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
@@ -276,6 +276,7 @@ const CarouselNext = React.forwardRef<
         height="50"
         viewBox="0 0 256 256"
         fill="currentColor"
+        className="block"
         xmlns="http://www.w3.org/2000/svg"
         stroke="currentColor"
         strokeWidth="0.25"
