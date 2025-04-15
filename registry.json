@@ -340,16 +340,16 @@
       ]
     },
     {
-      "name": "8bit-combo-box",
+      "name": "8bit-toggle",
       "type": "registry:component",
-      "title": "8-bit Combo Box",
-      "description": "Combo Box component with 8-bit style",
-      "registryDependencies": [],
+      "title": "8-bit Toggle",
+      "description": "A simple 8-bit toggle component",
+      "registryDependencies": ["toggle"],
       "files": [
         {
-          "path": "components/ui/8bit/combo-box.tsx",
+          "path": "components/ui/8bit/toggle.tsx",
           "type": "registry:component",
-          "target": "components/ui/8bit/combo-box.tsx"
+          "target": "components/ui/8bit/toggle.tsx"
         }
       ]
     }

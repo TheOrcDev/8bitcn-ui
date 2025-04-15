@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "8bit-toggle",
+  "type": "registry:component",
+  "title": "8-bit Toggle",
+  "description": "A simple 8-bit toggle component",
+  "registryDependencies": [
+    "toggle"
+  ],
+  "files": [
+    {
+      "path": "components/ui/8bit/toggle.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Press_Start_2P } from \"next/font/google\"\nimport * as TogglePrimitive from \"@radix-ui/react-toggle\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Toggle as ShadcnToggle } from \"@/components/ui/toggle\"\n\nconst pressStart = Press_Start_2P({\n  weight: [\"400\"],\n  subsets: [\"latin\"],\n})\n\nconst toggleVariants = cva(\"\", {\n  variants: {\n    font: {\n      normal: \"\",\n      retro: pressStart.className,\n    },\n    variant: {\n      default: \"bg-transparent\",\n      outline:\n        \"bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground\",\n    },\n    size: {\n      default: \"h-9 px-2 min-w-9\",\n      sm: \"h-8 px-1.5 min-w-8\",\n      lg: \"h-10 px-2.5 min-w-10\",\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n    font: \"retro\",\n    size: \"default\",\n  },\n})\n\nexport interface BitToggleProps\n  extends React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root>,\n    VariantProps<typeof toggleVariants> {}\n\nfunction Toggle({ children, font, ...props }: BitToggleProps) {\n  const { variant, className } = props\n\n  return (\n    <ShadcnToggle\n      {...props}\n      className={cn(\n        \"rounded-none active:translate-y-1 transition-transform relative border-none active:translate-x-1\",\n        \"data-[state=on]:bg-primary data-[state=on]:text-primary-foreground\",\n        font !== \"normal\" && pressStart.className,\n        className\n      )}\n    >\n      {children}\n\n      <>\n        {variant === \"outline\" && (\n          <>\n            <div className=\"absolute -top-1 left-0 w-full h-1 bg-foreground dark:bg-ring\" />\n            <div className=\"absolute -bottom-1 w-full h-1 bg-foreground dark:bg-ring\" />\n            <div className=\"absolute top-0 -left-1 w-1 h-1/2 bg-foreground dark:bg-ring\" />\n            <div className=\"absolute bottom-0 -left-1 w-1 h-1/2 bg-foreground dark:bg-ring\" />\n            <div className=\"absolute top-0 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring\" />\n            <div className=\"absolute bottom-0 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring\" />\n          </>\n        )}\n      </>\n    </ShadcnToggle>\n  )\n}\n\nexport { Toggle, toggleVariants }\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/toggle.tsx"
+    }
+  ]
+}
