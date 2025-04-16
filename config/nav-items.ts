@@ -100,7 +100,7 @@ export const navItems = {
         },
         {
           title: "Slider",
-          urL: "/docs/components/slider",
+          url: "/docs/components/slider",
           new: true,
         },
         {
