@@ -99,6 +99,11 @@ export const navItems = {
           new: true,
         },
         {
+          title: "Slider",
+          urL: "/docs/components/slider",
+          new: true,
+        },
+        {
           title: "Label",
           url: "/docs/components/label",
         },
