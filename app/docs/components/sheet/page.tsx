@@ -1,4 +1,4 @@
-"use client"
+import { Metadata } from "next"
 
 import { Button } from "@/components/ui/8bit/button"
 import { Input } from "@/components/ui/8bit/input"
@@ -27,6 +27,11 @@ import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
+export const metadata: Metadata = {
+  title: "8bit Sheet",
+  description: "Displays a sheet or a component that looks like a 8-bit sheet.",
+}
+
 const SheetPage = () => {
   return (
     <div className="flex flex-col gap-4">
@@ -54,7 +59,7 @@ const SheetPage = () => {
         </div>
         <div className="flex items-center justify-center min-h-[400px] max-w-md mx-auto relative">
           <Sheet>
-            <SheetTrigger>
+            <SheetTrigger asChild>
               <Button variant="outline">Open</Button>
             </SheetTrigger>
             <SheetContent>

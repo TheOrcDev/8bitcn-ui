@@ -1,3 +1,5 @@
+import { Metadata } from "next"
+
 import { Button } from "@/components/ui/8bit/button"
 import {
   DropdownMenu,
@@ -18,6 +20,12 @@ import CodeSnippet from "@/app/docs/components/code-snippet"
 import CopyCommandButton from "@/app/docs/components/copy-command-button"
 import InstallationCommands from "@/app/docs/components/installation-commands"
 import { OpenInV0Button } from "@/app/docs/components/open-in-v0-button"
+
+export const metadata: Metadata = {
+  title: "8bit Dropdown Menu",
+  description:
+    "Displays a menu to the user — such as a set of actions or functions — triggered by a button.",
+}
 
 export default function DropdownMenuPage() {
   return (

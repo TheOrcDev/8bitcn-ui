@@ -1,3 +1,5 @@
+import { Metadata } from "next"
+
 import {
   Select,
   SelectContent,
@@ -11,6 +13,12 @@ import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
+
+export const metadata: Metadata = {
+  title: "8bit Select",
+  description:
+    "Displays a select a component that looks like a 8-bit dropdown menu.",
+}
 
 export default function SelectPage() {
   return (
