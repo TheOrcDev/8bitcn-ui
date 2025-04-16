@@ -70,31 +70,30 @@ export function Combobox({ ...props }: ComboBoxProps) {
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <div className="relative w-[250px]">
-          <Button
-            role="combobox"
-            aria-expanded={open}
-            className="w-full justify-between relative -z-1 bg-background"
+        <Button
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          className="w-[250px] justify-between"
+        >
+          <span
+            className={cn(
+              "text-[12px]",
+              font !== "normal" && pressStart.className,
+              className
+            )}
           >
-            <span
-              className={cn(
-                "text-[12px]",
-                font !== "normal" && pressStart.className,
-                className
-              )}
-            >
-              {value
-                ? options.find((option) => option.value === value)?.label
-                : placeholder}
-            </span>
-            <ChevronDownIcon
-              className="w-12 h-12"
-              size={16}
-              strokeWidth={0.25}
-              radius={1}
-            />
-          </Button>
-        </div>
+            {value
+              ? options.find((option) => option.value === value)?.label
+              : placeholder}
+          </span>
+          <ChevronDownIcon
+            className="w-12 h-12"
+            size={16}
+            strokeWidth={0.25}
+            radius={1}
+          />
+        </Button>
       </PopoverTrigger>
 
       <PopoverContent
