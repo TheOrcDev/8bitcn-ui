@@ -42,6 +42,11 @@ export const navItems = {
           url: "/docs/components/button",
         },
         {
+          title: "Calendar",
+          url: "/docs/components/calendar",
+          new: true,
+        },
+        {
           title: "Card",
           url: "/docs/components/card",
         },
@@ -84,6 +89,11 @@ export const navItems = {
         {
           title: "Select",
           url: "/docs/components/select",
+        },
+        {
+          title: "Sheet",
+          url: "/docs/components/sheet",
+          new: true,
         },
         {
           title: "Skeleton",

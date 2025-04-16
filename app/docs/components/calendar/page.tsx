@@ -1,6 +1,8 @@
-import { Metadata } from "next"
+"use client"
 
-import { Input } from "@/components/ui/8bit/input"
+import { useState } from "react"
+
+import { Calendar } from "@/components/ui/8bit/calendar"
 import { Separator } from "@/components/ui/separator"
 
 import CodeSnippet from "../code-snippet"
@@ -8,40 +10,35 @@ import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
-export const metadata: Metadata = {
-  title: "8bit Input",
-  description:
-    "Displays a form input field or a component that looks like an input field.",
-}
+const HoverCardPage = () => {
+  const [date, setDate] = useState<Date | undefined>(new Date())
 
-export default function InputPage() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
-        <h1 className="text-3xl font-bold">Input</h1>
+        <h1 className="text-3xl font-bold">Calendar</h1>
         <CopyCommandButton
-          copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-input.json`}
-          command={"pnpm dlx shadcn@canary add 8bit-input"}
+          copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-calendar.json`}
+          command={"pnpm dlx shadcn@canary add 8bit-calendar"}
         />
       </div>
 
       <p className="text-muted-foreground">
-        Displays a form input field or a component that looks like an input
-        field.
+        Displays a calendar or a component that looks like a 8-bit calendar.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit input component
+            A simple 8-bit calendar component
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-input" className="w-fit" />
+            <OpenInV0Button name="8bit-calendar" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] max-w-md mx-auto relative">
-          <Input placeholder="Enter text" />
+          <Calendar mode="single" selected={date} onSelect={setDate} />
         </div>
       </div>
 
@@ -50,16 +47,24 @@ export default function InputPage() {
       <Separator />
 
       <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-input.json`}
+        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-calendar.json`}
       />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 
       <Separator />
 
-      <CodeSnippet>{`import { Input } from "@/components/ui/8bit/input"`}</CodeSnippet>
+      <CodeSnippet>{`import { Calendar } from "@/components/ui/8bit/calendar"`}</CodeSnippet>
 
-      <CodeSnippet>{`<Input placeholder="Enter text" />`}</CodeSnippet>
+      <CodeSnippet>{`const [date, setDate] = React.useState<Date | undefined>(new Date())
+      
+<Calendar
+  mode="single"
+  selected={date}
+  onSelect={setDate}
+/>`}</CodeSnippet>
     </div>
   )
 }
+
+export default HoverCardPage

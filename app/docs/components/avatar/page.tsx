@@ -1,3 +1,5 @@
+import { Metadata } from "next"
+
 import {
   Avatar,
   AvatarFallback,
@@ -9,6 +11,12 @@ import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
+
+export const metadata: Metadata = {
+  title: "8bit Avatar",
+  description:
+    "Displays an avatar or a component that looks like a 8-bit avatar.",
+}
 
 export default function AvatarPage() {
   return (

@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { Press_Start_2P } from "next/font/google"
 import Link from "next/link"
 
@@ -28,6 +29,12 @@ const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
 })
+
+export const metadata: Metadata = {
+  title: "8bit Breadcrumb",
+  description:
+    "Displays the path to the current resource using a hierarchy of links.",
+}
 
 const ChevronDown = () => {
   return (

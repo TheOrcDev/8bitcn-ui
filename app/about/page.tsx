@@ -1,3 +1,10 @@
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "About the project.",
+}
+
 export default function Page() {
   return (
     <div className="flex flex-col gap-4 max-w-[1400px] mx-auto px-4 py-8">

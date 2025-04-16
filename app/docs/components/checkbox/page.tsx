@@ -1,3 +1,5 @@
+import { Metadata } from "next"
+
 import { Checkbox } from "@/components/ui/8bit/checkbox"
 import { Label } from "@/components/ui/8bit/label"
 import { Separator } from "@/components/ui/separator"
@@ -6,6 +8,11 @@ import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
+
+export const metadata: Metadata = {
+  title: "8bit Checkbox",
+  description: "Displays a checkbox component that looks like an 8-bit toggle.",
+}
 
 export default function CheckboxPage() {
   return (
