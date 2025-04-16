@@ -7,7 +7,12 @@ import { cva, VariantProps } from "class-variance-authority"
 import { CheckIcon, ChevronDownIcon } from "raster-react"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/8bit/button"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/8bit/popover"
 import {
   Command,
   CommandEmpty,
@@ -16,11 +21,6 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
@@ -71,16 +71,6 @@ export function Combobox({ ...props }: ComboBoxProps) {
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <div className="relative w-[250px]">
-          <div className="absolute -top-1 w-[230px] left-1.5 h-1.5 bg-foreground dark:bg-ring" />
-          <div className="absolute -top-1 w-[10px] right-1.5 h-1.5 bg-foreground dark:bg-ring" />
-          <div className="absolute -bottom-1.5 w-[230px] left-1.5 h-1.5 bg-foreground dark:bg-ring" />
-          <div className="absolute -bottom-1.5 w-[10px] right-1.5 h-1.5 bg-foreground dark:bg-ring" />
-          <div className="absolute top-0 left-0 size-1.5 bg-foreground dark:bg-ring" />
-          <div className="absolute top-0 right-0 size-1.5 bg-foreground dark:bg-ring" />
-          <div className="absolute bottom-0 left-0 size-1.5 bg-foreground dark:bg-ring" />
-          <div className="absolute bottom-0 right-0 size-1.5 bg-foreground dark:bg-ring" />
-          <div className="absolute top-2 -left-1.5 h-[20px] w-1.5 bg-foreground dark:bg-ring" />
-          <div className="absolute top-2 -right-1.5 h-[20px] w-1.5 bg-foreground dark:bg-ring" />
           <Button
             role="combobox"
             aria-expanded={open}
@@ -109,22 +99,11 @@ export function Combobox({ ...props }: ComboBoxProps) {
 
       <PopoverContent
         className={cn(
-          "w-[240px] h-[180px] top-4 p-0 rounded-none relative",
+          "w-[240px] h-[180px] top-2 p-0 rounded-none relative",
           font !== "normal" && pressStart.className,
           className
         )}
       >
-        <div className="absolute -top-1 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute -top-1 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute -bottom-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute -bottom-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute top-0 left-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute top-0 right-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute bottom-0 left-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute bottom-0 right-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute top-2 -left-1.5 h-[165px] w-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute top-2 -right-1.5 h-[165px] w-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-
         <Command>
           <CommandInput
             className="text-[12px]"
