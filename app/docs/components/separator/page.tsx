@@ -1,4 +1,5 @@
 import { Separator } from "@/components/ui/8bit/separator"
+import { Separator as ShadcnSeparator } from "@/components/ui/separator"
 
 import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
@@ -54,7 +55,7 @@ export default function SeparatorPage() {
 
       <h3 className="text-lg font-bold">Installation</h3>
 
-      <Separator />
+      <ShadcnSeparator />
 
       <InstallationCommands
         packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-separator.json`}
@@ -62,7 +63,7 @@ export default function SeparatorPage() {
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 
-      <Separator />
+      <ShadcnSeparator />
 
       <CodeSnippet>
         {`import { Separator } from "@/components/ui/separator"`}
