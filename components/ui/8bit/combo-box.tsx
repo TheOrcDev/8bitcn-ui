@@ -103,7 +103,7 @@ export function Combobox({ ...props }: ComboBoxProps) {
           className
         )}
       >
-        <Command>
+        <Command className="p-2">
           <CommandInput
             className="text-[12px]"
             placeholder="Search number..."
@@ -123,16 +123,6 @@ export function Combobox({ ...props }: ComboBoxProps) {
                     setOpen(false)
                   }}
                 >
-                  <CheckIcon
-                    className={cn(
-                      "mr-2 w-4 h-4",
-                      value === option.value ? "opacity-100" : "opacity-0"
-                    )}
-                    size={16}
-                    strokeWidth={0.25}
-                    radius={1}
-                  />
-
                   {option.label}
                 </CommandItem>
               ))}
