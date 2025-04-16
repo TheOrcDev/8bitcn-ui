@@ -29,7 +29,7 @@ export type CalendarProps = React.ComponentProps<typeof DayPicker> &
 
 function Calendar({ className, classNames, font, ...props }: CalendarProps) {
   return (
-    <div className="relative">
+    <div className={cn("relative flex justify-center", className)}>
       <ShadcnCalendar
         className={cn(
           "py-5",
@@ -41,11 +41,11 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
         classNames={{
           nav_button: cn(
             buttonVariants({ variant: "outline" }),
-            "h-7 w-7 bg-transparent p-0 flex items-center justify-center opacity-50 hover:opacity-100 border"
+            "size-7 bg-transparent p-0 flex items-center justify-center opacity-50 hover:opacity-100 border"
           ),
           day: cn(
             buttonVariants({ variant: "ghost" }),
-            "h-9 w-9 p-0 font-normal aria-selected:opacity-100"
+            "size-9 p-0 font-normal aria-selected:opacity-100"
           ),
           caption_label: "text-xs font-medium",
           ...classNames,
@@ -59,7 +59,7 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
               stroke="currentColor"
               strokeWidth="0.25"
               color=""
-              className={cn("h-4 w-4 shrink-0", className)}
+              className={cn("size-4 shrink-0", className)}
               aria-label="chevron-left"
               {...props}
             >
@@ -115,7 +115,7 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
               stroke="currentColor"
               strokeWidth="0.25"
               color=""
-              className={cn("h-4 w-4 shrink-0", className)}
+              className={cn("size-4 shrink-0", className)}
               aria-label="chevron-right"
               {...props}
             >
