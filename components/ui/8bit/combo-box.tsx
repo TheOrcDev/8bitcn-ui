@@ -4,7 +4,7 @@
 import * as React from "react"
 import { Press_Start_2P } from "next/font/google"
 import { cva, VariantProps } from "class-variance-authority"
-import { CheckIcon, ChevronDownIcon } from "raster-react"
+import { ChevronDownIcon } from "raster-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/8bit/button"
