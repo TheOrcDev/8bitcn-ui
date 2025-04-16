@@ -39,7 +39,6 @@ const Slider = React.forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
   BitSliderProps
 >(({ className, font, variant, onValueChange, ...props }, ref) => {
-  // Track the current value internally to ensure the retro variant updates
   const [currentValue, setCurrentValue] = useState<number[]>(
     Array.isArray(props.value)
       ? props.value
@@ -48,14 +47,12 @@ const Slider = React.forwardRef<
         : [0]
   )
 
-  // Update internal state when controlled value changes
   useEffect(() => {
     if (props.value) {
       setCurrentValue(props.value)
     }
   }, [props.value])
 
-  // Custom handler to update both internal state and call parent handler
   const handleValueChange = (value: number[]) => {
     setCurrentValue(value)
     if (onValueChange) {
@@ -105,7 +102,6 @@ const Slider = React.forwardRef<
           )}
         </SliderPrimitive.Track>
 
-        {/* For retro variant, use multiple thumbs that look pixelated */}
         {variant === "retro" ? (
           <SliderPrimitive.Thumb
             data-slot="slider-thumb"
@@ -126,7 +122,6 @@ const Slider = React.forwardRef<
         )}
       </SliderPrimitive.Root>
 
-      {/* 8-bit border styling */}
       <div className="absolute -top-1 left-0 w-full h-[4px] bg-foreground dark:bg-ring pointer-events-none" />
       <div className="absolute -bottom-1 left-0 w-full h-[4px] bg-foreground dark:bg-ring pointer-events-none" />
       <div className="absolute top-0 -right-1 w-1.5 h-full bg-foreground dark:bg-ring pointer-events-none" />
