@@ -60,6 +60,11 @@ export const navItems = {
           url: "/docs/components/checkbox",
         },
         {
+          title: "Combo Box",
+          url: "/docs/components/combo-box",
+          new: true,
+        },
+        {
           title: "Collapsible",
           url: "/docs/components/collapsible",
           new: true,
@@ -129,11 +134,6 @@ export const navItems = {
         {
           title: "Tooltip",
           url: "/docs/components/tooltip",
-        },
-        {
-          title: "Combo Box",
-          url: "/docs/components/combo-box",
-          new: true,
         },
       ],
     },
