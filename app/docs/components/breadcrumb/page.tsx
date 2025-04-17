@@ -157,9 +157,7 @@ export default function BreadcrumbPageNext() {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbLink href="/docs/components">
-                  Components
-                </BreadcrumbLink>
+                <BreadcrumbLink href="/docs/">Components</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
