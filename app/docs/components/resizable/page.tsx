@@ -7,6 +7,7 @@ import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
+import { ResizableDemo } from "./_demo/ResizableDemo"
 
 export const metadata: Metadata = {
   title: "8bit Resizable Panel",
@@ -26,13 +27,13 @@ export default function ResizablePage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays a badge or a component that looks like a 8-bit badge.
+        Accessible resizable panel groups and layouts with keyboard support.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit badge component
+            A simple 8-bit resizable panel component
           </h2>
 
           <div className="flex items-center gap-2">
@@ -40,7 +41,7 @@ export default function ResizablePage() {
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
-          <Badge>Badge</Badge>
+          <ResizableDemo />
         </div>
       </div>
 
