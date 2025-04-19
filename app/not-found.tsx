@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
-  title: "404 | OrcDev",
+  title: "404 | 8bitcn/ui",
 }
 
 export default function NotFound() {

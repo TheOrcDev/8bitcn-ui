@@ -119,6 +119,11 @@ export const navItems = {
           new: true,
         },
         {
+          title: "Separator",
+          url: "/docs/components/separator",
+          new: true,
+        },
+        {
           title: "Switch",
           url: "/docs/components/switch",
         },
