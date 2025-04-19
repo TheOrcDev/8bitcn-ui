@@ -18,7 +18,7 @@ const pressStart = Press_Start_2P({
 export const tabsVariants = cva("", {
   variants: {
     variant: {
-      default: "",
+      default: "bg-primary",
       retro: pressStart.className,
     },
     font: {
@@ -59,20 +59,39 @@ function TabsList({
 }: React.ComponentProps<typeof ShadcnTabsList>) {
   return (
     <div>
-      <ShadcnTabsList {...props} className={cn("relative", className)}>
-        <div className="absolute -top-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute -top-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute -bottom-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute -bottom-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute top-0 left-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute top-0 right-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute bottom-0 left-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute bottom-0 right-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute top-1.5 -left-1.5 h-2/3 w-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-        <div className="absolute top-1.5 -right-1.5 h-2/3 w-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
+      <ShadcnTabsList
+        {...props}
+        className={cn("relative bg-card rounded-none mb-1", className)}
+      >
+        <div className="absolute -top-1.5 w-2/3 -left-0.5 h-1.5 bg-foreground dark:bg-ring" />
+        <div className="absolute -top-1.5 w-2/3 -right-0.5 h-1.5 bg-foreground dark:bg-ring" />
+
+        <div className="absolute -top-0.5 -left-1.5 h-2/3 w-1.5 bg-foreground dark:bg-ring" />
+        <div className="absolute -bottom-0.5 -left-1.5 h-2/3 w-1.5 bg-foreground dark:bg-ring" />
+
+        <div className="absolute -top-0.5 -right-1.5 h-2/3 w-1.5 bg-foreground dark:bg-ring" />
+        <div className="absolute -bottom-0.5 -right-1.5 h-2/3 w-1.5 bg-foreground dark:bg-ring" />
+
+        <div className="absolute -bottom-1.5 w-2/3 -left-0.5 h-1.5 bg-foreground dark:bg-ring" />
+        <div className="absolute -bottom-1.5 w-2/3 -right-0.5 h-1.5 bg-foreground dark:bg-ring" />
         {children}
       </ShadcnTabsList>
     </div>
+  )
+}
+
+function TabsTrigger({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof ShadcnTabsTrigger>) {
+  return (
+    <ShadcnTabsTrigger
+      className={cn("border-none data-[state=active]:bg-accent", className)}
+      {...props}
+    >
+      {children}
+    </ShadcnTabsTrigger>
   )
 }
 
@@ -80,18 +99,7 @@ function TabsContent({
   className,
   ...props
 }: React.ComponentProps<typeof ShadcnTabsContent>) {
-  return (
-    <>
-      <ShadcnTabsContent className={cn("", className)} {...props} />
-    </>
-  )
-}
-
-function TabsTrigger({
-  className,
-  ...props
-}: React.ComponentProps<typeof ShadcnTabsTrigger>) {
-  return <ShadcnTabsTrigger className={cn("", className)} {...props} />
+  return <ShadcnTabsContent className={cn("", className)} {...props} />
 }
 
 export { Tabs, TabsList, TabsContent, TabsTrigger }
