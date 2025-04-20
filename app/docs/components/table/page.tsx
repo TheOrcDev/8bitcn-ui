@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-import { calendarMetaData } from "@/lib/metadata"
+import { tableMetaData } from "@/lib/metadata"
 import {
   Table,
   TableBody,
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     " Displays a table or a component that looks like a 8-bit table.",
   openGraph: {
-    images: calendarMetaData,
+    images: tableMetaData,
   },
 }
 
