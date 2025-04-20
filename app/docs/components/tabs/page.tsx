@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { tabsMetaData } from "@/lib/metadata"
 import { Button } from "@/components/ui/8bit/button"
 import {
   Card,
@@ -27,7 +28,10 @@ import { OpenInV0Button } from "../open-in-v0-button"
 export const metadata: Metadata = {
   title: "8bit Tabs",
   description:
-    "Displays a tabs component that looks like an 8-bit dropdown menu.",
+    "Displays a tabs component that switches between different content sections.",
+  openGraph: {
+    images: tabsMetaData,
+  },
 }
 
 export default function TabsPage() {
