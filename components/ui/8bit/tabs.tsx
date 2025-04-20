@@ -87,7 +87,10 @@ function TabsTrigger({
 }: React.ComponentProps<typeof ShadcnTabsTrigger>) {
   return (
     <ShadcnTabsTrigger
-      className={cn("border-none data-[state=active]:bg-accent", className)}
+      className={cn(
+        "border-none data-[state=active]:bg-accent data-[state=active]:text-foreground text-muted-foreground",
+        className
+      )}
       {...props}
     >
       {children}
