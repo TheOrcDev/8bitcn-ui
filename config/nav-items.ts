@@ -121,6 +121,10 @@ export const navItems = {
           url: "/docs/components/switch",
         },
         {
+          title: "Table",
+          url: "/docs/components/table",
+        },
+        {
           title: "Textarea",
           url: "/docs/components/textarea",
         },

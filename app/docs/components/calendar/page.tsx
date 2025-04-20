@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
 }
 
-const HoverCardPage = () => {
+const CalendarPage = () => {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
@@ -73,4 +73,4 @@ const HoverCardPage = () => {
   )
 }
 
-export default HoverCardPage
+export default CalendarPage
