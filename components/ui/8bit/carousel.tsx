@@ -207,10 +207,10 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute h-5 w-5 rounded-none aspect-square px-1 py-4 md:py-5 md:px-2",
         orientation === "horizontal"
-          ? "top-1/2 -left-10 md:-left-14 -translate-y-1/2 active:-translate-y-1"
-          : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
+          ? "top-1/2 -left-10 md:-left-14 -translate-y-1/2 active:-translate-y-1 w-8 h-9 md:w-9 md:h-10 "
+          : "-top-12 left-1/2 -translate-x-1/2 rotate-90 w-8 h-10 md:w-9 md:h-11",
+        "absolute rounded-none aspect-square grid place-items-center",
         className
       )}
       disabled={!canScrollPrev}
@@ -261,10 +261,10 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute  h-6 w-6 rounded-none aspect-square px-1 py-4 md:py-5 md:px-2",
         orientation === "horizontal"
-          ? "top-1/2 -right-10 md:-right-14 -translate-y-1/2 active:-translate-y-1"
-          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
+          ? "top-1/2 -right-10 md:-right-14 -translate-y-1/2 active:-translate-y-1 aspect-square shrink-0 w-8 h-9 md:w-9 md:h-10 "
+          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90 w-8 h-10 md:w-9 md:h-11",
+        "absolute rounded-none aspect-square grid place-items-center",
         className
       )}
       disabled={!canScrollNext}

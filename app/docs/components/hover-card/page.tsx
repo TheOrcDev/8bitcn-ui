@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { hoverCardMetaData } from "@/lib/metadata"
 import { Button } from "@/components/ui/8bit/button"
 import {
   HoverCard,
@@ -17,6 +18,9 @@ export const metadata: Metadata = {
   title: "8bit Hover Card",
   description:
     "Displays a hover card or a component that looks like a 8-bit hover card.",
+  openGraph: {
+    images: hoverCardMetaData,
+  },
 }
 
 const HoverCardPage = () => {

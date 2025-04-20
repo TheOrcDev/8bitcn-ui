@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { switchMetaData } from "@/lib/metadata"
 import { Label } from "@/components/ui/8bit/label"
 import { Switch } from "@/components/ui/8bit/switch"
 import { Separator } from "@/components/ui/separator"
@@ -13,6 +14,9 @@ export const metadata: Metadata = {
   title: "8bit Switch",
   description:
     "Displays a switch or a component that looks like a 8-bit switch.",
+  openGraph: {
+    images: switchMetaData,
+  },
 }
 
 export default function SwitchPage() {

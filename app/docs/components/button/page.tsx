@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { buttonMetaData } from "@/lib/metadata"
 import { Button } from "@/components/ui/8bit/button"
 import { Separator } from "@/components/ui/separator"
 
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
   title: "8bit Button",
   description:
     "Displays a button or a component that looks like a 8-bit button.",
+  openGraph: {
+    images: buttonMetaData,
+  },
 }
 
 export default function ButtonPage() {

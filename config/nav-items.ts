@@ -112,8 +112,17 @@ export const navItems = {
           new: true,
         },
         {
+          title: "Separator",
+          url: "/docs/components/separator",
+          new: true,
+        },
+        {
           title: "Switch",
           url: "/docs/components/switch",
+        },
+        {
+          title: "Table",
+          url: "/docs/components/table",
         },
         {
           title: "Tabs",

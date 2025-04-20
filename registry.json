@@ -382,6 +382,20 @@
       ]
     },
     {
+      "name": "8bit-table",
+      "type": "registry:component",
+      "title": "8-bit Table",
+      "description": "A simple 8-bit table component",
+      "registryDependencies": ["table"],
+      "files": [
+        {
+          "path": "components/ui/8bit/table.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/table.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-tabs",
       "type": "registry:component",
       "title": "8-bit Tabs",
@@ -393,7 +407,7 @@
           "type": "registry:component",
           "target": "components/ui/8bit/tabs.tsx"
         }
-      ]
+      ],
     }
   ]
 }

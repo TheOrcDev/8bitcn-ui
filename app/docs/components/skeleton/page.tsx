@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { skeletonMetaData } from "@/lib/metadata"
 import { Skeleton } from "@/components/ui/8bit/skeleton"
 import { Separator } from "@/components/ui/separator"
 
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
   title: "8bit Skeleton",
   description:
     "Displays a skeleton or a component that looks like a 8-bit skeleton.",
+  openGraph: {
+    images: skeletonMetaData,
+  },
 }
 
 export default function SkeletonPage() {

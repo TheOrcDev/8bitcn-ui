@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { inputMetaData } from "@/lib/metadata"
 import { Input } from "@/components/ui/8bit/input"
 import { Separator } from "@/components/ui/separator"
 
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
   title: "8bit Input",
   description:
     "Displays a form input field or a component that looks like an input field.",
+  openGraph: {
+    images: inputMetaData,
+  },
 }
 
 export default function InputPage() {

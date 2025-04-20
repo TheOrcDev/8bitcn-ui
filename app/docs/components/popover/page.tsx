@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { popoverMetaData } from "@/lib/metadata"
 import { Button } from "@/components/ui/8bit/button"
 import { Input } from "@/components/ui/8bit/input"
 import { Label } from "@/components/ui/8bit/label"
@@ -18,6 +19,9 @@ import { OpenInV0Button } from "../open-in-v0-button"
 export const metadata: Metadata = {
   title: "8bit Popover",
   description: "Displays rich content in a portal, triggered by a button.",
+  openGraph: {
+    images: popoverMetaData,
+  },
 }
 
 export default function PopoverPage() {

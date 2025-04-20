@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { avatarMetaData } from "@/lib/metadata"
 import {
   Avatar,
   AvatarFallback,
@@ -16,6 +17,9 @@ export const metadata: Metadata = {
   title: "8bit Avatar",
   description:
     "Displays an avatar or a component that looks like a 8-bit avatar.",
+  openGraph: {
+    images: avatarMetaData,
+  },
 }
 
 export default function AvatarPage() {

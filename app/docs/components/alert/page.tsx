@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { alertMetaData } from "@/lib/metadata"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/8bit/alert"
 import { Separator } from "@/components/ui/separator"
 
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
   title: "8bit Alert",
   description:
     "Displays an alert or a component that looks like a 8-bit alert.",
+  openGraph: {
+    images: alertMetaData,
+  },
 }
 
 export default function AlertPage() {

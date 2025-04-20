@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "8bit-separator",
+  "type": "registry:component",
+  "title": "8-bit separator",
+  "description": "A simple 8-bit separator component",
+  "registryDependencies": [
+    "separator"
+  ],
+  "files": [
+    {
+      "path": "components/ui/8bit/separator.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport * as SeparatorPrimitive from \"@radix-ui/react-separator\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n \r\nfunction Separator({\r\n  className,\r\n  orientation = \"horizontal\",\r\n  decorative = true,\r\n  ...props\r\n}: React.ComponentProps<typeof SeparatorPrimitive.Root>) {\r\n  return (\r\n    <SeparatorPrimitive.Root\r\n      data-slot=\"separator-root\"\r\n      decorative={decorative}\r\n      orientation={orientation}\r\n      className={cn(\r\n        \"data-[orientation=horizontal]:bg-[length:16px_8px]  data-[orientation=horizontal]:bg-[linear-gradient(90deg,var(--separator)_75%,transparent_75%)] shrink-0 data-[orientation=horizontal]:h-0.5 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-0.5 data-[orientation=vertical]:bg-[length:2px_16px] data-[orientation=vertical]:bg-[linear-gradient(0deg,var(--separator)_75%,transparent_75%)]\",\r\n        className\r\n      )}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nexport { Separator }\r\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/separator.tsx"
+    }
+  ]
+}

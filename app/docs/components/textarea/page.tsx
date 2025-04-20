@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { textareaMetaData } from "@/lib/metadata"
 import { Textarea } from "@/components/ui/8bit/textarea"
 import { Separator } from "@/components/ui/separator"
 
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
   title: "8bit Textarea",
   description:
     "Displays a textarea or a component that looks like a 8-bit textarea.",
+  openGraph: {
+    images: textareaMetaData,
+  },
 }
 
 export default function TextareaPage() {

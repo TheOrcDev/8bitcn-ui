@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { dropdownMenuMetaData } from "@/lib/metadata"
 import { Button } from "@/components/ui/8bit/button"
 import {
   DropdownMenu,
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
   title: "8bit Dropdown Menu",
   description:
     "Displays a menu to the user — such as a set of actions or functions — triggered by a button.",
+  openGraph: {
+    images: dropdownMenuMetaData,
+  },
 }
 
 export default function DropdownMenuPage() {
