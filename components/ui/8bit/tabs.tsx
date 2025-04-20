@@ -88,7 +88,7 @@ function TabsTrigger({
   return (
     <ShadcnTabsTrigger
       className={cn(
-        "border-none data-[state=active]:bg-accent data-[state=active]:text-foreground text-muted-foreground",
+        "border-none data-[state=active]:bg-accent data-[state=active]:text-foreground text-muted-foreground rounded-none",
         className
       )}
       {...props}
