@@ -394,6 +394,25 @@
           "target": "components/ui/8bit/table.tsx"
         }
       ]
+    },
+    {
+      "name": "8bit-combo-box",
+      "type": "registry:component",
+      "title": "8-bit Combo Box",
+      "description": "A simple 8-bit combo box component",
+      "registryDependencies": ["command", "popover", "button"],
+      "files": [
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/popover.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/popover.tsx"
+        }
+      ]
     }
   ]
 }
