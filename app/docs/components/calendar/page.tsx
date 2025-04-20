@@ -1,11 +1,8 @@
-"use client"
-
-import { useState } from "react"
 import type { Metadata } from "next"
 
 import { calendarMetaData } from "@/lib/metadata"
-import { Calendar } from "@/components/ui/8bit/calendar"
 import { Separator } from "@/components/ui/separator"
+import { CalendarExample } from "@/components/examples/calendar"
 
 import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
@@ -22,8 +19,6 @@ export const metadata: Metadata = {
 }
 
 const HoverCardPage = () => {
-  const [date, setDate] = useState<Date | undefined>(new Date())
-
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
@@ -49,7 +44,7 @@ const HoverCardPage = () => {
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] max-w-md mx-auto relative">
-          <Calendar mode="single" selected={date} onSelect={setDate} />
+          <CalendarExample />
         </div>
       </div>
 
