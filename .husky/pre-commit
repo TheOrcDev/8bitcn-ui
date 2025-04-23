@@ -12,3 +12,18 @@ pnpm lint ||
 )
 
 echo '🎉 No problems found: initiating orcish conquest now.... ✨🚀🏹🛡️'
+
+pnpm registry:build 
+
+TARGET_FILE="public/r"
+DIFF_OUTPUT=$(git diff -- "$TARGET_FILE")
+if [ -n "$DIFF_OUTPUT" ]; then
+  echo "⚔️❌ You forgot to run the command 'pnpm registry:build' before committing. ⚔️❌"
+  echo "I have run this for you."
+  echo "Please stage the file in $TARGET_FILE before committing."
+  echo "And, don't forget to run the command next time before committing!"
+  exit 1
+else
+  echo "🎉 No unstaged changes in $TARGET_FILE. Proceeding with commit.✨🚀🏹🛡️"
+  exit 0
+fi
