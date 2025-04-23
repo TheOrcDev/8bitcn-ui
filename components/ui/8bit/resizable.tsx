@@ -50,13 +50,14 @@ const ResizableHandle = ({
   <ResizablePrimitive.PanelResizeHandle
     className={cn(
       `relative flex w-[1px] items-center justify-center after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1 data-[panel-group-direction=vertical]:h-px data-[panel-group-direction=vertical]:w-full data-[panel-group-direction=vertical]:after:left-0 data-[panel-group-direction=vertical]:after:h-1 data-[panel-group-direction=vertical]:after:w-full data-[panel-group-direction=vertical]:after:-translate-y-1/2 data-[panel-group-direction=vertical]:after:translate-x-0 [&[data-panel-group-direction=vertical]>div]:rotate-90`,
+      !withHandle && "bg-ring",
       className
     )}
     {...props}
   >
-    <div className="absolute w-1.5 h-full border border-dotted border-foreground dark:border-ring pointer-events-none" />
+    <div className="absolute w-[6px] h-full border bg-foreground dark:bg-ring border-foreground dark:border-ring pointer-events-none" />
     {withHandle && (
-      <div className="relative bg-foreground dark:bg-ring w-full aspect-video h-[20px] z-10 border border-ring"></div>
+      <div className="relative w-[12px] aspect-video h-[20px] z-10 border-3 border-ring"></div>
     )}
   </ResizablePrimitive.PanelResizeHandle>
 )
