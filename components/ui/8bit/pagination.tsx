@@ -25,9 +25,9 @@ export const paginationVariants = cva("", {
       retro: pressStart.className,
     },
     variant: {
-      default: "bg-card text-card-foreground",
+      default: "text-card-foreground",
       destructive:
-        "text-destructive bg-card [&>svg]:text-current *:data-[slot=alert-description]:text-destructive/90",
+        "text-destructive [&>svg]:text-current *:data-[slot=alert-description]:text-destructive/90",
     },
   },
   defaultVariants: {
@@ -141,7 +141,11 @@ function PaginationContent({ ...props }: BitPaginationProps<"ul">) {
   const { className, font } = props
   return (
     <ShadcnPaginationContent
-      className={cn(font !== "normal" && pressStart.className, className)}
+      className={cn(
+        "gap-2",
+        font !== "normal" && pressStart.className,
+        className
+      )}
       {...props}
     />
   )
@@ -170,7 +174,13 @@ function PaginationLink({ ...props }: PaginationLinkProps) {
         font !== "normal" && pressStart.className,
         className,
         "relative",
-        "hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none border-dashed border-y-4 border-transparent hover:border-foreground dark:focus:border-ring active:border-transparent active:focus:border-transparent active:hover:border-transparent  data-[active=true]:border-none aria-[current=page]:border-none"
+        "relative group",
+        "hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none",
+        "border-dotted border-y-4 border-transparent",
+        "dark:hover:border-ring dark:focus:border-ring active:border-transparent",
+        "hover:border-foreground focus:border-foreground",
+        "active:focus:border-transparent active:hover:border-transparent",
+        "data-[active=true]:border-none aria-[current=page]:border-none"
       )}
       {...props}
     >
@@ -218,7 +228,14 @@ function PaginationPrevious({
   return (
     <PaginationLink
       className={cn(
-        "hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none border-dashed border-y-4 border-transparent hover:border-foreground dark:focus:border-ring active:border-transparent active:focus:border-transparent active:hover:border-transparent  data-[active=true]:border-none aria-[current=page]:border-none",
+        "relative",
+        "relative group",
+        "hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none",
+        "border-dotted border-y-4 border-transparent",
+        "dark:hover:border-ring dark:focus:border-ring active:border-transparent",
+        "hover:border-foreground focus:border-foreground",
+        "active:focus:border-transparent active:hover:border-transparent",
+        "data-[active=true]:border-none aria-[current=page]:border-none",
         font !== "normal" && pressStart.className,
         "flex flex-row text-sm w-full",
         className
@@ -239,7 +256,14 @@ function PaginationNext({
   return (
     <PaginationLink
       className={cn(
-        "hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none border-dashed border-y-4 border-transparent hover:border-foreground dark:focus:border-ring active:border-transparent active:focus:border-transparent active:hover:border-transparent  data-[active=true]:border-none aria-[current=page]:border-none",
+        "relative",
+        "relative group",
+        "hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none",
+        "border-dotted border-y-4 border-transparent",
+        "dark:hover:border-ring dark:focus:border-ring active:border-transparent",
+        "hover:border-foreground focus:border-foreground",
+        "active:focus:border-transparent active:hover:border-transparent",
+        "data-[active=true]:border-none aria-[current=page]:border-none",
         font !== "normal" && pressStart.className,
         "flex flex-row text-sm w-full",
         className
