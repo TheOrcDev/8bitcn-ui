@@ -65,6 +65,11 @@ export const navItems = {
           new: true,
         },
         {
+          title: "Command",
+          url: "/docs/components/command",
+          new: true,
+        },
+        {
           title: "Collapsible",
           url: "/docs/components/collapsible",
           new: true,
@@ -126,6 +131,11 @@ export const navItems = {
         {
           title: "Separator",
           url: "/docs/components/separator",
+          new: true,
+        },
+        {
+          title: "Resizable",
+          url: "/docs/components/resizable",
           new: true,
         },
         {

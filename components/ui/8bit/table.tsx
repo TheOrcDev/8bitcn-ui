@@ -50,7 +50,7 @@ function Table({
   return (
     <div
       className={cn(
-        "relative flex justify-center",
+        "relative flex justify-center w-fit",
         tableVariants({ font, variant })
       )}
     >

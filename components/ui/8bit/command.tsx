@@ -1,9 +1,21 @@
 "use client"
 
-import * as React from "react"
+import { Press_Start_2P } from "next/font/google"
 import { Command as CommandPrimitive } from "cmdk"
+import { SearchIcon } from "raster-react"
 
 import { cn } from "@/lib/utils"
+import {
+  Command as ShadcnCommand,
+  CommandDialog as ShadcnCommandDialog,
+  CommandEmpty as ShadcnCommandEmpty,
+  CommandGroup as ShadcnCommandGroup,
+  CommandInput as ShadcnCommandInput,
+  CommandItem as ShadcnCommandItem,
+  CommandList as ShadcnCommandList,
+  CommandSeparator as ShadcnCommandSeparator,
+  CommandShortcut as ShadcnCommandShortcut,
+} from "@/components/ui/command"
 import {
   Dialog,
   DialogContent,
@@ -12,21 +24,38 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 
+const pressStart = Press_Start_2P({
+  weight: ["400"],
+  subsets: ["latin"],
+})
+
 function Command({
   className,
   ...props
 }: React.ComponentProps<typeof CommandPrimitive>) {
   return (
     <div className="relative p-0">
-      <CommandPrimitive
+      <ShadcnCommand
         data-slot="command"
         className={cn(
           "bg-popover text-popover-foreground flex h-full w-full flex-col overflow-hidden rounded-md",
-          className,
+          pressStart.className,
           className
         )}
         {...props}
       />
+      <div className="absolute -top-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
+      <div className="absolute -top-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
+      <div className="absolute -bottom-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
+      <div className="absolute -bottom-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
+      <div className="absolute top-0 left-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
+      <div className="absolute top-0 right-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
+      <div className="absolute bottom-0 left-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
+      <div className="absolute bottom-0 right-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
+      <div className="absolute top-1.5 -left-1.5 h-1/2 w-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
+      <div className="absolute top-1.5 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
+      <div className="absolute bottom-1.5 -left-1.5 h-1/2 w-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
+      <div className="absolute bottom-1.5 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
     </div>
   )
 }
@@ -41,7 +70,7 @@ function CommandDialog({
   description?: string
 }) {
   return (
-    <Dialog {...props}>
+    <ShadcnCommandDialog {...props}>
       <DialogHeader className="sr-only">
         <DialogTitle>{title}</DialogTitle>
         <DialogDescription>{description}</DialogDescription>
@@ -51,7 +80,7 @@ function CommandDialog({
           {children}
         </Command>
       </DialogContent>
-    </Dialog>
+    </ShadcnCommandDialog>
   )
 }
 
@@ -64,10 +93,12 @@ function CommandInput({
       data-slot="command-input-wrapper"
       className="flex h-9 items-center gap-2 border-b px-3"
     >
-      <CommandPrimitive.Input
+      <SearchIcon size={30} color="" strokeWidth={0.25} radius={1} />
+      <ShadcnCommandInput
         data-slot="command-input"
         className={cn(
           "placeholder:text-muted-foreground flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+          pressStart.className,
           className
         )}
         {...props}
@@ -81,10 +112,11 @@ function CommandList({
   ...props
 }: React.ComponentProps<typeof CommandPrimitive.List>) {
   return (
-    <CommandPrimitive.List
+    <ShadcnCommandList
       data-slot="command-list"
       className={cn(
         "max-h-[300px] scroll-py-1 overflow-x-hidden overflow-y-auto",
+        pressStart.className,
         className
       )}
       {...props}
@@ -96,7 +128,7 @@ function CommandEmpty({
   ...props
 }: React.ComponentProps<typeof CommandPrimitive.Empty>) {
   return (
-    <CommandPrimitive.Empty
+    <ShadcnCommandEmpty
       data-slot="command-empty"
       className="py-6 text-center text-sm"
       {...props}
@@ -109,10 +141,11 @@ function CommandGroup({
   ...props
 }: React.ComponentProps<typeof CommandPrimitive.Group>) {
   return (
-    <CommandPrimitive.Group
+    <ShadcnCommandGroup
       data-slot="command-group"
       className={cn(
         "text-foreground [&_[cmdk-group-heading]]:text-muted-foreground overflow-hidden p-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium",
+        pressStart.className,
         className
       )}
       {...props}
@@ -125,9 +158,9 @@ function CommandSeparator({
   ...props
 }: React.ComponentProps<typeof CommandPrimitive.Separator>) {
   return (
-    <CommandPrimitive.Separator
+    <ShadcnCommandSeparator
       data-slot="command-separator"
-      className={cn("bg-border -mx-1 h-px", className)}
+      className={cn("bg-border -mx-1 h-px", pressStart.className, className)}
       {...props}
     />
   )
@@ -138,7 +171,7 @@ function CommandItem({
   ...props
 }: React.ComponentProps<typeof CommandPrimitive.Item>) {
   return (
-    <CommandPrimitive.Item
+    <ShadcnCommandItem
       data-slot="command-item"
       className={cn(
         "data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
@@ -154,12 +187,8 @@ function CommandShortcut({
   ...props
 }: React.ComponentProps<"span">) {
   return (
-    <span
-      data-slot="command-shortcut"
-      className={cn(
-        "text-muted-foreground ml-auto text-xs tracking-widest",
-        className
-      )}
+    <ShadcnCommandShortcut
+      className={cn("", pressStart.className, className)}
       {...props}
     />
   )
