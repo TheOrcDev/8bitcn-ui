@@ -25,7 +25,7 @@ export default function ResizablePage() {
         <h1 className="text-3xl font-bold">Resizable</h1>
         <CopyCommandButton
           copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-resizable.json`}
-          command={"pnpm dlx shadcn@canary add 8bit-badge"}
+          command={"pnpm dlx shadcn@canary add 8bit-resizable"}
         />
       </div>
 
