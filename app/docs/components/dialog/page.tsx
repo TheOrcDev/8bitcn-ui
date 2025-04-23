@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { dialogMetaData } from "@/lib/metadata"
 import { Button } from "@/components/ui/8bit/button"
 import {
   Dialog,
@@ -30,6 +31,9 @@ export const metadata: Metadata = {
   title: "8bit Dialog",
   description:
     "A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.",
+  openGraph: {
+    images: dialogMetaData,
+  },
 }
 
 export default function DialogPage() {

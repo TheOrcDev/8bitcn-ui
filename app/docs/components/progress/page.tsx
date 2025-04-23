@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { progressMetaData } from "@/lib/metadata"
 import { Progress } from "@/components/ui/8bit/progress"
 import { Separator } from "@/components/ui/separator"
 
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
   title: "8bit Progress",
   description:
     "Displays a progress or a component that looks like a 8-bit progress.",
+  openGraph: {
+    images: progressMetaData,
+  },
 }
 
 export default function ProgressPage() {

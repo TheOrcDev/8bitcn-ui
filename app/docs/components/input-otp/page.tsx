@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { inputOtpMetaData } from "@/lib/metadata"
 import {
   InputOTP,
   InputOTPGroup,
@@ -17,6 +18,9 @@ export const metadata: Metadata = {
   title: "8bit OTP Input",
   description:
     "Displays a retro 8-bit style OTP input or a component that looks like a 8-bit OTP input.",
+  openGraph: {
+    images: inputOtpMetaData,
+  },
 }
 
 const InputOTPPage = () => {

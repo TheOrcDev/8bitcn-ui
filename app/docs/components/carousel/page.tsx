@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { carouselMetaData } from "@/lib/metadata"
 import { Separator } from "@/components/ui/separator"
 
 import CodeSnippet from "../code-snippet"
@@ -16,6 +17,9 @@ export const metadata: Metadata = {
   title: "8bit Carousel",
   description:
     "Displays a carousel or a component that looks like a 8-bit carousel.",
+  openGraph: {
+    images: carouselMetaData,
+  },
 }
 
 export default function CarouselPage() {

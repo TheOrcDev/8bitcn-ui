@@ -1,18 +1,24 @@
-"use client"
+import type { Metadata } from "next"
 
-import { useState } from "react"
-
-import { Calendar } from "@/components/ui/8bit/calendar"
+import { calendarMetaData } from "@/lib/metadata"
 import { Separator } from "@/components/ui/separator"
+import { CalendarExample } from "@/components/examples/calendar"
 
 import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
-const HoverCardPage = () => {
-  const [date, setDate] = useState<Date | undefined>(new Date())
+export const metadata: Metadata = {
+  title: "8bit Calendar",
+  description:
+    " Displays a calendar or a component that looks like a 8-bit calendar.",
+  openGraph: {
+    images: calendarMetaData,
+  },
+}
 
+const CalendarPage = () => {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
@@ -38,7 +44,7 @@ const HoverCardPage = () => {
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] max-w-md mx-auto relative">
-          <Calendar mode="single" selected={date} onSelect={setDate} />
+          <CalendarExample />
         </div>
       </div>
 
@@ -67,4 +73,4 @@ const HoverCardPage = () => {
   )
 }
 
-export default HoverCardPage
+export default CalendarPage

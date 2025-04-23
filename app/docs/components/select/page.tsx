@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { selectMetaData } from "@/lib/metadata"
 import {
   Select,
   SelectContent,
@@ -18,6 +19,9 @@ export const metadata: Metadata = {
   title: "8bit Select",
   description:
     "Displays a select a component that looks like a 8-bit dropdown menu.",
+  openGraph: {
+    images: selectMetaData,
+  },
 }
 
 export default function SelectPage() {

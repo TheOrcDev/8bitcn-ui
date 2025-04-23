@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 
+import { alertDialogMetaData } from "@/lib/metadata"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -23,6 +24,9 @@ export const metadata: Metadata = {
   title: "8bit Alert Dialog",
   description:
     "Displays a Alert Dialog or a component that looks like a 8-bit Alert Dialog.",
+  openGraph: {
+    images: alertDialogMetaData,
+  },
 }
 
 export default function AlertDialogPage() {

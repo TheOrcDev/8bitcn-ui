@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { badgeMetaData } from "@/lib/metadata"
 import { Badge } from "@/components/ui/8bit/badge"
 import { Separator } from "@/components/ui/separator"
 
@@ -11,6 +12,9 @@ import { OpenInV0Button } from "../open-in-v0-button"
 export const metadata: Metadata = {
   title: "8bit Badge",
   description: "Displays a badge or a component that looks like a 8-bit badge.",
+  openGraph: {
+    images: badgeMetaData,
+  },
 }
 
 export default function BadgePage() {

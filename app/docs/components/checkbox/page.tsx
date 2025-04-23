@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { checkboxMetaData } from "@/lib/metadata"
 import { Checkbox } from "@/components/ui/8bit/checkbox"
 import { Label } from "@/components/ui/8bit/label"
 import { Separator } from "@/components/ui/separator"
@@ -12,6 +13,9 @@ import { OpenInV0Button } from "../open-in-v0-button"
 export const metadata: Metadata = {
   title: "8bit Checkbox",
   description: "Displays a checkbox component that looks like an 8-bit toggle.",
+  openGraph: {
+    images: checkboxMetaData,
+  },
 }
 
 export default function CheckboxPage() {

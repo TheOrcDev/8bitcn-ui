@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { sheetMetaData } from "@/lib/metadata"
 import { Button } from "@/components/ui/8bit/button"
 import { Input } from "@/components/ui/8bit/input"
 import { Label } from "@/components/ui/8bit/label"
@@ -30,6 +31,9 @@ import { OpenInV0Button } from "../open-in-v0-button"
 export const metadata: Metadata = {
   title: "8bit Sheet",
   description: "Displays a sheet or a component that looks like a 8-bit sheet.",
+  openGraph: {
+    images: sheetMetaData,
+  },
 }
 
 const SheetPage = () => {

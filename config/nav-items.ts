@@ -1,3 +1,5 @@
+import { url } from "inspector"
+
 export const navItems = {
   header: [
     {
@@ -56,6 +58,11 @@ export const navItems = {
         {
           title: "Checkbox",
           url: "/docs/components/checkbox",
+        },
+        {
+          title: "Combo Box",
+          url: "/docs/components/combo-box",
+          new: true,
         },
         {
           title: "Collapsible",
@@ -124,6 +131,15 @@ export const navItems = {
         {
           title: "Switch",
           url: "/docs/components/switch",
+        },
+        {
+          title: "Table",
+          url: "/docs/components/table",
+        },
+        {
+          title: "Tabs",
+          url: "/docs/components/tabs",
+          new: true,
         },
         {
           title: "Textarea",

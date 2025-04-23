@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { tooltipMetaData } from "@/lib/metadata"
 import { Button } from "@/components/ui/8bit/button"
 import {
   Tooltip,
@@ -18,6 +19,9 @@ export const metadata: Metadata = {
   title: "8bit Tooltip",
   description:
     "Displays a tooltip or a component that looks like a 8-bit tooltip.",
+  openGraph: {
+    images: tooltipMetaData,
+  },
 }
 
 export default function TooltipPage() {

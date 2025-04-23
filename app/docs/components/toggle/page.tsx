@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import { Bold, Italic, Underline } from "lucide-react"
 
+import { toggleMetaData } from "@/lib/metadata"
 import { Toggle } from "@/components/ui/8bit/toggle"
 import { Separator } from "@/components/ui/separator"
 
@@ -13,6 +14,9 @@ export const metadata: Metadata = {
   title: "8bit Toggle",
   description:
     "Displays a toggle or a component that looks like a 8-bit toggle.",
+  openGraph: {
+    images: toggleMetaData,
+  },
 }
 
 export default function TogglePage() {

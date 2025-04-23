@@ -1,6 +1,7 @@
 import React from "react"
 import { Metadata } from "next"
 
+import { collapsibleMetaData } from "@/lib/metadata"
 import { Separator } from "@/components/ui/separator"
 
 import CodeSnippet from "../code-snippet"
@@ -13,6 +14,9 @@ export const metadata: Metadata = {
   title: "8bit Collapsible",
   description:
     "Displays an collapsible or a component that looks like a 8-bit collapsible.",
+  openGraph: {
+    images: collapsibleMetaData,
+  },
 }
 
 export default function CollapsiblePage() {

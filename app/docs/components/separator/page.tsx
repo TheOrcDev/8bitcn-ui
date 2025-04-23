@@ -1,3 +1,6 @@
+import { Metadata } from "next"
+
+import { separatorMetaData } from "@/lib/metadata"
 import { Separator } from "@/components/ui/8bit/separator"
 import { Separator as ShadcnSeparator } from "@/components/ui/separator"
 
@@ -5,6 +8,15 @@ import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
+
+export const metadata: Metadata = {
+  title: "8bit Separator",
+  description:
+    "Displays a separator or a component that looks like a 8-bit separator.",
+  openGraph: {
+    images: separatorMetaData,
+  },
+}
 
 export default function SeparatorPage() {
   return (
