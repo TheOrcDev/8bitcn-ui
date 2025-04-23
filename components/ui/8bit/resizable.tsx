@@ -56,7 +56,7 @@ const ResizableHandle = ({
   >
     <div className="absolute w-[6px] h-full border bg-foreground dark:bg-ring border-foreground dark:border-ring pointer-events-none" />
     {withHandle && (
-      <div className="relative w-[12px] aspect-video h-[20px] z-10 border-3 border-ring"></div>
+      <div className="relative w-[12px] aspect-video h-[20px] z-10 border-3 border-foreground dark:border-ring"></div>
     )}
   </ResizablePrimitive.PanelResizeHandle>
 )
