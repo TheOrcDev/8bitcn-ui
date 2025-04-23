@@ -2,7 +2,6 @@
 
 import { Press_Start_2P } from "next/font/google"
 import { Command as CommandPrimitive } from "cmdk"
-import { SearchIcon } from "raster-react"
 
 import { cn } from "@/lib/utils"
 import {
@@ -93,7 +92,36 @@ function CommandInput({
       data-slot="command-input-wrapper"
       className="flex h-9 items-center gap-2 border-b px-3"
     >
-      <SearchIcon size={30} color="" strokeWidth={0.25} radius={1} />
+      <svg
+        width="30"
+        height="30"
+        viewBox="0 0 256 256"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        stroke="currentColor"
+        strokeWidth="0.25"
+        aria-label="search"
+      >
+        <rect x="88" y="56" width="14" height="14" rx="1"></rect>
+        <rect x="72" y="72" width="14" height="14" rx="1"></rect>
+        <rect x="56" y="88" width="14" height="14" rx="1"></rect>
+        <rect x="56" y="104" width="14" height="14" rx="1"></rect>
+        <rect x="56" y="120" width="14" height="14" rx="1"></rect>
+        <rect x="72" y="136" width="14" height="14" rx="1"></rect>
+        <rect x="88" y="152" width="14" height="14" rx="1"></rect>
+        <rect x="104" y="152" width="14" height="14" rx="1"></rect>
+        <rect x="120" y="152" width="14" height="14" rx="1"></rect>
+        <rect x="136" y="136" width="14" height="14" rx="1"></rect>
+        <rect x="152" y="120" width="14" height="14" rx="1"></rect>
+        <rect x="152" y="104" width="14" height="14" rx="1"></rect>
+        <rect x="152" y="88" width="14" height="14" rx="1"></rect>
+        <rect x="136" y="72" width="14" height="14" rx="1"></rect>
+        <rect x="120" y="56" width="14" height="14" rx="1"></rect>
+        <rect x="104" y="56" width="14" height="14" rx="1"></rect>
+        <rect x="152" y="152" width="14" height="14" rx="1"></rect>
+        <rect x="168" y="168" width="14" height="14" rx="1"></rect>
+        <rect x="184" y="184" width="14" height="14" rx="1"></rect>
+      </svg>
       <ShadcnCommandInput
         data-slot="command-input"
         className={cn(

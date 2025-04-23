@@ -51,7 +51,7 @@ const ChevronDown = () => {
       stroke="currentColor"
       strokeWidth="0.25"
       color=""
-      className="raster-icon size-7"
+      className="size-7"
       aria-label="chevron-down"
     >
       <rect
