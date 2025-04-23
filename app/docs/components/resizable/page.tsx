@@ -1,6 +1,5 @@
 import { Metadata } from "next"
 
-import { Badge } from "@/components/ui/8bit/badge"
 import { Separator } from "@/components/ui/separator"
 
 import CodeSnippet from "../code-snippet"
@@ -37,7 +36,7 @@ export default function ResizablePage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-badge" className="w-fit" />
+            <OpenInV0Button name="8bit-resizable" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
@@ -50,14 +49,14 @@ export default function ResizablePage() {
       <Separator />
 
       <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-badge.json`}
+        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-resizable.json`}
       />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 
       <Separator />
 
-      <CodeSnippet>{`import { Badge } from "@/components/ui/8bit/badge"`}</CodeSnippet>
+      <CodeSnippet>{`import { Badge } from "@/components/ui/8bit/resizable"`}</CodeSnippet>
 
       <CodeSnippet>{`<Badge>Badge</Badge>`}</CodeSnippet>
     </div>

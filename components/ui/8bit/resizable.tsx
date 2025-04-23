@@ -1,18 +1,64 @@
-import { Press_Start_2P } from "next/font/google"
+"use client"
+
+import * as ResizablePrimitive from "react-resizable-panels"
 
 import { cn } from "@/lib/utils"
-import {
-  ResizableHandle as ShadcnResizableHandle,
-  ResizablePanel as ShadcnResizablePanel,
-  ResizablePanelGroup as ShadcnResizablePanelGroup,
-} from "@/components/ui/resizable"
 
-const ResizableHandle = ShadcnResizableHandle
+const ResizablePanelGroup = ({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof ResizablePrimitive.PanelGroup>) => (
+  <div className="relative">
+    <ResizablePrimitive.PanelGroup
+      className={cn(
+        "flex h-full w-full data-[panel-group-direction=vertical]:flex-col",
+        className
+      )}
+      {...props}
+    >
+      {children}
+      <div className="absolute top-0 left-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none" />
+      <div className="absolute bottom-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none" />
+      <div className="absolute top-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
+      <div className="absolute bottom-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
+      <div className="absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
+      <div className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
+    </ResizablePrimitive.PanelGroup>
+  </div>
+)
 
-function ResizablePanel() {
-  return <ResizablePanel />
+function ResizablePanel({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof ResizablePrimitive.Panel>) {
+  return (
+    <ResizablePrimitive.Panel className={cn(className)} {...props}>
+      {children}
+    </ResizablePrimitive.Panel>
+  )
 }
 
-const ResizablePanelGroup = ShadcnResizablePanelGroup
+const ResizableHandle = ({
+  withHandle,
+  className,
+  ...props
+}: React.ComponentProps<typeof ResizablePrimitive.PanelResizeHandle> & {
+  withHandle?: boolean
+}) => (
+  <ResizablePrimitive.PanelResizeHandle
+    className={cn(
+      `relative flex w-[1px] items-center justify-center after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1 data-[panel-group-direction=vertical]:h-px data-[panel-group-direction=vertical]:w-full data-[panel-group-direction=vertical]:after:left-0 data-[panel-group-direction=vertical]:after:h-1 data-[panel-group-direction=vertical]:after:w-full data-[panel-group-direction=vertical]:after:-translate-y-1/2 data-[panel-group-direction=vertical]:after:translate-x-0 [&[data-panel-group-direction=vertical]>div]:rotate-90`,
+      className
+    )}
+    {...props}
+  >
+    <div className="absolute w-1.5 h-full border border-dotted border-foreground dark:border-ring pointer-events-none" />
+    {withHandle && (
+      <div className="relative bg-foreground dark:bg-ring w-full aspect-video h-[20px] z-10 border border-ring"></div>
+    )}
+  </ResizablePrimitive.PanelResizeHandle>
+)
 
-export { ResizablePanel, ResizableHandle, ResizablePanelGroup }
+export { ResizablePanelGroup, ResizablePanel, ResizableHandle }

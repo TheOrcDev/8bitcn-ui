@@ -270,6 +270,20 @@
       ]
     },
     {
+      "name": "8bit-resizable",
+      "type": "registry:component",
+      "title": "8-bit Resizable Panel",
+      "description": "Accessible resizable panel groups and layouts with keyboard support.",
+      "registryDependencies": ["resizable"],
+      "files": [
+        {
+          "path": "components/ui/8bit/resizable.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/resizable.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-tooltip",
       "type": "registry:component",
       "title": "8-bit Tooltip",
