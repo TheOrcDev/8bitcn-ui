@@ -407,7 +407,7 @@
           "type": "registry:component",
           "target": "components/ui/8bit/tabs.tsx"
         }
-      ],
+      ]
     },
     {
       "name": "8bit-combo-box",
