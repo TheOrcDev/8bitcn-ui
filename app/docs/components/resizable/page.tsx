@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 
+import { resizableMetaData } from "@/lib/metadata"
 import { Separator } from "@/components/ui/separator"
 
 import CodeSnippet from "../code-snippet"
@@ -16,6 +17,9 @@ export const metadata: Metadata = {
   title: "8bit Resizable Panel",
   description:
     "Accessible resizable panel groups and layouts with keyboard support.",
+  openGraph: {
+    images: resizableMetaData,
+  },
 }
 
 export default function ResizablePage() {
