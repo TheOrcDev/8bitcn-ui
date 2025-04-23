@@ -427,6 +427,20 @@
           "target": "components/ui/8bit/popover.tsx"
         }
       ]
+    },
+    {
+      "name": "8bit-pagination",
+      "type": "registry:component",
+      "title": "8-bit Pagination",
+      "description": "A simple 8-bit pagination component",
+      "registryDependencies": ["pagination"],
+      "files": [
+        {
+          "path": "components/ui/8bit/pagination.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/pagination.tsx"
+        }
+      ]
     }
   ]
 }
