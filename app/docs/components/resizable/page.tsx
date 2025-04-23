@@ -10,7 +10,7 @@ import {
   ResizableDemo,
   ResizableDemoWithHeader,
   ResizableHandleDemo,
-} from "./_demo/ResizableDemo"
+} from "./_demo/resizable-demo"
 
 export const metadata: Metadata = {
   title: "8bit Resizable Panel",

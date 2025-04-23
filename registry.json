@@ -176,7 +176,7 @@
       "type": "registry:component",
       "title": "8-bit Resizable Panel",
       "description": "Accessible resizable panel groups and layouts with keyboard support.",
-      "registryDependencies": ["resizable"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "components/ui/8bit/resizable.tsx",
