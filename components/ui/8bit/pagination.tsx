@@ -173,13 +173,12 @@ function PaginationLink({ ...props }: PaginationLinkProps) {
       className={cn(
         font !== "normal" && pressStart.className,
         className,
-        "relative",
         "relative group",
-        "hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none",
-        "border-dotted border-y-4 border-transparent",
-        "dark:hover:border-ring dark:focus:border-ring active:border-transparent",
+        "bg-transparent hover:bg-transparent active:bg-transparent focus:bg-transparent",
+        "rounded-none border-dotted border-y-4 border-transparent",
+        "dark:hover:border-ring dark:focus:border-ring",
         "hover:border-foreground focus:border-foreground",
-        "active:focus:border-transparent active:hover:border-transparent",
+        "active:border-transparent",
         "data-[active=true]:border-none aria-[current=page]:border-none"
       )}
       {...props}
@@ -228,16 +227,14 @@ function PaginationPrevious({
   return (
     <PaginationLink
       className={cn(
-        "relative",
         "relative group",
-        "hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none",
-        "border-dotted border-y-4 border-transparent",
-        "dark:hover:border-ring dark:focus:border-ring active:border-transparent",
-        "hover:border-foreground focus:border-foreground",
-        "active:focus:border-transparent active:hover:border-transparent",
+        "flex flex-row w-full text-sm",
+        "bg-transparent hover:bg-transparent active:bg-transparent focus:bg-transparent",
+        "rounded-none border-dotted border-y-4 border-transparent",
+        "hover:border-foreground focus:border-foreground active:border-transparent",
+        "dark:hover:border-ring dark:focus:border-ring",
         "data-[active=true]:border-none aria-[current=page]:border-none",
         font !== "normal" && pressStart.className,
-        "flex flex-row text-sm w-full",
         className
       )}
       {...props}
@@ -256,16 +253,15 @@ function PaginationNext({
   return (
     <PaginationLink
       className={cn(
-        "relative",
         "relative group",
-        "hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none",
-        "border-dotted border-y-4 border-transparent",
-        "dark:hover:border-ring dark:focus:border-ring active:border-transparent",
-        "hover:border-foreground focus:border-foreground",
-        "active:focus:border-transparent active:hover:border-transparent",
+        "flex flex-row w-full text-sm",
+        "bg-transparent hover:bg-transparent active:bg-transparent focus:bg-transparent",
+        "rounded-none border-dotted border-y-4 border-transparent",
+        "hover:border-foreground focus:border-foreground active:border-transparent",
+        "dark:hover:border-ring dark:focus:border-ring",
         "data-[active=true]:border-none aria-[current=page]:border-none",
-        font !== "normal" && pressStart.className,
         "flex flex-row text-sm w-full",
+        font !== "normal" && pressStart.className,
         className
       )}
       {...props}
