@@ -30,7 +30,7 @@ export function CollapsibleDemo() {
                 stroke="currentColor"
                 strokeWidth="0.25"
                 color=""
-                className="raster-icon absolute bottom-2"
+                className="absolute bottom-2"
                 aria-label="chevron-up"
               >
                 <rect
@@ -85,7 +85,7 @@ export function CollapsibleDemo() {
                 stroke="currentColor"
                 strokeWidth="0.25"
                 color=""
-                className="raster-icon relative top-2"
+                className="relative top-2"
                 aria-label="chevron-down"
               >
                 <rect

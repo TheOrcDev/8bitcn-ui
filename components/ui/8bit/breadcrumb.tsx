@@ -66,7 +66,7 @@ const ChevronRight = () => {
       stroke="currentColor"
       strokeWidth="0.25"
       color=""
-      className="raster-icon size-7"
+      className="size-7"
       aria-label="chevron-right"
     >
       <rect x="128" y="136" width="14" height="14" rx="1"></rect>
