@@ -6,7 +6,11 @@ import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
-import { ResizableDemo } from "./_demo/ResizableDemo"
+import {
+  ResizableDemo,
+  ResizableDemoWithHeader,
+  ResizableHandleDemo,
+} from "./_demo/ResizableDemo"
 
 export const metadata: Metadata = {
   title: "8bit Resizable Panel",
@@ -29,7 +33,7 @@ export default function ResizablePage() {
         Accessible resizable panel groups and layouts with keyboard support.
       </p>
 
-      <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
+      <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[400px]  justify-center relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
             A simple 8-bit resizable panel component
@@ -39,8 +43,42 @@ export default function ResizablePage() {
             <OpenInV0Button name="8bit-resizable" className="w-fit" />
           </div>
         </div>
-        <div className="flex items-center justify-center min-h-[400px] relative">
+        <div className="flex items-center justify-center h-[250px] relative">
           <ResizableDemo />
+        </div>
+      </div>
+
+      <p className="text-muted-foreground">With Handle</p>
+
+      <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[300px] relative">
+        <div className="flex items-center justify-between">
+          <h2 className="text-sm text-muted-foreground sm:pl-3">
+            A simple 8-bit resizable panel component with handle
+          </h2>
+
+          <div className="flex items-center gap-2">
+            <OpenInV0Button name="8bit-resizable" className="w-fit" />
+          </div>
+        </div>
+        <div className="flex items-center justify-center h-[250px] relative">
+          <ResizableHandleDemo />
+        </div>
+      </div>
+
+      <p className="text-muted-foreground">Orientation</p>
+
+      <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[300px] relative">
+        <div className="flex items-center justify-between">
+          <h2 className="text-sm text-muted-foreground sm:pl-3">
+            A simple 8-bit resizable panel component with column
+          </h2>
+
+          <div className="flex items-center gap-2">
+            <OpenInV0Button name="8bit-resizable" className="w-fit" />
+          </div>
+        </div>
+        <div className="flex items-center justify-center h-[250px] relative">
+          <ResizableDemoWithHeader />
         </div>
       </div>
 
@@ -56,9 +94,19 @@ export default function ResizablePage() {
 
       <Separator />
 
-      <CodeSnippet>{`import { Badge } from "@/components/ui/8bit/resizable"`}</CodeSnippet>
+      <CodeSnippet>{`import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/8bit/resizable"
+`}</CodeSnippet>
 
-      <CodeSnippet>{`<Badge>Badge</Badge>`}</CodeSnippet>
+      <CodeSnippet>{`<ResizablePanelGroup direction="horizontal">
+  <ResizablePanel>One</ResizablePanel>
+  <ResizableHandle withHandle />
+  <ResizablePanel>Two</ResizablePanel>
+</ResizablePanelGroup>
+    `}</CodeSnippet>
     </div>
   )
 }
