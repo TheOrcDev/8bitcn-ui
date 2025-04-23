@@ -1,3 +1,6 @@
+import { Metadata } from "next"
+
+import { paginationMetaData } from "@/lib/metadata"
 import {
   Pagination,
   PaginationContent,
@@ -13,6 +16,15 @@ import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
+
+export const metadata: Metadata = {
+  title: "8bit Pagination",
+  description:
+    "Displays a pagination or a component that looks like a 8-bit pagination.",
+  openGraph: {
+    images: paginationMetaData,
+  },
+}
 
 export default function PaginationPage() {
   return (
