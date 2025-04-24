@@ -41,14 +41,14 @@ function Card({ ...props }: BitCardProps) {
   return (
     <div
       className={cn(
-        "relative border-y-6 border-foreground dark:border-ring",
+        "relative border-y-6 border-foreground dark:border-ring !p-0",
         className
       )}
     >
       <ShadcnCard
         {...props}
         className={cn(
-          "rounded-none border-0",
+          "rounded-none border-0 !w-full",
           font !== "normal" && pressStart.className,
           className
         )}
