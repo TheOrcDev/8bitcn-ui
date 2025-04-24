@@ -85,47 +85,23 @@ function AlertDialogContent({
   return (
     <AlertDialogPortal>
       <AlertDialogOverlay />
-      <div
-        className={cn(
-          "relative top-[50%] left-[50%] z-50 translate-x-[-50%] translate-y-[-50%]",
-          className
-        )}
-      >
+      <>
         <ShadcnAlertDialogContent
           className={cn(
-            "rounded-none border-none bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 grid w-full max-w-[calc(100%-2rem)] gap-4 p-6 duration-200 sm:max-w-lg",
+            "rounded-none border-y-6 border-foreground dark:border-ring",
             font !== "normal" && pressStart.className,
             className
           )}
           {...props}
         >
           {children}
+
           <div
-            className="absolute top-0 left-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute bottom-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute top-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute bottom-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
+            className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
             aria-hidden="true"
           />
         </ShadcnAlertDialogContent>
-      </div>
+      </>
     </AlertDialogPortal>
   )
 }
@@ -171,6 +147,7 @@ function AlertDialogAction({
     <ShadcnAlertDialogAction
       className={cn(
         "rounded-none active:translate-y-1 transition-transform relative bg-primary",
+        "ring-0 border-none",
         className
       )}
       {...props}
@@ -205,6 +182,7 @@ function AlertDialogCancel({
     <ShadcnAlertDialogCancel
       className={cn(
         "rounded-none active:translate-y-1 transition-transform relative bg-background",
+        "ring-0 border-none",
         className
       )}
       {...props}
