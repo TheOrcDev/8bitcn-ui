@@ -31,22 +31,25 @@ function Input({ ...props }: BitInputProps) {
   const { className, font } = props
 
   return (
-    <div className={cn("relative w-full", className)}>
+    <div
+      className={cn(
+        "relative border-y-6 border-foreground dark:border-ring !p-0",
+        className
+      )}
+    >
       <ShadcnInput
         {...props}
         className={cn(
-          "rounded-none transition-transform ring-0",
+          "rounded-none ring-0 !w-full",
           font !== "normal" && pressStart.className,
           className
         )}
       />
 
-      <div className="absolute top-0 left-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute bottom-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute top-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute bottom-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
+      <div
+        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring"
+        aria-hidden="true"
+      />
     </div>
   )
 }
