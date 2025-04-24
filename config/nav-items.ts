@@ -1,5 +1,3 @@
-import { url } from "inspector"
-
 export const navItems = {
   header: [
     {
@@ -23,7 +21,6 @@ export const navItems = {
         {
           title: "Alert Dialog",
           url: "/docs/components/alert-dialog",
-          new: true,
         },
         {
           title: "Avatar",
@@ -44,7 +41,6 @@ export const navItems = {
         {
           title: "Calendar",
           url: "/docs/components/calendar",
-          new: true,
         },
         {
           title: "Card",
@@ -53,7 +49,6 @@ export const navItems = {
         {
           title: "Carousel",
           url: "/docs/components/carousel",
-          new: true,
         },
         {
           title: "Checkbox",
@@ -72,7 +67,6 @@ export const navItems = {
         {
           title: "Collapsible",
           url: "/docs/components/collapsible",
-          new: true,
         },
         {
           title: "Dialog",
@@ -85,7 +79,6 @@ export const navItems = {
         {
           title: "Hover Card",
           url: "/docs/components/hover-card",
-          new: true,
         },
         {
           title: "Input",
@@ -94,7 +87,6 @@ export const navItems = {
         {
           title: "Input OTP",
           url: "/docs/components/input-otp",
-          new: true,
         },
         {
           title: "Select",
@@ -103,12 +95,10 @@ export const navItems = {
         {
           title: "Sheet",
           url: "/docs/components/sheet",
-          new: true,
         },
         {
           title: "Skeleton",
           url: "/docs/components/skeleton",
-          new: true,
         },
         {
           title: "Label",
@@ -126,12 +116,10 @@ export const navItems = {
         {
           title: "Progress",
           url: "/docs/components/progress",
-          new: true,
         },
         {
           title: "Separator",
           url: "/docs/components/separator",
-          new: true,
         },
         {
           title: "Resizable",
@@ -158,7 +146,6 @@ export const navItems = {
         {
           title: "Toggle",
           url: "/docs/components/toggle",
-          new: true,
         },
         {
           title: "Tooltip",
