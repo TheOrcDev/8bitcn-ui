@@ -47,7 +47,7 @@ function Input({ ...props }: BitInputProps) {
       />
 
       <div
-        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring"
+        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
       />
     </div>
