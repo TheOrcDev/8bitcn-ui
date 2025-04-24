@@ -39,23 +39,25 @@ function Card({ ...props }: BitCardProps) {
   const { className, font } = props
 
   return (
-    <div className={cn("relative", className)}>
+    <div
+      className={cn(
+        "relative border-y-6 border-foreground dark:border-ring",
+        className
+      )}
+    >
       <ShadcnCard
-        data-slot="card"
+        {...props}
         className={cn(
-          "rounded-none",
+          "rounded-none border-0",
           font !== "normal" && pressStart.className,
           className
         )}
-        {...props}
       />
 
-      <div className="absolute top-0 left-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute bottom-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute top-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute bottom-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
+      <div
+        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
+        aria-hidden="true"
+      />
     </div>
   )
 }
@@ -65,7 +67,6 @@ function CardHeader({ ...props }: BitCardProps) {
 
   return (
     <ShadcnCardHeader
-      data-slot="card-header"
       className={cn(font !== "normal" && pressStart.className, className)}
       {...props}
     />
@@ -99,7 +100,6 @@ function CardAction({ ...props }: BitCardProps) {
 
   return (
     <ShadcnCardAction
-      data-slot="card-action"
       className={cn(font !== "normal" && pressStart.className, className)}
       {...props}
     />
@@ -111,7 +111,6 @@ function CardContent({ ...props }: BitCardProps) {
 
   return (
     <ShadcnCardContent
-      data-slot="card-content"
       className={cn(font !== "normal" && pressStart.className, className)}
       {...props}
     />
