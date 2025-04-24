@@ -33,7 +33,7 @@ function Input({ ...props }: BitInputProps) {
   return (
     <div
       className={cn(
-        "relative border-y-6 border-foreground dark:border-ring !p-0",
+        "relative border-y-6 border-foreground dark:border-ring !p-0 flex items-center",
         className
       )}
     >
