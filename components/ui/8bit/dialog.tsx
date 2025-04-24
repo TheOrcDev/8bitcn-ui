@@ -65,7 +65,7 @@ function DialogContent({
   return (
     <ShadcnDialogContent
       className={cn(
-        "bg-card rounded-none border-none data-[state=closed]:fade-out data-[state=open]:fade-in",
+        "bg-card rounded-none border-none",
         font !== "normal" && pressStart.className,
         className
       )}

@@ -78,7 +78,7 @@ function SelectTrigger({ children, ...props }: BitSelectTriggerProps) {
   return (
     <div
       className={cn(
-        "relative w-full",
+        "relative border-y-6 border-foreground dark:border-ring",
         className,
         font !== "normal" && pressStart.className
       )}
@@ -90,12 +90,10 @@ function SelectTrigger({ children, ...props }: BitSelectTriggerProps) {
         {children}
       </ShadcnSelectTrigger>
 
-      <div className="absolute top-0 left-0 w-full h-1.5 bg-foreground dark:bg-ring" />
-      <div className="absolute bottom-0 w-full h-1.5 bg-foreground dark:bg-ring" />
-      <div className="absolute top-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring" />
-      <div className="absolute bottom-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring" />
-      <div className="absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring" />
-      <div className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring" />
+      <div
+        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
+        aria-hidden="true"
+      />
     </div>
   )
 }
@@ -118,7 +116,7 @@ function SelectContent({
       className={cn(
         font !== "normal" && pressStart.className,
         className,
-        "rounded-none border-4 border-foreground dark:border-ring -ml-[3px]"
+        "relative rounded-none border-4 border-foreground dark:border-ring -ml-1 mt-1"
       )}
       {...props}
     >
@@ -140,7 +138,13 @@ function SelectItem({
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Item>) {
   return (
-    <ShadcnSelectItem className={cn(className)} {...props}>
+    <ShadcnSelectItem
+      className={cn(
+        className,
+        "rounded-none border-t border-b border-dashed border-ring/0 hover:border-foreground dark:hover:border-ring"
+      )}
+      {...props}
+    >
       {children}
     </ShadcnSelectItem>
   )
