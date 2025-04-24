@@ -45,7 +45,7 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
         classNames={{
           nav_button: cn(
             buttonVariants({ variant: "outline" }),
-            "size-7 bg-transparent p-0 flex items-center justify-center opacity-50 hover:opacity-100 border"
+            "size-7 bg-transparent p-0 flex items-center justify-center opacity-50 hover:opacity-100 border-2 border-foreground dark:border-ring"
           ),
           day: cn(
             buttonVariants({ variant: "ghost" }),
