@@ -9,7 +9,6 @@ import {
   CommandDialog as ShadcnCommandDialog,
   CommandEmpty as ShadcnCommandEmpty,
   CommandGroup as ShadcnCommandGroup,
-  CommandInput as ShadcnCommandInput,
   CommandItem as ShadcnCommandItem,
   CommandList as ShadcnCommandList,
   CommandSeparator as ShadcnCommandSeparator,
@@ -33,28 +32,29 @@ function Command({
   ...props
 }: React.ComponentProps<typeof CommandPrimitive>) {
   return (
-    <div className="relative p-0">
+    <div className={cn("relative !p-0", className)}>
       <ShadcnCommand
         data-slot="command"
         className={cn(
-          "bg-popover text-popover-foreground flex h-full w-full flex-col overflow-hidden rounded-md",
+          "bg-popover text-popover-foreground flex h-full !w-full flex-col overflow-hidden rounded-md",
           pressStart.className,
           className
         )}
         {...props}
       />
-      <div className="absolute -top-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-      <div className="absolute -top-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-      <div className="absolute -bottom-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-      <div className="absolute -bottom-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-      <div className="absolute top-0 left-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-      <div className="absolute top-0 right-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-      <div className="absolute bottom-0 left-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-      <div className="absolute bottom-0 right-0 size-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-      <div className="absolute top-1.5 -left-1.5 h-1/2 w-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-      <div className="absolute top-1.5 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-      <div className="absolute bottom-1.5 -left-1.5 h-1/2 w-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
-      <div className="absolute bottom-1.5 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-foreground dark:bg-ring" />
+
+      <div className="absolute -top-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-ring" />
+      <div className="absolute -top-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-ring" />
+      <div className="absolute -bottom-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-ring" />
+      <div className="absolute -bottom-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-ring" />
+      <div className="absolute top-0 left-0 size-1.5 bg-foreground dark:bg-ring" />
+      <div className="absolute top-0 right-0 size-1.5 bg-foreground dark:bg-ring" />
+      <div className="absolute bottom-0 left-0 size-1.5 bg-foreground dark:bg-ring" />
+      <div className="absolute bottom-0 right-0 size-1.5 bg-foreground dark:bg-ring" />
+      <div className="absolute top-1.5 -left-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
+      <div className="absolute top-1.5 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
+      <div className="absolute bottom-1.5 -left-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
+      <div className="absolute bottom-1.5 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
     </div>
   )
 }
@@ -90,7 +90,7 @@ function CommandInput({
   return (
     <div
       data-slot="command-input-wrapper"
-      className="flex h-9 items-center gap-2 border-b px-3"
+      className="flex h-10 items-center gap-2 border-b px-3"
     >
       <svg
         width="30"
@@ -122,11 +122,10 @@ function CommandInput({
         <rect x="168" y="168" width="14" height="14" rx="1"></rect>
         <rect x="184" y="184" width="14" height="14" rx="1"></rect>
       </svg>
-      <ShadcnCommandInput
+      <CommandPrimitive.Input
         data-slot="command-input"
         className={cn(
           "placeholder:text-muted-foreground flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
-          pressStart.className,
           className
         )}
         {...props}
