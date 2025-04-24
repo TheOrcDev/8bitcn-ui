@@ -13,7 +13,7 @@ function Switch({
     <SwitchPrimitive.Root
       data-slot="switch"
       className={cn(
-        "relative peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center border border-transparent shadow-xs transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50",
+        "relative peer data-[state=checked]:bg-primary rounded-xs data-[state=unchecked]:bg-input focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center border border-transparent shadow-xs transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50",
         className
       )}
       {...props}
@@ -25,13 +25,15 @@ function Switch({
         )}
       />
 
-      <div className="absolute -top-1 left-0 w-full h-1 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute -bottom-1 w-full h-1 bg-foreground dark:bg-ring pointer-events-none" />
+      <div
+        className="absolute inset-0 border-y-4 -my-1 border-foreground dark:border-ring pointer-events-none"
+        aria-hidden="true"
+      />
 
-      <div className="absolute top-0 -left-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute bottom-0 -left-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute top-0 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute bottom-0 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
+      <div
+        className="absolute inset-0 border-x-4 -mx-1 border-foreground dark:border-ring pointer-events-none"
+        aria-hidden="true"
+      />
     </SwitchPrimitive.Root>
   )
 }

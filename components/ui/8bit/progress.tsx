@@ -40,7 +40,7 @@ function Progress({ ...props }: BitProgressProps) {
       <ProgressPrimitive.Root
         data-slot="progress"
         className={cn(
-          "bg-primary/20 relative h-2 w-full overflow-hidden rounded-full",
+          "bg-primary/20 relative h-2 w-full overflow-hidden",
           font !== "normal" && pressStart.className,
           className
         )}
@@ -79,11 +79,15 @@ function Progress({ ...props }: BitProgressProps) {
         </ProgressPrimitive.Indicator>
       </ProgressPrimitive.Root>
 
-      <div className="absolute -top-1 left-0 w-full h-[4px] bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute -bottom-1 left-0 w-full h-[4px] bg-foreground dark:bg-ring pointer-events-none" />
+      <div
+        className="absolute inset-0 border-y-4 -my-1 border-foreground dark:border-ring pointer-events-none"
+        aria-hidden="true"
+      />
 
-      <div className="absolute top-0 -right-1 w-1.5 h-full bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute top-0 -left-1 w-1.5 h-full bg-foreground dark:bg-ring pointer-events-none" />
+      <div
+        className="absolute inset-0 border-x-4 -mx-1 border-foreground dark:border-ring pointer-events-none"
+        aria-hidden="true"
+      />
     </div>
   )
 }

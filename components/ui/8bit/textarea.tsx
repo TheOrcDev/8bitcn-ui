@@ -35,18 +35,21 @@ function Textarea({ ...props }: BitTextareaProps) {
       <ShadcnTextarea
         placeholder="Enter text"
         className={cn(
-          "rounded-none transition-transform ring-0",
+          "rounded-none transition-transform ring-0 border-0",
           font !== "normal" && pressStart.className,
           className
         )}
       />
 
-      <div className="absolute top-0 left-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute bottom-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute top-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute bottom-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
-      <div className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
+      <div
+        className="absolute inset-0 border-y-6 -my-1.5 border-foreground dark:border-ring pointer-events-none"
+        aria-hidden="true"
+      />
+
+      <div
+        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
+        aria-hidden="true"
+      />
     </div>
   )
 }

@@ -59,12 +59,15 @@ function Toggle({ children, font, ...props }: BitToggleProps) {
       <>
         {variant === "outline" && (
           <>
-            <div className="absolute -top-1 left-0 w-full h-1 bg-foreground dark:bg-ring" />
-            <div className="absolute -bottom-1 w-full h-1 bg-foreground dark:bg-ring" />
-            <div className="absolute top-0 -left-1 w-1 h-1/2 bg-foreground dark:bg-ring" />
-            <div className="absolute bottom-0 -left-1 w-1 h-1/2 bg-foreground dark:bg-ring" />
-            <div className="absolute top-0 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring" />
-            <div className="absolute bottom-0 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring" />
+            <div
+              className="absolute inset-0 border-y-6 -my-1.5 border-foreground dark:border-ring pointer-events-none"
+              aria-hidden="true"
+            />
+
+            <div
+              className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
+              aria-hidden="true"
+            />
           </>
         )}
       </>

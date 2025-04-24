@@ -58,25 +58,21 @@ function TabsList({
   ...props
 }: React.ComponentProps<typeof ShadcnTabsList>) {
   return (
-    <div>
-      <ShadcnTabsList
-        {...props}
-        className={cn("relative bg-card rounded-none mb-1", className)}
-      >
-        <div className="absolute -top-1.5 w-2/3 -left-0.5 h-1.5 bg-foreground dark:bg-ring" />
-        <div className="absolute -top-1.5 w-2/3 -right-0.5 h-1.5 bg-foreground dark:bg-ring" />
+    <ShadcnTabsList
+      {...props}
+      className={cn("relative bg-card rounded-none", className)}
+    >
+      <div
+        className="absolute inset-0 border-y-6 -my-1.5 border-foreground dark:border-ring pointer-events-none"
+        aria-hidden="true"
+      />
 
-        <div className="absolute -top-0.5 -left-1.5 h-2/3 w-1.5 bg-foreground dark:bg-ring" />
-        <div className="absolute -bottom-0.5 -left-1.5 h-2/3 w-1.5 bg-foreground dark:bg-ring" />
-
-        <div className="absolute -top-0.5 -right-1.5 h-2/3 w-1.5 bg-foreground dark:bg-ring" />
-        <div className="absolute -bottom-0.5 -right-1.5 h-2/3 w-1.5 bg-foreground dark:bg-ring" />
-
-        <div className="absolute -bottom-1.5 w-2/3 -left-0.5 h-1.5 bg-foreground dark:bg-ring" />
-        <div className="absolute -bottom-1.5 w-2/3 -right-0.5 h-1.5 bg-foreground dark:bg-ring" />
-        {children}
-      </ShadcnTabsList>
-    </div>
+      <div
+        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
+        aria-hidden="true"
+      />
+      {children}
+    </ShadcnTabsList>
   )
 }
 

@@ -31,7 +31,12 @@ export interface BitCheckboxProps
 
 function Checkbox({ className, font, ...props }: BitCheckboxProps) {
   return (
-    <div className={cn("relative flex items-center justify-center", className)}>
+    <div
+      className={cn(
+        "relative flex items-center justify-center border-y-6 border-foreground dark:border-ring",
+        className
+      )}
+    >
       <ShadcnCheckbox
         className={cn(
           "rounded-none size-5 ring-0 border-none",
@@ -41,12 +46,10 @@ function Checkbox({ className, font, ...props }: BitCheckboxProps) {
         {...props}
       />
 
-      <div className="absolute -top-1 left-0 w-full h-1 bg-foreground dark:bg-ring" />
-      <div className="absolute -bottom-1 w-full h-1 bg-foreground dark:bg-ring" />
-      <div className="absolute top-0 -left-1 w-1 h-1/2 bg-foreground dark:bg-ring" />
-      <div className="absolute bottom-0 -left-1 w-1 h-1/2 bg-foreground dark:bg-ring" />
-      <div className="absolute top-0 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring" />
-      <div className="absolute bottom-0 -right-1 w-1 h-1/2 bg-foreground dark:bg-ring" />
+      <div
+        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
+        aria-hidden="true"
+      />
     </div>
   )
 }

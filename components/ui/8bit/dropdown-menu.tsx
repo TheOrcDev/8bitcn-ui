@@ -97,34 +97,19 @@ function DropdownMenuSubContent({
     <ShadcnDropdownMenuSubContent
       {...props}
       className={cn(
-        "bg-popover py-2",
+        "bg-popover",
         font !== "normal" && pressStart.className,
         className
       )}
     >
       {children}
+
       <div
-        className="absolute top-0 left-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none"
+        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute left-0 bottom-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute top-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
+        className="absolute inset-0 border-y-6 -my-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
       />
     </ShadcnDropdownMenuSubContent>
@@ -144,35 +129,20 @@ function DropdownMenuContent({
   return (
     <ShadcnDropdownMenuContent
       className={cn(
-        "bg-popover py-2",
+        "bg-popover mt-1 py-2",
         font !== "normal" && pressStart.className,
         className
       )}
       {...props}
     >
       {children}
+
       <div
-        className="absolute top-0 left-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none"
+        className="mt-2.5 absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute left-0 bottom-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute top-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
+        className="mt-1 absolute inset-0 border-y-6 -my-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
       />
     </ShadcnDropdownMenuContent>
