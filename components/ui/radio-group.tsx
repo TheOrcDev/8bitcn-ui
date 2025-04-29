@@ -42,7 +42,7 @@ const RadioGroupItem = React.forwardRef<
           fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
           stroke="currentColor"
-          stroke-width="0"
+          strokeWidth="0"
           className="raster-icon h-3.5 w-2.5"
           aria-label="square"
         >
