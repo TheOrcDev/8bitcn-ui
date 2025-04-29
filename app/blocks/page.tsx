@@ -59,7 +59,7 @@ export default function BlocksPage() {
           <OpenInV0Button name="8bit-login-page" className="w-fit" />
         </div>
       </div>
-      <div className="flex items-center justify-center min-h-[400px] relative">
+      <div className="flex items-center justify-center min-h-[400px] relative border rounded-md">
         <div className="w-full">
           <LoginPage />
         </div>
