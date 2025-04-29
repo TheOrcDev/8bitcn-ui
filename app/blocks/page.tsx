@@ -14,9 +14,6 @@ export const metadata: Metadata = {
 }
 
 export default function BlocksPage() {
-  const packageUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-login-form.json`
-  const copyCommand = `pnpm dlx shadcn@canary add ${packageUrl}`
-
   return (
     <div className="flex flex-col p-4 gap-5 pt-10">
       <h1 className={`${pressStart.className} md:text-2xl font-bold`}>
@@ -36,7 +33,7 @@ export default function BlocksPage() {
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
               command="npx shadcn@latest add 8bit-login-form"
-              copyCommand={copyCommand}
+              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-login-form.json`}
             />
             <OpenInV0Button name="8bit-login-form" className="w-fit" />
           </div>
@@ -54,7 +51,7 @@ export default function BlocksPage() {
         <div className="flex flex-col md:flex-row items-center gap-2">
           <CopyCommandButton
             command="npx shadcn@latest add 8bit-login-page"
-            copyCommand={copyCommand}
+            copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-login-page.json`}
           />
           <OpenInV0Button name="8bit-login-page" className="w-fit" />
         </div>
