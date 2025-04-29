@@ -5,6 +5,7 @@ import { LoginForm } from "@/components/blocks/login-form"
 
 import CopyCommandButton from "../docs/components/copy-command-button"
 import { OpenInV0Button } from "../docs/components/open-in-v0-button"
+import LoginPage from "../login/page"
 
 export const metadata: Metadata = {
   title: "Building Retro Blocks for the Web - 8bitcn/ui",
@@ -42,6 +43,25 @@ export default function BlocksPage() {
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
           <LoginForm />
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
+        <h2 className="text-sm text-muted-foreground sm:pl-3">
+          A two column login page with a cover image.
+        </h2>
+
+        <div className="flex flex-col md:flex-row items-center gap-2">
+          <CopyCommandButton
+            command="npx shadcn@latest add 8bit-login-page"
+            copyCommand={copyCommand}
+          />
+          <OpenInV0Button name="8bit-login-page" className="w-fit" />
+        </div>
+      </div>
+      <div className="flex items-center justify-center min-h-[400px] relative">
+        <div className="w-full">
+          <LoginPage />
         </div>
       </div>
     </div>

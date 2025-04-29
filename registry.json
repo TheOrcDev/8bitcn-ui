@@ -517,6 +517,45 @@
           "target": "components/ui/8bit/label.tsx"
         }
       ]
+    },
+    {
+      "name": "8bit-login-page",
+      "type": "registry:component",
+      "title": "8-bit Login Page",
+      "description": "A simple 8-bit login page component",
+      "registryDependencies": ["login-page"],
+      "files": [
+        {
+          "path": "app/login/page.tsx",
+          "type": "registry:component",
+          "target": "app/login/page.tsx"
+        },
+        {
+          "path": "components/blocks/login-form.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/login-form.tsx"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/input.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/input.tsx"
+        },
+        {
+          "path": "components/ui/8bit/label.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/label.tsx"
+        }
+      ]
     }
   ]
 }
