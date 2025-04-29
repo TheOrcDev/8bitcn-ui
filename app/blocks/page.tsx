@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 
 import { pressStart } from "@/config/fonts"
-import { LoginForm } from "@/components/blocks/login-form"
+import { LoginForm } from "@/components/ui/8bit/blocks/login-form"
 
 import CopyCommandButton from "../docs/components/copy-command-button"
 import { OpenInV0Button } from "../docs/components/open-in-v0-button"
