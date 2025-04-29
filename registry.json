@@ -492,7 +492,7 @@
       "registryDependencies": ["button", "card", "input", "label"],
       "files": [
         {
-          "path": "components/blocks/login-form.tsx",
+          "path": "components/ui/8bit/blocks/login-form.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/blocks/login-form.tsx"
         },
@@ -531,7 +531,7 @@
           "target": "app/login/page.tsx"
         },
         {
-          "path": "components/blocks/login-form.tsx",
+          "path": "components/ui/8bit/blocks/login-form.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/blocks/login-form.tsx"
         },
