@@ -1,9 +1,13 @@
 import { pressStart } from "@/config/fonts"
 import { LoginForm } from "@/components/blocks/login-form"
 
+import CopyCommandButton from "../docs/components/copy-command-button"
 import { OpenInV0Button } from "../docs/components/open-in-v0-button"
 
 export default function BlocksPage() {
+  const packageUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-login-form.json`
+  const copyCommand = `pnpm dlx shadcn@canary add ${packageUrl}`
+
   return (
     <div className="flex flex-col p-4 gap-5 pt-10">
       <h1 className={`${pressStart.className} md:text-2xl font-bold`}>
@@ -15,12 +19,16 @@ export default function BlocksPage() {
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
             A simple login form
           </h2>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-col md:flex-row items-center gap-2">
+            <CopyCommandButton
+              command="npx shadcn@latest add 8bit-login-form"
+              copyCommand={copyCommand}
+            />
             <OpenInV0Button name="8bit-login-form" className="w-fit" />
           </div>
         </div>
