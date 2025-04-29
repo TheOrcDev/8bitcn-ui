@@ -1,8 +1,16 @@
+import { Metadata } from "next"
+
 import { pressStart } from "@/config/fonts"
 import { LoginForm } from "@/components/blocks/login-form"
 
 import CopyCommandButton from "../docs/components/copy-command-button"
 import { OpenInV0Button } from "../docs/components/open-in-v0-button"
+
+export const metadata: Metadata = {
+  title: "Building Retro Blocks for the Web - 8bitcn/ui",
+  description:
+    "Clean, retro building blocks. Copy and paste into your apps. Works with all React frameworks. Open Source. Free forever.",
+}
 
 export default function BlocksPage() {
   const packageUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-login-form.json`
