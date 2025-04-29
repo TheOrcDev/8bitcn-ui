@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Activity, Upload, Users } from "lucide-react"
 
 import { pressStart } from "@/config/fonts"
+import { LoginForm } from "@/components/ui/8bit/blocks//login-form"
 import { Button } from "@/components/ui/8bit/button"
 import {
   Card,
@@ -21,7 +22,6 @@ import {
   SelectValue,
 } from "@/components/ui/8bit/select"
 import { Textarea } from "@/components/ui/8bit/textarea"
-import { LoginForm } from "@/components/blocks/login-form"
 import { CalendarExample } from "@/components/examples/calendar"
 
 export default function Home() {
