@@ -36,11 +36,11 @@ export function LoginForm({
                 />
               </div>
               <div className="grid gap-2">
-                <div className="flex items-center">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
                   <Label htmlFor="password">Password</Label>
                   <a
                     href="#"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                    className="inline-block text-sm underline-offset-4 hover:underline"
                   >
                     Forgot your password?
                   </a>

@@ -8,6 +8,10 @@ export const navItems = {
       label: "Components",
       href: "/docs/components/alert",
     },
+    {
+      label: "Blocks",
+      href: "/blocks",
+    },
   ],
   navMain: [
     {
