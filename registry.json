@@ -523,7 +523,7 @@
       "type": "registry:component",
       "title": "8-bit Login Page",
       "description": "A simple 8-bit login page component",
-      "registryDependencies": ["login-page"],
+      "registryDependencies": ["button", "card", "input", "label"],
       "files": [
         {
           "path": "app/login/page.tsx",
