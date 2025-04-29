@@ -494,7 +494,7 @@
         {
           "path": "components/blocks/login-form.tsx",
           "type": "registry:component",
-          "target": "components/blocks/login-form.tsx"
+          "target": "components/ui/8bit/blocks/login-form.tsx"
         },
         {
           "path": "components/ui/8bit/button.tsx",
