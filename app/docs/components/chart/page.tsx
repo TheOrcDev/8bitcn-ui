@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 
-import { buttonMetaData } from "@/lib/metadata"
+import { chartMetaData } from "@/lib/metadata"
 import { ChartExample } from "@/components/ui/8bit/blocks/chart"
 import { Separator } from "@/components/ui/separator"
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "8bit Chart",
   description: "Displays a 8-bit chart.",
   openGraph: {
-    images: buttonMetaData,
+    images: chartMetaData,
   },
 }
 
