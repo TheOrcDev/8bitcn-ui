@@ -556,6 +556,25 @@
           "target": "components/ui/8bit/label.tsx"
         }
       ]
+    },
+    {
+      "name": "8bit-chart",
+      "type": "registry:component",
+      "title": "8-bit Chart",
+      "description": "A simple 8-bit chart component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/chart.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/chart.tsx"
+        },
+        {
+          "path": "components/ui/8bit/chart.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/chart.tsx"
+        }
+      ]
     }
   ]
 }

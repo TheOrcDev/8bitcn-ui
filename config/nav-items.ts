@@ -55,6 +55,11 @@ export const navItems = {
           url: "/docs/components/carousel",
         },
         {
+          title: "Chart",
+          url: "/docs/components/chart",
+          new: true,
+        },
+        {
           title: "Checkbox",
           url: "/docs/components/checkbox",
         },
