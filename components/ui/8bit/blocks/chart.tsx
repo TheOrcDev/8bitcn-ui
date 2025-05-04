@@ -52,8 +52,14 @@ export function ChartExample() {
           tickMargin={8}
           tickFormatter={(value) => value.slice(0, 3)}
         />
-        <YAxis tickLine={false} axisLine={false} tickMargin={8} tickCount={3} />
         <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+        <YAxis
+          width={45}
+          tickLine={false}
+          axisLine={false}
+          tickMargin={8}
+          tickCount={3}
+        />
         <Area
           dataKey="mobile"
           fill="var(--chart-2)"

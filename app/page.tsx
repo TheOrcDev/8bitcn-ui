@@ -4,6 +4,7 @@ import { Activity, Upload, Users } from "lucide-react"
 
 import { pressStart } from "@/config/fonts"
 import { LoginForm } from "@/components/ui/8bit/blocks//login-form"
+import { ChartExample } from "@/components/ui/8bit/blocks/chart"
 import { Button } from "@/components/ui/8bit/button"
 import {
   Card,
@@ -23,6 +24,7 @@ import {
 } from "@/components/ui/8bit/select"
 import { Textarea } from "@/components/ui/8bit/textarea"
 import { CalendarExample } from "@/components/examples/calendar"
+import { CommandExample } from "@/components/examples/command"
 
 export default function Home() {
   return (
@@ -62,7 +64,7 @@ export default function Home() {
               <CardTitle className="text-sm font-medium">
                 Subscriptions
               </CardTitle>
-              <Users className="h-4 w-4 text-muted-foreground" />
+              <Users className="size-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">+2350</div>
@@ -71,17 +73,12 @@ export default function Home() {
               </p>
             </CardContent>
           </Card>
-        </div>
-
-        <div className="flex flex-col gap-4 md:col-span-2">
-          <LoginForm />
 
           <Card>
-            <CardHeader>
-              <CardTitle>Product Details</CardTitle>
-              <CardDescription>
-                Lipsum dolor sit amet, consectetur adipiscing elit
-              </CardDescription>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">
+                Product Details
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid gap-6">
@@ -91,7 +88,7 @@ export default function Home() {
                     id="name"
                     type="text"
                     className="w-full"
-                    defaultValue="Gamer Gear Pro Controller"
+                    defaultValue="Gamer Gear"
                   />
                 </div>
                 <div className="grid gap-3">
@@ -105,6 +102,22 @@ export default function Home() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        <div className="flex flex-col gap-4 md:col-span-2">
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between">
+              <CardTitle className="text-sm font-medium">
+                Total visitors in the last 6 months
+              </CardTitle>
+              <Users className="size-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <ChartExample />
+            </CardContent>
+          </Card>
+
+          <LoginForm />
         </div>
 
         <div className="flex flex-col gap-4 w-full">
@@ -130,6 +143,8 @@ export default function Home() {
               </div>
             </CardContent>
           </Card>
+
+          <CommandExample />
 
           <Card>
             <CardHeader>
@@ -167,7 +182,7 @@ export default function Home() {
                     />
                   </button>
                   <button className="flex aspect-square w-full items-center justify-center rounded-md border border-dashed">
-                    <Upload className="h-4 w-4 text-muted-foreground" />
+                    <Upload className="size-4 text-muted-foreground" />
                     <span className="sr-only">Upload</span>
                   </button>
                 </div>
