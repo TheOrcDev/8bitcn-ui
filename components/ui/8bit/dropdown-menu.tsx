@@ -117,7 +117,7 @@ function DropdownMenuSubContent({
 }
 
 export interface BitDropownMenuContentProps
-  extends React.ComponentProps<"div">,
+  extends React.ComponentProps<typeof DropdownMenuPrimitive.Content>,
     VariantProps<typeof dropDownVariants> {}
 
 function DropdownMenuContent({
