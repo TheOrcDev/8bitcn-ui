@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 
-import { buttonMetaData } from "@/lib/metadata"
+import { scrollAreaMetaData } from "@/lib/metadata"
 import { Separator } from "@/components/ui/separator"
 
 import CodeSnippet from "../code-snippet"
@@ -15,9 +15,9 @@ import {
 export const metadata: Metadata = {
   title: "8bit ScrollArea",
   description:
-    "Displays a button or a component that looks like a 8-bit button.",
+    "Augments native scroll functionality for custom, cross-browser styling.",
   openGraph: {
-    images: buttonMetaData,
+    images: scrollAreaMetaData,
   },
 }
 
