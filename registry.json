@@ -242,6 +242,20 @@
       ]
     },
     {
+      "name": "8bit-scroll-area",
+      "type": "registry:component",
+      "title": "8-bit Scroll Area",
+      "description": "A simple 8-bit Scroll Area component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/scroll-area.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/scroll-area.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-switch",
       "type": "registry:component",
       "title": "8-bit Switch",
