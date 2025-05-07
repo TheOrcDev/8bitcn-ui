@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react"
 import { Toaster } from "sonner"
 
 import { sharedMetaData } from "@/lib/metadata"
+import { ScreenSize } from "@/components/screen-size"
 import SiteFooter from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -48,6 +49,7 @@ export default function RootLayout({
           <SiteFooter />
           <Toaster />
           <Analytics />
+          {process.env.APP_ENV === "development" && <ScreenSize />}
         </ThemeProvider>
       </body>
     </html>
