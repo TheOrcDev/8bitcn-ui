@@ -19,7 +19,7 @@ export function LoginForm({
       <Card>
         <CardHeader>
           <CardTitle className="text-2xl">Login</CardTitle>
-          <CardDescription>
+          <CardDescription className="text-xs">
             Enter your email below to login to your account
           </CardDescription>
         </CardHeader>
@@ -40,9 +40,9 @@ export function LoginForm({
                   <Label htmlFor="password">Password</Label>
                   <a
                     href="#"
-                    className="inline-block text-sm underline-offset-4 hover:underline"
+                    className="inline-block text-xs underline-offset-4 hover:underline"
                   >
-                    Forgot your password?
+                    Forgot password?
                   </a>
                 </div>
                 <Input id="password" type="password" required />
@@ -54,7 +54,7 @@ export function LoginForm({
                 Login with Google
               </Button>
             </div>
-            <div className="mt-4 text-center text-sm">
+            <div className="mt-4 text-center text-xs">
               Don&apos;t have an account?{" "}
               <a href="#" className="underline underline-offset-4">
                 Sign up

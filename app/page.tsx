@@ -3,8 +3,8 @@ import Link from "next/link"
 import { Activity, Upload, Users } from "lucide-react"
 
 import { pressStart } from "@/config/fonts"
-import { LoginForm } from "@/components/ui/8bit/blocks//login-form"
 import { ChartExample } from "@/components/ui/8bit/blocks/chart"
+import { LoginForm } from "@/components/ui/8bit/blocks/login-form"
 import { Button } from "@/components/ui/8bit/button"
 import {
   Card,
