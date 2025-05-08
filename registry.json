@@ -567,6 +567,40 @@
       ]
     },
     {
+      "name": "8bit-login-form-with-image",
+      "type": "registry:component",
+      "title": "8-bit Login Form with Image",
+      "description": "A simple 8-bit login form component with image",
+      "registryDependencies": ["button", "card", "input", "label"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/login-form-with-image.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/login-form-with-image.tsx"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/input.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/input.tsx"
+        },
+        {
+          "path": "components/ui/8bit/label.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/label.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-login-page",
       "type": "registry:component",
       "title": "8-bit Login Page",
