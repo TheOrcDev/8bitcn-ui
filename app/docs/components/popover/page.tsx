@@ -17,8 +17,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Popover",
-  description: "Displays rich content in a portal, triggered by a button.",
+  title: "8-bit Popover",
+  description: "Displays an 8-bit popover component.",
   openGraph: {
     images: popoverMetaData,
   },
@@ -36,13 +36,13 @@ export default function PopoverPage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays rich content in a portal, triggered by a button.
+        Displays an 8-bit popover component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit popover component
+            8-bit popover component
           </h2>
 
           <div className="flex items-center gap-2">

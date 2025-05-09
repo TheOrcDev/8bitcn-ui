@@ -13,9 +13,8 @@ import {
 } from "./_demo/scrollarea-demo"
 
 export const metadata: Metadata = {
-  title: "8bit ScrollArea",
-  description:
-    "Augments native scroll functionality for custom, cross-browser styling.",
+  title: "8-bit ScrollArea",
+  description: "Displays an 8-bit scroll area component.",
   openGraph: {
     images: scrollAreaMetaData,
   },
@@ -33,13 +32,13 @@ export default function ScrollbarPage() {
       </div>
 
       <p className="text-muted-foreground">
-        Augments native scroll functionality for custom, cross-browser styling.
+        Displays an 8-bit scroll area component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit scroll area component
+            8-bit scroll area component
           </h2>
 
           <div className="flex items-center gap-2">

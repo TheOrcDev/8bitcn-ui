@@ -10,9 +10,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Calendar",
-  description:
-    " Displays a calendar or a component that looks like a 8-bit calendar.",
+  title: "8-bit Calendar",
+  description: "Displays an 8-bit calendar component.",
   openGraph: {
     images: calendarMetaData,
   },
@@ -30,13 +29,13 @@ const CalendarPage = () => {
       </div>
 
       <p className="text-muted-foreground">
-        Displays a calendar or a component that looks like a 8-bit calendar.
+        Displays an 8-bit calendar component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit calendar component
+            8-bit calendar component
           </h2>
 
           <div className="flex items-center gap-2">

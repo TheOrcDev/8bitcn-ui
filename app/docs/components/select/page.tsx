@@ -16,9 +16,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Select",
-  description:
-    "Displays a select a component that looks like a 8-bit dropdown menu.",
+  title: "8-bit Select",
+  description: "Displays an 8-bit select component.",
   openGraph: {
     images: selectMetaData,
   },
@@ -36,13 +35,13 @@ export default function SelectPage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays a select a component that looks like a 8-bit dropdown menu.
+        Displays an 8-bit select component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit select component
+            8-bit select component
           </h2>
 
           <div className="flex items-center gap-2">

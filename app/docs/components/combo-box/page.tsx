@@ -9,9 +9,8 @@ import InstallationCommands from "@/app/docs/components/installation-commands"
 import { OpenInV0Button } from "@/app/docs/components/open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Combo Box",
-  description:
-    "A combobox component with a searchable dropdown for selecting items from a list.",
+  title: "8-bit Combo Box",
+  description: "Displays an 8-bit combo box component.",
   openGraph: {
     images: comboBoxMetaData,
   },
@@ -29,14 +28,13 @@ export default function ComboBoxPage() {
       </div>
 
       <p className="text-muted-foreground">
-        A combobox component with a searchable dropdown for selecting items from
-        a list.
+        Displays an 8-bit combo box component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit combo box component
+            8-bit combo box component
           </h2>
 
           <div className="flex items-center gap-2">

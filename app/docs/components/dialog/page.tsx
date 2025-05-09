@@ -28,9 +28,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Dialog",
-  description:
-    "A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.",
+  title: "8-bit Dialog",
+  description: "Displays an 8-bit dialog component.",
   openGraph: {
     images: dialogMetaData,
   },
@@ -48,14 +47,13 @@ export default function DialogPage() {
       </div>
 
       <p className="text-muted-foreground">
-        A window overlaid on either the primary window or another dialog window,
-        rendering the content underneath inert.
+        Displays an 8-bit dialog component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit dialog component
+            8-bit dialog component
           </h2>
 
           <div className="flex items-center gap-2">

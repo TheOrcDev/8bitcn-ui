@@ -25,9 +25,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Sidebar",
-  description:
-    "Displays a sidebar or a component that looks like a 8-bit sidebar.",
+  title: "8-bit Sidebar",
+  description: "Displays a simple 8-bit sidebar component.",
   openGraph: {
     images: buttonMetaData,
   },
@@ -79,13 +78,13 @@ export default function SidebarPage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays a sidebar or a component that looks like a 8-bit sidebar.
+        Displays a simple 8-bit sidebar component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit sidebar component
+            8-bit sidebar component
           </h2>
 
           <div className="flex items-center gap-2">
@@ -147,7 +146,7 @@ export default function SidebarPage() {
       <Separator />
 
       <p>
-        8bit sidebar is using Shadcn sidebar component. All you need to do is
+        8-bit sidebar is using Shadcn sidebar component. All you need to do is
         replace your app sidebar with 8bit sidebar.
       </p>
 

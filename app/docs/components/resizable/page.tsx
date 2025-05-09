@@ -14,9 +14,8 @@ import {
 } from "./_demo/resizable-demo"
 
 export const metadata: Metadata = {
-  title: "8bit Resizable Panel",
-  description:
-    "Accessible resizable panel groups and layouts with keyboard support.",
+  title: "8-bit Resizable Panel",
+  description: "Displays an 8-bit resizable panel component.",
   openGraph: {
     images: resizableMetaData,
   },
@@ -34,13 +33,13 @@ export default function ResizablePage() {
       </div>
 
       <p className="text-muted-foreground">
-        Accessible resizable panel groups and layouts with keyboard support.
+        Displays an 8-bit resizable panel component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[400px]  justify-center relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit resizable panel component
+            8-bit resizable panel component
           </h2>
 
           <div className="flex items-center gap-2">
@@ -57,7 +56,7 @@ export default function ResizablePage() {
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[300px] relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit resizable panel component with handle
+            8-bit resizable panel component with handle
           </h2>
 
           <div className="flex items-center gap-2">

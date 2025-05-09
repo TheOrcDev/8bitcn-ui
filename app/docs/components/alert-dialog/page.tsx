@@ -21,9 +21,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Alert Dialog",
-  description:
-    "Displays a Alert Dialog or a component that looks like a 8-bit Alert Dialog.",
+  title: "8-bit Alert Dialog",
+  description: "Displays an 8-bit alert dialog component.",
   openGraph: {
     images: alertDialogMetaData,
   },
@@ -41,18 +40,17 @@ export default function AlertDialogPage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays a Alert Dialog or a component that looks like a 8-bit Alert
-        Dialog.
+        Displays an 8-bit alert dialog component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit Alert Dialog component
+            8-bit alert dialog component
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-badge" className="w-fit" />
+            <OpenInV0Button name="8bit-alert-dialog" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">

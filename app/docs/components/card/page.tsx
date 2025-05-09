@@ -27,8 +27,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Card",
-  description: "Displays a card or a component that looks like a 8-bit card.",
+  title: "8-bit Card",
+  description: "Displays an 8-bit card component.",
   openGraph: {
     images: cardMetaData,
   },
@@ -45,14 +45,12 @@ export default function TextareaPage() {
         />
       </div>
 
-      <p className="text-muted-foreground">
-        Displays a card or a component that looks like a 8-bit card.
-      </p>
+      <p className="text-muted-foreground">Displays an 8-bit card component.</p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit card component
+            8-bit card component
           </h2>
 
           <div className="flex items-center gap-2">

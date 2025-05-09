@@ -26,9 +26,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Tabs",
-  description:
-    "Displays a tabs component that switches between different content sections.",
+  title: "8-bit Tabs",
+  description: "Displays an 8-bit tabs component.",
   openGraph: {
     images: tabsMetaData,
   },
@@ -45,15 +44,12 @@ export default function TabsPage() {
         />
       </div>
 
-      <p className="text-muted-foreground">
-        A set of layered sections of content—known as tab panels—that are
-        displayed one at a time.
-      </p>
+      <p className="text-muted-foreground">Displays an 8-bit tabs component.</p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit tabs component
+            8-bit tabs component
           </h2>
 
           <div className="flex items-center gap-2">

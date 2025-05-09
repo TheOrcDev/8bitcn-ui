@@ -10,9 +10,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Textarea",
-  description:
-    "Displays a textarea or a component that looks like a 8-bit textarea.",
+  title: "8-bit Textarea",
+  description: "Displays an 8-bit textarea component.",
   openGraph: {
     images: textareaMetaData,
   },
@@ -30,13 +29,13 @@ export default function TextareaPage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays a textarea or a component that looks like a 8-bit textarea.
+        Displays an 8-bit textarea component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit textarea component
+            8-bit textarea component
           </h2>
 
           <div className="flex items-center gap-2">

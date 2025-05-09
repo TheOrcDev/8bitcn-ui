@@ -10,8 +10,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Chart",
-  description: "Displays a 8-bit chart.",
+  title: "8-bit Chart",
+  description: "Displays an 8-bit chart.",
   openGraph: {
     images: chartMetaData,
   },
@@ -28,12 +28,12 @@ export default function ChartPage() {
         />
       </div>
 
-      <p className="text-muted-foreground">Displays a 8-bit chart.</p>
+      <p className="text-muted-foreground">Displays an 8-bit chart.</p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit chart component
+            8-bit chart component
           </h2>
 
           <div className="flex items-center gap-2">

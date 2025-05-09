@@ -11,9 +11,8 @@ import { OpenInV0Button } from "../open-in-v0-button"
 import { CollapsibleDemo } from "./_demo/CollapsibleDemo"
 
 export const metadata: Metadata = {
-  title: "8bit Collapsible",
-  description:
-    "Displays an collapsible or a component that looks like a 8-bit collapsible.",
+  title: "8-bit Collapsible",
+  description: "Displays an 8-bit collapsible component.",
   openGraph: {
     images: collapsibleMetaData,
   },
@@ -31,14 +30,13 @@ export default function CollapsiblePage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays an collapsible or a component that looks like a 8-bit
-        collapsible.
+        Displays an 8-bit collapsible component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit collapsible component
+            8-bit collapsible component
           </h2>
 
           <div className="flex items-center gap-2">

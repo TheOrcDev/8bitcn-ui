@@ -32,9 +32,8 @@ const pressStart = Press_Start_2P({
 })
 
 export const metadata: Metadata = {
-  title: "8bit Breadcrumb",
-  description:
-    "Displays the path to the current resource using a hierarchy of links.",
+  title: "8-bit Breadcrumb",
+  description: "Displays an 8-bit breadcrumb component.",
   openGraph: {
     images: breadcrumbMetaData,
   },
@@ -126,7 +125,7 @@ export default function BreadcrumbPageNext() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays the path to the current resource using a hierarchy of links.
+        Displays an 8-bit breadcrumb component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">

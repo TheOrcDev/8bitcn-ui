@@ -10,9 +10,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Input",
-  description:
-    "Displays a form input field or a component that looks like an input field.",
+  title: "8-bit Input",
+  description: "Displays an 8-bit input component.",
   openGraph: {
     images: inputMetaData,
   },
@@ -30,14 +29,13 @@ export default function InputPage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays a form input field or a component that looks like an input
-        field.
+        Displays an 8-bit input component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit input component
+            8-bit input component
           </h2>
 
           <div className="flex items-center gap-2">

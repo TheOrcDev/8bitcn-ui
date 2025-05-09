@@ -10,9 +10,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Button",
-  description:
-    "Displays a button or a component that looks like a 8-bit button.",
+  title: "8-bit Button",
+  description: "Displays an 8-bit button component.",
   openGraph: {
     images: buttonMetaData,
   },
@@ -30,13 +29,13 @@ export default function ButtonPage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays a button or a component that looks like a 8-bit button.
+        Displays an 8-bit button component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit button component
+            8-bit button component
           </h2>
 
           <div className="flex items-center gap-2">

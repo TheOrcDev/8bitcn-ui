@@ -11,9 +11,8 @@ import InstallationCommands from "@/app/docs/components/installation-commands"
 import { OpenInV0Button } from "@/app/docs/components/open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Radio Group",
-  description:
-    "A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.",
+  title: "8-bit Radio Group",
+  description: "Displays an 8-bit radio group component.",
   openGraph: {
     images: radioGroupMetaData,
   },
@@ -31,18 +30,17 @@ export default function RadioGroupPage() {
       </div>
 
       <p className="text-muted-foreground">
-        A set of checkable buttons—known as radio buttons—where no more than one
-        of the buttons can be checked at a time.
+        Displays an 8-bit radio group component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit radio group component
+            8-bit radio group component
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-dropdown-menu" className="w-fit" />
+            <OpenInV0Button name="8bit-radio-group" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">

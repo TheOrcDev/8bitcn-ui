@@ -11,9 +11,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Toggle",
-  description:
-    "Displays a toggle or a component that looks like a 8-bit toggle.",
+  title: "8-bit Toggle",
+  description: "Displays an 8-bit toggle component.",
   openGraph: {
     images: toggleMetaData,
   },
@@ -31,14 +30,14 @@ export default function TogglePage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays a toggle or a component that looks like a 8-bit toggle. The
-        toggle can be used to trigger an action or to toggle between two states.
+        Displays an 8-bit toggle component. The toggle can be used to trigger an
+        action or to toggle between two states.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit toggle component with outline variant
+            8-bit toggle component with outline variant
           </h2>
 
           <div className="flex items-center gap-2">

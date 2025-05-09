@@ -10,9 +10,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Separator",
-  description:
-    "Displays a separator or a component that looks like a 8-bit separator.",
+  title: "8-bit Separator",
+  description: "Displays an 8-bit separator component.",
   openGraph: {
     images: separatorMetaData,
   },
@@ -30,13 +29,13 @@ export default function SeparatorPage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays a separator or a component that looks like a 8-bit separator.
+        Displays an 8-bit separator component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit separator component
+            8-bit separator component
           </h2>
 
           <div className="flex items-center gap-2">

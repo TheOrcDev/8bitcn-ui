@@ -29,8 +29,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Sheet",
-  description: "Displays a sheet or a component that looks like a 8-bit sheet.",
+  title: "8-bit Sheet",
+  description: "Displays an 8-bit sheet component.",
   openGraph: {
     images: sheetMetaData,
   },
@@ -48,7 +48,7 @@ const SheetPage = () => {
       </div>
 
       <p className="text-muted-foreground">
-        Displays a sheet or a component that looks like a 8-bit sheet.
+        Displays an 8-bit sheet component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">

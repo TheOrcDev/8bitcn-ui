@@ -11,8 +11,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Checkbox",
-  description: "Displays a checkbox component that looks like an 8-bit toggle.",
+  title: "8-bit Checkbox",
+  description: "Displays an 8-bit checkbox component.",
   openGraph: {
     images: checkboxMetaData,
   },
@@ -30,13 +30,13 @@ export default function CheckboxPage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays a checkbox component that looks like an 8-bit toggle.
+        Displays an 8-bit checkbox component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit checkbox component
+            8-bit checkbox component
           </h2>
 
           <div className="flex items-center gap-2">

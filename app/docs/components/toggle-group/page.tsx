@@ -11,8 +11,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Toggle Group",
-  description: "Displays Toggle Group Component.",
+  title: "8-bit Toggle Group",
+  description: "Displays an 8-bit toggle group component.",
   openGraph: { images: toggleGroupMetaData },
 }
 export default function ToggleGroupPage() {
@@ -26,12 +26,12 @@ export default function ToggleGroupPage() {
         />
       </div>
       <p className="text-muted-foreground">
-        A set of two-state buttons that can be toggled on or off.
+        Displays an 8-bit toggle group component.
       </p>
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit Toggle Group component
+            8-bit toggle group component
           </h2>
           <div className="flex items-center gap-2">
             <OpenInV0Button name="8bit-toggle-group" className="w-fit" />

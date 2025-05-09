@@ -11,8 +11,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Input",
-  description: "Displays a label or a component that looks like a 8-bit label.",
+  title: "8-bit Label",
+  description: "Displays an 8-bit label component.",
   openGraph: {
     images: labelMetaData,
   },
@@ -30,13 +30,13 @@ export default function LabelPage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays a label or a component that looks like a 8-bit label.
+        Displays an 8-bit label component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit label component
+            8-bit label component
           </h2>
 
           <div className="flex items-center gap-2">

@@ -10,9 +10,8 @@ import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Skeleton",
-  description:
-    "Displays a skeleton or a component that looks like a 8-bit skeleton.",
+  title: "8-bit Skeleton",
+  description: "Displays an 8-bit skeleton component.",
   openGraph: {
     images: skeletonMetaData,
   },
@@ -30,13 +29,13 @@ export default function SkeletonPage() {
       </div>
 
       <p className="text-muted-foreground">
-        Displays an skeleton or a component that looks like a 8-bit skeleton.
+        Displays an 8-bit skeleton component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit skeleton component
+            8-bit skeleton component
           </h2>
 
           <div className="flex items-center gap-2">

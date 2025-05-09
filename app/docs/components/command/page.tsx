@@ -10,9 +10,8 @@ import InstallationCommands from "@/app/docs/components/installation-commands"
 import { OpenInV0Button } from "@/app/docs/components/open-in-v0-button"
 
 export const metadata: Metadata = {
-  title: "8bit Command",
-  description:
-    "A command component with a searchable input for selecting items from a list.",
+  title: "8-bit Command",
+  description: "Displays an 8-bit command component.",
   openGraph: {
     images: commandMetaData,
   },
@@ -30,14 +29,13 @@ export default function CommandPage() {
       </div>
 
       <p className="text-muted-foreground">
-        A command component with a searchable input for selecting items from a
-        list.
+        Displays an 8-bit command component.
       </p>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            A simple 8-bit command component
+            8-bit command component
           </h2>
 
           <div className="flex items-center gap-2">
