@@ -62,7 +62,7 @@ export default function DropdownMenuPage() {
             <DropdownMenuTrigger asChild>
               <Button variant="outline">Open</Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="text-xs w-56 rounded-none overflow-clip">
+            <DropdownMenuContent className="text-xs w-56 rounded-none">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
@@ -147,7 +147,7 @@ export default function DropdownMenuPage() {
   <DropdownMenuTrigger asChild>
     <Button variant="outline">Open</Button>
   </DropdownMenuTrigger>
-  <DropdownMenuContent className="text-xs w-56 rounded-none overflow-clip">
+  <DropdownMenuContent className="text-xs w-56 rounded-none">
     <DropdownMenuLabel>My Account</DropdownMenuLabel>
     <DropdownMenuSeparator />
     <DropdownMenuGroup>

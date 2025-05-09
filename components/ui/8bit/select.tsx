@@ -141,7 +141,7 @@ function SelectItem({
     <ShadcnSelectItem
       className={cn(
         className,
-        "rounded-none border-t border-b border-dashed border-ring/0 hover:border-foreground dark:hover:border-ring"
+        "rounded-none border-y-3 border-dashed border-ring/0 hover:border-foreground dark:hover:border-ring"
       )}
       {...props}
     >

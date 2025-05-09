@@ -65,7 +65,7 @@ function DropdownMenuItem({
   return (
     <ShadcnDropdownMenuItem
       className={cn(
-        "hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none border-dashed border-y-4 border-transparent focus:border-foreground hover:border-foreground dark:focus:border-ring bg-transparent",
+        "hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none border-dashed border-y-3 border-transparent focus:border-foreground hover:border-foreground dark:focus:border-ring bg-transparent",
         className
       )}
       {...props}
@@ -129,7 +129,7 @@ function DropdownMenuContent({
   return (
     <ShadcnDropdownMenuContent
       className={cn(
-        "bg-popover mt-1 py-2",
+        "mt-1 py-2",
         font !== "normal" && pressStart.className,
         className
       )}
