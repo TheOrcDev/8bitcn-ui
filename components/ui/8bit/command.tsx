@@ -208,7 +208,7 @@ function CommandItem({
     <ShadcnCommandItem
       data-slot="command-item"
       className={cn(
-        "rounded-none border-t border-b border-dashed border-y-4 border-ring/0 hover:border-foreground dark:hover:border-ring",
+        "rounded-none border-dashed border-y-3 border-ring/0 hover:border-foreground dark:hover:border-ring",
         className
       )}
       {...props}

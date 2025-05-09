@@ -67,7 +67,12 @@ function Table({
 }
 
 function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
-  return <ShadcnTableHeader className={cn(className)} {...props} />
+  return (
+    <ShadcnTableHeader
+      className={cn(className, "border-b-4 border-foreground dark:border-ring")}
+      {...props}
+    />
+  )
 }
 
 function TableBody({ className, ...props }: React.ComponentProps<"tbody">) {
@@ -83,7 +88,7 @@ function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
     <ShadcnTableRow
       className={cn(
         className,
-        "border-dashed border-foreground dark:border-ring"
+        "border-dashed border-b-4 border-foreground dark:border-ring"
       )}
       {...props}
     />
