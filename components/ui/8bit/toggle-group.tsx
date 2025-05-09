@@ -61,12 +61,6 @@ function ToggleGroupItem({ ...props }: BitToggleGroupItemProps) {
     <ShadcnToggleGroupItem
       className={cn(
         "relative transition-transform active:translate-x-1 active:translate-y-1",
-        "bg-transparent hover:bg-transparent active:bg-transparent focus:bg-transparent",
-        "border-dotted border-y-4 border-transparent",
-        "hover:border-foreground focus:border-foreground active:border-transparent",
-        "dark:hover:border-ring dark:focus:border-ring",
-        "data-[state=on]:bg-primary data-[state=on]:text-primary-foreground",
-        "data-[active=true]:border-none aria-[current=page]:border-none",
         className,
         font !== "normal" && pressStart.className
       )}
