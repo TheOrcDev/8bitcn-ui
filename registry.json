@@ -671,6 +671,20 @@
           "target": "components/ui/8bit/toggle-group.tsx"
         }
       ]
+    },
+    {
+      "name": "8bit-sidebar",
+      "type": "registry:component",
+      "title": "8-bit Sidebar",
+      "description": "A simple 8-bit sidebar component",
+      "registryDependencies": ["sidebar"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/sidebar.tsx"
+        }
+      ]
     }
   ]
 }

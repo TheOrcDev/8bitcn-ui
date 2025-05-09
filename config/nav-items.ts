@@ -111,6 +111,11 @@ export const navItems = {
           url: "/docs/components/sheet",
         },
         {
+          title: "Sidebar",
+          url: "/docs/components/sidebar",
+          new: true,
+        },
+        {
           title: "Skeleton",
           url: "/docs/components/skeleton",
         },
