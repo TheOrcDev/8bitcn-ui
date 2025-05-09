@@ -44,16 +44,16 @@ export default function ToggleGroupPage() {
               value="bold"
               aria-label="Toggle bold"
             >
-              <Bold className="h-4 w-4" />
+              <Bold className="size-4" />
             </ToggleGroupItem>
             <ToggleGroupItem value="italic" aria-label="Toggle italic">
-              <Italic className="h-4 w-4" />
+              <Italic className="size-4" />
             </ToggleGroupItem>
             <ToggleGroupItem
               value="strikethrough"
               aria-label="Toggle strikethrough"
             >
-              <Underline className="h-4 w-4" />
+              <Underline className="size-4" />
             </ToggleGroupItem>
           </ToggleGroup>
         </div>
@@ -76,29 +76,29 @@ export default function ToggleGroupPage() {
         <div className="flex items-center justify-center min-h-[400px] relative">
           <ToggleGroup type="multiple">
             <ToggleGroupItem value="bold" aria-label="Toggle bold">
-              <Bold className="h-4 w-4" />
+              <Bold className="size-4" />
             </ToggleGroupItem>
             <ToggleGroupItem value="italic" aria-label="Toggle italic">
-              <Italic className="h-4 w-4" />
+              <Italic className="size-4" />
             </ToggleGroupItem>
             <ToggleGroupItem
               value="strikethrough"
               aria-label="Toggle strikethrough"
             >
-              <Underline className="h-4 w-4" />
+              <Underline className="size-4" />
             </ToggleGroupItem>
           </ToggleGroup>
         </div>
       </div>
       <CodeSnippet>{`<ToggleGroup type="multiple">
       <ToggleGroupItem value="bold" aria-label="Toggle bold">
-        <Bold className="h-4 w-4" />
+        <Bold className="size-4" />
       </ToggleGroupItem>
       <ToggleGroupItem value="italic" aria-label="Toggle italic">
-        <Italic className="h-4 w-4" />
+        <Italic className="size-4" />
       </ToggleGroupItem>
       <ToggleGroupItem value="strikethrough" aria-label="Toggle strikethrough">
-        <Underline className="h-4 w-4" />
+        <Underline className="size-4" />
       </ToggleGroupItem>
 </ToggleGroup>`}</CodeSnippet>
       <h3 className="text-lg font-bold">Outline</h3>
@@ -118,33 +118,33 @@ export default function ToggleGroupPage() {
               value="bold"
               aria-label="Toggle bold"
             >
-              <Bold className="h-4 w-4" />
+              <Bold className="size-4" />
             </ToggleGroupItem>
             <ToggleGroupItem
               variant="outline"
               value="italic"
               aria-label="Toggle italic"
             >
-              <Italic className="h-4 w-4" />
+              <Italic className="size-4" />
             </ToggleGroupItem>
             <ToggleGroupItem
               variant="outline"
               value="strikethrough"
               aria-label="Toggle strikethrough"
             >
-              <Underline className="h-4 w-4" />
+              <Underline className="size-4" />
             </ToggleGroupItem>
           </ToggleGroup>
         </div>
         <CodeSnippet>{`<ToggleGroup type="multiple" variant="outline">
       <ToggleGroupItem value="bold" aria-label="Toggle bold">
-        <Bold className="h-4 w-4" />
+        <Bold className="size-4" />
       </ToggleGroupItem>
       <ToggleGroupItem value="italic" aria-label="Toggle italic">
-        <Italic className="h-4 w-4" />
+        <Italic className="size-4" />
       </ToggleGroupItem>
       <ToggleGroupItem value="strikethrough" aria-label="Toggle strikethrough">
-        <Underline className="h-4 w-4" />
+        <Underline className="size-4" />
       </ToggleGroupItem>
 </ToggleGroup>`}</CodeSnippet>
         <h3 className="text-lg font-bold">Single</h3>
@@ -160,29 +160,29 @@ export default function ToggleGroupPage() {
           <div className="flex items-center justify-center min-h-[400px] relative">
             <ToggleGroup type="single">
               <ToggleGroupItem value="bold" aria-label="Toggle bold">
-                <Bold className="h-4 w-4" />
+                <Bold className="size-4" />
               </ToggleGroupItem>
               <ToggleGroupItem value="italic" aria-label="Toggle italic">
-                <Italic className="h-4 w-4" />
+                <Italic className="size-4" />
               </ToggleGroupItem>
               <ToggleGroupItem
                 value="strikethrough"
                 aria-label="Toggle strikethrough"
               >
-                <Underline className="h-4 w-4" />
+                <Underline className="size-4" />
               </ToggleGroupItem>
             </ToggleGroup>
           </div>
         </div>
         <CodeSnippet>{`<ToggleGroup type="single">
       <ToggleGroupItem value="bold" aria-label="Toggle bold">
-        <Bold className="h-4 w-4" />
+        <Bold className="size-4" />
       </ToggleGroupItem>
       <ToggleGroupItem value="italic" aria-label="Toggle italic">
-        <Italic className="h-4 w-4" />
+        <Italic className="size-4" />
       </ToggleGroupItem>
       <ToggleGroupItem value="strikethrough" aria-label="Toggle strikethrough">
-        <Underline className="h-4 w-4" />
+        <Underline className="size-4" />
       </ToggleGroupItem>
 </ToggleGroup>`}</CodeSnippet>
         <h3 className="text-lg font-bold">Disabled</h3>
@@ -214,13 +214,13 @@ export default function ToggleGroupPage() {
         </div>
         <CodeSnippet>{`<ToggleGroup type="multiple" disabled>
       <ToggleGroupItem value="bold" aria-label="Toggle bold">
-        <Bold className="h-4 w-4" />
+        <Bold className="size-4" />
       </ToggleGroupItem>
       <ToggleGroupItem value="italic" aria-label="Toggle italic">
-        <Italic className="h-4 w-4" />
+        <Italic className="size-4" />
       </ToggleGroupItem>
       <ToggleGroupItem value="strikethrough" aria-label="Toggle strikethrough">
-        <Underline className="h-4 w-4" />
+        <Underline className="size-4" />
       </ToggleGroupItem>
 </ToggleGroup>`}</CodeSnippet>
       </div>
