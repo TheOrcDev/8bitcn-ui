@@ -666,9 +666,9 @@
       "registryDependencies": ["toggle-group"],
       "files": [
         {
-          "path": "components/ui/8bit/blocks/toggle-group.tsx",
+          "path": "components/ui/8bit/toggle-group.tsx",
           "type": "registry:component",
-          "target": "components/ui/8bit/blocks/toggle-group.tsx"
+          "target": "components/ui/8bit/toggle-group.tsx"
         }
       ]
     }
