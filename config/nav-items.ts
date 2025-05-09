@@ -167,6 +167,11 @@ export const navItems = {
           url: "/docs/components/toggle",
         },
         {
+          title: "Toggle Group",
+          url: "/docs/components/toggle-group",
+          new: true,
+        },
+        {
           title: "Tooltip",
           url: "/docs/components/tooltip",
         },

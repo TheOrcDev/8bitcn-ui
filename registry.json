@@ -657,6 +657,20 @@
           "target": "components/ui/8bit/chart.tsx"
         }
       ]
+    },
+    {
+      "name": "8bit-toggle-group",
+      "type": "registry:component",
+      "title": "8-bit Toggle Group",
+      "description": "A simple 8-bit toggle group component",
+      "registryDependencies": ["toggle-group"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/toggle-group.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/toggle-group.tsx"
+        }
+      ]
     }
   ]
 }
