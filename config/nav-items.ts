@@ -103,6 +103,10 @@ export const navItems = {
           new: true,
         },
         {
+          title: "Navigation Menu",
+          url: "/docs/components/navigation-menu",
+        },
+        {
           title: "Select",
           url: "/docs/components/select",
         },
