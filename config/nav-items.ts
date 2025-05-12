@@ -6,7 +6,7 @@ export const navItems = {
     },
     {
       label: "Components",
-      href: "/docs/components/alert",
+      href: "/docs/components/accordion",
     },
     {
       label: "Blocks",
@@ -16,11 +16,11 @@ export const navItems = {
   navMain: [
     {
       title: "Components",
-      url: "/components/button",
+      url: "/components/accordion",
       items: [
         {
-          title: "Accordian",
-          url: "/docs/components/accordian",
+          title: "Accordion",
+          url: "/docs/components/accordion",
           new: true,
         },
         {
