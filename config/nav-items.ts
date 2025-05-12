@@ -96,6 +96,10 @@ const components = [
     url: "/docs/components/input-otp",
   },
   {
+    title: "Navigation Menu",
+    url: "/docs/components/navigation-menu",
+  },
+  {
     title: "Scroll Area",
     url: "/docs/components/scroll-area",
   },
