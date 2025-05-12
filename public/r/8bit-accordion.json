@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "8bit-accordion",
+  "type": "registry:component",
+  "title": "8-bit Accordion",
+  "description": "A simple 8-bit accordion component",
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "components/ui/8bit/accordion.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { Press_Start_2P } from \"next/font/google\"\r\nimport * as AccordionPrimitive from \"@radix-ui/react-accordion\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\nimport {\r\n  Accordion as ShadcnAccordion,\r\n  AccordionContent as ShadcnAccordionContent,\r\n  AccordionItem as ShadcnAccordionItem,\r\n  AccordionTrigger as ShadcnAccordionTrigger,\r\n} from \"@/components/ui/accordion\"\r\n\r\nconst pressStart = Press_Start_2P({\r\n  weight: [\"400\"],\r\n  subsets: [\"latin\"],\r\n})\r\n\r\nexport interface BitAccordionItemProps\r\n  extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> {}\r\n\r\nfunction AccordionItem({\r\n  className,\r\n  children,\r\n  ...props\r\n}: BitAccordionItemProps) {\r\n  return (\r\n    <ShadcnAccordionItem\r\n      className={cn(\"border-dashed border-b-2 relative\", className)}\r\n      {...props}\r\n    >\r\n      {children}\r\n    </ShadcnAccordionItem>\r\n  )\r\n}\r\n\r\nexport interface BitAccordionTriggerProps\r\n  extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> {\r\n  font?: \"normal\" | \"pressStart\"\r\n}\r\n\r\nfunction AccordionTrigger({\r\n  className,\r\n  children,\r\n  font,\r\n  ...props\r\n}: BitAccordionTriggerProps) {\r\n  return (\r\n    <ShadcnAccordionTrigger\r\n      className={cn(font !== \"normal\" && pressStart.className, className)}\r\n      {...props}\r\n    >\r\n      {children}\r\n    </ShadcnAccordionTrigger>\r\n  )\r\n}\r\n\r\nexport interface BitAccordionContentProps\r\n  extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content> {\r\n  font?: \"normal\" | \"pressStart\"\r\n}\r\n\r\nfunction AccordionContent({\r\n  className,\r\n  children,\r\n  font,\r\n  ...props\r\n}: BitAccordionContentProps) {\r\n  return (\r\n    <div className=\"relative\">\r\n      <ShadcnAccordionContent\r\n        className={cn(\r\n          \"overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down\",\r\n          font !== \"normal\" && pressStart.className,\r\n          className\r\n        )}\r\n        {...props}\r\n      >\r\n        <div className=\"pb-4 pt-0 relative z-10 p-1\">{children}</div>\r\n      </ShadcnAccordionContent>\r\n\r\n      <AccordionPrimitive.Content asChild forceMount />\r\n    </div>\r\n  )\r\n}\r\n\r\nconst Accordion = ShadcnAccordion\r\n\r\nexport { Accordion, AccordionItem, AccordionTrigger, AccordionContent }\r\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/accordion.tsx"
+    }
+  ]
+}

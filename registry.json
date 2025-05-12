@@ -685,6 +685,20 @@
           "target": "components/ui/8bit/blocks/sidebar.tsx"
         }
       ]
+    },
+    {
+      "name": "8bit-accordion",
+      "type": "registry:component",
+      "title": "8-bit Accordion",
+      "description": "A simple 8-bit accordion component",
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "components/ui/8bit/accordion.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/accordion.tsx"
+        }
+      ]
     }
   ]
 }
