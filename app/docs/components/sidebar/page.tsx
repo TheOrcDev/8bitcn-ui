@@ -16,7 +16,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-  SidebarTrigger,
 } from "@/components/ui/sidebar"
 
 import CodeSnippet from "../code-snippet"
@@ -120,7 +119,6 @@ export default function SidebarPage() {
               </Sidebar>
 
               <div className="bg-accent w-full px-5 py-3 gap-5 hidden md:flex flex-col">
-                <SidebarTrigger className="-ml-1" />
                 <Skeleton className="h-[225px] w-full rounded-xl" />
                 <div className="flex gap-5">
                   <Skeleton className="h-[125px] w-full rounded-xl" />
@@ -169,7 +167,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <SidebarProvider>
       <AppSidebar />
       <main>
-        <SidebarTrigger />
         {children}
       </main>
     </SidebarProvider>
