@@ -148,7 +148,7 @@ export default function BreadcrumbPageNext() {
               <BreadcrumbItem>
                 <DropdownMenu>
                   <DropdownMenuTrigger className="flex items-center gap-1">
-                    <BreadcrumbEllipsis className="h-4 w-4" />
+                    <BreadcrumbEllipsis className="size-4" />
                     <span className="sr-only">Toggle menu</span>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="align:start">

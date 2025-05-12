@@ -29,7 +29,10 @@ function AccordionItem({
 }: BitAccordionItemProps) {
   return (
     <ShadcnAccordionItem
-      className={cn("border-dashed border-b-2 relative", className)}
+      className={cn(
+        "border-dashed border-b-4 border-foreground dark:border-ring relative",
+        className
+      )}
       {...props}
     >
       {children}

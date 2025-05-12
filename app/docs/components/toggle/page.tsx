@@ -48,14 +48,14 @@ export default function TogglePage() {
           <div className="flex flex-col gap-6">
             <div className="flex flex-wrap items-center gap-4">
               <Toggle variant="outline" aria-label="Toggle Bold">
-                <Bold className="h-4 w-4" />
+                <Bold className="size-4" />
               </Toggle>
               <Toggle variant="outline" aria-label="Toggle Italic">
-                <Italic className="h-4 w-4" />
+                <Italic className="size-4" />
                 <span>Italic</span>
               </Toggle>
               <Toggle variant="outline" disabled aria-label="Toggle Disabled">
-                <Underline className="h-4 w-4" />
+                <Underline className="size-4" />
                 <span>Disabled</span>
               </Toggle>
             </div>
@@ -77,18 +77,18 @@ export default function TogglePage() {
 
       <CodeSnippet>{`// Basic outline toggle
 <Toggle variant="outline">
-  <Bold className="h-4 w-4" />
+  <Bold className="size-4" />
 </Toggle>
 
 // With text
 <Toggle variant="outline">
-  <Italic className="h-4 w-4" />
+  <Italic className="size-4" />
   <span>Italic</span>
 </Toggle>
 
 // Disabled outline toggle
 <Toggle variant="outline" disabled>
-  <Underline className="h-4 w-4" />
+  <Underline className="size-4" />
   <span>Disabled</span>
 </Toggle>`}</CodeSnippet>
     </div>
