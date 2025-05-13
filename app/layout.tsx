@@ -43,7 +43,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ProductHuntToast productHuntUrl="https://www.producthunt.com/posts/8bitcn" />
+          <ProductHuntToast />
           <SiteHeader />
           <div className="flex-1 border-l border-r border-dashed max-w-[1400px] mx-auto w-full">
             {children}
