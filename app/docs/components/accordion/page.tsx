@@ -48,7 +48,7 @@ export default function AccordionPage() {
           </div>
         </div>
         <div className="flex items-center p-10 justify-center min-h-[400px] relative">
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible className="lg:w-xl">
             <AccordionItem value="item-1">
               <AccordionTrigger>Is it accessible?</AccordionTrigger>
               <AccordionContent className="text-xs">
