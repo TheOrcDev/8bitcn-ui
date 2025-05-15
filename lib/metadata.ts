@@ -5,7 +5,7 @@ export const sharedMetaData = {
   },
   description: "A collection of 8-bit styled components for your next project.",
   openGraph: {
-    images: "/images/pixelized-8bitcnorc.jpg",
+    images: "/assets/8bitcn-landing-page.png",
   },
 }
 
