@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 import Link from "next/link"
 
-import { buttonMetaData } from "@/lib/metadata"
+import { datePickerMetaData } from "@/lib/metadata"
 import { Separator } from "@/components/ui/separator"
 import { DatePicker } from "@/components/examples/date-picker"
 import { DatePickerWithPresets } from "@/components/examples/date-picker-with-presets"
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "8-bit Date Picker",
   description: "Displays an 8-bit date picker component.",
   openGraph: {
-    images: buttonMetaData,
+    images: datePickerMetaData,
   },
 }
 
