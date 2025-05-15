@@ -396,6 +396,20 @@
       ]
     },
     {
+      "name": "8bit-slider",
+      "type": "registry:component",
+      "title": "8-bit Slider",
+      "description": "A simple 8-bit slider component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/slider.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/slider.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-toggle",
       "type": "registry:component",
       "title": "8-bit Toggle",

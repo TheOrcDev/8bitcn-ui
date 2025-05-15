@@ -126,6 +126,11 @@ export const navItems = {
           url: "/docs/components/skeleton",
         },
         {
+          title: "Slider",
+          url: "/docs/components/slider",
+          new: true,
+        },
+        {
           title: "Label",
           url: "/docs/components/label",
         },
