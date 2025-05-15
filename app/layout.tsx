@@ -7,7 +7,6 @@ import { Analytics } from "@vercel/analytics/react"
 import { Toaster } from "sonner"
 
 import { sharedMetaData } from "@/lib/metadata"
-import { ProductHuntToast } from "@/components/product-hunt-toast"
 import { ScreenSize } from "@/components/screen-size"
 import SiteFooter from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
@@ -43,7 +42,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ProductHuntToast />
           <SiteHeader />
           <div className="flex-1 border-l border-r border-dashed max-w-[1400px] mx-auto w-full">
             {children}
