@@ -62,7 +62,6 @@ export const navItems = {
         {
           title: "Chart",
           url: "/docs/components/chart",
-          new: true,
         },
         {
           title: "Checkbox",
@@ -71,12 +70,10 @@ export const navItems = {
         {
           title: "Combo Box",
           url: "/docs/components/combo-box",
-          new: true,
         },
         {
           title: "Command",
           url: "/docs/components/command",
-          new: true,
         },
         {
           title: "Collapsible",
@@ -110,7 +107,6 @@ export const navItems = {
         {
           title: "Scroll Area",
           url: "/docs/components/scroll-area",
-          new: true,
         },
         {
           title: "Select",
@@ -136,7 +132,6 @@ export const navItems = {
         {
           title: "Pagination",
           url: "/docs/components/pagination",
-          new: true,
         },
         {
           title: "Popover",
@@ -153,12 +148,10 @@ export const navItems = {
         {
           title: "Radio Group",
           url: "/docs/components/radio-group",
-          new: true,
         },
         {
           title: "Resizable",
           url: "/docs/components/resizable",
-          new: true,
         },
         {
           title: "Switch",
@@ -171,7 +164,6 @@ export const navItems = {
         {
           title: "Tabs",
           url: "/docs/components/tabs",
-          new: true,
         },
         {
           title: "Textarea",
@@ -184,7 +176,6 @@ export const navItems = {
         {
           title: "Toggle Group",
           url: "/docs/components/toggle-group",
-          new: true,
         },
         {
           title: "Tooltip",
