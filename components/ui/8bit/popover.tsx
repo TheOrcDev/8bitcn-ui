@@ -1,4 +1,5 @@
 import { Press_Start_2P } from "next/font/google"
+import * as PopoverPrimitive from "@radix-ui/react-popover"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
@@ -33,7 +34,7 @@ export const popOverVariants = cva("", {
 })
 
 export interface BitPopoverProps
-  extends React.ComponentProps<"div">,
+  extends React.ComponentProps<typeof PopoverPrimitive.Content>,
     VariantProps<typeof popOverVariants> {}
 
 function PopoverContent({

@@ -83,6 +83,11 @@ export const navItems = {
           url: "/docs/components/collapsible",
         },
         {
+          title: "Date Picker",
+          url: "/docs/components/date-picker",
+          new: true,
+        },
+        {
           title: "Dialog",
           url: "/docs/components/dialog",
         },
