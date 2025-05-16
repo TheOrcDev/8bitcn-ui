@@ -13,8 +13,11 @@ import { OpenInV0Button } from "../open-in-v0-button"
 export const metadata: Metadata = {
   title: "8-bit Toggle Group",
   description: "Displays an 8-bit toggle group component.",
-  openGraph: { images: toggleGroupMetaData },
+  openGraph: {
+    images: toggleGroupMetaData,
+  },
 }
+
 export default function ToggleGroupPage() {
   return (
     <div className="flex flex-col gap-4">

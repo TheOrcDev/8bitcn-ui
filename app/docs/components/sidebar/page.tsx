@@ -3,7 +3,7 @@ import { Press_Start_2P } from "next/font/google"
 import Link from "next/link"
 import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
 
-import { buttonMetaData } from "@/lib/metadata"
+import { sidebarMetaData } from "@/lib/metadata"
 import { Skeleton } from "@/components/ui/8bit/skeleton"
 import { Separator } from "@/components/ui/separator"
 import {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   title: "8-bit Sidebar",
   description: "Displays a simple 8-bit sidebar component.",
   openGraph: {
-    images: buttonMetaData,
+    images: sidebarMetaData,
   },
 }
 

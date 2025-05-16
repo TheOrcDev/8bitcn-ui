@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
 }
 
-const CalendarPage = () => {
+export default function CalendarPage() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
@@ -71,5 +71,3 @@ const CalendarPage = () => {
     </div>
   )
 }
-
-export default CalendarPage

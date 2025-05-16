@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function ButtonPage() {
+export default function ContextMenuPage() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
