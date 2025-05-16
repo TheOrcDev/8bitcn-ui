@@ -121,6 +121,11 @@ const components = [
     url: "/docs/components/label",
   },
   {
+    title: "Menubar",
+    url: "/docs/components/menubar",
+    new: true,
+  },
+  {
     title: "Pagination",
     url: "/docs/components/pagination",
   },

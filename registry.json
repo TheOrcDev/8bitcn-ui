@@ -424,6 +424,20 @@
       ]
     },
     {
+      "name": "8bit-menubar",
+      "type": "registry:component",
+      "title": "8-bit Menu Bar",
+      "description": "A simple 8-bit menu bar component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/menubar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/menubar.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-toggle",
       "type": "registry:component",
       "title": "8-bit Toggle",
