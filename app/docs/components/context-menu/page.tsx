@@ -1,9 +1,9 @@
 import { Metadata } from "next"
 
-import { buttonMetaData } from "@/lib/metadata"
+import { contextMenuMetaData } from "@/lib/metadata"
+import { Button } from "@/components/ui/8bit/button"
 import {
   ContextMenu,
-  ContextMenuCheckboxItem,
   ContextMenuContent,
   ContextMenuItem,
   ContextMenuTrigger,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "8-bit Context Menu",
   description: "Displays an 8-bit context menu component.",
   openGraph: {
-    images: buttonMetaData,
+    images: contextMenuMetaData,
   },
 }
 
@@ -50,15 +50,14 @@ export default function ButtonPage() {
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
           <ContextMenu>
-            <ContextMenuTrigger>Right click</ContextMenuTrigger>
+            <ContextMenuTrigger>
+              <Button>Right click me</Button>
+            </ContextMenuTrigger>
             <ContextMenuContent>
               <ContextMenuItem>Profile</ContextMenuItem>
               <ContextMenuItem>Billing</ContextMenuItem>
               <ContextMenuItem>Team</ContextMenuItem>
               <ContextMenuItem>Subscription</ContextMenuItem>
-              <ContextMenuCheckboxItem checked={true}>
-                Item
-              </ContextMenuCheckboxItem>
             </ContextMenuContent>
           </ContextMenu>
         </div>
