@@ -76,6 +76,11 @@ export const navItems = {
           url: "/docs/components/command",
         },
         {
+          title: "Context Menu",
+          url: "/docs/components/context-menu",
+          new: true,
+        },
+        {
           title: "Collapsible",
           url: "/docs/components/collapsible",
         },

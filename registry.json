@@ -410,6 +410,20 @@
       ]
     },
     {
+      "name": "8bit-context-menu",
+      "type": "registry:component",
+      "title": "8-bit Context Menu",
+      "description": "A simple 8-bit context menu component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/context-menu.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/context-menu.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-toggle",
       "type": "registry:component",
       "title": "8-bit Toggle",
