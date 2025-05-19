@@ -741,6 +741,20 @@
           "target": "components/ui/8bit/accordion.tsx"
         }
       ]
+    },
+    {
+      "name": "8bit-drawer",
+      "type": "registry:component",
+      "title": "8-bit Drawer",
+      "description": "A simple 8-bit drawer component",
+      "registryDependencies": ["drawer"],
+      "files": [
+        {
+          "path": "components/ui/8bit/drawer.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/drawer.tsx"
+        }
+      ]
     }
   ]
 }

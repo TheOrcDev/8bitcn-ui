@@ -75,6 +75,11 @@ const components = [
     url: "/docs/components/dialog",
   },
   {
+    title: "Drawer",
+    url: "/docs/components/drawer",
+    new: true,
+  },
+  {
     title: "Dropdown Menu",
     url: "/docs/components/dropdown-menu",
   },
