@@ -2,9 +2,16 @@
 
 import { useState } from "react"
 import { Check, Clipboard } from "lucide-react"
+import ShikiHighlighter from "react-shiki"
 import { toast } from "sonner"
 
+import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { ScrollArea } from "@/components/ui/scroll-area"
+
+function countLines(code: string) {
+  return code.split("\n").length
+}
 
 export default function CodeSnippet({
   children,
@@ -25,13 +32,29 @@ export default function CodeSnippet({
   }
 
   return (
-    <div className="rounded-lg overflow-hidden border border-zinc-800 break-all">
-      <div className="bg-[#121212] text-white flex justify-between px-2 pl-4 py-2">
-        <pre className="text-sm flex items-center">
-          <code className="text-white whitespace-pre-wrap">{children}</code>
-        </pre>
+    <ScrollArea
+      className={cn(countLines(children?.toString() || "") > 9 && "h-[400px]")}
+    >
+      <div className="relative">
+        <ShikiHighlighter
+          addDefaultStyles={false}
+          language="jsx"
+          showLanguage={false}
+          theme={{
+            light: "github-dark",
+            dark: "github-light",
+          }}
+          className="w-full text-sm [&>pre]:p-4"
+        >
+          {children?.toString().trim() || ""}
+        </ShikiHighlighter>
 
-        <Button variant="ghost" size="icon" onClick={handleCopy}>
+        <Button
+          variant="secondary"
+          size="icon"
+          onClick={handleCopy}
+          className="absolute z-10 top-2 right-2"
+        >
           {copied ? (
             <Check className="size-3" />
           ) : (
@@ -39,6 +62,6 @@ export default function CodeSnippet({
           )}
         </Button>
       </div>
-    </div>
+    </ScrollArea>
   )
 }
