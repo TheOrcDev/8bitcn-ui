@@ -171,6 +171,11 @@ const components = [
     url: "/docs/components/textarea",
   },
   {
+    title: "Toast",
+    url: "/docs/components/toast",
+    new: true,
+  },
+  {
     title: "Toggle",
     url: "/docs/components/toggle",
   },

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "8bit-toast",
+  "type": "registry:component",
+  "title": "8-bit Toast",
+  "description": "A simple 8-bit toast component",
+  "registryDependencies": [
+    "sonner"
+  ],
+  "files": [
+    {
+      "path": "components/ui/8bit/toast.tsx",
+      "content": "\"use client\"\n\nimport React from \"react\"\nimport { Press_Start_2P } from \"next/font/google\"\nimport { toast as sonnerToast } from \"sonner\"\n\nexport function toast(toast: string) {\n  return sonnerToast.custom((id) => <Toast id={id} title={toast} />)\n}\n\nconst pressStart = Press_Start_2P({\n  weight: [\"400\"],\n  subsets: [\"latin\"],\n})\n\ninterface ToastProps {\n  id: string | number\n  title: string\n}\n\nfunction Toast(props: ToastProps) {\n  const { title } = props\n\n  return (\n    <div className={`relative ${pressStart.className}`}>\n      <div className=\"flex rounded-lg bg-background shadow-lg ring-1 ring-black/5 w-full md:max-w-[364px] items-center p-4\">\n        <div className=\"flex flex-1 items-center\">\n          <div className=\"w-full\">\n            <p className=\"text-sm font-medium\">{title}</p>\n          </div>\n        </div>\n      </div>\n\n      <div className=\"absolute -top-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-ring\" />\n      <div className=\"absolute -top-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-ring\" />\n      <div className=\"absolute -bottom-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-ring\" />\n      <div className=\"absolute -bottom-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-ring\" />\n      <div className=\"absolute top-0 left-0 size-1.5 bg-foreground dark:bg-ring\" />\n      <div className=\"absolute top-0 right-0 size-1.5 bg-foreground dark:bg-ring\" />\n      <div className=\"absolute bottom-0 left-0 size-1.5 bg-foreground dark:bg-ring\" />\n      <div className=\"absolute bottom-0 right-0 size-1.5 bg-foreground dark:bg-ring\" />\n      <div className=\"absolute top-1 -left-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring\" />\n      <div className=\"absolute bottom-1 -left-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring\" />\n      <div className=\"absolute top-1 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring\" />\n      <div className=\"absolute bottom-1 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring\" />\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/toast.tsx"
+    }
+  ]
+}
