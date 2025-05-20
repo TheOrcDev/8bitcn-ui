@@ -2,8 +2,8 @@
 
 import { useState } from "react"
 import { Check, Clipboard } from "lucide-react"
-import { toast } from "sonner"
 
+import { toast } from "@/components/ui/8bit/toast"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
@@ -22,7 +22,7 @@ export default function InstallationCommands({
   const handleCopy = () => {
     navigator.clipboard.writeText(command)
     setCopied(true)
-    toast.success("Command copied to clipboard")
+    toast("Command copied to clipboard")
 
     setTimeout(() => {
       setCopied(false)
