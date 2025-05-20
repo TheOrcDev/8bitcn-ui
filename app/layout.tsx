@@ -4,9 +4,9 @@ import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 
 import { Analytics } from "@vercel/analytics/react"
-import { Toaster } from "sonner"
 
 import { sharedMetaData } from "@/lib/metadata"
+import { Toaster } from "@/components/ui/sonner"
 import { ScreenSize } from "@/components/screen-size"
 import SiteFooter from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
