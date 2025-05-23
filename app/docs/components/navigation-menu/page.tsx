@@ -10,8 +10,8 @@ import { OpenInV0Button } from "../open-in-v0-button"
 import NavigationMenuDemo from "./demo"
 
 export const metadata: Metadata = {
-  title: "8-bit Label",
-  description: "Displays an 8-bit label component.",
+  title: "8-bit Navigation Menu",
+  description: "Displays an 8-bit navigation menu component.",
   openGraph: {
     images: labelMetaData,
   },
@@ -68,7 +68,7 @@ export default function NavigationMenuPage() {
   NavigationMenuList,
   NavigationMenuTrigger,
   NavigationMenuViewport,
-} from "@/components/ui/navigation-menu"
+from "@/components/ui/8bit/navigation-menu"
 `}</CodeSnippet>
 
       <CodeSnippet>{`<NavigationMenu>

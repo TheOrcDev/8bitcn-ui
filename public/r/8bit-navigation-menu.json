@@ -5,7 +5,7 @@
   "title": "8-bit Navigation Menu",
   "description": "A simple 8-bit navigation menu component",
   "registryDependencies": [
-    "sidebar"
+    "navigation-menu"
   ],
   "files": [
     {

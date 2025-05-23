@@ -775,7 +775,7 @@
       "type": "registry:component",
       "title": "8-bit Navigation Menu",
       "description": "A simple 8-bit navigation menu component",
-      "registryDependencies": ["sidebar"],
+      "registryDependencies": ["navigation-menu"],
       "files": [
         {
           "path": "components/ui/8bit/navigation-menu.tsx",
