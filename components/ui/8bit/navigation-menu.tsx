@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Press_Start_2P } from "next/font/google"
+import { Indicator, Root, Viewport } from "@radix-ui/react-navigation-menu"
 import { cva, VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
@@ -11,7 +12,6 @@ import {
   NavigationMenuLink as ShadcnNavigationMenuLink,
   NavigationMenuList as ShadcnNavigationMenuList,
   NavigationMenuTrigger as ShadcnNavigationMenuTrigger,
-  NavigationMenuViewport as ShadcnNavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
 
 export { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
@@ -44,13 +44,26 @@ export interface BitNavigationMenuProps
 function NavigationMenu({
   className,
   font,
+  children,
+  viewport = true,
   ...props
-}: React.ComponentProps<typeof ShadcnNavigationMenu> & FontVariantProps) {
+}: React.ComponentProps<typeof Root> & {
+  viewport?: boolean
+} & FontVariantProps) {
   return (
-    <ShadcnNavigationMenu
-      className={cn(font !== "normal" && pressStart.className, className)}
+    <Root
+      data-slot="navigation-menu"
+      data-viewport={viewport}
+      className={cn(
+        "group/navigation-menu relative flex max-w-max flex-1 items-center justify-center",
+        font !== "normal" && pressStart.className,
+        className
+      )}
       {...props}
-    />
+    >
+      {children}
+      {viewport && <NavigationMenuViewport />}
+    </Root>
   )
 }
 
@@ -120,13 +133,24 @@ function NavigationMenuViewport({
   className,
   font,
   ...props
-}: React.ComponentProps<typeof ShadcnNavigationMenuViewport> &
-  FontVariantProps) {
+}: React.ComponentProps<typeof Viewport> & FontVariantProps) {
   return (
-    <ShadcnNavigationMenuViewport
-      className={cn(font !== "normal" && pressStart.className, className)}
-      {...props}
-    />
+    <div
+      className={cn(
+        "absolute top-full left-0 isolate z-50 flex justify-center"
+      )}
+    >
+      <Viewport
+        data-slot="navigation-menu-viewport"
+        className={cn(
+          "origin-top-center bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 relative mt-3 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border shadow md:w-[var(--radix-navigation-menu-viewport-width)]",
+          font !== "normal" && pressStart.className,
+          "shadow-border",
+          className
+        )}
+        {...props}
+      />
+    </div>
   )
 }
 
@@ -150,10 +174,17 @@ function NavigationMenuIndicator({
 }: React.ComponentProps<typeof ShadcnNavigationMenuIndicator> &
   FontVariantProps) {
   return (
-    <ShadcnNavigationMenuIndicator
-      className={cn(font !== "normal" && pressStart.className, className)}
+    <Indicator
+      data-slot="navigation-menu-indicator"
+      className={cn(
+        "data-[state=visible]:animate-in data-[state=hidden]:fade-out data-[state=visible]:fade-in top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden",
+        font !== "normal" && pressStart.className,
+        className
+      )}
       {...props}
-    />
+    >
+      <div className="bg-foreground dark:bg-ring relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm shadow-md" />
+    </Indicator>
   )
 }
 

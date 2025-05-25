@@ -68,7 +68,7 @@ export default function NavigationMenuPage() {
   NavigationMenuList,
   NavigationMenuTrigger,
   NavigationMenuViewport,
-from "@/components/ui/8bit/navigation-menu"
+} from "@/components/ui/8bit/navigation-menu"
 `}</CodeSnippet>
 
       <CodeSnippet>{`<NavigationMenu>

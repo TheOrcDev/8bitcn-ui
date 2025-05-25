@@ -36,7 +36,8 @@ const components: { title: string; href: string; description: string }[] = [
   {
     title: "Scroll-area",
     href: "/docs/components/scroll-area",
-    description: "Visually or semantically separates content.",
+    description:
+      "Augments native scroll functionality for custom, cross-browser styling.",
   },
   {
     title: "Tabs",
@@ -67,7 +68,7 @@ export default function NavigationMenuDemo() {
                     href="/"
                   >
                     <div className="mt-4 mb-2 text-lg font-medium">
-                      shadcn/ui
+                      8bitcn/ui
                     </div>
                     <p className="text-muted-foreground text-sm leading-tight">
                       Beautifully designed components built with Tailwind CSS.
@@ -75,14 +76,14 @@ export default function NavigationMenuDemo() {
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
+              <ListItem href="/docs" title="Installation">
                 How to install dependencies and structure your app.
               </ListItem>
-              <ListItem href="/docs/components/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
+              <ListItem href="/docs/components/accordion" title="Components">
+                Re-usable components built using Radix UI and Tailwind CSS.
+              </ListItem>
+              <ListItem href="/blocks" title="Building Blocks">
+                Building Retro Blocks for the Web
               </ListItem>
             </ul>
           </NavigationMenuContent>
