@@ -120,3 +120,348 @@
     @apply bg-background text-foreground;
   }
 }
+
+.theme-default {
+  --radius: 0rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.795 0.184 86.047);
+  --primary-foreground: oklch(0.421 0.095 57.708);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.795 0.184 86.047);
+  --chart-1: oklch(0.795 0.184 86.047);
+  --chart-2: oklch(0.421 0.095 57.708);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-primary: oklch(0.795 0.184 86.047);
+  --sidebar-primary-foreground: oklch(0.421 0.095 57.708);
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar-ring: oklch(0.795 0.184 86.047);
+
+  @variant dark {
+    --background: oklch(0.141 0.005 285.823);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.21 0.006 285.885);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.21 0.006 285.885);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.795 0.184 86.047);
+    --primary-foreground: oklch(0.421 0.095 57.708);
+    --secondary: oklch(0.274 0.006 286.033);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.274 0.006 286.033);
+    --muted-foreground: oklch(0.705 0.015 286.067);
+    --accent: oklch(0.274 0.006 286.033);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.554 0.135 66.442);
+    --chart-1: oklch(0.795 0.184 86.047);
+    --chart-2: oklch(0.421 0.095 57.708);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.21 0.006 285.885);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.795 0.184 86.047);
+    --sidebar-primary-foreground: oklch(0.421 0.095 57.708);
+    --sidebar-accent: oklch(0.274 0.006 286.033);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.554 0.135 66.442);
+  }
+}
+
+.theme-sega {
+  --radius: 0rem;
+  --primary: #0055a4; /* Sega's iconic blue from branding and Sonic */
+  --primary-foreground: #d1ddeb; /* Light gray-blue for text contrast */
+  --background: #9cc5ea; /* Dark gray for Genesis's moody backgrounds */
+  --foreground: #000040; /* Light gray-blue for readability */
+  --card: #9cc5ea; /* Matches background for cohesive cards */
+  --card-foreground: #000040; /* Light gray-blue for card text */
+  --popover: #9cc5ea; /* Dark gray for popovers */
+  --popover-foreground: #d1ddeb; /* Light gray-blue for popover text */
+  --secondary: #0055a4; /* Mid-tone blue for secondary elements */
+  --secondary-foreground: #d1ddeb; /* Light gray-blue for contrast */
+  --muted: #000040; /* Mid-gray for muted elements */
+  --muted-foreground: #5050b0; /* Lighter gray-blue for muted text */
+  --accent: #5050b0; /* Vibrant red from Genesis sprites (e.g., Sonic's shoes) */
+  --accent-foreground: #ffffff; /* White for accent text */
+  --destructive: #c0392b; /* Darker red for destructive actions */
+  --border: #0055a4; /* Mid-gray for borders */
+  --input: #0055a4; /* Mid-gray for input fields */
+  --ring: #0055a4; /* Sega blue for focus rings */
+  --chart-1: #0055a4; /* Green from Genesis games (e.g., Green Hill Zone) */
+  --chart-2: #043b6d; /* Darker green for chart contrast */
+  --chart-3: #749ac3; /* Light blue for charts */
+  --chart-4: #4578af; /* Mid-blue for charts */
+  --chart-5: #17569b; /* Sega blue for charts */
+  --sidebar: #2a2a2a; /* Dark gray for sidebar */
+  --sidebar-foreground: #d1ddeb; /* Light gray-blue for sidebar text */
+  --sidebar-primary: #17569b; /* Sega blue for sidebar primary elements */
+  --sidebar-primary-foreground: #d1ddeb; /* Light gray-blue for sidebar text */
+  --sidebar-accent: #e60000; /* Red for sidebar accents */
+  --sidebar-accent-foreground: #ffffff; /* White for sidebar accent text */
+  --sidebar-border: #4a4a4a; /* Mid-gray for sidebar borders */
+  --sidebar-ring: #17569b; /* Sega blue for sidebar focus rings */
+
+  @variant dark {
+    --primary: #0055a4; /* Sega blue remains primary */
+    --primary-foreground: #d1ddeb; /* Light gray-blue for contrast */
+    --background: #000040; /* Darker gray for deeper contrast */
+    --foreground: #d1ddeb; /* Light gray-blue for readability */
+    --card: #000040; /* Matches darker background */
+    --card-foreground: #d1ddeb; /* Light gray-blue for card text */
+    --popover: #000040; /* Darker gray for popovers */
+    --popover-foreground: #d1ddeb; /* Light gray-blue for popover text */
+    --secondary: #0055a4; /* Darker blue for secondary elements */
+    --secondary-foreground: #d1ddeb; /* Light gray-blue for contrast */
+    --muted: #0055a4; /* Darker gray for muted elements */
+    --muted-foreground: #5050b0; /* Lighter gray-blue for muted text */
+    --accent: #5050b0; /* Slightly darker red for accents */
+    --accent-foreground: #ffffff; /* White for accent text */
+    --destructive: #a63024; /* Darker destructive red */
+    --border: #0055a4; /* Darker gray for borders */
+    --input: #0055a4; /* Darker gray for inputs */
+    --ring: #0055a4; /* Sega blue for focus rings */
+    --chart-1: #0055a4; /* Darker green for charts */
+    --chart-2: #043b6d; /* Even darker green for contrast */
+    --chart-3: #5050b0; /* Darker light blue for charts */
+    --chart-4: #2a4d7a; /* Darker mid-blue for charts */
+    --chart-5: #17569b; /* Sega blue for charts */
+    --sidebar: #1a1a1a; /* Darker gray for sidebar */
+    --sidebar-foreground: #d1ddeb; /* Light gray-blue for sidebar text */
+    --sidebar-primary: #17569b; /* Sega blue for sidebar primary */
+    --sidebar-primary-foreground: #d1ddeb; /* Light gray-blue for sidebar text */
+    --sidebar-accent: #5050b0; /* Darker red for sidebar accents */
+    --sidebar-accent-foreground: #ffffff; /* White for sidebar accent text */
+    --sidebar-border: #0055a4; /* Darker gray for sidebar borders */
+    --sidebar-ring: #17569b; /* Sega blue for sidebar focus rings */
+  }
+}
+
+.theme-snes {
+  --radius: 0rem;
+  --primary: #104cb0; /* SNES blue, inspired by Super Mario World’s UI */
+  --primary-foreground: #000040; /* Dark blue for text contrast */
+  --background: #d8d8d8; /* Light gray for a bright 8-bit light mode, inspired by SNES title screens */
+  --foreground: #000040; /* Dark blue for readability */
+  --card: #d8d8d8; /* Matches light background for cohesive cards */
+  --card-foreground: #000040; /* Dark blue for card text */
+  --popover: #d8d8d8; /* Light gray for popovers */
+  --popover-foreground: #000040; /* Dark blue for popover text */
+  --secondary: #5088f8; /* Lighter blue from SNES palette for secondary elements */
+  --secondary-foreground: #000040; /* Dark blue for contrast */
+  --muted: #a0a0a0; /* Mid-gray for muted elements, from SNES palette */
+  --muted-foreground: #304080; /* Darker blue for muted text */
+  --accent: #f80030; /* Bright red from SNES sprites (e.g., Mario’s cap) */
+  --accent-foreground: #ffffff; /* White for accent text */
+  --destructive: #a00020; /* Darker red for destructive actions */
+  --border: #a0a0a0; /* Mid-gray for borders */
+  --input: #a0a0a0; /* Mid-gray for input fields */
+  --ring: #104cb0; /* SNES blue for focus rings, fixed */
+  --chart-1: #00a810; /* Bright green from SNES games (e.g., Yoshi’s Island) */
+  --chart-2: #005008; /* Darker green for chart contrast */
+  --chart-3: #5088f8; /* Light blue for charts */
+  --chart-4: #304080; /* Darker blue for charts */
+  --chart-5: #104cb0; /* SNES blue for charts */
+  --sidebar: #d8d8d8; /* Light gray for sidebar */
+  --sidebar-foreground: #000040; /* Dark blue for sidebar text */
+  --sidebar-primary: #104cb0; /* SNES blue for sidebar primary elements */
+  --sidebar-primary-foreground: #000040; /* Dark blue for sidebar text */
+  --sidebar-accent: #f80030; /* Bright red for sidebar accents */
+  --sidebar-accent-foreground: #ffffff; /* White for sidebar accent text */
+  --sidebar-border: #a0a0a0; /* Mid-gray for sidebar borders */
+  --sidebar-ring: #104cb0; /* SNES blue for sidebar focus rings, fixed */
+
+  @variant dark {
+    --primary: #104cb0; /* SNES blue remains primary */
+    --primary-foreground: #d8d8f8; /* Light blue-gray for contrast */
+    --background: #303030; /* Dark gray for 8-bit dark mode, inspired by SNES game backgrounds */
+    --foreground: #d8d8f8; /* Light blue-gray for readability */
+    --card: #303030; /* Matches darker background */
+    --card-foreground: #d8d8f8; /* Light blue-gray for card text */
+    --popover: #303030; /* Dark gray for popovers */
+    --popover-foreground: #d8d8f8; /* Light blue-gray for popover text */
+    --secondary: #304080; /* Darker blue for secondary elements */
+    --secondary-foreground: #d8d8f8; /* Light blue-gray for contrast */
+    --muted: #585858; /* Darker gray for muted elements */
+    --muted-foreground: #a0a0a0; /* Mid-gray for muted text */
+    --accent: #a00020; /* Darker red for accents */
+    --accent-foreground: #ffffff; /* White for accent text */
+    --destructive: #780018; /* Darker destructive red */
+    --border: #585858; /* Darker gray for borders */
+    --input: #585858; /* Darker gray for inputs */
+    --ring: #104cb0; /* SNES blue for focus rings, fixed */
+    --chart-1: #008008; /* Darker green for charts */
+    --chart-2: #004008; /* Even darker green for contrast */
+    --chart-3: #5088f8; /* Light blue for charts */
+    --chart-4: #304080; /* Darker blue for charts */
+    --chart-5: #104cb0; /* SNES blue for charts */
+    --sidebar: #303030; /* Dark gray for sidebar */
+    --sidebar-foreground: #d8d8f8; /* Light blue-gray for sidebar text */
+    --sidebar-primary: #104cb0; /* SNES blue for sidebar primary */
+    --sidebar-primary-foreground: #d8d8f8; /* Light blue-gray for sidebar text */
+    --sidebar-accent: #a00020; /* Darker red for sidebar accents */
+    --sidebar-accent-foreground: #ffffff; /* White for sidebar accent text */
+    --sidebar-border: #585858; /* Darker gray for sidebar borders */
+    --sidebar-ring: #104cb0; /* SNES blue for sidebar focus rings, fixed */
+  }
+}
+
+.theme-gameboy {
+  --radius: 0rem;
+  --primary: #8bac0f;
+  --primary-foreground: #0f380f;
+  --background: #57c657;
+  --foreground: #0f380f;
+  --card: #57c657;
+  --card-foreground: #0f380f;
+  --popover: #57c657;
+  --popover-foreground: #0f380f;
+  --secondary: #8bac0f;
+  --secondary-foreground: #0f380f;
+  --muted: #8bac0f;
+  --muted-foreground: #0f380f;
+  --accent: #076607;
+  --accent-foreground: #9bbc0f;
+  --destructive: #a80000;
+  --border: #0a8e0a;
+  --input: #0a8e0a;
+  --ring: #9bbc0f;
+  --chart-1: #0a8e0a;
+  --chart-2: #055005;
+  --chart-3: #0a8e0a;
+  --chart-4: #0a8e0a;
+  --chart-5: #0a8e0a;
+  --sidebar: #57c657;
+  --sidebar-foreground: #0f380f;
+  --sidebar-primary: #9bbc0f;
+  --sidebar-primary-foreground: #0f380f;
+  --sidebar-accent: #8bac0f;
+  --sidebar-accent-foreground: #0f380f;
+  --sidebar-border: #0a8e0a;
+  --sidebar-ring: #9bbc0f;
+
+  @variant dark {
+    --primary: #8bac0f;
+    --primary-foreground: #0f380f;
+    --background: #0f380f;
+    --foreground: #9bbc0f;
+    --card: #0f380f;
+    --card-foreground: #9bbc0f;
+    --popover: #0f380f;
+    --popover-foreground: #9bbc0f;
+    --secondary: #1a4d1a;
+    --secondary-foreground: #9bbc0f;
+    --muted: #1a4d1a;
+    --muted-foreground: #8bac0f;
+    --accent: #0a8e0a;
+    --accent-foreground: #9bbc0f;
+    --destructive: #a80000;
+    --border: #0a8e0a;
+    --input: #0a8e0a;
+    --ring: #9bbc0f;
+    --chart-1: #0a8e0a;
+    --chart-2: #055005;
+    --chart-3: #0a8e0a;
+    --chart-4: #0a8e0a;
+    --chart-5: #0a8e0a;
+    --sidebar: #0f380f;
+    --sidebar-foreground: #9bbc0f;
+    --sidebar-primary: #0a8e0a;
+    --sidebar-primary-foreground: #9bbc0f;
+    --sidebar-accent: #1a4d1a;
+    --sidebar-accent-foreground: #9bbc0f;
+    --sidebar-border: #0a8e0a;
+    --sidebar-ring: #9bbc0f;
+  }
+}
+
+.theme-atari {
+  --radius: 0rem;
+  --primary: #1c00a4; /* Atari 2600 blue, inspired by branding and games like Space Invaders */
+  --primary-foreground: #000000; /* Black for text contrast */
+  --background: #d4d4d4; /* Light gray for a bright 8-bit light mode, inspired by Atari game UIs */
+  --foreground: #000000; /* Black for readability */
+  --card: #d4d4d4; /* Matches light background for cohesive cards */
+  --card-foreground: #000000; /* Black for card text */
+  --popover: #d4d4d4; /* Light gray for popovers */
+  --popover-foreground: #000000; /* Black for popover text */
+  --secondary: #5858fc; /* Lighter blue from Atari 2600 palette for secondary elements */
+  --secondary-foreground: #000000; /* Black for contrast */
+  --muted: #a0a0a0; /* Mid-gray for muted elements, from Atari palette */
+  --muted-foreground: #2c2c54; /* Dark blue-gray for muted text */
+  --accent: #fc0000; /* Bright red from Atari sprites (e.g., Pitfall!’s enemies) */
+  --accent-foreground: #ffffff; /* White for accent text */
+  --destructive: #a40000; /* Darker red for destructive actions */
+  --border: #a0a0a0; /* Mid-gray for borders */
+  --input: #a0a0a0; /* Mid-gray for input fields */
+  --ring: #1c00a4; /* Atari blue for focus rings, fixed */
+  --chart-1: #00a400; /* Bright green from Atari games (e.g., Pitfall!’s jungle) */
+  --chart-2: #005400; /* Darker green for chart contrast */
+  --chart-3: #5858fc; /* Light blue for charts */
+  --chart-4: #2c2c54; /* Darker blue for charts */
+  --chart-5: #1c00a4; /* Atari blue for charts */
+  --sidebar: #d4d4d4; /* Light gray for sidebar */
+  --sidebar-foreground: #000000; /* Black for sidebar text */
+  --sidebar-primary: #1c00a4; /* Atari blue for sidebar primary elements */
+  --sidebar-primary-foreground: #000000; /* Black for sidebar text */
+  --sidebar-accent: #fc0000; /* Bright red for sidebar accents */
+  --sidebar-accent-foreground: #ffffff; /* White for sidebar accent text */
+  --sidebar-border: #a0a0a0; /* Mid-gray for sidebar borders */
+  --sidebar-ring: #1c00a4; /* Atari blue for sidebar focus rings, fixed */
+
+  @variant dark {
+    --primary: #1c00a4; /* Atari blue remains primary */
+    --primary-foreground: #d4d4d4; /* Light gray for contrast */
+    --background: #2c2c2c; /* Dark gray for 8-bit dark mode, inspired by Atari game backgrounds */
+    --foreground: #d4d4d4; /* Light gray for readability */
+    --card: #2c2c2c; /* Matches darker background */
+    --card-foreground: #d4d4d4; /* Light gray for card text */
+    --popover: #2c2c2c; /* Dark gray for popovers */
+    --popover-foreground: #d4d4d4; /* Light gray for popover text */
+    --secondary: #2c2c54; /* Darker blue for secondary elements */
+    --secondary-foreground: #d4d4d4; /* Light gray for contrast */
+    --muted: #585858; /* Darker gray for muted elements */
+    --muted-foreground: #a0a0a0; /* Mid-gray for muted text */
+    --accent: #a40000; /* Darker red for accents */
+    --accent-foreground: #ffffff; /* White for accent text */
+    --destructive: #7c0000; /* Darker destructive red */
+    --border: #585858; /* Darker gray for borders */
+    --input: #585858; /* Darker gray for inputs */
+    --ring: #1c00a4; /* Atari blue for focus rings, fixed */
+    --chart-1: #008000; /* Darker green for charts */
+    --chart-2: #004000; /* Even darker green for contrast */
+    --chart-3: #5858fc; /* Light blue for charts */
+    --chart-4: #2c2c54; /* Darker blue for charts */
+    --chart-5: #1c00a4; /* Atari blue for charts */
+    --sidebar: #2c2c2c; /* Dark gray for sidebar */
+    --sidebar-foreground: #d4d4d4; /* Light gray for sidebar text */
+    --sidebar-primary: #1c00a4; /* Atari blue for sidebar primary */
+    --sidebar-primary-foreground: #d4d4d4; /* Light gray for sidebar text */
+    --sidebar-accent: #a40000; /* Darker red for sidebar accents */
+    --sidebar-accent-foreground: #ffffff; /* White for sidebar accent text */
+    --sidebar-border: #585858; /* Darker gray for sidebar borders */
+    --sidebar-ring: #1c00a4; /* Atari blue for sidebar focus rings, fixed */
+  }
+}
