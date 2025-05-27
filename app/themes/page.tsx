@@ -1,11 +1,10 @@
 import { pressStart } from "@/config/fonts"
-import { ActiveThemeProvider } from "@/components/active-theme"
 import ComponentShowcase from "@/components/examples/component-showcase"
 import { ThemeSelector } from "@/components/theme-selector"
 
 export default function Home() {
   return (
-    <ActiveThemeProvider>
+    <>
       <div className="flex flex-col p-4 gap-5 py-10">
         <h1 className={`${pressStart.className} md:text-2xl font-bold`}>
           Add colors. Make it yours.
@@ -20,6 +19,6 @@ export default function Home() {
       <div className="p-5">
         <ComponentShowcase />
       </div>
-    </ActiveThemeProvider>
+    </>
   )
 }

@@ -7,6 +7,7 @@ import {
   useEffect,
   useState,
 } from "react"
+import { usePathname } from "next/navigation"
 
 const COOKIE_NAME = "active_theme"
 const DEFAULT_THEME = "default"
@@ -33,6 +34,12 @@ export function ActiveThemeProvider({
   children: ReactNode
   initialTheme?: string
 }) {
+  const pathname = usePathname()
+
+  useEffect(() => {
+    setActiveTheme(DEFAULT_THEME)
+  }, [pathname])
+
   const [activeTheme, setActiveTheme] = useState<string>(
     () => initialTheme || DEFAULT_THEME
   )
@@ -46,9 +53,6 @@ export function ActiveThemeProvider({
         document.body.classList.remove(className)
       })
     document.body.classList.add(`theme-${activeTheme}`)
-    if (activeTheme.endsWith("-scaled")) {
-      document.body.classList.add("theme-scaled")
-    }
   }, [activeTheme])
 
   return (

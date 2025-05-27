@@ -4,7 +4,13 @@ import { Button } from "@/components/ui/button"
 
 import { useThemeConfig } from "./active-theme"
 
-const themes = ["default", "sega", "nintendo", "gameboy", "atari"]
+const themes = [
+  { name: "default", color: "oklch(0.795 0.184 86.047)" },
+  { name: "sega", color: "#0055a4" },
+  { name: "gameboy", color: "#8bac0f" },
+  { name: "atari", color: "#7a4009" },
+  { name: "nintendo", color: "#104cb0" },
+]
 
 export function ThemeSelector() {
   const { setActiveTheme } = useThemeConfig()
@@ -13,11 +19,12 @@ export function ThemeSelector() {
     <div className="flex gap-2 border-y border-dashed p-5">
       {themes.map((theme) => (
         <Button
-          key={theme}
+          key={theme.name}
           variant={"outline"}
-          onClick={() => setActiveTheme(theme)}
+          onClick={() => setActiveTheme(theme.name)}
+          style={{ backgroundColor: theme.color }}
         >
-          {theme}
+          {theme.name}
         </Button>
       ))}
     </div>
