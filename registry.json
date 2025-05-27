@@ -769,6 +769,20 @@
           "target": "components/ui/8bit/drawer.tsx"
         }
       ]
+    },
+    {
+      "name": "8bit-navigation-menu",
+      "type": "registry:component",
+      "title": "8-bit Navigation Menu",
+      "description": "A simple 8-bit navigation menu component",
+      "registryDependencies": ["navigation-menu"],
+      "files": [
+        {
+          "path": "components/ui/8bit/navigation-menu.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/navigation-menu.tsx"
+        }
+      ]
     }
   ]
 }
