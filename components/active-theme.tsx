@@ -9,10 +9,12 @@ import {
 } from "react"
 import { usePathname } from "next/navigation"
 
-const COOKIE_NAME = "active_theme"
-const DEFAULT_THEME = "default"
+import { Theme } from "@/lib/themes"
 
-function setThemeCookie(theme: string) {
+const COOKIE_NAME = "active_theme"
+const DEFAULT_THEME = Theme.Default
+
+function setThemeCookie(theme: Theme) {
   if (typeof window === "undefined") return
 
   document.cookie = `${COOKIE_NAME}=${theme}; path=/; max-age=31536000; SameSite=Lax; ${
@@ -21,8 +23,8 @@ function setThemeCookie(theme: string) {
 }
 
 type ThemeContextType = {
-  activeTheme: string
-  setActiveTheme: (theme: string) => void
+  activeTheme: Theme
+  setActiveTheme: (theme: Theme) => void
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
@@ -32,7 +34,7 @@ export function ActiveThemeProvider({
   initialTheme,
 }: {
   children: ReactNode
-  initialTheme?: string
+  initialTheme?: Theme
 }) {
   const pathname = usePathname()
 
@@ -40,7 +42,7 @@ export function ActiveThemeProvider({
     setActiveTheme(DEFAULT_THEME)
   }, [pathname])
 
-  const [activeTheme, setActiveTheme] = useState<string>(
+  const [activeTheme, setActiveTheme] = useState<Theme>(
     () => initialTheme || DEFAULT_THEME
   )
 
