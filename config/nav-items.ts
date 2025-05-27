@@ -98,6 +98,7 @@ const components = [
   {
     title: "Navigation Menu",
     url: "/docs/components/navigation-menu",
+    new: true,
   },
   {
     title: "Scroll Area",
