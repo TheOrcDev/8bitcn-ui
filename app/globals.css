@@ -76,7 +76,6 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.795 0.184 86.047);
-  --shadow-border: var(--foreground);
 }
 
 .dark {
@@ -111,7 +110,6 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.554 0.135 66.442);
-  --shadow-border: var(--ring);
 }
 
 @layer base {
@@ -121,12 +119,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-.shadow-border {
-  box-shadow:
-    6px 0px var(--shadow-border),
-    -6px 0px var(--shadow-border),
-    0px 6px var(--shadow-border),
-    0px -6px var(--shadow-border);
 }

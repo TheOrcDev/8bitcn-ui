@@ -1,19 +1,19 @@
 import { Metadata } from "next"
 
-import { labelMetaData } from "@/lib/metadata"
+import { navigationMenuMetaData } from "@/lib/metadata"
 import { Separator } from "@/components/ui/separator"
+import NavigationMenuDemo from "@/components/examples/navigation-menu"
 
 import CodeSnippet from "../code-snippet"
 import CopyCommandButton from "../copy-command-button"
 import InstallationCommands from "../installation-commands"
 import { OpenInV0Button } from "../open-in-v0-button"
-import NavigationMenuDemo from "./demo"
 
 export const metadata: Metadata = {
   title: "8-bit Navigation Menu",
   description: "Displays an 8-bit navigation menu component.",
   openGraph: {
-    images: labelMetaData,
+    images: navigationMenuMetaData,
   },
 }
 
