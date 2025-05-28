@@ -208,6 +208,10 @@ export const navItems = {
       label: "Blocks",
       href: "/blocks",
     },
+    {
+      label: "Themes",
+      href: "/themes",
+    },
   ],
   navMain: [
     {

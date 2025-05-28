@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react"
 
 import { sharedMetaData } from "@/lib/metadata"
 import { Toaster } from "@/components/ui/sonner"
+import { ActiveThemeProvider } from "@/components/active-theme"
 import { ScreenSize } from "@/components/screen-size"
 import SiteFooter from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
@@ -42,14 +43,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SiteHeader />
-          <div className="flex-1 border-l border-r border-dashed max-w-[1400px] mx-auto w-full">
-            {children}
-          </div>
-          <SiteFooter />
-          <Toaster />
-          <Analytics />
-          {process.env.APP_ENV === "development" && <ScreenSize />}
+          <ActiveThemeProvider>
+            <SiteHeader />
+            <div className="flex-1 border-l border-r border-dashed max-w-[1400px] mx-auto w-full">
+              {children}
+            </div>
+            <SiteFooter />
+            <Toaster />
+            <Analytics />
+            {process.env.APP_ENV === "development" && <ScreenSize />}
+          </ActiveThemeProvider>
         </ThemeProvider>
       </body>
     </html>

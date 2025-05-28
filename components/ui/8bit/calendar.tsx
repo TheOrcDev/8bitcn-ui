@@ -31,7 +31,7 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
   return (
     <div
       className={cn(
-        "flex justify-center relative border-y-6 border-foreground dark:border-ring !p-0",
+        "flex bg-popover justify-center relative border-y-6 border-foreground dark:border-ring !p-0",
         className
       )}
     >

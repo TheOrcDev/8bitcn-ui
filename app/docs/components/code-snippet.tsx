@@ -32,22 +32,11 @@ export default function CodeSnippet({
   }
 
   return (
-    <ScrollArea
-      className={cn(countLines(children?.toString() || "") > 9 && "h-[400px]")}
-    >
-      <div className="relative">
-        <ShikiHighlighter
-          addDefaultStyles={false}
-          language="jsx"
-          showLanguage={false}
-          theme={{
-            light: "github-dark",
-            dark: "github-light",
-          }}
-          className="w-full text-sm [&>pre]:p-4"
-        >
-          {children?.toString().trim() || ""}
-        </ShikiHighlighter>
+    <div className="bg-[#121212] rounded-lg overflow-hidden border border-zinc-800 break-all max-h-[400px] overflow-y-scroll  overflow-x-auto">
+      <div className="text-white flex justify-between px-2 pl-4 py-2">
+        <pre className="text-sm flex items-center">
+          <code className="text-white text-nowrap">{children}</code>
+        </pre>
 
         <Button
           variant="secondary"
