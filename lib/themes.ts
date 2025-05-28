@@ -94,7 +94,7 @@ const themes = [
   --secondary-foreground: oklch(0.9 0.02 260);
   --muted: oklch(0.1 0.1 280);
   --muted-foreground: oklch(0.5 0.2 280);
-  --accent: oklch(0.5 0.2 280);
+  --accent: oklch(0.5 0.2 260);
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.6 0.2 20);
   --border: oklch(0.5 0.2 260);
@@ -127,8 +127,8 @@ const themes = [
     --secondary: oklch(0.5 0.2 260);
     --secondary-foreground: oklch(0.9 0.02 260);
     --muted: oklch(0.5 0.2 260);
-    --muted-foreground: oklch(0.5 0.2 280);
-    --accent: oklch(0.5 0.2 280);
+    --muted-foreground: oklch(0.85 0.1 220);
+    --accent: oklch(0.5 0.2 260);
     --accent-foreground: oklch(1 0 0);
     --destructive: oklch(0.5 0.2 20);
     --border: oklch(0.5 0.2 260);
@@ -340,7 +340,7 @@ const themes = [
     --secondary-foreground: oklch(1 0 0);
     --muted: oklch(0.4 0 0);
     --muted-foreground: oklch(0.7 0 0);
-    --accent: oklch(0.5 0.2 280);
+    --accent: oklch(0.4 0.2 280);
     --accent-foreground: oklch(1 0 0);
     --destructive: oklch(0.4 0.2 10);
     --border: oklch(1 0 0);
