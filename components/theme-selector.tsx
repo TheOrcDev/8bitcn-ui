@@ -27,13 +27,13 @@ export function ThemeSelector() {
 
   return (
     <div className="flex justify-between gap-2 border-y border-dashed p-5">
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         {themes.map((theme) => (
           <Button
             key={theme.name}
             onClick={() => setActiveTheme(theme.name)}
-            className="text-neutral-200"
             style={{ backgroundColor: theme.color }}
+            className={`text-neutral-200 border-2  ${theme.name === activeTheme ? "border-neutral-200" : "border-transparent"}`}
           >
             {theme.name}
           </Button>
