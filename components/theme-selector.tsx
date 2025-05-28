@@ -32,6 +32,7 @@ export function ThemeSelector() {
           <Button
             key={theme.name}
             onClick={() => setActiveTheme(theme.name)}
+            className="text-neutral-200"
             style={{ backgroundColor: theme.color }}
           >
             {theme.name}
@@ -41,7 +42,7 @@ export function ThemeSelector() {
 
       <Dialog>
         <DialogTrigger asChild>
-          <Button>Copy</Button>
+          <Button className="text-neutral-200">Copy</Button>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
