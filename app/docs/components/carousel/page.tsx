@@ -1,17 +1,18 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { carouselMetaData } from "@/lib/metadata"
-import { Separator } from "@/components/ui/separator"
+import { carouselMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { Separator } from "@/components/ui/separator";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 import {
   CarouselDemo,
   CarouselSpacing,
   OrientationVertical,
-} from "./_demos/carousel"
+} from "./_demos/carousel";
 
 export const metadata: Metadata = {
   title: "8-bit Carousel",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: carouselMetaData,
   },
-}
+};
 
 export default function CarouselPage() {
   return (
@@ -173,5 +174,5 @@ export default function CarouselPage() {
 </Carousel>
 `}</CodeSnippet>
     </div>
-  )
+  );
 }

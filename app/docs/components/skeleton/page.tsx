@@ -1,13 +1,14 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { skeletonMetaData } from "@/lib/metadata"
-import { Skeleton } from "@/components/ui/8bit/skeleton"
-import { Separator } from "@/components/ui/separator"
+import { skeletonMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { Skeleton } from "@/components/ui/8bit/skeleton";
+import { Separator } from "@/components/ui/separator";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Skeleton",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: skeletonMetaData,
   },
-}
+};
 
 export default function SkeletonPage() {
   return (
@@ -77,5 +78,5 @@ export default function SkeletonPage() {
 </div>`}
       </CodeSnippet>
     </div>
-  )
+  );
 }

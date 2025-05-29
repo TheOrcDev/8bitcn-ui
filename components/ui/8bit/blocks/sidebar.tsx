@@ -1,5 +1,6 @@
-import { Press_Start_2P } from "next/font/google"
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
+import { Press_Start_2P } from "next/font/google";
+
+import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
 
 import {
   Sidebar,
@@ -10,12 +11,12 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 // Menu items.
 const items = [
@@ -44,7 +45,7 @@ const items = [
     url: "#",
     icon: Settings,
   },
-]
+];
 
 export function AppSidebar() {
   return (
@@ -71,5 +72,5 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>
-  )
+  );
 }

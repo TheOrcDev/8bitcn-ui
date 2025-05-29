@@ -1,7 +1,8 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { dialogMetaData } from "@/lib/metadata"
-import { Button } from "@/components/ui/8bit/button"
+import { dialogMetaData } from "@/lib/metadata";
+
+import { Button } from "@/components/ui/8bit/button";
 import {
   Dialog,
   DialogContent,
@@ -10,22 +11,22 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/8bit/dialog"
-import { Input } from "@/components/ui/8bit/input"
-import { Label } from "@/components/ui/8bit/label"
+} from "@/components/ui/8bit/dialog";
+import { Input } from "@/components/ui/8bit/input";
+import { Label } from "@/components/ui/8bit/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/8bit/select"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/select";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Dialog",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: dialogMetaData,
   },
-}
+};
 
 export default function DialogPage() {
   return (
@@ -154,5 +155,5 @@ export default function DialogPage() {
   </DialogContent>
 </Dialog>`}</CodeSnippet>
     </div>
-  )
+  );
 }

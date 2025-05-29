@@ -1,27 +1,29 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { addDays, format } from "date-fns"
-import { Calendar as CalendarIcon } from "lucide-react"
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/8bit/button"
-import { Calendar } from "@/components/ui/8bit/calendar"
+import { addDays, format } from "date-fns";
+import { Calendar as CalendarIcon } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+
+import { Button } from "@/components/ui/8bit/button";
+import { Calendar } from "@/components/ui/8bit/calendar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/8bit/popover"
+} from "@/components/ui/8bit/popover";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/8bit/select"
+} from "@/components/ui/8bit/select";
 
 export function DatePickerWithPresets() {
-  const [date, setDate] = React.useState<Date>()
+  const [date, setDate] = React.useState<Date>();
 
   return (
     <Popover>
@@ -58,5 +60,5 @@ export function DatePickerWithPresets() {
         </div>
       </PopoverContent>
     </Popover>
-  )
+  );
 }

@@ -1,14 +1,16 @@
-import React from "react"
-import { Metadata } from "next"
+import React from "react";
 
-import { collapsibleMetaData } from "@/lib/metadata"
-import { Separator } from "@/components/ui/separator"
+import { Metadata } from "next";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
-import { CollapsibleDemo } from "./_demo/CollapsibleDemo"
+import { collapsibleMetaData } from "@/lib/metadata";
+
+import { Separator } from "@/components/ui/separator";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
+import { CollapsibleDemo } from "./_demo/CollapsibleDemo";
 
 export const metadata: Metadata = {
   title: "8-bit Collapsible",
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: collapsibleMetaData,
   },
-}
+};
 
 export default function CollapsiblePage() {
   return (
@@ -75,5 +77,5 @@ export default function CollapsiblePage() {
 </Collapsible>
 `}</CodeSnippet>
     </div>
-  )
+  );
 }

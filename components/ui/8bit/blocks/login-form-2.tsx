@@ -1,21 +1,22 @@
-import { Press_Start_2P } from "next/font/google"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/8bit/button"
+import { cn } from "@/lib/utils";
+
+import { Button } from "@/components/ui/8bit/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/8bit/card"
-import { Input } from "@/components/ui/8bit/input"
-import { Label } from "@/components/ui/8bit/label"
+} from "@/components/ui/8bit/card";
+import { Input } from "@/components/ui/8bit/input";
+import { Label } from "@/components/ui/8bit/label";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export function LoginForm({
   className,
@@ -100,5 +101,5 @@ export function LoginForm({
         <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
       </div>
     </div>
-  )
+  );
 }

@@ -1,10 +1,12 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { ChevronsUpDown } from "lucide-react"
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/8bit/button"
+import { ChevronsUpDown } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+
+import { Button } from "@/components/ui/8bit/button";
 import {
   Command,
   CommandEmpty,
@@ -12,12 +14,12 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/8bit/command"
+} from "@/components/ui/8bit/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/8bit/popover"
+} from "@/components/ui/8bit/popover";
 
 const frameworks = [
   {
@@ -40,11 +42,11 @@ const frameworks = [
     value: "astro",
     label: "Astro",
   },
-]
+];
 
 export function ComboBoxExample() {
-  const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+  const [open, setOpen] = React.useState(false);
+  const [value, setValue] = React.useState("");
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -72,8 +74,8 @@ export function ComboBoxExample() {
                   key={framework.value}
                   value={framework.value}
                   onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue)
-                    setOpen(false)
+                    setValue(currentValue === value ? "" : currentValue);
+                    setOpen(false);
                   }}
                 >
                   <svg
@@ -163,5 +165,5 @@ export function ComboBoxExample() {
         </Command>
       </PopoverContent>
     </Popover>
-  )
+  );
 }

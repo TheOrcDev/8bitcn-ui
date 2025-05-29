@@ -1,15 +1,15 @@
 "use client";
 
-import * as CollapsiblePrimitive from "@radix-ui/react-collapsible";
-import { cn } from "@/lib/utils";
+import { Press_Start_2P } from "next/font/google";
 
+import * as CollapsiblePrimitive from "@radix-ui/react-collapsible";
 import {
   Collapsible as ShadcnCollapsible,
   CollapsibleContent as ShadcnCollapsibleContent,
   CollapsibleTrigger as ShadcnCollapsibleTrigger,
 } from "@radix-ui/react-collapsible";
 
-import { Press_Start_2P } from "next/font/google";
+import { cn } from "@/lib/utils";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],

@@ -1,7 +1,8 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { tabsMetaData } from "@/lib/metadata"
-import { Button } from "@/components/ui/8bit/button"
+import { tabsMetaData } from "@/lib/metadata";
+
+import { Button } from "@/components/ui/8bit/button";
 import {
   Card,
   CardContent,
@@ -9,21 +10,21 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/8bit/card"
-import { Input } from "@/components/ui/8bit/input"
-import { Label } from "@/components/ui/8bit/label"
+} from "@/components/ui/8bit/card";
+import { Input } from "@/components/ui/8bit/input";
+import { Label } from "@/components/ui/8bit/label";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/components/ui/8bit/tabs"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/tabs";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Tabs",
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: tabsMetaData,
   },
-}
+};
 
 export default function TabsPage() {
   return (
@@ -190,5 +191,5 @@ export default function TabsPage() {
 </Tabs>`}
       </CodeSnippet>
     </div>
-  )
+  );
 }

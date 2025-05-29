@@ -1,8 +1,10 @@
-import Link from "next/link"
+import Link from "next/link";
 
-import { pressStart } from "@/config/fonts"
-import { Button } from "@/components/ui/8bit/button"
-import ComponentShowcase from "@/components/examples/component-showcase"
+import { pressStart } from "@/config/fonts";
+
+import { Button } from "@/components/ui/8bit/button";
+
+import ComponentShowcase from "@/components/examples/component-showcase";
 
 export default function Home() {
   return (
@@ -22,5 +24,5 @@ export default function Home() {
 
       <ComponentShowcase />
     </div>
-  )
+  );
 }

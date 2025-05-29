@@ -1,16 +1,15 @@
 {
   "endOfLine": "lf",
-  "semi": false,
+  "semi": true,
   "singleQuote": false,
   "tabWidth": 2,
   "trailingComma": "es5",
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
   "importOrder": [
     "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)",
     "<THIRD_PARTY_MODULES>",
-    "",
     "^@workspace/(.*)$",
-    "",
     "^types$",
     "^@/types/(.*)$",
     "^@/config/(.*)$",
@@ -22,14 +21,8 @@
     "^@/styles/(.*)$",
     "^@/app/(.*)$",
     "^@/www/(.*)$",
-    "",
     "^[./]"
   ],
-  "importOrderSeparation": false,
-  "importOrderSortSpecifiers": true,
-  "importOrderBuiltinModulesToTop": true,
-  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
-  "importOrderMergeDuplicateImports": true,
-  "importOrderCombineTypeAndValueImports": true,
-  "plugins": ["@ianvs/prettier-plugin-sort-imports"]
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

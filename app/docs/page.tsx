@@ -1,14 +1,18 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/8bit/alert"
-import { Separator } from "@/components/ui/separator"
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from "@/components/ui/8bit/alert";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "./components/code-snippet"
+import CodeSnippet from "./components/code-snippet";
 
 export const metadata: Metadata = {
   title: "Installation",
   description: "How to install dependencies and structure your app.",
-}
+};
 
 export default function Page() {
   return (
@@ -68,5 +72,5 @@ export default function Home() {
 }`}</CodeSnippet>
       </div>
     </div>
-  )
+  );
 }

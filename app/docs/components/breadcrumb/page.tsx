@@ -1,9 +1,10 @@
-import { Metadata } from "next"
-import { Press_Start_2P } from "next/font/google"
-import Link from "next/link"
+import { Metadata } from "next";
+import { Press_Start_2P } from "next/font/google";
+import Link from "next/link";
 
-import { breadcrumbMetaData } from "@/lib/metadata"
-import { cn } from "@/lib/utils"
+import { breadcrumbMetaData } from "@/lib/metadata";
+import { cn } from "@/lib/utils";
+
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
@@ -12,24 +13,24 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/8bit/breadcrumb"
+} from "@/components/ui/8bit/breadcrumb";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/8bit/dropdown-menu"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/dropdown-menu";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const metadata: Metadata = {
   title: "8-bit Breadcrumb",
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: breadcrumbMetaData,
   },
-}
+};
 
 const ChevronDown = () => {
   return (
@@ -110,8 +111,8 @@ const ChevronDown = () => {
         transform="rotate(90 168 112)"
       ></rect>
     </svg>
-  )
-}
+  );
+};
 
 export default function BreadcrumbPageNext() {
   return (
@@ -485,5 +486,5 @@ export default function BreadcrumbPageNext() {
   </BreadcrumbList>
 </Breadcrumb>`}</CodeSnippet>
     </div>
-  )
+  );
 }

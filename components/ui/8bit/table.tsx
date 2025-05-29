@@ -1,10 +1,13 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Press_Start_2P } from "next/font/google"
-import { cva, VariantProps } from "class-variance-authority"
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
+import { Press_Start_2P } from "next/font/google";
+
+import { VariantProps, cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
 import {
   Table as ShadcnTable,
   TableBody as ShadcnTableBody,
@@ -14,12 +17,12 @@ import {
   TableHead as ShadcnTableHead,
   TableHeader as ShadcnTableHeader,
   TableRow as ShadcnTableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const tableVariants = cva("", {
   variants: {
@@ -36,7 +39,7 @@ export const tableVariants = cva("", {
     font: "retro",
     variant: "default",
   },
-})
+});
 
 function Table({
   className,
@@ -44,8 +47,8 @@ function Table({
   variant,
   ...props
 }: React.ComponentProps<"table"> & {
-  font?: VariantProps<typeof tableVariants>["font"]
-  variant?: VariantProps<typeof tableVariants>["variant"]
+  font?: VariantProps<typeof tableVariants>["font"];
+  variant?: VariantProps<typeof tableVariants>["variant"];
 }) {
   return (
     <div
@@ -63,7 +66,7 @@ function Table({
         />
       )}
     </div>
-  )
+  );
 }
 
 function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
@@ -72,15 +75,15 @@ function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
       className={cn(className, "border-b-4 border-foreground dark:border-ring")}
       {...props}
     />
-  )
+  );
 }
 
 function TableBody({ className, ...props }: React.ComponentProps<"tbody">) {
-  return <ShadcnTableBody className={cn(className)} {...props} />
+  return <ShadcnTableBody className={cn(className)} {...props} />;
 }
 
 function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
-  return <ShadcnTableFooter className={cn(className)} {...props} />
+  return <ShadcnTableFooter className={cn(className)} {...props} />;
 }
 
 function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
@@ -92,22 +95,22 @@ function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
       )}
       {...props}
     />
-  )
+  );
 }
 
 function TableHead({ className, ...props }: React.ComponentProps<"th">) {
-  return <ShadcnTableHead className={cn(className)} {...props} />
+  return <ShadcnTableHead className={cn(className)} {...props} />;
 }
 
 function TableCell({ className, ...props }: React.ComponentProps<"td">) {
-  return <ShadcnTableCell className={cn(className)} {...props} />
+  return <ShadcnTableCell className={cn(className)} {...props} />;
 }
 
 function TableCaption({
   className,
   ...props
 }: React.ComponentProps<"caption">) {
-  return <ShadcnTableCaption className={cn(className)} {...props} />
+  return <ShadcnTableCaption className={cn(className)} {...props} />;
 }
 
 export {
@@ -119,4 +122,4 @@ export {
   TableRow,
   TableCell,
   TableCaption,
-}
+};

@@ -1,5 +1,6 @@
-import React from "react"
-import Link from "next/link"
+import React from "react";
+
+import Link from "next/link";
 
 export default function SiteFooter() {
   return (
@@ -22,5 +23,5 @@ export default function SiteFooter() {
         </p>
       </div>
     </footer>
-  )
+  );
 }

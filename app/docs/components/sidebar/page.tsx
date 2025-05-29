@@ -1,11 +1,13 @@
-import { Metadata } from "next"
-import { Press_Start_2P } from "next/font/google"
-import Link from "next/link"
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
+import { Metadata } from "next";
+import { Press_Start_2P } from "next/font/google";
+import Link from "next/link";
 
-import { sidebarMetaData } from "@/lib/metadata"
-import { Skeleton } from "@/components/ui/8bit/skeleton"
-import { Separator } from "@/components/ui/separator"
+import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+
+import { sidebarMetaData } from "@/lib/metadata";
+
+import { Skeleton } from "@/components/ui/8bit/skeleton";
+import { Separator } from "@/components/ui/separator";
 import {
   Sidebar,
   SidebarContent,
@@ -16,12 +18,12 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Sidebar",
@@ -29,12 +31,12 @@ export const metadata: Metadata = {
   openGraph: {
     images: sidebarMetaData,
   },
-}
+};
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 // Menu items.
 const items = [
@@ -63,7 +65,7 @@ const items = [
     url: "#",
     icon: Settings,
   },
-]
+];
 
 export default function SidebarPage() {
   return (
@@ -173,5 +175,5 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   )
 }`}</CodeSnippet>
     </div>
-  )
+  );
 }

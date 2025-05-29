@@ -1,19 +1,20 @@
-import { Press_Start_2P } from "next/font/google"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
-import { Skeleton as ShadcnSkeleton } from "@/components/ui/skeleton"
+import { cn } from "@/lib/utils";
+
+import { Skeleton as ShadcnSkeleton } from "@/components/ui/skeleton";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export interface BitSkeletonProp extends React.ComponentProps<"div"> {
-  asChild?: boolean
+  asChild?: boolean;
 }
 
 function Skeleton({ children, ...props }: BitSkeletonProp) {
-  const { className } = props
+  const { className } = props;
 
   return (
     <div className={cn("relative animate-pulse", className)}>
@@ -49,7 +50,7 @@ function Skeleton({ children, ...props }: BitSkeletonProp) {
         <div className="absolute bottom-1 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
       </div>
     </div>
-  )
+  );
 }
 
-export { Skeleton }
+export { Skeleton };

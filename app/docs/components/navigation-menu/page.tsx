@@ -1,13 +1,15 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { navigationMenuMetaData } from "@/lib/metadata"
-import { Separator } from "@/components/ui/separator"
-import NavigationMenuDemo from "@/components/examples/navigation-menu"
+import { navigationMenuMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { Separator } from "@/components/ui/separator";
+
+import NavigationMenuDemo from "@/components/examples/navigation-menu";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Navigation Menu",
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: navigationMenuMetaData,
   },
-}
+};
 
 export default function NavigationMenuPage() {
   return (
@@ -83,5 +85,5 @@ export default function NavigationMenuPage() {
 </NavigationMenu>
 `}</CodeSnippet>
     </div>
-  )
+  );
 }

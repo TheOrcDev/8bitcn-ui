@@ -2,7 +2,7 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "@/components/ui/8bit/resizable"
+} from "@/components/ui/8bit/resizable";
 
 export function ResizableDemo() {
   return (
@@ -32,7 +32,7 @@ export function ResizableDemo() {
         </ResizablePanelGroup>
       </ResizablePanel>
     </ResizablePanelGroup>
-  )
+  );
 }
 
 export function ResizableHandleDemo() {
@@ -53,7 +53,7 @@ export function ResizableHandleDemo() {
         </div>
       </ResizablePanel>
     </ResizablePanelGroup>
-  )
+  );
 }
 
 export function ResizableDemoWithHeader() {
@@ -74,5 +74,5 @@ export function ResizableDemoWithHeader() {
         </div>
       </ResizablePanel>
     </ResizablePanelGroup>
-  )
+  );
 }

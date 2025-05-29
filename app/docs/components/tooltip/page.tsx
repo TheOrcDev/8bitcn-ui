@@ -1,19 +1,20 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { tooltipMetaData } from "@/lib/metadata"
-import { Button } from "@/components/ui/8bit/button"
+import { tooltipMetaData } from "@/lib/metadata";
+
+import { Button } from "@/components/ui/8bit/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/8bit/tooltip"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/tooltip";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Tooltip",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: tooltipMetaData,
   },
-}
+};
 
 export default function TooltipPage() {
   return (
@@ -96,5 +97,5 @@ export default function TooltipPage() {
 </TooltipProvider>`}
       </CodeSnippet>
     </div>
-  )
+  );
 }

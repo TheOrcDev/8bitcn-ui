@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/8bit/collapsible"
+} from "@/components/ui/8bit/collapsible";
 
 export function CollapsibleDemo() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
       <Collapsible
@@ -161,5 +161,5 @@ export function CollapsibleDemo() {
         </CollapsibleContent>
       </Collapsible>
     </div>
-  )
+  );
 }

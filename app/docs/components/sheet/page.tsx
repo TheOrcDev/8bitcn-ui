@@ -1,16 +1,17 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { sheetMetaData } from "@/lib/metadata"
-import { Button } from "@/components/ui/8bit/button"
-import { Input } from "@/components/ui/8bit/input"
-import { Label } from "@/components/ui/8bit/label"
+import { sheetMetaData } from "@/lib/metadata";
+
+import { Button } from "@/components/ui/8bit/button";
+import { Input } from "@/components/ui/8bit/input";
+import { Label } from "@/components/ui/8bit/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/8bit/select"
+} from "@/components/ui/8bit/select";
 import {
   Sheet,
   SheetClose,
@@ -20,13 +21,13 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/8bit/sheet"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/sheet";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Sheet",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: sheetMetaData,
   },
-}
+};
 
 export default function SheetPage() {
   return (
@@ -134,5 +135,5 @@ export default function SheetPage() {
   </SheetContent>
 </Sheet>`}</CodeSnippet>
     </div>
-  )
+  );
 }

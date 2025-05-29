@@ -1,14 +1,15 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { pressStart } from "@/config/fonts"
-import ComponentShowcase from "@/components/examples/component-showcase"
-import { ThemeSelector } from "@/components/theme-selector"
+import { pressStart } from "@/config/fonts";
+
+import ComponentShowcase from "@/components/examples/component-showcase";
+import { ThemeSelector } from "@/components/theme-selector";
 
 export const metadata: Metadata = {
   title: "Themes",
   description:
     "8-bit retro themes to give your designs that nostalgic edge. 👾 Paired with 8-bit components, they're the perfect combo.",
-}
+};
 
 export default function ThemesPage() {
   return (
@@ -28,5 +29,5 @@ export default function ThemesPage() {
         <ComponentShowcase />
       </div>
     </>
-  )
+  );
 }

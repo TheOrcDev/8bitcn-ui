@@ -1,6 +1,7 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { menubarMetaData } from "@/lib/metadata"
+import { menubarMetaData } from "@/lib/metadata";
+
 import {
   Menubar,
   MenubarCheckboxItem,
@@ -15,13 +16,13 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from "@/components/ui/8bit/menubar"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/menubar";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Menubar",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: menubarMetaData,
   },
-}
+};
 
 export default function MenubarPage() {
   return (
@@ -187,5 +188,5 @@ export default function MenubarPage() {
   </MenubarMenu>
 </Menubar>`}</CodeSnippet>
     </div>
-  )
+  );
 }

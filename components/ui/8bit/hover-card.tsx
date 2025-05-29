@@ -1,18 +1,20 @@
-import { Press_Start_2P } from "next/font/google"
-import * as HoverCardPrimitive from "@radix-ui/react-hover-card"
-import { cva, VariantProps } from "class-variance-authority"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
+import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
+import { VariantProps, cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
 import {
   HoverCard as ShadcnHoverCard,
   HoverCardContent as ShadcnHoverCardContent,
   HoverCardTrigger as ShadcnHoverCardTrigger,
-} from "@/components/ui/hover-card"
+} from "@/components/ui/hover-card";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const hoverCardVariants = cva("", {
   variants: {
@@ -24,7 +26,7 @@ export const hoverCardVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-})
+});
 
 export interface BitHoverCardProps
   extends React.ComponentProps<typeof HoverCardPrimitive.Content>,
@@ -33,7 +35,7 @@ export interface BitHoverCardProps
 function HoverCard({
   ...props
 }: React.ComponentProps<typeof HoverCardPrimitive.Root>) {
-  return <ShadcnHoverCard {...props} />
+  return <ShadcnHoverCard {...props} />;
 }
 
 function HoverCardTrigger({
@@ -47,7 +49,7 @@ function HoverCardTrigger({
       asChild={asChild}
       {...props}
     />
-  )
+  );
 }
 
 function HoverCardContent({
@@ -78,7 +80,7 @@ function HoverCardContent({
         aria-hidden="true"
       />
     </ShadcnHoverCardContent>
-  )
+  );
 }
 
-export { HoverCard, HoverCardTrigger, HoverCardContent }
+export { HoverCard, HoverCardTrigger, HoverCardContent };

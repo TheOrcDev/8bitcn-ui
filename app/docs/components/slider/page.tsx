@@ -1,13 +1,14 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { sliderMetaData } from "@/lib/metadata"
-import { Slider } from "@/components/ui/8bit/slider"
-import { Separator } from "@/components/ui/separator"
+import { sliderMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { Slider } from "@/components/ui/8bit/slider";
+import { Separator } from "@/components/ui/separator";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Slider",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: sliderMetaData,
   },
-}
+};
 
 export default function SliderPage() {
   return (
@@ -64,5 +65,5 @@ export default function SliderPage() {
 
       <CodeSnippet>{`<Slider defaultValue={[70]} max={100} step={1} />`}</CodeSnippet>
     </div>
-  )
+  );
 }

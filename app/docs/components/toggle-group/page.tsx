@@ -1,14 +1,19 @@
-import { Metadata } from "next"
-import { Separator } from "@radix-ui/react-select"
-import { Bold, Italic, Underline } from "lucide-react"
+import { Metadata } from "next";
 
-import { toggleGroupMetaData } from "@/lib/metadata"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/8bit/toggle-group"
+import { Separator } from "@radix-ui/react-select";
+import { Bold, Italic, Underline } from "lucide-react";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { toggleGroupMetaData } from "@/lib/metadata";
+
+import {
+  ToggleGroup,
+  ToggleGroupItem,
+} from "@/components/ui/8bit/toggle-group";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Toggle Group",
@@ -16,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: toggleGroupMetaData,
   },
-}
+};
 
 export default function ToggleGroupPage() {
   return (
@@ -228,5 +233,5 @@ export default function ToggleGroupPage() {
 </ToggleGroup>`}</CodeSnippet>
       </div>
     </div>
-  )
+  );
 }

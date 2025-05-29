@@ -1,16 +1,17 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { scrollAreaMetaData } from "@/lib/metadata"
-import { Separator } from "@/components/ui/separator"
+import { scrollAreaMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { Separator } from "@/components/ui/separator";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 import {
   ScrollAreaDemo,
   ScrollAreaHorizontalDemo,
-} from "./_demo/scrollarea-demo"
+} from "./_demo/scrollarea-demo";
 
 export const metadata: Metadata = {
   title: "8-bit ScrollArea",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: scrollAreaMetaData,
   },
-}
+};
 
 export default function ScrollAreaPage() {
   return (
@@ -92,5 +93,5 @@ export default function ScrollAreaPage() {
   started laughing, they couldn't stop.
 </ScrollArea>`}</CodeSnippet>
     </div>
-  )
+  );
 }

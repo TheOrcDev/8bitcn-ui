@@ -1,18 +1,19 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { accordionMetaData } from "@/lib/metadata"
+import { accordionMetaData } from "@/lib/metadata";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/8bit/accordion"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/accordion";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Accordion",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: accordionMetaData,
   },
-}
+};
 
 export default function AccordionPage() {
   return (
@@ -96,5 +97,5 @@ export default function AccordionPage() {
   </AccordionItem>
 </Accordion>`}</CodeSnippet>
     </div>
-  )
+  );
 }

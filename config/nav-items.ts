@@ -192,7 +192,7 @@ const components = [
     title: "Tooltip",
     url: "/docs/components/tooltip",
   },
-]
+];
 
 export const navItems = {
   header: [
@@ -220,4 +220,4 @@ export const navItems = {
       items: components.sort((a, b) => a.title.localeCompare(b.title)),
     },
   ],
-}
+};

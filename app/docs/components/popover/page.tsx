@@ -1,20 +1,21 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { popoverMetaData } from "@/lib/metadata"
-import { Button } from "@/components/ui/8bit/button"
-import { Input } from "@/components/ui/8bit/input"
-import { Label } from "@/components/ui/8bit/label"
+import { popoverMetaData } from "@/lib/metadata";
+
+import { Button } from "@/components/ui/8bit/button";
+import { Input } from "@/components/ui/8bit/input";
+import { Label } from "@/components/ui/8bit/label";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/8bit/popover"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/popover";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Popover",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: popoverMetaData,
   },
-}
+};
 
 export default function PopoverPage() {
   return (
@@ -125,5 +126,5 @@ export default function PopoverPage() {
   <PopoverContent>Place content for the popover here.</PopoverContent>
 </Popover>`}</CodeSnippet>
     </div>
-  )
+  );
 }

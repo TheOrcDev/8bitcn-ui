@@ -1,13 +1,14 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { separatorMetaData } from "@/lib/metadata"
-import { Separator } from "@/components/ui/8bit/separator"
-import { Separator as ShadcnSeparator } from "@/components/ui/separator"
+import { separatorMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { Separator } from "@/components/ui/8bit/separator";
+import { Separator as ShadcnSeparator } from "@/components/ui/separator";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Separator",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: separatorMetaData,
   },
-}
+};
 
 export default function SeparatorPage() {
   return (
@@ -82,5 +83,5 @@ export default function SeparatorPage() {
 
       <CodeSnippet>{`<Separator />`}</CodeSnippet>
     </div>
-  )
+  );
 }

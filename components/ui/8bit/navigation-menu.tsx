@@ -1,9 +1,12 @@
-import * as React from "react"
-import { Press_Start_2P } from "next/font/google"
-import { Indicator, Root, Viewport } from "@radix-ui/react-navigation-menu"
-import { cva, VariantProps } from "class-variance-authority"
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
+import { Press_Start_2P } from "next/font/google";
+
+import { Indicator, Root, Viewport } from "@radix-ui/react-navigation-menu";
+import { VariantProps, cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
 import {
   NavigationMenuContent as ShadcnNavigationMenuContent,
   NavigationMenuIndicator as ShadcnNavigationMenuIndicator,
@@ -11,14 +14,14 @@ import {
   NavigationMenuLink as ShadcnNavigationMenuLink,
   NavigationMenuList as ShadcnNavigationMenuList,
   NavigationMenuTrigger as ShadcnNavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 
-export { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
+export { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const navigationMenuVariants = cva("", {
   variants: {
@@ -30,12 +33,12 @@ export const navigationMenuVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-})
+});
 
-type FontVariantProps = VariantProps<typeof navigationMenuVariants>
+type FontVariantProps = VariantProps<typeof navigationMenuVariants>;
 
 const getFontClassName = (font: FontVariantProps["font"]) =>
-  navigationMenuVariants({ font })
+  navigationMenuVariants({ font });
 
 function NavigationMenu({
   className,
@@ -44,7 +47,7 @@ function NavigationMenu({
   viewport = true,
   ...props
 }: React.ComponentProps<typeof Root> & {
-  viewport?: boolean
+  viewport?: boolean;
 } & FontVariantProps) {
   return (
     <Root
@@ -60,7 +63,7 @@ function NavigationMenu({
       {children}
       {viewport && <NavigationMenuViewport />}
     </Root>
-  )
+  );
 }
 
 function NavigationMenuList({
@@ -74,7 +77,7 @@ function NavigationMenuList({
       className={cn(getFontClassName(font), className)}
       {...props}
     />
-  )
+  );
 }
 
 function NavigationMenuItem({
@@ -87,7 +90,7 @@ function NavigationMenuItem({
       className={cn("static", getFontClassName(font), className)}
       {...props}
     />
-  )
+  );
 }
 
 function NavigationMenuTrigger({
@@ -101,7 +104,7 @@ function NavigationMenuTrigger({
       className={cn(getFontClassName(font), className)}
       {...props}
     />
-  )
+  );
 }
 
 function NavigationMenuContent({
@@ -118,7 +121,7 @@ function NavigationMenuContent({
     >
       {children}
     </ShadcnNavigationMenuContent>
-  )
+  );
 }
 
 function NavigationMenuViewport({
@@ -144,7 +147,7 @@ function NavigationMenuViewport({
         {...props}
       />
     </div>
-  )
+  );
 }
 
 function NavigationMenuLink({
@@ -157,7 +160,7 @@ function NavigationMenuLink({
       className={cn(getFontClassName(font), className)}
       {...props}
     />
-  )
+  );
 }
 
 function NavigationMenuIndicator({
@@ -178,7 +181,7 @@ function NavigationMenuIndicator({
     >
       <div className="bg-foreground dark:bg-ring relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm shadow-md" />
     </Indicator>
-  )
+  );
 }
 
 export {
@@ -190,4 +193,4 @@ export {
   NavigationMenuList,
   NavigationMenuTrigger,
   NavigationMenuViewport,
-}
+};

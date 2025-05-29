@@ -1,19 +1,21 @@
-import { Press_Start_2P } from "next/font/google"
-import * as TabsPrimitive from "@radix-ui/react-tabs"
-import { cva, VariantProps } from "class-variance-authority"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
+import * as TabsPrimitive from "@radix-ui/react-tabs";
+import { VariantProps, cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
 import {
   Tabs as ShadcnTabs,
   TabsContent as ShadcnTabsContent,
   TabsList as ShadcnTabsList,
   TabsTrigger as ShadcnTabsTrigger,
-} from "@/components/ui/tabs"
+} from "@/components/ui/tabs";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const tabsVariants = cva("", {
   variants: {
@@ -29,16 +31,16 @@ export const tabsVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-})
+});
 
 export interface BitTabsProps
   extends React.ComponentProps<typeof TabsPrimitive.Root>,
     VariantProps<typeof tabsVariants> {
-  asChild?: boolean
+  asChild?: boolean;
 }
 
 function Tabs({ className, ...props }: BitTabsProps) {
-  const { font } = props
+  const { font } = props;
 
   return (
     <ShadcnTabs
@@ -49,7 +51,7 @@ function Tabs({ className, ...props }: BitTabsProps) {
         className
       )}
     />
-  )
+  );
 }
 
 function TabsList({
@@ -73,7 +75,7 @@ function TabsList({
       />
       {children}
     </ShadcnTabsList>
-  )
+  );
 }
 
 function TabsTrigger({
@@ -91,14 +93,14 @@ function TabsTrigger({
     >
       {children}
     </ShadcnTabsTrigger>
-  )
+  );
 }
 
 function TabsContent({
   className,
   ...props
 }: React.ComponentProps<typeof ShadcnTabsContent>) {
-  return <ShadcnTabsContent className={cn("", className)} {...props} />
+  return <ShadcnTabsContent className={cn("", className)} {...props} />;
 }
 
-export { Tabs, TabsList, TabsContent, TabsTrigger }
+export { Tabs, TabsList, TabsContent, TabsTrigger };

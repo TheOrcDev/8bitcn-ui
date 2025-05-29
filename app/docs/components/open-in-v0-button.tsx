@@ -1,5 +1,6 @@
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils";
+
+import { Button } from "@/components/ui/button";
 
 export function OpenInV0Button({
   name,
@@ -37,5 +38,5 @@ export function OpenInV0Button({
         </svg>
       </a>
     </Button>
-  )
+  );
 }

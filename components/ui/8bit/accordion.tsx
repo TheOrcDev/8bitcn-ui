@@ -1,25 +1,28 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Press_Start_2P } from "next/font/google"
-import * as AccordionPrimitive from "@radix-ui/react-accordion"
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
+import { Press_Start_2P } from "next/font/google";
+
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+
+import { cn } from "@/lib/utils";
+
 import {
   Accordion as ShadcnAccordion,
   AccordionContent as ShadcnAccordionContent,
   AccordionItem as ShadcnAccordionItem,
   AccordionTrigger as ShadcnAccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export interface BitAccordionItemProps
   extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> {
-  asChild?: boolean
+  asChild?: boolean;
 }
 
 function AccordionItem({
@@ -37,12 +40,12 @@ function AccordionItem({
     >
       {children}
     </ShadcnAccordionItem>
-  )
+  );
 }
 
 export interface BitAccordionTriggerProps
   extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> {
-  font?: "normal" | "pressStart"
+  font?: "normal" | "pressStart";
 }
 
 function AccordionTrigger({
@@ -58,12 +61,12 @@ function AccordionTrigger({
     >
       {children}
     </ShadcnAccordionTrigger>
-  )
+  );
 }
 
 export interface BitAccordionContentProps
   extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content> {
-  font?: "normal" | "pressStart"
+  font?: "normal" | "pressStart";
 }
 
 function AccordionContent({
@@ -87,9 +90,9 @@ function AccordionContent({
 
       <AccordionPrimitive.Content asChild forceMount />
     </div>
-  )
+  );
 }
 
-const Accordion = ShadcnAccordion
+const Accordion = ShadcnAccordion;
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };

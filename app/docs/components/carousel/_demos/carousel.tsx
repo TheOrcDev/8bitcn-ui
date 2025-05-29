@@ -1,11 +1,11 @@
-import { Card, CardContent } from "@/components/ui/8bit/card"
+import { Card, CardContent } from "@/components/ui/8bit/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/8bit/carousel"
+} from "@/components/ui/8bit/carousel";
 
 export function CarouselDemo() {
   return (
@@ -26,7 +26,7 @@ export function CarouselDemo() {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-  )
+  );
 }
 
 export function CarouselSpacing() {
@@ -48,7 +48,7 @@ export function CarouselSpacing() {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-  )
+  );
 }
 
 export function OrientationVertical() {
@@ -76,5 +76,5 @@ export function OrientationVertical() {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-  )
+  );
 }

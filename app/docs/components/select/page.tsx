@@ -1,19 +1,20 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { selectMetaData } from "@/lib/metadata"
+import { selectMetaData } from "@/lib/metadata";
+
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/8bit/select"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/select";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Select",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: selectMetaData,
   },
-}
+};
 
 export default function SelectPage() {
   return (
@@ -95,5 +96,5 @@ export default function SelectPage() {
 </Select>`}
       </CodeSnippet>
     </div>
-  )
+  );
 }

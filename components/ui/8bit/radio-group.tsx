@@ -1,17 +1,20 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Press_Start_2P } from "next/font/google"
-import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
-import { cva } from "class-variance-authority"
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
-import { RadioGroup as ShadcnRadioGroup } from "@/components/ui/radio-group"
+import { Press_Start_2P } from "next/font/google";
+
+import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
+import { cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
+import { RadioGroup as ShadcnRadioGroup } from "@/components/ui/radio-group";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const radioGroupVariants = cva("", {
   variants: {
@@ -23,13 +26,13 @@ export const radioGroupVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-})
+});
 
 function RadioGroup({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<typeof ShadcnRadioGroup>) {
-  return <ShadcnRadioGroup className={cn("", className)} {...props} />
+  return <ShadcnRadioGroup className={cn("", className)} {...props} />;
 }
 
 function RadioGroupItem({
@@ -37,7 +40,7 @@ function RadioGroupItem({
   ref,
   ...props
 }: React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item> & {
-  ref?: React.RefObject<React.ComponentRef<typeof RadioGroupPrimitive.Item>>
+  ref?: React.RefObject<React.ComponentRef<typeof RadioGroupPrimitive.Item>>;
 }) {
   return (
     <div className={cn("relative", className)}>
@@ -84,7 +87,7 @@ function RadioGroupItem({
       <div className="absolute bottom-[2px] -right-0.5 w-1 h-1 bg-foreground dark:bg-ring" />
       <div className="absolute bottom-[2px] -left-0.5 w-1 h-1 bg-foreground dark:bg-ring" />
     </div>
-  )
+  );
 }
 
-export { RadioGroup, RadioGroupItem }
+export { RadioGroup, RadioGroupItem };

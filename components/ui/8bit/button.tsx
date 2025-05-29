@@ -1,13 +1,15 @@
-import { Press_Start_2P } from "next/font/google"
-import { cva, VariantProps } from "class-variance-authority"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
-import { Button as ShadcnButton } from "@/components/ui/button"
+import { VariantProps, cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
+import { Button as ShadcnButton } from "@/components/ui/button";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const buttonVariants = cva("", {
   variants: {
@@ -34,17 +36,17 @@ export const buttonVariants = cva("", {
     variant: "default",
     size: "default",
   },
-})
+});
 
 export interface BitButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean
-  ref?: React.Ref<HTMLButtonElement>
+  asChild?: boolean;
+  ref?: React.Ref<HTMLButtonElement>;
 }
 
 function Button({ children, ...props }: BitButtonProps) {
-  const { variant, size, className, font } = props
+  const { variant, size, className, font } = props;
 
   return (
     <ShadcnButton
@@ -97,7 +99,7 @@ function Button({ children, ...props }: BitButtonProps) {
         </>
       )}
     </ShadcnButton>
-  )
+  );
 }
 
-export { Button }
+export { Button };

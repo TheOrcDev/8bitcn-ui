@@ -1,7 +1,8 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { dropdownMenuMetaData } from "@/lib/metadata"
-import { Button } from "@/components/ui/8bit/button"
+import { dropdownMenuMetaData } from "@/lib/metadata";
+
+import { Button } from "@/components/ui/8bit/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,12 +16,13 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/components/ui/8bit/dropdown-menu"
-import { Separator } from "@/components/ui/separator"
-import CodeSnippet from "@/app/docs/components/code-snippet"
-import CopyCommandButton from "@/app/docs/components/copy-command-button"
-import InstallationCommands from "@/app/docs/components/installation-commands"
-import { OpenInV0Button } from "@/app/docs/components/open-in-v0-button"
+} from "@/components/ui/8bit/dropdown-menu";
+import { Separator } from "@/components/ui/separator";
+
+import CodeSnippet from "@/app/docs/components/code-snippet";
+import CopyCommandButton from "@/app/docs/components/copy-command-button";
+import InstallationCommands from "@/app/docs/components/installation-commands";
+import { OpenInV0Button } from "@/app/docs/components/open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Dropdown Menu",
@@ -28,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: dropdownMenuMetaData,
   },
-}
+};
 
 export default function DropdownMenuPage() {
   return (
@@ -197,5 +199,5 @@ export default function DropdownMenuPage() {
   </DropdownMenuContent>
 </DropdownMenu>`}</CodeSnippet>
     </div>
-  )
+  );
 }

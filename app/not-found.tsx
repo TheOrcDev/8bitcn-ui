@@ -1,12 +1,12 @@
-import { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "404 | 8bitcn/ui",
-}
+};
 
 export default function NotFound() {
   return (
@@ -25,5 +25,5 @@ export default function NotFound() {
         <Button variant={"outline"}>Return to Home Page</Button>
       </Link>
     </div>
-  )
+  );
 }

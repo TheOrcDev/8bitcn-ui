@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react"
 import { Check, Clipboard } from "lucide-react"
@@ -16,20 +16,20 @@ function countLines(code: string) {
 export default function CodeSnippet({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(children as string)
-    setCopied(true)
+    navigator.clipboard.writeText(children as string);
+    setCopied(true);
 
     setTimeout(() => {
-      setCopied(false)
-    }, 3000)
+      setCopied(false);
+    }, 3000);
 
-    toast.success("Copied to clipboard")
-  }
+    toast.success("Copied to clipboard");
+  };
 
   return (
     <div className="bg-[#121212] rounded-lg overflow-hidden border border-zinc-800 break-all max-h-[400px] overflow-y-scroll  overflow-x-auto">

@@ -1,14 +1,15 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { labelMetaData } from "@/lib/metadata"
-import { Checkbox } from "@/components/ui/8bit/checkbox"
-import { Label } from "@/components/ui/8bit/label"
-import { Separator } from "@/components/ui/separator"
+import { labelMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { Checkbox } from "@/components/ui/8bit/checkbox";
+import { Label } from "@/components/ui/8bit/label";
+import { Separator } from "@/components/ui/separator";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Label",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: labelMetaData,
   },
-}
+};
 
 export default function LabelPage() {
   return (
@@ -67,5 +68,5 @@ export default function LabelPage() {
 
       <CodeSnippet>{`<Label>Label</Label>`}</CodeSnippet>
     </div>
-  )
+  );
 }

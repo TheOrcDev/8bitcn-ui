@@ -1,13 +1,14 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { buttonMetaData } from "@/lib/metadata"
-import { Button } from "@/components/ui/8bit/button"
-import { Separator } from "@/components/ui/separator"
+import { buttonMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { Button } from "@/components/ui/8bit/button";
+import { Separator } from "@/components/ui/separator";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Button",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: buttonMetaData,
   },
-}
+};
 
 export default function ButtonPage() {
   return (
@@ -63,5 +64,5 @@ export default function ButtonPage() {
 
       <CodeSnippet>{`<Button variant="outline">Button</Button>`}</CodeSnippet>
     </div>
-  )
+  );
 }

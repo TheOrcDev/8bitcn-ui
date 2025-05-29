@@ -1,12 +1,13 @@
-import * as React from "react"
-import Image from "next/image"
+import * as React from "react";
 
-import { ScrollArea, ScrollBar } from "@/components/ui/8bit/scroll-area"
-import { Separator } from "@/components/ui/8bit/separator"
+import Image from "next/image";
+
+import { ScrollArea, ScrollBar } from "@/components/ui/8bit/scroll-area";
+import { Separator } from "@/components/ui/8bit/separator";
 
 const tags = Array.from({ length: 50 }).map(
   (_, i, a) => `v1.2.0-beta.${a.length - i}`
-)
+);
 
 export function ScrollAreaDemo() {
   return (
@@ -22,13 +23,13 @@ export function ScrollAreaDemo() {
       </div>
       <ScrollBar orientation="vertical" />
     </ScrollArea>
-  )
+  );
 }
 
 export interface Artwork {
-  artist: string
-  art: string
-  id: number
+  artist: string;
+  art: string;
+  id: number;
 }
 
 export const works: Artwork[] = [
@@ -47,7 +48,7 @@ export const works: Artwork[] = [
     artist: "8bitcnorc",
     art: "/images/pixelized-8bitcnorc.jpg",
   },
-]
+];
 
 export function ScrollAreaHorizontalDemo() {
   return (
@@ -73,5 +74,5 @@ export function ScrollAreaHorizontalDemo() {
       </div>
       <ScrollBar orientation="horizontal" />
     </ScrollArea>
-  )
+  );
 }

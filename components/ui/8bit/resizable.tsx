@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import * as ResizablePrimitive from "react-resizable-panels"
+import * as ResizablePrimitive from "react-resizable-panels";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 const ResizablePanelGroup = ({
   className,
@@ -25,7 +25,7 @@ const ResizablePanelGroup = ({
       <div className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none" />
     </ResizablePrimitive.PanelGroup>
   </div>
-)
+);
 
 function ResizablePanel({
   className,
@@ -36,7 +36,7 @@ function ResizablePanel({
     <ResizablePrimitive.Panel className={cn(className)} {...props}>
       {children}
     </ResizablePrimitive.Panel>
-  )
+  );
 }
 
 const ResizableHandle = ({
@@ -44,7 +44,7 @@ const ResizableHandle = ({
   className,
   ...props
 }: React.ComponentProps<typeof ResizablePrimitive.PanelResizeHandle> & {
-  withHandle?: boolean
+  withHandle?: boolean;
 }) => (
   <ResizablePrimitive.PanelResizeHandle
     className={cn(
@@ -59,6 +59,6 @@ const ResizableHandle = ({
       <div className="relative w-[12px] aspect-video h-[20px] z-10 border-3 border-foreground dark:border-ring"></div>
     )}
   </ResizablePrimitive.PanelResizeHandle>
-)
+);
 
-export { ResizablePanelGroup, ResizablePanel, ResizableHandle }
+export { ResizablePanelGroup, ResizablePanel, ResizableHandle };

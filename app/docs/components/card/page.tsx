@@ -1,7 +1,8 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { cardMetaData } from "@/lib/metadata"
-import { Button } from "@/components/ui/8bit/button"
+import { cardMetaData } from "@/lib/metadata";
+
+import { Button } from "@/components/ui/8bit/button";
 import {
   Card,
   CardContent,
@@ -9,22 +10,22 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/8bit/card"
-import { Input } from "@/components/ui/8bit/input"
-import { Label } from "@/components/ui/8bit/label"
+} from "@/components/ui/8bit/card";
+import { Input } from "@/components/ui/8bit/input";
+import { Label } from "@/components/ui/8bit/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/8bit/select"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/select";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Card",
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: cardMetaData,
   },
-}
+};
 
 export default function CardPage() {
   return (
@@ -126,5 +127,5 @@ export default function CardPage() {
 </Card>`}
       </CodeSnippet>
     </div>
-  )
+  );
 }

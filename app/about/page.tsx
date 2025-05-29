@@ -1,9 +1,9 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About",
   description: "About the project.",
-}
+};
 
 export default function Page() {
   return (
@@ -11,5 +11,5 @@ export default function Page() {
       <h1 className="text-2xl font-bold">About</h1>
       <p>Coming soon...</p>
     </div>
-  )
+  );
 }

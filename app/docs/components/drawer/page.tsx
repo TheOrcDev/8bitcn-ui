@@ -1,13 +1,17 @@
-import * as React from "react"
-import { Metadata } from "next"
+import * as React from "react";
 
-import { drawerMetaData } from "@/lib/metadata"
-import { Separator } from "@/components/ui/separator"
-import { DrawerExample } from "@/components/examples/drawer"
-import CodeSnippet from "@/app/docs/components/code-snippet"
-import CopyCommandButton from "@/app/docs/components/copy-command-button"
-import InstallationCommands from "@/app/docs/components/installation-commands"
-import { OpenInV0Button } from "@/app/docs/components/open-in-v0-button"
+import { Metadata } from "next";
+
+import { drawerMetaData } from "@/lib/metadata";
+
+import { Separator } from "@/components/ui/separator";
+
+import { DrawerExample } from "@/components/examples/drawer";
+
+import CodeSnippet from "@/app/docs/components/code-snippet";
+import CopyCommandButton from "@/app/docs/components/copy-command-button";
+import InstallationCommands from "@/app/docs/components/installation-commands";
+import { OpenInV0Button } from "@/app/docs/components/open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Drawer",
@@ -15,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: drawerMetaData,
   },
-}
+};
 
 export default function DrawerPaged() {
   return (
@@ -87,5 +91,5 @@ export default function DrawerPaged() {
   </DrawerContent>
 </Drawer>`}</CodeSnippet>
     </div>
-  )
+  );
 }

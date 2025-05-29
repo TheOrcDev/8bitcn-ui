@@ -1,18 +1,20 @@
-import { Press_Start_2P } from "next/font/google"
-import { cva, VariantProps } from "class-variance-authority"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
+import { VariantProps, cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
 import {
   InputOTP as ShadcnInputOTP,
   InputOTPGroup as ShadcnInputOTPGroup,
   InputOTPSeparator as ShadcnInputOTPSeparator,
   InputOTPSlot as ShadcnInputOTPSlot,
-} from "@/components/ui/input-otp"
+} from "@/components/ui/input-otp";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const inputVariants = cva("", {
   variants: {
@@ -24,22 +26,22 @@ export const inputVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-})
+});
 
 interface SharedProps
   extends React.ComponentProps<"div">,
     VariantProps<typeof inputVariants> {
-  className?: string
-  children?: React.ReactNode
+  className?: string;
+  children?: React.ReactNode;
 }
 
 interface InputOTPProps {
-  maxLength: number
-  value?: string
-  onChange?: (value: string) => unknown
-  children?: React.ReactNode
-  className?: string
-  font?: "normal" | "retro"
+  maxLength: number;
+  value?: string;
+  onChange?: (value: string) => unknown;
+  children?: React.ReactNode;
+  className?: string;
+  font?: "normal" | "retro";
 }
 
 export const InputOTP = ({
@@ -63,14 +65,14 @@ export const InputOTP = ({
         {children}
       </ShadcnInputOTP>
     </div>
-  )
-}
+  );
+};
 
 export const InputOTPGroup = ({ className, ...props }: SharedProps) => {
   return (
     <ShadcnInputOTPGroup {...props} className={cn("flex gap-2", className)} />
-  )
-}
+  );
+};
 
 export const InputOTPSlot = ({
   className,
@@ -95,9 +97,9 @@ export const InputOTPSlot = ({
         aria-hidden="true"
       />
     </div>
-  )
-}
+  );
+};
 
 export const InputOTPSeparator = ({ className, ...props }: SharedProps) => {
-  return <ShadcnInputOTPSeparator {...props} className={cn("", className)} />
-}
+  return <ShadcnInputOTPSeparator {...props} className={cn("", className)} />;
+};

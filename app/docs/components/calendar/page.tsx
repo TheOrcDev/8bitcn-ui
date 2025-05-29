@@ -1,13 +1,15 @@
-import type { Metadata } from "next"
+import type { Metadata } from "next";
 
-import { calendarMetaData } from "@/lib/metadata"
-import { Separator } from "@/components/ui/separator"
-import { CalendarExample } from "@/components/examples/calendar"
+import { calendarMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { Separator } from "@/components/ui/separator";
+
+import { CalendarExample } from "@/components/examples/calendar";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Calendar",
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: calendarMetaData,
   },
-}
+};
 
 export default function CalendarPage() {
   return (
@@ -69,5 +71,5 @@ export default function CalendarPage() {
   onSelect={setDate}
 />`}</CodeSnippet>
     </div>
-  )
+  );
 }

@@ -1,8 +1,10 @@
-import { Press_Start_2P } from "next/font/google"
-import * as SelectPrimitive from "@radix-ui/react-select"
-import { cva, VariantProps } from "class-variance-authority"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
+import * as SelectPrimitive from "@radix-ui/react-select";
+import { VariantProps, cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
 import {
   Select as ShadcnSelect,
   SelectContent as ShadcnSelectContent,
@@ -14,12 +16,12 @@ import {
   SelectSeparator as ShadcnSelectSeparator,
   SelectTrigger as ShadcnSelectTrigger,
   SelectValue as ShadcnSelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const inputVariants = cva("", {
   variants: {
@@ -31,49 +33,49 @@ export const inputVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-})
+});
 
 export interface BitSelectProps
   extends React.SelectHTMLAttributes<HTMLSelectElement>,
     VariantProps<typeof inputVariants> {
-  asChild?: boolean
+  asChild?: boolean;
 }
 
 function Select({ ...props }: React.ComponentProps<typeof ShadcnSelect>) {
-  return <ShadcnSelect {...props} />
+  return <ShadcnSelect {...props} />;
 }
 
 function SelectGroup({
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Group>) {
-  return <ShadcnSelectGroup {...props} />
+  return <ShadcnSelectGroup {...props} />;
 }
 
 interface BitSelectValueProps
   extends React.ComponentProps<typeof SelectPrimitive.Value>,
     VariantProps<typeof inputVariants> {
-  asChild?: boolean
+  asChild?: boolean;
 }
 
 function SelectValue({ ...props }: BitSelectValueProps) {
-  const { font } = props
+  const { font } = props;
 
   return (
     <ShadcnSelectValue
       className={cn(font !== "normal" && pressStart.className)}
       {...props}
     />
-  )
+  );
 }
 
 interface BitSelectTriggerProps
   extends React.ComponentProps<typeof SelectPrimitive.Trigger>,
     VariantProps<typeof inputVariants> {
-  asChild?: boolean
+  asChild?: boolean;
 }
 
 function SelectTrigger({ children, ...props }: BitSelectTriggerProps) {
-  const { className, font } = props
+  const { className, font } = props;
 
   return (
     <div
@@ -95,13 +97,13 @@ function SelectTrigger({ children, ...props }: BitSelectTriggerProps) {
         aria-hidden="true"
       />
     </div>
-  )
+  );
 }
 
 export interface BitSelectContentProps
   extends React.ComponentProps<typeof SelectPrimitive.Content>,
     VariantProps<typeof inputVariants> {
-  asChild?: boolean
+  asChild?: boolean;
 }
 
 function SelectContent({
@@ -109,7 +111,7 @@ function SelectContent({
   children,
   ...props
 }: BitSelectContentProps) {
-  const { font } = props
+  const { font } = props;
 
   return (
     <ShadcnSelectContent
@@ -122,14 +124,14 @@ function SelectContent({
     >
       {children}
     </ShadcnSelectContent>
-  )
+  );
 }
 
 function SelectLabel({
   className,
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Label>) {
-  return <ShadcnSelectLabel className={cn(className)} {...props} />
+  return <ShadcnSelectLabel className={cn(className)} {...props} />;
 }
 
 function SelectItem({
@@ -147,28 +149,28 @@ function SelectItem({
     >
       {children}
     </ShadcnSelectItem>
-  )
+  );
 }
 
 function SelectSeparator({
   className,
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Separator>) {
-  return <ShadcnSelectSeparator className={cn(className)} {...props} />
+  return <ShadcnSelectSeparator className={cn(className)} {...props} />;
 }
 
 function SelectScrollUpButton({
   className,
   ...props
 }: React.ComponentProps<typeof ShadcnSelectScrollUpButton>) {
-  return <ShadcnSelectScrollUpButton className={cn(className)} {...props} />
+  return <ShadcnSelectScrollUpButton className={cn(className)} {...props} />;
 }
 
 function SelectScrollDownButton({
   className,
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.ScrollDownButton>) {
-  return <ShadcnSelectScrollDownButton className={cn(className)} {...props} />
+  return <ShadcnSelectScrollDownButton className={cn(className)} {...props} />;
 }
 
 export {
@@ -182,4 +184,4 @@ export {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-}
+};

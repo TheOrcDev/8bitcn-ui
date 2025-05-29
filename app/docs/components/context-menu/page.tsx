@@ -1,19 +1,20 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { contextMenuMetaData } from "@/lib/metadata"
-import { Button } from "@/components/ui/8bit/button"
+import { contextMenuMetaData } from "@/lib/metadata";
+
+import { Button } from "@/components/ui/8bit/button";
 import {
   ContextMenu,
   ContextMenuContent,
   ContextMenuItem,
   ContextMenuTrigger,
-} from "@/components/ui/8bit/context-menu"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/context-menu";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Context Menu",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: contextMenuMetaData,
   },
-}
+};
 
 export default function ContextMenuPage() {
   return (
@@ -87,5 +88,5 @@ export default function ContextMenuPage() {
   </ContextMenuContent>
 </ContextMenu>`}</CodeSnippet>
     </div>
-  )
+  );
 }
