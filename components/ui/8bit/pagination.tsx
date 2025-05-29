@@ -1,22 +1,24 @@
-import { Press_Start_2P } from "next/font/google"
-import { cva, VariantProps } from "class-variance-authority"
-import { MoreHorizontal } from "lucide-react"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
+import { VariantProps, cva } from "class-variance-authority";
+import { MoreHorizontal } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+
 import {
   Pagination as ShadcnPagination,
   PaginationContent as ShadcnPaginationContent,
   PaginationEllipsis as ShadcnPaginationEllipsis,
   PaginationItem as ShadcnPaginationItem,
   PaginationLink as ShadcnPaginationLink,
-} from "@/components/ui/pagination"
+} from "@/components/ui/pagination";
 
-import { Button } from "../button"
+import { Button } from "../button";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const paginationVariants = cva("", {
   variants: {
@@ -33,13 +35,13 @@ export const paginationVariants = cva("", {
   defaultVariants: {
     variant: "default",
   },
-})
+});
 
 export type BitPaginationProps<T extends React.ElementType> =
-  React.ComponentPropsWithoutRef<T> & VariantProps<typeof paginationVariants>
+  React.ComponentPropsWithoutRef<T> & VariantProps<typeof paginationVariants>;
 
 function Pagination({ ...props }: BitPaginationProps<"nav">) {
-  const { variant, className, font } = props
+  const { variant, className, font } = props;
   return (
     <ShadcnPagination
       {...props}
@@ -49,7 +51,7 @@ function Pagination({ ...props }: BitPaginationProps<"nav">) {
         className
       )}
     />
-  )
+  );
 }
 
 const ChevronLeftIcon = () => {
@@ -109,8 +111,8 @@ const ChevronLeftIcon = () => {
         transform="matrix(-1 0 0 1 144 88)"
       ></rect>
     </svg>
-  )
-}
+  );
+};
 
 const ChevronRightIcon = () => {
   return (
@@ -134,11 +136,11 @@ const ChevronRightIcon = () => {
       <rect x="128" y="104" width="14" height="14" rx="1"></rect>
       <rect x="112" y="88" width="14" height="14" rx="1"></rect>
     </svg>
-  )
-}
+  );
+};
 
 function PaginationContent({ ...props }: BitPaginationProps<"ul">) {
-  const { className, font } = props
+  const { className, font } = props;
   return (
     <ShadcnPaginationContent
       className={cn(
@@ -148,26 +150,26 @@ function PaginationContent({ ...props }: BitPaginationProps<"ul">) {
       )}
       {...props}
     />
-  )
+  );
 }
 
 function PaginationItem({ ...props }: BitPaginationProps<"li">) {
-  const { className, font } = props
+  const { className, font } = props;
   return (
     <ShadcnPaginationItem
       className={cn(font !== "normal" && pressStart.className, className)}
       {...props}
     />
-  )
+  );
 }
 
 type PaginationLinkProps = {
-  isActive?: boolean
+  isActive?: boolean;
 } & Pick<React.ComponentProps<typeof Button>, "size"> &
-  BitPaginationProps<"a">
+  BitPaginationProps<"a">;
 
 function PaginationLink({ ...props }: PaginationLinkProps) {
-  const { font, children, isActive, className } = props
+  const { font, children, isActive, className } = props;
   return (
     <ShadcnPaginationLink
       className={cn(
@@ -217,13 +219,13 @@ function PaginationLink({ ...props }: PaginationLinkProps) {
         </div>
       )}
     </ShadcnPaginationLink>
-  )
+  );
 }
 
 function PaginationPrevious({
   ...props
 }: React.ComponentProps<typeof PaginationLink>) {
-  const { font, className } = props
+  const { font, className } = props;
   return (
     <PaginationLink
       className={cn(
@@ -242,13 +244,13 @@ function PaginationPrevious({
       <ChevronLeftIcon />
       <span className="hidden sm:block">Previous</span>
     </PaginationLink>
-  )
+  );
 }
 
 function PaginationNext({
   ...props
 }: React.ComponentProps<typeof PaginationLink>) {
-  const { font, className } = props
+  const { font, className } = props;
 
   return (
     <PaginationLink
@@ -269,11 +271,11 @@ function PaginationNext({
       <span className="hidden sm:block">Next</span>
       <ChevronRightIcon />
     </PaginationLink>
-  )
+  );
 }
 
 function PaginationEllipsis({ ...props }: BitPaginationProps<"span">) {
-  const { font, className } = props
+  const { font, className } = props;
 
   return (
     <ShadcnPaginationEllipsis
@@ -283,7 +285,7 @@ function PaginationEllipsis({ ...props }: BitPaginationProps<"span">) {
       <MoreHorizontal className={cn("size-7", pressStart.className)} />
       <span className="sr-only">More pages</span>
     </ShadcnPaginationEllipsis>
-  )
+  );
 }
 
 export {
@@ -294,4 +296,4 @@ export {
   PaginationPrevious,
   PaginationNext,
   PaginationEllipsis,
-}
+};

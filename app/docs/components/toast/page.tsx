@@ -1,13 +1,15 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { buttonMetaData } from "@/lib/metadata"
-import { Separator } from "@/components/ui/separator"
-import { ToastExample } from "@/components/examples/toast"
+import { buttonMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { Separator } from "@/components/ui/separator";
+
+import { ToastExample } from "@/components/examples/toast";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Toast",
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: buttonMetaData,
   },
-}
+};
 
 export default function ToastPage() {
   return (
@@ -82,5 +84,5 @@ export default function RootLayout({ children }) {
 
       <CodeSnippet>{`toast("8bitcn is an awesome project!")`}</CodeSnippet>
     </div>
-  )
+  );
 }

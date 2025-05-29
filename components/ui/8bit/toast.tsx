@@ -1,25 +1,27 @@
-"use client"
+"use client";
 
-import React from "react"
-import { Press_Start_2P } from "next/font/google"
-import { toast as sonnerToast } from "sonner"
+import React from "react";
+
+import { Press_Start_2P } from "next/font/google";
+
+import { toast as sonnerToast } from "sonner";
 
 export function toast(toast: string) {
-  return sonnerToast.custom((id) => <Toast id={id} title={toast} />)
+  return sonnerToast.custom((id) => <Toast id={id} title={toast} />);
 }
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 interface ToastProps {
-  id: string | number
-  title: string
+  id: string | number;
+  title: string;
 }
 
 function Toast(props: ToastProps) {
-  const { title } = props
+  const { title } = props;
 
   return (
     <div className={`relative ${pressStart.className}`}>
@@ -44,5 +46,5 @@ function Toast(props: ToastProps) {
       <div className="absolute top-1 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
       <div className="absolute bottom-1 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
     </div>
-  )
+  );
 }

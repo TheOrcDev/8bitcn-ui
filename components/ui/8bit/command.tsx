@@ -1,10 +1,12 @@
-"use client"
+"use client";
 
-import { Press_Start_2P } from "next/font/google"
-import { Command as CommandPrimitive } from "cmdk"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
-import { Separator } from "@/components/ui/8bit/separator"
+import { Command as CommandPrimitive } from "cmdk";
+
+import { cn } from "@/lib/utils";
+
+import { Separator } from "@/components/ui/8bit/separator";
 import {
   Command as ShadcnCommand,
   CommandDialog as ShadcnCommandDialog,
@@ -14,19 +16,19 @@ import {
   CommandList as ShadcnCommandList,
   CommandSeparator as ShadcnCommandSeparator,
   CommandShortcut as ShadcnCommandShortcut,
-} from "@/components/ui/command"
+} from "@/components/ui/command";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
+} from "@/components/ui/dialog";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 function Command({
   className,
@@ -57,7 +59,7 @@ function Command({
       <div className="absolute bottom-1.5 -left-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
       <div className="absolute bottom-1.5 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
     </div>
-  )
+  );
 }
 
 function CommandDialog({
@@ -66,8 +68,8 @@ function CommandDialog({
   children,
   ...props
 }: React.ComponentProps<typeof Dialog> & {
-  title?: string
-  description?: string
+  title?: string;
+  description?: string;
 }) {
   return (
     <ShadcnCommandDialog {...props}>
@@ -81,7 +83,7 @@ function CommandDialog({
         </Command>
       </DialogContent>
     </ShadcnCommandDialog>
-  )
+  );
 }
 
 function CommandInput({
@@ -132,7 +134,7 @@ function CommandInput({
         {...props}
       />
     </div>
-  )
+  );
 }
 
 function CommandList({
@@ -149,7 +151,7 @@ function CommandList({
       )}
       {...props}
     />
-  )
+  );
 }
 
 function CommandEmpty({
@@ -161,7 +163,7 @@ function CommandEmpty({
       className="py-6 text-center text-sm"
       {...props}
     />
-  )
+  );
 }
 
 function CommandGroup({
@@ -178,7 +180,7 @@ function CommandGroup({
       )}
       {...props}
     />
-  )
+  );
 }
 
 function CommandSeparator({
@@ -197,7 +199,7 @@ function CommandSeparator({
     >
       <Separator />
     </ShadcnCommandSeparator>
-  )
+  );
 }
 
 function CommandItem({
@@ -213,7 +215,7 @@ function CommandItem({
       )}
       {...props}
     />
-  )
+  );
 }
 
 function CommandShortcut({
@@ -225,7 +227,7 @@ function CommandShortcut({
       className={cn("", pressStart.className, className)}
       {...props}
     />
-  )
+  );
 }
 
 export {
@@ -238,4 +240,4 @@ export {
   CommandItem,
   CommandShortcut,
   CommandSeparator,
-}
+};

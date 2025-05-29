@@ -1,6 +1,7 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { paginationMetaData } from "@/lib/metadata"
+import { paginationMetaData } from "@/lib/metadata";
+
 import {
   Pagination,
   PaginationContent,
@@ -9,13 +10,13 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/8bit/pagination"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/pagination";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Pagination",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: paginationMetaData,
   },
-}
+};
 
 export default function PaginationPage() {
   return (
@@ -146,5 +147,5 @@ const PaginationLink = ({...props }: ) => (
 )
 `}</CodeSnippet>
     </div>
-  )
+  );
 }

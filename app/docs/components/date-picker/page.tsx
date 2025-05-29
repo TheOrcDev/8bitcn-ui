@@ -1,14 +1,16 @@
-import { Metadata } from "next"
-import Link from "next/link"
+import { Metadata } from "next";
+import Link from "next/link";
 
-import { datePickerMetaData } from "@/lib/metadata"
-import { Separator } from "@/components/ui/separator"
-import { DatePicker } from "@/components/examples/date-picker"
-import { DatePickerWithPresets } from "@/components/examples/date-picker-with-presets"
-import { DatePickerWithRange } from "@/components/examples/date-range-picker"
+import { datePickerMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { Separator } from "@/components/ui/separator";
+
+import { DatePicker } from "@/components/examples/date-picker";
+import { DatePickerWithPresets } from "@/components/examples/date-picker-with-presets";
+import { DatePickerWithRange } from "@/components/examples/date-range-picker";
+
+import CodeSnippet from "../code-snippet";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Date Picker",
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: datePickerMetaData,
   },
-}
+};
 
 export default function DatePickerPage() {
   return (
@@ -299,5 +301,5 @@ export function DatePickerWithPresets() {
 }
 `}</CodeSnippet>
     </div>
-  )
+  );
 }

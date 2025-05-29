@@ -1,13 +1,17 @@
-import * as React from "react"
-import type { Metadata } from "next"
+import * as React from "react";
 
-import { commandMetaData } from "@/lib/metadata"
-import { Separator } from "@/components/ui/separator"
-import { CommandExample } from "@/components/examples/command"
-import CodeSnippet from "@/app/docs/components/code-snippet"
-import CopyCommandButton from "@/app/docs/components/copy-command-button"
-import InstallationCommands from "@/app/docs/components/installation-commands"
-import { OpenInV0Button } from "@/app/docs/components/open-in-v0-button"
+import type { Metadata } from "next";
+
+import { commandMetaData } from "@/lib/metadata";
+
+import { Separator } from "@/components/ui/separator";
+
+import { CommandExample } from "@/components/examples/command";
+
+import CodeSnippet from "@/app/docs/components/code-snippet";
+import CopyCommandButton from "@/app/docs/components/copy-command-button";
+import InstallationCommands from "@/app/docs/components/installation-commands";
+import { OpenInV0Button } from "@/app/docs/components/open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Command",
@@ -15,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: commandMetaData,
   },
-}
+};
 
 export default function CommandPage() {
   return (
@@ -172,5 +176,5 @@ export function CommandExample() {
 }
 `}</CodeSnippet>
     </div>
-  )
+  );
 }

@@ -1,18 +1,19 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { inputOtpMetaData } from "@/lib/metadata"
+import { inputOtpMetaData } from "@/lib/metadata";
+
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@/components/ui/8bit/input-otp"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/input-otp";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit OTP Input",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: inputOtpMetaData,
   },
-}
+};
 
 const InputOTPPage = () => {
   return (
@@ -97,7 +98,7 @@ const InputOTPPage = () => {
   </InputOTPGroup>
 </InputOTP>`}</CodeSnippet>
     </div>
-  )
-}
+  );
+};
 
-export default InputOTPPage
+export default InputOTPPage;

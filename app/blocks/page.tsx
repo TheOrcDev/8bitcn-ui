@@ -1,19 +1,20 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { pressStart } from "@/config/fonts"
-import { LoginForm } from "@/components/ui/8bit/blocks/login-form"
-import { LoginForm as LoginForm2 } from "@/components/ui/8bit/blocks/login-form-2"
-import { LoginForm as LoginFormWithImage } from "@/components/ui/8bit/blocks/login-form-with-image"
+import { pressStart } from "@/config/fonts";
 
-import CopyCommandButton from "../docs/components/copy-command-button"
-import { OpenInV0Button } from "../docs/components/open-in-v0-button"
-import LoginPage from "../login/page"
+import { LoginForm } from "@/components/ui/8bit/blocks/login-form";
+import { LoginForm as LoginForm2 } from "@/components/ui/8bit/blocks/login-form-2";
+import { LoginForm as LoginFormWithImage } from "@/components/ui/8bit/blocks/login-form-with-image";
+
+import CopyCommandButton from "../docs/components/copy-command-button";
+import { OpenInV0Button } from "../docs/components/open-in-v0-button";
+import LoginPage from "../login/page";
 
 export const metadata: Metadata = {
   title: "Building Retro Blocks for the Web - 8bitcn/ui",
   description:
     "Clean, retro building blocks. Copy and paste into your apps. Works with all React frameworks. Open Source. Free forever.",
-}
+};
 
 export default function BlocksPage() {
   return (
@@ -105,5 +106,5 @@ export default function BlocksPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

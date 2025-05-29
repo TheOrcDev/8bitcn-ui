@@ -1,27 +1,29 @@
-import Image from "next/image"
-import { Activity, Upload, Users } from "lucide-react"
+import Image from "next/image";
 
-import { ChartExample } from "@/components/ui/8bit/blocks/chart"
-import { LoginForm } from "@/components/ui/8bit/blocks/login-form"
+import { Activity, Upload, Users } from "lucide-react";
+
+import { ChartExample } from "@/components/ui/8bit/blocks/chart";
+import { LoginForm } from "@/components/ui/8bit/blocks/login-form";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/8bit/card"
-import { Input } from "@/components/ui/8bit/input"
-import { Label } from "@/components/ui/8bit/label"
+} from "@/components/ui/8bit/card";
+import { Input } from "@/components/ui/8bit/input";
+import { Label } from "@/components/ui/8bit/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/8bit/select"
-import { Textarea } from "@/components/ui/8bit/textarea"
-import { CalendarExample } from "@/components/examples/calendar"
-import { CommandExample } from "@/components/examples/command"
+} from "@/components/ui/8bit/select";
+import { Textarea } from "@/components/ui/8bit/textarea";
+
+import { CalendarExample } from "@/components/examples/calendar";
+import { CommandExample } from "@/components/examples/command";
 
 export default function ComponentShowcase() {
   return (
@@ -172,5 +174,5 @@ export default function ComponentShowcase() {
         </Card>
       </div>
     </div>
-  )
+  );
 }

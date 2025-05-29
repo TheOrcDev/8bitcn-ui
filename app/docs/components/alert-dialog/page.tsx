@@ -1,6 +1,7 @@
-import type { Metadata } from "next"
+import type { Metadata } from "next";
 
-import { alertDialogMetaData } from "@/lib/metadata"
+import { alertDialogMetaData } from "@/lib/metadata";
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -11,14 +12,14 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/8bit/alert-dialog"
-import { Button } from "@/components/ui/8bit/button"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/alert-dialog";
+import { Button } from "@/components/ui/8bit/button";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Alert Dialog",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: alertDialogMetaData,
   },
-}
+};
 
 export default function AlertDialogPage() {
   return (
@@ -121,5 +122,5 @@ export default function AlertDialogPage() {
 `}{" "}
       </CodeSnippet>
     </div>
-  )
+  );
 }

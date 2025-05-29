@@ -1,6 +1,7 @@
-"use client"
+"use client";
 
-import { getThemeCode, Theme } from "@/lib/themes"
+import { Theme, getThemeCode } from "@/lib/themes";
+
 import {
   Dialog,
   DialogContent,
@@ -8,11 +9,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/8bit/dialog"
-import { Button } from "@/components/ui/button"
-import CodeSnippet from "@/app/docs/components/code-snippet"
+} from "@/components/ui/8bit/dialog";
+import { Button } from "@/components/ui/button";
 
-import { useThemeConfig } from "./active-theme"
+import CodeSnippet from "@/app/docs/components/code-snippet";
+
+import { useThemeConfig } from "./active-theme";
 
 const themes = [
   { name: Theme.Default, color: "oklch(0.795 0.184 86.047)" },
@@ -20,10 +22,10 @@ const themes = [
   { name: Theme.Gameboy, color: "#8bac0f" },
   { name: Theme.Atari, color: "#7a4009" },
   { name: Theme.Nintendo, color: "#104cb0" },
-]
+];
 
 export function ThemeSelector() {
-  const { activeTheme, setActiveTheme } = useThemeConfig()
+  const { activeTheme, setActiveTheme } = useThemeConfig();
 
   return (
     <div className="flex justify-between gap-2 border-y border-dashed p-5">
@@ -56,5 +58,5 @@ export function ThemeSelector() {
         </DialogContent>
       </Dialog>
     </div>
-  )
+  );
 }

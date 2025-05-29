@@ -1,18 +1,19 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { hoverCardMetaData } from "@/lib/metadata"
-import { Button } from "@/components/ui/8bit/button"
+import { hoverCardMetaData } from "@/lib/metadata";
+
+import { Button } from "@/components/ui/8bit/button";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/8bit/hover-card"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/hover-card";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Hover Card",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: hoverCardMetaData,
   },
-}
+};
 
 const HoverCardPage = () => {
   return (
@@ -84,7 +85,7 @@ const HoverCardPage = () => {
   <HoverCardContent>For the Horde! ⚔️</HoverCardContent>
 </HoverCard>`}</CodeSnippet>
     </div>
-  )
-}
+  );
+};
 
-export default HoverCardPage
+export default HoverCardPage;

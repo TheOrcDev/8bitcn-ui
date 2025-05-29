@@ -1,17 +1,18 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { avatarMetaData } from "@/lib/metadata"
+import { avatarMetaData } from "@/lib/metadata";
+
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/components/ui/8bit/avatar"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/avatar";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Avatar",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: avatarMetaData,
   },
-}
+};
 
 export default function AvatarPage() {
   return (
@@ -117,5 +118,5 @@ export default function AvatarPage() {
   <AvatarFallback>8B</AvatarFallback>
 </Avatar>`}</CodeSnippet>
     </div>
-  )
+  );
 }

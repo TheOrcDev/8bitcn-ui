@@ -1,13 +1,14 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { chartMetaData } from "@/lib/metadata"
-import { ChartExample } from "@/components/ui/8bit/blocks/chart"
-import { Separator } from "@/components/ui/separator"
+import { chartMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { ChartExample } from "@/components/ui/8bit/blocks/chart";
+import { Separator } from "@/components/ui/separator";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Chart",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: chartMetaData,
   },
-}
+};
 
 export default function ChartPage() {
   return (
@@ -61,5 +62,5 @@ export default function ChartPage() {
 
       <CodeSnippet>{`<ChartExample />`}</CodeSnippet>
     </div>
-  )
+  );
 }

@@ -1,6 +1,7 @@
-import type { Metadata } from "next"
+import type { Metadata } from "next";
 
-import { tableMetaData } from "@/lib/metadata"
+import { tableMetaData } from "@/lib/metadata";
+
 import {
   Table,
   TableBody,
@@ -9,13 +10,13 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/8bit/table"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/8bit/table";
+import { Separator } from "@/components/ui/separator";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Table",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: tableMetaData,
   },
-}
+};
 
 export default function TablePage() {
   return (
@@ -155,5 +156,5 @@ export default function TablePage() {
   </TableBody>
 </Table>`}</CodeSnippet>
     </div>
-  )
+  );
 }

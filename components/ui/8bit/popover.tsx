@@ -1,25 +1,27 @@
-import { Press_Start_2P } from "next/font/google"
-import * as PopoverPrimitive from "@radix-ui/react-popover"
-import { cva, type VariantProps } from "class-variance-authority"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
+import * as PopoverPrimitive from "@radix-ui/react-popover";
+import { type VariantProps, cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
 import {
   Popover as ShadcnPopover,
   PopoverAnchor as ShadcnPopoverAnchor,
   PopoverContent as ShadcnPopoverContent,
   PopoverTrigger as ShadcnPopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/popover";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
-const Popover = ShadcnPopover
+const Popover = ShadcnPopover;
 
-const PopoverTrigger = ShadcnPopoverTrigger
+const PopoverTrigger = ShadcnPopoverTrigger;
 
-const PopoverAnchor = ShadcnPopoverAnchor
+const PopoverAnchor = ShadcnPopoverAnchor;
 
 export const popOverVariants = cva("", {
   variants: {
@@ -31,7 +33,7 @@ export const popOverVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-})
+});
 
 export interface BitPopoverProps
   extends React.ComponentProps<typeof PopoverPrimitive.Content>,
@@ -59,7 +61,7 @@ function PopoverContent({
         aria-hidden="true"
       />
     </ShadcnPopoverContent>
-  )
+  );
 }
 
-export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor }
+export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor };

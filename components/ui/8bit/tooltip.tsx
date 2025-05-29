@@ -1,21 +1,24 @@
-"use client"
+"use client";
 
-import type * as React from "react"
-import { Press_Start_2P } from "next/font/google"
-import { cva, type VariantProps } from "class-variance-authority"
+import type * as React from "react";
 
-import { cn } from "@/lib/utils"
+import { Press_Start_2P } from "next/font/google";
+
+import { type VariantProps, cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
 import {
   Tooltip as ShadcnTooltip,
   TooltipContent as ShadcnTooltipContent,
   TooltipProvider as ShadcnTooltipProvider,
   TooltipTrigger as ShadcnTooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "@/components/ui/tooltip";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const tooltipVariants = cva("", {
   variants: {
@@ -27,7 +30,7 @@ export const tooltipVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-})
+});
 
 export interface BitTooltipContentProps
   extends React.ComponentPropsWithoutRef<typeof ShadcnTooltipContent>,
@@ -39,7 +42,7 @@ function TooltipContent({
   font,
   ...props
 }: BitTooltipContentProps) {
-  const color = tooltipVariants({ font })
+  const color = tooltipVariants({ font });
 
   return (
     <div className={cn("relative inline-flex", className)}>
@@ -63,7 +66,7 @@ function TooltipContent({
         />
       </ShadcnTooltipContent>
     </div>
-  )
+  );
 }
 
 export interface BitTooltipProps
@@ -75,12 +78,12 @@ function Tooltip({ children, ...props }: BitTooltipProps) {
     <ShadcnTooltip data-slot="tooltip" {...props}>
       {children}
     </ShadcnTooltip>
-  )
+  );
 }
 
 export interface BitTooltipProviderProps
   extends React.ComponentPropsWithoutRef<typeof ShadcnTooltipProvider> {
-  delayDuration?: number
+  delayDuration?: number;
 }
 
 function TooltipProvider({
@@ -92,7 +95,7 @@ function TooltipProvider({
     <ShadcnTooltipProvider delayDuration={delayDuration} {...props}>
       {children}
     </ShadcnTooltipProvider>
-  )
+  );
 }
 
 function TooltipTrigger({
@@ -108,7 +111,7 @@ function TooltipTrigger({
     >
       {children}
     </ShadcnTooltipTrigger>
-  )
+  );
 }
 
-export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger }
+export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger };

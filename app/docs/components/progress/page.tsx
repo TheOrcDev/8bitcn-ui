@@ -1,13 +1,14 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { progressMetaData } from "@/lib/metadata"
-import { Progress } from "@/components/ui/8bit/progress"
-import { Separator } from "@/components/ui/separator"
+import { progressMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { Progress } from "@/components/ui/8bit/progress";
+import { Separator } from "@/components/ui/separator";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Progress",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: progressMetaData,
   },
-}
+};
 
 export default function ProgressPage() {
   return (
@@ -68,5 +69,5 @@ export default function ProgressPage() {
 
       <CodeSnippet>{`<Progress value={70} variant="retro" />`}</CodeSnippet>
     </div>
-  )
+  );
 }

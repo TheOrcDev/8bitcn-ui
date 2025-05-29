@@ -1,13 +1,14 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { inputMetaData } from "@/lib/metadata"
-import { Input } from "@/components/ui/8bit/input"
-import { Separator } from "@/components/ui/separator"
+import { inputMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { Input } from "@/components/ui/8bit/input";
+import { Separator } from "@/components/ui/separator";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Input",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: inputMetaData,
   },
-}
+};
 
 export default function InputPage() {
   return (
@@ -63,5 +64,5 @@ export default function InputPage() {
 
       <CodeSnippet>{`<Input placeholder="Enter text" />`}</CodeSnippet>
     </div>
-  )
+  );
 }

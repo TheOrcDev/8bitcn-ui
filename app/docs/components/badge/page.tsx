@@ -1,13 +1,14 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { badgeMetaData } from "@/lib/metadata"
-import { Badge } from "@/components/ui/8bit/badge"
-import { Separator } from "@/components/ui/separator"
+import { badgeMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { Badge } from "@/components/ui/8bit/badge";
+import { Separator } from "@/components/ui/separator";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Badge",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: badgeMetaData,
   },
-}
+};
 
 export default function BadgePage() {
   return (
@@ -63,5 +64,5 @@ export default function BadgePage() {
 
       <CodeSnippet>{`<Badge>Badge</Badge>`}</CodeSnippet>
     </div>
-  )
+  );
 }

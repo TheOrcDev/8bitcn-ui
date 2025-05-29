@@ -1,11 +1,14 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Press_Start_2P } from "next/font/google"
-import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
-import { cva, VariantProps } from "class-variance-authority"
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
+import { Press_Start_2P } from "next/font/google";
+
+import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
+import { VariantProps, cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
 import {
   AlertDialog as ShadcnAlertDialog,
   AlertDialogAction as ShadcnAlertDialogAction,
@@ -18,12 +21,12 @@ import {
   AlertDialogPortal as ShadcnAlertDialogPortal,
   AlertDialogTitle as ShadcnAlertDialogTitle,
   AlertDialogTrigger as ShadcnAlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
+} from "@/components/ui/alert-dialog";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const alertDialogVariants = cva("", {
   variants: {
@@ -35,14 +38,14 @@ export const alertDialogVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-})
+});
 
 export interface BitAlertDialogProps
   extends React.ComponentProps<typeof AlertDialogPrimitive.Root>,
     VariantProps<typeof alertDialogVariants> {}
 
 function AlertDialog({ ...props }: BitAlertDialogProps) {
-  return <ShadcnAlertDialog {...props} />
+  return <ShadcnAlertDialog {...props} />;
 }
 
 function AlertDialogTrigger({
@@ -56,20 +59,20 @@ function AlertDialogTrigger({
       asChild={asChild}
       {...props}
     />
-  )
+  );
 }
 
 function AlertDialogPortal({
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Portal>) {
-  return <ShadcnAlertDialogPortal {...props} />
+  return <ShadcnAlertDialogPortal {...props} />;
 }
 
 function AlertDialogOverlay({
   className,
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Overlay>) {
-  return <ShadcnAlertDialogOverlay className={cn(className)} {...props} />
+  return <ShadcnAlertDialogOverlay className={cn(className)} {...props} />;
 }
 
 interface BitAlertDialogContentProps
@@ -103,14 +106,14 @@ function AlertDialogContent({
         </ShadcnAlertDialogContent>
       </>
     </AlertDialogPortal>
-  )
+  );
 }
 
 function AlertDialogHeader({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  return <ShadcnAlertDialogHeader className={cn(className)} {...props} />
+  return <ShadcnAlertDialogHeader className={cn(className)} {...props} />;
 }
 
 function AlertDialogFooter({
@@ -122,21 +125,21 @@ function AlertDialogFooter({
       className={cn("flex flex-col-reverse sm:flex-row gap-4", className)}
       {...props}
     />
-  )
+  );
 }
 
 function AlertDialogTitle({
   className,
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Title>) {
-  return <ShadcnAlertDialogTitle className={cn(className)} {...props} />
+  return <ShadcnAlertDialogTitle className={cn(className)} {...props} />;
 }
 
 function AlertDialogDescription({
   className,
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Description>) {
-  return <ShadcnAlertDialogDescription className={cn(className)} {...props} />
+  return <ShadcnAlertDialogDescription className={cn(className)} {...props} />;
 }
 
 function AlertDialogAction({
@@ -171,7 +174,7 @@ function AlertDialogAction({
       <div className="absolute bottom-0 left-0 w-full h-1.5 bg-foreground/20" />
       <div className="absolute bottom-1.5 right-0 w-3 h-1.5 bg-foreground/20" />
     </ShadcnAlertDialogAction>
-  )
+  );
 }
 
 function AlertDialogCancel({
@@ -199,7 +202,7 @@ function AlertDialogCancel({
       <div className="absolute top-1.5 -left-1.5 h-2/3 w-1.5 bg-foreground dark:bg-ring" />
       <div className="absolute top-1.5 -right-1.5 h-2/3 w-1.5 bg-foreground dark:bg-ring" />
     </ShadcnAlertDialogCancel>
-  )
+  );
 }
 
 export {
@@ -214,4 +217,4 @@ export {
   AlertDialogDescription,
   AlertDialogAction,
   AlertDialogCancel,
-}
+};

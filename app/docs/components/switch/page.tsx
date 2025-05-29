@@ -1,14 +1,15 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { switchMetaData } from "@/lib/metadata"
-import { Label } from "@/components/ui/8bit/label"
-import { Switch } from "@/components/ui/8bit/switch"
-import { Separator } from "@/components/ui/separator"
+import { switchMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { Label } from "@/components/ui/8bit/label";
+import { Switch } from "@/components/ui/8bit/switch";
+import { Separator } from "@/components/ui/separator";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Switch",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: switchMetaData,
   },
-}
+};
 
 export default function SwitchPage() {
   return (
@@ -65,5 +66,5 @@ export default function SwitchPage() {
 
       <CodeSnippet>{`<Switch />`}</CodeSnippet>
     </div>
-  )
+  );
 }

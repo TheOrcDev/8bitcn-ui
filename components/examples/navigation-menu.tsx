@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
+import * as React from "react";
+
+import Link from "next/link";
 
 import {
   NavigationMenu,
@@ -12,7 +13,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/8bit/navigation-menu"
+} from "@/components/ui/8bit/navigation-menu";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -51,7 +52,7 @@ const components: { title: string; href: string; description: string }[] = [
     description:
       "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
   },
-]
+];
 
 export default function NavigationMenuDemo() {
   return (
@@ -115,7 +116,7 @@ export default function NavigationMenuDemo() {
         <NavigationMenuIndicator />
       </NavigationMenuList>
     </NavigationMenu>
-  )
+  );
 }
 
 function ListItem({
@@ -135,5 +136,5 @@ function ListItem({
         </Link>
       </NavigationMenuLink>
     </li>
-  )
+  );
 }

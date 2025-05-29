@@ -1,17 +1,20 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Press_Start_2P } from "next/font/google"
-import * as TogglePrimitive from "@radix-ui/react-toggle"
-import { cva, type VariantProps } from "class-variance-authority"
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
-import { Toggle as ShadcnToggle } from "@/components/ui/toggle"
+import { Press_Start_2P } from "next/font/google";
+
+import * as TogglePrimitive from "@radix-ui/react-toggle";
+import { type VariantProps, cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
+import { Toggle as ShadcnToggle } from "@/components/ui/toggle";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 const toggleVariants = cva("", {
   variants: {
@@ -35,14 +38,14 @@ const toggleVariants = cva("", {
     font: "retro",
     size: "default",
   },
-})
+});
 
 export interface BitToggleProps
   extends React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root>,
     VariantProps<typeof toggleVariants> {}
 
 function Toggle({ children, font, ...props }: BitToggleProps) {
-  const { variant, className } = props
+  const { variant, className } = props;
 
   return (
     <ShadcnToggle
@@ -72,7 +75,7 @@ function Toggle({ children, font, ...props }: BitToggleProps) {
         )}
       </>
     </ShadcnToggle>
-  )
+  );
 }
 
-export { Toggle, toggleVariants }
+export { Toggle, toggleVariants };

@@ -1,13 +1,18 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { alertMetaData } from "@/lib/metadata"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/8bit/alert"
-import { Separator } from "@/components/ui/separator"
+import { alertMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from "@/components/ui/8bit/alert";
+import { Separator } from "@/components/ui/separator";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Alert",
@@ -15,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: alertMetaData,
   },
-}
+};
 
 export default function AlertPage() {
   return (
@@ -73,5 +78,5 @@ export default function AlertPage() {
   </AlertDescription>
 </Alert>`}</CodeSnippet>
     </div>
-  )
+  );
 }

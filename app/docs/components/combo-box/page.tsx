@@ -1,12 +1,15 @@
-import type { Metadata } from "next"
+import type { Metadata } from "next";
 
-import { comboBoxMetaData } from "@/lib/metadata"
-import { Separator } from "@/components/ui/separator"
-import { ComboBoxExample } from "@/components/examples/combobox"
-import CodeSnippet from "@/app/docs/components/code-snippet"
-import CopyCommandButton from "@/app/docs/components/copy-command-button"
-import InstallationCommands from "@/app/docs/components/installation-commands"
-import { OpenInV0Button } from "@/app/docs/components/open-in-v0-button"
+import { comboBoxMetaData } from "@/lib/metadata";
+
+import { Separator } from "@/components/ui/separator";
+
+import { ComboBoxExample } from "@/components/examples/combobox";
+
+import CodeSnippet from "@/app/docs/components/code-snippet";
+import CopyCommandButton from "@/app/docs/components/copy-command-button";
+import InstallationCommands from "@/app/docs/components/installation-commands";
+import { OpenInV0Button } from "@/app/docs/components/open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Combo Box",
@@ -14,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: comboBoxMetaData,
   },
-}
+};
 
 export default function ComboBoxPage() {
   return (
@@ -226,5 +229,5 @@ export function ComboBoxExample() {
 }
 `}</CodeSnippet>
     </div>
-  )
+  );
 }

@@ -1,6 +1,7 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
+
 import {
   Calculator,
   Calendar,
@@ -8,7 +9,7 @@ import {
   Settings,
   Smile,
   User,
-} from "lucide-react"
+} from "lucide-react";
 
 import {
   Command,
@@ -19,7 +20,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/components/ui/8bit/command"
+} from "@/components/ui/8bit/command";
 
 const suggestionCommands = [
   {
@@ -49,7 +50,7 @@ const suggestionCommands = [
       </>
     ),
   },
-]
+];
 
 const settingCommands = [
   {
@@ -82,7 +83,7 @@ const settingCommands = [
     ),
     shortcut: "⌘S",
   },
-]
+];
 
 export function CommandExample() {
   return (
@@ -108,5 +109,5 @@ export function CommandExample() {
         </CommandGroup>
       </CommandList>
     </Command>
-  )
+  );
 }

@@ -1,9 +1,11 @@
-import { Press_Start_2P } from "next/font/google"
-import { Slot } from "@radix-ui/react-slot"
-import { cva, VariantProps } from "class-variance-authority"
-import { MoreHorizontal } from "lucide-react"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
+import { Slot } from "@radix-ui/react-slot";
+import { VariantProps, cva } from "class-variance-authority";
+import { MoreHorizontal } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+
 import {
   Breadcrumb as ShadcnBreadcrumb,
   BreadcrumbEllipsis as ShadcnBreadcrumbEllipsis,
@@ -11,12 +13,12 @@ import {
   BreadcrumbList as ShadcnBreadcrumbList,
   BreadcrumbPage as ShadcnBreadcrumbPage,
   BreadcrumbSeparator as ShadcnBreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+} from "@/components/ui/breadcrumb";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const breadcrumbVariants = cva("", {
   variants: {
@@ -33,7 +35,7 @@ export const breadcrumbVariants = cva("", {
   defaultVariants: {
     variant: "default",
   },
-})
+});
 
 interface BitBreadcrumbNavigationProps
   extends React.ComponentProps<"nav">,
@@ -77,11 +79,11 @@ const ChevronRight = () => {
       <rect x="128" y="104" width="14" height="14" rx="1"></rect>
       <rect x="112" y="88" width="14" height="14" rx="1"></rect>
     </svg>
-  )
-}
+  );
+};
 
 function Breadcrumb({ children, ...props }: BitBreadcrumbNavigationProps) {
-  const { variant, className, font } = props
+  const { variant, className, font } = props;
 
   return (
     <div
@@ -102,40 +104,40 @@ function Breadcrumb({ children, ...props }: BitBreadcrumbNavigationProps) {
         {children}
       </ShadcnBreadcrumb>
     </div>
-  )
+  );
 }
 
 function BreadcrumbList({ ...props }: BitBreadcrumbOrderedListProps) {
-  const { font, className } = props
+  const { font, className } = props;
 
   return (
     <ShadcnBreadcrumbList
       className={cn(className, font !== "normal" && pressStart.className)}
       {...props}
     />
-  )
+  );
 }
 
 function BreadcrumbItem({ ...props }: BitBreadcrumbListItemProps) {
-  const { font, className } = props
+  const { font, className } = props;
 
   return (
     <ShadcnBreadcrumbItem
       className={cn(className, font !== "normal" && pressStart.className)}
       {...props}
     />
-  )
+  );
 }
 
 function BreadcrumbLink({
   asChild,
   ...props
 }: BitBreadcrumbLinkProps & {
-  asChild?: boolean
+  asChild?: boolean;
 }) {
-  const { font, className } = props
+  const { font, className } = props;
 
-  const Comp = asChild ? Slot : "a"
+  const Comp = asChild ? Slot : "a";
 
   return (
     <Comp
@@ -143,22 +145,22 @@ function BreadcrumbLink({
       className={cn(className, font !== "normal" && pressStart.className)}
       {...props}
     />
-  )
+  );
 }
 
 function BreadcrumbPage({ ...props }: BitBreadcrumbSpanProps) {
-  const { font, className } = props
+  const { font, className } = props;
 
   return (
     <ShadcnBreadcrumbPage
       className={cn(className, font !== "normal" && pressStart.className)}
       {...props}
     />
-  )
+  );
 }
 
 function BreadcrumbSeparator({ ...props }: BitBreadcrumbListItemProps) {
-  const { font, children, className } = props
+  const { font, children, className } = props;
 
   return (
     <ShadcnBreadcrumbSeparator
@@ -171,11 +173,11 @@ function BreadcrumbSeparator({ ...props }: BitBreadcrumbListItemProps) {
     >
       {children ?? <ChevronRight />}
     </ShadcnBreadcrumbSeparator>
-  )
+  );
 }
 
 function BreadcrumbEllipsis({ ...props }: BitBreadcrumbSpanProps) {
-  const { font, className } = props
+  const { font, className } = props;
 
   return (
     <ShadcnBreadcrumbEllipsis
@@ -185,7 +187,7 @@ function BreadcrumbEllipsis({ ...props }: BitBreadcrumbSpanProps) {
       <MoreHorizontal className={cn("size-7", pressStart.className)} />
       <span className="sr-only">More</span>
     </ShadcnBreadcrumbEllipsis>
-  )
+  );
 }
 
 export {
@@ -196,4 +198,4 @@ export {
   BreadcrumbPage,
   BreadcrumbSeparator,
   BreadcrumbEllipsis,
-}
+};

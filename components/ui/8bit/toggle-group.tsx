@@ -1,15 +1,16 @@
-import { Press_Start_2P } from "next/font/google"
-import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group"
-import { cva, type VariantProps } from "class-variance-authority"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
+import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
+import { type VariantProps, cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
 
 import {
   ToggleGroup as ShadcnToggleGroup,
   ToggleGroupItem as ShadcnToggleGroupItem,
-} from "../toggle-group"
+} from "../toggle-group";
 
-const pressStart = Press_Start_2P({ weight: ["400"], subsets: ["latin"] })
+const pressStart = Press_Start_2P({ weight: ["400"], subsets: ["latin"] });
 
 export const toggleGroupVariants = cva("", {
   variants: {
@@ -26,20 +27,20 @@ export const toggleGroupVariants = cva("", {
     },
   },
   defaultVariants: { variant: "default", font: "retro", size: "default" },
-})
+});
 
 export type BitToggleGroupProps = React.ComponentPropsWithoutRef<
   typeof ToggleGroupPrimitive.Root
 > &
-  VariantProps<typeof toggleGroupVariants>
+  VariantProps<typeof toggleGroupVariants>;
 
 export type BitToggleGroupItemProps = React.ComponentPropsWithoutRef<
   typeof ToggleGroupPrimitive.Item
 > &
-  VariantProps<typeof toggleGroupVariants>
+  VariantProps<typeof toggleGroupVariants>;
 
 function ToggleGroup({ ...props }: BitToggleGroupProps) {
-  const { className, font, children } = props
+  const { className, font, children } = props;
 
   return (
     <ShadcnToggleGroup
@@ -53,10 +54,10 @@ function ToggleGroup({ ...props }: BitToggleGroupProps) {
       {" "}
       {children}{" "}
     </ShadcnToggleGroup>
-  )
+  );
 }
 function ToggleGroupItem({ ...props }: BitToggleGroupItemProps) {
-  const { className, font, children, variant } = props
+  const { className, font, children, variant } = props;
   return (
     <ShadcnToggleGroupItem
       className={cn(
@@ -82,7 +83,7 @@ function ToggleGroupItem({ ...props }: BitToggleGroupItemProps) {
         </>
       )}{" "}
     </ShadcnToggleGroupItem>
-  )
+  );
 }
 
-export { ToggleGroup, ToggleGroupItem }
+export { ToggleGroup, ToggleGroupItem };

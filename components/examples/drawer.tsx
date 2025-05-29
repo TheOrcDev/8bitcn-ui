@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Minus, Plus } from "lucide-react"
-import { Bar, BarChart, ResponsiveContainer } from "recharts"
+import * as React from "react";
 
-import { Button } from "@/components/ui/8bit/button"
+import { Minus, Plus } from "lucide-react";
+import { Bar, BarChart, ResponsiveContainer } from "recharts";
+
+import { Button } from "@/components/ui/8bit/button";
 import {
   Drawer,
   DrawerClose,
@@ -14,7 +15,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/8bit/drawer"
+} from "@/components/ui/8bit/drawer";
 
 const data = [
   {
@@ -56,13 +57,13 @@ const data = [
   {
     goal: 349,
   },
-]
+];
 
 export function DrawerExample() {
-  const [goal, setGoal] = React.useState(350)
+  const [goal, setGoal] = React.useState(350);
 
   function onClick(adjustment: number) {
-    setGoal(Math.max(200, Math.min(400, goal + adjustment)))
+    setGoal(Math.max(200, Math.min(400, goal + adjustment)));
   }
 
   return (
@@ -132,5 +133,5 @@ export function DrawerExample() {
         </div>
       </DrawerContent>
     </Drawer>
-  )
+  );
 }

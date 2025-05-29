@@ -361,8 +361,8 @@ const themes = [
     --sidebar-ring: oklch(0.5 0.2 280);
 }`,
   },
-]
+];
 
 export const getThemeCode = (theme: Theme) => {
-  return themes.find((t) => t.name === theme)?.color
-}
+  return themes.find((t) => t.name === theme)?.color;
+};

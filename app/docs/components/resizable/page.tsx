@@ -1,17 +1,18 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
-import { resizableMetaData } from "@/lib/metadata"
-import { Separator } from "@/components/ui/separator"
+import { resizableMetaData } from "@/lib/metadata";
 
-import CodeSnippet from "../code-snippet"
-import CopyCommandButton from "../copy-command-button"
-import InstallationCommands from "../installation-commands"
-import { OpenInV0Button } from "../open-in-v0-button"
+import { Separator } from "@/components/ui/separator";
+
+import CodeSnippet from "../code-snippet";
+import CopyCommandButton from "../copy-command-button";
+import InstallationCommands from "../installation-commands";
+import { OpenInV0Button } from "../open-in-v0-button";
 import {
   ResizableDemo,
   ResizableDemoWithHeader,
   ResizableHandleDemo,
-} from "./_demo/resizable-demo"
+} from "./_demo/resizable-demo";
 
 export const metadata: Metadata = {
   title: "8-bit Resizable Panel",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: resizableMetaData,
   },
-}
+};
 
 export default function ResizablePage() {
   return (
@@ -111,5 +112,5 @@ export default function ResizablePage() {
 </ResizablePanelGroup>
     `}</CodeSnippet>
     </div>
-  )
+  );
 }

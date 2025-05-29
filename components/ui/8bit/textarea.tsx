@@ -1,13 +1,15 @@
-import { Press_Start_2P } from "next/font/google"
-import { cva, VariantProps } from "class-variance-authority"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
-import { Textarea as ShadcnTextarea } from "@/components/ui/textarea"
+import { VariantProps, cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
+import { Textarea as ShadcnTextarea } from "@/components/ui/textarea";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const inputVariants = cva("", {
   variants: {
@@ -19,16 +21,16 @@ export const inputVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-})
+});
 
 export interface BitTextareaProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof inputVariants> {
-  asChild?: boolean
+  asChild?: boolean;
 }
 
 function Textarea({ ...props }: BitTextareaProps) {
-  const { className, font } = props
+  const { className, font } = props;
 
   return (
     <div className={cn("relative w-full", className)}>
@@ -51,7 +53,7 @@ function Textarea({ ...props }: BitTextareaProps) {
         aria-hidden="true"
       />
     </div>
-  )
+  );
 }
 
-export { Textarea }
+export { Textarea };

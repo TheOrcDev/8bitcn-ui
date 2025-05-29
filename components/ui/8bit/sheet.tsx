@@ -1,8 +1,10 @@
-import { Press_Start_2P } from "next/font/google"
-import * as SheetPrimitive from "@radix-ui/react-dialog"
-import { cva, VariantProps } from "class-variance-authority"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
+import * as SheetPrimitive from "@radix-ui/react-dialog";
+import { VariantProps, cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
 import {
   Sheet as ShadcnSheet,
   SheetClose as ShadcnSheetClose,
@@ -11,26 +13,26 @@ import {
   SheetHeader as ShadcnSheetHeader,
   SheetTitle as ShadcnSheetTitle,
   SheetTrigger as ShadcnSheetTrigger,
-} from "@/components/ui/sheet"
+} from "@/components/ui/sheet";
 
-const Sheet = ShadcnSheet
+const Sheet = ShadcnSheet;
 
-const SheetTrigger = ShadcnSheetTrigger
+const SheetTrigger = ShadcnSheetTrigger;
 
-const SheetClose = ShadcnSheetClose
+const SheetClose = ShadcnSheetClose;
 
-const SheetDescription = ShadcnSheetDescription
+const SheetDescription = ShadcnSheetDescription;
 
-const SheetFooter = ShadcnSheetFooter
+const SheetFooter = ShadcnSheetFooter;
 
-const SheetHeader = ShadcnSheetHeader
+const SheetHeader = ShadcnSheetHeader;
 
-const SheetTitle = ShadcnSheetTitle
+const SheetTitle = ShadcnSheetTitle;
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const sheetVariants = cva("", {
   variants: {
@@ -42,12 +44,12 @@ export const sheetVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-})
+});
 
 function SheetPortal({
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Portal>) {
-  return <SheetPrimitive.Portal data-slot="sheet-portal" {...props} />
+  return <SheetPrimitive.Portal data-slot="sheet-portal" {...props} />;
 }
 
 function SheetOverlay({
@@ -63,15 +65,15 @@ function SheetOverlay({
       )}
       {...props}
     />
-  )
+  );
 }
 
 export type BitSheetProps = React.ComponentProps<
   typeof SheetPrimitive.Content
 > &
   VariantProps<typeof sheetVariants> & {
-    side?: "top" | "right" | "bottom" | "left"
-  }
+    side?: "top" | "right" | "bottom" | "left";
+  };
 
 function SheetContent({
   className,
@@ -268,7 +270,7 @@ function SheetContent({
         </SheetPrimitive.Close>
       </SheetPrimitive.Content>
     </SheetPortal>
-  )
+  );
 }
 
 export {
@@ -280,4 +282,4 @@ export {
   SheetFooter,
   SheetHeader,
   SheetTitle,
-}
+};

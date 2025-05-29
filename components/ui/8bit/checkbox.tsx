@@ -1,15 +1,18 @@
-import * as React from "react"
-import { Press_Start_2P } from "next/font/google"
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
-import { cva, VariantProps } from "class-variance-authority"
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
-import { Checkbox as ShadcnCheckbox } from "@/components/ui/checkbox"
+import { Press_Start_2P } from "next/font/google";
+
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
+import { VariantProps, cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
+import { Checkbox as ShadcnCheckbox } from "@/components/ui/checkbox";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const checkboxVariants = cva("", {
   variants: {
@@ -21,12 +24,12 @@ export const checkboxVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-})
+});
 
 export interface BitCheckboxProps
   extends React.ComponentProps<typeof CheckboxPrimitive.Root>,
     VariantProps<typeof checkboxVariants> {
-  asChild?: boolean
+  asChild?: boolean;
 }
 
 function Checkbox({ className, font, ...props }: BitCheckboxProps) {
@@ -51,7 +54,7 @@ function Checkbox({ className, font, ...props }: BitCheckboxProps) {
         aria-hidden="true"
       />
     </div>
-  )
+  );
 }
 
-export { Checkbox }
+export { Checkbox };

@@ -1,13 +1,14 @@
-import { Press_Start_2P } from "next/font/google"
-import * as ProgressPrimitive from "@radix-ui/react-progress"
-import { cva, VariantProps } from "class-variance-authority"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
+import * as ProgressPrimitive from "@radix-ui/react-progress";
+import { VariantProps, cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const progressVariants = cva("", {
   variants: {
@@ -23,17 +24,17 @@ export const progressVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-})
+});
 
 export interface BitProgressProps
   extends React.ComponentProps<typeof ProgressPrimitive.Root>,
     VariantProps<typeof progressVariants> {
-  className?: string
-  font?: VariantProps<typeof progressVariants>["font"]
+  className?: string;
+  font?: VariantProps<typeof progressVariants>["font"];
 }
 
 function Progress({ ...props }: BitProgressProps) {
-  const { className, font } = props
+  const { className, font } = props;
 
   return (
     <div className={cn("relative w-full", className)}>
@@ -63,7 +64,7 @@ function Progress({ ...props }: BitProgressProps) {
               {Array.from({ length: 20 }).map((_, i) => {
                 const filledSquares = Math.round(
                   ((props.value || 0) / 100) * 20
-                )
+                );
                 return (
                   <div
                     key={i}
@@ -72,7 +73,7 @@ function Progress({ ...props }: BitProgressProps) {
                       i < filledSquares ? "bg-primary" : "bg-transparent"
                     )}
                   />
-                )
+                );
               })}
             </div>
           )}
@@ -89,7 +90,7 @@ function Progress({ ...props }: BitProgressProps) {
         aria-hidden="true"
       />
     </div>
-  )
+  );
 }
 
-export { Progress }
+export { Progress };

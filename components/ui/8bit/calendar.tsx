@@ -1,16 +1,18 @@
-import { Press_Start_2P } from "next/font/google"
-import { cva, VariantProps } from "class-variance-authority"
-import { DayPicker } from "react-day-picker"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
-import { Calendar as ShadcnCalendar } from "@/components/ui/calendar"
+import { VariantProps, cva } from "class-variance-authority";
+import { DayPicker } from "react-day-picker";
 
-import { buttonVariants } from "./button"
+import { cn } from "@/lib/utils";
+
+import { Calendar as ShadcnCalendar } from "@/components/ui/calendar";
+
+import { buttonVariants } from "./button";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
 export const calendarVariants = cva("", {
   variants: {
@@ -22,10 +24,10 @@ export const calendarVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-})
+});
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker> &
-  VariantProps<typeof calendarVariants>
+  VariantProps<typeof calendarVariants>;
 
 function Calendar({ className, classNames, font, ...props }: CalendarProps) {
   return (
@@ -141,7 +143,7 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
         aria-hidden="true"
       />
     </div>
-  )
+  );
 }
 
-export { Calendar }
+export { Calendar };

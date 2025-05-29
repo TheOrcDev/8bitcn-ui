@@ -1,8 +1,10 @@
-import { Press_Start_2P } from "next/font/google"
-import { cva, VariantProps } from "class-variance-authority"
-import { Drawer as DrawerPrimitive } from "vaul"
+import { Press_Start_2P } from "next/font/google";
 
-import { cn } from "@/lib/utils"
+import { VariantProps, cva } from "class-variance-authority";
+import { Drawer as DrawerPrimitive } from "vaul";
+
+import { cn } from "@/lib/utils";
+
 import {
   Drawer as ShadcnDrawer,
   DrawerClose as ShadcnDrawerClose,
@@ -13,20 +15,20 @@ import {
   DrawerPortal as ShadcnDrawerPortal,
   DrawerTitle as ShadcnDrawerTitle,
   DrawerTrigger as ShadcnDrawerTrigger,
-} from "@/components/ui/drawer"
+} from "@/components/ui/drawer";
 
 const pressStart = Press_Start_2P({
   weight: ["400"],
   subsets: ["latin"],
-})
+});
 
-const Drawer = ShadcnDrawer
+const Drawer = ShadcnDrawer;
 
-const DrawerPortal = ShadcnDrawerPortal
+const DrawerPortal = ShadcnDrawerPortal;
 
-const DrawerOverlay = ShadcnDrawerOverlay
+const DrawerOverlay = ShadcnDrawerOverlay;
 
-const DrawerClose = ShadcnDrawerClose
+const DrawerClose = ShadcnDrawerClose;
 
 function DrawerTitle({
   className,
@@ -40,7 +42,7 @@ function DrawerTitle({
     >
       {children}
     </ShadcnDrawerTitle>
-  )
+  );
 }
 
 function DrawerDescription({
@@ -55,7 +57,7 @@ function DrawerDescription({
     >
       {children}
     </ShadcnDrawerDescription>
-  )
+  );
 }
 
 function DrawerTrigger({
@@ -76,7 +78,7 @@ function DrawerTrigger({
         {children}
       </ShadcnDrawerTrigger>
     </>
-  )
+  );
 }
 
 export const drawerVariants = cva("", {
@@ -89,12 +91,12 @@ export const drawerVariants = cva("", {
   defaultVariants: {
     font: "retro",
   },
-})
+});
 
 export type DrawerProps = React.ComponentProps<typeof DrawerPrimitive.Content> &
   VariantProps<typeof drawerVariants> & {
-    side?: "right" | "bottom" | "left"
-  }
+    side?: "right" | "bottom" | "left";
+  };
 
 function DrawerContent({ className, children, side, ...props }: DrawerProps) {
   return (
@@ -120,7 +122,7 @@ function DrawerContent({ className, children, side, ...props }: DrawerProps) {
         {children}
       </DrawerPrimitive.Content>
     </ShadcnDrawerPortal>
-  )
+  );
 }
 
 function DrawerHeader({
@@ -135,7 +137,7 @@ function DrawerHeader({
     >
       {children}
     </ShadcnDrawerHeader>
-  )
+  );
 }
 
 function DrawerFooter({
@@ -150,7 +152,7 @@ function DrawerFooter({
     >
       {children}
     </ShadcnDrawerFooter>
-  )
+  );
 }
 
 export {
@@ -164,4 +166,4 @@ export {
   DrawerPortal,
   DrawerTitle,
   DrawerDescription,
-}
+};
