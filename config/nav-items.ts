@@ -2,7 +2,6 @@ const components = [
   {
     title: "Accordion",
     url: "/docs/components/accordion",
-    new: true,
   },
   {
     title: "Alert",
@@ -59,7 +58,6 @@ const components = [
   {
     title: "Context Menu",
     url: "/docs/components/context-menu",
-    new: true,
   },
   {
     title: "Collapsible",
@@ -68,7 +66,6 @@ const components = [
   {
     title: "Date Picker",
     url: "/docs/components/date-picker",
-    new: true,
   },
   {
     title: "Dialog",
@@ -77,7 +74,6 @@ const components = [
   {
     title: "Drawer",
     url: "/docs/components/drawer",
-    new: true,
   },
   {
     title: "Dropdown Menu",
@@ -98,7 +94,6 @@ const components = [
   {
     title: "Navigation Menu",
     url: "/docs/components/navigation-menu",
-    new: true,
   },
   {
     title: "Scroll Area",
@@ -115,7 +110,6 @@ const components = [
   {
     title: "Sidebar",
     url: "/docs/components/sidebar",
-    new: true,
   },
   {
     title: "Skeleton",
@@ -124,7 +118,6 @@ const components = [
   {
     title: "Slider",
     url: "/docs/components/slider",
-    new: true,
   },
   {
     title: "Label",
@@ -133,7 +126,6 @@ const components = [
   {
     title: "Menubar",
     url: "/docs/components/menubar",
-    new: true,
   },
   {
     title: "Pagination",
@@ -178,7 +170,6 @@ const components = [
   {
     title: "Toast",
     url: "/docs/components/toast",
-    new: true,
   },
   {
     title: "Toggle",
