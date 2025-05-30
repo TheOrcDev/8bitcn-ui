@@ -1,21 +1,16 @@
-import { Press_Start_2P } from "next/font/google";
-
 import { VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
 import { Button as ShadcnButton } from "@/components/ui/button";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./retro.css";
 
 export const buttonVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
     variant: {
       default: "bg-foreground",
@@ -53,7 +48,7 @@ function Button({ children, ...props }: BitButtonProps) {
       {...props}
       className={cn(
         "rounded-none active:translate-y-1 transition-transform relative",
-        font !== "normal" && pressStart.className,
+        font !== "normal" && "retro",
         className
       )}
       size={size}
