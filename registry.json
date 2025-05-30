@@ -14,6 +14,16 @@
           "path": "components/ui/8bit/button.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/fonts/PressStart2P-Regular.ttf",
+          "type": "registry:component",
+          "target": "components/ui/8bit/fonts/PressStart2P-Regular.ttf"
         }
       ]
     },
