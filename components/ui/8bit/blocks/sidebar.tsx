@@ -1,5 +1,3 @@
-import { Press_Start_2P } from "next/font/google";
-
 import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
 
 import {
@@ -13,10 +11,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 // Menu items.
 const items = [
@@ -50,7 +45,7 @@ const items = [
 export function AppSidebar() {
   return (
     <Sidebar
-      className={`${pressStart.className} border-r-4 border-foreground dark:border-ring`}
+      className={`${"retro"} border-r-4 border-foreground dark:border-ring`}
     >
       <SidebarContent>
         <SidebarGroup>

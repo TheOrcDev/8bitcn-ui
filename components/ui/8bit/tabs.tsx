@@ -1,5 +1,3 @@
-import { Press_Start_2P } from "next/font/google";
-
 import * as TabsPrimitive from "@radix-ui/react-tabs";
 import { VariantProps, cva } from "class-variance-authority";
 
@@ -12,20 +10,17 @@ import {
   TabsTrigger as ShadcnTabsTrigger,
 } from "@/components/ui/tabs";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const tabsVariants = cva("", {
   variants: {
     variant: {
       default: "bg-primary",
-      retro: pressStart.className,
+      retro: "retro",
     },
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {
@@ -45,11 +40,7 @@ function Tabs({ className, ...props }: BitTabsProps) {
   return (
     <ShadcnTabs
       {...props}
-      className={cn(
-        "relative",
-        font !== "normal" && pressStart.className,
-        className
-      )}
+      className={cn("relative", font !== "normal" && "retro", className)}
     />
   );
 }

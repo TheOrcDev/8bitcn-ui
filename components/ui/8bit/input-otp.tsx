@@ -1,5 +1,3 @@
-import { Press_Start_2P } from "next/font/google";
-
 import { VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
@@ -11,16 +9,13 @@ import {
   InputOTPSlot as ShadcnInputOTPSlot,
 } from "@/components/ui/input-otp";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const inputVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {
@@ -60,7 +55,7 @@ export const InputOTP = ({
         value={value}
         onChange={onChange}
         {...otherProps}
-        className={cn(font !== "normal" && pressStart.className, className)}
+        className={cn(font !== "normal" && "retro", className)}
       >
         {children}
       </ShadcnInputOTP>
@@ -87,7 +82,7 @@ export const InputOTPSlot = ({
         {...props}
         className={cn(
           "pl-1 size-full text-center text-xl tracking-widest z-0 ring-0 border-transparent ",
-          font !== "normal" && pressStart.className,
+          font !== "normal" && "retro",
           className
         )}
       />

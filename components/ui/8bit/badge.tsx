@@ -1,21 +1,14 @@
-import { Press_Start_2P } from "next/font/google";
-
 import { VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
 import { Badge as ShadcnBadge } from "@/components/ui/badge";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
-
 export const badgeVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
     variant: {
       default: "bg-primary border-primary",
@@ -44,11 +37,7 @@ function Badge({ children, ...props }: BitButtonProps) {
     <div className={cn("relative inline-flex", className)}>
       <ShadcnBadge
         {...props}
-        className={cn(
-          "rounded-none",
-          font !== "normal" && pressStart.className,
-          className
-        )}
+        className={cn("rounded-none", font !== "normal" && "retro", className)}
         variant={variant}
       >
         {children}

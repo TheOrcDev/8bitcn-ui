@@ -1,7 +1,5 @@
 import { Metadata } from "next";
 
-import { pressStart } from "@/config/fonts";
-
 import { LoginForm } from "@/components/ui/8bit/blocks/login-form";
 import { LoginForm as LoginForm2 } from "@/components/ui/8bit/blocks/login-form-2";
 import { LoginForm as LoginFormWithImage } from "@/components/ui/8bit/blocks/login-form-with-image";
@@ -19,7 +17,7 @@ export const metadata: Metadata = {
 export default function BlocksPage() {
   return (
     <div className="flex flex-col p-4 gap-5 pt-10">
-      <h1 className={`${pressStart.className} md:text-2xl font-bold`}>
+      <h1 className={`${"retro"} md:text-2xl font-bold`}>
         Building Retro Blocks for the Web
       </h1>
       <p className="max-w-2xl text-sm md:text-base">

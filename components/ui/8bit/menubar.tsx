@@ -2,24 +2,19 @@
 
 import * as React from "react";
 
-import { Press_Start_2P } from "next/font/google";
-
 import * as MenubarPrimitive from "@radix-ui/react-menubar";
 import { cva } from "class-variance-authority";
 import { Circle } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const menubarVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {

@@ -2,8 +2,6 @@
 
 import * as React from "react";
 
-import { Press_Start_2P } from "next/font/google";
-
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 import { VariantProps, cva } from "class-variance-authority";
 
@@ -23,16 +21,13 @@ import {
   AlertDialogTrigger as ShadcnAlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const alertDialogVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {
@@ -92,7 +87,7 @@ function AlertDialogContent({
         <ShadcnAlertDialogContent
           className={cn(
             "rounded-none border-y-6 border-foreground dark:border-ring",
-            font !== "normal" && pressStart.className,
+            font !== "normal" && "retro",
             className
           )}
           {...props}

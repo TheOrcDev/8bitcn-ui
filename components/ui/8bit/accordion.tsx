@@ -2,8 +2,6 @@
 
 import * as React from "react";
 
-import { Press_Start_2P } from "next/font/google";
-
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
 import { cn } from "@/lib/utils";
@@ -15,10 +13,7 @@ import {
   AccordionTrigger as ShadcnAccordionTrigger,
 } from "@/components/ui/accordion";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export interface BitAccordionItemProps
   extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> {
@@ -45,7 +40,7 @@ function AccordionItem({
 
 export interface BitAccordionTriggerProps
   extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> {
-  font?: "normal" | "pressStart";
+  font?: "normal" | "retro";
 }
 
 function AccordionTrigger({
@@ -56,7 +51,7 @@ function AccordionTrigger({
 }: BitAccordionTriggerProps) {
   return (
     <ShadcnAccordionTrigger
-      className={cn(font !== "normal" && pressStart.className, className)}
+      className={cn(font !== "normal" && "retro", className)}
       {...props}
     >
       {children}
@@ -66,7 +61,7 @@ function AccordionTrigger({
 
 export interface BitAccordionContentProps
   extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content> {
-  font?: "normal" | "pressStart";
+  font?: "normal" | "retro";
 }
 
 function AccordionContent({
@@ -80,7 +75,7 @@ function AccordionContent({
       <ShadcnAccordionContent
         className={cn(
           "overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
-          font !== "normal" && pressStart.className,
+          font !== "normal" && "retro",
           className
         )}
         {...props}

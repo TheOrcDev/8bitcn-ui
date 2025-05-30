@@ -1,7 +1,5 @@
 import { Metadata } from "next";
 
-import { pressStart } from "@/config/fonts";
-
 import ComponentShowcase from "@/components/examples/component-showcase";
 import { ThemeSelector } from "@/components/theme-selector";
 
@@ -15,7 +13,7 @@ export default function ThemesPage() {
   return (
     <>
       <div className="flex flex-col p-4 gap-5 py-10">
-        <h1 className={`${pressStart.className} md:text-2xl font-bold`}>
+        <h1 className={`retro md:text-2xl font-bold`}>
           Add colors. Make it yours.
         </h1>
         <p className="max-w-2xl text-sm md:text-base">

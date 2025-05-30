@@ -1,24 +1,19 @@
-import { Press_Start_2P } from "next/font/google";
-
 import * as ProgressPrimitive from "@radix-ui/react-progress";
 import { VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const progressVariants = cva("", {
   variants: {
     variant: {
       default: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {
@@ -42,7 +37,7 @@ function Progress({ ...props }: BitProgressProps) {
         data-slot="progress"
         className={cn(
           "bg-primary/20 relative h-2 w-full overflow-hidden",
-          font !== "normal" && pressStart.className,
+          font !== "normal" && "retro",
           className
         )}
         {...props}

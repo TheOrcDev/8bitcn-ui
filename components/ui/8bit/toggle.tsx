@@ -2,8 +2,6 @@
 
 import * as React from "react";
 
-import { Press_Start_2P } from "next/font/google";
-
 import * as TogglePrimitive from "@radix-ui/react-toggle";
 import { type VariantProps, cva } from "class-variance-authority";
 
@@ -11,16 +9,13 @@ import { cn } from "@/lib/utils";
 
 import { Toggle as ShadcnToggle } from "@/components/ui/toggle";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 const toggleVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
     variant: {
       default: "bg-transparent",
@@ -53,7 +48,7 @@ function Toggle({ children, font, ...props }: BitToggleProps) {
       className={cn(
         "rounded-none active:translate-y-1 transition-transform relative border-none active:translate-x-1",
         "data-[state=on]:bg-primary data-[state=on]:text-primary-foreground",
-        font !== "normal" && pressStart.className,
+        font !== "normal" && "retro",
         className
       )}
     >

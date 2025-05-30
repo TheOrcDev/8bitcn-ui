@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { pressStart } from "@/config/fonts";
 import { navItems } from "@/config/nav-items";
 
 import { Button } from "@/components/ui/button";
@@ -16,9 +15,7 @@ export function SiteHeader() {
       <div className="flex w-full items-center h-full gap-1 px-4 md:gap-5 md:px-6 max-w-[1400px] mx-auto border-dashed border-l border-r">
         <Link href="/" className="hidden md:flex items-center gap-2">
           <Image src="/8bitcn.png" alt="logo" width={32} height={32} />{" "}
-          <h2
-            className={`${pressStart.className} hidden font-bold md:inline-block text-xs`}
-          >
+          <h2 className={`${"retro"} hidden font-bold md:inline-block text-xs`}>
             8bitcn/ui
           </h2>
         </Link>

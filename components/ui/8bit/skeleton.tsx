@@ -1,13 +1,8 @@
-import { Press_Start_2P } from "next/font/google";
-
 import { cn } from "@/lib/utils";
 
 import { Skeleton as ShadcnSkeleton } from "@/components/ui/skeleton";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export interface BitSkeletonProp extends React.ComponentProps<"div"> {
   asChild?: boolean;
@@ -20,11 +15,7 @@ function Skeleton({ children, ...props }: BitSkeletonProp) {
     <div className={cn("relative animate-pulse", className)}>
       <ShadcnSkeleton
         {...props}
-        className={cn(
-          "rounded-none border-none bg-accent",
-          pressStart.className,
-          className
-        )}
+        className={cn("rounded-none border-none bg-accent", "retro", className)}
       >
         {children}
       </ShadcnSkeleton>

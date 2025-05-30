@@ -1,5 +1,3 @@
-import { Press_Start_2P } from "next/font/google";
-
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { type VariantProps, cva } from "class-variance-authority";
 
@@ -12,10 +10,7 @@ import {
   PopoverTrigger as ShadcnPopoverTrigger,
 } from "@/components/ui/popover";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 const Popover = ShadcnPopover;
 
@@ -27,7 +22,7 @@ export const popOverVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {
@@ -49,7 +44,7 @@ function PopoverContent({
     <ShadcnPopoverContent
       className={cn(
         "relative bg-card border-y-6 border-foreground dark:border-ring rounded-none mt-1",
-        font !== "normal" && pressStart.className,
+        font !== "normal" && "retro",
         className
       )}
       {...props}

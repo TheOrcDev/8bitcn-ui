@@ -1,5 +1,3 @@
-import { Press_Start_2P } from "next/font/google";
-
 import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/8bit/button";
@@ -7,10 +5,7 @@ import { Card, CardContent } from "@/components/ui/8bit/card";
 import { Input } from "@/components/ui/8bit/input";
 import { Label } from "@/components/ui/8bit/label";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "../styles/retro.css";
 
 export function LoginForm({
   className,
@@ -104,7 +99,7 @@ export function LoginForm({
         </CardContent>
       </Card>
       <p
-        className={`${pressStart.className} text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-primary`}
+        className={`${"retro"} text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-primary`}
       >
         By clicking continue, you agree to our <a href="#">Terms of Service</a>{" "}
         and <a href="#">Privacy Policy</a>.

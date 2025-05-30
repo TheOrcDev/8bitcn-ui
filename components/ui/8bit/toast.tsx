@@ -2,18 +2,13 @@
 
 import React from "react";
 
-import { Press_Start_2P } from "next/font/google";
-
 import { toast as sonnerToast } from "sonner";
+
+import "./styles/retro.css";
 
 export function toast(toast: string) {
   return sonnerToast.custom((id) => <Toast id={id} title={toast} />);
 }
-
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 interface ToastProps {
   id: string | number;
@@ -24,7 +19,7 @@ function Toast(props: ToastProps) {
   const { title } = props;
 
   return (
-    <div className={`relative ${pressStart.className}`}>
+    <div className={`relative ${"retro"}`}>
       <div className="flex rounded-lg bg-background shadow-lg ring-1 ring-black/5 w-full md:max-w-[364px] items-center p-4">
         <div className="flex flex-1 items-center">
           <div className="w-full">

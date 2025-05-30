@@ -1,5 +1,3 @@
-import { Press_Start_2P } from "next/font/google";
-
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { VariantProps, cva } from "class-variance-authority";
 
@@ -20,6 +18,8 @@ import {
   DropdownMenuTrigger as ShadcnDropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+import "./styles/retro.css";
+
 const DropdownMenu = ShadcnDropdownMenu;
 
 const DropdownMenuPortal = ShadcnDropdownMenuPortal;
@@ -35,11 +35,6 @@ const DropdownMenuSeparator = ShadcnDropdownMenuSeparator;
 const DropdownMenuShortcut = ShadcnDropdownMenuShortcut;
 
 const DropdownMenuSub = ShadcnDropdownMenuSub;
-
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 function DropdownMenuSubTrigger({
   className,
@@ -81,7 +76,7 @@ export const dropDownVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {
@@ -98,11 +93,7 @@ function DropdownMenuSubContent({
   return (
     <ShadcnDropdownMenuSubContent
       {...props}
-      className={cn(
-        "bg-popover",
-        font !== "normal" && pressStart.className,
-        className
-      )}
+      className={cn("bg-popover", font !== "normal" && "retro", className)}
     >
       {children}
 
@@ -130,11 +121,7 @@ function DropdownMenuContent({
 }: BitDropownMenuContentProps) {
   return (
     <ShadcnDropdownMenuContent
-      className={cn(
-        "mt-1 py-2",
-        font !== "normal" && pressStart.className,
-        className
-      )}
+      className={cn("mt-1 py-2", font !== "normal" && "retro", className)}
       {...props}
     >
       {children}

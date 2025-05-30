@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Press_Start_2P } from "next/font/google";
 import Link from "next/link";
 
 import { breadcrumbMetaData } from "@/lib/metadata";
@@ -26,11 +25,6 @@ import CodeSnippet from "../code-snippet";
 import CopyCommandButton from "../copy-command-button";
 import InstallationCommands from "../installation-commands";
 import { OpenInV0Button } from "../open-in-v0-button";
-
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "8-bit Breadcrumb",
@@ -241,13 +235,13 @@ export default function BreadcrumbPageNext() {
                 <BreadcrumbLink href="/">Home</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator>
-                <span className={cn(pressStart.className)}>/</span>
+                <span className={cn("retro")}>/</span>
               </BreadcrumbSeparator>
               <BreadcrumbItem>
                 <BreadcrumbLink href="/components">Components</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator>
-                <span className={cn(pressStart.className)}>/</span>
+                <span className={cn("retro")}>/</span>
               </BreadcrumbSeparator>
               <BreadcrumbItem>
                 <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
@@ -302,7 +296,7 @@ export default function BreadcrumbPageNext() {
                 <BreadcrumbLink href="/">Home</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator>
-                <span className={cn(pressStart.className)}>/</span>
+                <span className={cn("retro")}>/</span>
               </BreadcrumbSeparator>
               <BreadcrumbItem>
                 <DropdownMenu>
@@ -318,7 +312,7 @@ export default function BreadcrumbPageNext() {
                 </DropdownMenu>
               </BreadcrumbItem>
               <BreadcrumbSeparator>
-                <span className={cn(pressStart.className)}>/</span>
+                <span className={cn("retro")}>/</span>
               </BreadcrumbSeparator>
               <BreadcrumbItem>
                 <BreadcrumbPage>Breadcrumb</BreadcrumbPage>

@@ -1,5 +1,3 @@
-import { Press_Start_2P } from "next/font/google";
-
 import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
 import { VariantProps, cva } from "class-variance-authority";
 
@@ -11,16 +9,13 @@ import {
   HoverCardTrigger as ShadcnHoverCardTrigger,
 } from "@/components/ui/hover-card";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const hoverCardVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {

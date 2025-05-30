@@ -1,5 +1,3 @@
-import { Press_Start_2P } from "next/font/google";
-
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { VariantProps, cva } from "class-variance-authority";
 
@@ -15,6 +13,8 @@ import {
   SheetTrigger as ShadcnSheetTrigger,
 } from "@/components/ui/sheet";
 
+import "./styles/retro.css";
+
 const Sheet = ShadcnSheet;
 
 const SheetTrigger = ShadcnSheetTrigger;
@@ -29,16 +29,11 @@ const SheetHeader = ShadcnSheetHeader;
 
 const SheetTitle = ShadcnSheetTitle;
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
-
 export const sheetVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {

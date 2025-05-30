@@ -1,7 +1,5 @@
 "use client";
 
-import { Press_Start_2P } from "next/font/google";
-
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
 import {
@@ -10,11 +8,6 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/8bit/chart";
-
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 export const description = "An area chart with axes";
 
@@ -42,7 +35,7 @@ export function ChartExample() {
   return (
     <ChartContainer
       config={chartConfig}
-      className={`min-h-[200px] w-full ${pressStart.className}`}
+      className={`min-h-[200px] w-full ${"retro"}`}
     >
       <AreaChart accessibilityLayer data={chartData}>
         <CartesianGrid />
