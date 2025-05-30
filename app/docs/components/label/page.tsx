@@ -44,7 +44,7 @@ export default function LabelPage() {
             <OpenInV0Button name="8bit-label" className="w-fit" />
           </div>
         </div>
-        <div className="flex items-center justify-center min-h-[400px] relative space-x-2">
+        <div className="flex items-center justify-center min-h-[400px] relative gap-4">
           <Checkbox id="terms" />
           <Label htmlFor="terms" className="text-xs">
             Accept terms and conditions

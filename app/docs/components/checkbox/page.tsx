@@ -45,7 +45,7 @@ export default function CheckboxPage() {
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center gap-4">
             <Checkbox id="terms" />
             <Label htmlFor="terms" className="text-xs">
               Accept terms and conditions
