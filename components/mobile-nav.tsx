@@ -8,7 +8,6 @@ import { Menu } from "lucide-react";
 
 import { navItems } from "@/config/nav-items";
 
-import { Badge } from "./ui/8bit/badge";
 import { Button } from "./ui/button";
 import {
   Drawer,
@@ -54,7 +53,6 @@ export default function MobileNav() {
                   onClick={() => setOpen(false)}
                 >
                   {item.title}
-                  {item.new && <Badge>New</Badge>}
                 </Link>
               ))}
             </div>
