@@ -1,4 +1,4 @@
-import { VariantProps, cva } from "class-variance-authority";
+import { type VariantProps, cva } from "class-variance-authority";
 import { DayPicker } from "react-day-picker";
 
 import { cn } from "@/lib/utils";
