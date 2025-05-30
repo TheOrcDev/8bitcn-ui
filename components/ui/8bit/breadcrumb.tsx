@@ -1,5 +1,3 @@
-import { Press_Start_2P } from "next/font/google";
-
 import { Slot } from "@radix-ui/react-slot";
 import { VariantProps, cva } from "class-variance-authority";
 import { MoreHorizontal } from "lucide-react";
@@ -15,16 +13,13 @@ import {
   BreadcrumbSeparator as ShadcnBreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const breadcrumbVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
     variant: {
       default: "text-card-foreground",
@@ -97,7 +92,7 @@ function Breadcrumb({ children, ...props }: BitBreadcrumbNavigationProps) {
         className={cn(
           "relative rounded-none border-none bg-background",
           breadcrumbVariants({ variant }),
-          font !== "normal" && pressStart.className,
+          font !== "normal" && "retro",
           className
         )}
       >
@@ -112,7 +107,7 @@ function BreadcrumbList({ ...props }: BitBreadcrumbOrderedListProps) {
 
   return (
     <ShadcnBreadcrumbList
-      className={cn(className, font !== "normal" && pressStart.className)}
+      className={cn(className, font !== "normal" && "retro")}
       {...props}
     />
   );
@@ -123,7 +118,7 @@ function BreadcrumbItem({ ...props }: BitBreadcrumbListItemProps) {
 
   return (
     <ShadcnBreadcrumbItem
-      className={cn(className, font !== "normal" && pressStart.className)}
+      className={cn(className, font !== "normal" && "retro")}
       {...props}
     />
   );
@@ -142,7 +137,7 @@ function BreadcrumbLink({
   return (
     <Comp
       data-slot="breadcrumb-link"
-      className={cn(className, font !== "normal" && pressStart.className)}
+      className={cn(className, font !== "normal" && "retro")}
       {...props}
     />
   );
@@ -153,7 +148,7 @@ function BreadcrumbPage({ ...props }: BitBreadcrumbSpanProps) {
 
   return (
     <ShadcnBreadcrumbPage
-      className={cn(className, font !== "normal" && pressStart.className)}
+      className={cn(className, font !== "normal" && "retro")}
       {...props}
     />
   );
@@ -164,11 +159,7 @@ function BreadcrumbSeparator({ ...props }: BitBreadcrumbListItemProps) {
 
   return (
     <ShadcnBreadcrumbSeparator
-      className={cn(
-        className,
-        font !== "normal" && pressStart.className,
-        "[&>svg]:size-7"
-      )}
+      className={cn(className, font !== "normal" && "retro", "[&>svg]:size-7")}
       {...props}
     >
       {children ?? <ChevronRight />}
@@ -181,10 +172,10 @@ function BreadcrumbEllipsis({ ...props }: BitBreadcrumbSpanProps) {
 
   return (
     <ShadcnBreadcrumbEllipsis
-      className={cn(className, font !== "normal" && pressStart.className)}
+      className={cn(className, font !== "normal" && "retro")}
       {...props}
     >
-      <MoreHorizontal className={cn("size-7", pressStart.className)} />
+      <MoreHorizontal className={cn("size-7", "retro")} />
       <span className="sr-only">More</span>
     </ShadcnBreadcrumbEllipsis>
   );

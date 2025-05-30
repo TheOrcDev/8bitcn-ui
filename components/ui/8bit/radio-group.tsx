@@ -2,8 +2,6 @@
 
 import * as React from "react";
 
-import { Press_Start_2P } from "next/font/google";
-
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { cva } from "class-variance-authority";
 
@@ -11,16 +9,13 @@ import { cn } from "@/lib/utils";
 
 import { RadioGroup as ShadcnRadioGroup } from "@/components/ui/radio-group";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const radioGroupVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {

@@ -1,5 +1,3 @@
-import { Press_Start_2P } from "next/font/google";
-
 import { VariantProps, cva } from "class-variance-authority";
 import { MoreHorizontal } from "lucide-react";
 
@@ -14,17 +12,13 @@ import {
 } from "@/components/ui/pagination";
 
 import { Button } from "../button";
-
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const paginationVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
     variant: {
       default: "text-card-foreground",
@@ -47,7 +41,7 @@ function Pagination({ ...props }: BitPaginationProps<"nav">) {
       {...props}
       className={cn(
         paginationVariants({ variant }),
-        font !== "normal" && pressStart.className,
+        font !== "normal" && "retro",
         className
       )}
     />
@@ -143,11 +137,7 @@ function PaginationContent({ ...props }: BitPaginationProps<"ul">) {
   const { className, font } = props;
   return (
     <ShadcnPaginationContent
-      className={cn(
-        "gap-2",
-        font !== "normal" && pressStart.className,
-        className
-      )}
+      className={cn("gap-2", font !== "normal" && "retro", className)}
       {...props}
     />
   );
@@ -157,7 +147,7 @@ function PaginationItem({ ...props }: BitPaginationProps<"li">) {
   const { className, font } = props;
   return (
     <ShadcnPaginationItem
-      className={cn(font !== "normal" && pressStart.className, className)}
+      className={cn(font !== "normal" && "retro", className)}
       {...props}
     />
   );
@@ -173,7 +163,7 @@ function PaginationLink({ ...props }: PaginationLinkProps) {
   return (
     <ShadcnPaginationLink
       className={cn(
-        font !== "normal" && pressStart.className,
+        font !== "normal" && "retro",
         className,
         "relative group",
         "bg-transparent hover:bg-transparent active:bg-transparent focus:bg-transparent",
@@ -236,7 +226,7 @@ function PaginationPrevious({
         "hover:border-foreground focus:border-foreground active:border-transparent",
         "dark:hover:border-ring dark:focus:border-ring",
         "data-[active=true]:border-none aria-[current=page]:border-none",
-        font !== "normal" && pressStart.className,
+        font !== "normal" && "retro",
         className
       )}
       {...props}
@@ -263,7 +253,7 @@ function PaginationNext({
         "dark:hover:border-ring dark:focus:border-ring",
         "data-[active=true]:border-none aria-[current=page]:border-none",
         "flex flex-row text-sm w-full",
-        font !== "normal" && pressStart.className,
+        font !== "normal" && "retro",
         className
       )}
       {...props}
@@ -279,10 +269,10 @@ function PaginationEllipsis({ ...props }: BitPaginationProps<"span">) {
 
   return (
     <ShadcnPaginationEllipsis
-      className={cn(font !== "normal" && pressStart.className, className)}
+      className={cn(font !== "normal" && "retro", className)}
       {...props}
     >
-      <MoreHorizontal className={cn("size-7", pressStart.className)} />
+      <MoreHorizontal className={cn("size-7", "retro")} />
       <span className="sr-only">More pages</span>
     </ShadcnPaginationEllipsis>
   );

@@ -1,7 +1,5 @@
 import * as React from "react";
 
-import { Press_Start_2P } from "next/font/google";
-
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { VariantProps, cva } from "class-variance-authority";
 
@@ -9,16 +7,13 @@ import { cn } from "@/lib/utils";
 
 import { Checkbox as ShadcnCheckbox } from "@/components/ui/checkbox";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const checkboxVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {
@@ -43,7 +38,7 @@ function Checkbox({ className, font, ...props }: BitCheckboxProps) {
       <ShadcnCheckbox
         className={cn(
           "rounded-none size-5 ring-0 border-none",
-          font !== "normal" && pressStart.className,
+          font !== "normal" && "retro",
           className
         )}
         {...props}

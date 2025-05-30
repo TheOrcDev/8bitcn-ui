@@ -1,7 +1,5 @@
 "use client";
 
-import { Press_Start_2P } from "next/font/google";
-
 import * as CollapsiblePrimitive from "@radix-ui/react-collapsible";
 import {
   Collapsible as ShadcnCollapsible,
@@ -11,10 +9,7 @@ import {
 
 import { cn } from "@/lib/utils";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export interface BitCollapsibleProps
   extends React.ComponentProps<typeof CollapsiblePrimitive.Root> {
@@ -26,10 +21,7 @@ function Collapsible({ children, ...props }: BitCollapsibleProps) {
 
   return (
     <div className={cn("relative", className)}>
-      <ShadcnCollapsible
-        {...props}
-        className={cn(className, pressStart.className)}
-      >
+      <ShadcnCollapsible {...props} className={cn(className, "retro")}>
         {children}
       </ShadcnCollapsible>
     </div>
@@ -44,7 +36,7 @@ function CollapsibleTrigger({
   return (
     <ShadcnCollapsibleTrigger
       data-slot="collapsible-trigger"
-      className={cn(className, pressStart.className)}
+      className={cn(className, "retro")}
       {...props}
     >
       {children}
@@ -60,7 +52,7 @@ function CollapsibleContent({
   return (
     <ShadcnCollapsibleContent
       data-slot="collapsible-content"
-      className={cn(className, pressStart.className)}
+      className={cn(className, "retro")}
       {...props}
     >
       {children}

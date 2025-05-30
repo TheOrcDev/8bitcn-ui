@@ -1,23 +1,18 @@
 import type React from "react";
 import { forwardRef } from "react";
 
-import { Press_Start_2P } from "next/font/google";
-
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import { cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const avatarVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
     variant: {
       default: "",
@@ -104,7 +99,7 @@ const Avatar = forwardRef<
           "relative flex size-10 shrink-0 overflow-hidden text-xs",
           !isPixel && "rounded-none",
           isPixel && "rounded-full",
-          font !== "normal" && pressStart.className,
+          font !== "normal" && "retro",
           variant === "retro" && "image-rendering-pixelated",
           className
         )}
@@ -143,7 +138,7 @@ const AvatarImage = forwardRef<
       data-slot="avatar-image"
       className={cn(
         "aspect-square h-full w-full",
-        font === "retro" && pressStart.className,
+        font === "retro" && "retro",
         className
       )}
       {...props}

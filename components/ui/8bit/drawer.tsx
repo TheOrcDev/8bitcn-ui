@@ -1,5 +1,3 @@
-import { Press_Start_2P } from "next/font/google";
-
 import { VariantProps, cva } from "class-variance-authority";
 import { Drawer as DrawerPrimitive } from "vaul";
 
@@ -17,10 +15,7 @@ import {
   DrawerTrigger as ShadcnDrawerTrigger,
 } from "@/components/ui/drawer";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 const Drawer = ShadcnDrawer;
 
@@ -36,10 +31,7 @@ function DrawerTitle({
   ...props
 }: React.ComponentProps<typeof DrawerPrimitive.Title>) {
   return (
-    <ShadcnDrawerTitle
-      className={cn(className, pressStart.className)}
-      {...props}
-    >
+    <ShadcnDrawerTitle className={cn(className, "retro")} {...props}>
       {children}
     </ShadcnDrawerTitle>
   );
@@ -51,10 +43,7 @@ function DrawerDescription({
   ...props
 }: React.ComponentProps<typeof DrawerPrimitive.Description>) {
   return (
-    <ShadcnDrawerDescription
-      className={cn(className, pressStart.className)}
-      {...props}
-    >
+    <ShadcnDrawerDescription className={cn(className, "retro")} {...props}>
       {children}
     </ShadcnDrawerDescription>
   );
@@ -71,7 +60,7 @@ function DrawerTrigger({
         className={cn(
           "border-foreground dark:border-ring hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none border-4 focus:border-foreground hover:border-foreground dark:focus:border-ring bg-transparent data-[state=open]:bg-transparent data-[state=open]:border-foreground dark:data-[state=open]:border-ring",
           className,
-          pressStart.className
+          "retro"
         )}
         {...props}
       >
@@ -85,7 +74,7 @@ export const drawerVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {
@@ -114,7 +103,7 @@ function DrawerContent({ className, children, side, ...props }: DrawerProps) {
           side === "bottom" &&
             "border-t-4 data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom inset-x-0 bottom-0 h-auto",
           className,
-          pressStart.className
+          "retro"
         )}
         {...props}
       >
@@ -131,10 +120,7 @@ function DrawerHeader({
   ...props
 }: React.ComponentProps<"div">) {
   return (
-    <ShadcnDrawerHeader
-      className={cn("", className, pressStart.className)}
-      {...props}
-    >
+    <ShadcnDrawerHeader className={cn("", className, "retro")} {...props}>
       {children}
     </ShadcnDrawerHeader>
   );
@@ -146,10 +132,7 @@ function DrawerFooter({
   ...props
 }: React.ComponentProps<"div">) {
   return (
-    <ShadcnDrawerFooter
-      className={cn("", className, pressStart.className)}
-      {...props}
-    >
+    <ShadcnDrawerFooter className={cn("", className, "retro")} {...props}>
       {children}
     </ShadcnDrawerFooter>
   );

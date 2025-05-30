@@ -1,5 +1,3 @@
-import { Press_Start_2P } from "next/font/google";
-
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { VariantProps, cva } from "class-variance-authority";
 
@@ -18,16 +16,13 @@ import {
   SelectValue as ShadcnSelectValue,
 } from "@/components/ui/select";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const inputVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {
@@ -62,7 +57,7 @@ function SelectValue({ ...props }: BitSelectValueProps) {
 
   return (
     <ShadcnSelectValue
-      className={cn(font !== "normal" && pressStart.className)}
+      className={cn(font !== "normal" && "retro")}
       {...props}
     />
   );
@@ -82,7 +77,7 @@ function SelectTrigger({ children, ...props }: BitSelectTriggerProps) {
       className={cn(
         "relative border-y-6 border-foreground dark:border-ring",
         className,
-        font !== "normal" && pressStart.className
+        font !== "normal" && "retro"
       )}
     >
       <ShadcnSelectTrigger
@@ -116,7 +111,7 @@ function SelectContent({
   return (
     <ShadcnSelectContent
       className={cn(
-        font !== "normal" && pressStart.className,
+        font !== "normal" && "retro",
         className,
         "relative rounded-none border-4 border-foreground dark:border-ring -ml-1 mt-1"
       )}

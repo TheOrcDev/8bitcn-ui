@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Press_Start_2P } from "next/font/google";
 import Link from "next/link";
 
 import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
@@ -32,11 +31,6 @@ export const metadata: Metadata = {
     images: sidebarMetaData,
   },
 };
-
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 // Menu items.
 const items = [
@@ -97,7 +91,7 @@ export default function SidebarPage() {
             <div className="flex border w-full h-[450px]">
               <Sidebar
                 collapsible="none"
-                className={`${pressStart.className} border-r-4 border-foreground dark:border-ring`}
+                className={`${"retro"} border-r-4 border-foreground dark:border-ring`}
               >
                 <SidebarContent>
                   <SidebarGroup>

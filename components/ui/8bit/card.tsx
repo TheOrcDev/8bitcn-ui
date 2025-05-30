@@ -1,5 +1,3 @@
-import { Press_Start_2P } from "next/font/google";
-
 import { VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
@@ -14,16 +12,13 @@ import {
   CardTitle as ShadcnCardTitle,
 } from "@/components/ui/card";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const cardVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {
@@ -51,7 +46,7 @@ function Card({ ...props }: BitCardProps) {
         {...props}
         className={cn(
           "rounded-none border-0 !w-full",
-          font !== "normal" && pressStart.className,
+          font !== "normal" && "retro",
           className
         )}
       />
@@ -69,7 +64,7 @@ function CardHeader({ ...props }: BitCardProps) {
 
   return (
     <ShadcnCardHeader
-      className={cn(font !== "normal" && pressStart.className, className)}
+      className={cn(font !== "normal" && "retro", className)}
       {...props}
     />
   );
@@ -80,7 +75,7 @@ function CardTitle({ ...props }: BitCardProps) {
 
   return (
     <ShadcnCardTitle
-      className={cn(font !== "normal" && pressStart.className, className)}
+      className={cn(font !== "normal" && "retro", className)}
       {...props}
     />
   );
@@ -91,7 +86,7 @@ function CardDescription({ ...props }: BitCardProps) {
 
   return (
     <ShadcnCardDescription
-      className={cn(font !== "normal" && pressStart.className, className)}
+      className={cn(font !== "normal" && "retro", className)}
       {...props}
     />
   );
@@ -102,7 +97,7 @@ function CardAction({ ...props }: BitCardProps) {
 
   return (
     <ShadcnCardAction
-      className={cn(font !== "normal" && pressStart.className, className)}
+      className={cn(font !== "normal" && "retro", className)}
       {...props}
     />
   );
@@ -113,7 +108,7 @@ function CardContent({ ...props }: BitCardProps) {
 
   return (
     <ShadcnCardContent
-      className={cn(font !== "normal" && pressStart.className, className)}
+      className={cn(font !== "normal" && "retro", className)}
       {...props}
     />
   );
@@ -125,7 +120,7 @@ function CardFooter({ ...props }: BitCardProps) {
   return (
     <ShadcnCardFooter
       data-slot="card-footer"
-      className={cn(font !== "normal" && pressStart.className, className)}
+      className={cn(font !== "normal" && "retro", className)}
       {...props}
     />
   );

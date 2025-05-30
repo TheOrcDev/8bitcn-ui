@@ -1,21 +1,16 @@
-import { Press_Start_2P } from "next/font/google";
-
 import { VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
 import { Input as ShadcnInput } from "@/components/ui/input";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const inputVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {
@@ -43,7 +38,7 @@ function Input({ ...props }: BitInputProps) {
         {...props}
         className={cn(
           "rounded-none ring-0 !w-full",
-          font !== "normal" && pressStart.className,
+          font !== "normal" && "retro",
           className
         )}
       />

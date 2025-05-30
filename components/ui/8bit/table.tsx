@@ -2,8 +2,6 @@
 
 import * as React from "react";
 
-import { Press_Start_2P } from "next/font/google";
-
 import { VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
@@ -19,10 +17,7 @@ import {
   TableRow as ShadcnTableRow,
 } from "@/components/ui/table";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const tableVariants = cva("", {
   variants: {
@@ -32,7 +27,7 @@ export const tableVariants = cva("", {
     },
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {

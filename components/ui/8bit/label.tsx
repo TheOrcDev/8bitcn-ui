@@ -2,8 +2,6 @@
 
 import * as React from "react";
 
-import { Press_Start_2P } from "next/font/google";
-
 import * as LabelPrimitive from "@radix-ui/react-label";
 import { VariantProps, cva } from "class-variance-authority";
 
@@ -11,16 +9,13 @@ import { cn } from "@/lib/utils";
 
 import { Label as ShadcnLabel } from "@/components/ui/label";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const inputVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {
@@ -37,7 +32,7 @@ interface BitLabelProps
 function Label({ className, font, ...props }: BitLabelProps) {
   return (
     <ShadcnLabel
-      className={cn(className, font !== "normal" && pressStart.className)}
+      className={cn(className, font !== "normal" && "retro")}
       {...props}
     />
   );

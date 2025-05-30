@@ -33,6 +33,11 @@
           "path": "components/ui/8bit/input.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/input.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -47,6 +52,11 @@
           "path": "components/ui/8bit/toast.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/toast.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -61,6 +71,11 @@
           "path": "components/ui/8bit/input-otp.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/input-otp.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -75,6 +90,11 @@
           "path": "components/ui/8bit/badge.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/badge.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -89,6 +109,11 @@
           "path": "components/ui/8bit/textarea.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/textarea.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -103,6 +128,11 @@
           "path": "components/ui/8bit/calendar.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/calendar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -117,6 +147,11 @@
           "path": "components/ui/8bit/card.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -131,6 +166,11 @@
           "path": "components/ui/8bit/carousel.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/carousel.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -145,6 +185,11 @@
           "path": "components/ui/8bit/dialog.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/dialog.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -159,6 +204,11 @@
           "path": "components/ui/8bit/dropdown-menu.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/dropdown-menu.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -173,6 +223,11 @@
           "path": "components/ui/8bit/hover-card.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/hover-card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -187,6 +242,11 @@
           "path": "components/ui/8bit/popover.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/popover.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -201,6 +261,11 @@
           "path": "components/ui/8bit/resizable.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/resizable.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -215,6 +280,11 @@
           "path": "components/ui/8bit/select.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/select.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -229,6 +299,11 @@
           "path": "components/ui/8bit/sheet.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/sheet.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -243,6 +318,11 @@
           "path": "components/ui/8bit/label.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/label.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -257,6 +337,11 @@
           "path": "components/ui/8bit/checkbox.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/checkbox.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -271,6 +356,11 @@
           "path": "components/ui/8bit/scroll-area.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/scroll-area.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -285,6 +375,11 @@
           "path": "components/ui/8bit/switch.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/switch.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -299,6 +394,11 @@
           "path": "components/ui/8bit/alert.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/alert.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -313,6 +413,11 @@
           "path": "components/ui/8bit/alert-dialog.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/alert-dialog.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -327,6 +432,11 @@
           "path": "components/ui/8bit/tooltip.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/tooltip.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -341,6 +451,11 @@
           "path": "components/ui/8bit/tooltip.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/tooltip.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -355,6 +470,11 @@
           "path": "components/ui/8bit/avatar.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/avatar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -369,6 +489,11 @@
           "path": "components/ui/8bit/skeleton.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/skeleton.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -383,6 +508,11 @@
           "path": "components/ui/8bit/breadcrumb.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/breadcrumb.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -397,6 +527,11 @@
           "path": "components/ui/8bit/collapsible.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/collapsible.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -411,6 +546,11 @@
           "path": "components/ui/8bit/progress.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/progress.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -425,6 +565,11 @@
           "path": "components/ui/8bit/slider.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/slider.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -439,6 +584,11 @@
           "path": "components/ui/8bit/context-menu.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/context-menu.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -453,6 +603,11 @@
           "path": "components/ui/8bit/menubar.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/menubar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -467,6 +622,11 @@
           "path": "components/ui/8bit/toggle.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/toggle.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -481,6 +641,11 @@
           "path": "components/ui/8bit/table.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/table.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -495,6 +660,11 @@
           "path": "components/ui/8bit/tabs.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/tabs.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -514,6 +684,11 @@
           "path": "components/ui/8bit/popover.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/popover.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -528,6 +703,11 @@
           "path": "components/ui/8bit/command.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/command.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -542,6 +722,11 @@
           "path": "components/ui/8bit/radio-group.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/radio-group.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -556,6 +741,11 @@
           "path": "components/ui/8bit/pagination.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/pagination.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -590,6 +780,11 @@
           "path": "components/ui/8bit/label.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/label.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -624,6 +819,11 @@
           "path": "components/ui/8bit/label.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/label.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -658,6 +858,11 @@
           "path": "components/ui/8bit/label.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/label.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -697,6 +902,11 @@
           "path": "components/ui/8bit/label.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/label.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -716,6 +926,11 @@
           "path": "components/ui/8bit/chart.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/chart.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -730,6 +945,11 @@
           "path": "components/ui/8bit/toggle-group.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/toggle-group.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -744,6 +964,11 @@
           "path": "components/ui/8bit/blocks/sidebar.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/blocks/sidebar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -758,6 +983,11 @@
           "path": "components/ui/8bit/accordion.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/accordion.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -772,6 +1002,11 @@
           "path": "components/ui/8bit/drawer.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/drawer.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     },
@@ -786,6 +1021,11 @@
           "path": "components/ui/8bit/navigation-menu.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/navigation-menu.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
         }
       ]
     }

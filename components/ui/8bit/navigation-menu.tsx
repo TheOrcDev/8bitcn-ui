@@ -1,7 +1,5 @@
 import * as React from "react";
 
-import { Press_Start_2P } from "next/font/google";
-
 import { Indicator, Root, Viewport } from "@radix-ui/react-navigation-menu";
 import { VariantProps, cva } from "class-variance-authority";
 
@@ -16,18 +14,15 @@ import {
   NavigationMenuTrigger as ShadcnNavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
-export { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import "./styles/retro.css";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+export { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 
 export const navigationMenuVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {

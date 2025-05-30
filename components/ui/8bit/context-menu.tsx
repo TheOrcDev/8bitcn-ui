@@ -2,17 +2,12 @@
 
 import * as React from "react";
 
-import { Press_Start_2P } from "next/font/google";
-
 import * as ContextMenuPrimitive from "@radix-ui/react-context-menu";
 import { ChevronRight, Circle } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 const ContextMenu = ContextMenuPrimitive.Root;
 
@@ -72,7 +67,7 @@ const ContextMenuContent = React.forwardRef<
         ref={ref}
         className={cn(
           "z-50 max-h-[--radix-context-menu-content-available-height] min-w-[8rem] overflow-y-auto overflow-x-hidden rounded-md border-x-4 border-y-6 border-foreground dark:border-ring bg-popover p-1 text-popover-foreground animate-in fade-in-80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 origin-[--radix-context-menu-content-transform-origin]",
-          pressStart.className,
+          "retro",
           className
         )}
         {...props}

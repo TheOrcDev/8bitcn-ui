@@ -1,5 +1,3 @@
-import { Press_Start_2P } from "next/font/google";
-
 import { VariantProps, cva } from "class-variance-authority";
 import { DayPicker } from "react-day-picker";
 
@@ -8,17 +6,13 @@ import { cn } from "@/lib/utils";
 import { Calendar as ShadcnCalendar } from "@/components/ui/calendar";
 
 import { buttonVariants } from "./button";
-
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+import "./styles/retro.css";
 
 export const calendarVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
   },
   defaultVariants: {

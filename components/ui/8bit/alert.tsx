@@ -1,5 +1,3 @@
-import { Press_Start_2P } from "next/font/google";
-
 import { VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
@@ -10,16 +8,11 @@ import {
   AlertTitle as ShadcnAlertTitle,
 } from "@/components/ui/alert";
 
-const pressStart = Press_Start_2P({
-  weight: ["400"],
-  subsets: ["latin"],
-});
-
 export const alertVariants = cva("", {
   variants: {
     font: {
       normal: "",
-      retro: pressStart.className,
+      retro: "retro",
     },
     variant: {
       default: "bg-card text-card-foreground",
@@ -46,7 +39,7 @@ function Alert({ children, ...props }: BitAlertProps) {
         variant={variant}
         className={cn(
           "relative rounded-none border-none bg-background",
-          font !== "normal" && pressStart.className,
+          font !== "normal" && "retro",
           className
         )}
       >

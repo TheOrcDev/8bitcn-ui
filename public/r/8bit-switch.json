@@ -13,6 +13,12 @@
       "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport * as SwitchPrimitive from \"@radix-ui/react-switch\";\n\nimport { cn } from \"@/lib/utils\";\n\nfunction Switch({\n  className,\n  ...props\n}: React.ComponentProps<typeof SwitchPrimitive.Root>) {\n  return (\n    <SwitchPrimitive.Root\n      data-slot=\"switch\"\n      className={cn(\n        \"relative peer data-[state=checked]:bg-primary rounded-xs data-[state=unchecked]:bg-input focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center border border-transparent shadow-xs transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50\",\n        className\n      )}\n      {...props}\n    >\n      <SwitchPrimitive.Thumb\n        data-slot=\"switch-thumb\"\n        className={cn(\n          \"bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 border border-foreground dark:border-ring ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0\"\n        )}\n      />\n\n      <div\n        className=\"absolute inset-0 border-y-4 -my-1 border-foreground dark:border-ring pointer-events-none\"\n        aria-hidden=\"true\"\n      />\n\n      <div\n        className=\"absolute inset-0 border-x-4 -mx-1 border-foreground dark:border-ring pointer-events-none\"\n        aria-hidden=\"true\"\n      />\n    </SwitchPrimitive.Root>\n  );\n}\n\nexport { Switch };\n",
       "type": "registry:component",
       "target": "components/ui/8bit/switch.tsx"
+    },
+    {
+      "path": "components/ui/8bit/styles/retro.css",
+      "content": "@import url(\"https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap\");\n\n.retro {\n  font-family:\n    \"Press Start 2P\",\n    system-ui,\n    -apple-system,\n    sans-serif;\n  line-height: 1.5;\n  letter-spacing: 0.5px;\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/styles/retro.css"
     }
   ]
 }
