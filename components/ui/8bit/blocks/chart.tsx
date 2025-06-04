@@ -48,7 +48,7 @@ export function ChartExample() {
         />
         <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
         <YAxis
-          width={46}
+          width={47}
           tickLine={false}
           axisLine={false}
           tickMargin={8}

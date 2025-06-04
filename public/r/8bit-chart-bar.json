@@ -1,16 +1,16 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "8bit-chart",
+  "name": "8bit-chart-bar",
   "type": "registry:component",
-  "title": "8-bit Chart",
-  "description": "A simple 8-bit chart component",
+  "title": "8-bit Chart Bar",
+  "description": "A simple 8-bit chart bar component",
   "registryDependencies": [],
   "files": [
     {
-      "path": "components/ui/8bit/blocks/chart.tsx",
-      "content": "\"use client\";\n\nimport { Area, AreaChart, CartesianGrid, XAxis, YAxis } from \"recharts\";\n\nimport {\n  ChartConfig,\n  ChartContainer,\n  ChartTooltip,\n  ChartTooltipContent,\n} from \"@/components/ui/8bit/chart\";\n\nexport const description = \"An area chart with axes\";\n\nconst chartData = [\n  { month: \"January\", desktop: 186, mobile: 80 },\n  { month: \"February\", desktop: 305, mobile: 200 },\n  { month: \"March\", desktop: 237, mobile: 120 },\n  { month: \"April\", desktop: 73, mobile: 190 },\n  { month: \"May\", desktop: 209, mobile: 130 },\n  { month: \"June\", desktop: 214, mobile: 140 },\n];\n\nconst chartConfig = {\n  desktop: {\n    label: \"Desktop\",\n    color: \"var(--chart-1)\",\n  },\n  mobile: {\n    label: \"Mobile\",\n    color: \"var(--chart-2)\",\n  },\n} satisfies ChartConfig;\n\nexport function ChartExample() {\n  return (\n    <ChartContainer\n      config={chartConfig}\n      className={`min-h-[200px] w-full ${\"retro\"}`}\n    >\n      <AreaChart accessibilityLayer data={chartData}>\n        <CartesianGrid />\n        <XAxis\n          dataKey=\"month\"\n          tickLine={false}\n          axisLine={false}\n          tickMargin={8}\n          tickFormatter={(value) => value.slice(0, 3)}\n        />\n        <ChartTooltip cursor={false} content={<ChartTooltipContent />} />\n        <YAxis\n          width={47}\n          tickLine={false}\n          axisLine={false}\n          tickMargin={8}\n          tickCount={3}\n        />\n        <Area\n          dataKey=\"mobile\"\n          fill=\"var(--chart-2)\"\n          stroke=\"var(--chart-2)\"\n          stackId=\"a\"\n        />\n        <Area\n          dataKey=\"desktop\"\n          fill=\"var(--chart-1)\"\n          stroke=\"var(--chart-1)\"\n          stackId=\"a\"\n        />\n      </AreaChart>\n    </ChartContainer>\n  );\n}\n",
+      "path": "components/ui/8bit/blocks/chart-bar.tsx",
+      "content": "\"use client\";\n\nimport { Bar, BarChart, CartesianGrid, XAxis } from \"recharts\";\n\nimport {\n  ChartConfig,\n  ChartContainer,\n  ChartTooltip,\n  ChartTooltipContent,\n} from \"@/components/ui/8bit/chart\";\n\nexport const description = \"A multiple bar chart\";\n\nconst chartData = [\n  { month: \"January\", desktop: 186, mobile: 80 },\n  { month: \"February\", desktop: 305, mobile: 200 },\n  { month: \"March\", desktop: 237, mobile: 120 },\n  { month: \"April\", desktop: 73, mobile: 190 },\n  { month: \"May\", desktop: 209, mobile: 130 },\n  { month: \"June\", desktop: 214, mobile: 140 },\n];\n\nconst chartConfig = {\n  desktop: {\n    label: \"Desktop\",\n    color: \"var(--chart-1)\",\n  },\n  mobile: {\n    label: \"Mobile\",\n    color: \"var(--chart-2)\",\n  },\n} satisfies ChartConfig;\n\nexport default function ChartBarMultiple() {\n  return (\n    <ChartContainer config={chartConfig}>\n      <BarChart accessibilityLayer data={chartData}>\n        <CartesianGrid vertical={false} />\n        <XAxis\n          dataKey=\"month\"\n          tickLine={false}\n          tickMargin={10}\n          axisLine={false}\n          tickFormatter={(value) => value.slice(0, 3)}\n        />\n        <ChartTooltip\n          cursor={false}\n          content={<ChartTooltipContent indicator=\"dot\" />}\n        />\n        <Bar dataKey=\"desktop\" fill=\"var(--color-desktop)\" />\n        <Bar dataKey=\"mobile\" fill=\"var(--color-mobile)\" />\n      </BarChart>\n    </ChartContainer>\n  );\n}\n",
       "type": "registry:component",
-      "target": "components/ui/8bit/blocks/chart.tsx"
+      "target": "components/ui/8bit/blocks/chart-bar.tsx"
     },
     {
       "path": "components/ui/8bit/chart.tsx",
