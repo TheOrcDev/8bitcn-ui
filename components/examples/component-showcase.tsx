@@ -2,7 +2,6 @@ import Image from "next/image";
 
 import { Activity, Upload, Users } from "lucide-react";
 
-import { ChartExample } from "@/components/ui/8bit/blocks/chart";
 import { LoginForm } from "@/components/ui/8bit/blocks/login-form";
 import {
   Card,
@@ -24,6 +23,8 @@ import { Textarea } from "@/components/ui/8bit/textarea";
 
 import { CalendarExample } from "@/components/examples/calendar";
 import { CommandExample } from "@/components/examples/command";
+
+import ChartBarMultiple from "../ui/8bit/blocks/chart-bar";
 
 export default function ComponentShowcase() {
   return (
@@ -96,7 +97,7 @@ export default function ComponentShowcase() {
             <Users className="size-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <ChartExample />
+            <ChartBarMultiple />
           </CardContent>
         </Card>
 
