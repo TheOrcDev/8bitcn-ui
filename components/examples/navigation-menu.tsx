@@ -83,7 +83,7 @@ export default function NavigationMenuDemo() {
               <ListItem href="/docs/components/accordion" title="Components">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
-              <ListItem href="/blocks" title="Building Blocks">
+              <ListItem href="/blocks/authentication" title="Building Blocks">
                 Building Retro Blocks for the Web
               </ListItem>
             </ul>
