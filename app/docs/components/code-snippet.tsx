@@ -6,8 +6,14 @@ import { Check, Clipboard } from "lucide-react";
 import ShikiHighlighter from "react-shiki";
 import { toast } from "sonner";
 
+import { cn } from "@/lib/utils";
+
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
+
+function countLines(code: string) {
+  return code.split("\n").length;
+}
 
 export default function CodeSnippet({
   children,
@@ -28,7 +34,12 @@ export default function CodeSnippet({
   };
 
   return (
-    <ScrollArea className="max-h-[400px]">
+    <ScrollArea
+      className={cn(
+        "relative",
+        countLines(children?.toString() || "") > 10 && "h-[400px]"
+      )}
+    >
       <ShikiHighlighter
         addDefaultStyles={false}
         language="jsx"
