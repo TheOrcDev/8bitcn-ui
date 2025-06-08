@@ -32,9 +32,9 @@ export default function InstallationCommands({
 
   return (
     <div className="rounded-lg overflow-hidden border border-zinc-800">
-      <div className="bg-[#121212] text-white">
+      <div className="bg-[#27212e] text-white">
         <Tabs defaultValue="pnpm">
-          <TabsList className="bg-[#121212] border-b border-zinc-800 rounded-none h-12 px-2 w-full justify-between">
+          <TabsList className="bg-[#27212e] border-b border-zinc-800 rounded-none h-12 px-2 w-full justify-between">
             <div>
               <TabsTrigger
                 value="pnpm"

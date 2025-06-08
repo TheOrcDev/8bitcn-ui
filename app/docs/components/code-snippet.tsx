@@ -1,17 +1,13 @@
 "use client";
 
-import { useState } from "react"
-import { Check, Clipboard } from "lucide-react"
-import ShikiHighlighter from "react-shiki"
-import { toast } from "sonner"
+import { useState } from "react";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { Check, Clipboard } from "lucide-react";
+import ShikiHighlighter from "react-shiki";
+import { toast } from "sonner";
 
-function countLines(code: string) {
-  return code.split("\n").length
-}
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function CodeSnippet({
   children,
@@ -32,36 +28,33 @@ export default function CodeSnippet({
   };
 
   return (
-    <ScrollArea
-      className={cn(countLines(children?.toString() || "") > 9 && "h-[400px]")}
-    >
-      <div className="relative">
-        <ShikiHighlighter
-          addDefaultStyles={false}
-          language="jsx"
-          showLanguage={false}
-          theme={{
-            light: "github-dark",
-            dark: "github-light",
-          }}
-          className="w-full text-sm [&>pre]:p-4"
-        >
-          {children?.toString().trim() || ""}
-        </ShikiHighlighter>
+    <ScrollArea className="max-h-[400px]">
+      <ShikiHighlighter
+        addDefaultStyles={false}
+        language="jsx"
+        showLanguage={false}
+        theme={{
+          light: "laserwave",
+          dark: "laserwave",
+        }}
+        as="div"
+        className="w-full text-sm [&>pre]:p-4"
+      >
+        {children?.toString().trim() || ""}
+      </ShikiHighlighter>
 
-        <Button
-          variant="secondary"
-          size="icon"
-          onClick={handleCopy}
-          className="absolute z-10 top-2 right-2"
-        >
-          {copied ? (
-            <Check className="size-3" />
-          ) : (
-            <Clipboard className="size-3" />
-          )}
-        </Button>
-      </div>
+      <Button
+        variant="secondary"
+        size="icon"
+        onClick={handleCopy}
+        className="absolute z-10 top-2 right-2"
+      >
+        {copied ? (
+          <Check className="size-3" />
+        ) : (
+          <Clipboard className="size-3" />
+        )}
+      </Button>
     </ScrollArea>
-  )
+  );
 }
