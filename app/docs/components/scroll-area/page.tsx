@@ -14,7 +14,7 @@ import {
 } from "./_demo/scrollarea-demo";
 
 export const metadata: Metadata = {
-  title: "8-bit ScrollArea",
+  title: "8-bit Scroll-area",
   description: "Displays an 8-bit scroll area component.",
   openGraph: {
     images: scrollAreaMetaData,
@@ -25,7 +25,7 @@ export default function ScrollAreaPage() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
-        <h1 className="text-3xl font-bold">Button</h1>
+        <h1 className="text-3xl font-bold">Scroll-area</h1>
         <CopyCommandButton
           copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-scroll-area.json`}
           command={"pnpm dlx shadcn@canary add 8bit-scroll-area"}
@@ -39,7 +39,7 @@ export default function ScrollAreaPage() {
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            8-bit scroll area component
+            8-bit scroll-area component
           </h2>
 
           <div className="flex items-center gap-2">
