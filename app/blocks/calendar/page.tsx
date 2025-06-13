@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/8bit/button";
 
-import AuthenticationBlocks from "./authentication";
+import CalendarBlocks from "./calendar";
 
 export const metadata: Metadata = {
   title: "Building Retro Blocks for the Web - 8bitcn/ui",
@@ -23,19 +23,19 @@ export default function BlocksPage() {
       </p>
 
       <div className="flex flex-col md:flex-row gap-5">
-        <Button variant="outline" asChild>
+        <Button asChild>
           <Link href="/blocks/authentication">Authentication</Link>
         </Button>
 
         <Button asChild>
           <Link href="/blocks/charts">Charts</Link>
         </Button>
-        <Button asChild>
+        <Button variant="outline" asChild>
           <Link href="/blocks/calendar">Calendar</Link>
         </Button>
       </div>
 
-      <AuthenticationBlocks />
+      <CalendarBlocks />
     </div>
   );
 }
