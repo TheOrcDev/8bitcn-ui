@@ -2,7 +2,8 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/8bit/button";
+import "@/components/ui/8bit/styles/retro.css";
 
 export const metadata: Metadata = {
   title: "404 | 8bitcn/ui",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className="grid h-screen w-full place-content-center gap-5 bg-background px-4 text-center">
+    <div className="retro grid h-screen w-full place-content-center gap-5 bg-background px-4 text-center">
       <Image
         src={"/images/404/pixel-orc.webp"}
         width={300}
@@ -22,7 +23,7 @@ export default function NotFound() {
 
       <p className="text-gray-500">You are lost.</p>
       <Link href={"/"}>
-        <Button variant={"outline"}>Return to Home Page</Button>
+        <Button>Return to Home Page</Button>
       </Link>
     </div>
   );
