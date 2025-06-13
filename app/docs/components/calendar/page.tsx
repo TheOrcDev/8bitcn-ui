@@ -5,6 +5,7 @@ import { calendarMetaData } from "@/lib/metadata";
 import { Separator } from "@/components/ui/separator";
 
 import { CalendarExample } from "@/components/examples/calendar";
+import { RangeCalendar } from "@/components/examples/range-calendar";
 
 import CodeSnippet from "../code-snippet";
 import CopyCommandButton from "../copy-command-button";
@@ -70,6 +71,44 @@ export default function CalendarPage() {
   selected={date}
   onSelect={setDate}
 />`}</CodeSnippet>
+
+      <h3 className="text-lg font-bold mt-10">Range Calendar</h3>
+
+      <Separator />
+
+      <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
+        <div className="flex items-center justify-between">
+          <h2 className="text-sm text-muted-foreground sm:pl-3">
+            8-bit range calendar component
+          </h2>
+        </div>
+        <div className="flex items-center justify-center min-h-[400px] max-w-md mx-auto relative">
+          <RangeCalendar />
+        </div>
+      </div>
+
+      <CodeSnippet>{`"use client";
+
+import * as React from "react";
+
+import { Calendar } from "@/components/ui/8bit/calendar";
+
+export function RangeCalendar() {
+  const [date, setDate] = React.useState<Date | undefined>(
+    new Date(2025, 5, 12)
+  );
+
+  return (
+    <Calendar
+      mode="single"
+      defaultMonth={date}
+      numberOfMonths={2}
+      selected={date}
+      onSelect={setDate}
+    />
+  );
+}
+`}</CodeSnippet>
     </div>
   );
 }
