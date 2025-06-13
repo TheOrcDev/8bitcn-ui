@@ -1,6 +1,7 @@
 import { Users } from "lucide-react";
 
 import { ChartExample } from "@/components/ui/8bit/blocks/chart";
+import ChartAreaStep from "@/components/ui/8bit/blocks/chart-area-step";
 import ChartBarMultiple from "@/components/ui/8bit/blocks/chart-bar";
 import {
   Card,
@@ -67,6 +68,34 @@ export default function ChartsBlocks() {
           </CardHeader>
           <CardContent>
             <ChartBarMultiple />
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
+        <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
+          <h2 className="text-sm text-muted-foreground sm:pl-3">
+            A step area chart
+          </h2>
+
+          <div className="flex flex-col md:flex-row items-center gap-2">
+            <CopyCommandButton
+              command="npx shadcn@latest add 8bit-chart-area-step"
+              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-chart-area-step.json`}
+            />
+            <OpenInV0Button name="8bit-chart-area-step" className="w-fit" />
+          </div>
+        </div>
+
+        <Card className="w-full md:w-[600px] mx-auto">
+          <CardHeader className="flex flex-row items-center justify-between">
+            <CardTitle className="text-sm font-medium">
+              Total visitors in the last 6 months
+            </CardTitle>
+            <Users className="size-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <ChartAreaStep />
           </CardContent>
         </Card>
       </div>

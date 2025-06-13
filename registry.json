@@ -959,6 +959,30 @@
       ]
     },
     {
+      "name": "8bit-chart-area-step",
+      "type": "registry:component",
+      "title": "8-bit Chart Area Step",
+      "description": "A simple 8-bit chart area step component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/chart-area-step.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/chart-area-step.tsx"
+        },
+        {
+          "path": "components/ui/8bit/chart.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/chart.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
       "name": "8bit-toggle-group",
       "type": "registry:component",
       "title": "8-bit Toggle Group",
