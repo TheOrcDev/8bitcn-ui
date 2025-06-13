@@ -6,6 +6,13 @@ import { cn } from "@/lib/utils";
 import { Calendar as ShadcnCalendar } from "@/components/ui/calendar";
 
 import { buttonVariants } from "./button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./select";
 import "./styles/retro.css";
 
 export const calendarVariants = cva("", {
@@ -27,7 +34,7 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
   return (
     <div
       className={cn(
-        "flex bg-popover justify-center relative border-y-6 border-foreground dark:border-ring !p-0",
+        "bg-popover relative border-y-6 border-foreground dark:border-ring w-max",
         className
       )}
     >
@@ -43,14 +50,75 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
             buttonVariants({ variant: "outline" }),
             "size-7 bg-transparent p-0 flex items-center justify-center hover:opacity-50 border-2 border-foreground dark:border-ring"
           ),
-          day: cn(
+          day_button: cn(
             buttonVariants({ variant: "ghost" }),
-            "size-9 p-0 font-normal aria-selected:opacity-100"
+            "h-10 p-2 font-normal aria-selected:opacity-100"
           ),
           caption_label: "text-xs font-medium",
           ...classNames,
         }}
         components={{
+          MonthsDropdown: ({ className, ...props }) => {
+            const currentMonth = props.value as number;
+
+            const months = [
+              "January",
+              "February",
+              "March",
+              "April",
+              "May",
+              "June",
+              "July",
+              "August",
+              "September",
+              "October",
+              "November",
+              "December",
+            ];
+
+            const currentMonthName = months[currentMonth];
+
+            return (
+              <div className={cn("flex flex-col gap-3 text-xs", className)}>
+                <Select defaultValue={currentMonthName}>
+                  <SelectTrigger id="dropdown" className="bg-background w-full">
+                    <SelectValue placeholder="Dropdown" />
+                  </SelectTrigger>
+                  <SelectContent align="center">
+                    {months.map((month) => (
+                      <SelectItem key={month} value={month}>
+                        {month}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            );
+          },
+          YearsDropdown: ({ className }) => {
+            const currentYear = new Date().getFullYear();
+            const years = Array.from(
+              { length: currentYear - 1925 + 1 },
+              (_, i) => 1925 + i
+            );
+
+            return (
+              <div className={cn("flex flex-col gap-3 text-xs", className)}>
+                <Select defaultValue={currentYear?.toString()}>
+                  <SelectTrigger id="dropdown" className="bg-background w-full">
+                    <SelectValue placeholder="Dropdown" />
+                  </SelectTrigger>
+                  <SelectContent align="center">
+                    {years.map((year) => (
+                      <SelectItem key={year} value={year.toString()}>
+                        {year}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            );
+          },
           Chevron: ({ className, ...props }) => {
             if (props.orientation === "left") {
               return (
