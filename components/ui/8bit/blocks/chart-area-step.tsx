@@ -36,8 +36,8 @@ export default function ChartAreaStep() {
         accessibilityLayer
         data={chartData}
         margin={{
-          left: 12,
-          right: 12,
+          left: 20,
+          right: 20,
         }}
       >
         <CartesianGrid vertical={false} />
