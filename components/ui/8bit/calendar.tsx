@@ -52,7 +52,10 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
           ),
           day_button: cn(
             buttonVariants({ variant: "ghost" }),
-            "h-10 p-2 font-normal aria-selected:opacity-100"
+            "h-10 font-normal aria-selected:opacity-100"
+          ),
+          day: cn(
+            "relative w-full h-full p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md group/day select-none"
           ),
           caption_label: "text-xs font-medium",
           ...classNames,
