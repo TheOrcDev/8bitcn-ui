@@ -34,7 +34,7 @@ export default function CalendarBlocks() {
             <OpenInV0Button name="8bit-calendar" className="w-fit" />
           </div>
         </div>
-        <div className="flex items-center justify-center min-h-[400px] relative">
+        <div className="flex items-center justify-center min-h-[400px] relative max-w-sm mx-auto">
           <CalendarExample />
         </div>
       </div>
