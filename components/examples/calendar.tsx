@@ -8,7 +8,7 @@ export function CalendarExample() {
   const [date, setDate] = useState<Date | undefined>(new Date());
   return (
     <Calendar
-      className="h-max"
+      className="h-max w-full"
       mode="single"
       selected={date}
       onSelect={setDate}
