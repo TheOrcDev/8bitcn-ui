@@ -10,6 +10,10 @@ export default function SiteFooter() {
           Built by{" "}
           <Link href="https://orcdev.com" className="underline" target="_blank">
             OrcDev
+          </Link>{" "}
+          and{" "}
+          <Link href="/contributors" className="underline" target="_blank">
+            Contributors
           </Link>
           . The source code is available on{" "}
           <Link

@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,6 +12,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/8bit/card";
+
+export const metadata: Metadata = {
+  title: "Contributors",
+  description: "Meet the amazing people who make this project possible.",
+};
 
 const contributors = [
   {
