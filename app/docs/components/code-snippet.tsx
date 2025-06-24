@@ -36,7 +36,7 @@ export default function CodeSnippet({
   return (
     <ScrollArea
       className={cn(
-        "relative",
+        "relative overflow-x-auto",
         countLines(children?.toString() || "") > 10 && "h-[400px]"
       )}
     >

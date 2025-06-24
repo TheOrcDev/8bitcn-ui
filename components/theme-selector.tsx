@@ -22,6 +22,7 @@ const themes = [
   { name: Theme.Gameboy, color: "#8bac0f" },
   { name: Theme.Atari, color: "#7a4009" },
   { name: Theme.Nintendo, color: "#104cb0" },
+  { name: Theme.Arcade, color: "#F07CD4" },
 ];
 
 export function ThemeSelector() {
