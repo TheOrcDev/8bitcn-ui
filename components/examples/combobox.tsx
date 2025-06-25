@@ -55,12 +55,14 @@ export function ComboBoxExample() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-auto md:w-[320px] justify-between"
+          className="w-auto px-10"
         >
-          {value
-            ? frameworks.find((framework) => framework.value === value)?.label
-            : "Select framework..."}
-          <ChevronsUpDown className="ml-2 size-4 shrink-0 opacity-50" />
+          <div className="flex items-center">
+            {value
+              ? frameworks.find((framework) => framework.value === value)?.label
+              : "Select framework..."}
+            <ChevronsUpDown className="absolute right-4 size-4 shrink-0 opacity-50" />
+          </div>
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto md:w-[320px] p-0">
