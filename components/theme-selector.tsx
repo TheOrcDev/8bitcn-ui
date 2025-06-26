@@ -29,35 +29,37 @@ export function ThemeSelector() {
   const { activeTheme, setActiveTheme } = useThemeConfig();
 
   return (
-    <div className="flex justify-between gap-2 border-y border-dashed p-5">
-      <div className="flex flex-wrap gap-2">
-        {themes.map((theme) => (
-          <Button
-            key={theme.name}
-            onClick={() => setActiveTheme(theme.name)}
-            style={{ backgroundColor: theme.color }}
-            className={`text-neutral-200 border-2  ${theme.name === activeTheme ? "border-neutral-200" : "border-transparent"}`}
-          >
-            {theme.name}
-          </Button>
-        ))}
+    <>
+      <div className="flex justify-between gap-2 border-y border-dashed p-5">
+        <div className="flex flex-wrap gap-2">
+          {themes.map((theme) => (
+            <Button
+              key={theme.name}
+              onClick={() => setActiveTheme(theme.name)}
+              style={{ backgroundColor: theme.color }}
+              className={`text-neutral-200 border-2  ${theme.name === activeTheme ? "border-neutral-200" : "border-transparent"}`}
+            ></Button>
+          ))}
+        </div>
+
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button className="text-neutral-200">Copy</Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Theme</DialogTitle>
+              <DialogDescription>
+                Copy and paste the following code into your CSS file.
+              </DialogDescription>
+            </DialogHeader>
+
+            <CodeSnippet>{getThemeCode(activeTheme)}</CodeSnippet>
+          </DialogContent>
+        </Dialog>
       </div>
 
-      <Dialog>
-        <DialogTrigger asChild>
-          <Button className="text-neutral-200">Copy</Button>
-        </DialogTrigger>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Theme</DialogTitle>
-            <DialogDescription>
-              Copy and paste the following code into your CSS file.
-            </DialogDescription>
-          </DialogHeader>
-
-          <CodeSnippet>{getThemeCode(activeTheme)}</CodeSnippet>
-        </DialogContent>
-      </Dialog>
-    </div>
+      <div className="flex justify-center pt-5 retro">{activeTheme}</div>
+    </>
   );
 }
