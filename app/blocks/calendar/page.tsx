@@ -1,7 +1,6 @@
 import { Metadata } from "next";
-import Link from "next/link";
 
-import { Button } from "@/components/ui/8bit/button";
+import BlocksNavigation from "@/app/docs/components/blocks-navigation";
 
 import CalendarBlocks from "./calendar";
 
@@ -22,18 +21,7 @@ export default function BlocksPage() {
         all React frameworks. Open Source. Free forever.
       </p>
 
-      <div className="flex flex-col md:flex-row gap-5">
-        <Button asChild>
-          <Link href="/blocks/authentication">Authentication</Link>
-        </Button>
-
-        <Button asChild>
-          <Link href="/blocks/charts">Charts</Link>
-        </Button>
-        <Button variant="outline" asChild>
-          <Link href="/blocks/calendar">Calendar</Link>
-        </Button>
-      </div>
+      <BlocksNavigation active="calendar" />
 
       <CalendarBlocks />
     </div>
