@@ -27,7 +27,7 @@ const contributors = [
       "15 years in the code mines. I build, I break, I conquer - all in orcish style. 🛠️🔥",
     avatar: "/avatars/orcdev.jpeg",
     githubUrl: "https://github.com/TheOrcDev",
-    contributions: 241,
+    contributions: 249,
   },
   {
     id: 2,
@@ -165,6 +165,15 @@ const contributors = [
     githubUrl: "https://github.com/harryfrzz",
     contributions: 1,
   },
+  {
+    id: 17,
+    username: "manumorante",
+    name: "Manu Morante",
+    description: "",
+    avatar: "/avatars/manu.png",
+    githubUrl: "https://github.com/manumorante",
+    contributions: 1,
+  },
 ];
 
 export default function ContributorsPage() {
@@ -201,7 +210,8 @@ export default function ContributorsPage() {
                 className="rounded-full border-4 border-background shadow-lg"
               />
               <Badge className="text-xs">
-                {contributor.contributions} contributions
+                {contributor.contributions} contribution
+                {contributor.contributions === 1 ? "" : "s"}
               </Badge>
 
               <CardTitle className="text-lg">{contributor.name}</CardTitle>
