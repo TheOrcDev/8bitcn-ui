@@ -23,6 +23,7 @@ const themes = [
   { name: Theme.Atari, color: "#7a4009" },
   { name: Theme.Nintendo, color: "#104cb0" },
   { name: Theme.Arcade, color: "#F07CD4" },
+  { name: Theme.NeoGeo, color: "#dc2626" },
 ];
 
 export function ThemeSelector() {
