@@ -365,7 +365,7 @@ const themes = [
   },
   {
     name: Theme.Arcade,
-    color: `:root {
+    color: `.theme-arcade {
   --radius: 0rem;
   --primary: oklch(0.7 0.25 320);
   --primary-foreground: oklch(0.1 0.05 320);
@@ -398,10 +398,9 @@ const themes = [
   --sidebar-accent-foreground: oklch(0.1 0.05 220);
   --sidebar-border: oklch(0.7 0.25 320);
   --sidebar-ring: oklch(0.7 0.25 320);
-}
 
-.dark {
-  --primary: oklch(0.8 0.3 320);
+  @variant dark {
+    --primary: oklch(0.8 0.3 320);
     --primary-foreground: oklch(0.05 0.02 320);
     --background: oklch(0.02 0.01 280);
     --foreground: oklch(0.98 0.01 280);
@@ -418,7 +417,7 @@ const themes = [
     --destructive: oklch(0.8 0.35 20);
     --border: oklch(0.8 0.3 320);
     --input: oklch(0.1 0.03 280);
-    --ring: oklch(0.8 0.3 320);
+    --ring: oklch(0.6 0.25 320);
     --chart-1: oklch(0.8 0.3 320);
     --chart-2: oklch(0.7 0.25 220);
     --chart-3: oklch(0.9 0.3 60);
@@ -432,6 +431,7 @@ const themes = [
     --sidebar-accent-foreground: oklch(0.05 0.02 220);
     --sidebar-border: oklch(0.8 0.3 320);
     --sidebar-ring: oklch(0.8 0.3 320);
+  }
 }`,
   },
   {
@@ -440,7 +440,7 @@ const themes = [
   --radius: 0rem;
   --primary: oklch(0.65 0.25 25);
   --primary-foreground: oklch(0.98 0.01 25);
-  --background: oklch(0.98 0.01 25);
+  --background: oklch(0.98 0.03 25);
   --foreground: oklch(0.15 0.05 25);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.15 0.05 25);
