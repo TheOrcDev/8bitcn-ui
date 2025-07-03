@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Clean, retro building blocks. Copy and paste into your apps. Works with all React frameworks. Open Source. Free forever.",
 };
 
-export default function BlocksPage() {
+export default function AuthenticationBlocksPage() {
   return (
     <div className="flex flex-col p-4 gap-5 pt-10">
       <h1 className={`${"retro"} md:text-2xl font-bold`}>

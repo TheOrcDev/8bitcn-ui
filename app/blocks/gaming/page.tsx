@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 import BlocksNavigation from "@/app/docs/components/blocks-navigation";
 
-import ChartsBlocks from "./charts";
+import GamingBlocks from "./gaming";
 
 export const metadata: Metadata = {
   title: "Building Retro Blocks for the Web - 8bitcn/ui",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Clean, retro building blocks. Copy and paste into your apps. Works with all React frameworks. Open Source. Free forever.",
 };
 
-export default function ChartsBlocksPage() {
+export default function GamingBlocksPage() {
   return (
     <div className="flex flex-col p-4 gap-5 pt-10">
       <h1 className={`${"retro"} md:text-2xl font-bold`}>
@@ -21,9 +21,9 @@ export default function ChartsBlocksPage() {
         all React frameworks. Open Source. Free forever.
       </p>
 
-      <BlocksNavigation active="charts" />
+      <BlocksNavigation active="gaming" />
 
-      <ChartsBlocks />
+      <GamingBlocks />
     </div>
   );
 }
