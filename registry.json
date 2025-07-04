@@ -1012,6 +1012,35 @@
       ]
     },
     {
+      "name": "8bit-game-over",
+      "type": "registry:component",
+      "title": "8-bit Game Over",
+      "description": "A simple 8-bit game over component",
+      "registryDependencies": ["button", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-over.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/game-over.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-toggle-group",
       "type": "registry:component",
       "title": "8-bit Toggle Group",
