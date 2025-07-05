@@ -1,5 +1,7 @@
 import { Play, Power, Settings, Trophy, Users } from "lucide-react";
 
+import { cn } from "@/lib/utils";
+
 import { Button } from "@/components/ui/8bit/button";
 import {
   Card,
@@ -33,9 +35,12 @@ const menuItems = [
   { label: "QUIT", icon: Power, action: () => console.log("Quitting game...") },
 ];
 
-export default function MainMenu() {
+export default function MainMenu({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
   return (
-    <Card className="w-full md:w-[400px] mx-auto">
+    <Card className={cn(className)} {...props}>
       <CardHeader className="flex flex-col items-center justify-center gap-2">
         <CardTitle>Main Menu</CardTitle>
         <CardDescription>Retro 8-bit Quest</CardDescription>

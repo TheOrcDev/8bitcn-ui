@@ -20,7 +20,7 @@ export default function GamingBlocks() {
           </div>
         </div>
 
-        <MainMenu />
+        <MainMenu className="md:w-[400px] mx-auto" />
       </div>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">

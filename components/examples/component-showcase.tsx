@@ -1,12 +1,9 @@
-import Image from "next/image";
-
-import { Activity, Upload, Users } from "lucide-react";
+import { Activity, Users } from "lucide-react";
 
 import { LoginForm } from "@/components/ui/8bit/blocks/login-form";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/8bit/card";
@@ -24,13 +21,17 @@ import { Textarea } from "@/components/ui/8bit/textarea";
 import { CalendarExample } from "@/components/examples/calendar";
 import { CommandExample } from "@/components/examples/command";
 
+import ChartAreaStep from "../ui/8bit/blocks/chart-area-step";
 import ChartBarMultiple from "../ui/8bit/blocks/chart-bar";
+import GameOver from "../ui/8bit/blocks/game-over";
+import MainMenu from "../ui/8bit/blocks/main-menu";
 
 export default function ComponentShowcase() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+      {/* Column 1 */}
       <div className="flex flex-col gap-4">
-        <CalendarExample />
+        <MainMenu />
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -88,7 +89,10 @@ export default function ComponentShowcase() {
         </Card>
       </div>
 
-      <div className="flex flex-col gap-4 md:col-span-2">
+      {/* Column 2 */}
+      <div className="flex flex-col gap-4 lg:col-span-2">
+        <GameOver />
+
         <Card>
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle className="text-sm font-medium">
@@ -97,14 +101,27 @@ export default function ComponentShowcase() {
             <Users className="size-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <ChartBarMultiple />
+            <ChartAreaStep />
           </CardContent>
         </Card>
 
         <LoginForm />
       </div>
 
+      {/* Column 3 */}
       <div className="flex flex-col gap-4 w-full">
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between">
+            <CardTitle className="text-sm font-medium">
+              Total visitors
+            </CardTitle>
+            <Users className="size-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <ChartBarMultiple />
+          </CardContent>
+        </Card>
+        <CalendarExample />
         <Card>
           <CardHeader>
             <CardTitle>Product Status</CardTitle>
@@ -129,50 +146,6 @@ export default function ComponentShowcase() {
         </Card>
 
         <CommandExample />
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Product Images</CardTitle>
-            <CardDescription>
-              Lipsum dolor sit amet, consectetur adipiscing elit
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid gap-2">
-              <Image
-                alt="Product image"
-                className="aspect-square w-full rounded-md object-cover"
-                height="300"
-                src="/placeholder.svg"
-                width="300"
-              />
-              <div className="grid grid-cols-3 gap-2">
-                <button>
-                  <Image
-                    alt="Product image"
-                    className="aspect-square w-full rounded-md object-cover"
-                    height="84"
-                    src="/placeholder.svg"
-                    width="84"
-                  />
-                </button>
-                <button>
-                  <Image
-                    alt="Product image"
-                    className="aspect-square w-full rounded-md object-cover"
-                    height="84"
-                    src="/placeholder.svg"
-                    width="84"
-                  />
-                </button>
-                <button className="flex aspect-square w-full items-center justify-center rounded-md border border-dashed">
-                  <Upload className="size-4 text-muted-foreground" />
-                  <span className="sr-only">Upload</span>
-                </button>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );
