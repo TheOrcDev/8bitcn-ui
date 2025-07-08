@@ -34,7 +34,7 @@ const chartConfig = {
 export default function ChartBarMultiple() {
   return (
     <ChartContainer config={chartConfig}>
-      <BarChart accessibilityLayer data={chartData}>
+      <BarChart data={chartData}>
         <CartesianGrid vertical={false} />
         <XAxis
           dataKey="month"

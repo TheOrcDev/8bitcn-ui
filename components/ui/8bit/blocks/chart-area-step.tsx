@@ -33,7 +33,6 @@ export default function ChartAreaStep() {
   return (
     <ChartContainer config={chartConfig}>
       <AreaChart
-        accessibilityLayer
         data={chartData}
         margin={{
           left: 20,
