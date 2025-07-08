@@ -24,6 +24,7 @@ const themes = [
   { name: Theme.Nintendo, color: "#104cb0" },
   { name: Theme.Arcade, color: "#F07CD4" },
   { name: Theme.NeoGeo, color: "#dc2626" },
+  { name: Theme.SoftPop, color: "#4B3F99" },
 ];
 
 export function ThemeSelector() {
