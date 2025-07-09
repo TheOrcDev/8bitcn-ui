@@ -18,13 +18,13 @@ import {
 } from "@/components/ui/8bit/select";
 import { Textarea } from "@/components/ui/8bit/textarea";
 
-import { CalendarExample } from "@/components/examples/calendar";
 import { CommandExample } from "@/components/examples/command";
 
 import ChartAreaStep from "../ui/8bit/blocks/chart-area-step";
 import ChartBarMultiple from "../ui/8bit/blocks/chart-bar";
 import GameOver from "../ui/8bit/blocks/game-over";
 import MainMenu from "../ui/8bit/blocks/main-menu";
+import { Skeleton } from "../ui/8bit/skeleton";
 
 export default function ComponentShowcase() {
   return (
@@ -121,7 +121,7 @@ export default function ComponentShowcase() {
             <ChartBarMultiple />
           </CardContent>
         </Card>
-        <CalendarExample />
+
         <Card>
           <CardHeader>
             <CardTitle>Product Status</CardTitle>
@@ -146,6 +146,10 @@ export default function ComponentShowcase() {
         </Card>
 
         <CommandExample />
+
+        <Skeleton className="w-full h-full flex flex-col justify-center items-center">
+          Skeleton
+        </Skeleton>
       </div>
     </div>
   );
