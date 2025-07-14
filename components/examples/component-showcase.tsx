@@ -1,4 +1,4 @@
-import { Activity, Users } from "lucide-react";
+import { Activity, Sword, Users } from "lucide-react";
 
 import { LoginForm } from "@/components/ui/8bit/blocks/login-form";
 import {
@@ -20,8 +20,6 @@ import { Textarea } from "@/components/ui/8bit/textarea";
 
 import { CommandExample } from "@/components/examples/command";
 
-import ChartAreaStep from "../ui/8bit/blocks/chart-area-step";
-import ChartBarMultiple from "../ui/8bit/blocks/chart-bar";
 import GameOver from "../ui/8bit/blocks/game-over";
 import MainMenu from "../ui/8bit/blocks/main-menu";
 import { Skeleton } from "../ui/8bit/skeleton";
@@ -61,6 +59,70 @@ export default function ComponentShowcase() {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Warriors</CardTitle>
+            <Sword className="size-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">+100</div>
+            <p className="text-xs text-muted-foreground">
+              +100 since last month
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Column 2 */}
+      <div className="flex flex-col gap-4 lg:col-span-2">
+        <GameOver />
+
+        {/* <Card>
+          <CardHeader className="flex flex-row items-center justify-between">
+            <CardTitle className="text-sm font-medium">
+              Total visitors in the last 6 months
+            </CardTitle>
+            <Users className="size-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <ChartAreaStep />
+          </CardContent>
+        </Card> */}
+
+        <LoginForm />
+
+        <Skeleton className="w-full h-full flex flex-col justify-center items-center">
+          Skeleton
+        </Skeleton>
+      </div>
+
+      {/* Column 3 */}
+      <div className="flex flex-col gap-4 w-full">
+        <Card>
+          <CardHeader>
+            <CardTitle>Product Status</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-6">
+              <div className="grid gap-3">
+                <Label htmlFor="status">Status</Label>
+                <Select>
+                  <SelectTrigger id="status" aria-label="Select status">
+                    <SelectValue placeholder="Select status" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="draft">Draft</SelectItem>
+                    <SelectItem value="published">Active</SelectItem>
+                    <SelectItem value="archived">Archived</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <CommandExample />
+
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
               Product Details
             </CardTitle>
@@ -87,69 +149,6 @@ export default function ComponentShowcase() {
             </div>
           </CardContent>
         </Card>
-      </div>
-
-      {/* Column 2 */}
-      <div className="flex flex-col gap-4 lg:col-span-2">
-        <GameOver />
-
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle className="text-sm font-medium">
-              Total visitors in the last 6 months
-            </CardTitle>
-            <Users className="size-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <ChartAreaStep />
-          </CardContent>
-        </Card>
-
-        <LoginForm />
-      </div>
-
-      {/* Column 3 */}
-      <div className="flex flex-col gap-4 w-full">
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle className="text-sm font-medium">
-              Total visitors
-            </CardTitle>
-            <Users className="size-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <ChartBarMultiple />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Product Status</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid gap-6">
-              <div className="grid gap-3">
-                <Label htmlFor="status">Status</Label>
-                <Select>
-                  <SelectTrigger id="status" aria-label="Select status">
-                    <SelectValue placeholder="Select status" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="draft">Draft</SelectItem>
-                    <SelectItem value="published">Active</SelectItem>
-                    <SelectItem value="archived">Archived</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        <CommandExample />
-
-        <Skeleton className="w-full h-full flex flex-col justify-center items-center">
-          Skeleton
-        </Skeleton>
       </div>
     </div>
   );
