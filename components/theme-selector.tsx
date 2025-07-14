@@ -17,7 +17,7 @@ import CodeSnippet from "@/app/docs/components/code-snippet";
 import { useThemeConfig } from "./active-theme";
 
 const themes = [
-  { name: Theme.Default, color: "oklch(0.795 0.184 86.047)" },
+  { name: Theme.Default, color: "#000" },
   { name: Theme.Sega, color: "#0055a4" },
   { name: Theme.Gameboy, color: "#8bac0f" },
   { name: Theme.Atari, color: "#7a4009" },
