@@ -118,19 +118,11 @@ export default function ComponentShowcase() {
           <CardHeader>
             <CardTitle className="text-sm font-medium">Player Status</CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-wrap gap-2">
-            <Badge variant="default" font="retro">
-              Level 42
-            </Badge>
-            <Badge variant="secondary" font="retro">
-              Warrior
-            </Badge>
-            <Badge variant="destructive" font="retro">
-              Critical
-            </Badge>
-            <Badge variant="outline" font="retro">
-              Online
-            </Badge>
+          <CardContent className="flex flex-wrap gap-5">
+            <Badge>Level 42</Badge>
+            <Badge>Warrior</Badge>
+            <Badge>Critical</Badge>
+            <Badge>Online</Badge>
           </CardContent>
         </Card>
       </div>
@@ -281,30 +273,30 @@ export default function ComponentShowcase() {
           <CardHeader>
             <CardTitle className="text-sm font-medium">Game Controls</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3">
-            <div className="flex gap-2">
-              <Button variant="default" size="sm" font="retro">
+          <CardContent className="space-y-5">
+            <div className="flex gap-5">
+              <Button variant="default" size="sm">
                 <Play className="size-4" />
                 Start
               </Button>
-              <Button variant="secondary" size="sm" font="retro">
+              <Button variant="secondary" size="sm">
                 <Pause className="size-4" />
                 Pause
               </Button>
             </div>
-            <div className="flex gap-2">
-              <Button variant="outline" size="sm" font="retro">
+            <div className="flex gap-5">
+              <Button variant="outline" size="sm">
                 Settings
               </Button>
-              <Button variant="destructive" size="sm" font="retro">
+              <Button variant="destructive" size="sm">
                 Quit
               </Button>
             </div>
             <div className="flex gap-2">
-              <Button variant="ghost" size="sm" font="retro">
+              <Button variant="ghost" size="sm">
                 Help
               </Button>
-              <Button variant="default" size="icon" font="retro">
+              <Button variant="default" size="icon">
                 <Volume2 className="size-4" />
               </Button>
             </div>
@@ -357,19 +349,19 @@ export default function ComponentShowcase() {
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="flex items-center space-x-2">
-              <Checkbox id="autosave" defaultChecked font="retro" />
+              <Checkbox id="autosave" defaultChecked />
               <Label htmlFor="autosave">Auto-save enabled</Label>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox id="notifications" font="retro" />
+              <Checkbox id="notifications" />
               <Label htmlFor="notifications">Show notifications</Label>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox id="fullscreen" defaultChecked font="retro" />
+              <Checkbox id="fullscreen" defaultChecked />
               <Label htmlFor="fullscreen">Fullscreen mode</Label>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox id="hardcore" font="retro" />
+              <Checkbox id="hardcore" />
               <Label htmlFor="hardcore">Hardcore mode</Label>
             </div>
           </CardContent>
