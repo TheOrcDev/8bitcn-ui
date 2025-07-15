@@ -1,14 +1,32 @@
-import { Activity, Sword, Users } from "lucide-react";
+import {
+  Activity,
+  AlertTriangle,
+  Info,
+  Pause,
+  Play,
+  Sword,
+  Users,
+  Volume2,
+} from "lucide-react";
 
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from "@/components/ui/8bit/alert";
+import { Badge } from "@/components/ui/8bit/badge";
 import { LoginForm } from "@/components/ui/8bit/blocks/login-form";
+import { Button } from "@/components/ui/8bit/button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "@/components/ui/8bit/card";
+import { Checkbox } from "@/components/ui/8bit/checkbox";
 import { Input } from "@/components/ui/8bit/input";
 import { Label } from "@/components/ui/8bit/label";
+import { Progress } from "@/components/ui/8bit/progress";
 import {
   Select,
   SelectContent,
@@ -16,6 +34,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/8bit/select";
+import { Slider } from "@/components/ui/8bit/slider";
+import { Switch } from "@/components/ui/8bit/switch";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/8bit/tabs";
 import { Textarea } from "@/components/ui/8bit/textarea";
 
 import { CommandExample } from "@/components/examples/command";
@@ -69,6 +95,44 @@ export default function ComponentShowcase() {
             </p>
           </CardContent>
         </Card>
+
+        {/* Alert Examples */}
+        <Alert>
+          <Info className="size-4" />
+          <AlertTitle>Info</AlertTitle>
+          <AlertDescription>
+            Your game progress has been saved successfully.
+          </AlertDescription>
+        </Alert>
+
+        <Alert variant="destructive">
+          <AlertTriangle className="size-4" />
+          <AlertTitle>Warning</AlertTitle>
+          <AlertDescription>
+            Low health! Find a health potion quickly.
+          </AlertDescription>
+        </Alert>
+
+        {/* Badge Examples */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-sm font-medium">Player Status</CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-wrap gap-2">
+            <Badge variant="default" font="retro">
+              Level 42
+            </Badge>
+            <Badge variant="secondary" font="retro">
+              Warrior
+            </Badge>
+            <Badge variant="destructive" font="retro">
+              Critical
+            </Badge>
+            <Badge variant="outline" font="retro">
+              Online
+            </Badge>
+          </CardContent>
+        </Card>
       </div>
 
       {/* Column 2 */}
@@ -92,6 +156,68 @@ export default function ComponentShowcase() {
         <Skeleton className="w-full h-full flex flex-col justify-center items-center">
           Skeleton
         </Skeleton>
+
+        {/* Progress Examples */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-sm font-medium">Game Progress</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <div className="flex justify-between text-sm mb-2">
+                <span>Health</span>
+                <span>75%</span>
+              </div>
+              <Progress value={75} />
+            </div>
+            <div>
+              <div className="flex justify-between text-sm mb-2">
+                <span>Mana</span>
+                <span>45%</span>
+              </div>
+              <Progress value={45} variant="retro" />
+            </div>
+            <div>
+              <div className="flex justify-between text-sm mb-2">
+                <span>Experience</span>
+                <span>90%</span>
+              </div>
+              <Progress value={90} />
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Tabs Example */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-sm font-medium">Game Menu</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Tabs defaultValue="inventory" className="w-full">
+              <TabsList className="grid w-full grid-cols-3">
+                <TabsTrigger value="inventory">Items</TabsTrigger>
+                <TabsTrigger value="skills">Skills</TabsTrigger>
+                <TabsTrigger value="stats">Stats</TabsTrigger>
+              </TabsList>
+              <TabsContent value="inventory" className="mt-4">
+                <p className="text-sm text-muted-foreground">
+                  Your inventory contains 15 items including potions and
+                  weapons.
+                </p>
+              </TabsContent>
+              <TabsContent value="skills" className="mt-4">
+                <p className="text-sm text-muted-foreground">
+                  You have learned 8 skills. 3 skill points available.
+                </p>
+              </TabsContent>
+              <TabsContent value="stats" className="mt-4">
+                <p className="text-sm text-muted-foreground">
+                  Strength: 25, Agility: 18, Intelligence: 22
+                </p>
+              </TabsContent>
+            </Tabs>
+          </CardContent>
+        </Card>
       </div>
 
       {/* Column 3 */}
@@ -146,6 +272,105 @@ export default function ComponentShowcase() {
                   className="min-h-32"
                 />
               </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Button Examples */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-sm font-medium">Game Controls</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="flex gap-2">
+              <Button variant="default" size="sm" font="retro">
+                <Play className="size-4" />
+                Start
+              </Button>
+              <Button variant="secondary" size="sm" font="retro">
+                <Pause className="size-4" />
+                Pause
+              </Button>
+            </div>
+            <div className="flex gap-2">
+              <Button variant="outline" size="sm" font="retro">
+                Settings
+              </Button>
+              <Button variant="destructive" size="sm" font="retro">
+                Quit
+              </Button>
+            </div>
+            <div className="flex gap-2">
+              <Button variant="ghost" size="sm" font="retro">
+                Help
+              </Button>
+              <Button variant="default" size="icon" font="retro">
+                <Volume2 className="size-4" />
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Slider and Switch Examples */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-sm font-medium">
+              Audio Settings
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="volume">Master Volume</Label>
+              <Slider
+                id="volume"
+                defaultValue={[75]}
+                max={100}
+                step={1}
+                className="w-full"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="sfx">SFX Volume</Label>
+              <Slider
+                id="sfx"
+                defaultValue={[60]}
+                max={100}
+                step={1}
+                className="w-full"
+              />
+            </div>
+            <div className="flex items-center justify-between">
+              <Label htmlFor="mute">Mute Audio</Label>
+              <Switch id="mute" />
+            </div>
+            <div className="flex items-center justify-between">
+              <Label htmlFor="vibration">Vibration</Label>
+              <Switch id="vibration" defaultChecked />
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Checkbox Examples */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-sm font-medium">Game Options</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="flex items-center space-x-2">
+              <Checkbox id="autosave" defaultChecked font="retro" />
+              <Label htmlFor="autosave">Auto-save enabled</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="notifications" font="retro" />
+              <Label htmlFor="notifications">Show notifications</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="fullscreen" defaultChecked font="retro" />
+              <Label htmlFor="fullscreen">Fullscreen mode</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="hardcore" font="retro" />
+              <Label htmlFor="hardcore">Hardcore mode</Label>
             </div>
           </CardContent>
         </Card>
