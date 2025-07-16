@@ -1041,6 +1041,45 @@
       ]
     },
     {
+      "name": "8bit-audio-settings",
+      "type": "registry:component",
+      "title": "8-bit Audio Settings",
+      "description": "A simple 8-bit audio settings component",
+      "registryDependencies": ["button", "card", "label"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/audio-settings.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/audio-settings.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/switch.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/switch.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/slider.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/slider.tsx"
+        },
+        {
+          "path": "components/ui/8bit/label.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/label.tsx"
+        }
+      ]
+    },
+    {
       "name": "8bit-toggle-group",
       "type": "registry:component",
       "title": "8-bit Toggle Group",

@@ -15,6 +15,7 @@ import {
   AlertTitle,
 } from "@/components/ui/8bit/alert";
 import { Badge } from "@/components/ui/8bit/badge";
+import AudioSettings from "@/components/ui/8bit/blocks/audio-settings";
 import { LoginForm } from "@/components/ui/8bit/blocks/login-form";
 import { Button } from "@/components/ui/8bit/button";
 import {
@@ -304,43 +305,7 @@ export default function ComponentShowcase() {
         </Card>
 
         {/* Slider and Switch Examples */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-sm font-medium">
-              Audio Settings
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="volume">Master Volume</Label>
-              <Slider
-                id="volume"
-                defaultValue={[75]}
-                max={100}
-                step={1}
-                className="w-full"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="sfx">SFX Volume</Label>
-              <Slider
-                id="sfx"
-                defaultValue={[60]}
-                max={100}
-                step={1}
-                className="w-full"
-              />
-            </div>
-            <div className="flex items-center justify-between">
-              <Label htmlFor="mute">Mute Audio</Label>
-              <Switch id="mute" />
-            </div>
-            <div className="flex items-center justify-between">
-              <Label htmlFor="vibration">Vibration</Label>
-              <Switch id="vibration" defaultChecked />
-            </div>
-          </CardContent>
-        </Card>
+        <AudioSettings />
 
         {/* Checkbox Examples */}
         <Card>
