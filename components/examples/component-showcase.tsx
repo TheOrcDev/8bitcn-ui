@@ -58,6 +58,22 @@ export default function ComponentShowcase() {
       <div className="flex flex-col gap-4">
         <MainMenu />
 
+        <Alert>
+          <Info className="size-4" />
+          <AlertTitle>Info</AlertTitle>
+          <AlertDescription>
+            Your game progress has been saved successfully.
+          </AlertDescription>
+        </Alert>
+
+        <Alert variant="destructive">
+          <AlertTriangle className="size-4" />
+          <AlertTitle>Warning</AlertTitle>
+          <AlertDescription>
+            Low health! Find a health potion quickly.
+          </AlertDescription>
+        </Alert>
+
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Active Now</CardTitle>
@@ -97,23 +113,6 @@ export default function ComponentShowcase() {
           </CardContent>
         </Card>
 
-        {/* Alert Examples */}
-        <Alert>
-          <Info className="size-4" />
-          <AlertTitle>Info</AlertTitle>
-          <AlertDescription>
-            Your game progress has been saved successfully.
-          </AlertDescription>
-        </Alert>
-
-        <Alert variant="destructive">
-          <AlertTriangle className="size-4" />
-          <AlertTitle>Warning</AlertTitle>
-          <AlertDescription>
-            Low health! Find a health potion quickly.
-          </AlertDescription>
-        </Alert>
-
         {/* Badge Examples */}
         <Card>
           <CardHeader>
@@ -150,7 +149,6 @@ export default function ComponentShowcase() {
           Skeleton
         </Skeleton>
 
-        {/* Progress Examples */}
         <Card>
           <CardHeader>
             <CardTitle className="text-sm font-medium">Game Progress</CardTitle>
@@ -215,6 +213,42 @@ export default function ComponentShowcase() {
 
       {/* Column 3 */}
       <div className="flex flex-col gap-4 w-full">
+        <AudioSettings />
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-sm font-medium">Game Controls</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-5">
+            <div className="flex gap-5">
+              <Button variant="default" size="sm">
+                <Play className="size-4" />
+                Start
+              </Button>
+              <Button variant="secondary" size="sm">
+                <Pause className="size-4" />
+                Pause
+              </Button>
+            </div>
+            <div className="flex gap-5">
+              <Button variant="outline" size="sm">
+                Settings
+              </Button>
+              <Button variant="destructive" size="sm">
+                Quit
+              </Button>
+            </div>
+            <div className="flex gap-2">
+              <Button variant="ghost" size="sm">
+                Help
+              </Button>
+              <Button variant="default" size="icon">
+                <Volume2 className="size-4" />
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+
         <Card>
           <CardHeader>
             <CardTitle>Product Status</CardTitle>
@@ -269,45 +303,6 @@ export default function ComponentShowcase() {
           </CardContent>
         </Card>
 
-        {/* Button Examples */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-sm font-medium">Game Controls</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-5">
-            <div className="flex gap-5">
-              <Button variant="default" size="sm">
-                <Play className="size-4" />
-                Start
-              </Button>
-              <Button variant="secondary" size="sm">
-                <Pause className="size-4" />
-                Pause
-              </Button>
-            </div>
-            <div className="flex gap-5">
-              <Button variant="outline" size="sm">
-                Settings
-              </Button>
-              <Button variant="destructive" size="sm">
-                Quit
-              </Button>
-            </div>
-            <div className="flex gap-2">
-              <Button variant="ghost" size="sm">
-                Help
-              </Button>
-              <Button variant="default" size="icon">
-                <Volume2 className="size-4" />
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Slider and Switch Examples */}
-        <AudioSettings />
-
-        {/* Checkbox Examples */}
         <Card>
           <CardHeader>
             <CardTitle className="text-sm font-medium">Game Options</CardTitle>
