@@ -47,7 +47,7 @@ export function ThemeSelector() {
 
       <Dialog>
         <DialogTrigger asChild>
-          <Button className="text-neutral-200">Copy</Button>
+          <Button>Copy</Button>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
