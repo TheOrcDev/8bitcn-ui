@@ -2,11 +2,8 @@ import {
   Activity,
   AlertTriangle,
   Info,
-  Pause,
-  Play,
   Sword,
   Users,
-  Volume2,
   Wand,
 } from "lucide-react";
 
@@ -18,7 +15,6 @@ import {
 import { Badge } from "@/components/ui/8bit/badge";
 import AudioSettings from "@/components/ui/8bit/blocks/audio-settings";
 import { LoginForm } from "@/components/ui/8bit/blocks/login-form";
-import { Button } from "@/components/ui/8bit/button";
 import {
   Card,
   CardContent,
@@ -36,8 +32,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/8bit/select";
-import { Slider } from "@/components/ui/8bit/slider";
-import { Switch } from "@/components/ui/8bit/switch";
 import {
   Tabs,
   TabsContent,
