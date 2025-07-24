@@ -13,3 +13,9 @@ Please read the [contributing guide](/contributing.md).
 ## License
 
 Licensed under the [MIT license](/license.md).
+
+## Open Source Program
+
+<a href="https://vercel.com/oss">
+  <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg" />
+</a>
