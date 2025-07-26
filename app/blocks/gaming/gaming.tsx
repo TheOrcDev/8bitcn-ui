@@ -10,7 +10,7 @@ export default function GamingBlocks() {
     <div className="flex flex-col gap-10">
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
-          <h2 className="text-sm text-muted-foreground sm:pl-3">A main menu</h2>
+          <h2 className="text-sm text-muted-foreground sm:pl-3">Main menu</h2>
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
@@ -26,9 +26,7 @@ export default function GamingBlocks() {
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
-          <h2 className="text-sm text-muted-foreground sm:pl-3">
-            Audio settings
-          </h2>
+          <h2 className="text-sm text-muted-foreground sm:pl-3">Game over</h2>
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
