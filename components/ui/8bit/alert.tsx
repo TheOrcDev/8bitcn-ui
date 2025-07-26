@@ -54,10 +54,10 @@ function Alert({ children, ...props }: BitAlertProps) {
       <div className="absolute top-0 right-0 size-1.5 bg-foreground dark:bg-ring" />
       <div className="absolute bottom-0 left-0 size-1.5 bg-foreground dark:bg-ring" />
       <div className="absolute bottom-0 right-0 size-1.5 bg-foreground dark:bg-ring" />
-      <div className="absolute top-1 -left-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
-      <div className="absolute bottom-1 -left-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
-      <div className="absolute top-1 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
-      <div className="absolute bottom-1 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
+      <div className="absolute top-1.5 -left-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
+      <div className="absolute bottom-1.5 -left-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
+      <div className="absolute top-1.5 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
+      <div className="absolute bottom-1.5 -right-1.5 h-1/2 w-1.5 bg-foreground dark:bg-ring" />
     </div>
   );
 }

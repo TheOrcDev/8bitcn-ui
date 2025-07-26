@@ -76,7 +76,7 @@ export default function GamingBlocks() {
         <AudioSettings className="w-full md:w-[600px] mx-auto" />
       </div>
 
-      <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
+      <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[250px]">
         <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
             Dialogue box
