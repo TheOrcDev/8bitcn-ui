@@ -1,5 +1,6 @@
 import GameOver from "@/components/ui/8bit/blocks/game-over";
 import MainMenu from "@/components/ui/8bit/blocks/main-menu";
+import PauseMenu from "@/components/ui/8bit/blocks/pause-menu";
 
 import AudioSettings from "../../../components/ui/8bit/blocks/audio-settings";
 import CopyCommandButton from "../../docs/components/copy-command-button";
@@ -22,6 +23,22 @@ export default function GamingBlocks() {
         </div>
 
         <MainMenu className="md:w-[400px] mx-auto" />
+      </div>
+
+      <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
+        <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
+          <h2 className="text-sm text-muted-foreground sm:pl-3">Pause menu</h2>
+
+          <div className="flex flex-col md:flex-row items-center gap-2">
+            <CopyCommandButton
+              command="npx shadcn@latest add 8bit-pause-menu"
+              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-pause-menu.json`}
+            />
+            <OpenInV0Button name="8bit-pause-menu" className="w-fit" />
+          </div>
+        </div>
+
+        <PauseMenu className="md:w-[400px] mx-auto" />
       </div>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
