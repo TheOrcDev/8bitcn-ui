@@ -26,19 +26,24 @@ export interface BitProgressProps
     VariantProps<typeof progressVariants> {
   className?: string;
   font?: VariantProps<typeof progressVariants>["font"];
+  progressBg?: string;
 }
 
-function Progress({ ...props }: BitProgressProps) {
-  const { className, font } = props;
-
+function Progress({
+  className,
+  font,
+  variant,
+  value,
+  progressBg,
+  ...props
+}: BitProgressProps) {
   return (
     <div className={cn("relative w-full", className)}>
       <ProgressPrimitive.Root
         data-slot="progress"
         className={cn(
           "bg-primary/20 relative h-2 w-full overflow-hidden",
-          font !== "normal" && "retro",
-          className
+          font !== "normal" && "retro"
         )}
         {...props}
       >
@@ -46,26 +51,25 @@ function Progress({ ...props }: BitProgressProps) {
           data-slot="progress-indicator"
           className={cn(
             "h-full transition-all",
-            props.variant === "retro" ? "flex" : "bg-primary w-full flex-1"
+            variant === "retro" ? "flex" : "w-full flex-1",
+            progressBg && variant !== "retro" ? progressBg : "bg-primary"
           )}
           style={
-            props.variant === "retro"
+            variant === "retro"
               ? undefined
-              : { transform: `translateX(-${100 - (props.value || 0)}%)` }
+              : { transform: `translateX(-${100 - (value || 0)}%)` }
           }
         >
-          {props.variant === "retro" && (
+          {variant === "retro" && (
             <div className="flex w-full">
               {Array.from({ length: 20 }).map((_, i) => {
-                const filledSquares = Math.round(
-                  ((props.value || 0) / 100) * 20
-                );
+                const filledSquares = Math.round(((value || 0) / 100) * 20);
                 return (
                   <div
                     key={i}
                     className={cn(
                       "size-2 mx-[1px] w-full",
-                      i < filledSquares ? "bg-primary" : "bg-transparent"
+                      i < filledSquares ? progressBg : "bg-transparent"
                     )}
                   />
                 );
