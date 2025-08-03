@@ -7,7 +7,7 @@ interface ManaBarProps extends React.ComponentProps<"div"> {
   value?: number;
 }
 
-export default function HealthBar({
+export default function ManaBar({
   className,
   variant,
   value,
@@ -19,7 +19,7 @@ export default function HealthBar({
       value={value}
       variant={variant}
       className={className}
-      progressBg="bg-red-500"
+      progressBg="bg-blue-500"
     />
   );
 }

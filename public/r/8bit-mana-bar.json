@@ -1,16 +1,16 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "8bit-health-bar",
+  "name": "8bit-mana-bar",
   "type": "registry:component",
-  "title": "8-bit Health Bar",
-  "description": "A simple 8-bit health bar component",
+  "title": "8-bit Mana Bar",
+  "description": "A simple 8-bit mana bar component",
   "registryDependencies": [],
   "files": [
     {
-      "path": "components/ui/8bit/blocks/health-bar.tsx",
-      "content": "import { BitProgressProps, Progress } from \"@/components/ui/8bit/progress\";\n\ninterface ManaBarProps extends React.ComponentProps<\"div\"> {\n  className?: string;\n  props?: BitProgressProps;\n  variant?: \"retro\" | \"default\";\n  value?: number;\n}\n\nexport default function HealthBar({\n  className,\n  variant,\n  value,\n  ...props\n}: ManaBarProps) {\n  return (\n    <Progress\n      {...props}\n      value={value}\n      variant={variant}\n      className={className}\n      progressBg=\"bg-red-500\"\n    />\n  );\n}\n",
+      "path": "components/ui/8bit/blocks/mana-bar.tsx",
+      "content": "import { BitProgressProps, Progress } from \"@/components/ui/8bit/progress\";\n\ninterface ManaBarProps extends React.ComponentProps<\"div\"> {\n  className?: string;\n  props?: BitProgressProps;\n  variant?: \"retro\" | \"default\";\n  value?: number;\n}\n\nexport default function ManaBar({\n  className,\n  variant,\n  value,\n  ...props\n}: ManaBarProps) {\n  return (\n    <Progress\n      {...props}\n      value={value}\n      variant={variant}\n      className={className}\n      progressBg=\"bg-blue-500\"\n    />\n  );\n}\n",
       "type": "registry:component",
-      "target": "components/ui/8bit/blocks/health-bar.tsx"
+      "target": "components/ui/8bit/blocks/mana-bar.tsx"
     },
     {
       "path": "components/ui/8bit/progress.tsx",
