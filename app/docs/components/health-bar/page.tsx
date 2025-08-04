@@ -2,7 +2,6 @@ import { Metadata } from "next";
 
 import { buttonMetaData } from "@/lib/metadata";
 
-import { Button } from "@/components/ui/8bit/button";
 import HealthBar from "@/components/ui/8bit/health-bar";
 import { Separator } from "@/components/ui/separator";
 

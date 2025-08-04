@@ -24,7 +24,6 @@ import {
 import { Checkbox } from "@/components/ui/8bit/checkbox";
 import { Input } from "@/components/ui/8bit/input";
 import { Label } from "@/components/ui/8bit/label";
-import { Progress } from "@/components/ui/8bit/progress";
 import {
   Select,
   SelectContent,
@@ -44,9 +43,7 @@ import { CommandExample } from "@/components/examples/command";
 
 import GameOver from "../ui/8bit/blocks/game-over";
 import GameProgress from "../ui/8bit/blocks/game-progress";
-import HealthBar from "../ui/8bit/blocks/health-bar";
 import MainMenu from "../ui/8bit/blocks/main-menu";
-import ManaBar from "../ui/8bit/blocks/mana-bar";
 import { Skeleton } from "../ui/8bit/skeleton";
 
 export default function ComponentShowcase() {
