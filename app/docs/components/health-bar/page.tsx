@@ -44,24 +44,28 @@ export default function HealthBarPage() {
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] max-w-[500px] mx-auto">
-          <div className="md:min-w-[300px] min-w-[200px] flex flex-col gap-4">
-            <p className="text-sm text-muted-foreground mb-2">
-              Default health bar
-            </p>
-            <div className="flex justify-between text-sm mb-2">
-              <span>Health</span>
-              <span>75%</span>
+          <div className="md:min-w-[300px] min-w-[200px] flex flex-col gap-8">
+            <div>
+              <p className="text-sm text-muted-foreground mb-2">
+                Default health bar
+              </p>
+              <div className="flex justify-between text-sm mb-2 retro">
+                <span>Health</span>
+                <span>75%</span>
+              </div>
+              <HealthBar value={75} />
             </div>
-            <HealthBar value={75} />
 
-            <p className="text-sm text-muted-foreground mb-2">
-              Retro health bar
-            </p>
-            <div className="flex justify-between text-sm mb-2">
-              <span>Health</span>
-              <span>45%</span>
+            <div>
+              <p className="text-sm text-muted-foreground mb-2">
+                Retro health bar
+              </p>
+              <div className="flex justify-between text-sm mb-2 retro">
+                <span>Health</span>
+                <span>45%</span>
+              </div>
+              <HealthBar value={45} variant="retro" />
             </div>
-            <HealthBar value={45} variant="retro" />
           </div>
         </div>
       </div>
