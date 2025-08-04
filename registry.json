@@ -603,6 +603,40 @@
       ]
     },
     {
+      "name": "8bit-game-progress",
+      "type": "registry:component",
+      "title": "8-bit Game Progress",
+      "description": "A simple 8-bit game progress component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-progress.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/game-progress.tsx"
+        },
+        {
+          "path": "components/ui/8bit/health-bar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/health-bar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/mana-bar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/mana-bar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/progress.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/progress.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
       "name": "8bit-slider",
       "type": "registry:component",
       "title": "8-bit Slider",
