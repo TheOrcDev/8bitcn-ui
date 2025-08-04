@@ -43,7 +43,10 @@ import { Textarea } from "@/components/ui/8bit/textarea";
 import { CommandExample } from "@/components/examples/command";
 
 import GameOver from "../ui/8bit/blocks/game-over";
+import GameProgress from "../ui/8bit/blocks/game-progress";
+import HealthBar from "../ui/8bit/blocks/health-bar";
 import MainMenu from "../ui/8bit/blocks/main-menu";
+import ManaBar from "../ui/8bit/blocks/mana-bar";
 import { Skeleton } from "../ui/8bit/skeleton";
 
 export default function ComponentShowcase() {
@@ -133,34 +136,7 @@ export default function ComponentShowcase() {
           Skeleton
         </Skeleton>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-sm font-medium">Game Progress</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div>
-              <div className="flex justify-between text-sm mb-2">
-                <span>Health</span>
-                <span>75%</span>
-              </div>
-              <Progress value={75} />
-            </div>
-            <div>
-              <div className="flex justify-between text-sm mb-2">
-                <span>Mana</span>
-                <span>45%</span>
-              </div>
-              <Progress value={45} variant="retro" />
-            </div>
-            <div>
-              <div className="flex justify-between text-sm mb-2">
-                <span>Experience</span>
-                <span>90%</span>
-              </div>
-              <Progress value={90} />
-            </div>
-          </CardContent>
-        </Card>
+        <GameProgress />
 
         {/* Tabs Example */}
         <Card>

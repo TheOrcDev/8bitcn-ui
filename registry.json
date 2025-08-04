@@ -562,9 +562,9 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "components/ui/8bit/blocks/health-bar.tsx",
+          "path": "components/ui/8bit/health-bar.tsx",
           "type": "registry:component",
-          "target": "components/ui/8bit/blocks/health-bar.tsx"
+          "target": "components/ui/8bit/health-bar.tsx"
         },
         {
           "path": "components/ui/8bit/progress.tsx",
@@ -586,9 +586,9 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "components/ui/8bit/blocks/mana-bar.tsx",
+          "path": "components/ui/8bit/mana-bar.tsx",
           "type": "registry:component",
-          "target": "components/ui/8bit/blocks/mana-bar.tsx"
+          "target": "components/ui/8bit/mana-bar.tsx"
         },
         {
           "path": "components/ui/8bit/progress.tsx",

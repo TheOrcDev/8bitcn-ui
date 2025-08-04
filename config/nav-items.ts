@@ -80,6 +80,10 @@ const components = [
     url: "/docs/components/dropdown-menu",
   },
   {
+    title: "Health Bar",
+    url: "/docs/components/health-bar",
+  },
+  {
     title: "Hover Card",
     url: "/docs/components/hover-card",
   },
@@ -122,6 +126,10 @@ const components = [
   {
     title: "Label",
     url: "/docs/components/label",
+  },
+  {
+    title: "Mana Bar",
+    url: "/docs/components/mana-bar",
   },
   {
     title: "Menubar",

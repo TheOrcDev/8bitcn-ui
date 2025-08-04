@@ -7,10 +7,10 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "components/ui/8bit/blocks/mana-bar.tsx",
+      "path": "components/ui/8bit/mana-bar.tsx",
       "content": "import { BitProgressProps, Progress } from \"@/components/ui/8bit/progress\";\n\ninterface ManaBarProps extends React.ComponentProps<\"div\"> {\n  className?: string;\n  props?: BitProgressProps;\n  variant?: \"retro\" | \"default\";\n  value?: number;\n}\n\nexport default function ManaBar({\n  className,\n  variant,\n  value,\n  ...props\n}: ManaBarProps) {\n  return (\n    <Progress\n      {...props}\n      value={value}\n      variant={variant}\n      className={className}\n      progressBg=\"bg-blue-500\"\n    />\n  );\n}\n",
       "type": "registry:component",
-      "target": "components/ui/8bit/blocks/mana-bar.tsx"
+      "target": "components/ui/8bit/mana-bar.tsx"
     },
     {
       "path": "components/ui/8bit/progress.tsx",

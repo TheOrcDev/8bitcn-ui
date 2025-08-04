@@ -1,9 +1,9 @@
 import DialogueBox from "@/components/ui/8bit/blocks/dialogue-box";
 import GameOver from "@/components/ui/8bit/blocks/game-over";
-import HealthBar from "@/components/ui/8bit/blocks/health-bar";
 import MainMenu from "@/components/ui/8bit/blocks/main-menu";
-import ManaBar from "@/components/ui/8bit/blocks/mana-bar";
 import PauseMenu from "@/components/ui/8bit/blocks/pause-menu";
+import HealthBar from "@/components/ui/8bit/health-bar";
+import ManaBar from "@/components/ui/8bit/mana-bar";
 
 import AudioSettings from "../../../components/ui/8bit/blocks/audio-settings";
 import CopyCommandButton from "../../docs/components/copy-command-button";
