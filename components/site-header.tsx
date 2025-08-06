@@ -65,12 +65,11 @@ export async function StarsCount() {
     next: { revalidate: 86400 }, // Cache for 1 day (86400 seconds)
   });
   const json = await data.json();
+  const stars = json.stargazers_count;
 
   return (
     <span className="text-muted-foreground w-8 text-xs tabular-nums retro mt-0.5">
-      {json.stargazers_count >= 1000
-        ? `${(json.stargazers_count / 1000).toFixed(1)}k`
-        : json.stargazers_count.toLocaleString()}
+      {stars >= 1000 ? `${(stars / 1000).toFixed(1)}k` : stars.toLocaleString()}
     </span>
   );
 }
