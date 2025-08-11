@@ -10,6 +10,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/8bit/dialog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/8bit/select";
 import { Button } from "@/components/ui/button";
 
 import CodeSnippet from "@/app/docs/components/code-snippet";
@@ -31,18 +38,30 @@ export function ThemeSelector() {
   const { activeTheme, setActiveTheme } = useThemeConfig();
 
   return (
-    <div className="flex justify-between gap-2 border-y border-dashed p-5">
-      <div className="flex flex-wrap gap-2">
-        {themes.map((theme) => (
-          <Button
-            key={theme.name}
-            onClick={() => setActiveTheme(theme.name)}
-            style={{ backgroundColor: theme.color }}
-            className={`text-neutral-200 border-2  ${theme.name === activeTheme ? "border-neutral-200" : "border-transparent"}`}
-          >
-            {theme.name}
-          </Button>
-        ))}
+    <div className="flex items-center justify-between gap-2 border-y border-dashed p-5">
+      <div className="w-64">
+        <Select
+          value={activeTheme}
+          onValueChange={(val) => setActiveTheme(val as Theme)}
+        >
+          <SelectTrigger className="w-full">
+            <SelectValue font="retro" placeholder="Select theme" />
+          </SelectTrigger>
+          <SelectContent>
+            {themes.map((theme) => (
+              <SelectItem key={theme.name} value={theme.name}>
+                <div className="flex items-center gap-2">
+                  <span
+                    aria-hidden
+                    className="inline-block h-3 w-3 rounded-sm border border-foreground"
+                    style={{ backgroundColor: theme.color }}
+                  />
+                  <span className="capitalize">{theme.name}</span>
+                </div>
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
       <Dialog>

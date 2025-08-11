@@ -50,12 +50,16 @@ export function ActiveThemeProvider({
   useEffect(() => {
     setThemeCookie(activeTheme);
 
-    Array.from(document.body.classList)
-      .filter((className) => className.startsWith("theme-"))
-      .forEach((className) => {
-        document.body.classList.remove(className);
-      });
-    document.body.classList.add(`theme-${activeTheme}`);
+    const targets = [document.body, document.documentElement];
+
+    targets.forEach((el) => {
+      Array.from(el.classList)
+        .filter((className) => className.startsWith("theme-"))
+        .forEach((className) => {
+          el.classList.remove(className);
+        });
+      el.classList.add(`theme-${activeTheme}`);
+    });
   }, [activeTheme]);
 
   return (
