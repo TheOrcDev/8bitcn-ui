@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 
 import {
   DropdownMenu as ShadcnDropdownMenu,
+  DropdownMenuCheckboxItem as ShadcnDropdownMenuCheckboxItem,
   DropdownMenuContent as ShadcnDropdownMenuContent,
   DropdownMenuGroup as ShadcnDropdownMenuGroup,
   DropdownMenuItem as ShadcnDropdownMenuItem,
@@ -35,6 +36,8 @@ const DropdownMenuSeparator = ShadcnDropdownMenuSeparator;
 const DropdownMenuShortcut = ShadcnDropdownMenuShortcut;
 
 const DropdownMenuSub = ShadcnDropdownMenuSub;
+
+const DropdownMenuCheckboxItem = ShadcnDropdownMenuCheckboxItem;
 
 function DropdownMenuSubTrigger({
   className,
@@ -149,6 +152,7 @@ export {
   DropdownMenuSeparator,
   DropdownMenuSubTrigger,
   DropdownMenuSubContent,
+  DropdownMenuCheckboxItem,
   DropdownMenuShortcut,
   DropdownMenuSub,
 };
