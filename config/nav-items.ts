@@ -82,6 +82,7 @@ const components = [
   {
     title: "Health Bar",
     url: "/docs/components/health-bar",
+    new: true,
   },
   {
     title: "Hover Card",
@@ -130,6 +131,7 @@ const components = [
   {
     title: "Mana Bar",
     url: "/docs/components/mana-bar",
+    new: true,
   },
   {
     title: "Menubar",
