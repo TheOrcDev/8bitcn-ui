@@ -19,7 +19,7 @@ export const inputVariants = cva("", {
 });
 
 export interface BitTextareaProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement>,
     VariantProps<typeof inputVariants> {
   asChild?: boolean;
 }
@@ -30,7 +30,7 @@ function Textarea({ ...props }: BitTextareaProps) {
   return (
     <div className={cn("relative w-full", className)}>
       <ShadcnTextarea
-        placeholder="Enter text"
+        {...props}
         className={cn(
           "rounded-none transition-transform ring-0 border-0",
           font !== "normal" && "retro",

@@ -2,74 +2,64 @@
 
 import { useMemo, useState } from "react";
 
-import Link from "next/link";
-
-import { Github, Twitter } from "lucide-react";
-
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/8bit/avatar";
-import { Badge } from "@/components/ui/8bit/badge";
 import { Button } from "@/components/ui/8bit/button";
 import {
   Card,
   CardContent,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/8bit/card";
 import { Input } from "@/components/ui/8bit/input";
 import { Label } from "@/components/ui/8bit/label";
+import { Switch } from "@/components/ui/8bit/switch";
+import { Textarea } from "@/components/ui/8bit/textarea";
 
-function getInitials(name: string) {
-  if (!name) return "?";
-  const parts = name.trim().split(/\s+/);
-  const initials = parts
-    .slice(0, 2)
-    .map((p) => p[0]?.toUpperCase())
-    .join("");
-  return initials || "?";
-}
+import CopyProfileCardDialog from "../docs/components/copy-profile-card-dialog";
+import ProfileCard from "../docs/components/profile-card";
+
+type Profile = {
+  name: string;
+  avatarUrl: string;
+  badgeTitle: string;
+  isRetroAvatar: boolean;
+  githubUrl: string;
+  xUrl: string;
+  githubUsername: string;
+  xUsername: string;
+  safeGithubUrl: string;
+  safeXUrl: string;
+  description: string;
+};
 
 export default function ProfileCreatorPage() {
-  const [name, setName] = useState("");
-  const [avatarUrl, setAvatarUrl] = useState("/placeholder.svg");
-  const [githubUrl, setGithubUrl] = useState("");
-  const [xUrl, setXUrl] = useState("");
-  const [badgeTitle, setBadgeTitle] = useState("");
+  const [profile, setProfile] = useState<Profile>({
+    name: "",
+    avatarUrl: "/avatar.jpg",
+    badgeTitle: "warrior",
+    isRetroAvatar: false,
+    githubUrl: "",
+    xUrl: "",
+    githubUsername: "",
+    xUsername: "",
+    safeGithubUrl: "",
+    safeXUrl: "",
+    description: "",
+  });
 
   const safeGithubUrl = useMemo(() => {
-    if (!githubUrl) return "";
-    if (/^https?:\/\//i.test(githubUrl)) return githubUrl;
-    return `https://github.com/${githubUrl.replace(/^@/, "")}`;
-  }, [githubUrl]);
-
-  const githubUsername = useMemo(() => {
-    if (!safeGithubUrl) return "";
-    return safeGithubUrl
-      .replace(/^https?:\/\//i, "")
-      .replace(/^github\.com\//i, "")
-      .replace(/^\//i, "");
-  }, [safeGithubUrl]);
+    if (!profile.githubUrl) return "";
+    if (/^https?:\/\//i.test(profile.githubUrl)) return profile.githubUrl;
+    return `https://github.com/${profile.githubUrl.replace(/^@/, "")}`;
+  }, [profile.githubUrl]);
 
   const safeXUrl = useMemo(() => {
-    if (!xUrl) return "";
-    if (/^https?:\/\//i.test(xUrl)) return xUrl;
-    return `https://x.com/${xUrl.replace(/^@/, "")}`;
-  }, [xUrl]);
-
-  const xUsername = useMemo(() => {
-    if (!safeXUrl) return "";
-    return safeXUrl
-      .replace(/^https?:\/\//i, "")
-      .replace(/^x\.com\//i, "")
-      .replace(/^\//i, "");
-  }, [safeXUrl]);
+    if (!profile.xUrl) return "";
+    if (/^https?:\/\//i.test(profile.xUrl)) return profile.xUrl;
+    return `https://x.com/${profile.xUrl.replace(/^@/, "")}`;
+  }, [profile.xUrl]);
 
   return (
-    <div className="p-4 md:p-6 space-y-6">
+    <div className="p-4 md:p-6 space-y-6 retro">
       <div className="space-y-2">
         <h1 className="retro font-bold text-xl md:text-2xl">Profile Creator</h1>
         <p className="text-sm text-muted-foreground max-w-2xl">
@@ -89,22 +79,54 @@ export default function ProfileCreatorPage() {
               <Input
                 id="name"
                 placeholder="Pacman"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={profile.name}
+                onChange={(e) =>
+                  setProfile({ ...profile, name: e.currentTarget.value })
+                }
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="avatar">Avatar URL</Label>
+              <Label htmlFor="description">Description</Label>
+              <Textarea
+                id="description"
+                value={profile.description}
+                onChange={(e) =>
+                  setProfile({ ...profile, description: e.currentTarget.value })
+                }
+                rows={4}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <div className="flex items-center justify-between gap-2">
+                <Label htmlFor="avatar">Avatar URL</Label>
+                <div className="flex items-center gap-2">
+                  <Switch
+                    id="avatar"
+                    checked={profile.isRetroAvatar}
+                    onCheckedChange={() =>
+                      setProfile({
+                        ...profile,
+                        isRetroAvatar: !profile.isRetroAvatar,
+                      })
+                    }
+                  />
+                  <Label htmlFor="avatar">
+                    {profile.isRetroAvatar ? "Pixel" : "Retro"}
+                  </Label>
+                </div>
+              </div>
               <Input
                 id="avatar"
                 placeholder="https://example.com/avatar.png"
-                value={avatarUrl}
-                onChange={(e) => setAvatarUrl(e.target.value)}
+                value={profile.avatarUrl}
+                onChange={(e) =>
+                  setProfile({ ...profile, avatarUrl: e.currentTarget.value })
+                }
               />
               <p className="text-xs text-muted-foreground">
-                Tip: You can paste any image URL. A placeholder is used by
-                default.
+                Tip: You can paste any image URL. Shadcn orc is used by default.
               </p>
             </div>
 
@@ -113,8 +135,10 @@ export default function ProfileCreatorPage() {
               <Input
                 id="github"
                 placeholder="pacman or https://github.com/pacman"
-                value={githubUrl}
-                onChange={(e) => setGithubUrl(e.target.value)}
+                value={profile.githubUrl}
+                onChange={(e) =>
+                  setProfile({ ...profile, githubUrl: e.currentTarget.value })
+                }
               />
             </div>
 
@@ -123,8 +147,10 @@ export default function ProfileCreatorPage() {
               <Input
                 id="x"
                 placeholder="pacman or https://x.com/pacman"
-                value={xUrl}
-                onChange={(e) => setXUrl(e.target.value)}
+                value={profile.xUrl}
+                onChange={(e) =>
+                  setProfile({ ...profile, xUrl: e.currentTarget.value })
+                }
               />
             </div>
 
@@ -133,80 +159,53 @@ export default function ProfileCreatorPage() {
               <Input
                 id="badge"
                 placeholder="Retro Hacker"
-                value={badgeTitle}
-                onChange={(e) => setBadgeTitle(e.target.value)}
+                value={profile.badgeTitle}
+                onChange={(e) =>
+                  setProfile({ ...profile, badgeTitle: e.currentTarget.value })
+                }
               />
             </div>
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Live Preview</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex items-center gap-4">
-              <Avatar className="size-20" variant="pixel">
-                <AvatarImage src={avatarUrl} alt={name || "Avatar"} />
-                <AvatarFallback>{getInitials(name)}</AvatarFallback>
-              </Avatar>
-              <div className="space-y-1 min-w-0">
-                <div className="flex items-center gap-4 flex-wrap">
-                  <h3 className="retro font-bold truncate max-w-[16rem]">
-                    {name || "Your Name"}
-                  </h3>
-                  {badgeTitle ? <Badge>{badgeTitle}</Badge> : null}
-                </div>
-                <div className="flex items-center gap-3 text-sm">
-                  {safeGithubUrl ? (
-                    <Link
-                      href={safeGithubUrl}
-                      target="_blank"
-                      className="inline-flex items-center gap-1 text-foreground hover:underline"
-                    >
-                      <Github className="size-4" />
-                      <span className="truncate max-w-[12rem]">
-                        {githubUsername}
-                      </span>
-                    </Link>
-                  ) : (
-                    <span className="text-muted-foreground">GitHub link</span>
-                  )}
-                  <span className="text-muted-foreground">•</span>
-                  {safeXUrl ? (
-                    <Link
-                      href={safeXUrl}
-                      target="_blank"
-                      className="inline-flex items-center gap-1 text-foreground hover:underline"
-                    >
-                      <Twitter className="size-4" />
-                      <span className="truncate max-w-[12rem]">
-                        {xUsername}
-                      </span>
-                    </Link>
-                  ) : (
-                    <span className="text-muted-foreground">X link</span>
-                  )}
-                </div>
-              </div>
-            </div>
-          </CardContent>
-          <CardFooter className="justify-end gap-2">
+        <div className="space-y-4">
+          <ProfileCard
+            name={profile.name}
+            avatarUrl={profile.avatarUrl}
+            badgeTitle={profile.badgeTitle}
+            isRetroAvatar={profile.isRetroAvatar}
+            githubUrl={profile.githubUrl}
+            xUrl={profile.xUrl}
+            githubUsername={profile.githubUsername}
+            xUsername={profile.xUsername}
+            safeGithubUrl={safeGithubUrl}
+            safeXUrl={safeXUrl}
+            description={profile.description}
+          />
+
+          <div className="flex gap-5 items-center">
             <Button
               variant="secondary"
-              size="sm"
               onClick={() => {
-                setName("");
-                setAvatarUrl("/placeholder.svg");
-                setGithubUrl("");
-                setXUrl("");
-                setBadgeTitle("");
+                setProfile({
+                  ...profile,
+                  name: "",
+                  avatarUrl: "/avatar.jpg",
+                  githubUrl: "",
+                  xUrl: "",
+                  badgeTitle: "",
+                  isRetroAvatar: false,
+                });
               }}
             >
               Reset
             </Button>
-          </CardFooter>
-        </Card>
+
+            <CopyProfileCardDialog
+              code={`<ProfileCard name="${profile.name}" />`}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
