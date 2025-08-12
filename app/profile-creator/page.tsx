@@ -73,19 +73,139 @@ export default function ProfileCreatorPage() {
           <div className="flex items-center gap-3 text-sm">
             ${
               hasGithub
-                ? `<a href="${valueForAttr(safeGithubUrl)}" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center size-8 border px-0">
+                ? `
+              <Button size="icon" asChild>
+                <a href="${valueForAttr(safeGithubUrl)}" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center size-8 border px-0">
                 {/* Github icon */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A6.5 6.5 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85"></path><path d="M9 18c-4 2-5-2-7-2"></path></svg>
-              </a>`
+                 <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 256 256"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    stroke="currentColor"
+                    strokeWidth="0.25"
+                    aria-label="github"
+                    className="size-7"
+                  >
+                    <rect x="200" y="80" width="14" height="14" rx="1"></rect>
+                    <rect x="184" y="64" width="14" height="14" rx="1"></rect>
+                    <rect x="200" y="96" width="14" height="14" rx="1"></rect>
+                    <rect x="168" y="48" width="14" height="14" rx="1"></rect>
+                    <rect x="72" y="48" width="14" height="14" rx="1"></rect>
+                    <rect x="72" y="64" width="14" height="14" rx="1"></rect>
+                    <rect x="88" y="48" width="14" height="14" rx="1"></rect>
+                    <rect x="152" y="48" width="14" height="14" rx="1"></rect>
+                    <rect x="104" y="48" width="14" height="14" rx="1"></rect>
+                    <rect x="136" y="48" width="14" height="14" rx="1"></rect>
+                    <rect x="120" y="48" width="14" height="14" rx="1"></rect>
+                    <rect x="168" y="64" width="14" height="14" rx="1"></rect>
+                    <rect x="104" y="64" width="14" height="14" rx="1"></rect>
+                    <rect x="136" y="64" width="14" height="14" rx="1"></rect>
+                    <rect x="120" y="64" width="14" height="14" rx="1"></rect>
+                    <rect x="56" y="64" width="14" height="14" rx="1"></rect>
+                    <rect x="40" y="80" width="14" height="14" rx="1"></rect>
+                    <rect x="40" y="96" width="14" height="14" rx="1"></rect>
+                    <rect x="40" y="112" width="14" height="14" rx="1"></rect>
+                    <rect x="40" y="128" width="14" height="14" rx="1"></rect>
+                    <rect x="56" y="80" width="14" height="14" rx="1"></rect>
+                    <rect x="56" y="96" width="14" height="14" rx="1"></rect>
+                    <rect x="56" y="112" width="14" height="14" rx="1"></rect>
+                    <rect x="56" y="128" width="14" height="14" rx="1"></rect>
+                    <rect x="184" y="80" width="14" height="14" rx="1"></rect>
+                    <rect x="184" y="96" width="14" height="14" rx="1"></rect>
+                    <rect x="184" y="112" width="14" height="14" rx="1"></rect>
+                    <rect x="168" y="80" width="14" height="14" rx="1"></rect>
+                    <rect x="184" y="144" width="14" height="14" rx="1"></rect>
+                    <rect x="72" y="80" width="14" height="14" rx="1"></rect>
+                    <rect x="88" y="144" width="14" height="14" rx="1"></rect>
+                    <rect x="184" y="128" width="14" height="14" rx="1"></rect>
+                    <rect x="72" y="144" width="14" height="14" rx="1"></rect>
+                    <rect x="168" y="144" width="14" height="14" rx="1"></rect>
+                    <rect x="152" y="144" width="14" height="14" rx="1"></rect>
+                    <rect x="136" y="144" width="14" height="14" rx="1"></rect>
+                    <rect x="104" y="144" width="14" height="14" rx="1"></rect>
+                    <rect x="168" y="128" width="14" height="14" rx="1"></rect>
+                    <rect x="72" y="128" width="14" height="14" rx="1"></rect>
+                    <rect x="168" y="160" width="14" height="14" rx="1"></rect>
+                    <rect x="152" y="160" width="14" height="14" rx="1"></rect>
+                    <rect x="88" y="192" width="14" height="14" rx="1"></rect>
+                    <rect x="72" y="176" width="14" height="14" rx="1"></rect>
+                    <rect x="56" y="176" width="14" height="14" rx="1"></rect>
+                    <rect x="56" y="160" width="14" height="14" rx="1"></rect>
+                    <rect x="40" y="160" width="14" height="14" rx="1"></rect>
+                    <rect x="152" y="176" width="14" height="14" rx="1"></rect>
+                    <rect x="88" y="176" width="14" height="14" rx="1"></rect>
+                    <rect x="152" y="192" width="14" height="14" rx="1"></rect>
+                    <rect x="168" y="192" width="14" height="14" rx="1"></rect>
+                    <rect x="72" y="192" width="14" height="14" rx="1"></rect>
+                    <rect x="168" y="176" width="14" height="14" rx="1"></rect>
+                    <rect x="184" y="176" width="14" height="14" rx="1"></rect>
+                    <rect x="184" y="160" width="14" height="14" rx="1"></rect>
+                    <rect x="200" y="160" width="14" height="14" rx="1"></rect>
+                    <rect x="200" y="128" width="14" height="14" rx="1"></rect>
+                    <rect x="200" y="144" width="14" height="14" rx="1"></rect>
+                    <rect x="40" y="144" width="14" height="14" rx="1"></rect>
+                    <rect x="200" y="112" width="14" height="14" rx="1"></rect>
+                  </svg>
+              </a>
+              </Button>`
                 : ""
             }
             ${hasGithub && hasX ? `<span className=\"text-muted-foreground\">•</span>` : ""}
             ${
               hasX
-                ? `<a href="${valueForAttr(safeXUrl)}" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center size-8 border px-0">
+                ? `
+              <Button size="icon" asChild>
+                <a href="${valueForAttr(safeXUrl)}" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center size-8 border px-0">
                 {/* Twitter icon */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
-              </a>`
+                <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 256 256"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    stroke="currentColor"
+                    strokeWidth="0.25"
+                    aria-label="twitter"
+                    className="size-6"
+                  >
+                    <rect x="40" y="40" width="14" height="14" rx="1"></rect>
+                    <rect x="56" y="40" width="14" height="14" rx="1"></rect>
+                    <rect x="72" y="56" width="14" height="14" rx="1"></rect>
+                    <rect x="88" y="72" width="14" height="14" rx="1"></rect>
+                    <rect x="104" y="88" width="14" height="14" rx="1"></rect>
+                    <rect x="120" y="104" width="14" height="14" rx="1"></rect>
+                    <rect x="136" y="120" width="14" height="14" rx="1"></rect>
+                    <rect x="152" y="136" width="14" height="14" rx="1"></rect>
+                    <rect x="168" y="152" width="14" height="14" rx="1"></rect>
+                    <rect x="200" y="184" width="14" height="14" rx="1"></rect>
+                    <rect x="200" y="200" width="14" height="14" rx="1"></rect>
+                    <rect x="184" y="200" width="14" height="14" rx="1"></rect>
+                    <rect x="152" y="168" width="14" height="14" rx="1"></rect>
+                    <rect x="168" y="184" width="14" height="14" rx="1"></rect>
+                    <rect x="184" y="168" width="14" height="14" rx="1"></rect>
+                    <rect x="136" y="152" width="14" height="14" rx="1"></rect>
+                    <rect x="120" y="136" width="14" height="14" rx="1"></rect>
+                    <rect x="104" y="120" width="14" height="14" rx="1"></rect>
+                    <rect x="88" y="104" width="14" height="14" rx="1"></rect>
+                    <rect x="72" y="88" width="14" height="14" rx="1"></rect>
+                    <rect x="56" y="72" width="14" height="14" rx="1"></rect>
+                    <rect x="40" y="56" width="14" height="14" rx="1"></rect>
+                    <rect x="136" y="104" width="14" height="14" rx="1"></rect>
+                    <rect x="152" y="88" width="14" height="14" rx="1"></rect>
+                    <rect x="200" y="40" width="14" height="14" rx="1"></rect>
+                    <rect x="40" y="200" width="14" height="14" rx="1"></rect>
+                    <rect x="152" y="88" width="14" height="14" rx="1"></rect>
+                    <rect x="168" y="72" width="14" height="14" rx="1"></rect>
+                    <rect x="184" y="56" width="14" height="14" rx="1"></rect>
+                    <rect x="104" y="136" width="14" height="14" rx="1"></rect>
+                    <rect x="88" y="152" width="14" height="14" rx="1"></rect>
+                    <rect x="72" y="168" width="14" height="14" rx="1"></rect>
+                    <rect x="56" y="184" width="14" height="14" rx="1"></rect>
+                  </svg>
+              </a>
+              </Button>`
                 : ""
             }
           </div>
@@ -104,6 +224,7 @@ export default function ProfileCreatorPage() {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/8bit/avatar";
 import { Badge } from "@/components/ui/8bit/badge";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/8bit/card";
+import { Button } from "@/components/ui/8bit/button";
 
 function getInitials(name: string) {
   if (!name) return "?";
