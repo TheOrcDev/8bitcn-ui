@@ -2,9 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-export const dynamic = "force-dynamic";
-export const runtime = "nodejs";
-
 export async function POST(req: NextRequest) {
   try {
     const payload = (await req.json()) as {
