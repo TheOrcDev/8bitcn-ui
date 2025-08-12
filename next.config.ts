@@ -1,10 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  experimental: {
-    // Ensure these native deps and assets are available in serverless bundle
-    serverComponentsExternalPackages: ["@sparticuz/chromium", "puppeteer-core"],
-  },
+  // Ensure these native deps are kept as externals and shipped in the serverless bundle
+  serverExternalPackages: ["@sparticuz/chromium", "puppeteer-core"],
 };
 
 export default nextConfig;
