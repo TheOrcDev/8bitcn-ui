@@ -303,8 +303,25 @@ export default function ProfileCard() {
 
       <div className="grid gap-6 md:grid-cols-2">
         <Card>
-          <CardHeader>
+          <CardHeader className="flex items-center justify-between">
             <CardTitle>Details</CardTitle>
+
+            <Button
+              variant="outline"
+              onClick={() => {
+                setProfile({
+                  ...profile,
+                  name: "",
+                  avatarUrl: "/avatar.jpg",
+                  githubUrl: "",
+                  xUrl: "",
+                  badgeTitle: "",
+                  isRetroAvatar: false,
+                });
+              }}
+            >
+              Reset
+            </Button>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
@@ -417,23 +434,6 @@ export default function ProfileCard() {
           />
 
           <div className="flex gap-5 items-center">
-            <Button
-              variant="secondary"
-              onClick={() => {
-                setProfile({
-                  ...profile,
-                  name: "",
-                  avatarUrl: "/avatar.jpg",
-                  githubUrl: "",
-                  xUrl: "",
-                  badgeTitle: "",
-                  isRetroAvatar: false,
-                });
-              }}
-            >
-              Reset
-            </Button>
-
             <CopyProfileCardDialog code={generateProfileCardCode()} />
 
             <Button onClick={handleDownload} disabled={isDownloading}>

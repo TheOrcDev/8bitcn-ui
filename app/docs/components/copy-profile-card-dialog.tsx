@@ -19,7 +19,7 @@ export default function CopyProfileCardDialog({ code }: ProfileCardProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="secondary">Copy Code</Button>
+        <Button>Copy Code</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>

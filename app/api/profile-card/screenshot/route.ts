@@ -80,7 +80,11 @@ export async function POST(req: NextRequest) {
         clip,
       });
 
-      return new NextResponse(pngBuffer, {
+      // Ensure body matches BodyInit (Buffer isn't part of BodyInit)
+      const body =
+        typeof pngBuffer === "string" ? pngBuffer : new Uint8Array(pngBuffer);
+
+      return new NextResponse(body, {
         status: 200,
         headers: {
           "Content-Type": "image/png",
