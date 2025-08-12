@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
+import chromium from "@sparticuz/chromium";
 import puppeteer from "puppeteer";
 
 export const dynamic = "force-dynamic";
@@ -22,10 +23,26 @@ export async function POST(req: NextRequest) {
       base64
     )}`;
 
-    const browser = await puppeteer.launch({
-      headless: true,
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    });
+    const isProd =
+      process.env.VERCEL === "1" || process.env.NODE_ENV === "production";
+
+    const browser = isProd
+      ? await (
+          await import("puppeteer-core")
+        ).default.launch({
+          args: chromium.args,
+          defaultViewport: {
+            width: 1200,
+            height: 1000,
+            deviceScaleFactor: 2,
+          },
+          executablePath: await chromium.executablePath(),
+          headless: true,
+        })
+      : await puppeteer.launch({
+          headless: true,
+          args: ["--no-sandbox", "--disable-setuid-sandbox"],
+        });
 
     try {
       const page = await browser.newPage();
@@ -40,9 +57,9 @@ export async function POST(req: NextRequest) {
         timeout: 30000,
       });
 
-      await page.waitForSelector("#profile-card", { timeout: 15000 });
-
-      const element = await page.$("#profile-card");
+      const element = (await page.waitForSelector("#profile-card", {
+        timeout: 15000,
+      })) as import("puppeteer").ElementHandle<Element> | null;
       if (!element) {
         throw new Error("profile card element not found");
       }
@@ -56,7 +73,7 @@ export async function POST(req: NextRequest) {
       );
 
       const rect = await element.evaluate((el) => {
-        const r = el.getBoundingClientRect();
+        const r = (el as HTMLElement).getBoundingClientRect();
         return {
           x: Math.round(r.left + window.scrollX),
           y: Math.round(r.top + window.scrollY),
