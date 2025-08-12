@@ -1,7 +1,11 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/8bit/avatar";
 import { Badge } from "@/components/ui/8bit/badge";
 import { Button } from "@/components/ui/8bit/button";
 import {
@@ -27,7 +31,7 @@ const contributors = [
       "15 years in the code mines. I build, I break, I conquer - all in orcish style. 🛠️🔥",
     avatar: "/avatars/orcdev.jpeg",
     githubUrl: "https://github.com/TheOrcDev",
-    contributions: 249,
+    contributions: 280,
   },
   {
     id: 2,
@@ -174,6 +178,15 @@ const contributors = [
     githubUrl: "https://github.com/manumorante",
     contributions: 1,
   },
+  {
+    id: 18,
+    username: "jln13x",
+    name: "Julian",
+    description: "",
+    avatar: "/avatars/julian.png",
+    githubUrl: "https://github.com/jln13x",
+    contributions: 1,
+  },
 ];
 
 export default function ContributorsPage() {
@@ -202,13 +215,13 @@ export default function ContributorsPage() {
         {contributors.map((contributor) => (
           <Card key={contributor.id} className="h-full">
             <CardHeader className="text-center gap-4 flex flex-col items-center">
-              <Image
-                src={contributor.avatar || "/placeholder.svg"}
-                alt={`${contributor.name}'s avatar`}
-                width={80}
-                height={80}
-                className="rounded-full border-4 border-background shadow-lg"
-              />
+              <Avatar className="size-30">
+                <AvatarImage
+                  src={contributor.avatar}
+                  alt={`${contributor.name}'s avatar`}
+                />
+                <AvatarFallback>{contributor.name.charAt(0)}</AvatarFallback>
+              </Avatar>
               <Badge className="text-xs">
                 {contributor.contributions} contribution
                 {contributor.contributions === 1 ? "" : "s"}
