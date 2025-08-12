@@ -32,7 +32,8 @@ const themes = [
   { name: Theme.Arcade, color: "#F07CD4" },
   { name: Theme.NeoGeo, color: "#dc2626" },
   { name: Theme.SoftPop, color: "#4B3F99" },
-  { name: Theme.VHS, color: "#000000" },
+  { name: Theme.Pacman, color: "#ffcc00" },
+  { name: Theme.VHS, color: "#8B5CF6" },
 ];
 
 export function ThemeSelector() {
