@@ -235,7 +235,7 @@ function getInitials(name: string) {
 
 export default function ProfileCard() {
   return (
-    <Card className="max-w-md">
+    <Card className="min-w-sm max-w-md">
       <CardHeader className="flex flex-col items-center gap-2">
         <Avatar className="size-20" variant="${profile.isRetroAvatar ? "pixel" : "retro"}">
           <AvatarImage src="${valueForAttr(profile.avatarUrl)}" alt="${valueForAttr(profile.name || "Avatar")}" />
