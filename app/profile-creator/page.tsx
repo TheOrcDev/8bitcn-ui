@@ -46,6 +46,8 @@ export default function ProfileCreatorPage() {
     description: "",
   });
 
+  const [isDownloading, setIsDownloading] = useState(false);
+
   const safeGithubUrl = useMemo(() => {
     if (!profile.githubUrl) return "";
     if (/^https?:\/\//i.test(profile.githubUrl)) return profile.githubUrl;
@@ -258,6 +260,37 @@ export default function ProfileCard() {
 }`;
   };
 
+  const handleDownload = async () => {
+    try {
+      setIsDownloading(true);
+      const res = await fetch("/api/profile-card/screenshot", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          profile: {
+            ...profile,
+            safeGithubUrl,
+            safeXUrl,
+          },
+        }),
+      });
+      if (!res.ok) throw new Error("Failed to generate screenshot");
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "profile-card.png";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+
   return (
     <div className="p-4 md:p-6 space-y-6 retro">
       <div className="space-y-2">
@@ -402,6 +435,10 @@ export default function ProfileCard() {
             </Button>
 
             <CopyProfileCardDialog code={generateProfileCardCode()} />
+
+            <Button onClick={handleDownload} disabled={isDownloading}>
+              {isDownloading ? "Downloading..." : "Download PNG"}
+            </Button>
           </div>
         </div>
       </div>
