@@ -21,13 +21,25 @@ export default function CopyProfileCardDialog({ code }: ProfileCardProps) {
       <DialogTrigger asChild>
         <Button variant="secondary">Copy Code</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent>
         <DialogHeader>
           <DialogTitle>Copy Profile Card</DialogTitle>
           <DialogDescription className="text-xs">
             Copy the profile card code to your clipboard.
           </DialogDescription>
         </DialogHeader>
+
+        <p className="text-xs text-muted-foreground">
+          First add all dependencies to your project.
+        </p>
+
+        <CodeSnippet>
+          pnpm dlx shadcn@canary add https://8bitcn.com/r/8bit-profile-card.json
+        </CodeSnippet>
+
+        <p className="text-xs text-muted-foreground">
+          Then use the component in your project.
+        </p>
 
         <CodeSnippet>{code}</CodeSnippet>
 

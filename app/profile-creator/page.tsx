@@ -58,6 +58,85 @@ export default function ProfileCreatorPage() {
     return `https://x.com/${profile.xUrl.replace(/^@/, "")}`;
   }, [profile.xUrl]);
 
+  const valueForAttr = (value: string) => value.replace(/"/g, "&quot;");
+  const escapeText = (value: string) =>
+    value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+  const generateProfileCardCode = () => {
+    const hasGithub = Boolean(safeGithubUrl);
+    const hasX = Boolean(safeXUrl);
+    const hasAnySocial = hasGithub || hasX;
+
+    const socialsBlock = hasAnySocial
+      ? `
+        <div className="flex items-center gap-4 justify-center">
+          <div className="flex items-center gap-3 text-sm">
+            ${
+              hasGithub
+                ? `<a href="${valueForAttr(safeGithubUrl)}" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center size-8 border px-0">
+                {/* Github icon */}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A6.5 6.5 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85"></path><path d="M9 18c-4 2-5-2-7-2"></path></svg>
+              </a>`
+                : ""
+            }
+            ${hasGithub && hasX ? `<span className=\"text-muted-foreground\">•</span>` : ""}
+            ${
+              hasX
+                ? `<a href="${valueForAttr(safeXUrl)}" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center size-8 border px-0">
+                {/* Twitter icon */}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+              </a>`
+                : ""
+            }
+          </div>
+        </div>`
+      : "";
+
+    const descriptionBlock = profile.description
+      ? `
+        <p className="text-sm text-muted-foreground text-center w-3/4 mx-auto">
+          ${escapeText(profile.description)}
+        </p>`
+      : "";
+
+    return `"use client";
+
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/8bit/avatar";
+import { Badge } from "@/components/ui/8bit/badge";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/8bit/card";
+
+function getInitials(name: string) {
+  if (!name) return "?";
+  const parts = name.trim().split(/\s+/);
+  const initials = parts.slice(0, 2).map((p) => p[0]?.toUpperCase()).join("");
+  return initials || "?";
+}
+
+export default function ProfileCard() {
+  return (
+    <Card className="max-w-md">
+      <CardHeader className="flex flex-col items-center gap-2">
+        <Avatar className="size-20" variant="${profile.isRetroAvatar ? "pixel" : "retro"}">
+          <AvatarImage src="${valueForAttr(profile.avatarUrl)}" alt="${valueForAttr(profile.name || "Avatar")}" />
+          <AvatarFallback>{getInitials("${valueForAttr(profile.name)}")}</AvatarFallback>
+        </Avatar>
+
+        <CardTitle>
+          <h3>${escapeText(profile.name) || "Your Name"}</h3>
+        </CardTitle>
+
+        ${profile.badgeTitle ? `<Badge>${escapeText(profile.badgeTitle)}</Badge>` : ""}
+      </CardHeader>
+      <CardContent className="flex flex-col items-center gap-4">
+        ${descriptionBlock}
+        ${socialsBlock}
+      </CardContent>
+      <CardFooter className="justify-end gap-2"></CardFooter>
+    </Card>
+  );
+}`;
+  };
+
   return (
     <div className="p-4 md:p-6 space-y-6 retro">
       <div className="space-y-2">
@@ -201,9 +280,7 @@ export default function ProfileCreatorPage() {
               Reset
             </Button>
 
-            <CopyProfileCardDialog
-              code={`<ProfileCard name="${profile.name}" />`}
-            />
+            <CopyProfileCardDialog code={generateProfileCardCode()} />
           </div>
         </div>
       </div>
