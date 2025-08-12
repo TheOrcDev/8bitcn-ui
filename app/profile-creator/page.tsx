@@ -46,11 +46,27 @@ export default function ProfileCreatorPage() {
     return `https://github.com/${githubUrl.replace(/^@/, "")}`;
   }, [githubUrl]);
 
+  const githubUsername = useMemo(() => {
+    if (!safeGithubUrl) return "";
+    return safeGithubUrl
+      .replace(/^https?:\/\//i, "")
+      .replace(/^github\.com\//i, "")
+      .replace(/^\//i, "");
+  }, [safeGithubUrl]);
+
   const safeXUrl = useMemo(() => {
     if (!xUrl) return "";
     if (/^https?:\/\//i.test(xUrl)) return xUrl;
     return `https://x.com/${xUrl.replace(/^@/, "")}`;
   }, [xUrl]);
+
+  const xUsername = useMemo(() => {
+    if (!safeXUrl) return "";
+    return safeXUrl
+      .replace(/^https?:\/\//i, "")
+      .replace(/^x\.com\//i, "")
+      .replace(/^\//i, "");
+  }, [safeXUrl]);
 
   return (
     <div className="p-4 md:p-6 space-y-6">
@@ -72,7 +88,7 @@ export default function ProfileCreatorPage() {
               <Label htmlFor="name">Name</Label>
               <Input
                 id="name"
-                placeholder="Ada Lovelace"
+                placeholder="Pacman"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -96,7 +112,7 @@ export default function ProfileCreatorPage() {
               <Label htmlFor="github">GitHub</Label>
               <Input
                 id="github"
-                placeholder="octocat or https://github.com/octocat"
+                placeholder="pacman or https://github.com/pacman"
                 value={githubUrl}
                 onChange={(e) => setGithubUrl(e.target.value)}
               />
@@ -106,7 +122,7 @@ export default function ProfileCreatorPage() {
               <Label htmlFor="x">X</Label>
               <Input
                 id="x"
-                placeholder="jack or https://x.com/jack"
+                placeholder="pacman or https://x.com/pacman"
                 value={xUrl}
                 onChange={(e) => setXUrl(e.target.value)}
               />
@@ -135,15 +151,11 @@ export default function ProfileCreatorPage() {
                 <AvatarFallback>{getInitials(name)}</AvatarFallback>
               </Avatar>
               <div className="space-y-1 min-w-0">
-                <div className="flex items-center gap-2 flex-wrap">
+                <div className="flex items-center gap-4 flex-wrap">
                   <h3 className="retro font-bold truncate max-w-[16rem]">
                     {name || "Your Name"}
                   </h3>
-                  {badgeTitle ? (
-                    <Badge className="ml-1" variant="secondary">
-                      {badgeTitle}
-                    </Badge>
-                  ) : null}
+                  {badgeTitle ? <Badge>{badgeTitle}</Badge> : null}
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   {safeGithubUrl ? (
@@ -154,7 +166,7 @@ export default function ProfileCreatorPage() {
                     >
                       <Github className="size-4" />
                       <span className="truncate max-w-[12rem]">
-                        {safeGithubUrl}
+                        {githubUsername}
                       </span>
                     </Link>
                   ) : (
@@ -168,7 +180,9 @@ export default function ProfileCreatorPage() {
                       className="inline-flex items-center gap-1 text-foreground hover:underline"
                     >
                       <Twitter className="size-4" />
-                      <span className="truncate max-w-[12rem]">{safeXUrl}</span>
+                      <span className="truncate max-w-[12rem]">
+                        {xUsername}
+                      </span>
                     </Link>
                   ) : (
                     <span className="text-muted-foreground">X link</span>
