@@ -23,6 +23,9 @@ export async function POST(req: NextRequest) {
     )}`;
 
     const isVercel = !!process.env.VERCEL_ENV;
+    if (isVercel && !process.env.CHROMIUM_CHANNEL) {
+      process.env.CHROMIUM_CHANNEL = "stable";
+    }
     let puppeteer: any;
     let launchOptions: any = { headless: true };
 
