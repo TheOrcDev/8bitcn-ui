@@ -75,7 +75,7 @@ export default function ProfileCreatorPage() {
               hasGithub
                 ? `
               <Button size="icon" asChild>
-                <a href="${valueForAttr(safeGithubUrl)}" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center size-8 border px-0">
+                <a href="${valueForAttr(safeGithubUrl)}" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center size-8 px-0">
                 {/* Github icon */}
                  <svg
                     width="50"
@@ -157,7 +157,7 @@ export default function ProfileCreatorPage() {
               hasX
                 ? `
               <Button size="icon" asChild>
-                <a href="${valueForAttr(safeXUrl)}" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center size-8 border px-0">
+                <a href="${valueForAttr(safeXUrl)}" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center size-8 px-0">
                 {/* Twitter icon */}
                 <svg
                     width="50"
