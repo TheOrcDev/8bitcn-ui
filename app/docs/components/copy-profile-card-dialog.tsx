@@ -3,7 +3,6 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -42,10 +41,6 @@ export default function CopyProfileCardDialog({ code }: ProfileCardProps) {
         </p>
 
         <CodeSnippet>{code}</CodeSnippet>
-
-        <DialogFooter>
-          <Button size="sm">Copy</Button>
-        </DialogFooter>
       </DialogContent>
     </Dialog>
   );

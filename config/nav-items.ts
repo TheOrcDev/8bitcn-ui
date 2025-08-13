@@ -213,6 +213,10 @@ export const navItems = {
       label: "Themes",
       href: "/themes",
     },
+    {
+      label: "Profile Creator",
+      href: "/profile-creator",
+    },
   ],
   navMain: [
     {

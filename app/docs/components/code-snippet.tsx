@@ -4,10 +4,10 @@ import { useState } from "react";
 
 import { Check, Clipboard } from "lucide-react";
 import ShikiHighlighter from "react-shiki";
-import { toast } from "sonner";
 
 import { cn } from "@/lib/utils";
 
+import { toast } from "@/components/ui/8bit/toast";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
@@ -30,7 +30,7 @@ export default function CodeSnippet({
       setCopied(false);
     }, 3000);
 
-    toast.success("Copied to clipboard");
+    toast("Copied to clipboard");
   };
 
   return (
