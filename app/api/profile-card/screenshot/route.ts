@@ -1,10 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import chromium from "@sparticuz/chromium";
-import * as puppeteer from "puppeteer";
-import puppeteerCore from "puppeteer-core";
-
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 export async function POST(req: NextRequest) {
   try {
     const payload = (await req.json()) as {
@@ -24,24 +21,24 @@ export async function POST(req: NextRequest) {
 
     const isVercel = !!process.env.VERCEL_ENV;
 
-    let browser: any;
+    let puppeteer: any,
+      launchOptions: any = {
+        headless: true,
+      };
+
     if (isVercel) {
-      browser = await puppeteerCore.launch({
+      const chromium = (await import("@sparticuz/chromium")).default;
+      puppeteer = await import("puppeteer-core");
+      launchOptions = {
+        ...launchOptions,
         args: chromium.args,
-        defaultViewport: {
-          width: 1200,
-          height: 1000,
-          deviceScaleFactor: 2,
-        },
         executablePath: await chromium.executablePath(),
-        headless: true,
-      });
+      };
     } else {
-      browser = await puppeteer.launch({
-        args: ["--no-sandbox", "--disable-setuid-sandbox"],
-        headless: true,
-      });
+      puppeteer = await import("puppeteer");
     }
+
+    const browser = await puppeteer.launch(launchOptions);
 
     try {
       const page = await browser.newPage();
