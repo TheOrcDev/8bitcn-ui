@@ -228,7 +228,6 @@ export default function ProfileCreatorPage() {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/8bit/avatar";
 import { Badge } from "@/components/ui/8bit/badge";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/8bit/card";
-import { Button } from "@/components/ui/8bit/button";
 
 function getInitials(name: string) {
   if (!name) return "?";
