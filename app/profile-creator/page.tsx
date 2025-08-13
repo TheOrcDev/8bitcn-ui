@@ -16,6 +16,8 @@ import { Label } from "@/components/ui/8bit/label";
 import { Switch } from "@/components/ui/8bit/switch";
 import { Textarea } from "@/components/ui/8bit/textarea";
 
+import { SelectThemeDropdown } from "@/components/select-theme-dropdown";
+
 import CopyProfileCardDialog from "../docs/components/copy-profile-card-dialog";
 import ProfileCard from "../docs/components/profile-card";
 
@@ -244,6 +246,9 @@ export default function ProfileCreatorPage() {
 
         <div className="space-y-4">
           <h2 className="text-center text-lg font-bold">Preview</h2>
+          <div className="max-w-xs mx-auto">
+            <SelectThemeDropdown />
+          </div>
           <div id="profile-card" className="flex justify-center p-5">
             <ProfileCard
               name={profile.name}
