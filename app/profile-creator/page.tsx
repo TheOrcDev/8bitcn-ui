@@ -60,10 +60,6 @@ export default function ProfileCreatorPage() {
     return `https://x.com/${profile.xUrl.replace(/^@/, "")}`;
   }, [profile.xUrl]);
 
-  const valueForAttr = (value: string) => value.replace(/"/g, "&quot;");
-  const escapeText = (value: string) =>
-    value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-
   const generateProfileCardCode = () => {
     return `"use client";\n`;
   };

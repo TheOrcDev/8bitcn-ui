@@ -57,7 +57,7 @@ export default function ProfileCard({
         </Avatar>
 
         <CardTitle>
-          <h3>{name || "Your Name"}</h3>
+          <h3 className="text-center">{name || "Your Name"}</h3>
         </CardTitle>
 
         {badgeTitle ? <Badge>{badgeTitle}</Badge> : null}
