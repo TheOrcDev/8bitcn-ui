@@ -3,7 +3,6 @@
 import { useMemo, useState } from "react";
 
 import * as htmlToImage from "html-to-image";
-import { useScreenshot } from "use-react-screenshot";
 
 import { Button } from "@/components/ui/8bit/button";
 import {
@@ -49,8 +48,6 @@ export default function ProfileCreatorPage() {
     description: "",
   });
 
-  const [, takeScreenshot] = useScreenshot({ type: "image/png", quality: 1 });
-
   const safeGithubUrl = useMemo(() => {
     if (!profile.githubUrl) return "";
     if (/^https?:\/\//i.test(profile.githubUrl)) return profile.githubUrl;
@@ -89,29 +86,19 @@ export default function ProfileCreatorPage() {
         "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       ).then((r) => r.text());
 
-      // Try hook first
-      let dataUrl: string | null = null;
-      try {
-        dataUrl = await takeScreenshot(node);
-      } catch {
-        dataUrl = null;
-      }
-
-      if (!dataUrl) {
-        dataUrl = await htmlToImage.toPng(node, {
-          cacheBust: true,
-          pixelRatio: 2,
-          backgroundColor: "#ffffff",
-          skipFonts: false,
-          preferredFontFormat: "woff2",
-          fontEmbedCSS: fontCss,
-        });
-      }
+      const dataUrl = await htmlToImage.toPng(node, {
+        cacheBust: true,
+        pixelRatio: 2,
+        backgroundColor: "#ffffff",
+        skipFonts: false,
+        fontEmbedCSS: fontCss,
+      });
 
       const a = document.createElement("a");
       a.href = dataUrl!;
       a.download = "profile-card.png";
       document.body.appendChild(a);
+      document.body.style.fontFamily = previousFont;
       a.click();
       a.remove();
     } catch (e) {
