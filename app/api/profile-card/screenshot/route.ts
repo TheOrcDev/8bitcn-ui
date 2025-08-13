@@ -32,10 +32,23 @@ export async function POST(req: NextRequest) {
     if (isVercel) {
       const chromium = (await import("@sparticuz/chromium")).default;
       puppeteer = await import("puppeteer-core");
+
+      // Additional config for serverless environment
+
       launchOptions = {
         ...launchOptions,
-        args: chromium.args,
+        args: [
+          ...chromium.args,
+          "--disable-gpu",
+          "--disable-dev-shm-usage",
+          "--disable-setuid-sandbox",
+          "--no-first-run",
+          "--no-sandbox",
+          "--no-zygote",
+          "--single-process",
+        ],
         executablePath: await chromium.executablePath(),
+        ignoreHTTPSErrors: true,
       };
     } else {
       puppeteer = await import("puppeteer");
