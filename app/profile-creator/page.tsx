@@ -68,20 +68,31 @@ export default function ProfileCreatorPage() {
     const node = document.getElementById("profile-card") as HTMLElement | null;
     if (!node) return;
 
-    // Ensure layout is settled
     await new Promise((r) => requestAnimationFrame(() => r(undefined)));
 
-    // Temporarily enforce the font on the target subtree
     const previousFont = node.style.fontFamily;
-    node.style.fontFamily =
-      '"Press Start 2P", system-ui, -apple-system, sans-serif';
+    node.style.fontFamily = '"Press Start 2P", system-ui, sans-serif';
 
     try {
-      // Prefer embedding only WOFF2 and reuse CSS if needed
-      const fontCss = await fetch(
+      // 1. Fetch Google Fonts CSS
+      let fontCss = await fetch(
         "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       ).then((r) => r.text());
 
+      // 2. Find font URLs in the CSS
+      const fontUrls = fontCss.match(/https:\/\/[^)]+\.woff2/g) || [];
+
+      // 3. Replace each URL with base64 font data
+      for (const url of fontUrls) {
+        const fontResp = await fetch(url);
+        const fontBuffer = await fontResp.arrayBuffer();
+        const fontBase64 = `data:font/woff2;base64,${btoa(
+          String.fromCharCode(...new Uint8Array(fontBuffer))
+        )}`;
+        fontCss = fontCss.replace(url, fontBase64);
+      }
+
+      // 4. Generate PNG with embedded font
       const dataUrl = await htmlToImage.toPng(node, {
         cacheBust: true,
         pixelRatio: 2,
@@ -90,11 +101,11 @@ export default function ProfileCreatorPage() {
         fontEmbedCSS: fontCss,
       });
 
+      // 5. Download PNG
       const a = document.createElement("a");
       a.href = dataUrl!;
       a.download = "profile-card.png";
       document.body.appendChild(a);
-      document.body.style.fontFamily = previousFont;
       a.click();
       a.remove();
     } catch (e) {
