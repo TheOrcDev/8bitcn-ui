@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export const runtime = "nodejs";
-export const dynamic = "force-dynamic";
-
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 export async function POST(req: NextRequest) {
   try {
     const payload = (await req.json()) as {
@@ -23,39 +19,20 @@ export async function POST(req: NextRequest) {
     )}`;
 
     const isVercel = !!process.env.VERCEL_ENV;
-    if (isVercel && !process.env.CHROMIUM_CHANNEL) {
-      process.env.CHROMIUM_CHANNEL = "stable";
-    }
+
     let puppeteer: any;
     let launchOptions: any = { headless: true };
 
     if (isVercel) {
       const chromium = (await import("@sparticuz/chromium")).default;
       puppeteer = await import("puppeteer-core");
-
-      // Additional config for serverless environment
-
       launchOptions = {
         ...launchOptions,
-        args: [
-          ...chromium.args,
-          "--disable-gpu",
-          "--disable-dev-shm-usage",
-          "--disable-setuid-sandbox",
-          "--no-first-run",
-          "--no-sandbox",
-          "--no-zygote",
-          "--single-process",
-        ],
+        args: chromium.args,
         executablePath: await chromium.executablePath(),
-        ignoreHTTPSErrors: true,
       };
     } else {
       puppeteer = await import("puppeteer");
-      launchOptions = {
-        ...launchOptions,
-        args: ["--no-sandbox", "--disable-setuid-sandbox"],
-      };
     }
 
     const browser = await puppeteer.launch(launchOptions);
@@ -113,7 +90,6 @@ export async function POST(req: NextRequest) {
         clip,
       });
 
-      // Ensure body matches BodyInit (Buffer isn't part of BodyInit)
       const body =
         typeof pngBuffer === "string" ? pngBuffer : new Uint8Array(pngBuffer);
 
