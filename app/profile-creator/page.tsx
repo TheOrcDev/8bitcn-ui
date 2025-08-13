@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-import { toPng } from "html-to-image";
+import * as htmlToImage from "html-to-image";
 import { useScreenshot } from "use-react-screenshot";
 
 import { Button } from "@/components/ui/8bit/button";
@@ -75,35 +75,50 @@ export default function ProfileCreatorPage() {
     const node = document.getElementById("profile-card") as HTMLElement | null;
     if (!node) return;
 
-    // Wait a tick to ensure fonts/images are ready
-    await new Promise((r) => setTimeout(r, 0));
+    // Ensure layout is settled
+    await new Promise((r) => requestAnimationFrame(() => r(undefined)));
 
-    let dataUrl: string | null = null;
+    // Temporarily enforce the font on the target subtree
+    const previousFont = node.style.fontFamily;
+    node.style.fontFamily =
+      '"Press Start 2P", system-ui, -apple-system, sans-serif';
+
     try {
-      dataUrl = await takeScreenshot(node);
-    } catch {
-      dataUrl = null;
-    }
-    if (!dataUrl) {
+      // Prefer embedding only WOFF2 and reuse CSS if needed
+      const fontCss = await fetch(
+        "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      ).then((r) => r.text());
+
+      // Try hook first
+      let dataUrl: string | null = null;
       try {
-        dataUrl = await toPng(node, {
+        dataUrl = await takeScreenshot(node);
+      } catch {
+        dataUrl = null;
+      }
+
+      if (!dataUrl) {
+        dataUrl = await htmlToImage.toPng(node, {
           cacheBust: true,
           pixelRatio: 2,
           backgroundColor: "#ffffff",
-          skipFonts: true,
+          skipFonts: false,
+          preferredFontFormat: "woff2",
+          fontEmbedCSS: fontCss,
         });
-      } catch (e) {
-        console.error("html-to-image failed", e);
-        return;
       }
-    }
 
-    const a = document.createElement("a");
-    a.href = dataUrl;
-    a.download = "profile-card.png";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
+      const a = document.createElement("a");
+      a.href = dataUrl!;
+      a.download = "profile-card.png";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    } catch (e) {
+      console.error("html-to-image failed", e);
+    } finally {
+      node.style.fontFamily = previousFont;
+    }
   };
 
   return (
