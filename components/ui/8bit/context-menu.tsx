@@ -3,9 +3,11 @@
 import * as React from "react";
 
 import * as ContextMenuPrimitive from "@radix-ui/react-context-menu";
-import { ChevronRight, Circle } from "lucide-react";
+import { Circle } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+
+import { ChevronRightIcon } from "@/components/ui/8bit/assets/chevronRightIcon";
 
 import "./styles/retro.css";
 
@@ -37,7 +39,7 @@ const ContextMenuSubTrigger = React.forwardRef<
     {...props}
   >
     {children}
-    <ChevronRight className="ml-auto size-4" />
+    <ChevronRightIcon />
   </ContextMenuPrimitive.SubTrigger>
 ));
 ContextMenuSubTrigger.displayName = ContextMenuPrimitive.SubTrigger.displayName;

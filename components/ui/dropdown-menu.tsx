@@ -3,9 +3,11 @@
 import * as React from "react";
 
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
+import { CheckIcon, CircleIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+
+import { ChevronRightIcon } from "@/components/ui/8bit/assets/chevronRightIcon";
 
 function DropdownMenu({
   ...props
@@ -218,7 +220,7 @@ function DropdownMenuSubTrigger({
       {...props}
     >
       {children}
-      <ChevronRightIcon className="ml-auto size-4" />
+      <ChevronRightIcon />
     </DropdownMenuPrimitive.SubTrigger>
   );
 }

@@ -10,13 +10,13 @@
   "files": [
     {
       "path": "components/ui/8bit/label.tsx",
-      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport * as LabelPrimitive from \"@radix-ui/react-label\";\nimport { type VariantProps, cva } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nimport { Label as ShadcnLabel } from \"@/components/ui/label\";\n\nimport \"./styles/retro.css\";\n\nexport const inputVariants = cva(\"\", {\n  variants: {\n    font: {\n      normal: \"\",\n      retro: \"retro\",\n    },\n  },\n  defaultVariants: {\n    font: \"retro\",\n  },\n});\n\ninterface BitLabelProps\n  extends React.ComponentProps<typeof LabelPrimitive.Root>,\n    VariantProps<typeof inputVariants> {\n  asChild?: boolean;\n}\n\nfunction Label({ className, font, ...props }: BitLabelProps) {\n  return (\n    <ShadcnLabel\n      className={cn(className, font !== \"normal\" && \"retro\")}\n      {...props}\n    />\n  );\n}\n\nexport { Label };\n",
+      "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\n\r\nimport * as LabelPrimitive from \"@radix-ui/react-label\";\r\nimport { type VariantProps, cva } from \"class-variance-authority\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nimport { Label as ShadcnLabel } from \"@/components/ui/label\";\r\n\r\nimport \"./styles/retro.css\";\r\n\r\nexport const inputVariants = cva(\"\", {\r\n  variants: {\r\n    font: {\r\n      normal: \"\",\r\n      retro: \"retro\",\r\n    },\r\n  },\r\n  defaultVariants: {\r\n    font: \"retro\",\r\n  },\r\n});\r\n\r\ninterface BitLabelProps\r\n  extends React.ComponentProps<typeof LabelPrimitive.Root>,\r\n    VariantProps<typeof inputVariants> {\r\n  asChild?: boolean;\r\n}\r\n\r\nfunction Label({ className, font, ...props }: BitLabelProps) {\r\n  return (\r\n    <ShadcnLabel\r\n      className={cn(className, font !== \"normal\" && \"retro\")}\r\n      {...props}\r\n    />\r\n  );\r\n}\r\n\r\nexport { Label };\r\n",
       "type": "registry:component",
       "target": "components/ui/8bit/label.tsx"
     },
     {
       "path": "components/ui/8bit/styles/retro.css",
-      "content": "@import url(\"https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap\");\n\n.retro {\n  font-family:\n    \"Press Start 2P\",\n    system-ui,\n    -apple-system,\n    sans-serif;\n  line-height: 1.5;\n  letter-spacing: 0.5px;\n}\n",
+      "content": "@import url(\"https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap\");\r\n\r\n.retro {\r\n  font-family:\r\n    \"Press Start 2P\",\r\n    system-ui,\r\n    -apple-system,\r\n    sans-serif;\r\n  line-height: 1.5;\r\n  letter-spacing: 0.5px;\r\n}\r\n",
       "type": "registry:component",
       "target": "components/ui/8bit/styles/retro.css"
     }
