@@ -3,6 +3,8 @@ import { MoreHorizontal } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
+import { ChevronLeftIcon } from "@/components/ui/8bit/assets/chevronLeftIcon";
+import { ChevronRightIcon } from "@/components/ui/8bit/assets/chevronRightIcon";
 import {
   Pagination as ShadcnPagination,
   PaginationContent as ShadcnPaginationContent,
@@ -47,91 +49,6 @@ function Pagination({ ...props }: BitPaginationProps<"nav">) {
     />
   );
 }
-
-const ChevronLeftIcon = () => {
-  return (
-    <svg
-      width="50"
-      height="50"
-      viewBox="0 0 256 256"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-      stroke="currentColor"
-      strokeWidth="0.25"
-      color=""
-      className="size-7"
-      aria-label="chevron-left"
-    >
-      <rect
-        width="14"
-        height="14"
-        rx="1"
-        transform="matrix(-1 0 0 1 128 136)"
-      ></rect>
-      <rect
-        width="14"
-        height="14"
-        rx="1"
-        transform="matrix(-1 0 0 1 144 152)"
-      ></rect>
-      <rect
-        width="14"
-        height="14"
-        rx="1"
-        transform="matrix(-1 0 0 1 160 72)"
-      ></rect>
-      <rect
-        width="14"
-        height="14"
-        rx="1"
-        transform="matrix(-1 0 0 1 160 168)"
-      ></rect>
-      <rect
-        width="14"
-        height="14"
-        rx="1"
-        transform="matrix(-1 0 0 1 112 120)"
-      ></rect>
-      <rect
-        width="14"
-        height="14"
-        rx="1"
-        transform="matrix(-1 0 0 1 128 104)"
-      ></rect>
-      <rect
-        width="14"
-        height="14"
-        rx="1"
-        transform="matrix(-1 0 0 1 144 88)"
-      ></rect>
-    </svg>
-  );
-};
-
-const ChevronRightIcon = () => {
-  return (
-    <svg
-      width="50"
-      height="50"
-      viewBox="0 0 256 256"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-      stroke="currentColor"
-      strokeWidth="0.25"
-      color=""
-      className="raster-icon size-7"
-      aria-label="chevron-right"
-    >
-      <rect x="128" y="136" width="14" height="14" rx="1"></rect>
-      <rect x="112" y="152" width="14" height="14" rx="1"></rect>
-      <rect x="96" y="72" width="14" height="14" rx="1"></rect>
-      <rect x="96" y="168" width="14" height="14" rx="1"></rect>
-      <rect x="144" y="120" width="14" height="14" rx="1"></rect>
-      <rect x="128" y="104" width="14" height="14" rx="1"></rect>
-      <rect x="112" y="88" width="14" height="14" rx="1"></rect>
-    </svg>
-  );
-};
 
 function PaginationContent({ ...props }: BitPaginationProps<"ul">) {
   const { className, font } = props;

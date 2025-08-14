@@ -4,6 +4,7 @@ import { MoreHorizontal } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
+import { ChevronRightIcon } from "@/components/ui/8bit/assets/chevronRightIcon";
 import {
   Breadcrumb as ShadcnBreadcrumb,
   BreadcrumbEllipsis as ShadcnBreadcrumbEllipsis,
@@ -51,31 +52,6 @@ interface BitBreadcrumbListItemProps
 interface BitBreadcrumbLinkProps
   extends React.ComponentProps<"a">,
     VariantProps<typeof breadcrumbVariants> {}
-
-const ChevronRight = () => {
-  return (
-    <svg
-      width="50"
-      height="50"
-      viewBox="0 0 256 256"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-      stroke="currentColor"
-      strokeWidth="0.25"
-      color=""
-      className="size-7"
-      aria-label="chevron-right"
-    >
-      <rect x="128" y="136" width="14" height="14" rx="1"></rect>
-      <rect x="112" y="152" width="14" height="14" rx="1"></rect>
-      <rect x="96" y="72" width="14" height="14" rx="1"></rect>
-      <rect x="96" y="168" width="14" height="14" rx="1"></rect>
-      <rect x="144" y="120" width="14" height="14" rx="1"></rect>
-      <rect x="128" y="104" width="14" height="14" rx="1"></rect>
-      <rect x="112" y="88" width="14" height="14" rx="1"></rect>
-    </svg>
-  );
-};
 
 function Breadcrumb({ children, ...props }: BitBreadcrumbNavigationProps) {
   const { variant, className, font } = props;
@@ -162,7 +138,7 @@ function BreadcrumbSeparator({ ...props }: BitBreadcrumbListItemProps) {
       className={cn(className, font !== "normal" && "retro", "[&>svg]:size-7")}
       {...props}
     >
-      {children ?? <ChevronRight />}
+      {children ?? <ChevronRightIcon />}
     </ShadcnBreadcrumbSeparator>
   );
 }
