@@ -122,36 +122,15 @@ export default function DialogPage() {
 `}</CodeSnippet>
 
       <CodeSnippet>{`<Dialog>
-  <DialogTrigger asChild>
-    <Button variant="outline">Open Dialog</Button>
-  </DialogTrigger>
-  <DialogContent className="sm:max-w-[425px]">
+  <DialogTrigger>Open</DialogTrigger>
+  <DialogContent>
     <DialogHeader>
-      <DialogTitle>Edit profile</DialogTitle>
-      <DialogDescription className="text-xs">
-        Make changes to your profile here. Click save when you're
-        done.
+      <DialogTitle>Are you absolutely sure?</DialogTitle>
+      <DialogDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
       </DialogDescription>
     </DialogHeader>
-
-    <Label>Name</Label>
-    <Input placeholder="Project name" className="max-w-72" />
-
-    <Label>Framework</Label>
-    <Select>
-      <SelectTrigger>
-        <SelectValue placeholder="Framework" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="next">Next.js</SelectItem>
-        <SelectItem value="svelte">SvelteKit</SelectItem>
-        <SelectItem value="astro">Astro</SelectItem>
-        <SelectItem value="nuxt">Nuxt.js</SelectItem>
-      </SelectContent>
-    </Select>
-    <DialogFooter>
-      <Button size="sm">Save changes</Button>
-    </DialogFooter>
   </DialogContent>
 </Dialog>`}</CodeSnippet>
     </div>
