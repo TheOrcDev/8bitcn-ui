@@ -15,6 +15,7 @@ import { Input } from "@/components/ui/8bit/input";
 import { Label } from "@/components/ui/8bit/label";
 import { Switch } from "@/components/ui/8bit/switch";
 import { Textarea } from "@/components/ui/8bit/textarea";
+import { toast } from "@/components/ui/8bit/toast";
 
 import { SelectThemeDropdown } from "@/components/select-theme-dropdown";
 
@@ -49,6 +50,9 @@ export default function ProfileCreator() {
     safeXUrl: "",
     description: "",
   });
+
+  // Note: when a file is uploaded we convert it to a data URL
+  // to avoid CSP issues that can affect blob: URLs in some setups.
 
   const safeGithubUrl = useMemo(() => {
     if (!profile.githubUrl) return "";
@@ -223,6 +227,12 @@ export default function ProfileCreator() {
         </p>`
       : "";
 
+    // Do not emit data/blob URLs in generated code. Only keep http(s) or root-relative paths.
+    const isHttpLike = /^(https?:)?\/\//i.test(profile.avatarUrl);
+    const isRootRelative = profile.avatarUrl.startsWith("/");
+    const avatarSrcForCode =
+      isHttpLike || isRootRelative ? profile.avatarUrl : "/avatar.jpg";
+
     return `"use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/8bit/avatar";
@@ -240,8 +250,8 @@ export default function ProfileCard() {
   return (
     <Card className="min-w-sm max-w-md">
       <CardHeader className="flex flex-col items-center gap-2">
-        <Avatar className="size-20" variant="${profile.isRetroAvatar ? "pixel" : "retro"}">
-          <AvatarImage src="${valueForAttr(profile.avatarUrl)}" alt="${valueForAttr(profile.name || "Avatar")}" />
+         <Avatar className="size-20" variant="${profile.isRetroAvatar ? "pixel" : "retro"}">
+          <AvatarImage src="${valueForAttr(avatarSrcForCode)}" alt="${valueForAttr(profile.name || "Avatar")}" />
           <AvatarFallback>{getInitials("${valueForAttr(profile.name)}")}</AvatarFallback>
         </Avatar>
 
@@ -307,6 +317,7 @@ export default function ProfileCard() {
       a.remove();
     } catch (e) {
       console.error("html-to-image failed", e);
+      toast("Failed to generate profile card, try with manual upload.");
     } finally {
       node.style.fontFamily = previousFont;
     }
@@ -371,10 +382,10 @@ export default function ProfileCard() {
 
             <div className="space-y-2">
               <div className="flex items-center justify-between gap-2">
-                <Label htmlFor="avatar">Avatar URL</Label>
+                <Label htmlFor="avatar-url">Avatar</Label>
                 <div className="flex items-center gap-2">
                   <Switch
-                    id="avatar"
+                    id="avatar-variant"
                     checked={profile.isRetroAvatar}
                     onCheckedChange={() =>
                       setProfile({
@@ -383,21 +394,63 @@ export default function ProfileCard() {
                       })
                     }
                   />
-                  <Label htmlFor="avatar">
+                  <Label htmlFor="avatar-variant">
                     {profile.isRetroAvatar ? "Pixel" : "Retro"}
                   </Label>
                 </div>
               </div>
-              <Input
-                id="avatar"
-                placeholder="https://example.com/avatar.png"
-                value={profile.avatarUrl}
-                onChange={(e) =>
-                  setProfile({ ...profile, avatarUrl: e.currentTarget.value })
-                }
-              />
+
+              <div className="grid gap-2">
+                <Input
+                  id="avatar-url"
+                  placeholder="https://example.com/avatar.png"
+                  value={profile.avatarUrl}
+                  onChange={(e) => {
+                    const next = e.currentTarget.value;
+                    setProfile({
+                      ...profile,
+                      avatarUrl: next,
+                    });
+                  }}
+                />
+
+                <div className="flex items-center gap-5">
+                  <Input
+                    id="avatar-file"
+                    type="file"
+                    accept="image/*"
+                    className="pt-1.5"
+                    onChange={(e) => {
+                      const file = e.currentTarget.files?.[0];
+                      if (!file) return;
+                      if (!file.type.startsWith("image/")) return;
+                      const reader = new FileReader();
+                      reader.onload = () => {
+                        const dataUrl = String(reader.result || "");
+                        if (dataUrl) {
+                          setProfile({ ...profile, avatarUrl: dataUrl });
+                        }
+                      };
+                      reader.readAsDataURL(file);
+                    }}
+                  />
+                  {profile.avatarUrl.startsWith("data:") ? (
+                    <Button
+                      variant="outline"
+                      type="button"
+                      onClick={() => {
+                        setProfile({ ...profile, avatarUrl: "/avatar.jpg" });
+                      }}
+                    >
+                      Clear
+                    </Button>
+                  ) : null}
+                </div>
+              </div>
+
               <p className="text-xs text-muted-foreground">
-                Tip: You can paste any image URL. Shadcn orc is used by default.
+                Tip: Upload an image file or paste an image URL. The default
+                avatar is used if a local upload is chosen when exporting code.
               </p>
             </div>
 
