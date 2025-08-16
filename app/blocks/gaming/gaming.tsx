@@ -1,4 +1,5 @@
 import DialogueBox from "@/components/ui/8bit/blocks/dialogue-box";
+import DifficultySelect from "@/components/ui/8bit/blocks/difficulty-select";
 import GameOver from "@/components/ui/8bit/blocks/game-over";
 import MainMenu from "@/components/ui/8bit/blocks/main-menu";
 import PauseMenu from "@/components/ui/8bit/blocks/pause-menu";
@@ -26,6 +27,32 @@ export default function GamingBlocks() {
         </div>
 
         <MainMenu className="md:w-[400px] mx-auto" />
+      </div>
+
+      <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[300px]">
+        <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
+          <h2 className="text-sm text-muted-foreground sm:pl-3">
+            Difficulty select
+          </h2>
+
+          <div className="flex flex-col md:flex-row items-center gap-2">
+            <CopyCommandButton
+              command="npx shadcn@latest add 8bit-difficulty-select"
+              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-difficulty-select.json`}
+            />
+            <OpenInV0Button name="8bit-difficulty-select" className="w-fit" />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <DifficultySelect className="md:w-[400px] mx-auto" />
+          <DifficultySelect
+            className="md:w-[400px] mx-auto"
+            title="Choose Mode"
+            description="Pick your challenge!"
+            vertical={false}
+          />
+        </div>
       </div>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
