@@ -55,10 +55,9 @@ export default function CodeSnippet({
       </ShikiHighlighter>
 
       <Button
-        variant="secondary"
-        size="icon"
+        variant="ghost"
         onClick={handleCopy}
-        className="absolute z-10 top-2 right-2"
+        className="absolute z-10 top-2 right-2 text-white hover:bg-zinc-800 rounded-md hover:text-white"
       >
         {copied ? (
           <Check className="size-3" />
