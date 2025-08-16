@@ -15,7 +15,8 @@ import {
 
 export type Difficulty = "easy" | "normal" | "hard";
 
-export interface DifficultySelectProps extends React.ComponentProps<"div"> {
+export interface DifficultySelectProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "onChange"> {
   value?: Difficulty;
   defaultValue?: Difficulty;
   onChange?: (value: Difficulty) => void;
