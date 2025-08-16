@@ -34,6 +34,7 @@ import { Textarea } from "@/components/ui/8bit/textarea";
 
 import { CommandExample } from "@/components/examples/command";
 
+import ChapterIntro from "../ui/8bit/blocks/chapter-intro";
 import DifficultySelect from "../ui/8bit/blocks/difficulty-select";
 import GameOver from "../ui/8bit/blocks/game-over";
 import GameProgress from "../ui/8bit/blocks/game-progress";
@@ -109,19 +110,15 @@ export default function ComponentShowcase() {
       <div className="flex flex-col gap-4 lg:col-span-2">
         <GameOver />
 
-        {/* <Card>
-          <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle className="text-sm font-medium">
-              Total visitors in the last 6 months
-            </CardTitle>
-            <Users className="size-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <ChartAreaStep />
-          </CardContent>
-        </Card> */}
-
-        <LoginForm />
+        <ChapterIntro
+          className="w-full md:w-full mx-auto text-white"
+          title="LEVEL 1: SKELETONS"
+          subtitle="Defeat the skeletons to unlock the gate."
+          backgroundSrc="/images/fiery-skeletons.png"
+          height="md"
+          align="center"
+          darken={0.5}
+        />
 
         <Skeleton className="w-full h-full flex flex-col justify-center items-center">
           Skeleton

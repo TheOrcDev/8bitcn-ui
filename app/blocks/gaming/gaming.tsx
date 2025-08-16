@@ -1,3 +1,4 @@
+import ChapterIntro from "@/components/ui/8bit/blocks/chapter-intro";
 import DialogueBox from "@/components/ui/8bit/blocks/dialogue-box";
 import DifficultySelect from "@/components/ui/8bit/blocks/difficulty-select";
 import GameOver from "@/components/ui/8bit/blocks/game-over";
@@ -13,6 +14,32 @@ import { OpenInV0Button } from "../../docs/components/open-in-v0-button";
 export default function GamingBlocks() {
   return (
     <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
+        <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
+          <h2 className="text-sm text-muted-foreground sm:pl-3">
+            Chapter intro
+          </h2>
+
+          <div className="flex flex-col md:flex-row items-center gap-2">
+            <CopyCommandButton
+              command="npx shadcn@latest add 8bit-chapter-intro"
+              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-chapter-intro.json`}
+            />
+            <OpenInV0Button name="8bit-chapter-intro" className="w-fit" />
+          </div>
+        </div>
+
+        <ChapterIntro
+          className="w-full md:w-[800px] mx-auto text-white"
+          title="LEVEL 1: FIERY SKELETONS"
+          subtitle="Defeat the skeletons to unlock the gate."
+          backgroundSrc="/images/fiery-skeletons.png"
+          height="md"
+          align="center"
+          darken={0.5}
+        />
+      </div>
+
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">Main menu</h2>
