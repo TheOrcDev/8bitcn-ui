@@ -44,15 +44,7 @@ export default function GamingBlocks() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <DifficultySelect className="md:w-[400px] mx-auto" />
-          <DifficultySelect
-            className="md:w-[400px] mx-auto"
-            title="Choose Mode"
-            description="Pick your challenge!"
-            vertical={false}
-          />
-        </div>
+        <DifficultySelect className="md:w-[400px] mx-auto" />
       </div>
 
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
