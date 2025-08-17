@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/8bit/alert";
 import { Badge } from "@/components/ui/8bit/badge";
 import AudioSettings from "@/components/ui/8bit/blocks/audio-settings";
-import { LoginForm } from "@/components/ui/8bit/blocks/login-form";
 import {
   Card,
   CardContent,
@@ -35,11 +34,11 @@ import { Textarea } from "@/components/ui/8bit/textarea";
 import { CommandExample } from "@/components/examples/command";
 
 import ChapterIntro from "../ui/8bit/blocks/chapter-intro";
+import Dialogue from "../ui/8bit/blocks/dialogue";
 import DifficultySelect from "../ui/8bit/blocks/difficulty-select";
 import GameOver from "../ui/8bit/blocks/game-over";
 import GameProgress from "../ui/8bit/blocks/game-progress";
 import MainMenu from "../ui/8bit/blocks/main-menu";
-import { Skeleton } from "../ui/8bit/skeleton";
 
 export default function ComponentShowcase() {
   return (
@@ -108,6 +107,27 @@ export default function ComponentShowcase() {
 
       {/* Column 2 */}
       <div className="flex flex-col gap-4 lg:col-span-2">
+        <Card>
+          <CardContent className="flex flex-col gap-4">
+            <Dialogue
+              avatarSrc="/images/pixelized-8bitcnorc.jpg"
+              avatarFallback="Orc"
+              title="Orc"
+              description="I bring you a gift… it's called AXE TO THE FACE! SLASH!!"
+            />
+
+            <div className="flex justify-end">
+              <Dialogue
+                avatarSrc="/images/goblin.png"
+                avatarFallback="Goblin"
+                title="Goblin"
+                description="`Screeches like a dying flute`"
+                player={false}
+              />
+            </div>
+          </CardContent>
+        </Card>
+
         <GameOver />
 
         <ChapterIntro
@@ -119,10 +139,6 @@ export default function ComponentShowcase() {
           align="center"
           darken={0.5}
         />
-
-        <Skeleton className="w-full h-full flex flex-col justify-center items-center">
-          Skeleton
-        </Skeleton>
 
         <GameProgress />
 
