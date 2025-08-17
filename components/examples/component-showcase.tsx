@@ -112,9 +112,9 @@ export default function ComponentShowcase() {
 
         <ChapterIntro
           className="w-full md:w-full mx-auto text-white"
-          title="LEVEL 1: SKELETONS"
-          subtitle="Defeat the skeletons to unlock the gate."
-          backgroundSrc="/images/fiery-skeletons.png"
+          title="LEVEL 2: GOBLINS"
+          subtitle="Defeat the goblins to pass through the forest."
+          backgroundSrc="/images/forest-goblins.png"
           height="md"
           align="center"
           darken={0.5}
