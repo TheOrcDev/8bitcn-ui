@@ -33,7 +33,7 @@ function Alert({ children, ...props }: BitAlertProps) {
   const { variant, className, font } = props;
 
   return (
-    <div className={cn("relative", className)}>
+    <div className={cn("relative m-1.5", className)}>
       <ShadcnAlert
         {...props}
         variant={variant}

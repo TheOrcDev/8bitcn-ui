@@ -661,6 +661,35 @@
       ]
     },
     {
+      "name": "8bit-dialogue",
+      "type": "registry:component",
+      "title": "8-bit Dialogue",
+      "description": "A simple 8-bit dialogue component",
+      "registryDependencies": ["alert"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/dialogue.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/dialogue.tsx"
+        },
+        {
+          "path": "components/ui/8bit/alert.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/alert.tsx"
+        },
+        {
+          "path": "components/ui/8bit/avatar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/avatar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
       "name": "8bit-profile-card",
       "type": "registry:component",
       "title": "8-bit Profile Card",
@@ -1148,35 +1177,6 @@
           "path": "components/ui/8bit/card.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/card.tsx"
-        }
-      ]
-    },
-    {
-      "name": "8bit-dialogue-box",
-      "type": "registry:component",
-      "title": "8-bit Dialogue Box",
-      "description": "A simple 8-bit dialogue box component",
-      "registryDependencies": ["alert", "avatar"],
-      "files": [
-        {
-          "path": "components/ui/8bit/blocks/dialogue-box.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/blocks/dialogue-box.tsx"
-        },
-        {
-          "path": "components/ui/8bit/styles/retro.css",
-          "type": "registry:component",
-          "target": "components/ui/8bit/styles/retro.css"
-        },
-        {
-          "path": "components/ui/8bit/alert.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/alert.tsx"
-        },
-        {
-          "path": "components/ui/8bit/avatar.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/avatar.tsx"
         }
       ]
     },
