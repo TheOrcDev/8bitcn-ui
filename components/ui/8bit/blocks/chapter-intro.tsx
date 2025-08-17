@@ -76,7 +76,7 @@ export default function ChapterIntro({
                 {title}
               </h1>
               {subtitle && (
-                <p className="mt-4 text-xs md:text-base text-secondary/90 drop-shadow-[0_2px_0_rgba(0,0,0,0.8)]">
+                <p className="mt-4 text-xs md:text-base text-secondary/90 dark:text-muted-foreground/90 drop-shadow-[0_2px_0_rgba(0,0,0,0.8)]">
                   {subtitle}
                 </p>
               )}
