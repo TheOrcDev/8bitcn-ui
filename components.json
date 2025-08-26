@@ -19,6 +19,6 @@
   },
   "iconLibrary": "lucide",
   "registries": {
-    "@8bitcn": "https://8bitcn.com/registry.json"
+    "@8bitcn": "https://8bitcn.com/r/registry.json"
   }
 }
