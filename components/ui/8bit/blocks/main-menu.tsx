@@ -1,5 +1,3 @@
-import { Play, Power, Settings, Trophy, Users } from "lucide-react";
-
 import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/8bit/button";
