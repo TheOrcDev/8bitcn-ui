@@ -65,14 +65,6 @@ export default function CommandPage() {
       <CodeSnippet>{`"use client"
 
 import * as React from "react"
-import {
-  Calculator,
-  Calendar,
-  CreditCard,
-  Settings,
-  Smile,
-  User,
-} from "lucide-react"
 
 import {
   Command,
@@ -89,28 +81,19 @@ const suggestionCommands = [
   {
     value: "Calendar",
     symbol: (
-      <>
-        <Calendar />
-        <span>Calendar</span>
-      </>
+      <span>Calendar</span>
     ),
   },
   {
     value: "Search Emoji",
     symbol: (
-      <>
-        <Smile />
-        <span>Search Emoji</span>
-      </>
+      <span>Search Emoji</span>
     ),
   },
   {
     value: "Calculator",
     symbol: (
-      <>
-        <Calculator />
-        <span>Calculator</span>
-      </>
+      <span>Calculator</span>
     ),
   },
 ]
@@ -119,30 +102,21 @@ const settingCommands = [
   {
     value: "Profile",
     symbol: (
-      <>
-        <User />
-        <span>Profile</span>
-      </>
+      <span>Profile</span>
     ),
     shortcut: "⌘P",
   },
   {
     value: "Billing",
     symbol: (
-      <>
-        <CreditCard />
-        <span>Billing</span>
-      </>
+      <span>Billing</span>
     ),
     shortcut: "⌘B",
   },
   {
     value: "Settings",
     symbol: (
-      <>
-        <Settings />
-        <span>Settings</span>
-      </>
+      <span>Settings</span>
     ),
     shortcut: "⌘S",
   },

@@ -1,5 +1,3 @@
-import { Users } from "lucide-react";
-
 import { ChartExample } from "@/components/ui/8bit/blocks/chart";
 import ChartAreaStep from "@/components/ui/8bit/blocks/chart-area-step";
 import ChartBarMultiple from "@/components/ui/8bit/blocks/chart-bar";
@@ -36,7 +34,49 @@ export default function ChartsBlocks() {
             <CardTitle className="text-sm font-medium">
               Total visitors in the last 6 months
             </CardTitle>
-            <Users className="size-4 text-muted-foreground" />
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 256 256"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke="currentColor"
+              strokeWidth="0.25"
+              className="size-6"
+              aria-label="user"
+            >
+              <rect x="64" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="80" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="80" width="14" height="14" rx="1"></rect>
+              <rect x="192" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="176" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="64" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="48" y="176" width="14" height="14" rx="1"></rect>
+              <rect x="48" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="192" y="160" width="14" height="14" rx="1"></rect>
+              <rect x="176" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="192" y="176" width="14" height="14" rx="1"></rect>
+              <rect x="48" y="160" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="64" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="48" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="48" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="64" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="64" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="96" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="96" width="14" height="14" rx="1"></rect>
+              <rect x="80" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="160" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="80" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="160" y="192" width="14" height="14" rx="1"></rect>
+            </svg>
           </CardHeader>
           <CardContent>
             <ChartExample />
@@ -64,7 +104,49 @@ export default function ChartsBlocks() {
             <CardTitle className="text-sm font-medium">
               Total visitors in the last 6 months
             </CardTitle>
-            <Users className="size-4 text-muted-foreground" />
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 256 256"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke="currentColor"
+              strokeWidth="0.25"
+              className="size-6"
+              aria-label="user"
+            >
+              <rect x="64" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="80" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="80" width="14" height="14" rx="1"></rect>
+              <rect x="192" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="176" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="64" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="48" y="176" width="14" height="14" rx="1"></rect>
+              <rect x="48" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="192" y="160" width="14" height="14" rx="1"></rect>
+              <rect x="176" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="192" y="176" width="14" height="14" rx="1"></rect>
+              <rect x="48" y="160" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="64" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="48" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="48" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="64" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="64" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="96" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="96" width="14" height="14" rx="1"></rect>
+              <rect x="80" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="160" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="80" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="160" y="192" width="14" height="14" rx="1"></rect>
+            </svg>
           </CardHeader>
           <CardContent>
             <ChartBarMultiple />
@@ -92,7 +174,49 @@ export default function ChartsBlocks() {
             <CardTitle className="text-sm font-medium">
               Total visitors in the last 6 months
             </CardTitle>
-            <Users className="size-4 text-muted-foreground" />
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 256 256"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke="currentColor"
+              strokeWidth="0.25"
+              className="size-6"
+              aria-label="user"
+            >
+              <rect x="64" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="80" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="80" width="14" height="14" rx="1"></rect>
+              <rect x="192" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="176" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="64" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="48" y="176" width="14" height="14" rx="1"></rect>
+              <rect x="48" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="192" y="160" width="14" height="14" rx="1"></rect>
+              <rect x="176" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="192" y="176" width="14" height="14" rx="1"></rect>
+              <rect x="48" y="160" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="64" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="48" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="48" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="64" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="64" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="96" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="96" width="14" height="14" rx="1"></rect>
+              <rect x="80" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="160" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="80" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="160" y="192" width="14" height="14" rx="1"></rect>
+            </svg>
           </CardHeader>
           <CardContent>
             <ChartAreaStep />

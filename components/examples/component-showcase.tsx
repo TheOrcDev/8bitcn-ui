@@ -1,13 +1,4 @@
 import {
-  Activity,
-  AlertTriangle,
-  Info,
-  Sword,
-  Users,
-  Wand,
-} from "lucide-react";
-
-import {
   Alert,
   AlertDescription,
   AlertTitle,
@@ -50,7 +41,6 @@ export default function ComponentShowcase() {
         <MainMenu />
 
         <Alert>
-          <Info className="size-4" />
           <AlertTitle>Info</AlertTitle>
           <AlertDescription>
             Your game progress has been saved successfully.
@@ -58,7 +48,6 @@ export default function ComponentShowcase() {
         </Alert>
 
         <Alert variant="destructive">
-          <AlertTriangle className="size-4" />
           <AlertTitle>Warning</AlertTitle>
           <AlertDescription>
             Low health! Find a health potion quickly.
@@ -68,7 +57,41 @@ export default function ComponentShowcase() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Active Now</CardTitle>
-            <Activity className="size-4 text-muted-foreground" />
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 256 256"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke="currentColor"
+              strokeWidth="0.25"
+              className="size-6"
+              aria-label="activity"
+            >
+              <rect x="160" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="164" y="176" width="14" height="14" rx="1"></rect>
+              <rect x="168" y="160" width="14" height="14" rx="1"></rect>
+              <rect x="172" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="176" y="128" width="14" height="14" rx="1"></rect>
+              <rect x="192" y="128" width="14" height="14" rx="1"></rect>
+              <rect x="64" y="128" width="14" height="14" rx="1"></rect>
+              <rect x="152" y="208" width="14" height="14" rx="1"></rect>
+              <rect x="84" y="112" width="14" height="14" rx="1"></rect>
+              <rect x="88" y="96" width="14" height="14" rx="1"></rect>
+              <rect x="92" y="80" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="64" width="14" height="14" rx="1"></rect>
+              <rect x="104" y="48" width="14" height="14" rx="1"></rect>
+              <rect x="80" y="128" width="14" height="14" rx="1"></rect>
+              <rect x="120" y="96" width="14" height="14" rx="1"></rect>
+              <rect x="116" y="80" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="64" width="14" height="14" rx="1"></rect>
+              <rect x="136" y="160" width="14" height="14" rx="1"></rect>
+              <rect x="140" y="176" width="14" height="14" rx="1"></rect>
+              <rect x="124" y="112" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="128" width="14" height="14" rx="1"></rect>
+              <rect x="132" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="192" width="14" height="14" rx="1"></rect>
+            </svg>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">+573</div>
@@ -81,7 +104,49 @@ export default function ComponentShowcase() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Subscriptions</CardTitle>
-            <Users className="size-4 text-muted-foreground" />
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 256 256"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke="currentColor"
+              strokeWidth="0.25"
+              className="size-6"
+              aria-label="user"
+            >
+              <rect x="64" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="80" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="80" width="14" height="14" rx="1"></rect>
+              <rect x="192" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="176" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="64" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="48" y="176" width="14" height="14" rx="1"></rect>
+              <rect x="48" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="192" y="160" width="14" height="14" rx="1"></rect>
+              <rect x="176" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="192" y="176" width="14" height="14" rx="1"></rect>
+              <rect x="48" y="160" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="64" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="48" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="48" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="64" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="64" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="96" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="96" width="14" height="14" rx="1"></rect>
+              <rect x="80" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="160" y="144" width="14" height="14" rx="1"></rect>
+              <rect x="80" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="96" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="112" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="128" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="144" y="192" width="14" height="14" rx="1"></rect>
+              <rect x="160" y="192" width="14" height="14" rx="1"></rect>
+            </svg>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">+2350</div>
@@ -215,19 +280,19 @@ export default function ComponentShowcase() {
             <CardTitle className="text-sm font-medium">Game Options</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-4">
               <Checkbox id="autosave" defaultChecked />
               <Label htmlFor="autosave">Auto-save enabled</Label>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-4">
               <Checkbox id="notifications" />
               <Label htmlFor="notifications">Show notifications</Label>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-4">
               <Checkbox id="fullscreen" defaultChecked />
               <Label htmlFor="fullscreen">Fullscreen mode</Label>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-4">
               <Checkbox id="hardcore" />
               <Label htmlFor="hardcore">Hardcore mode</Label>
             </div>
@@ -235,27 +300,25 @@ export default function ComponentShowcase() {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex">
             <CardTitle className="text-sm font-medium">Warriors</CardTitle>
-            <Sword className="size-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">+100</div>
             <p className="text-xs text-muted-foreground">
-              +100 since last month
+              +42% since last month
             </p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex">
             <CardTitle className="text-sm font-medium">Wizards</CardTitle>
-            <Wand className="size-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">+1000</div>
             <p className="text-xs text-muted-foreground">
-              +1000 since last month
+              +31% since last month
             </p>
           </CardContent>
         </Card>

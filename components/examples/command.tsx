@@ -25,62 +25,32 @@ import {
 const suggestionCommands = [
   {
     value: "Calendar",
-    symbol: (
-      <>
-        <Calendar />
-        <span>Calendar</span>
-      </>
-    ),
+    symbol: <span>Calendar</span>,
   },
   {
     value: "Search Emoji",
-    symbol: (
-      <>
-        <Smile />
-        <span>Search Emoji</span>
-      </>
-    ),
+    symbol: <span>Search Emoji</span>,
   },
   {
     value: "Calculator",
-    symbol: (
-      <>
-        <Calculator />
-        <span>Calculator</span>
-      </>
-    ),
+    symbol: <span>Calculator</span>,
   },
 ];
 
 const settingCommands = [
   {
     value: "Profile",
-    symbol: (
-      <>
-        <User />
-        <span>Profile</span>
-      </>
-    ),
+    symbol: <span>Profile</span>,
     shortcut: "⌘P",
   },
   {
     value: "Billing",
-    symbol: (
-      <>
-        <CreditCard />
-        <span>Billing</span>
-      </>
-    ),
+    symbol: <span>Billing</span>,
     shortcut: "⌘B",
   },
   {
     value: "Settings",
-    symbol: (
-      <>
-        <Settings />
-        <span>Settings</span>
-      </>
-    ),
+    symbol: <span>Settings</span>,
     shortcut: "⌘S",
   },
 ];
