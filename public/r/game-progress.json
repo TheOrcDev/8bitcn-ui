@@ -1,0 +1,40 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "game-progress",
+  "type": "registry:component",
+  "title": "8-bit Game Progress",
+  "description": "A simple 8-bit game progress component",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/8bit/blocks/game-progress.tsx",
+      "content": "import { cn } from \"@/lib/utils\";\n\nimport {\n  Card,\n  CardContent,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/8bit/card\";\nimport HealthBar from \"@/components/ui/8bit/health-bar\";\nimport ManaBar from \"@/components/ui/8bit/mana-bar\";\nimport { Progress } from \"@/components/ui/8bit/progress\";\n\nexport default function GameProgress({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <Card className={cn(className)} {...props}>\n      <CardHeader>\n        <CardTitle className=\"text-sm font-medium\">Game Progress</CardTitle>\n      </CardHeader>\n      <CardContent className=\"space-y-4\">\n        <div>\n          <div className=\"flex justify-between text-sm mb-2\">\n            <span>Health</span>\n            <span>75%</span>\n          </div>\n          <HealthBar value={75} />\n        </div>\n        <div>\n          <div className=\"flex justify-between text-sm mb-2\">\n            <span>Mana</span>\n            <span>45%</span>\n          </div>\n          <ManaBar value={45} />\n        </div>\n        <div>\n          <div className=\"flex justify-between text-sm mb-2\">\n            <span>Experience</span>\n            <span>90%</span>\n          </div>\n          <Progress value={90} />\n        </div>\n      </CardContent>\n    </Card>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/blocks/game-progress.tsx"
+    },
+    {
+      "path": "components/ui/8bit/health-bar.tsx",
+      "content": "import { BitProgressProps, Progress } from \"@/components/ui/8bit/progress\";\n\ninterface ManaBarProps extends React.ComponentProps<\"div\"> {\n  className?: string;\n  props?: BitProgressProps;\n  variant?: \"retro\" | \"default\";\n  value?: number;\n}\n\nexport default function HealthBar({\n  className,\n  variant,\n  value,\n  ...props\n}: ManaBarProps) {\n  return (\n    <Progress\n      {...props}\n      value={value}\n      variant={variant}\n      className={className}\n      progressBg=\"bg-red-500\"\n    />\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/health-bar.tsx"
+    },
+    {
+      "path": "components/ui/8bit/mana-bar.tsx",
+      "content": "import { BitProgressProps, Progress } from \"@/components/ui/8bit/progress\";\n\ninterface ManaBarProps extends React.ComponentProps<\"div\"> {\n  className?: string;\n  props?: BitProgressProps;\n  variant?: \"retro\" | \"default\";\n  value?: number;\n}\n\nexport default function ManaBar({\n  className,\n  variant,\n  value,\n  ...props\n}: ManaBarProps) {\n  return (\n    <Progress\n      {...props}\n      value={value}\n      variant={variant}\n      className={className}\n      progressBg=\"bg-blue-500\"\n    />\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/mana-bar.tsx"
+    },
+    {
+      "path": "components/ui/8bit/progress.tsx",
+      "content": "import * as ProgressPrimitive from \"@radix-ui/react-progress\";\nimport { type VariantProps, cva } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nimport \"./styles/retro.css\";\n\nexport const progressVariants = cva(\"\", {\n  variants: {\n    variant: {\n      default: \"\",\n      retro: \"retro\",\n    },\n    font: {\n      normal: \"\",\n      retro: \"retro\",\n    },\n  },\n  defaultVariants: {\n    font: \"retro\",\n  },\n});\n\nexport interface BitProgressProps\n  extends React.ComponentProps<typeof ProgressPrimitive.Root>,\n    VariantProps<typeof progressVariants> {\n  className?: string;\n  font?: VariantProps<typeof progressVariants>[\"font\"];\n  progressBg?: string;\n}\n\nfunction Progress({\n  className,\n  font,\n  variant,\n  value,\n  progressBg,\n  ...props\n}: BitProgressProps) {\n  return (\n    <div className={cn(\"relative w-full\", className)}>\n      <ProgressPrimitive.Root\n        data-slot=\"progress\"\n        className={cn(\n          \"bg-primary/20 relative h-2 w-full overflow-hidden\",\n          font !== \"normal\" && \"retro\"\n        )}\n        {...props}\n      >\n        <ProgressPrimitive.Indicator\n          data-slot=\"progress-indicator\"\n          className={cn(\n            \"h-full transition-all\",\n            variant === \"retro\" ? \"flex\" : \"w-full flex-1\",\n            progressBg && variant !== \"retro\" ? progressBg : \"bg-primary\"\n          )}\n          style={\n            variant === \"retro\"\n              ? undefined\n              : { transform: `translateX(-${100 - (value || 0)}%)` }\n          }\n        >\n          {variant === \"retro\" && (\n            <div className=\"flex w-full\">\n              {Array.from({ length: 20 }).map((_, i) => {\n                const filledSquares = Math.round(((value || 0) / 100) * 20);\n                return (\n                  <div\n                    key={i}\n                    className={cn(\n                      \"size-2 mx-[1px] w-full\",\n                      i < filledSquares ? progressBg : \"bg-transparent\"\n                    )}\n                  />\n                );\n              })}\n            </div>\n          )}\n        </ProgressPrimitive.Indicator>\n      </ProgressPrimitive.Root>\n\n      <div\n        className=\"absolute inset-0 border-y-4 -my-1 border-foreground dark:border-ring pointer-events-none\"\n        aria-hidden=\"true\"\n      />\n\n      <div\n        className=\"absolute inset-0 border-x-4 -mx-1 border-foreground dark:border-ring pointer-events-none\"\n        aria-hidden=\"true\"\n      />\n    </div>\n  );\n}\n\nexport { Progress };\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/progress.tsx"
+    },
+    {
+      "path": "components/ui/8bit/styles/retro.css",
+      "content": "@import url(\"https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap\");\n\n.retro {\n  font-family:\n    \"Press Start 2P\",\n    system-ui,\n    -apple-system,\n    sans-serif;\n  line-height: 1.5;\n  letter-spacing: 0.5px;\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/styles/retro.css"
+    }
+  ]
+}

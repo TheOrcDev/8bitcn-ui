@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "type": "registry:component",
+  "title": "8-bit Badge",
+  "description": "A simple 8-bit badge component",
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "components/ui/8bit/badge.tsx",
+      "content": "import { type VariantProps, cva } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nimport { Badge as ShadcnBadge } from \"@/components/ui/badge\";\n\nexport const badgeVariants = cva(\"\", {\n  variants: {\n    font: {\n      normal: \"\",\n      retro: \"retro\",\n    },\n    variant: {\n      default: \"bg-primary border-primary\",\n      destructive: \"bg-destructive border-destructive\",\n      outline: \"bg-background border-background\",\n      secondary: \"bg-secondary border-secondary\",\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n  },\n});\n\nexport interface BitButtonProps\n  extends React.ButtonHTMLAttributes<HTMLButtonElement>,\n    VariantProps<typeof badgeVariants> {\n  asChild?: boolean;\n}\n\nfunction Badge({\n  children,\n  className = \"\",\n  font,\n  variant,\n  ...props\n}: BitButtonProps) {\n  const color = badgeVariants({ variant, font });\n\n  const classes = className.split(\" \");\n\n  // spacing-related Tailwind classes\n  const spacingClasses = classes.filter((c) =>\n    /^(m|p|mt|mr|mb|ml|mx|my|pt|pr|pb|pl|px|py|top|bottom|left|right|inset|inset-x|inset-y)-/.test(\n      c\n    )\n  );\n\n  // visual classes for badge and sidebars\n  const visualClasses = classes.filter(\n    (c) =>\n      c.startsWith(\"bg-\") ||\n      c.startsWith(\"border-\") ||\n      c.startsWith(\"text-\") ||\n      c.startsWith(\"rounded-\")\n  );\n\n  return (\n    <div className={cn(\"relative inline-flex\", spacingClasses)}>\n      <ShadcnBadge\n        {...props}\n        className={cn(\n          \"rounded-none\",\n          font !== \"normal\" && \"retro\",\n          visualClasses\n        )}\n        variant={variant}\n      >\n        {children}\n      </ShadcnBadge>\n\n      {/* Left pixel bar */}\n      <div\n        className={cn(\n          \"absolute top-1.5 bottom-1.5 -left-1.5 h-1/2 w-1.5\",\n          color,\n          visualClasses\n        )}\n      />\n      {/* Right pixel bar */}\n      <div\n        className={cn(\n          \"absolute top-1.5 bottom-1.5 -right-1.5 h-1/2 w-1.5\",\n          color,\n          visualClasses\n        )}\n      />\n    </div>\n  );\n}\n\nexport { Badge };\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/badge.tsx"
+    },
+    {
+      "path": "components/ui/8bit/styles/retro.css",
+      "content": "@import url(\"https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap\");\n\n.retro {\n  font-family:\n    \"Press Start 2P\",\n    system-ui,\n    -apple-system,\n    sans-serif;\n  line-height: 1.5;\n  letter-spacing: 0.5px;\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/styles/retro.css"
+    }
+  ]
+}

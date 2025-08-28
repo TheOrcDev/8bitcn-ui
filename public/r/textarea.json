@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "type": "registry:component",
+  "title": "8-bit Textarea",
+  "description": "A simple 8-bit textarea component",
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "components/ui/8bit/textarea.tsx",
+      "content": "import { type VariantProps, cva } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\nimport { Textarea as ShadcnTextarea } from \"@/components/ui/textarea\";\n\nimport \"./styles/retro.css\";\n\nexport const inputVariants = cva(\"\", {\n  variants: {\n    font: {\n      normal: \"\",\n      retro: \"retro\",\n    },\n  },\n  defaultVariants: {\n    font: \"retro\",\n  },\n});\n\nexport interface BitTextareaProps\n  extends React.TextareaHTMLAttributes<HTMLTextAreaElement>,\n    VariantProps<typeof inputVariants> {\n  asChild?: boolean;\n}\n\nfunction Textarea({ ...props }: BitTextareaProps) {\n  const { className, font } = props;\n\n  return (\n    <div className={cn(\"relative w-full\", className)}>\n      <ShadcnTextarea\n        {...props}\n        className={cn(\n          \"rounded-none transition-transform ring-0 border-0\",\n          font !== \"normal\" && \"retro\",\n          className\n        )}\n      />\n\n      <div\n        className=\"absolute inset-0 border-y-6 -my-1.5 border-foreground dark:border-ring pointer-events-none\"\n        aria-hidden=\"true\"\n      />\n\n      <div\n        className=\"absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none\"\n        aria-hidden=\"true\"\n      />\n    </div>\n  );\n}\n\nexport { Textarea };\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/textarea.tsx"
+    },
+    {
+      "path": "components/ui/8bit/styles/retro.css",
+      "content": "@import url(\"https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap\");\n\n.retro {\n  font-family:\n    \"Press Start 2P\",\n    system-ui,\n    -apple-system,\n    sans-serif;\n  line-height: 1.5;\n  letter-spacing: 0.5px;\n}\n",
+      "type": "registry:component",
+      "target": "components/ui/8bit/styles/retro.css"
+    }
+  ]
+}
