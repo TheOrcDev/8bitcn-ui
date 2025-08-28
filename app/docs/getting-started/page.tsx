@@ -64,8 +64,8 @@ export default function GettingStartedPage() {
               <h3 className="font-semibold">2. Start adding components!</h3>
               <div className="bg-muted p-4 rounded-lg">
                 <CopyCommandButton
-                  command="npx shadcn@latest add @8bitcn/button"
-                  copyCommand="npx shadcn@latest add @8bitcn/button"
+                  command="pnpm dlx shadcn@latest add @8bitcn/button"
+                  copyCommand="pnpm dlx shadcn@latest add @8bitcn/button"
                 />
               </div>
             </div>
