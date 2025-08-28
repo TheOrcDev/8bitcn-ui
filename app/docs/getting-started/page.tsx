@@ -81,8 +81,8 @@ export default function GettingStartedPage() {
               </p>
               <div className="bg-muted p-4 rounded-lg">
                 <CopyCommandButton
-                  command="pnpm dlx shadcn@beta mcp init"
-                  copyCommand="pnpm dlx shadcn@beta mcp init"
+                  command="pnpm dlx shadcn@latest mcp init"
+                  copyCommand="pnpm dlx shadcn@latest mcp init"
                 />
               </div>
             </div>
