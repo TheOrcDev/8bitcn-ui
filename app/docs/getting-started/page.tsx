@@ -26,7 +26,9 @@ export default function GettingStartedPage() {
       <div className="space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold tracking-tight">Getting Started</h1>
+          <h1 className="text-4xl font-bold tracking-tight retro">
+            Getting Started
+          </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Welcome to 8bitcn/ui! This guide will help you set up and start
             using our retro-styled components in your project.
@@ -75,7 +77,7 @@ export default function GettingStartedPage() {
         {/* Support */}
         <Card>
           <CardHeader>
-            <CardTitle>Need Help?</CardTitle>
+            <CardTitle className="retro">Need Help?</CardTitle>
             <CardDescription>
               We&apos;re here to help you get started with 8bitcn/ui
             </CardDescription>
