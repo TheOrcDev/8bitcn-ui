@@ -19,13 +19,19 @@ export default function CopyCommandButton({
     toast("Command copied to clipboard");
   };
 
+  const shortCommand = command.split(" ").slice(-1)[0];
+
   return (
     <Button
       variant="outline"
       onClick={copy}
       className="text-xs md:text-sm font-mono"
     >
-      <Terminal className="size-3 md:size-4" /> {command}
+      <Terminal className="size-3 md:size-4" />
+      <span className="hidden sm:block">{command}</span>
+      <span className="block sm:hidden">
+        <span className="font-mono">{shortCommand}</span>
+      </span>
     </Button>
   );
 }
