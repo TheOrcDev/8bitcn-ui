@@ -64,8 +64,8 @@ export default function GettingStartedPage() {
               <h3 className="font-semibold">2. Start adding components!</h3>
               <div className="bg-muted p-4 rounded-lg">
                 <CopyCommandButton
-                  command="npx shadcn@latest add @8bitcn/login-form"
-                  copyCommand="npx shadcn@latest add @8bitcn/login-form"
+                  command="npx shadcn@latest add @8bitcn/button"
+                  copyCommand="npx shadcn@latest add @8bitcn/button"
                 />
               </div>
             </div>
@@ -84,7 +84,7 @@ export default function GettingStartedPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild variant="outline" className="flex-1">
                 <Link
-                  href="https://github.com/theorcdev/8bitcn"
+                  href="https://github.com/TheOrcDev/8bitcn-ui"
                   target="_blank"
                 >
                   GitHub Repository
