@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Link from "next/link";
 
 import { Download } from "lucide-react";
@@ -12,6 +13,12 @@ import {
 } from "@/components/ui/card";
 
 import CopyCommandButton from "../../docs/components/copy-command-button";
+
+export const metadata: Metadata = {
+  title: "Getting Started",
+  description:
+    "Welcome to 8bitcn/ui! This guide will help you set up and start using our retro-styled components in your project.",
+};
 
 export default function GettingStartedPage() {
   return (
