@@ -52,9 +52,7 @@ export default function ButtonPage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-button.json`}
-      />
+      <InstallationCommands packageName="button" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

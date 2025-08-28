@@ -67,9 +67,7 @@ export default function RadioGroupPage() {
       <h3 className="text-lg font-bold">Installation</h3>
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-radio-group.json`}
-      />
+      <InstallationCommands packageName="radio-group" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

@@ -52,9 +52,7 @@ export default function InputPage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-input.json`}
-      />
+      <InstallationCommands packageName="input" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

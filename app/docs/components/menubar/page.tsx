@@ -154,9 +154,7 @@ export default function MenubarPage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-menubar.json`}
-      />
+      <InstallationCommands packageName="menubar" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

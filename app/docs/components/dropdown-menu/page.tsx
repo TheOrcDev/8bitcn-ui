@@ -120,9 +120,7 @@ export default function DropdownMenuPage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-dropdown-menu.json`}
-      />
+      <InstallationCommands packageName="dropdown-menu" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

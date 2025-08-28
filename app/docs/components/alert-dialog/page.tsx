@@ -80,9 +80,7 @@ export default function AlertDialogPage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-alert-dialog.json`}
-      />
+      <InstallationCommands packageName="alert-dialog" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

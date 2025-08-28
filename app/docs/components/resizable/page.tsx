@@ -90,9 +90,7 @@ export default function ResizablePage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-resizable.json`}
-      />
+      <InstallationCommands packageName="resizable" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

@@ -67,9 +67,7 @@ export default function ToggleGroupPage() {
         </div>
       </div>
       <h3 className="text-lg font-bold">Installation</h3> <Separator />
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-toggle-group.json`}
-      />
+      <InstallationCommands packageName="toggle-group" />
       <h3 className="text-lg font-bold">Examples</h3> <Separator />
       <h3 className="text-lg font-bold">Default</h3>
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">

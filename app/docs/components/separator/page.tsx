@@ -69,9 +69,7 @@ export default function SeparatorPage() {
 
       <ShadcnSeparator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-separator.json`}
-      />
+      <InstallationCommands packageName="separator" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

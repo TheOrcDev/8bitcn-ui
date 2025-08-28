@@ -52,9 +52,7 @@ export default function TextareaPage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-textarea.json`}
-      />
+      <InstallationCommands packageName="textarea" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

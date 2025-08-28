@@ -78,9 +78,7 @@ export default function PaginationPage() {
       </div>
       <h3 className="text-lg font-bold">Installation</h3>
       <Separator />
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-pagination.json`}
-      />
+      <InstallationCommands packageName="pagination" />
       <h3 className="text-lg font-bold mt-10">Usage</h3>
       <Separator />
       <CodeSnippet>{`import {

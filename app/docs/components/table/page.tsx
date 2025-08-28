@@ -104,9 +104,7 @@ export default function TablePage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-table.json`}
-      />
+      <InstallationCommands packageName="table" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

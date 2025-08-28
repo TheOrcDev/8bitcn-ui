@@ -67,9 +67,7 @@ export default function TooltipPage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-tooltip.json`}
-      />
+      <InstallationCommands packageName="tooltip" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

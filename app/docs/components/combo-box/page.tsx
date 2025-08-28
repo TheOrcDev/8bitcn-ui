@@ -52,9 +52,7 @@ export default function ComboBoxPage() {
       <h3 className="text-lg font-bold">Installation</h3>
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-combo-box.json`}
-      />
+      <InstallationCommands packageName="combo-box" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

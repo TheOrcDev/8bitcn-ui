@@ -55,9 +55,7 @@ export default function CalendarPage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-calendar.json`}
-      />
+      <InstallationCommands packageName="calendar" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

@@ -53,9 +53,7 @@ export default function NavigationMenuPage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-navigation-menu.json`}
-      />
+      <InstallationCommands packageName="navigation-menu" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

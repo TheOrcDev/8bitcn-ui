@@ -9,14 +9,14 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface InstallationCommandsProps {
-  packageUrl: string;
+  packageName: string;
 }
 
 export default function InstallationCommands({
-  packageUrl,
+  packageName,
 }: InstallationCommandsProps) {
   const [command, setCommand] = useState(
-    `pnpm dlx shadcn@canary add ${packageUrl}`
+    `pnpm dlx shadcn@latest add @8bitcn/${packageName}`
   );
   const [copied, setCopied] = useState(false);
 
@@ -39,7 +39,9 @@ export default function InstallationCommands({
               <TabsTrigger
                 value="pnpm"
                 onClick={() =>
-                  setCommand(`pnpm dlx shadcn@canary add ${packageUrl}`)
+                  setCommand(
+                    `pnpm dlx shadcn@latest add @8bitcn/${packageName}`
+                  )
                 }
                 className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-x-2 data-[state=active]:border-b-white data-[state=active]:shadow-none rounded-none px-2 text-white data-[state=inactive]:text-zinc-500"
               >
@@ -48,7 +50,7 @@ export default function InstallationCommands({
               <TabsTrigger
                 value="npm"
                 onClick={() =>
-                  setCommand(`npx shadcn@latest add ${packageUrl}`)
+                  setCommand(`npx shadcn@latest add @8bitcn/${packageName}`)
                 }
                 className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-b-white data-[state=active]:shadow-none rounded-none px-2 text-white data-[state=inactive]:text-zinc-500"
               >
@@ -57,7 +59,9 @@ export default function InstallationCommands({
               <TabsTrigger
                 value="yarn"
                 onClick={() =>
-                  setCommand(`yarn dlx shadcn@latest add ${packageUrl}`)
+                  setCommand(
+                    `yarn dlx shadcn@latest add @8bitcn/${packageName}`
+                  )
                 }
                 className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-b-white data-[state=active]:shadow-none rounded-none px-2 text-white data-[state=inactive]:text-zinc-500"
               >
@@ -66,7 +70,9 @@ export default function InstallationCommands({
               <TabsTrigger
                 value="bun"
                 onClick={() =>
-                  setCommand(`bunx --bun shadcn@latest add ${packageUrl}`)
+                  setCommand(
+                    `bunx --bun shadcn@latest add @8bitcn/${packageName}`
+                  )
                 }
                 className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-b-white data-[state=active]:shadow-none rounded-none px-2 text-white data-[state=inactive]:text-zinc-500"
               >
@@ -90,25 +96,25 @@ export default function InstallationCommands({
 
           <TabsContent value="pnpm" className="p-4 pt-2">
             <div className="font-mono text-sm">
-              pnpm dlx shadcn@canary add {packageUrl}
+              pnpm dlx shadcn@latest add @8bitcn/{packageName}
             </div>
           </TabsContent>
 
           <TabsContent value="npm" className="p-4 pt-2">
             <div className="font-mono text-sm">
-              npx shadcn@latest add {packageUrl}
+              npx shadcn@latest add @8bitcn/{packageName}
             </div>
           </TabsContent>
 
           <TabsContent value="yarn" className="p-4 pt-2">
             <div className="font-mono text-sm">
-              yarn dlx shadcn@latest add {packageUrl}
+              yarn dlx shadcn@latest add @8bitcn/{packageName}
             </div>
           </TabsContent>
 
           <TabsContent value="bun" className="p-4 pt-2">
             <div className="font-mono text-sm">
-              bunx --bun shadcn@latest add {packageUrl}
+              bunx --bun shadcn@latest add @8bitcn/{packageName}
             </div>
           </TabsContent>
         </Tabs>

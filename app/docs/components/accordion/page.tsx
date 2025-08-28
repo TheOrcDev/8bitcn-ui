@@ -78,9 +78,7 @@ export default function AccordionPage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-accordion.json`}
-      />
+      <InstallationCommands packageName="accordion" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

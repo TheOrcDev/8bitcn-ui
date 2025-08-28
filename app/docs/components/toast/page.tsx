@@ -53,9 +53,7 @@ export default function ToastPage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-toast.json`}
-      />
+      <InstallationCommands packageName="toast" />
 
       <p>
         8bitcn Toast is using Sonner under the hood. Add the Sonner Toaster

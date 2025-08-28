@@ -107,9 +107,7 @@ export default function PopoverPage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-popover.json`}
-      />
+      <InstallationCommands packageName="popover" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

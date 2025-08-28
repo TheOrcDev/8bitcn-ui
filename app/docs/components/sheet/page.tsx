@@ -105,9 +105,7 @@ export default function SheetPage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-sheet.json`}
-      />
+      <InstallationCommands packageName="sheet" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

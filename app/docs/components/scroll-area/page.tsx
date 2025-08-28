@@ -55,9 +55,7 @@ export default function ScrollAreaPage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-scroll-area.json`}
-      />
+      <InstallationCommands packageName="scroll-area" />
 
       <h3 className="text-lg font-bold mt-10">Horizontal Scrolling</h3>
 

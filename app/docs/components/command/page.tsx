@@ -54,9 +54,7 @@ export default function CommandPage() {
       <h3 className="text-lg font-bold">Installation</h3>
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-command.json`}
-      />
+      <InstallationCommands packageName="command" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

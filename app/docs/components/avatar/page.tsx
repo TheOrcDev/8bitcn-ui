@@ -79,9 +79,7 @@ export default function AvatarPage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-avatar.json`}
-      />
+      <InstallationCommands packageName="avatar" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

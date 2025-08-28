@@ -69,9 +69,7 @@ export default function TogglePage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-toggle.json`}
-      />
+      <InstallationCommands packageName="toggle" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

@@ -54,9 +54,7 @@ export default function CollapsiblePage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-collapsible.json`}
-      />
+      <InstallationCommands packageName="collapsible" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

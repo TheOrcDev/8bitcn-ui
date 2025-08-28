@@ -170,9 +170,7 @@ export default function BreadcrumbPageNext() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-breadcrumb.json`}
-      />
+      <InstallationCommands packageName="breadcrumb" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
       <Separator />

@@ -56,9 +56,7 @@ export default function DrawerPaged() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-drawer.json`}
-      />
+      <InstallationCommands packageName="drawer" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

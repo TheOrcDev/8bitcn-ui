@@ -68,9 +68,7 @@ export default function ContextMenuPage() {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-context-menu.json`}
-      />
+      <InstallationCommands packageName="context-menu" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 

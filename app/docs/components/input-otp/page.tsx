@@ -69,9 +69,7 @@ const InputOTPPage = () => {
 
       <Separator />
 
-      <InstallationCommands
-        packageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-input.json`}
-      />
+      <InstallationCommands packageName="input-otp" />
 
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 
