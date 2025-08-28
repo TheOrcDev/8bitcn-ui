@@ -91,7 +91,7 @@ export default function GettingStartedPage() {
                 </Link>
               </Button>
               <Button asChild variant="outline" className="flex-1">
-                <Link href="/contributors">Meet the Team</Link>
+                <Link href="/contributors">Contributors</Link>
               </Button>
               <Button asChild className="flex-1">
                 <Link href="/docs">Documentation</Link>

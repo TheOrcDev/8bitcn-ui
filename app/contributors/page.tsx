@@ -31,7 +31,7 @@ const contributors = [
       "15 years in the code mines. I build, I break, I conquer - all in orcish style. 🛠️🔥",
     avatar: "/avatars/orcdev.jpeg",
     githubUrl: "https://github.com/TheOrcDev",
-    contributions: 280,
+    contributions: 331,
   },
   {
     id: 2,
@@ -185,6 +185,15 @@ const contributors = [
     description: "",
     avatar: "/avatars/julian.png",
     githubUrl: "https://github.com/jln13x",
+    contributions: 1,
+  },
+  {
+    id: 19,
+    username: "shadcn",
+    name: "Shadcn",
+    description: "",
+    avatar: "/avatars/shadcn.jpg",
+    githubUrl: "https://github.com/shadcn",
     contributions: 1,
   },
 ];
