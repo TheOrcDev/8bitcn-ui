@@ -24,8 +24,8 @@ export default function SeparatorPage() {
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
         <h1 className="text-3xl font-bold">Separator</h1>
         <CopyCommandButton
-          copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-separator.json`}
-          command={"pnpm dlx shadcn@canary add 8bit-separator"}
+          copyCommand="pnpm dlx shadcn@latest add @8bitcn/separator"
+          command="pnpm dlx shadcn@latest add @8bitcn/separator"
         />
       </div>
 

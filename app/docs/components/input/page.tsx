@@ -24,8 +24,8 @@ export default function InputPage() {
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
         <h1 className="text-3xl font-bold">Input</h1>
         <CopyCommandButton
-          copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-input.json`}
-          command={"pnpm dlx shadcn@canary add 8bit-input"}
+          copyCommand="pnpm dlx shadcn@latest add @8bitcn/input"
+          command="pnpm dlx shadcn@latest add @8bitcn/input"
         />
       </div>
 

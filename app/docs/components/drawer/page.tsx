@@ -27,8 +27,8 @@ export default function DrawerPaged() {
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
         <h1 className="text-3xl font-bold">Drawer</h1>
         <CopyCommandButton
-          copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-drawer.json`}
-          command={"pnpm dlx shadcn@canary add 8bit-drawer"}
+          copyCommand="pnpm dlx shadcn@latest add @8bitcn/drawer"
+          command="pnpm dlx shadcn@latest add @8bitcn/drawer"
         />
       </div>
 

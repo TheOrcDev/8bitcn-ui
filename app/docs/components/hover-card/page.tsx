@@ -29,8 +29,8 @@ const HoverCardPage = () => {
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
         <h1 className="text-3xl font-bold">Hover Card</h1>
         <CopyCommandButton
-          copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-hover-card.json`}
-          command={"pnpm dlx shadcn@canary add 8bit-hover-card"}
+          copyCommand="pnpm dlx shadcn@latest add @8bitcn/hover-card"
+          command="pnpm dlx shadcn@latest add @8bitcn/hover-card"
         />
       </div>
 

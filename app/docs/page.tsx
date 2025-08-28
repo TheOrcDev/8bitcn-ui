@@ -56,7 +56,7 @@ export default function Page() {
       <div className="flex flex-col gap-4">
         <h3 className="text-lg font-bold">2. Add Components</h3>
         <p>You can now start adding components to your project.</p>
-        <CodeSnippet>{`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-button.json`}</CodeSnippet>
+        <CodeSnippet>{`pnpm dlx shadcn@latest add @8bitcn/button`}</CodeSnippet>
         <p>
           The command above will add the Button component to your project. You
           can then import it like this:

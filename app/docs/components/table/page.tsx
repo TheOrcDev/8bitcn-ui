@@ -32,8 +32,8 @@ export default function TablePage() {
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
         <h1 className="text-3xl font-bold">Table</h1>
         <CopyCommandButton
-          copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-table.json`}
-          command={"pnpm dlx shadcn@canary add 8bit-table"}
+          copyCommand="pnpm dlx shadcn@latest add @8bitcn/table"
+          command="pnpm dlx shadcn@latest add @8bitcn/table"
         />
       </div>
 

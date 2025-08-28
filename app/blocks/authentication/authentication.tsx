@@ -17,8 +17,8 @@ export default function AuthenticationBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-login-form"
-              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-login-form.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/login-form"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/login-form"
             />
             <OpenInV0Button name="8bit-login-form" className="w-fit" />
           </div>
@@ -35,8 +35,8 @@ export default function AuthenticationBlocks() {
 
         <div className="flex flex-col md:flex-row items-center gap-2">
           <CopyCommandButton
-            command="npx shadcn@latest add 8bit-login-page"
-            copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-login-page.json`}
+            command="pnpm dlx shadcn@latest add @8bitcn/login-page"
+            copyCommand="pnpm dlx shadcn@latest add @8bitcn/login-page"
           />
           <OpenInV0Button name="8bit-login-page" className="w-fit" />
         </div>
@@ -55,8 +55,8 @@ export default function AuthenticationBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-login-form-2"
-              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-login-form-2.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/login-form-2"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/login-form-2"
             />
             <OpenInV0Button name="8bit-login-form-2" className="w-fit" />
           </div>
@@ -74,8 +74,8 @@ export default function AuthenticationBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-login-form-with-image"
-              copyCommand={`pnpm dlx shadcn@  canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-login-form-with-image.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/login-form-with-image"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/login-form-with-image"
             />
             <OpenInV0Button
               name="8bit-login-form-with-image"

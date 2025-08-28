@@ -33,7 +33,7 @@ export default function CopyProfileCardDialog({ code }: ProfileCardProps) {
         </p>
 
         <CodeSnippet>
-          pnpm dlx shadcn@canary add https://8bitcn.com/r/8bit-profile-card.json
+          pnpm dlx shadcn@latest add @8bitcn/profile-card
         </CodeSnippet>
 
         <p className="text-xs text-muted-foreground">

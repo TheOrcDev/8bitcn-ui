@@ -25,8 +25,8 @@ export default function NavigationMenuPage() {
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
         <h1 className="text-3xl font-bold">Navigation Menu</h1>
         <CopyCommandButton
-          copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-navigation-menu.json`}
-          command={"pnpm dlx shadcn@canary add 8bit-navigation-menu"}
+          copyCommand="pnpm dlx shadcn@latest add @8bitcn/navigation-menu"
+          command="pnpm dlx shadcn@latest add @8bitcn/navigation-menu"
         />
       </div>
 

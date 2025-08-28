@@ -27,8 +27,8 @@ export default function CommandPage() {
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
         <h1 className="text-3xl font-bold">Command</h1>
         <CopyCommandButton
-          copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-command.json`}
-          command={"pnpm dlx shadcn@canary add 8bit-command"}
+          copyCommand="pnpm dlx shadcn@latest add @8bitcn/command"
+          command="pnpm dlx shadcn@latest add @8bitcn/command"
         />
       </div>
 

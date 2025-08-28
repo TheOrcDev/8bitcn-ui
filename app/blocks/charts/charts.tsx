@@ -22,8 +22,8 @@ export default function ChartsBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-chart"
-              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-chart.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/chart"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/chart"
             />
             <OpenInV0Button name="8bit-chart" className="w-fit" />
           </div>
@@ -92,8 +92,8 @@ export default function ChartsBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-chart-bar"
-              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-chart-bar.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/chart-bar"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/chart-bar"
             />
             <OpenInV0Button name="8bit-chart-bar" className="w-fit" />
           </div>
@@ -162,8 +162,8 @@ export default function ChartsBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-chart-area-step"
-              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-chart-area-step.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/chart-area-step"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/chart-area-step"
             />
             <OpenInV0Button name="8bit-chart-area-step" className="w-fit" />
           </div>

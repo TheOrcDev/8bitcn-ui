@@ -22,8 +22,8 @@ export default function GamingBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-chapter-intro"
-              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-chapter-intro.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/chapter-intro"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/chapter-intro"
             />
             <OpenInV0Button name="8bit-chapter-intro" className="w-fit" />
           </div>
@@ -46,8 +46,8 @@ export default function GamingBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-main-menu"
-              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-main-menu.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/main-menu"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/main-menu"
             />
             <OpenInV0Button name="8bit-main-menu" className="w-fit" />
           </div>
@@ -64,8 +64,8 @@ export default function GamingBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-difficulty-select"
-              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-difficulty-select.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/difficulty-select"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/difficulty-select"
             />
             <OpenInV0Button name="8bit-difficulty-select" className="w-fit" />
           </div>
@@ -80,8 +80,8 @@ export default function GamingBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-dialogue"
-              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-dialogue.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/dialogue"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/dialogue"
             />
             <OpenInV0Button name="8bit-dialogue" className="w-fit" />
           </div>
@@ -113,8 +113,8 @@ export default function GamingBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-pause-menu"
-              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-pause-menu.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/pause-menu"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/pause-menu"
             />
             <OpenInV0Button name="8bit-pause-menu" className="w-fit" />
           </div>
@@ -129,8 +129,8 @@ export default function GamingBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-game-over"
-              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-game-over.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/game-over"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/game-over"
             />
             <OpenInV0Button name="8bit-game-over" className="w-fit" />
           </div>
@@ -147,8 +147,8 @@ export default function GamingBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-audio-settings"
-              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-audio-settings.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/audio-settings"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/audio-settings"
             />
             <OpenInV0Button name="8bit-audio-settings" className="w-fit" />
           </div>
@@ -163,8 +163,8 @@ export default function GamingBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-health-bar"
-              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-health-bar.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/health-bar"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/health-bar"
             />
             <OpenInV0Button name="8bit-health-bar" className="w-fit" />
           </div>
@@ -189,8 +189,8 @@ export default function GamingBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-mana-bar"
-              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-mana-bar.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/mana-bar"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/mana-bar"
             />
             <OpenInV0Button name="8bit-mana-bar" className="w-fit" />
           </div>

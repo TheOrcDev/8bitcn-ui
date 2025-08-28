@@ -42,8 +42,8 @@ export default function DialogPage() {
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
         <h1 className="text-3xl font-bold">Dialog</h1>
         <CopyCommandButton
-          copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-dialog.json`}
-          command={"pnpm dlx shadcn@canary add 8bit-dialog"}
+          copyCommand="pnpm dlx shadcn@latest add @8bitcn/dialog"
+          command="pnpm dlx shadcn@latest add @8bitcn/dialog"
         />
       </div>
 

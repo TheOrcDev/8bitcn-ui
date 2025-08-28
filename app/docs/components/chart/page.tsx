@@ -24,8 +24,8 @@ export default function ChartPage() {
       <div className="flex flex-col md:flex-row items-center justify-between gap-2">
         <h1 className="text-3xl font-bold">Chart</h1>
         <CopyCommandButton
-          copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-chart.json`}
-          command={"pnpm dlx shadcn@canary add 8bit-chart"}
+          copyCommand="pnpm dlx shadcn@latest add @8bitcn/chart"
+          command="pnpm dlx shadcn@latest add @8bitcn/chart"
         />
       </div>
 

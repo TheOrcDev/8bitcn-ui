@@ -28,8 +28,8 @@ export default function CalendarBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-calendar"
-              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-calendar.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/calendar"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/calendar"
             />
             <OpenInV0Button name="8bit-calendar" className="w-fit" />
           </div>
@@ -46,8 +46,8 @@ export default function CalendarBlocks() {
 
         <div className="flex flex-col md:flex-row items-center gap-2">
           <CopyCommandButton
-            command="npx shadcn@latest add 8bit-calendar-range"
-            copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-calendar-range.json`}
+            command="pnpm dlx shadcn@latest add @8bitcn/calendar"
+            copyCommand="pnpm dlx shadcn@latest add @8bitcn/calendar"
           />
           <OpenInV0Button name="8bit-calendar-range" className="w-fit" />
         </div>
@@ -66,8 +66,8 @@ export default function CalendarBlocks() {
 
           <div className="flex flex-col md:flex-row items-center gap-2">
             <CopyCommandButton
-              command="npx shadcn@latest add 8bit-login-form-2"
-              copyCommand={`pnpm dlx shadcn@canary add ${process.env.NEXT_PUBLIC_BASE_URL}/r/8bit-login-form-2.json`}
+              command="pnpm dlx shadcn@latest add @8bitcn/calendar"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/calendar"
             />
             <OpenInV0Button name="8bit-calendar-single" className="w-fit" />
           </div>
