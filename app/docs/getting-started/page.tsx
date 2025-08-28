@@ -71,6 +71,21 @@ export default function GettingStartedPage() {
                 />
               </div>
             </div>
+
+            <div className="space-y-3">
+              <h3 className="font-semibold">3. Initialize MCP</h3>
+              <p className="text-sm text-muted-foreground">
+                This adds configuration to your IDE, enabling you to use the
+                components directly in your code with AI assistance. The AI will
+                have full context of the entire 8bitcn library.
+              </p>
+              <div className="bg-muted p-4 rounded-lg">
+                <CopyCommandButton
+                  command="pnpm dlx shadcn@beta mcp init"
+                  copyCommand="pnpm dlx shadcn@beta mcp init"
+                />
+              </div>
+            </div>
           </CardContent>
         </Card>
 
