@@ -874,9 +874,28 @@
           "target": "components/ui/8bit/command.tsx"
         },
         {
+          "path": "components/ui/8bit/separator.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/separator.tsx"
+        },
+        {
           "path": "components/ui/8bit/styles/retro.css",
           "type": "registry:component",
           "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:component",
+      "title": "8-bit Separator",
+      "description": "A simple 8-bit separator component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/separator.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/separator.tsx"
         }
       ]
     },

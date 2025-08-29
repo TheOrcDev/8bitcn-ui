@@ -4,7 +4,7 @@
   "homepage": "https://8bitcn.com",
   "items": [
     {
-      "name": "8bit-chapter-intro",
+      "name": "chapter-intro",
       "type": "registry:component",
       "title": "8-bit Chapter Intro",
       "description": "A cinematic chapter/level intro with pixel art background.",
@@ -28,7 +28,7 @@
       ]
     },
     {
-      "name": "8bit-button",
+      "name": "button",
       "type": "registry:component",
       "title": "8-bit Button",
       "description": "A simple 8-bit button component",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "name": "8bit-input",
+      "name": "input",
       "type": "registry:component",
       "title": "8-bit Input",
       "description": "A simple 8-bit input component",
@@ -66,7 +66,7 @@
       ]
     },
     {
-      "name": "8bit-toast",
+      "name": "toast",
       "type": "registry:component",
       "title": "8-bit Toast",
       "description": "A simple 8-bit toast component",
@@ -85,7 +85,7 @@
       ]
     },
     {
-      "name": "8bit-input-otp",
+      "name": "input-otp",
       "type": "registry:component",
       "title": "8-bit Input-OTP",
       "description": "A simple 8-bit input-otp component",
@@ -104,7 +104,7 @@
       ]
     },
     {
-      "name": "8bit-badge",
+      "name": "badge",
       "type": "registry:component",
       "title": "8-bit Badge",
       "description": "A simple 8-bit badge component",
@@ -123,7 +123,7 @@
       ]
     },
     {
-      "name": "8bit-textarea",
+      "name": "textarea",
       "type": "registry:component",
       "title": "8-bit Textarea",
       "description": "A simple 8-bit textarea component",
@@ -142,7 +142,7 @@
       ]
     },
     {
-      "name": "8bit-calendar",
+      "name": "calendar",
       "type": "registry:component",
       "title": "8-bit Calendar",
       "description": "A simple 8-bit calendar component",
@@ -161,7 +161,7 @@
       ]
     },
     {
-      "name": "8bit-card",
+      "name": "card",
       "type": "registry:component",
       "title": "8-bit Card",
       "description": "A simple 8-bit card component",
@@ -180,7 +180,7 @@
       ]
     },
     {
-      "name": "8bit-carousel",
+      "name": "carousel",
       "type": "registry:component",
       "title": "8-bit Card",
       "description": "A simple 8-bit carousel component",
@@ -199,7 +199,7 @@
       ]
     },
     {
-      "name": "8bit-dialog",
+      "name": "dialog",
       "type": "registry:component",
       "title": "8-bit Dialog",
       "description": "A simple 8-bit dialog component",
@@ -218,7 +218,7 @@
       ]
     },
     {
-      "name": "8bit-dropdown-menu",
+      "name": "dropdown-menu",
       "type": "registry:component",
       "title": "8-bit Dropdown Menu",
       "description": "A simple 8-bit dropdown-menu component",
@@ -237,7 +237,7 @@
       ]
     },
     {
-      "name": "8bit-hover-card",
+      "name": "hover-card",
       "type": "registry:component",
       "title": "8-bit Hover Card",
       "description": "A simple 8-bit hover card component",
@@ -256,7 +256,7 @@
       ]
     },
     {
-      "name": "8bit-popover",
+      "name": "popover",
       "type": "registry:component",
       "title": "8-bit Popover",
       "description": "A simple 8-bit popover component",
@@ -275,7 +275,7 @@
       ]
     },
     {
-      "name": "8bit-resizable",
+      "name": "resizable",
       "type": "registry:component",
       "title": "8-bit Resizable Panel",
       "description": "Accessible resizable panel groups and layouts with keyboard support.",
@@ -294,7 +294,7 @@
       ]
     },
     {
-      "name": "8bit-select",
+      "name": "select",
       "type": "registry:component",
       "title": "8-bit Select",
       "description": "A simple 8-bit select component",
@@ -313,7 +313,7 @@
       ]
     },
     {
-      "name": "8bit-sheet",
+      "name": "sheet",
       "type": "registry:component",
       "title": "8-bit sheet",
       "description": "A simple 8-bit sheet component",
@@ -332,7 +332,7 @@
       ]
     },
     {
-      "name": "8bit-label",
+      "name": "label",
       "type": "registry:component",
       "title": "8-bit Label",
       "description": "A simple 8-bit label component",
@@ -351,7 +351,7 @@
       ]
     },
     {
-      "name": "8bit-checkbox",
+      "name": "checkbox",
       "type": "registry:component",
       "title": "8-bit Checkbox",
       "description": "A simple 8-bit checkbox component",
@@ -370,7 +370,7 @@
       ]
     },
     {
-      "name": "8bit-scroll-area",
+      "name": "scroll-area",
       "type": "registry:component",
       "title": "8-bit Scroll Area",
       "description": "A simple 8-bit Scroll Area component",
@@ -389,7 +389,7 @@
       ]
     },
     {
-      "name": "8bit-switch",
+      "name": "switch",
       "type": "registry:component",
       "title": "8-bit Switch",
       "description": "A simple 8-bit switch component",
@@ -408,7 +408,7 @@
       ]
     },
     {
-      "name": "8bit-alert",
+      "name": "alert",
       "type": "registry:component",
       "title": "8-bit Alert",
       "description": "A simple 8-bit switch component",
@@ -427,7 +427,7 @@
       ]
     },
     {
-      "name": "8bit-alert-dialog",
+      "name": "alert-dialog",
       "type": "registry:component",
       "title": "8-bit Alert Dialog",
       "description": "A simple 8-bit Alert Dialog component",
@@ -446,7 +446,7 @@
       ]
     },
     {
-      "name": "8bit-tooltip",
+      "name": "tooltip",
       "type": "registry:component",
       "title": "8-bit Tooltip",
       "description": "A simple 8-bit tooltip component",
@@ -465,7 +465,7 @@
       ]
     },
     {
-      "name": "8bit-tooltip",
+      "name": "tooltip",
       "type": "registry:component",
       "title": "8-bit Tooltip",
       "description": "A simple 8-bit tooltip component",
@@ -484,7 +484,7 @@
       ]
     },
     {
-      "name": "8bit-avatar",
+      "name": "avatar",
       "type": "registry:component",
       "title": "8-bit Avatar",
       "description": "A simple 8-bit avatar component",
@@ -503,7 +503,7 @@
       ]
     },
     {
-      "name": "8bit-skeleton",
+      "name": "skeleton",
       "type": "registry:component",
       "title": "8-bit Skeleton",
       "description": "A simple 8-bit skeleton component",
@@ -522,7 +522,7 @@
       ]
     },
     {
-      "name": "8bit-breadcrumb",
+      "name": "breadcrumb",
       "type": "registry:component",
       "title": "8-bit Breadcrumb",
       "description": "A simple 8-bit breadcrumb component",
@@ -541,7 +541,7 @@
       ]
     },
     {
-      "name": "8bit-collapsible",
+      "name": "collapsible",
       "type": "registry:component",
       "title": "8-bit Collapsible",
       "description": "A simple 8-bit collapsible component",
@@ -560,7 +560,7 @@
       ]
     },
     {
-      "name": "8bit-progress",
+      "name": "progress",
       "type": "registry:component",
       "title": "8-bit Progress",
       "description": "A simple 8-bit progress component",
@@ -579,7 +579,7 @@
       ]
     },
     {
-      "name": "8bit-health-bar",
+      "name": "health-bar",
       "type": "registry:component",
       "title": "8-bit Health Bar",
       "description": "A simple 8-bit health bar component",
@@ -603,7 +603,7 @@
       ]
     },
     {
-      "name": "8bit-mana-bar",
+      "name": "mana-bar",
       "type": "registry:component",
       "title": "8-bit Mana Bar",
       "description": "A simple 8-bit mana bar component",
@@ -627,7 +627,7 @@
       ]
     },
     {
-      "name": "8bit-game-progress",
+      "name": "game-progress",
       "type": "registry:component",
       "title": "8-bit Game Progress",
       "description": "A simple 8-bit game progress component",
@@ -661,7 +661,7 @@
       ]
     },
     {
-      "name": "8bit-dialogue",
+      "name": "dialogue",
       "type": "registry:component",
       "title": "8-bit Dialogue",
       "description": "A simple 8-bit dialogue component",
@@ -690,7 +690,7 @@
       ]
     },
     {
-      "name": "8bit-profile-card",
+      "name": "profile-card",
       "type": "registry:component",
       "title": "8-bit Profile Card",
       "description": "A simple 8-bit profile card component",
@@ -724,7 +724,7 @@
       ]
     },
     {
-      "name": "8bit-slider",
+      "name": "slider",
       "type": "registry:component",
       "title": "8-bit Slider",
       "description": "A simple 8-bit slider component",
@@ -743,7 +743,7 @@
       ]
     },
     {
-      "name": "8bit-context-menu",
+      "name": "context-menu",
       "type": "registry:component",
       "title": "8-bit Context Menu",
       "description": "A simple 8-bit context menu component",
@@ -762,7 +762,7 @@
       ]
     },
     {
-      "name": "8bit-menubar",
+      "name": "menubar",
       "type": "registry:component",
       "title": "8-bit Menu Bar",
       "description": "A simple 8-bit menu bar component",
@@ -781,7 +781,7 @@
       ]
     },
     {
-      "name": "8bit-toggle",
+      "name": "toggle",
       "type": "registry:component",
       "title": "8-bit Toggle",
       "description": "A simple 8-bit toggle component",
@@ -800,7 +800,7 @@
       ]
     },
     {
-      "name": "8bit-table",
+      "name": "table",
       "type": "registry:component",
       "title": "8-bit Table",
       "description": "A simple 8-bit table component",
@@ -819,7 +819,7 @@
       ]
     },
     {
-      "name": "8bit-tabs",
+      "name": "tabs",
       "type": "registry:component",
       "title": "8-bit Tabs",
       "description": "A simple 8-bit tabs component",
@@ -838,7 +838,7 @@
       ]
     },
     {
-      "name": "8bit-combo-box",
+      "name": "combo-box",
       "type": "registry:component",
       "title": "8-bit Combo Box",
       "description": "A simple 8-bit combo box component",
@@ -862,7 +862,7 @@
       ]
     },
     {
-      "name": "8bit-command",
+      "name": "command",
       "type": "registry:component",
       "title": "8-bit Command",
       "description": "A simple 8-bit command component",
@@ -874,6 +874,11 @@
           "target": "components/ui/8bit/command.tsx"
         },
         {
+          "path": "components/ui/8bit/separator.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/separator.tsx"
+        },
+        {
           "path": "components/ui/8bit/styles/retro.css",
           "type": "registry:component",
           "target": "components/ui/8bit/styles/retro.css"
@@ -881,7 +886,21 @@
       ]
     },
     {
-      "name": "8bit-radio-group",
+      "name": "separator",
+      "type": "registry:component",
+      "title": "8-bit Separator",
+      "description": "A simple 8-bit separator component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/separator.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
       "type": "registry:component",
       "title": "8-bit Radio Group",
       "description": "A simple 8-bit radio group component",
@@ -900,7 +919,7 @@
       ]
     },
     {
-      "name": "8bit-pagination",
+      "name": "pagination",
       "type": "registry:component",
       "title": "8-bit Pagination",
       "description": "A simple 8-bit pagination component",
@@ -919,7 +938,7 @@
       ]
     },
     {
-      "name": "8bit-login-form",
+      "name": "login-form",
       "type": "registry:component",
       "title": "8-bit Login Form",
       "description": "A simple 8-bit login form component",
@@ -958,7 +977,7 @@
       ]
     },
     {
-      "name": "8bit-login-form-2",
+      "name": "login-form-2",
       "type": "registry:component",
       "title": "8-bit Login Form 2",
       "description": "A simple 8-bit login form component",
@@ -997,7 +1016,7 @@
       ]
     },
     {
-      "name": "8bit-login-form-with-image",
+      "name": "login-form-with-image",
       "type": "registry:component",
       "title": "8-bit Login Form with Image",
       "description": "A simple 8-bit login form component with image",
@@ -1036,7 +1055,7 @@
       ]
     },
     {
-      "name": "8bit-login-page",
+      "name": "login-page",
       "type": "registry:component",
       "title": "8-bit Login Page",
       "description": "A simple 8-bit login page component",
@@ -1080,7 +1099,7 @@
       ]
     },
     {
-      "name": "8bit-chart",
+      "name": "chart",
       "type": "registry:component",
       "title": "8-bit Chart",
       "description": "A simple 8-bit chart component",
@@ -1104,7 +1123,7 @@
       ]
     },
     {
-      "name": "8bit-chart-bar",
+      "name": "chart-bar",
       "type": "registry:component",
       "title": "8-bit Chart Bar",
       "description": "A simple 8-bit chart bar component",
@@ -1128,7 +1147,7 @@
       ]
     },
     {
-      "name": "8bit-chart-area-step",
+      "name": "chart-area-step",
       "type": "registry:component",
       "title": "8-bit Chart Area Step",
       "description": "A simple 8-bit chart area step component",
@@ -1152,7 +1171,7 @@
       ]
     },
     {
-      "name": "8bit-main-menu",
+      "name": "main-menu",
       "type": "registry:component",
       "title": "8-bit Main Menu",
       "description": "A simple 8-bit main menu component",
@@ -1181,7 +1200,7 @@
       ]
     },
     {
-      "name": "8bit-pause-menu",
+      "name": "pause-menu",
       "type": "registry:component",
       "title": "8-bit Pause Menu",
       "description": "A simple 8-bit pause menu component",
@@ -1210,7 +1229,7 @@
       ]
     },
     {
-      "name": "8bit-game-over",
+      "name": "game-over",
       "type": "registry:component",
       "title": "8-bit Game Over",
       "description": "A simple 8-bit game over component",
@@ -1239,7 +1258,7 @@
       ]
     },
     {
-      "name": "8bit-audio-settings",
+      "name": "audio-settings",
       "type": "registry:component",
       "title": "8-bit Audio Settings",
       "description": "A simple 8-bit audio settings component",
@@ -1278,7 +1297,7 @@
       ]
     },
     {
-      "name": "8bit-toggle-group",
+      "name": "toggle-group",
       "type": "registry:component",
       "title": "8-bit Toggle Group",
       "description": "A simple 8-bit toggle group component",
@@ -1297,7 +1316,7 @@
       ]
     },
     {
-      "name": "8bit-sidebar",
+      "name": "sidebar",
       "type": "registry:component",
       "title": "8-bit Sidebar",
       "description": "A simple 8-bit sidebar component",
@@ -1316,7 +1335,7 @@
       ]
     },
     {
-      "name": "8bit-accordion",
+      "name": "accordion",
       "type": "registry:component",
       "title": "8-bit Accordion",
       "description": "A simple 8-bit accordion component",
@@ -1335,7 +1354,7 @@
       ]
     },
     {
-      "name": "8bit-drawer",
+      "name": "drawer",
       "type": "registry:component",
       "title": "8-bit Drawer",
       "description": "A simple 8-bit drawer component",
@@ -1354,7 +1373,7 @@
       ]
     },
     {
-      "name": "8bit-navigation-menu",
+      "name": "navigation-menu",
       "type": "registry:component",
       "title": "8-bit Navigation Menu",
       "description": "A simple 8-bit navigation menu component",
@@ -1373,7 +1392,7 @@
       ]
     },
     {
-      "name": "8bit-difficulty-select",
+      "name": "difficulty-select",
       "type": "registry:component",
       "title": "8-bit Difficulty Select",
       "description": "A reusable 8-bit difficulty selector with Easy, Normal, Hard.",
