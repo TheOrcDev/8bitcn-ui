@@ -496,8 +496,12 @@ export default function ProfileCard() {
           </CardContent>
         </Card>
 
-        <div className="space-y-4">
+        <div className="space-y-4 max-w-md mx-auto">
           <h2 className="text-center text-lg font-bold">Preview</h2>
+          <p className="text-xs text-muted-foreground">
+            Tip: change to dark / light mode to see the card in different
+            themes.
+          </p>
           <div className="max-w-xs mx-auto">
             <SelectThemeDropdown
               activeTheme={activeTheme}
