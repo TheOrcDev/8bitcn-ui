@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/8bit/card";
 import { Input } from "@/components/ui/8bit/input";
 import { Label } from "@/components/ui/8bit/label";
+import { Separator } from "@/components/ui/8bit/separator";
 import { Switch } from "@/components/ui/8bit/switch";
 import { Textarea } from "@/components/ui/8bit/textarea";
 import { toast } from "@/components/ui/8bit/toast";
@@ -385,6 +386,18 @@ export default function ProfileCard() {
             </div>
 
             <div className="space-y-2">
+              <Label htmlFor="badge">Badge Title</Label>
+              <Input
+                id="badge"
+                placeholder="Retro Hacker"
+                value={profile.badgeTitle}
+                onChange={(e) =>
+                  setProfile({ ...profile, badgeTitle: e.currentTarget.value })
+                }
+              />
+            </div>
+
+            <div className="space-y-2">
               <div className="flex items-center justify-between gap-2">
                 <Label htmlFor="avatar-url">Avatar</Label>
                 <div className="flex items-center gap-2">
@@ -458,6 +471,13 @@ export default function ProfileCard() {
               </p>
             </div>
 
+            <Separator />
+
+            <p className="text-xs text-muted-foreground">
+              GitHub and X links will work only in the generated code, not in
+              the downloaded image.
+            </p>
+
             <div className="space-y-2">
               <Label htmlFor="github">GitHub</Label>
               <Input
@@ -478,18 +498,6 @@ export default function ProfileCard() {
                 value={profile.xUrl}
                 onChange={(e) =>
                   setProfile({ ...profile, xUrl: e.currentTarget.value })
-                }
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="badge">Badge Title</Label>
-              <Input
-                id="badge"
-                placeholder="Retro Hacker"
-                value={profile.badgeTitle}
-                onChange={(e) =>
-                  setProfile({ ...profile, badgeTitle: e.currentTarget.value })
                 }
               />
             </div>
