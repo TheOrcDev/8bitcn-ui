@@ -34,6 +34,7 @@ const themes = [
   { name: Theme.SoftPop, color: "#4B3F99" },
   { name: Theme.Pacman, color: "#ffcc00" },
   { name: Theme.VHS, color: "#8B5CF6" },
+  { name: Theme.Cassette, color: "#8B5A2B" },
 ];
 
 export function ThemeSelector() {
