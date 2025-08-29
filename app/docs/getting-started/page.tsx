@@ -1,8 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
-import { Download } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -12,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import CopyCommandButton from "../../docs/components/copy-command-button";
+import QuickStart from "./_components/quick-start";
 
 export const metadata: Metadata = {
   title: "Getting Started",
@@ -35,59 +33,7 @@ export default function GettingStartedPage() {
           </p>
         </div>
 
-        {/* Quick Start */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Download className="h-5 w-5" />
-              Quick Start
-            </CardTitle>
-            <CardDescription>
-              Get up and running with 8bitcn/ui in just a few steps
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-3">
-              <h3 className="font-semibold">
-                1. Add the 8bitcn registry to your components.json
-              </h3>
-              <div className="bg-muted p-4 rounded-lg">
-                <pre className="text-sm overflow-x-auto">
-                  {`{
-  "registries": {
-    "@8bitcn": "https://8bitcn.com/r/{name}.json"
-  }
-}`}
-                </pre>
-              </div>
-            </div>
-
-            <div className="space-y-3">
-              <h3 className="font-semibold">2. Start adding components!</h3>
-              <div className="bg-muted p-4 rounded-lg">
-                <CopyCommandButton
-                  command="pnpm dlx shadcn@latest add @8bitcn/button"
-                  copyCommand="pnpm dlx shadcn@latest add @8bitcn/button"
-                />
-              </div>
-            </div>
-
-            <div className="space-y-3">
-              <h3 className="font-semibold">3. Initialize MCP</h3>
-              <p className="text-sm text-muted-foreground">
-                This adds configuration to your IDE, enabling you to use the
-                components directly in your code with AI assistance. The AI will
-                have full context of the entire 8bitcn library.
-              </p>
-              <div className="bg-muted p-4 rounded-lg">
-                <CopyCommandButton
-                  command="pnpm dlx shadcn@latest mcp init"
-                  copyCommand="pnpm dlx shadcn@latest mcp init"
-                />
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <QuickStart />
 
         {/* Support */}
         <Card>
