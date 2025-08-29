@@ -10,8 +10,6 @@ import {
   SelectValue,
 } from "@/components/ui/8bit/select";
 
-import { useThemeConfig } from "./active-theme";
-
 const themes = [
   { name: Theme.Default, color: "#000" },
   { name: Theme.Sega, color: "#0055a4" },
@@ -23,10 +21,16 @@ const themes = [
   { name: Theme.SoftPop, color: "#4B3F99" },
   { name: Theme.Pacman, color: "#ffcc00" },
   { name: Theme.VHS, color: "#8B5CF6" },
+  { name: Theme.Cassette, color: "#8B5A2B" },
 ];
-export function SelectThemeDropdown() {
-  const { activeTheme, setActiveTheme } = useThemeConfig();
 
+export function SelectThemeDropdown({
+  activeTheme,
+  setActiveTheme,
+}: {
+  activeTheme: Theme;
+  setActiveTheme: (theme: Theme) => void;
+}) {
   return (
     <Select
       value={activeTheme}
