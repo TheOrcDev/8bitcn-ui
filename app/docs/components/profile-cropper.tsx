@@ -9,6 +9,7 @@ import {
   DialogContent,
   DialogTitle,
 } from "@/components/ui/8bit/dialog";
+import { Slider } from "@/components/ui/8bit/slider";
 import {
   Cropper,
   CropperCropArea,
@@ -77,6 +78,8 @@ const ProfileCropper = ({
 }: Props) => {
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
   const [croppedImgUrl, setCroppedImgUrl] = useState<string | null>(null);
+  const [zoom, setZoom] = useState(1);
+
   const handleCropChange = useCallback((pixels: Area | null) => {
     setCroppedAreaPixels(pixels);
   }, []);
@@ -131,11 +134,27 @@ const ProfileCropper = ({
               className="h-80"
               image={tempImage}
               onCropChange={handleCropChange}
+              zoom={zoom}
+              onZoomChange={setZoom}
             >
               <CropperDescription />
               <CropperImage />
               <CropperCropArea />
             </Cropper>
+            <div className="mx-auto flex w-full max-w-80 items-center gap-4 py-5">
+              <Slider
+                defaultValue={[1]}
+                value={[zoom]}
+                min={1}
+                max={3}
+                step={0.1}
+                onValueChange={(value) => setZoom(value[0])}
+                aria-label="Zoom slider"
+              />
+              <output className="block w-10 shrink-0 text-right text-sm font-medium tabular-nums">
+                {parseFloat(zoom.toFixed(1))}x
+              </output>
+            </div>
             <Button
               variant={"outline"}
               onClick={handleCrop}
