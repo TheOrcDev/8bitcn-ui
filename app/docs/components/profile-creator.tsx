@@ -19,11 +19,11 @@ import { Textarea } from "@/components/ui/8bit/textarea";
 import { toast } from "@/components/ui/8bit/toast";
 
 import { useThemeConfig } from "@/components/active-theme";
-import { ModeSwitcher } from "@/components/mode-switcher";
 import { SelectThemeDropdown } from "@/components/select-theme-dropdown";
 
 import CopyProfileCardDialog from "./copy-profile-card-dialog";
 import ProfileCard from "./profile-card";
+import ProfileCropper from "./profile-cropper";
 
 type Profile = {
   name: string;
@@ -40,6 +40,9 @@ type Profile = {
 };
 
 export default function ProfileCreator() {
+  const [openCropper, setOpenCropper] = useState(false);
+  const [tempImage, setTempImage] = useState<string | null>(null);
+
   const [profile, setProfile] = useState<Profile>({
     name: "",
     avatarUrl: "/avatar.jpg",
@@ -326,6 +329,17 @@ export default function ProfileCard() {
     }
   };
 
+  const toggleImageCropper = (state?: boolean) => {
+    setOpenCropper((prev) => state || !prev);
+  };
+
+  const setProfileImage = (imageUrl: string) => {
+    setProfile({
+      ...profile,
+      avatarUrl: imageUrl,
+    });
+  };
+
   const { activeTheme, setActiveTheme } = useThemeConfig();
 
   return (
@@ -445,7 +459,8 @@ export default function ProfileCard() {
                       reader.onload = () => {
                         const dataUrl = String(reader.result || "");
                         if (dataUrl) {
-                          setProfile({ ...profile, avatarUrl: dataUrl });
+                          setOpenCropper(true);
+                          setTempImage(dataUrl);
                         }
                       };
                       reader.readAsDataURL(file);
@@ -531,6 +546,13 @@ export default function ProfileCard() {
               description={profile.description}
             />
           </div>
+
+          <ProfileCropper
+            toggleImageCropper={toggleImageCropper}
+            setProfileImage={setProfileImage}
+            open={openCropper}
+            tempImage={tempImage}
+          />
 
           <div className="flex gap-5 items-center justify-center">
             <CopyProfileCardDialog code={generateProfileCardCode()} />
