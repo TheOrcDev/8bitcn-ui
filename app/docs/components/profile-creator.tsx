@@ -330,14 +330,12 @@ export default function ProfileCard() {
   };
 
   const toggleImageCropper = (state?: boolean) => {
-    setOpenCropper((prev) => state || !prev);
+    setOpenCropper((prev) => (state === undefined ? !prev : state));
   };
 
   const setProfileImage = (imageUrl: string) => {
-    setProfile({
-      ...profile,
-      avatarUrl: imageUrl,
-    });
+    setProfile((prev) => ({ ...prev, avatarUrl: imageUrl }));
+    setTempImage(null);
   };
 
   const { activeTheme, setActiveTheme } = useThemeConfig();

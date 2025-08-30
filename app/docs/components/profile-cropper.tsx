@@ -78,6 +78,7 @@ const ProfileCropper = ({
 }: Props) => {
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
   const [croppedImgUrl, setCroppedImgUrl] = useState<string | null>(null);
+  const [isCropping, setIsCropping] = useState(false);
   const [zoom, setZoom] = useState(1);
 
   const handleCropChange = useCallback((pixels: Area | null) => {
@@ -88,9 +89,15 @@ const ProfileCropper = ({
 
   const handleCrop = async () => {
     if (!croppedAreaPixels) return;
-
-    const croppedUrl = await getCroppedDataUrl(tempImage, croppedAreaPixels);
-    setCroppedImgUrl(croppedUrl);
+    setIsCropping(true);
+    try {
+      const croppedUrl = await getCroppedDataUrl(tempImage, croppedAreaPixels);
+      setCroppedImgUrl(croppedUrl);
+    } catch (error) {
+      console.error("Crop failed:", error);
+    } finally {
+      setIsCropping(false);
+    }
   };
 
   const handleCancel = () => {
@@ -158,9 +165,9 @@ const ProfileCropper = ({
             <Button
               variant={"outline"}
               onClick={handleCrop}
-              disabled={!croppedAreaPixels}
+              disabled={!croppedAreaPixels || isCropping}
             >
-              Crop
+              {isCropping ? "Cropping..." : "Crop"}
             </Button>
           </>
         )}
