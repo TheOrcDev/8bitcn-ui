@@ -196,6 +196,15 @@ const contributors = [
     githubUrl: "https://github.com/shadcn",
     contributions: 1,
   },
+  {
+    id: 20,
+    username: "Ubeyidah",
+    name: "Ubeyid Oumer",
+    description: "",
+    avatar: "/avatars/ubeyidah.jpg",
+    githubUrl: "https://github.com/Ubeyidah",
+    contributions: 1,
+  },
 ];
 
 export default function ContributorsPage() {
