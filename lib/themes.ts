@@ -422,7 +422,7 @@ const themes = [
   --muted: oklch(0.1 0.03 280);
   --muted-foreground: oklch(0.8 0.1 280);
   --accent: oklch(0.9 0.3 60);
-  --accent-foreground: oklch(0.05 0.02 60);
+  --accent-foreground: oklch(0.7 0.25 220);
   --destructive: oklch(0.8 0.35 20);
   --border: oklch(0.8 0.3 320);
   --input: oklch(0.1 0.03 280);
@@ -589,7 +589,7 @@ const themes = [
   --muted: oklch(0.3211 0 0);
   --muted-foreground: oklch(0.8452 0 0);
   --accent: oklch(0.879 0.1534 91.6054);
-  --accent-foreground: oklch(0 0 0);
+  --accent-foreground: oklch(0.7845 0.1325 181.912);
   --destructive: oklch(0.7106 0.1661 22.2162);
   --destructive-foreground: oklch(0 0 0);
   --border: oklch(0.4459 0 0);
