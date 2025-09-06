@@ -11,8 +11,8 @@ import InstallationCommands from "../installation-commands";
 import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
-  title: "8-bit Button",
-  description: "Displays an 8-bit button component.",
+  title: "8-bit Mana Bar",
+  description: "Displays an 8-bit mana bar component.",
   openGraph: {
     images: buttonMetaData,
   },

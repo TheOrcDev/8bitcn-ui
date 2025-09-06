@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 
+import { buttonMetaData } from "@/lib/metadata";
+
 import EnemyHealthDisplay from "@/components/ui/8bit/enemy-health-display";
 import { Separator } from "@/components/ui/separator";
 
@@ -7,15 +9,10 @@ import CopyCommandButton from "../../components/copy-command-button";
 import InstallationCommands from "../../components/installation-commands";
 import { OpenInV0Button } from "../../components/open-in-v0-button";
 
-const buttonMetaData = {
-  title: "Enemy Health Display - 8bitcn UI",
+export const metadata: Metadata = {
+  title: "Enemy Health Display",
   description:
     "A retro-styled enemy health display component with health bar, name, and level",
-};
-
-export const metadata: Metadata = {
-  title: buttonMetaData.title,
-  description: buttonMetaData.description,
   openGraph: {
     images: buttonMetaData,
   },
