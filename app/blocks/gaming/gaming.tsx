@@ -4,6 +4,7 @@ import DifficultySelect from "@/components/ui/8bit/blocks/difficulty-select";
 import GameOver from "@/components/ui/8bit/blocks/game-over";
 import MainMenu from "@/components/ui/8bit/blocks/main-menu";
 import PauseMenu from "@/components/ui/8bit/blocks/pause-menu";
+import EnemyHealthDisplay from "@/components/ui/8bit/enemy-health-display";
 import HealthBar from "@/components/ui/8bit/health-bar";
 import ManaBar from "@/components/ui/8bit/mana-bar";
 
@@ -206,6 +207,74 @@ export default function GamingBlocks() {
             variant="retro"
             value={70}
           />
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[300px]">
+        <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
+          <h2 className="text-sm text-muted-foreground sm:pl-3">
+            Enemy Health Display
+          </h2>
+
+          <div className="flex flex-col md:flex-row items-center gap-2">
+            <CopyCommandButton
+              command="pnpm dlx shadcn@latest add @8bitcn/enemy-health-display"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/enemy-health-display"
+            />
+            <OpenInV0Button
+              name="8bit-enemy-health-display"
+              className="w-fit"
+            />
+          </div>
+        </div>
+
+        <div className="py-14 flex flex-col gap-6 items-center">
+          <div className="w-full md:w-[600px] space-y-10">
+            <div className="space-y-4">
+              <p className="text-sm text-muted-foreground text-center">
+                Boss Enemy (High Health)
+              </p>
+              <EnemyHealthDisplay
+                enemyName="Fire Dragon"
+                level={25}
+                currentHealth={850}
+                maxHealth={1000}
+                healthBarVariant="retro"
+                healthBarColor="bg-red-500"
+                enemyNameColor="text-red-500"
+              />
+            </div>
+
+            <div className="space-y-4">
+              <p className="text-sm text-muted-foreground text-center">
+                Regular Enemy (Low Health)
+              </p>
+              <EnemyHealthDisplay
+                enemyName="Goblin Warrior"
+                level={5}
+                currentHealth={45}
+                maxHealth={100}
+                healthBarVariant="retro"
+                healthBarColor="bg-orange-500"
+                enemyNameColor="text-green-500"
+              />
+            </div>
+
+            <div className="space-y-4">
+              <p className="text-sm text-muted-foreground text-center">
+                Elite Enemy (Critical Health)
+              </p>
+              <EnemyHealthDisplay
+                enemyName="Dark Knight"
+                level={15}
+                currentHealth={12}
+                maxHealth={200}
+                healthBarVariant="retro"
+                healthBarColor="bg-purple-500"
+                enemyNameColor="text-purple-500"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
