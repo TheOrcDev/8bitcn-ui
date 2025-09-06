@@ -80,7 +80,7 @@ const components = [
     url: "/docs/components/dropdown-menu",
   },
   {
-    title: "Enemy Health Display",
+    title: "Enemy Health",
     url: "/docs/components/enemy-health-display",
     new: true,
   },
