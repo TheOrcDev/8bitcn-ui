@@ -48,42 +48,9 @@ export default function QuickStart() {
       <CardContent className="space-y-4">
         <div className="space-y-3">
           <h3 className="font-semibold">
-            1. Add the 8bitcn registry to your components.json
+            1. 8bitcn is a trusted registry for shadcn/ui. You can start adding
+            components right away!
           </h3>
-          <div className="relative bg-muted p-4 rounded-lg">
-            <pre className="text-sm overflow-x-auto">
-              {`{
-    "registries": {
-        "@8bitcn": "https://8bitcn.com/r/{name}.json"
-    }
-}`}
-            </pre>
-            <Button
-              variant="outline"
-              size="icon"
-              className="absolute top-2 right-2"
-              onClick={() =>
-                handleCopy(
-                  `
-"registries": {
-    "@8bitcn": "https://8bitcn.com/r/{name}.json"
-}
-    `,
-                  "components.json"
-                )
-              }
-            >
-              {copied && copiedId === "components.json" ? (
-                <Check className="size-3" />
-              ) : (
-                <Clipboard className="size-3" />
-              )}
-            </Button>
-          </div>
-        </div>
-
-        <div className="space-y-3">
-          <h3 className="font-semibold">2. Start adding components!</h3>
           <div className="bg-muted p-4 rounded-lg relative">
             <CopyCommandButton
               command="pnpm dlx shadcn@latest add @8bitcn/button"
@@ -111,7 +78,22 @@ export default function QuickStart() {
         </div>
 
         <div className="space-y-3">
-          <h3 className="font-semibold">3. Initialize MCP</h3>
+          <h3 className="font-semibold">
+            This will add the 8bitcn registry to your components.json
+          </h3>
+          <div className="relative bg-muted p-4 rounded-lg">
+            <pre className="text-sm overflow-x-auto">
+              {`{
+    "registries": {
+        "@8bitcn": "https://8bitcn.com/r/{name}.json"
+    }
+}`}
+            </pre>
+          </div>
+        </div>
+
+        <div className="space-y-3">
+          <h3 className="font-semibold">2. Initialize MCP (optional)</h3>
           <p className="text-sm text-muted-foreground">
             This adds configuration to your IDE, enabling you to use the
             components directly in your code with AI assistance. The AI will
