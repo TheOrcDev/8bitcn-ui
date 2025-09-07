@@ -23,7 +23,7 @@ export default function SidebarItem({ item }: SidebarItemProps) {
       <SidebarMenuButton asChild isActive={isActive}>
         <Link href={item.url} className="flex items-center justify-between">
           {item.title}
-          {item.new && <Badge>New</Badge>}
+          {item.new && <Badge className="text-[9px]">new</Badge>}
         </Link>
       </SidebarMenuButton>
     </SidebarMenuItem>
