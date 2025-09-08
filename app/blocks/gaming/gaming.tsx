@@ -9,6 +9,7 @@ import HealthBar from "@/components/ui/8bit/health-bar";
 import ManaBar from "@/components/ui/8bit/mana-bar";
 
 import AudioSettings from "../../../components/ui/8bit/blocks/audio-settings";
+import Leaderboard from "../../../components/ui/8bit/leaderboard";
 import CopyCommandButton from "../../docs/components/copy-command-button";
 import { OpenInV0Button } from "../../docs/components/open-in-v0-button";
 
@@ -274,6 +275,84 @@ export default function GamingBlocks() {
                 enemyNameColor="text-purple-500"
               />
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
+        <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
+          <h2 className="text-sm text-muted-foreground sm:pl-3">Leaderboard</h2>
+
+          <div className="flex flex-col md:flex-row items-center gap-2">
+            <CopyCommandButton
+              command="pnpm dlx shadcn@latest add @8bitcn/leaderboard"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/leaderboard"
+            />
+            <OpenInV0Button name="8bit-leaderboard" className="w-fit" />
+          </div>
+        </div>
+
+        <div className="py-14 flex flex-col gap-6">
+          <div className="flex flex-col gap-6 w-full md:w-[600px] mx-auto">
+            <Leaderboard
+              players={[
+                {
+                  id: "1",
+                  name: "OrcDev",
+                  score: 125000,
+                  avatar: "/avatars/orcdev.jpeg",
+                  avatarFallback: "OD",
+                },
+                {
+                  id: "2",
+                  name: "Shadow Mage",
+                  score: 98500,
+                  avatarFallback: "S",
+                },
+                {
+                  id: "3",
+                  name: "Dragon Slayer",
+                  score: 87500,
+                  avatarFallback: "D",
+                },
+                {
+                  id: "4",
+                  name: "Fire Wizard",
+                  score: 76500,
+                  avatarFallback: "F",
+                },
+                {
+                  id: "5",
+                  name: "Retro Lover",
+                  score: 68500,
+                  isCurrentPlayer: true,
+                  avatarFallback: "Y",
+                },
+                {
+                  id: "6",
+                  name: "Ice Queen",
+                  score: 59500,
+                  avatarFallback: "I",
+                },
+                {
+                  id: "7",
+                  name: "Storm Knight",
+                  score: 55000,
+                  avatarFallback: "S",
+                },
+                {
+                  id: "8",
+                  name: "Moon Elf",
+                  score: 50500,
+                  avatarFallback: "M",
+                },
+              ]}
+              maxPlayers={8}
+              showRank={true}
+              showAvatar={true}
+              currentPlayerId="5"
+              className="w-full"
+            />
           </div>
         </div>
       </div>

@@ -579,6 +579,35 @@
       ]
     },
     {
+      "name": "enemy-health-display",
+      "type": "registry:component",
+      "title": "8-bit Enemy Health Display",
+      "description": "A retro-styled enemy health display component with health bar, name, and level",
+      "registryDependencies": ["health-bar"],
+      "files": [
+        {
+          "path": "components/ui/8bit/enemy-health-display.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/enemy-health-display.tsx"
+        },
+        {
+          "path": "components/ui/8bit/health-bar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/health-bar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/progress.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/progress.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
       "name": "health-bar",
       "type": "registry:component",
       "title": "8-bit Health Bar",
@@ -1417,6 +1446,45 @@
           "path": "components/ui/8bit/card.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "leaderboard",
+      "type": "registry:component",
+      "title": "8-bit Leaderboard",
+      "description": "A retro-styled leaderboard component for displaying player rankings with avatars and scores.",
+      "registryDependencies": ["card", "avatar", "badge", "separator"],
+      "files": [
+        {
+          "path": "components/ui/8bit/leaderboard.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/leaderboard.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/avatar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/avatar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/badge.tsx"
+        },
+        {
+          "path": "components/ui/8bit/separator.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/separator.tsx"
         }
       ]
     }
