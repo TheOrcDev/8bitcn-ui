@@ -43,7 +43,7 @@ export default function PlayerProfilePage() {
                       mana: { current: 320, max: 400 },
                       experience: { current: 7500, max: 10000 },
                     }}
-                    playerClass="Pixel Warrior"
+                    playerClass="Web Dev Warrior"
                   />
                 </div>
               </div>
@@ -55,7 +55,7 @@ export default function PlayerProfilePage() {
                 </p>
                 <div className="flex justify-center">
                   <PlayerProfileCard
-                    playerName="Dragon Slayer"
+                    playerName="Sir Knight"
                     avatarFallback="DS"
                     level={42}
                     stats={{
@@ -63,22 +63,10 @@ export default function PlayerProfilePage() {
                       mana: { current: 500, max: 600 },
                       experience: { current: 15000, max: 20000 },
                     }}
-                    playerClass="Dragon Slayer"
+                    playerClass="Fighter"
                     customStats={[
                       {
-                        label: "Strength",
-                        value: 95,
-                        max: 100,
-                        color: "bg-red-500",
-                      },
-                      {
-                        label: "Defense",
-                        value: 88,
-                        max: 100,
-                        color: "bg-blue-500",
-                      },
-                      {
-                        label: "Speed",
+                        label: "Stamina",
                         value: 72,
                         max: 100,
                         color: "bg-green-500",

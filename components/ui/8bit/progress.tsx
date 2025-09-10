@@ -37,12 +37,17 @@ function Progress({
   progressBg,
   ...props
 }: BitProgressProps) {
+  // Extract height from className if present
+  const heightMatch = className?.match(/h-(\d+|\[.*?\])/);
+  const heightClass = heightMatch ? heightMatch[0] : "h-2";
+
   return (
     <div className={cn("relative w-full", className)}>
       <ProgressPrimitive.Root
         data-slot="progress"
         className={cn(
-          "bg-primary/20 relative h-2 w-full overflow-hidden",
+          "bg-primary/20 relative w-full overflow-hidden",
+          heightClass,
           font !== "normal" && "retro"
         )}
         {...props}
@@ -68,7 +73,7 @@ function Progress({
                   <div
                     key={i}
                     className={cn(
-                      "size-2 mx-[1px] w-full",
+                      "size-full mx-[1px]",
                       i < filledSquares ? progressBg : "bg-transparent"
                     )}
                   />
