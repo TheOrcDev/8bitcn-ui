@@ -11,6 +11,7 @@ import ManaBar from "@/components/ui/8bit/mana-bar";
 
 import AudioSettings from "../../../components/ui/8bit/blocks/audio-settings";
 import Leaderboard from "../../../components/ui/8bit/leaderboard";
+import QuestLog from "../../../components/ui/8bit/quest-log";
 import CopyCommandButton from "../../docs/components/copy-command-button";
 import { OpenInV0Button } from "../../docs/components/open-in-v0-button";
 
@@ -421,6 +422,85 @@ export default function GamingBlocks() {
               showRank={true}
               showAvatar={true}
               currentPlayerId="5"
+              className="w-full"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
+        <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
+          <h2 className="text-sm text-muted-foreground sm:pl-3">Quest Log</h2>
+
+          <div className="flex flex-col md:flex-row items-center gap-2">
+            <CopyCommandButton
+              command="pnpm dlx shadcn@latest add @8bitcn/quest-log"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/quest-log"
+            />
+            <OpenInV0Button name="8bit-quest-log" className="w-fit" />
+          </div>
+        </div>
+
+        <div className="py-14 flex flex-col gap-6">
+          <div className="flex flex-col gap-6 w-full md:w-[600px] mx-auto">
+            <QuestLog
+              quests={[
+                {
+                  id: "quest-1",
+                  title: "Defeat the Goblin King",
+                  description:
+                    "The Goblin King has been terrorizing the village for weeks. Travel to the Dark Forest and defeat him to restore peace. Be careful - he&apos;s known to have powerful dark magic and a horde of goblin minions. The reward is 500 gold pieces and a legendary sword.",
+                  status: "active",
+                  shortDescription:
+                    "Defeat the Goblin King in the Dark Forest to restore peace to the village.",
+                },
+                {
+                  id: "quest-2",
+                  title: "Collect Dragon Scales",
+                  description:
+                    "The local blacksmith needs dragon scales to forge the ultimate armor. Travel to the Dragon's Lair and collect 10 dragon scales. Be warned - dragons are extremely dangerous and this quest is not for the faint of heart.",
+                  status: "active",
+                  shortDescription:
+                    "Collect 10 dragon scales from the Dragon's Lair for the blacksmith.",
+                },
+                {
+                  id: "quest-3",
+                  title: "Deliver the Potion",
+                  description:
+                    "The village healer needs this healing potion delivered to the wounded knight in the castle. Time is of the essence - the knight's life depends on it.",
+                  status: "completed",
+                  shortDescription:
+                    "Deliver healing potion to the wounded knight in the castle.",
+                },
+                {
+                  id: "quest-4",
+                  title: "Find the Lost Artifact",
+                  description:
+                    "An ancient artifact has been stolen from the museum. Investigate the crime scene and follow the clues to find the thief.",
+                  status: "failed",
+                  shortDescription:
+                    "Investigate the stolen artifact and find the thief.",
+                },
+                {
+                  id: "quest-5",
+                  title: "Escort the Merchant",
+                  description:
+                    "A wealthy merchant needs protection while traveling through the dangerous mountain pass. Bandits are known to frequent this area.",
+                  status: "pending",
+                  shortDescription:
+                    "Protect the merchant while traveling through the mountain pass.",
+                },
+                {
+                  id: "quest-6",
+                  title: "Collect 4 sweet fruits",
+                  shortDescription:
+                    "Collect 4 sweet fruits from the forest to make a cake for the orc chieftain.",
+                  description:
+                    "Orc chieftain needs 4 sweet fruits to make a cake. Travel to the forest and collect 4 sweet fruits. Be warned - the forest is extremely dangerous and this quest is not for the faint of heart.",
+                  status: "active",
+                },
+              ]}
+              maxHeight="400px"
               className="w-full"
             />
           </div>
