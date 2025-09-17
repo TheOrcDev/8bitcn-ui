@@ -612,7 +612,7 @@
       "type": "registry:component",
       "title": "8-bit Health Bar",
       "description": "A simple 8-bit health bar component",
-      "registryDependencies": [],
+      "registryDependencies": ["progress"],
       "files": [
         {
           "path": "components/ui/8bit/health-bar.tsx",
