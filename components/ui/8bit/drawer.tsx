@@ -52,21 +52,23 @@ function DrawerDescription({
 function DrawerTrigger({
   className,
   children,
+  asChild,
   ...props
 }: React.ComponentProps<typeof DrawerPrimitive.Trigger>) {
   return (
-    <>
-      <ShadcnDrawerTrigger
-        className={cn(
+    <ShadcnDrawerTrigger
+      className={cn(
+        // Only apply default trigger styling when NOT using asChild
+        !asChild &&
           "border-foreground dark:border-ring hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none border-4 focus:border-foreground hover:border-foreground dark:focus:border-ring bg-transparent data-[state=open]:bg-transparent data-[state=open]:border-foreground dark:data-[state=open]:border-ring",
-          className,
-          "retro"
-        )}
-        {...props}
-      >
-        {children}
-      </ShadcnDrawerTrigger>
-    </>
+        className,
+        "retro"
+      )}
+      asChild={asChild}
+      {...props}
+    >
+      {children}
+    </ShadcnDrawerTrigger>
   );
 }
 
@@ -87,7 +89,12 @@ export type DrawerProps = React.ComponentProps<typeof DrawerPrimitive.Content> &
     side?: "right" | "bottom" | "left";
   };
 
-function DrawerContent({ className, children, side, ...props }: DrawerProps) {
+function DrawerContent({
+  className,
+  children,
+  side = "bottom",
+  ...props
+}: DrawerProps) {
   return (
     <ShadcnDrawerPortal data-slot="drawer-portal">
       <ShadcnDrawerOverlay />
