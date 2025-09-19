@@ -1056,7 +1056,7 @@
   }
 }
 
-.theme-rust {
+.theme-rusty-byte {
   --radius: 0.25rem;
   --primary: oklch(0.65 0.18 40);
   --primary-foreground: oklch(0.98 0.02 95);

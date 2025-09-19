@@ -10,7 +10,7 @@ export enum Theme {
   Pacman = "pacman",
   VHS = "vhs",
   Cassette = "cassette",
-  Rust = "rust",
+  RustyByte = "rusty-byte",
 }
 
 const themes = [
@@ -975,7 +975,7 @@ const themes = [
       `,
   },
   {
-    name: Theme.Rust,
+    name: Theme.RustyByte,
     color: `
     :root {
   --radius: 0.25rem;
