@@ -22,6 +22,7 @@ const themes = [
   { name: Theme.Pacman, color: "#ffcc00" },
   { name: Theme.VHS, color: "#8B5CF6" },
   { name: Theme.Cassette, color: "#8B5A2B" },
+  { name: Theme.Rust, color: "#d2691e" },
 ];
 
 export function SelectThemeDropdown({
