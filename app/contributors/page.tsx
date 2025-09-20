@@ -22,190 +22,36 @@ export const metadata: Metadata = {
   description: "Meet the amazing people who make this project possible.",
 };
 
-const contributors = [
+type Contributor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: "User";
+  user_view_type: "public";
+  site_admin: boolean;
+  contributions: number;
+};
+
+const data = await fetch(
+  "https://api.github.com/repos/TheOrcDev/8bitcn-ui/contributors",
   {
-    id: 1,
-    username: "TheOrcDev",
-    name: "OrcDev",
-    description:
-      "15 years in the code mines. I build, I break, I conquer - all in orcish style. 🛠️🔥",
-    avatar: "/avatars/orcdev.jpeg",
-    githubUrl: "https://github.com/TheOrcDev",
-    contributions: 331,
-  },
-  {
-    id: 2,
-    username: "Riley1101",
-    name: "Arkar Myat",
-    description:
-      "An inspiring dev who love problem solving, coding and design.",
-    avatar: "/avatars/arkar.png",
-    githubUrl: "https://github.com/Riley1101",
-    contributions: 10,
-  },
-  {
-    id: 3,
-    username: "wangshu24",
-    name: "Elias Tran",
-    description: "Mediocre engineer 😓 Improvement in progress ⚗️",
-    avatar: "/avatars/wangshu.jpeg",
-    githubUrl: "https://github.com/wangshu24",
-    contributions: 7,
-  },
-  {
-    id: 4,
-    username: "aleksandarLazic1998",
-    name: "Aleksandar Lazic",
-    description: "Hi, my name is Aleksandar I'm a Software developer",
-    avatar: "/avatars/aca.jpeg",
-    githubUrl: "https://github.com/aleksandarLazic1998",
-    contributions: 4,
-  },
-  {
-    id: 5,
-    username: "rampantvoid",
-    name: "Priyanshu",
-    description: "Robot on a computer.",
-    avatar: "/avatars/priyanshu.jpeg",
-    githubUrl: "https://github.com/rampantvoid",
-    contributions: 4,
-  },
-  {
-    id: 6,
-    username: "BIT-zhaoyang",
-    name: "YangZhao",
-    description: "",
-    avatar: "/avatars/yangzhao.jpeg",
-    githubUrl: "https://github.com/BIT-zhaoyang",
-    contributions: 4,
-  },
-  {
-    id: 7,
-    username: "luis-gustavoj",
-    name: "Luis Silva",
-    description: "",
-    avatar: "/avatars/luis.jpeg",
-    githubUrl: "https://github.com/luis-gustavoj",
-    contributions: 3,
-  },
-  {
-    id: 8,
-    username: "iinava",
-    name: "Navaneeth",
-    description: "",
-    avatar: "/avatars/navaneeth.jpeg",
-    githubUrl: "https://github.com/iinava",
-    contributions: 2,
-  },
-  {
-    id: 9,
-    username: "josef5",
-    name: "Jose Espejo",
-    description: "",
-    avatar: "/avatars/jose.jpeg",
-    githubUrl: "https://github.com/josef5",
-    contributions: 2,
-  },
-  {
-    id: 10,
-    username: "ee3lol",
-    name: "ee3",
-    description: "",
-    avatar: "/avatars/ee3.jpeg",
-    githubUrl: "https://github.com/ee3lol",
-    contributions: 1,
-  },
-  {
-    id: 11,
-    username: "devashish2024",
-    name: "Ashish Agarwal",
-    description: "",
-    avatar: "/avatars/ashish.gif",
-    githubUrl: "https://github.com/devashish2024",
-    contributions: 1,
-  },
-  {
-    id: 12,
-    username: "bdhamithkumara",
-    name: "Dhamith Kumara",
-    description: "",
-    avatar: "/avatars/dhamith.jpeg",
-    githubUrl: "https://github.com/bdhamithkumara",
-    contributions: 1,
-  },
-  {
-    id: 13,
-    username: "Somondas",
-    name: "Somon Das",
-    description: "",
-    avatar: "/avatars/somon.jpeg",
-    githubUrl: "https://github.com/Somondas",
-    contributions: 1,
-  },
-  {
-    id: 14,
-    username: "lou1sgudboiz",
-    name: "lou1sgudboiz",
-    description: "",
-    avatar: "/avatars/lou1sgudboiz.png",
-    githubUrl: "https://github.com/lou1sgudboiz",
-    contributions: 1,
-  },
-  {
-    id: 15,
-    username: "sagarmauryaa",
-    name: "Sagar Maurya",
-    description: "",
-    avatar: "/avatars/sagar.jpeg",
-    githubUrl: "https://github.com/sagarmauryaa",
-    contributions: 1,
-  },
-  {
-    id: 16,
-    username: "harryfrzz",
-    name: "Harikrishna C",
-    description: "",
-    avatar: "/avatars/harry.jpeg",
-    githubUrl: "https://github.com/harryfrzz",
-    contributions: 1,
-  },
-  {
-    id: 17,
-    username: "manumorante",
-    name: "Manu Morante",
-    description: "",
-    avatar: "/avatars/manu.png",
-    githubUrl: "https://github.com/manumorante",
-    contributions: 1,
-  },
-  {
-    id: 18,
-    username: "jln13x",
-    name: "Julian",
-    description: "",
-    avatar: "/avatars/julian.png",
-    githubUrl: "https://github.com/jln13x",
-    contributions: 1,
-  },
-  {
-    id: 19,
-    username: "shadcn",
-    name: "Shadcn",
-    description: "",
-    avatar: "/avatars/shadcn.jpg",
-    githubUrl: "https://github.com/shadcn",
-    contributions: 1,
-  },
-  {
-    id: 20,
-    username: "Ubeyidah",
-    name: "Ubeyid Oumer",
-    description: "",
-    avatar: "/avatars/ubeyidah.jpg",
-    githubUrl: "https://github.com/Ubeyidah",
-    contributions: 1,
-  },
-];
+    next: { revalidate: 86400 },
+  }
+);
+const contributors: Contributor[] = await data.json();
 
 export default function ContributorsPage() {
   return (
@@ -235,30 +81,32 @@ export default function ContributorsPage() {
             <CardHeader className="text-center gap-4 flex flex-col items-center">
               <Avatar className="size-30">
                 <AvatarImage
-                  src={contributor.avatar}
-                  alt={`${contributor.name}'s avatar`}
+                  src={contributor.avatar_url}
+                  alt={`${contributor.login}'s avatar`}
                 />
-                <AvatarFallback>{contributor.name.charAt(0)}</AvatarFallback>
+                <AvatarFallback>
+                  {contributor.login.charAt(0).toUpperCase()}
+                </AvatarFallback>
               </Avatar>
               <Badge className="text-xs">
                 {contributor.contributions} contribution
                 {contributor.contributions === 1 ? "" : "s"}
               </Badge>
 
-              <CardTitle className="text-lg">{contributor.name}</CardTitle>
+              <CardTitle className="text-lg">{contributor.login}</CardTitle>
               <CardDescription className="text-sm text-muted-foreground">
-                @{contributor.username}
+                @{contributor.login}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4 h-full">
               <p className="text-sm text-center text-muted-foreground leading-relaxed">
-                {contributor.description}
+                {contributor.contributions} contributions
               </p>
             </CardContent>
             <CardFooter className="flex justify-center">
               <Button className="w-full" asChild>
                 <Link
-                  href={contributor.githubUrl}
+                  href={contributor.html_url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 w-full justify-center"
