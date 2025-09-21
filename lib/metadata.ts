@@ -42,6 +42,7 @@ export const tabsMetaData = "/assets/8bitcn-tabs-light.png";
 export const textareaMetaData = "/assets/8bitcn-textarea-light.png";
 export const toggleMetaData = "/assets/8bitcn-toggle-light.png";
 export const tooltipMetaData = "/assets/8bitcn-tooltip-light.png";
+export const multiTooltipMetaData = "/assets/8bitcn-multi-tooltip-light.png";
 export const resizableMetaData = "/assets/8bitcn-resizable-light.png";
 export const paginationMetaData = "/assets/8bitcn-pagination-light.png";
 export const scrollAreaMetaData = "/assets/8bitcn-scrollarea-light.png";
