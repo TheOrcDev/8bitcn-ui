@@ -49,13 +49,13 @@ function TooltipContent({
         {children}
         <div
           className={cn(
-            "absolute top-1.5 bottom-1.5 -left-1.5 h-1/2 w-1.5 bg-primary",
+            "absolute top-1.5 bottom-1.5 -left-1.5 w-1.5 bg-primary",
             color
           )}
         />
         <div
           className={cn(
-            "absolute top-1.5 bottom-1.5 -right-1.5 h-1/2 w-1.5 bg-primary ",
+            "absolute top-1.5 bottom-1.5 -right-1.5 w-1.5 bg-primary ",
             color
           )}
         />
