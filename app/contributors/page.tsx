@@ -55,17 +55,21 @@ const contributors: Contributor[] = await data.json();
 
 export default function ContributorsPage() {
   return (
-    <div className={`container mx-auto px-4 py-8 ${"retro"}`}>
+    <div className={`container mx-auto px-4 py-8 overflow-x-hidden ${"retro"}`}>
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4">Our Contributors</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+          Our Contributors
+        </h1>
         <p className="text-muted-foreground max-w-4xl mx-auto">
           Meet the amazing people who make this project possible. Their
           contributions, big and small, help build something incredible
           together.
         </p>
-        <div className="flex justify-center items-center gap-4 mt-6">
-          <Badge className="text-sm">{contributors.length} Contributors</Badge>
-          <Badge className="text-sm">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 mt-6">
+          <Badge className="text-xs sm:text-sm">
+            {contributors.length} Contributors
+          </Badge>
+          <Badge className="text-xs sm:text-sm">
             {contributors.reduce(
               (sum, contributor) => sum + contributor.contributions,
               0
