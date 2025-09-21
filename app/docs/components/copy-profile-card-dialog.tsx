@@ -18,7 +18,7 @@ export default function CopyProfileCardDialog({ code }: ProfileCardProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Copy Code</Button>
+        <Button className="w-full md:w-auto">Copy Code</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>

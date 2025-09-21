@@ -350,7 +350,7 @@ export default function ProfileCard() {
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <Card>
           <CardHeader className="flex items-center justify-between">
             <CardTitle>Details</CardTitle>
@@ -517,7 +517,7 @@ export default function ProfileCard() {
           </CardContent>
         </Card>
 
-        <div className="space-y-4 max-w-md mx-auto">
+        <div className="space-y-4 w-full max-w-md mx-auto">
           <h2 className="text-center text-lg font-bold">Preview</h2>
           <p className="text-xs text-muted-foreground">
             Tip: change to dark / light mode to see the card in different
@@ -552,9 +552,11 @@ export default function ProfileCard() {
             tempImage={tempImage}
           />
 
-          <div className="flex gap-5 items-center justify-center">
+          <div className="flex md:flex-row flex-col gap-5 items-center justify-center">
             <CopyProfileCardDialog code={generateProfileCardCode()} />
-            <Button onClick={getImage}>Download PNG</Button>
+            <Button className="w-full md:w-auto" onClick={getImage}>
+              Download PNG
+            </Button>
           </div>
         </div>
       </div>
