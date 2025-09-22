@@ -484,6 +484,25 @@
       ]
     },
     {
+      "name": "multi-tooltip",
+      "type": "registry:component",
+      "title": "8-bit MultiTooltip",
+      "description": "Displays multiple 8-bit tooltips around a single trigger element.",
+      "registryDependencies": ["multi-tooltip"],
+      "files": [
+        {
+          "path": "components/ui/8bit/multi-tooltip.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/multi-tooltip.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
       "name": "avatar",
       "type": "registry:component",
       "title": "8-bit Avatar",

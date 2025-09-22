@@ -143,6 +143,11 @@ const components = [
     url: "/docs/components/menubar",
   },
   {
+    title: "Multi Tooltip",
+    url: "/docs/components/multi-tooltip",
+    new: true,
+  },
+  {
     title: "Pagination",
     url: "/docs/components/pagination",
   },
