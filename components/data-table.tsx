@@ -147,7 +147,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   {
     id: "select",
     header: ({ table }) => (
-      <div className="flex items-center justify-center">
+      <div className="flex items-center">
         <Checkbox
           checked={
             table.getIsAllPageRowsSelected() ||

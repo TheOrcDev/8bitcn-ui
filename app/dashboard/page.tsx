@@ -1,5 +1,12 @@
 import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
 
+import ChartBarMultiple from "@/components/ui/8bit/blocks/chart-bar";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/8bit/card";
 import {
   Sidebar,
   SidebarContent,
@@ -13,7 +20,6 @@ import {
   SidebarProvider,
 } from "@/components/ui/sidebar";
 
-import { ChartAreaInteractive } from "@/components/chart-area-interactive";
 import { DashboardHeader } from "@/components/dashboard-header";
 import { DataTable } from "@/components/data-table";
 import { SectionCards } from "@/components/section-cards";
@@ -59,10 +65,7 @@ export default function Page() {
       }
     >
       <div className="flex border w-full h-screen">
-        <Sidebar
-          collapsible="none"
-          className={`${"retro"} border-r-4 border-foreground dark:border-ring`}
-        >
+        <Sidebar className="retro border-r-4 border-foreground dark:border-ring">
           <SidebarContent>
             <SidebarGroup>
               <SidebarGroupLabel>Application</SidebarGroupLabel>
@@ -90,8 +93,16 @@ export default function Page() {
               <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
                 <SectionCards />
                 <div className="px-4 lg:px-6">
-                  <ChartAreaInteractive />
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Visitors for the last 6 months</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <ChartBarMultiple />
+                    </CardContent>
+                  </Card>
                 </div>
+
                 <DataTable data={data} />
               </div>
             </div>
