@@ -4,6 +4,16 @@
   "type": "registry:component",
   "title": "8-bit Dashboard 01",
   "description": "A complete 8-bit styled dashboard with sidebar navigation, stats cards, charts, and data table with drag-and-drop functionality.",
+  "dependencies": [
+    "@dnd-kit/core",
+    "@dnd-kit/sortable",
+    "@dnd-kit/modifiers",
+    "@dnd-kit/utilities",
+    "@tabler/icons-react",
+    "@tanstack/react-table",
+    "sonner",
+    "zod"
+  ],
   "registryDependencies": [
     "sidebar",
     "button",
@@ -19,15 +29,7 @@
     "select",
     "separator",
     "table",
-    "tabs",
-    "@dnd-kit/core",
-    "@dnd-kit/sortable",
-    "@dnd-kit/modifiers",
-    "@dnd-kit/utilities",
-    "@tabler/icons-react",
-    "@tanstack/react-table",
-    "sonner",
-    "zod"
+    "tabs"
   ],
   "files": [
     {

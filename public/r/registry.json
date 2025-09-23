@@ -1596,7 +1596,9 @@
         "select",
         "separator",
         "table",
-        "tabs",
+        "tabs"
+      ],
+      "dependencies": [
         "@dnd-kit/core",
         "@dnd-kit/sortable",
         "@dnd-kit/modifiers",
