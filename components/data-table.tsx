@@ -413,10 +413,16 @@ export function DataTable({
 
         <TabsList className="hidden **:data-[slot=badge]:size-5 **:data-[slot=badge]:px-1 @4xl/main:flex">
           <TabsTrigger value="outline">Outline</TabsTrigger>
-          <TabsTrigger value="past-performance">
+          <TabsTrigger
+            value="past-performance"
+            className="flex items-center gap-3"
+          >
             Past Performance <Badge>3</Badge>
           </TabsTrigger>
-          <TabsTrigger value="key-personnel">
+          <TabsTrigger
+            value="key-personnel"
+            className="flex items-center gap-3"
+          >
             Key Personnel <Badge>2</Badge>
           </TabsTrigger>
         </TabsList>
