@@ -1615,6 +1615,11 @@
           "target": "app/dashboard/page.tsx"
         },
         {
+          "path": "app/dashboard/data.json",
+          "type": "registry:component",
+          "target": "app/dashboard/data.json"
+        },
+        {
           "path": "components/dashboard-header.tsx",
           "type": "registry:component",
           "target": "components/dashboard-header.tsx"
