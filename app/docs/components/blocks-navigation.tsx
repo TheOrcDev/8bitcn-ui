@@ -10,6 +10,11 @@ interface BlocksNavigationProps {
 
 const blocks = [
   {
+    id: "featured",
+    title: "Featured",
+    href: "/blocks/featured",
+  },
+  {
     id: "authentication",
     title: "Authentication",
     href: "/blocks/authentication",
@@ -33,7 +38,7 @@ const blocks = [
 
 export default function BlocksNavigation({ active }: BlocksNavigationProps) {
   return (
-    <div className="flex flex-col md:flex-row gap-5">
+    <div className="flex flex-wrap gap-5">
       {blocks.map((block) => (
         <Link key={block.id} href={block.href}>
           <Button variant={active === block.id ? "default" : "outline"}>
