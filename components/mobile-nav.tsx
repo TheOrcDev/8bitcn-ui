@@ -4,9 +4,9 @@ import React, { useState } from "react";
 
 import Link from "next/link";
 
-import { Menu } from "lucide-react";
-
 import { navItems } from "@/config/nav-items";
+
+import { MenuIcon } from "@/components/ui/8bit/icons";
 
 import { Button } from "./ui/button";
 import {
@@ -24,7 +24,7 @@ export default function MobileNav() {
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
         <Button variant="ghost" size="icon">
-          <Menu />
+          ☰
         </Button>
       </DrawerTrigger>
       <DrawerContent className="h-3/4">
