@@ -216,7 +216,7 @@ export const navItems = {
     },
     {
       label: "Blocks",
-      href: "/blocks/authentication",
+      href: "/blocks/featured",
     },
     {
       label: "Themes",
