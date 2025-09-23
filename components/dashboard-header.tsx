@@ -10,7 +10,7 @@ export function DashboardHeader() {
 
   return (
     <header className="flex sticky top-0 z-50 h-14 shrink-0 items-center gap-2 border-b-4 border-foreground dark:border-ring bg-background/95">
-      <div className="flex w-full items-center h-full gap-4">
+      <div className="flex w-full items-center h-full gap-4 pr-4 md:pr-6">
         <Button variant="ghost" onClick={toggleSidebar}>
           {open ? (
             <svg
