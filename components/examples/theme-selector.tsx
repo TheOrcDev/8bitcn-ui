@@ -81,6 +81,9 @@ export default function ThemeSelectorExample() {
         <CodeSnippet>
           {`import { ActiveThemeProvider } from "@/components/active-theme"
 
+// You can also overwrite your globals.css file
+import "./retro-globals.css";
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     ...
@@ -95,9 +98,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <h4 className="text-md font-medium">Usage Examples</h4>
         <div className="space-y-4">
           <CodeSnippet>
-            {`import { ThemeSelector } from "@/components/theme-selector"
+            {`import { SelectThemeDropdown } from "@/components/select-theme-dropdown";
           
-<ThemeSelector />`}
+  export default function Component() {
+  const { activeTheme, setActiveTheme } = useThemeConfig();
+
+  return (
+    <SelectThemeDropdown
+      activeTheme={activeTheme}
+      setActiveTheme={setActiveTheme}
+    />
+  )
+}`}
           </CodeSnippet>
 
           <h4 className="text-md font-medium">Custom With Button</h4>
