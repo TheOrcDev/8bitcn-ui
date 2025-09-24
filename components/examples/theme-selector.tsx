@@ -3,14 +3,6 @@
 import { Theme } from "@/lib/themes";
 
 import { Badge } from "@/components/ui/8bit/badge";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 
 import { useThemeConfig } from "@/components/active-theme";
 import { SelectThemeDropdown } from "@/components/select-theme-dropdown";
