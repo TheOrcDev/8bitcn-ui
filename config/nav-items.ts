@@ -188,6 +188,11 @@ const components = [
     new: true,
   },
   {
+    title: "Retro Switcher",
+    url: "/docs/components/retro-mode-switcher",
+    new: true,
+  },
+  {
     title: "Toast",
     url: "/docs/components/toast",
   },
