@@ -10,6 +10,7 @@ import { SelectThemeDropdown } from "@/components/select-theme-dropdown";
 import CodeSnippet from "@/app/docs/components/code-snippet";
 import InstallationCommands from "@/app/docs/components/installation-commands";
 
+import { Button } from "../ui/8bit/button";
 import { Separator } from "../ui/8bit/separator";
 
 export default function ThemeSelectorExample() {
@@ -51,21 +52,11 @@ export default function ThemeSelectorExample() {
         <p className="text-sm text-muted-foreground">
           Click on any theme below to switch to it instantly
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+        <div className="flex flex-wrap gap-5">
           {Object.values(Theme).map((theme) => (
-            <div
-              key={theme}
-              className={`p-3 border rounded-lg text-center cursor-pointer transition-colors ${
-                activeTheme === theme
-                  ? "border-primary bg-primary/10"
-                  : "hover:bg-muted"
-              }`}
-              onClick={() => setActiveTheme(theme)}
-            >
-              <div className="text-xs font-medium capitalize mb-1">
-                {theme.replace("-", " ")}
-              </div>
-            </div>
+            <Button key={theme} onClick={() => setActiveTheme(theme)}>
+              {theme.replace("-", " ")}
+            </Button>
           ))}
         </div>
       </div>

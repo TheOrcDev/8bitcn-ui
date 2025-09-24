@@ -34,7 +34,7 @@ export default function CodeSnippet({
   };
 
   return (
-    <ScrollArea className={cn("relative overflow-x-auto h-max")}>
+    <ScrollArea className={cn("relative overflow-x-auto h-max max-w-full")}>
       <ShikiHighlighter
         addDefaultStyles={false}
         language="jsx"
@@ -44,7 +44,7 @@ export default function CodeSnippet({
           dark: "laserwave",
         }}
         as="div"
-        className="w-full text-sm [&>pre]:p-4"
+        className="w-full text-sm [&>pre]:p-4 [&>pre]:overflow-x-auto [&>pre]:whitespace-pre-wrap [&>pre]:break-words"
       >
         {children?.toString().trim() || ""}
       </ShikiHighlighter>
