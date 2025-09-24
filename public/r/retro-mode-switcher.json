@@ -24,6 +24,12 @@
       "target": "components/ui/8bit/button.tsx"
     },
     {
+      "path": "components/theme-provider.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { ThemeProvider as NextThemesProvider } from \"next-themes\";\n\nexport function ThemeProvider({\n  children,\n  ...props\n}: React.ComponentProps<typeof NextThemesProvider>) {\n  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;\n}\n",
+      "type": "registry:component",
+      "target": "components/theme-provider.tsx"
+    },
+    {
       "path": "components/ui/8bit/styles/retro.css",
       "content": "@import url(\"https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap\");\n\n.retro {\n  font-family:\n    \"Press Start 2P\",\n    system-ui,\n    -apple-system,\n    sans-serif;\n  line-height: 1.5;\n  letter-spacing: 0.5px;\n}\n",
       "type": "registry:component",

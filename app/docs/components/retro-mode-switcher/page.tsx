@@ -54,6 +54,36 @@ export default function RetroModeSwitcherPage() {
 
       <InstallationCommands packageName="retro-mode-switcher" />
 
+      <h3 className="text-lg font-bold">Wrap your root layout</h3>
+      <p className="text-muted-foreground text-sm">
+        Add the ThemeProvider to your root layout and add the
+        suppressHydrationWarning prop to the html tag.
+      </p>
+
+      <Separator />
+
+      <CodeSnippet>{`import { ThemeProvider } from "@/components/theme-provider"
+ 
+export default function RootLayout({ children }: RootLayoutProps) {
+  return (
+    <>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </>
+  )
+}`}</CodeSnippet>
+
       <h3 className="text-lg font-bold mt-10">Usage</h3>
 
       <Separator />
