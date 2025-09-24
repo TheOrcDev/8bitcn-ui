@@ -1720,6 +1720,67 @@
           "target": "components/ui/8bit/styles/retro.css"
         }
       ]
+    },
+    {
+      "name": "theme-selector",
+      "type": "registry:component",
+      "title": "8-bit Theme Selector",
+      "description": "A complete theme selector component with dropdown selection and code copy functionality. Includes theme context provider for managing active themes across the application.",
+      "registryDependencies": [
+        "button",
+        "dialog",
+        "select",
+        "scroll-area",
+        "toast"
+      ],
+      "dependencies": ["react-shiki", "lucide-react"],
+      "files": [
+        {
+          "path": "components/theme-selector.tsx",
+          "type": "registry:component",
+          "target": "components/theme-selector.tsx"
+        },
+        {
+          "path": "components/select-theme-dropdown.tsx",
+          "type": "registry:component",
+          "target": "components/select-theme-dropdown.tsx"
+        },
+        {
+          "path": "components/active-theme.tsx",
+          "type": "registry:component",
+          "target": "components/active-theme.tsx"
+        },
+        {
+          "path": "app/docs/components/code-snippet.tsx",
+          "type": "registry:component",
+          "target": "app/docs/components/code-snippet.tsx"
+        },
+        {
+          "path": "lib/themes.ts",
+          "type": "registry:component",
+          "target": "lib/themes.ts"
+        },
+        {
+          "path": "components/ui/8bit/select.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/select.tsx"
+        },
+        {
+          "path": "components/ui/8bit/dialog.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/dialog.tsx"
+        },
+        {
+          "path": "components/ui/8bit/toast.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/toast.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
     }
   ]
 }

@@ -183,6 +183,11 @@ const components = [
     url: "/docs/components/textarea",
   },
   {
+    title: "Theme Selector",
+    url: "/docs/components/theme-selector",
+    new: true,
+  },
+  {
     title: "Toast",
     url: "/docs/components/toast",
   },
