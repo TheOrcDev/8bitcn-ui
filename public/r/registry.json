@@ -1950,6 +1950,40 @@
           "target": "components/ui/8bit/styles/retro.css"
         }
       ]
+    },
+    {
+      "name": "email-only-login-form",
+      "type": "registry:component",
+      "title": "8-bit Email Only Login Form",
+      "description": "A simple 8-bit email only login form component",
+      "registryDependencies": ["button", "input", "label"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/email-only-login-form.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/email-only-login-form.tsx"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/input.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/input.tsx"
+        },
+        {
+          "path": "components/ui/8bit/label.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/label.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
     }
   ]
 }

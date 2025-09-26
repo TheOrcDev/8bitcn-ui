@@ -1,3 +1,4 @@
+import { EmailOnlyLoginForm } from "@/components/ui/8bit/blocks/email-only-login-form";
 import { LoginForm } from "@/components/ui/8bit/blocks/login-form";
 import { LoginForm as LoginForm2 } from "@/components/ui/8bit/blocks/login-form-2";
 import { LoginForm as LoginFormWithImage } from "@/components/ui/8bit/blocks/login-form-with-image";
@@ -89,6 +90,28 @@ export default function AuthenticationBlocks() {
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative w-full max-w-sm md:max-w-4xl mx-auto">
           <LoginFormWithImage />
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
+        <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
+          <h2 className="text-sm text-muted-foreground sm:pl-3">
+            A simple email-only login form
+          </h2>
+
+          <div className="flex flex-col md:flex-row items-center gap-2">
+            <CopyCommandButton
+              command="pnpm dlx shadcn@latest add @8bitcn/email-only-login-form"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/email-only-login-form"
+            />
+            <OpenInV0Button
+              name="8bit-email-only-login-form"
+              className="w-fit"
+            />
+          </div>
+        </div>
+        <div className="flex items-center justify-center min-h-[400px] relative">
+          <EmailOnlyLoginForm />
         </div>
       </div>
 
