@@ -54,12 +54,18 @@ export default function ThemeSelectorExample() {
         </p>
         <div className="flex flex-wrap gap-5">
           {Object.values(Theme).map((theme) => (
-            <Button key={theme} onClick={() => setActiveTheme(theme)}>
+            <Button
+              key={theme}
+              onClick={() => setActiveTheme(theme)}
+              variant={activeTheme === theme ? "outline" : "default"}
+            >
               {theme.replace("-", " ")}
             </Button>
           ))}
         </div>
       </div>
+
+      <h3 className="text-lg font-bold">Installation</h3>
 
       <Separator />
 

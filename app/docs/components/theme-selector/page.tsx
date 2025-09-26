@@ -45,20 +45,6 @@ export default function ThemeSelectorPage() {
         </div>
       </div>
 
-      <h3 className="text-lg font-bold">Installation</h3>
-
-      <Separator />
-
-      <InstallationCommands packageName="theme-selector" />
-
-      <h3 className="text-lg font-bold mt-10">Usage</h3>
-
-      <Separator />
-
-      <CodeSnippet>{`import { ThemeSelector } from "@/components/theme-selector"`}</CodeSnippet>
-
-      <CodeSnippet>{`<ThemeSelector />`}</CodeSnippet>
-
       <h3 className="text-lg font-bold mt-10">Examples</h3>
 
       <Separator />
