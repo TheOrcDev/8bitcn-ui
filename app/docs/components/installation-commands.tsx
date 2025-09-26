@@ -31,10 +31,10 @@ export default function InstallationCommands({
   };
 
   return (
-    <div className="overflow-hidden border border-zinc-800">
-      <div className="bg-[#27212e] text-white">
+    <div className="overflow-hidden border">
+      <div className="bg-background">
         <Tabs defaultValue="pnpm">
-          <TabsList className="bg-[#27212e] border-b border-zinc-800 rounded-none h-12 px-2 w-full justify-between">
+          <TabsList className="bg-background border-b rounded-none h-12 px-2 w-full justify-between">
             <div>
               <TabsTrigger
                 value="pnpm"
@@ -43,7 +43,7 @@ export default function InstallationCommands({
                     `pnpm dlx shadcn@latest add @8bitcn/${packageName}`
                   )
                 }
-                className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-x-2 data-[state=active]:border-b-white data-[state=active]:shadow-none rounded-none px-2 text-white data-[state=inactive]:text-zinc-500"
+                className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-x-2 data-[state=active]:border-b-primary data-[state=active]:shadow-none rounded-none px-2"
               >
                 pnpm
               </TabsTrigger>
@@ -52,7 +52,7 @@ export default function InstallationCommands({
                 onClick={() =>
                   setCommand(`npx shadcn@latest add @8bitcn/${packageName}`)
                 }
-                className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-b-white data-[state=active]:shadow-none rounded-none px-2 text-white data-[state=inactive]:text-zinc-500"
+                className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-b-primary data-[state=active]:shadow-none rounded-none px-2"
               >
                 npm
               </TabsTrigger>
@@ -63,7 +63,7 @@ export default function InstallationCommands({
                     `yarn dlx shadcn@latest add @8bitcn/${packageName}`
                   )
                 }
-                className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-b-white data-[state=active]:shadow-none rounded-none px-2 text-white data-[state=inactive]:text-zinc-500"
+                className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-b-primary data-[state=active]:shadow-none rounded-none px-2"
               >
                 yarn
               </TabsTrigger>
@@ -74,7 +74,7 @@ export default function InstallationCommands({
                     `bunx --bun shadcn@latest add @8bitcn/${packageName}`
                   )
                 }
-                className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-b-white data-[state=active]:shadow-none rounded-none px-2 text-white data-[state=inactive]:text-zinc-500"
+                className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-b-primary data-[state=active]:shadow-none rounded-none px-2"
               >
                 bun
               </TabsTrigger>
@@ -83,7 +83,7 @@ export default function InstallationCommands({
             <Button
               variant="ghost"
               size="icon"
-              className="text-white hover:bg-zinc-800 rounded-md hover:text-white"
+              className="hover:bg-primary/20 rounded-md"
               onClick={handleCopy}
             >
               {copied ? (
