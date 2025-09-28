@@ -213,10 +213,6 @@ const components = [
 export const navItems = {
   header: [
     {
-      label: "Getting Started",
-      href: "/docs/getting-started",
-    },
-    {
       label: "Docs",
       href: "/docs",
     },

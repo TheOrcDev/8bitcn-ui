@@ -1,75 +1,64 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
+import { Button } from "@/components/ui/button";
 import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-} from "@/components/ui/8bit/alert";
-import { Separator } from "@/components/ui/separator";
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
-import CodeSnippet from "./components/code-snippet";
+import QuickStart from "./_components/quick-start";
 
 export const metadata: Metadata = {
-  title: "Installation",
-  description: "How to install dependencies and structure your app.",
+  title: "8bitcn/ui Docs",
+  description:
+    "Welcome to 8bitcn/ui! This guide will help you set up and start using our retro-styled components in your project.",
 };
 
-export default function Page() {
+export default function GettingStartedPage() {
   return (
-    <div className="flex flex-col gap-10 max-w-[1400px] mx-auto px-4 py-8">
-      <div className="flex flex-col gap-2">
-        <h1 className="text-3xl font-bold">Installation</h1>
+    <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <div className="space-y-8">
+        {/* Header */}
+        <div className="text-center space-y-4">
+          <h1 className="md:text-4xl text-2xl font-bold tracking-tight retro">
+            Getting Started
+          </h1>
+          <p className="md:text-xl text-sm text-muted-foreground max-w-2xl mx-auto">
+            Welcome to 8bitcn/ui! This guide will help you set up and start
+            using our retro-styled components in your project.
+          </p>
+        </div>
 
-        <h3 className="text-muted-foreground">
-          How to install dependencies and structure your app.
-        </h3>
-      </div>
+        <QuickStart />
 
-      <div className="flex flex-col gap-4">
-        <h2 className="text-2xl font-bold">TypeScript</h2>
-
-        <Separator />
-
-        <p>
-          This project and the components are written in TypeScript. We
-          recommend using TypeScript for your project as well.
-        </p>
-      </div>
-
-      <Alert>
-        <AlertTitle>Note:</AlertTitle>
-        <AlertDescription>
-          The following guide is for Tailwind v4. If you are using Tailwind v3,
-          use shadcn@2.3.0.
-        </AlertDescription>
-      </Alert>
-
-      <div className="flex flex-col gap-4">
-        <h3 className="text-lg font-bold">1. Create Project</h3>
-        <p>
-          Run the init command to create a new Next.js project or to setup an
-          existing one:
-        </p>
-        <CodeSnippet>{`pnpm dlx shadcn@canary init`}</CodeSnippet>
-      </div>
-
-      <div className="flex flex-col gap-4">
-        <h3 className="text-lg font-bold">2. Add Components</h3>
-        <p>You can now start adding components to your project.</p>
-        <CodeSnippet>{`pnpm dlx shadcn@latest add @8bitcn/button`}</CodeSnippet>
-        <p>
-          The command above will add the Button component to your project. You
-          can then import it like this:
-        </p>
-        <CodeSnippet>{`import { Button } from "@/components/ui/8bit/button"
- 
-export default function Home() {
-  return (
-    <div>
-      <Button>Click me</Button>
-    </div>
-  )
-}`}</CodeSnippet>
+        {/* Support */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="retro">Need Help?</CardTitle>
+            <CardDescription>
+              We&apos;re here to help you get started with 8bitcn/ui
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button asChild variant="outline" className="flex-1">
+                <Link
+                  href="https://github.com/TheOrcDev/8bitcn-ui"
+                  target="_blank"
+                >
+                  GitHub Repository
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="flex-1">
+                <Link href="/contributors">Contributors</Link>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
