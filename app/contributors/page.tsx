@@ -104,7 +104,8 @@ export default function ContributorsPage() {
             </CardHeader>
             <CardContent className="space-y-4 h-full">
               <p className="text-sm text-center text-muted-foreground leading-relaxed">
-                {contributor.contributions} contributions
+                {contributor.contributions} contribution
+                {contributor.contributions === 1 ? "" : "s"}
               </p>
             </CardContent>
             <CardFooter className="flex justify-center">
