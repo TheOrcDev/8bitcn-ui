@@ -61,8 +61,8 @@ export default function ContributorsPage() {
           Our Contributors
         </h1>
         <p className="text-muted-foreground max-w-4xl mx-auto">
-          Meet the amazing people who make this project possible. Their
-          contributions, big and small, help build something incredible
+          Meet the incredible team that makes this project possible. Their
+          contributions, both big and small, shape what we&apos;re building
           together.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 mt-6">
