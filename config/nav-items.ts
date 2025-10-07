@@ -152,6 +152,11 @@ const components = [
     url: "/docs/components/progress",
   },
   {
+    title: "Spinner",
+    url: "/docs/components/spinner",
+    new: true,
+  },
+  {
     title: "Separator",
     url: "/docs/components/separator",
   },

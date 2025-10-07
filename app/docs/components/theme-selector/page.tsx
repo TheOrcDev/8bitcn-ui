@@ -5,9 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import ThemeSelectorExample from "@/components/examples/theme-selector";
 import ThemeSelectorShowcase from "@/components/examples/theme-selector-showcase";
 
-import CodeSnippet from "../code-snippet";
 import CopyCommandButton from "../copy-command-button";
-import InstallationCommands from "../installation-commands";
 
 export const metadata: Metadata = {
   title: "8-bit Theme Selector",

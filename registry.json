@@ -1761,6 +1761,20 @@
       ]
     },
     {
+      "name": "spinner",
+      "type": "registry:component",
+      "title": "8-bit Spinner",
+      "description": "Displays an 8-bit spinner component.",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/spinner.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/spinner.tsx"
+        }
+      ]
+    },
+    {
       "name": "retro-mode-switcher",
       "type": "registry:component",
       "title": "8-bit Retro Mode Switcher",
