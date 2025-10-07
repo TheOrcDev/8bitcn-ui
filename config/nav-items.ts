@@ -100,6 +100,11 @@ const components = [
     url: "/docs/components/input-otp",
   },
   {
+    title: "Kbd",
+    url: "/docs/components/kbd",
+    new: true,
+  },
+  {
     title: "Navigation Menu",
     url: "/docs/components/navigation-menu",
   },

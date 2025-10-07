@@ -1775,6 +1775,25 @@
       ]
     },
     {
+      "name": "kbd",
+      "type": "registry:component",
+      "title": "8-bit Kbd",
+      "description": "A simple 8-bit kbd component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/kbd.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/kbd.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
       "name": "retro-mode-switcher",
       "type": "registry:component",
       "title": "8-bit Retro Mode Switcher",
