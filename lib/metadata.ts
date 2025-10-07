@@ -57,5 +57,6 @@ export const toastMetaData = "/assets/8bitcn-toast-light.png";
 export const navigationMenuMetaData =
   "/assets/8bitcn-navigation-menu-light.png";
 export const spinnerMetaData = "/assets/8bitcn-spinner-light.png";
+export const kbdMetaData = "/assets/8bitcn-kbd-light.png";
 
 export const profileCreatorMetaData = "/assets/8bitcn-profile-creator.png";
