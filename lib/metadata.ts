@@ -60,3 +60,4 @@ export const spinnerMetaData = "/assets/8bitcn-spinner-light.png";
 export const kbdMetaData = "/assets/8bitcn-kbd-light.png";
 
 export const profileCreatorMetaData = "/assets/8bitcn-profile-creator.png";
+export const emptyMetaData = "/assets/8bitcn-empty-light.png";
