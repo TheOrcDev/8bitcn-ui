@@ -26,7 +26,11 @@ const emptyMediaVariants = cva(
   }
 );
 
-function Empty({ className, font, ...props }: React.ComponentProps<"div">) {
+function Empty({
+  className,
+  font,
+  ...props
+}: React.ComponentProps<"div"> & { font?: "normal" | "retro" }) {
   return (
     <div
       data-slot="empty"
