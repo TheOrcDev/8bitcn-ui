@@ -62,7 +62,7 @@ export default function EmptyPage() {
               </EmptyMedia>
               <EmptyTitle>No Characters Yet</EmptyTitle>
               <EmptyDescription>
-                You haven&apos;t created any Charaters yet. Get started by
+                You haven&apos;t created any Characters yet. Get started by
                 creating your first character.
               </EmptyDescription>
             </EmptyHeader>
@@ -102,7 +102,7 @@ import {
     </EmptyMedia>
     <EmptyTitle>No Characters Yet</EmptyTitle>
     <EmptyDescription>
-      You haven&apos;t created any Charaters yet. Get started by creating
+      You haven&apos;t created any Characters yet. Get started by creating
       your first character.
     </EmptyDescription>
   </EmptyHeader>

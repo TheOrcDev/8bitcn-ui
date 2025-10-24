@@ -12,7 +12,7 @@ const emptyMediaVariants = cva(
     variants: {
       variant: {
         default: "bg-transparent",
-        icon: "realative bg-muted text-foreground flex size-12 shrink-0 items-center justify-center",
+        icon: "relative bg-muted text-foreground flex size-12 shrink-0 items-center justify-center",
       },
       font: {
         normal: "",
@@ -26,13 +26,13 @@ const emptyMediaVariants = cva(
   }
 );
 
-function Empty({ className, ...props }: React.ComponentProps<"div">) {
+function Empty({ className, font, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="empty"
       className={cn(
         "flex min-w-0 flex-1 flex-col items-center justify-center gap-6 rounded-lg border-dashed p-6 text-center text-balance md:p-12",
-        props.font !== "default" && "retro",
+        font !== "default" && "retro",
         className
       )}
       {...props}
@@ -92,7 +92,7 @@ function EmptyTitle({ className, ...props }: React.ComponentProps<"div">) {
 
 function EmptyDescription({ className, ...props }: React.ComponentProps<"p">) {
   return (
-    <div
+    <p
       data-slot="empty-description"
       className={cn(
         "text-muted-foreground [&>a:hover]:text-primary text-sm/relaxed [&>a]:underline [&>a]:underline-offset-4",
