@@ -4,10 +4,6 @@ import { cn } from "@/lib/utils";
 
 import { Badge as ShadcnBadge } from "@/components/ui/badge";
 
-// Precompile regex to avoid recreating it on every render
-const spacingClassRegex =
-  /^(m|p|mt|mr|mb|ml|mx|my|pt|pr|pb|pl|px|py|top|bottom|left|right|inset|inset-x|inset-y)-/;
-
 export const badgeVariants = cva("", {
   variants: {
     font: {
@@ -43,9 +39,6 @@ function Badge({
 
   const classes = className.split(" ");
 
-  // spacing-related Tailwind classes
-  const spacingClasses = classes.filter((c) => spacingClassRegex.test(c));
-
   // visual classes for badge and sidebars
   const visualClasses = classes.filter(
     (c) =>
@@ -55,12 +48,25 @@ function Badge({
       c.startsWith("rounded-")
   );
 
+  // Container should accept all non-visual utility classes (e.g., size, spacing, layout)
+  const containerClasses = classes.filter(
+    (c) =>
+      !(
+        c.startsWith("bg-") ||
+        c.startsWith("border-") ||
+        c.startsWith("text-") ||
+        c.startsWith("rounded-")
+      )
+  );
+
   return (
-    <div className={cn("relative inline-flex", spacingClasses)}>
+    <div className={cn("relative inline-flex items-stretch", containerClasses)}>
       <ShadcnBadge
         {...props}
         className={cn(
+          "h-full",
           "rounded-none",
+          "w-full",
           font !== "normal" && "retro",
           visualClasses
         )}
@@ -72,7 +78,7 @@ function Badge({
       {/* Left pixel bar */}
       <div
         className={cn(
-          "-left-1.5 absolute inset-y-1.5 w-1.5",
+          "-left-1.5 absolute inset-y-[4px] w-1.5",
           color,
           visualClasses
         )}
@@ -80,7 +86,7 @@ function Badge({
       {/* Right pixel bar */}
       <div
         className={cn(
-          "-right-1.5 absolute inset-y-1.5 w-1.5",
+          "-right-1.5 absolute inset-y-[4px] w-1.5",
           color,
           visualClasses
         )}
