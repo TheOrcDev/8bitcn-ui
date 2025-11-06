@@ -18,7 +18,7 @@ export function Calendar13() {
       "dropdown"
     );
   const [date, setDate] = React.useState<Date | undefined>(
-    new Date(2025, 5, 12)
+    () => new Date(2025, 5, 12)
   );
 
   return (

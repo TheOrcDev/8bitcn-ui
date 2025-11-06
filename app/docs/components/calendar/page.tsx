@@ -1,7 +1,10 @@
+import { Suspense } from "react";
+
 import type { Metadata } from "next";
 
 import { calendarMetaData } from "@/lib/metadata";
 
+import { Skeleton } from "@/components/ui/8bit/skeleton";
 import { Separator } from "@/components/ui/separator";
 
 import { CalendarExample } from "@/components/examples/calendar";
@@ -47,7 +50,9 @@ export default function CalendarPage() {
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] max-w-md mx-auto relative">
-          <CalendarExample />
+          <Suspense fallback={<Skeleton className="h-full w-full" />}>
+            <CalendarExample />
+          </Suspense>
         </div>
       </div>
 
@@ -82,7 +87,9 @@ export default function CalendarPage() {
           </h2>
         </div>
         <div className="flex items-center justify-center min-h-[400px] max-w-md mx-auto relative">
-          <RangeCalendar />
+          <Suspense fallback={<Skeleton className="h-full w-full" />}>
+            <RangeCalendar />
+          </Suspense>
         </div>
       </div>
 
@@ -120,7 +127,9 @@ export function RangeCalendar() {
           </h2>
         </div>
         <div className="flex items-center justify-center min-h-[400px] max-w-md mx-auto relative">
-          <Calendar13 />
+          <Suspense fallback={<Skeleton className="h-full w-full" />}>
+            <Calendar13 />
+          </Suspense>
         </div>
       </div>
 

@@ -1,6 +1,10 @@
+import { Suspense } from "react";
+
 import type { Metadata } from "next";
 
 import { calendarMetaData } from "@/lib/metadata";
+
+import { Skeleton } from "@/components/ui/8bit/skeleton";
 
 import { CalendarExample } from "@/components/examples/calendar";
 import { Calendar13 } from "@/components/examples/calendars/calendar-13";
@@ -35,7 +39,9 @@ export default function CalendarBlocks() {
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative max-w-sm mx-auto">
-          <CalendarExample />
+          <Suspense fallback={<Skeleton className="h-full w-full" />}>
+            <CalendarExample />
+          </Suspense>
         </div>
       </div>
 
@@ -54,7 +60,9 @@ export default function CalendarBlocks() {
       </div>
       <div className="flex items-center justify-center min-h-[400px] relative border rounded-md">
         <div className="flex items-center justify-center min-h-[400px] relative">
-          <RangeCalendar />
+          <Suspense fallback={<Skeleton className="h-full w-full" />}>
+            <RangeCalendar />
+          </Suspense>
         </div>
       </div>
 
@@ -73,7 +81,9 @@ export default function CalendarBlocks() {
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
-          <Calendar13 />
+          <Suspense fallback={<Skeleton className="h-full w-full" />}>
+            <Calendar13 />
+          </Suspense>
         </div>
       </div>
     </>
