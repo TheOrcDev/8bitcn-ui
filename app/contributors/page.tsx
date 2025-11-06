@@ -1,3 +1,5 @@
+"use cache";
+
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -45,15 +47,13 @@ type Contributor = {
   contributions: number;
 };
 
-const data = await fetch(
-  "https://api.github.com/repos/TheOrcDev/8bitcn-ui/contributors",
-  {
-    next: { revalidate: 86400 },
-  }
-);
-const contributors: Contributor[] = await data.json();
+export default async function ContributorsPage() {
+  const data = await fetch(
+    "https://api.github.com/repos/TheOrcDev/8bitcn-ui/contributors"
+  );
 
-export default function ContributorsPage() {
+  const contributors: Contributor[] = await data.json();
+
   return (
     <div className={`container mx-auto px-4 py-8 overflow-x-hidden ${"retro"}`}>
       <div className="text-center mb-12">
