@@ -39,7 +39,7 @@ export default function CalendarBlocks() {
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative max-w-sm mx-auto">
-          <Suspense fallback={<Skeleton className="h-full w-full" />}>
+          <Suspense fallback={<Skeleton className="h-96 w-64" />}>
             <CalendarExample />
           </Suspense>
         </div>
@@ -60,7 +60,7 @@ export default function CalendarBlocks() {
       </div>
       <div className="flex items-center justify-center min-h-[400px] relative border rounded-md">
         <div className="flex items-center justify-center min-h-[400px] relative">
-          <Suspense fallback={<Skeleton className="h-full w-full" />}>
+          <Suspense fallback={<Skeleton className="h-96 w-96" />}>
             <RangeCalendar />
           </Suspense>
         </div>
@@ -81,7 +81,7 @@ export default function CalendarBlocks() {
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
-          <Suspense fallback={<Skeleton className="h-full w-full" />}>
+          <Suspense fallback={<Skeleton className="h-96 w-64" />}>
             <Calendar13 />
           </Suspense>
         </div>

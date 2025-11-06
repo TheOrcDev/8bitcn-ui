@@ -50,7 +50,7 @@ export default function CalendarPage() {
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] max-w-md mx-auto relative">
-          <Suspense fallback={<Skeleton className="h-full w-full" />}>
+          <Suspense fallback={<Skeleton className="h-96 w-64" />}>
             <CalendarExample />
           </Suspense>
         </div>
@@ -87,7 +87,7 @@ export default function CalendarPage() {
           </h2>
         </div>
         <div className="flex items-center justify-center min-h-[400px] max-w-md mx-auto relative">
-          <Suspense fallback={<Skeleton className="h-full w-full" />}>
+          <Suspense fallback={<Skeleton className="h-96 w-96" />}>
             <RangeCalendar />
           </Suspense>
         </div>
