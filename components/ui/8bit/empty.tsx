@@ -70,7 +70,7 @@ function EmptyMedia({
         className={cn(emptyMediaVariants({ variant, className }))}
         {...props}
       />
-      {variant != "default" && (
+      {variant !== "default" && (
         <>
           <div className="absolute top-0 left-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none" />
           <div className="absolute bottom-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none" />
