@@ -63,6 +63,7 @@ function Item({
   className,
   variant = "default",
   size = "default",
+  font = "retro",
   asChild = false,
   ...props
 }: React.ComponentProps<"div"> &
@@ -73,7 +74,8 @@ function Item({
       data-slot="item"
       data-variant={variant}
       data-size={size}
-      className={cn(itemVariants({ variant, size, className }))}
+      data-font={font}
+      className={cn(itemVariants({ variant, size, font, className }))}
       {...props}
     />
   );
