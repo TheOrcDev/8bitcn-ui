@@ -1824,6 +1824,20 @@
       ]
     },
     {
+      "name": "empty",
+      "type": "registry:component",
+      "title": "8-bit Empty",
+      "description": "Displays an 8-bit empty component.",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/empty.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/empty.tsx"
+        }
+      ]
+    },
+    {
       "name": "item",
       "type": "registry:component",
       "title": "8-bit Item",
