@@ -107,10 +107,14 @@ const components = [
   {
     title: "Item",
 <<<<<<< HEAD
+<<<<<<< HEAD
     url: "/docs/components/item",
 =======
     url: "/docs/components/Item",
 >>>>>>> f7d626c (feat: Item Component)
+=======
+    url: "/docs/components/item",
+>>>>>>> a36509e (chore: resolved merge confilts)
     new: true,
   },
   {

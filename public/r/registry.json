@@ -1824,7 +1824,7 @@
       ]
     },
     {
-      "name": "empty",
+      "name": "item",
       "type": "registry:component",
       "title": "8-bit Empty",
       "description": "Displays an 8-bit empty component.",

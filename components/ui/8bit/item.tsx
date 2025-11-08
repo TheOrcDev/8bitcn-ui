@@ -6,10 +6,14 @@ import { type VariantProps, cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Separator } from "./separator";
 =======
 import { Separator } from "./separator.tsx";
 >>>>>>> f7d626c (feat: Item Component)
+=======
+import { Separator } from "./separator";
+>>>>>>> a36509e (chore: resolved merge confilts)
 import "./styles/retro.css";
 
 function ItemGroup({ className, ...props }: React.ComponentProps<"div">) {
