@@ -111,7 +111,6 @@ import {
   ItemSeparator,
   ItemTitle,
 } from "@/components/ui/8bit/item";
-import { Separator } from "@/components/ui/separator";
 
 const items = [
   {
