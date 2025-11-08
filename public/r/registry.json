@@ -1824,11 +1824,11 @@
       ]
     },
     {
-      "name": "empty",
+      "name": "item",
       "type": "registry:component",
       "title": "8-bit Item",
       "description": "Displays an 8-bit item component.",
-      "registryDependencies": [],
+      "registryDependencies": ["separator"],
       "files": [
         {
           "path": "components/ui/8bit/item.tsx",

@@ -101,7 +101,7 @@ const components = [
   },
   {
     title: "Item",
-    url: "/docs/components/Item",
+    url: "/docs/components/item",
     new: true,
   },
   {
