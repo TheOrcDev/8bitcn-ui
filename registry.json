@@ -1822,6 +1822,20 @@
           "target": "components/ui/8bit/styles/retro.css"
         }
       ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:component",
+      "title": "8-bit Item",
+      "description": "Displays an 8-bit item component.",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/item.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/item.tsx"
+        }
+      ]
     }
   ]
 }
