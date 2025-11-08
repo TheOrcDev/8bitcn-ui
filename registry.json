@@ -1836,6 +1836,20 @@
           "target": "components/ui/8bit/empty.tsx"
         }
       ]
+    },
+    {
+      "name": "item",
+      "type": "registry:component",
+      "title": "8-bit Item",
+      "description": "Displays an 8-bit item component.",
+      "registryDependencies": ["separator"],
+      "files": [
+        {
+          "path": "components/ui/8bit/item.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/item.tsx"
+        }
+      ]
     }
   ]
 }
