@@ -106,7 +106,11 @@ const components = [
   },
   {
     title: "Item",
+<<<<<<< HEAD
     url: "/docs/components/item",
+=======
+    url: "/docs/components/Item",
+>>>>>>> f7d626c (feat: Item Component)
     new: true,
   },
   {
