@@ -5,15 +5,7 @@ import { type VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { Separator } from "./separator";
-=======
-import { Separator } from "./separator.tsx";
->>>>>>> f7d626c (feat: Item Component)
-=======
-import { Separator } from "./separator";
->>>>>>> a36509e (chore: resolved merge confilts)
 import "./styles/retro.css";
 
 function ItemGroup({ className, ...props }: React.ComponentProps<"div">) {
@@ -71,10 +63,7 @@ function Item({
   className,
   variant = "default",
   size = "default",
-<<<<<<< HEAD
   font = "retro",
-=======
->>>>>>> f7d626c (feat: Item Component)
   asChild = false,
   ...props
 }: React.ComponentProps<"div"> &
@@ -85,12 +74,8 @@ function Item({
       data-slot="item"
       data-variant={variant}
       data-size={size}
-<<<<<<< HEAD
       data-font={font}
       className={cn(itemVariants({ variant, size, font, className }))}
-=======
-      className={cn(itemVariants({ variant, size, className }))}
->>>>>>> f7d626c (feat: Item Component)
       {...props}
     />
   );
