@@ -65,15 +65,7 @@ export default function ItemPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <OpenInV0Button name="item" className="w-fit" />
-=======
-            <OpenInV0Button name="8bit-empty" className="w-fit" />
->>>>>>> f7d626c (feat: Item Component)
-=======
             <OpenInV0Button name="8bit-item" className="w-fit" />
->>>>>>> a36509e (chore: resolved merge confilts)
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
@@ -119,10 +111,7 @@ import {
   ItemSeparator,
   ItemTitle,
 } from "@/components/ui/8bit/item";
-<<<<<<< HEAD
-=======
 import { Separator } from "@/components/ui/separator";
->>>>>>> f7d626c (feat: Item Component)
 
 const items = [
   {
