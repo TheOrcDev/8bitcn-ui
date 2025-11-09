@@ -38,7 +38,7 @@ export default function DatePickerPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-date-picker" className="w-fit" />
+            <OpenInV0Button name="date-picker" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
@@ -136,7 +136,7 @@ export function DatePicker() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-date-picker" className="w-fit" />
+            <OpenInV0Button name="date-picker" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
@@ -225,7 +225,7 @@ export function DatePickerWithRange({
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-date-picker" className="w-fit" />
+            <OpenInV0Button name="date-picker" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">

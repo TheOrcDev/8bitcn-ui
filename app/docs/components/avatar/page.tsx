@@ -45,7 +45,7 @@ export default function AvatarPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-avatar" className="w-fit" />
+            <OpenInV0Button name="avatar" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">

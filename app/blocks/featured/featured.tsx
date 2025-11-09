@@ -23,7 +23,7 @@ export default function FeaturedBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/dashboard-01"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/dashboard-01"
             />
-            <OpenInV0Button name="8bit-dashboard-01" className="w-fit" />
+            <OpenInV0Button name="dashboard-01" className="w-fit" />
           </div>
         </div>
 

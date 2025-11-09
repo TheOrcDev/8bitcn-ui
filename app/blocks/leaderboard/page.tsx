@@ -17,7 +17,7 @@ export default function LeaderboardPage() {
               command="pnpm dlx shadcn@latest add @8bitcn/leaderboard"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/leaderboard"
             />
-            <OpenInV0Button name="8bit-leaderboard" className="w-fit" />
+            <OpenInV0Button name="leaderboard" className="w-fit" />
           </div>
         </div>
 

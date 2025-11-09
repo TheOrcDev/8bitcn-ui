@@ -29,7 +29,7 @@ export default function GamingBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/chapter-intro"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/chapter-intro"
             />
-            <OpenInV0Button name="8bit-chapter-intro" className="w-fit" />
+            <OpenInV0Button name="chapter-intro" className="w-fit" />
           </div>
         </div>
 
@@ -53,7 +53,7 @@ export default function GamingBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/main-menu"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/main-menu"
             />
-            <OpenInV0Button name="8bit-main-menu" className="w-fit" />
+            <OpenInV0Button name="main-menu" className="w-fit" />
           </div>
         </div>
 
@@ -71,7 +71,7 @@ export default function GamingBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/difficulty-select"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/difficulty-select"
             />
-            <OpenInV0Button name="8bit-difficulty-select" className="w-fit" />
+            <OpenInV0Button name="difficulty-select" className="w-fit" />
           </div>
         </div>
 
@@ -87,7 +87,7 @@ export default function GamingBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/dialogue"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/dialogue"
             />
-            <OpenInV0Button name="8bit-dialogue" className="w-fit" />
+            <OpenInV0Button name="dialogue" className="w-fit" />
           </div>
         </div>
 
@@ -120,7 +120,7 @@ export default function GamingBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/pause-menu"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/pause-menu"
             />
-            <OpenInV0Button name="8bit-pause-menu" className="w-fit" />
+            <OpenInV0Button name="pause-menu" className="w-fit" />
           </div>
         </div>
 
@@ -136,7 +136,7 @@ export default function GamingBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/game-over"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/game-over"
             />
-            <OpenInV0Button name="8bit-game-over" className="w-fit" />
+            <OpenInV0Button name="game-over" className="w-fit" />
           </div>
         </div>
 
@@ -154,7 +154,7 @@ export default function GamingBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/audio-settings"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/audio-settings"
             />
-            <OpenInV0Button name="8bit-audio-settings" className="w-fit" />
+            <OpenInV0Button name="audio-settings" className="w-fit" />
           </div>
         </div>
 
@@ -170,7 +170,7 @@ export default function GamingBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/health-bar"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/health-bar"
             />
-            <OpenInV0Button name="8bit-health-bar" className="w-fit" />
+            <OpenInV0Button name="health-bar" className="w-fit" />
           </div>
         </div>
 
@@ -196,7 +196,7 @@ export default function GamingBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/mana-bar"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/mana-bar"
             />
-            <OpenInV0Button name="8bit-mana-bar" className="w-fit" />
+            <OpenInV0Button name="mana-bar" className="w-fit" />
           </div>
         </div>
 
@@ -292,7 +292,7 @@ export default function GamingBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/player-profile-card"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/player-profile-card"
             />
-            <OpenInV0Button name="8bit-player-profile-card" className="w-fit" />
+            <OpenInV0Button name="player-profile-card" className="w-fit" />
           </div>
         </div>
 
@@ -359,7 +359,7 @@ export default function GamingBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/leaderboard"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/leaderboard"
             />
-            <OpenInV0Button name="8bit-leaderboard" className="w-fit" />
+            <OpenInV0Button name="leaderboard" className="w-fit" />
           </div>
         </div>
 
@@ -437,7 +437,7 @@ export default function GamingBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/quest-log"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/quest-log"
             />
-            <OpenInV0Button name="8bit-quest-log" className="w-fit" />
+            <OpenInV0Button name="quest-log" className="w-fit" />
           </div>
         </div>
 

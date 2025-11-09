@@ -42,7 +42,7 @@ export default function CollapsiblePage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-collapsible" className="w-fit" />
+            <OpenInV0Button name="collapsible" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">

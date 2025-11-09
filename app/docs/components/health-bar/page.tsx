@@ -40,7 +40,7 @@ export default function HealthBarPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-health-bar" className="w-fit" />
+            <OpenInV0Button name="health-bar" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] max-w-[500px] mx-auto">

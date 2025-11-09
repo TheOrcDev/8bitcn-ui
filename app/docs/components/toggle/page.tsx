@@ -43,7 +43,7 @@ export default function TogglePage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-toggle" className="w-fit" />
+            <OpenInV0Button name="toggle" className="w-fit" />
           </div>
         </div>
         <div className="flex flex-col items-center justify-center min-h-[400px] space-y-8">

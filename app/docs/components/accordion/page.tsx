@@ -45,7 +45,7 @@ export default function AccordionPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-accordion" className="w-fit" />
+            <OpenInV0Button name="accordion" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center p-10 justify-center min-h-[400px] relative">

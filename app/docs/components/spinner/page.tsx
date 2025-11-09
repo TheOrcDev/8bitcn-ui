@@ -42,7 +42,7 @@ export default function SpinnerPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-spinner" className="w-fit" />
+            <OpenInV0Button name="spinner" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
@@ -79,7 +79,7 @@ export default function SpinnerPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-spinner" className="w-fit" />
+            <OpenInV0Button name="spinner" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
@@ -118,7 +118,7 @@ export default function SpinnerPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-spinner" className="w-fit" />
+            <OpenInV0Button name="spinner" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
@@ -152,7 +152,7 @@ export default function SpinnerPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-spinner" className="w-fit" />
+            <OpenInV0Button name="spinner" className="w-fit" />
           </div>
         </div>
         <div className="flex flex-col items-center justify-center min-h-[400px] gap-4">
@@ -199,7 +199,7 @@ export default function SpinnerPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-spinner" className="w-fit" />
+            <OpenInV0Button name="spinner" className="w-fit" />
           </div>
         </div>
         <div className="flex flex-col items-center justify-center min-h-[400px] gap-5">

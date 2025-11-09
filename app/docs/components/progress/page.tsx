@@ -40,7 +40,7 @@ export default function ProgressPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-progress" className="w-fit" />
+            <OpenInV0Button name="progress" className="w-fit" />
           </div>
         </div>
         <div className="flex flex-col gap-5 items-center justify-center min-h-[400px] mx-auto w-96">

@@ -46,7 +46,7 @@ export default function ContextMenuPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-context-menu" className="w-fit" />
+            <OpenInV0Button name="context-menu" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">

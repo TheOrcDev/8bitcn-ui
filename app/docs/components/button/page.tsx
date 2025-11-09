@@ -40,7 +40,7 @@ export default function ButtonPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-button" className="w-fit" />
+            <OpenInV0Button name="button" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">

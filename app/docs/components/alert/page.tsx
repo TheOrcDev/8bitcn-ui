@@ -44,7 +44,7 @@ export default function AlertPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-alert" className="w-fit" />
+            <OpenInV0Button name="alert" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
