@@ -16,6 +16,7 @@ import CodeSnippet from "@/app/docs/components/code-snippet";
 
 import { useThemeConfig } from "./active-theme";
 import { SelectThemeDropdown } from "./select-theme-dropdown";
+import { ScrollArea } from "./ui/8bit/scroll-area";
 
 export function ThemeSelector() {
   const { activeTheme, setActiveTheme } = useThemeConfig();
@@ -34,14 +35,16 @@ export function ThemeSelector() {
           <Button>Copy</Button>
         </DialogTrigger>
         <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Theme</DialogTitle>
-            <DialogDescription>
-              Copy and paste the following code into your CSS file.
-            </DialogDescription>
-          </DialogHeader>
+          <ScrollArea className="max-h-[80vh]">
+            <DialogHeader>
+              <DialogTitle>Theme</DialogTitle>
+              <DialogDescription>
+                Copy and paste the following code into your CSS file.
+              </DialogDescription>
+            </DialogHeader>
 
-          <CodeSnippet>{getThemeCode(activeTheme)}</CodeSnippet>
+            <CodeSnippet>{getThemeCode(activeTheme)}</CodeSnippet>
+          </ScrollArea>
         </DialogContent>
       </Dialog>
     </div>
