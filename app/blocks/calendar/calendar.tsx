@@ -35,7 +35,7 @@ export default function CalendarBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/calendar"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/calendar"
             />
-            <OpenInV0Button name="8bit-calendar" className="w-fit" />
+            <OpenInV0Button name="calendar" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative max-w-sm mx-auto">
@@ -55,7 +55,7 @@ export default function CalendarBlocks() {
             command="pnpm dlx shadcn@latest add @8bitcn/calendar"
             copyCommand="pnpm dlx shadcn@latest add @8bitcn/calendar"
           />
-          <OpenInV0Button name="8bit-calendar-range" className="w-fit" />
+          <OpenInV0Button name="calendar-range" className="w-fit" />
         </div>
       </div>
       <div className="flex items-center justify-center min-h-[400px] relative border rounded-md">
@@ -77,7 +77,7 @@ export default function CalendarBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/calendar"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/calendar"
             />
-            <OpenInV0Button name="8bit-calendar-single" className="w-fit" />
+            <OpenInV0Button name="calendar-single" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">

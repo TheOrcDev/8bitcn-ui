@@ -130,7 +130,7 @@ export default function BreadcrumbPageNext() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-breadcrumb" className="w-fit" />
+            <OpenInV0Button name="breadcrumb" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
@@ -223,7 +223,7 @@ export default function BreadcrumbPageNext() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-breadcrumb" className="w-fit" />
+            <OpenInV0Button name="breadcrumb" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
@@ -284,7 +284,7 @@ export default function BreadcrumbPageNext() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-breadcrumb" className="w-fit" />
+            <OpenInV0Button name="breadcrumb" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
@@ -366,7 +366,7 @@ export default function BreadcrumbPageNext() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-breadcrumb" className="w-fit" />
+            <OpenInV0Button name="breadcrumb" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
@@ -441,7 +441,7 @@ export default function BreadcrumbPageNext() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-breadcrumb" className="w-fit" />
+            <OpenInV0Button name="breadcrumb" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">

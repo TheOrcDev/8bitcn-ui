@@ -41,7 +41,7 @@ export default function NavigationMenuPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-navigation-menu" className="w-fit" />
+            <OpenInV0Button name="navigation-menu" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative space-x-2">

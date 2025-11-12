@@ -83,7 +83,7 @@ export default function SidebarPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-sidebar" className="w-fit" />
+            <OpenInV0Button name="sidebar" className="w-fit" />
           </div>
         </div>
         <div className="relative flex min-h-[400px] h-[450px] w-full">

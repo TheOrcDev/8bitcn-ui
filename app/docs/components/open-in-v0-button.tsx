@@ -1,22 +1,71 @@
+import registry from "@/registry.json";
+
 import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/button";
 
+const registryNameMap = new Map(
+  registry.items.map((item) => [normalizeName(item.name), item.name])
+);
+
+function normalizeName(input: string) {
+  return input.trim().toLowerCase().replace(/_/g, "-");
+}
+
+function resolveRegistryName(rawName?: string) {
+  if (!rawName) {
+    return undefined;
+  }
+
+  const baseCandidates = new Set<string>();
+  const sanitized = normalizeName(rawName.replace(/^@8bitcn\//, ""));
+
+  baseCandidates.add(sanitized);
+  baseCandidates.add(sanitized.replace(/^8bit-/, ""));
+
+  for (const candidate of Array.from(baseCandidates)) {
+    const segments = candidate.split("-");
+
+    while (segments.length > 1) {
+      segments.pop();
+      baseCandidates.add(segments.join("-"));
+    }
+  }
+
+  for (const candidate of baseCandidates) {
+    const normalizedCandidate = normalizeName(candidate);
+
+    if (registryNameMap.has(normalizedCandidate)) {
+      return registryNameMap.get(normalizedCandidate);
+    }
+  }
+
+  return undefined;
+}
+
 export function OpenInV0Button({
   name,
   className,
+  ...buttonProps
 }: { name: string } & React.ComponentProps<typeof Button>) {
+  const registryName = resolveRegistryName(name);
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/$/, "");
+
+  if (!registryName || !baseUrl) {
+    return null;
+  }
+
+  const registryUrl = `${baseUrl}/r/${registryName}.json`;
+  const href = `https://v0.dev/chat/api/open?url=${encodeURIComponent(registryUrl)}`;
+
   return (
     <Button
       aria-label="Open in v0"
       className={cn("gap-1 rounded-lg shadow-none px-3 text-xs", className)}
       asChild
+      {...buttonProps}
     >
-      <a
-        href={`https://v0.dev/chat/api/open?url=${process.env.NEXT_PUBLIC_BASE_URL}/r/${name}.json`}
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a href={href} target="_blank" rel="noreferrer">
         Open in{" "}
         <svg
           viewBox="0 0 40 20"

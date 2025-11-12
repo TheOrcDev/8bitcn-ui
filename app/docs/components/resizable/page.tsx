@@ -44,7 +44,7 @@ export default function ResizablePage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-resizable" className="w-fit" />
+            <OpenInV0Button name="resizable" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center h-[250px] relative">
@@ -61,7 +61,7 @@ export default function ResizablePage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-resizable" className="w-fit" />
+            <OpenInV0Button name="resizable" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center h-[250px] relative">
@@ -78,7 +78,7 @@ export default function ResizablePage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-resizable" className="w-fit" />
+            <OpenInV0Button name="resizable" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center h-[250px] relative">

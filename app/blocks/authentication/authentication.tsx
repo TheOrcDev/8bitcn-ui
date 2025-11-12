@@ -20,7 +20,7 @@ export default function AuthenticationBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/login-form"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/login-form"
             />
-            <OpenInV0Button name="8bit-login-form" className="w-fit" />
+            <OpenInV0Button name="login-form" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
@@ -38,7 +38,7 @@ export default function AuthenticationBlocks() {
             command="pnpm dlx shadcn@latest add @8bitcn/login-page"
             copyCommand="pnpm dlx shadcn@latest add @8bitcn/login-page"
           />
-          <OpenInV0Button name="8bit-login-page" className="w-fit" />
+          <OpenInV0Button name="login-page" className="w-fit" />
         </div>
       </div>
       <div className="flex items-center justify-center min-h-[400px] relative border rounded-md">
@@ -58,7 +58,7 @@ export default function AuthenticationBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/login-form-2"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/login-form-2"
             />
-            <OpenInV0Button name="8bit-login-form-2" className="w-fit" />
+            <OpenInV0Button name="login-form-2" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">

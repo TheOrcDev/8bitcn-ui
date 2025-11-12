@@ -42,7 +42,7 @@ export default function ToggleGroupPage() {
             8-bit toggle group component
           </h2>
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-toggle-group" className="w-fit" />
+            <OpenInV0Button name="toggle-group" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
@@ -76,7 +76,7 @@ export default function ToggleGroupPage() {
             Default example
           </h2>
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-toggle-group" className="w-fit" />
+            <OpenInV0Button name="toggle-group" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
@@ -114,7 +114,7 @@ export default function ToggleGroupPage() {
             Outline example
           </h2>
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-toggle-group" className="w-fit" />
+            <OpenInV0Button name="toggle-group" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">
@@ -160,7 +160,7 @@ export default function ToggleGroupPage() {
               Single example
             </h2>
             <div className="flex items-center gap-2">
-              <OpenInV0Button name="8bit-toggle-group" className="w-fit" />
+              <OpenInV0Button name="toggle-group" className="w-fit" />
             </div>
           </div>
           <div className="flex items-center justify-center min-h-[400px] relative">
@@ -198,7 +198,7 @@ export default function ToggleGroupPage() {
               Disabled example
             </h2>
             <div className="flex items-center gap-2">
-              <OpenInV0Button name="8bit-toggle-group" className="w-fit" />
+              <OpenInV0Button name="toggle-group" className="w-fit" />
             </div>
           </div>
           <div className="flex items-center justify-center min-h-[400px] relative">

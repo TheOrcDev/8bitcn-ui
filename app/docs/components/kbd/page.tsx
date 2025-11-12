@@ -46,7 +46,7 @@ export default function KbdPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-kbd" className="w-fit" />
+            <OpenInV0Button name="kbd" className="w-fit" />
           </div>
         </div>
         <div className="flex flex-col items-center justify-center min-h-[400px] gap-4">
@@ -95,7 +95,7 @@ export default function KbdPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-kbd" className="w-fit" />
+            <OpenInV0Button name="kbd" className="w-fit" />
           </div>
         </div>
         <div className="flex flex-col items-center justify-center min-h-[400px] gap-4">
@@ -135,7 +135,7 @@ export default function KbdPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-kbd" className="w-fit" />
+            <OpenInV0Button name="kbd" className="w-fit" />
           </div>
         </div>
         <div className="flex flex-wrap items-center justify-center min-h-[400px] gap-4">
@@ -177,7 +177,7 @@ export default function KbdPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-kbd" className="w-fit" />
+            <OpenInV0Button name="kbd" className="w-fit" />
           </div>
         </div>
         <div className="flex flex-wrap items-center justify-center min-h-[400px] gap-4">

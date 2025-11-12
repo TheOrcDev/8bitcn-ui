@@ -40,7 +40,7 @@ export default function TextareaPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-textarea" className="w-fit" />
+            <OpenInV0Button name="textarea" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] max-w-md mx-auto relative">

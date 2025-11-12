@@ -58,7 +58,7 @@ export default function DialogPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-dialog" className="w-fit" />
+            <OpenInV0Button name="dialog" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">

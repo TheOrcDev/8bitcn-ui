@@ -41,7 +41,7 @@ export default function CheckboxPage() {
           </h2>
 
           <div className="flex items-center gap-2">
-            <OpenInV0Button name="8bit-checkbox" className="w-fit" />
+            <OpenInV0Button name="checkbox" className="w-fit" />
           </div>
         </div>
         <div className="flex items-center justify-center min-h-[400px] relative">

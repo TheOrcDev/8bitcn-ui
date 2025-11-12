@@ -25,7 +25,7 @@ export default function ChartsBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/chart"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/chart"
             />
-            <OpenInV0Button name="8bit-chart" className="w-fit" />
+            <OpenInV0Button name="chart" className="w-fit" />
           </div>
         </div>
 
@@ -95,7 +95,7 @@ export default function ChartsBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/chart-bar"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/chart-bar"
             />
-            <OpenInV0Button name="8bit-chart-bar" className="w-fit" />
+            <OpenInV0Button name="chart-bar" className="w-fit" />
           </div>
         </div>
 
@@ -165,7 +165,7 @@ export default function ChartsBlocks() {
               command="pnpm dlx shadcn@latest add @8bitcn/chart-area-step"
               copyCommand="pnpm dlx shadcn@latest add @8bitcn/chart-area-step"
             />
-            <OpenInV0Button name="8bit-chart-area-step" className="w-fit" />
+            <OpenInV0Button name="chart-area-step" className="w-fit" />
           </div>
         </div>
 
