@@ -43,52 +43,57 @@ const Avatar = forwardRef<
           className="absolute inset-0 w-full h-full pointer-events-none"
           style={{ zIndex: 10 }}
         >
-          {/* Top black border */}
-          <div className="absolute top-0 left-[25%] right-[25%] h-[6.25%] bg-foreground dark:bg-ring"></div>
+          {/* Top section - Row 1 */}
+          <div className="absolute top-0 left-[23%] right-[23%] h-[7%] bg-foreground dark:bg-ring"></div>
 
-          {/* Second row */}
-          <div className="absolute top-[6.25%] left-[18.75%] right-[18.75%] h-[6.25%] bg-foreground dark:bg-ring"></div>
+          {/* Top section - Row 2 */}
+          <div className="absolute top-[6.25%] left-[17%] right-[17%] h-[7%] bg-foreground dark:bg-ring"></div>
 
-          {/* Third row */}
-          <div className="absolute top-[12.5%] left-[12.5%] h-[6.25%] bg-foreground dark:bg-ring w-[18.75%]"></div>
-          <div className="absolute top-[12.5%] right-[12.5%] h-[6.25%] bg-foreground dark:bg-ring w-[18.75%]"></div>
+          {/* Top section - Row 3 */}
+          <div className="absolute top-[12.5%] left-[11%] h-[7%] bg-foreground dark:bg-ring w-[20%]"></div>
+          <div className="absolute top-[12.5%] right-[11%] h-[7%] bg-foreground dark:bg-ring w-[20%]"></div>
 
-          {/* Fourth row */}
-          <div className="absolute top-[18.75%] left-[6.25%] w-[18.75%] h-[6.25%] bg-foreground dark:bg-ring"></div>
-          <div className="absolute top-[18.75%] right-[6.25%] w-[18.75%] h-[6.25%] bg-foreground dark:bg-ring"></div>
+          {/* Top section - Row 4 */}
+          <div className="absolute top-[18.75%] left-[5%] w-[20%] h-[7%] bg-foreground dark:bg-ring"></div>
+          <div className="absolute top-[18.75%] right-[5%] w-[20%] h-[7%] bg-foreground dark:bg-ring"></div>
 
-          {/* Fifth row */}
-          <div className="absolute top-[25%] left-0 w-[18.75%] h-[6.25%] bg-foreground dark:bg-ring"></div>
-          <div className="absolute top-[25%] right-0 w-[18.75%] h-[6.25%] bg-foreground dark:bg-ring"></div>
+          {/* Top section - Row 5 */}
+          <div className="absolute top-[25%] left-0 w-[20%] h-[7%] bg-foreground dark:bg-ring"></div>
+          <div className="absolute top-[25%] right-0 w-[20%] h-[7%] bg-foreground dark:bg-ring"></div>
 
-          {/* Rows 6-7 */}
-          <div className="absolute top-[31.25%] left-0 w-[12.5%] h-[12.5%] bg-foreground dark:bg-ring"></div>
-          <div className="absolute top-[31.25%] right-0 w-[12.5%] h-[12.5%] bg-foreground dark:bg-ring"></div>
+          {/* Top section - Rows 6-7 */}
+          <div className="absolute top-[31.25%] left-0 w-[13.5%] h-[13%] bg-foreground dark:bg-ring"></div>
+          <div className="absolute top-[31.25%] right-0 w-[13.5%] h-[13%] bg-foreground dark:bg-ring"></div>
 
-          {/* Rows 8-10 */}
-          <div className="absolute top-[43.75%] left-0 w-[12.5%] h-[18.75%] bg-foreground dark:bg-ring"></div>
-          <div className="absolute top-[43.75%] right-0 w-[12.5%] h-[18.75%] bg-foreground dark:bg-ring"></div>
+          {/* Top section - Rows 8-10 */}
+          <div className="absolute top-[43.75%] left-0 w-[13.5%] h-[7%] bg-foreground dark:bg-ring"></div>
+          <div className="absolute top-[43.75%] right-0 w-[13.5%] h-[7%] bg-foreground dark:bg-ring"></div>
 
-          {/* Rows 11-12 */}
-          <div className="absolute top-[62.5%] left-0 w-[12.5%] h-[12.5%] bg-foreground dark:bg-ring"></div>
-          <div className="absolute top-[62.5%] right-0 w-[12.5%] h-[12.5%] bg-foreground dark:bg-ring"></div>
+          {/* Bottom section - Rows 8-10 (mirror) */}
+          <div className="absolute top-[50%] left-0 w-[13.5%] h-[7%] bg-foreground dark:bg-ring"></div>
+          <div className="absolute top-[50%] right-0 w-[13.5%] h-[7%] bg-foreground dark:bg-ring"></div>
 
-          {/* Row 13 */}
-          <div className="absolute top-[75%] left-0 w-[18.75%] h-[6.25%] bg-foreground dark:bg-ring"></div>
-          <div className="absolute top-[75%] right-0 w-[18.75%] h-[6.25%] bg-foreground dark:bg-ring"></div>
+          {/* Bottom section - Rows 6-7 (mirror) */}
+          <div className="absolute top-[56.25%] left-0 w-[13.5%] h-[13%] bg-foreground dark:bg-ring"></div>
+          <div className="absolute top-[56.25%] right-0 w-[13.5%] h-[13%] bg-foreground dark:bg-ring"></div>
 
-          {/* Row 14 */}
-          <div className="absolute top-[81.25%] left-[6.25%] w-[18.75%] h-[6.25%] bg-foreground dark:bg-ring"></div>
-          <div className="absolute top-[81.25%] right-[6.25%] w-[18.75%] h-[6.25%] bg-foreground dark:bg-ring"></div>
+          {/* Bottom section - Row 5 (mirror) */}
+          <div className="absolute top-[68.75%] left-0 w-[20%] h-[7%] bg-foreground dark:bg-ring"></div>
+          <div className="absolute top-[68.75%] right-0 w-[20%] h-[7%] bg-foreground dark:bg-ring"></div>
 
-          {/* Row 15 */}
-          <div className="absolute top-[87.5%] left-[12.5%] right-[12.5%] h-[6.25%] bg-foreground dark:bg-ring"></div>
+          {/* Bottom section - Row 4 (mirror) */}
+          <div className="absolute top-[75%] left-[5%] w-[20%] h-[7%] bg-foreground dark:bg-ring"></div>
+          <div className="absolute top-[75%] right-[5%] w-[20%] h-[7%] bg-foreground dark:bg-ring"></div>
 
-          {/* Row 16 */}
-          <div className="absolute top-[93.75%] left-[18.75%] right-[18.75%] h-[6.25%] bg-foreground dark:bg-ring"></div>
+          {/* Bottom section - Row 3 (mirror) */}
+          <div className="absolute top-[81.25%] left-[11%] h-[7%] bg-foreground dark:bg-ring w-[20%]"></div>
+          <div className="absolute top-[81.25%] right-[11%] h-[7%] bg-foreground dark:bg-ring w-[20%]"></div>
 
-          {/* Bottom row */}
-          <div className="absolute bottom-0 left-[25%] right-[25%] h-[6.25%] bg-foreground dark:bg-ring"></div>
+          {/* Bottom section - Row 2 (mirror) */}
+          <div className="absolute top-[87.5%] left-[17%] right-[17%] h-[7%] bg-foreground dark:bg-ring"></div>
+
+          {/* Bottom section - Row 1 (mirror) */}
+          <div className="absolute bottom-0 left-[23%] right-[23%] h-[7%] bg-foreground dark:bg-ring"></div>
         </div>
       )}
 
