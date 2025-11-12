@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/8bit/button";
 
 import ComponentShowcase from "@/components/examples/component-showcase";
+import Sponsors from "@/components/sponsors";
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
       </Link>
 
       <ComponentShowcase />
+
+      <Sponsors />
     </div>
   );
 }
