@@ -19,3 +19,7 @@ Licensed under the [MIT license](/license.md).
 <a href="https://vercel.com/oss">
   <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg" />
 </a>
+
+## Star History
+
+[![Star History](https://starchart.cc/theorcdev/8bitcn-ui.svg?variant=adaptive&line=%237fce00)](https://starchart.cc/theorcdev/8bitcn-ui)
