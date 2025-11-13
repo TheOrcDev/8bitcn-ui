@@ -246,8 +246,8 @@ export const navItems = {
       href: "/themes",
     },
     {
-      label: "Profile Creator",
-      href: "/profile-creator",
+      label: "Sponsors",
+      href: "/sponsors",
     },
   ],
   navMain: [
