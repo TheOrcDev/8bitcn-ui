@@ -20,6 +20,12 @@ const sponsors = [
     image: "/sponsors/trigger-dev.png",
     invert: false,
   },
+  {
+    name: "Inbox Zero",
+    url: "https://www.getinboxzero.com/",
+    image: "/sponsors/inbox-zero.jpg",
+    invert: true,
+  },
 ];
 
 export default function Sponsors() {
@@ -37,7 +43,7 @@ export default function Sponsors() {
 
       <h2 className="text-xl font-bold">LEGENDARY Sponsors</h2>
 
-      <div className="flex gap-10">
+      <div className="flex gap-10 flex-wrap justify-center items-center">
         {sponsors.map((sponsor) => (
           <Link href={sponsor.url} target="_blank" key={sponsor.name}>
             <div className="flex flex-col gap-4 items-center">
