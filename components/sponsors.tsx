@@ -11,7 +11,7 @@ import { Separator } from "./ui/8bit/separator";
 
 export default function Sponsors() {
   return (
-    <div className="retro px-5 flex flex-col gap-10 mt-10 justify-center items-center">
+    <div className="retro px-5 flex flex-col gap-10 justify-center items-center py-10">
       <div className="flex flex-col gap-2 items-center">
         <h1 className="text-2xl font-bold">Sponsors</h1>
         <p className="text-xs text-muted-foreground max-w-xl text-center">
