@@ -26,6 +26,12 @@ const legendarySponsors = [
     image: "/sponsors/inbox-zero.jpg",
     invert: true,
   },
+  {
+    name: "Coolify",
+    url: "https://www.coolify.io/",
+    image: "/sponsors/coolify-logo.png",
+    invert: false,
+  },
 ];
 
 const sponsors = [
