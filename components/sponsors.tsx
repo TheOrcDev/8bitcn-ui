@@ -7,7 +7,7 @@ import { Avatar, AvatarImage } from "@/components/ui/8bit/avatar";
 import { Button } from "./ui/8bit/button";
 import { Separator } from "./ui/8bit/separator";
 
-const sponsors = [
+const legendarySponsors = [
   {
     name: "Shadcn Blocks",
     url: "https://www.shadcnblocks.com/",
@@ -28,6 +28,15 @@ const sponsors = [
   },
 ];
 
+const sponsors = [
+  {
+    name: "Bounty",
+    url: "https://www.bounty.new/",
+    image: "/sponsors/bounty.jpg",
+    invert: true,
+  },
+];
+
 export default function Sponsors() {
   return (
     <div className="retro px-5 flex flex-col gap-10 justify-center items-center py-10">
@@ -44,10 +53,29 @@ export default function Sponsors() {
       <h2 className="text-xl font-bold">LEGENDARY Sponsors</h2>
 
       <div className="flex gap-10 flex-wrap justify-center items-center">
-        {sponsors.map((sponsor) => (
+        {legendarySponsors.map((sponsor) => (
           <Link href={sponsor.url} target="_blank" key={sponsor.name}>
             <div className="flex flex-col gap-4 items-center">
               <Avatar className="size-60" variant="default">
+                <AvatarImage
+                  src={sponsor.image}
+                  alt={sponsor.name}
+                  className={cn("p-5", sponsor.invert && "dark:invert")}
+                />
+              </Avatar>
+              <p className="text-sm font-bold">{sponsor.name}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      <h2 className="text-xl font-bold">Sponsors</h2>
+
+      <div className="flex gap-10 flex-wrap justify-center items-center">
+        {sponsors.map((sponsor) => (
+          <Link href={sponsor.url} target="_blank" key={sponsor.name}>
+            <div className="flex flex-col gap-4 items-center">
+              <Avatar className="size-30" variant="default">
                 <AvatarImage
                   src={sponsor.image}
                   alt={sponsor.name}
