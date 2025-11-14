@@ -32,6 +32,12 @@ const legendarySponsors = [
     image: "/sponsors/coolify-logo.png",
     invert: false,
   },
+  {
+    name: "Inbound",
+    url: "https://inbound.new/",
+    image: "/sponsors/inbound.svg",
+    invert: false,
+  },
 ];
 
 const sponsors = [
