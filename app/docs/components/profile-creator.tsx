@@ -319,7 +319,7 @@ export default function ProfileCard() {
   };
 
   const setProfileImage = (imageUrl: string) => {
-    setProfile((prev) => ({ ...prev, avatarUrl: imageUrl }));
+    setProfile({ avatarUrl: imageUrl });
     setTempImage(null);
   };
 
@@ -439,7 +439,7 @@ export default function ProfileCard() {
                       variant="outline"
                       type="button"
                       onClick={() => {
-                        setProfile({ avatarUrl: null });
+                        setProfile({ avatarUrl: "/avatar.jpg" });
                       }}
                     >
                       Clear
