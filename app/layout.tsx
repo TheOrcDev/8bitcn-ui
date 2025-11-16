@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 import { sharedMetaData } from "@/lib/metadata";
 
@@ -47,15 +48,17 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ActiveThemeProvider>
-            <SiteHeader />
-            <div className="flex-1 border-l border-r border-dashed max-w-[1400px] mx-auto w-full">
-              {children}
-            </div>
-            <SiteFooter />
-            <Toaster />
-            <Analytics />
-            <SpeedInsights />
-            {process.env.APP_ENV === "development" && <ScreenSize />}
+            <NuqsAdapter>
+              <SiteHeader />
+              <div className="flex-1 border-l border-r border-dashed max-w-[1400px] mx-auto w-full">
+                {children}
+              </div>
+              <SiteFooter />
+              <Toaster />
+              <Analytics />
+              <SpeedInsights />
+              {process.env.APP_ENV === "development" && <ScreenSize />}
+            </NuqsAdapter>
           </ActiveThemeProvider>
         </ThemeProvider>
       </body>
