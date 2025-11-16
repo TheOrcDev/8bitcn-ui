@@ -12,7 +12,7 @@
       "files": [
         {
           "path": "components/ui/8bit/blocks/chapter-intro.tsx",
-          "type": "registry:component",
+          "type": "registry:block",
           "target": "components/ui/8bit/blocks/chapter-intro.tsx"
         },
         {
@@ -979,7 +979,7 @@
       "files": [
         {
           "path": "components/ui/8bit/blocks/login-form.tsx",
-          "type": "registry:component",
+          "type": "registry:block",
           "target": "components/ui/8bit/blocks/login-form.tsx"
         },
         {
@@ -1018,7 +1018,7 @@
       "files": [
         {
           "path": "components/ui/8bit/blocks/login-form-2.tsx",
-          "type": "registry:component",
+          "type": "registry:block",
           "target": "components/ui/8bit/blocks/login-form-2.tsx"
         },
         {
@@ -1057,7 +1057,7 @@
       "files": [
         {
           "path": "components/ui/8bit/blocks/login-form-with-image.tsx",
-          "type": "registry:component",
+          "type": "registry:block",
           "target": "components/ui/8bit/blocks/login-form-with-image.tsx"
         },
         {
