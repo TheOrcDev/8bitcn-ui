@@ -5,7 +5,7 @@
   "items": [
     {
       "name": "chapter-intro",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Chapter Intro",
       "description": "A cinematic chapter/level intro with pixel art background.",
       "registryDependencies": ["card"],
@@ -564,6 +564,7 @@
       "type": "registry:component",
       "title": "8-bit Progress",
       "description": "A simple 8-bit progress component",
+      "dependencies": ["@radix-ui/react-progress"],
       "registryDependencies": [],
       "files": [
         {
@@ -657,14 +658,15 @@
     },
     {
       "name": "game-progress",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Game Progress",
       "description": "A simple 8-bit game progress component",
+      "dependencies": ["@radix-ui/react-progress"],
       "registryDependencies": [],
       "files": [
         {
           "path": "components/ui/8bit/blocks/game-progress.tsx",
-          "type": "registry:component",
+          "type": "registry:block",
           "target": "components/ui/8bit/blocks/game-progress.tsx"
         },
         {
@@ -691,14 +693,15 @@
     },
     {
       "name": "dialogue",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Dialogue",
       "description": "A simple 8-bit dialogue component",
+      "dependencies": ["@radix-ui/react-avatar"],
       "registryDependencies": ["alert"],
       "files": [
         {
           "path": "components/ui/8bit/blocks/dialogue.tsx",
-          "type": "registry:component",
+          "type": "registry:block",
           "target": "components/ui/8bit/blocks/dialogue.tsx"
         },
         {
@@ -724,6 +727,7 @@
       "title": "8-bit Profile Card",
       "description": "A simple 8-bit profile card component",
       "registryDependencies": ["card", "button", "avatar", "badge"],
+      "dependencies": ["@radix-ui/react-avatar"],
       "files": [
         {
           "path": "components/ui/8bit/card.tsx",
@@ -968,7 +972,7 @@
     },
     {
       "name": "login-form",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Login Form",
       "description": "A simple 8-bit login form component",
       "registryDependencies": ["button", "card", "input", "label"],
@@ -1007,7 +1011,7 @@
     },
     {
       "name": "login-form-2",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Login Form 2",
       "description": "A simple 8-bit login form component",
       "registryDependencies": ["button", "card", "input", "label"],
@@ -1046,7 +1050,7 @@
     },
     {
       "name": "login-form-with-image",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Login Form with Image",
       "description": "A simple 8-bit login form component with image",
       "registryDependencies": ["button", "card", "input", "label"],
@@ -1085,7 +1089,7 @@
     },
     {
       "name": "login-page",
-      "type": "registry:component",
+      "type": "registry:page",
       "title": "8-bit Login Page",
       "description": "A simple 8-bit login page component",
       "registryDependencies": ["button", "card", "input", "label"],
@@ -1097,7 +1101,7 @@
         },
         {
           "path": "components/ui/8bit/blocks/login-form.tsx",
-          "type": "registry:component",
+          "type": "registry:block",
           "target": "components/ui/8bit/blocks/login-form.tsx"
         },
         {
@@ -1129,14 +1133,14 @@
     },
     {
       "name": "chart",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Chart",
       "description": "A simple 8-bit chart component",
       "registryDependencies": [],
       "files": [
         {
           "path": "components/ui/8bit/blocks/chart.tsx",
-          "type": "registry:component",
+          "type": "registry:block",
           "target": "components/ui/8bit/blocks/chart.tsx"
         },
         {
@@ -1153,7 +1157,7 @@
     },
     {
       "name": "chart-bar",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Chart Bar",
       "description": "A simple 8-bit chart bar component",
       "registryDependencies": [],
@@ -1177,7 +1181,7 @@
     },
     {
       "name": "chart-area-step",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Chart Area Step",
       "description": "A simple 8-bit chart area step component",
       "registryDependencies": [],
@@ -1201,7 +1205,7 @@
     },
     {
       "name": "main-menu",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Main Menu",
       "description": "A simple 8-bit main menu component",
       "registryDependencies": ["button", "card"],
@@ -1230,14 +1234,14 @@
     },
     {
       "name": "pause-menu",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Pause Menu",
       "description": "A simple 8-bit pause menu component",
       "registryDependencies": ["button", "card"],
       "files": [
         {
           "path": "components/ui/8bit/blocks/pause-menu.tsx",
-          "type": "registry:component",
+          "type": "registry:block",
           "target": "components/ui/8bit/blocks/pause-menu.tsx"
         },
         {
@@ -1259,14 +1263,14 @@
     },
     {
       "name": "game-over",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Game Over",
       "description": "A simple 8-bit game over component",
       "registryDependencies": ["button", "card"],
       "files": [
         {
           "path": "components/ui/8bit/blocks/game-over.tsx",
-          "type": "registry:component",
+          "type": "registry:block",
           "target": "components/ui/8bit/blocks/game-over.tsx"
         },
         {
@@ -1288,14 +1292,15 @@
     },
     {
       "name": "audio-settings",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Audio Settings",
       "description": "A simple 8-bit audio settings component",
+      "dependencies": ["@radix-ui/react-slider", "@radix-ui/react-switch"],
       "registryDependencies": ["button", "card", "label"],
       "files": [
         {
           "path": "components/ui/8bit/blocks/audio-settings.tsx",
-          "type": "registry:component",
+          "type": "registry:block",
           "target": "components/ui/8bit/blocks/audio-settings.tsx"
         },
         {
@@ -1346,7 +1351,7 @@
     },
     {
       "name": "sidebar",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Sidebar",
       "description": "A simple 8-bit sidebar component",
       "registryDependencies": ["sidebar"],
@@ -1422,7 +1427,7 @@
     },
     {
       "name": "difficulty-select",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Difficulty Select",
       "description": "A reusable 8-bit difficulty selector with Easy, Normal, Hard.",
       "registryDependencies": ["button", "card"],
@@ -1451,7 +1456,7 @@
     },
     {
       "name": "leaderboard",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Leaderboard",
       "description": "A retro-styled leaderboard component for displaying player rankings with avatars and scores.",
       "registryDependencies": ["card", "avatar", "badge", "separator"],
@@ -1490,7 +1495,7 @@
     },
     {
       "name": "player-profile-card",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Player Profile Card",
       "description": "A comprehensive player profile card component with stats, health/mana bars, and custom stats support.",
       "registryDependencies": ["card", "avatar", "badge", "progress"],
@@ -1539,7 +1544,7 @@
     },
     {
       "name": "quest-log",
-      "type": "registry:component",
+      "type": "registry:block",
       "title": "8-bit Quest Log",
       "description": "A retro-styled quest log component for tracking game missions and tasks with accordion functionality and status indicators.",
       "registryDependencies": ["accordion", "card", "badge", "scroll-area"],
@@ -1578,7 +1583,7 @@
     },
     {
       "name": "dashboard-01",
-      "type": "registry:component",
+      "type": "registry:page",
       "title": "8-bit Dashboard 01",
       "description": "A complete 8-bit styled dashboard with sidebar navigation, stats cards, charts, and data table with drag-and-drop functionality.",
       "registryDependencies": [
