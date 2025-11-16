@@ -19,7 +19,7 @@ import { Switch } from "@/components/ui/8bit/switch";
 import { Textarea } from "@/components/ui/8bit/textarea";
 import { toast } from "@/components/ui/8bit/toast";
 
-import { useThemeConfig } from "@/components/active-theme";
+import { useThemeConfig, useUrlTheme } from "@/components/active-theme";
 import { SelectThemeDropdown } from "@/components/select-theme-dropdown";
 
 import CopyProfileCardDialog from "./copy-profile-card-dialog";
@@ -324,6 +324,7 @@ export default function ProfileCard() {
   };
 
   const { activeTheme, setActiveTheme } = useThemeConfig();
+  const [, setUrlTheme] = useUrlTheme();
 
   return (
     <div className="p-4 md:p-6 space-y-6 retro">
@@ -491,7 +492,10 @@ export default function ProfileCard() {
           <div className="max-w-xs mx-auto">
             <SelectThemeDropdown
               activeTheme={activeTheme}
-              setActiveTheme={setActiveTheme}
+              setActiveTheme={(theme) => {
+                setActiveTheme(theme);
+                setUrlTheme(theme);
+              }}
             />
           </div>
           <div id="profile-card" className="flex justify-center p-5">

@@ -41,14 +41,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ActiveThemeProvider>
-            <NuqsAdapter>
+        <NuqsAdapter>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <ActiveThemeProvider>
               <SiteHeader />
               <div className="flex-1 border-l border-r border-dashed max-w-[1400px] mx-auto w-full">
                 {children}
@@ -58,9 +58,9 @@ export default function RootLayout({
               <Analytics />
               <SpeedInsights />
               {process.env.APP_ENV === "development" && <ScreenSize />}
-            </NuqsAdapter>
-          </ActiveThemeProvider>
-        </ThemeProvider>
+            </ActiveThemeProvider>
+          </ThemeProvider>
+        </NuqsAdapter>
       </body>
     </html>
   );

@@ -2,13 +2,17 @@
 
 import {
   ReactNode,
+  Suspense,
   createContext,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from "react";
 
 import { usePathname } from "next/navigation";
+
+import { parseAsStringLiteral, useQueryState } from "nuqs";
 
 import { Theme } from "@/lib/themes";
 
@@ -64,6 +68,9 @@ export function ActiveThemeProvider({
 
   return (
     <ThemeContext.Provider value={{ activeTheme, setActiveTheme }}>
+      <Suspense>
+        <ActiveThemeUrlSync />
+      </Suspense>
       {children}
     </ThemeContext.Provider>
   );
@@ -77,4 +84,31 @@ export function useThemeConfig() {
     );
   }
   return context;
+}
+
+export const useUrlTheme = () =>
+  useQueryState("theme", parseAsStringLiteral(Object.values(Theme)));
+
+// Load the active theme from the URL query parameter on mount.
+export function ActiveThemeUrlSync() {
+  const [urlTheme] = useUrlTheme();
+  const synced = useRef(false);
+  const { activeTheme, setActiveTheme } = useThemeConfig();
+
+  useEffect(() => {
+    if (synced.current || !urlTheme) return;
+    if (urlTheme !== activeTheme) {
+      // Setting it directly here would be cancelled by the useEffect above
+      // that resets the theme on pathname change.
+      // Defer to the end of the microtask queue to re-apply it afterwards
+      // to follow the URL as the source of truth.
+      queueMicrotask(() => {
+        setActiveTheme(urlTheme);
+      });
+    }
+    // Avoid queuing multiple times
+    synced.current = true;
+  }, [urlTheme, activeTheme, setActiveTheme]);
+
+  return null;
 }
