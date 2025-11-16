@@ -535,10 +535,6 @@ export default function ProfileCard() {
               avatarUrl={profile.avatarUrl}
               badgeTitle={profile.badgeTitle}
               isRetroAvatar={profile.isRetroAvatar}
-              githubUrl={profile.githubUrl}
-              xUrl={profile.xUrl}
-              githubUsername={profile.githubUsername}
-              xUsername={profile.xUsername}
               safeGithubUrl={safeGithubUrl}
               safeXUrl={safeXUrl}
               description={profile.description}
