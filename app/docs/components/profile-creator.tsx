@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 
 import * as htmlToImage from "html-to-image";
+import { parseAsBoolean, parseAsString, useQueryStates } from "nuqs";
 
 import { Button } from "@/components/ui/8bit/button";
 import {
@@ -18,59 +19,43 @@ import { Switch } from "@/components/ui/8bit/switch";
 import { Textarea } from "@/components/ui/8bit/textarea";
 import { toast } from "@/components/ui/8bit/toast";
 
-import { useThemeConfig } from "@/components/active-theme";
+import { useThemeConfig, useUrlTheme } from "@/components/active-theme";
 import { SelectThemeDropdown } from "@/components/select-theme-dropdown";
 
 import CopyProfileCardDialog from "./copy-profile-card-dialog";
 import ProfileCard from "./profile-card";
 import ProfileCropper from "./profile-cropper";
 
-type Profile = {
-  name: string;
-  avatarUrl: string;
-  badgeTitle: string;
-  isRetroAvatar: boolean;
-  githubUrl: string;
-  xUrl: string;
-  githubUsername: string;
-  xUsername: string;
-  safeGithubUrl: string;
-  safeXUrl: string;
-  description: string;
+const profileSearchParams = {
+  name: parseAsString.withDefault(""),
+  avatarUrl: parseAsString.withDefault("/avatar.jpg"),
+  badgeTitle: parseAsString.withDefault("warrior"),
+  isRetroAvatar: parseAsBoolean.withDefault(false),
+  description: parseAsString.withDefault(""),
+  x: parseAsString.withDefault(""),
+  github: parseAsString.withDefault(""),
 };
 
 export default function ProfileCreator() {
   const [openCropper, setOpenCropper] = useState(false);
   const [tempImage, setTempImage] = useState<string | null>(null);
 
-  const [profile, setProfile] = useState<Profile>({
-    name: "",
-    avatarUrl: "/avatar.jpg",
-    badgeTitle: "warrior",
-    isRetroAvatar: false,
-    githubUrl: "",
-    xUrl: "",
-    githubUsername: "",
-    xUsername: "",
-    safeGithubUrl: "",
-    safeXUrl: "",
-    description: "",
-  });
+  const [profile, setProfile] = useQueryStates(profileSearchParams);
 
   // Note: when a file is uploaded we convert it to a data URL
   // to avoid CSP issues that can affect blob: URLs in some setups.
 
   const safeGithubUrl = useMemo(() => {
-    if (!profile.githubUrl) return "";
-    if (/^https?:\/\//i.test(profile.githubUrl)) return profile.githubUrl;
-    return `https://github.com/${profile.githubUrl.replace(/^@/, "")}`;
-  }, [profile.githubUrl]);
+    if (!profile.github) return "";
+    if (/^https?:\/\//i.test(profile.github)) return profile.github;
+    return `https://github.com/${profile.github.replace(/^@/, "")}`;
+  }, [profile.github]);
 
   const safeXUrl = useMemo(() => {
-    if (!profile.xUrl) return "";
-    if (/^https?:\/\//i.test(profile.xUrl)) return profile.xUrl;
-    return `https://x.com/${profile.xUrl.replace(/^@/, "")}`;
-  }, [profile.xUrl]);
+    if (!profile.x) return "";
+    if (/^https?:\/\//i.test(profile.x)) return profile.x;
+    return `https://x.com/${profile.x.replace(/^@/, "")}`;
+  }, [profile.x]);
 
   const valueForAttr = (value: string) => value.replace(/"/g, "&quot;");
   const escapeText = (value: string) =>
@@ -334,11 +319,12 @@ export default function ProfileCard() {
   };
 
   const setProfileImage = (imageUrl: string) => {
-    setProfile((prev) => ({ ...prev, avatarUrl: imageUrl }));
+    setProfile({ avatarUrl: imageUrl });
     setTempImage(null);
   };
 
   const { activeTheme, setActiveTheme } = useThemeConfig();
+  const [, setUrlTheme] = useUrlTheme();
 
   return (
     <div className="p-4 md:p-6 space-y-6 retro">
@@ -358,15 +344,7 @@ export default function ProfileCard() {
             <Button
               variant="outline"
               onClick={() => {
-                setProfile({
-                  ...profile,
-                  name: "",
-                  avatarUrl: "/avatar.jpg",
-                  githubUrl: "",
-                  xUrl: "",
-                  badgeTitle: "",
-                  isRetroAvatar: false,
-                });
+                setProfile(null);
               }}
             >
               Reset
@@ -379,9 +357,7 @@ export default function ProfileCard() {
                 id="name"
                 placeholder="Pacman"
                 value={profile.name}
-                onChange={(e) =>
-                  setProfile({ ...profile, name: e.currentTarget.value })
-                }
+                onChange={(e) => setProfile({ name: e.currentTarget.value })}
               />
             </div>
 
@@ -391,7 +367,7 @@ export default function ProfileCard() {
                 id="description"
                 value={profile.description}
                 onChange={(e) =>
-                  setProfile({ ...profile, description: e.currentTarget.value })
+                  setProfile({ description: e.currentTarget.value })
                 }
                 rows={4}
               />
@@ -404,7 +380,7 @@ export default function ProfileCard() {
                 placeholder="Retro Hacker"
                 value={profile.badgeTitle}
                 onChange={(e) =>
-                  setProfile({ ...profile, badgeTitle: e.currentTarget.value })
+                  setProfile({ badgeTitle: e.currentTarget.value })
                 }
               />
             </div>
@@ -417,10 +393,7 @@ export default function ProfileCard() {
                     id="avatar-variant"
                     checked={profile.isRetroAvatar}
                     onCheckedChange={() =>
-                      setProfile({
-                        ...profile,
-                        isRetroAvatar: !profile.isRetroAvatar,
-                      })
+                      setProfile({ isRetroAvatar: !profile.isRetroAvatar })
                     }
                   />
                   <Label htmlFor="avatar-variant">
@@ -436,10 +409,7 @@ export default function ProfileCard() {
                   value={profile.avatarUrl}
                   onChange={(e) => {
                     const next = e.currentTarget.value;
-                    setProfile({
-                      ...profile,
-                      avatarUrl: next,
-                    });
+                    setProfile({ avatarUrl: next });
                   }}
                 />
 
@@ -469,7 +439,7 @@ export default function ProfileCard() {
                       variant="outline"
                       type="button"
                       onClick={() => {
-                        setProfile({ ...profile, avatarUrl: "/avatar.jpg" });
+                        setProfile({ avatarUrl: "/avatar.jpg" });
                       }}
                     >
                       Clear
@@ -496,10 +466,8 @@ export default function ProfileCard() {
               <Input
                 id="github"
                 placeholder="pacman or https://github.com/pacman"
-                value={profile.githubUrl}
-                onChange={(e) =>
-                  setProfile({ ...profile, githubUrl: e.currentTarget.value })
-                }
+                value={profile.github}
+                onChange={(e) => setProfile({ github: e.currentTarget.value })}
               />
             </div>
 
@@ -508,10 +476,8 @@ export default function ProfileCard() {
               <Input
                 id="x"
                 placeholder="pacman or https://x.com/pacman"
-                value={profile.xUrl}
-                onChange={(e) =>
-                  setProfile({ ...profile, xUrl: e.currentTarget.value })
-                }
+                value={profile.x}
+                onChange={(e) => setProfile({ x: e.currentTarget.value })}
               />
             </div>
           </CardContent>
@@ -526,7 +492,10 @@ export default function ProfileCard() {
           <div className="max-w-xs mx-auto">
             <SelectThemeDropdown
               activeTheme={activeTheme}
-              setActiveTheme={setActiveTheme}
+              setActiveTheme={(theme) => {
+                setActiveTheme(theme);
+                setUrlTheme(theme);
+              }}
             />
           </div>
           <div id="profile-card" className="flex justify-center p-5">
@@ -535,10 +504,6 @@ export default function ProfileCard() {
               avatarUrl={profile.avatarUrl}
               badgeTitle={profile.badgeTitle}
               isRetroAvatar={profile.isRetroAvatar}
-              githubUrl={profile.githubUrl}
-              xUrl={profile.xUrl}
-              githubUsername={profile.githubUsername}
-              xUsername={profile.xUsername}
               safeGithubUrl={safeGithubUrl}
               safeXUrl={safeXUrl}
               description={profile.description}

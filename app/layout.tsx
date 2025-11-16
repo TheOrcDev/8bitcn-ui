@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 import { sharedMetaData } from "@/lib/metadata";
 
@@ -40,24 +41,26 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ActiveThemeProvider>
-            <SiteHeader />
-            <div className="flex-1 border-l border-r border-dashed max-w-[1400px] mx-auto w-full">
-              {children}
-            </div>
-            <SiteFooter />
-            <Toaster />
-            <Analytics />
-            <SpeedInsights />
-            {process.env.APP_ENV === "development" && <ScreenSize />}
-          </ActiveThemeProvider>
-        </ThemeProvider>
+        <NuqsAdapter>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <ActiveThemeProvider>
+              <SiteHeader />
+              <div className="flex-1 border-l border-r border-dashed max-w-[1400px] mx-auto w-full">
+                {children}
+              </div>
+              <SiteFooter />
+              <Toaster />
+              <Analytics />
+              <SpeedInsights />
+              {process.env.APP_ENV === "development" && <ScreenSize />}
+            </ActiveThemeProvider>
+          </ThemeProvider>
+        </NuqsAdapter>
       </body>
     </html>
   );

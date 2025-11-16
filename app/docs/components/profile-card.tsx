@@ -20,10 +20,6 @@ interface ProfileCardProps {
   avatarUrl: string;
   badgeTitle: string;
   isRetroAvatar: boolean;
-  githubUrl: string;
-  xUrl: string;
-  githubUsername: string;
-  xUsername: string;
   safeGithubUrl: string;
   safeXUrl: string;
   description: string;
