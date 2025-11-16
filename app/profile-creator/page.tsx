@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import { Metadata } from "next";
 
 import { profileCreatorMetaData } from "@/lib/metadata";
@@ -14,5 +16,9 @@ export const metadata: Metadata = {
 };
 
 export default function ProfileCreatorPage() {
-  return <ProfileCreator />;
+  return (
+    <Suspense>
+      <ProfileCreator />
+    </Suspense>
+  );
 }
