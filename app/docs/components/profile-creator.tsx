@@ -439,7 +439,7 @@ export default function ProfileCard() {
                       variant="outline"
                       type="button"
                       onClick={() => {
-                        setProfile({ avatarUrl: "/avatar.jpg" });
+                        setProfile({ avatarUrl: null });
                       }}
                     >
                       Clear
