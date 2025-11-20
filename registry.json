@@ -1487,6 +1487,25 @@
           "target": "components/ui/8bit/separator.tsx"
         }
       ]
+    },
+    {
+      "name": "status-effect-indicator",
+      "type": "registry:component",
+      "title": "8-bit Status Effect Indicator",
+      "description": "A retro-styled status effect indicator component for displaying pixel art icons of various game status effects.",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/status-effect-indicator.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/status-effect-indicator.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
     }
   ]
 }

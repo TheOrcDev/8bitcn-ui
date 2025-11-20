@@ -7,6 +7,7 @@ import PauseMenu from "@/components/ui/8bit/blocks/pause-menu";
 import EnemyHealthDisplay from "@/components/ui/8bit/enemy-health-display";
 import HealthBar from "@/components/ui/8bit/health-bar";
 import ManaBar from "@/components/ui/8bit/mana-bar";
+import StatusEffectIndicator from "@/components/ui/8bit/status-effect-indicator";
 
 import AudioSettings from "../../../components/ui/8bit/blocks/audio-settings";
 import Leaderboard from "../../../components/ui/8bit/leaderboard";
@@ -353,6 +354,105 @@ export default function GamingBlocks() {
               currentPlayerId="5"
               className="w-full"
             />
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
+        <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
+          <h2 className="text-sm text-muted-foreground sm:pl-3">Status Effects</h2>
+          <div className="flex flex-col md:flex-row items-center gap-2">
+            <CopyCommandButton
+              command="pnpm dlx shadcn@latest add @8bitcn/status-effect-indicator"
+              copyCommand="pnpm dlx shadcn@latest add @8bitcn/status-effect-indicator"
+            />
+            <OpenInV0Button name="8bit-status-effects" className="w-fit" />
+          </div>
+        </div>
+        <div className="py-14 flex flex-col gap-6">
+          <div className="flex flex-col gap-6 w-full md:w-[600px] mx-auto space-y-8">
+            <div className="space-y-4">
+              <p className="text-sm text-muted-foreground text-center">Player Status Effects</p>
+              <StatusEffectIndicator
+                effects={[
+                  {
+                    id: "poison-1",
+                    type: "poison",
+                    duration: 15,
+                    stacks: 2,
+                    intensity: "normal",
+                  },
+                  {
+                    id: "shield-1",
+                    type: "shield",
+                    duration: 30,
+                    intensity: "strong",
+                  },
+                  {
+                    id: "speed-1",
+                    type: "speed",
+                    duration: 12,
+                    intensity: "normal",
+                  },
+                ]}
+                showDuration={true}
+                showStacks={true}
+                size="lg"
+                className="flex-row justify-center"
+              />
+            </div>
+
+            <div className="space-y-4">
+              <p className="text-sm text-muted-foreground text-center">Boss Debuffs</p>
+              <StatusEffectIndicator
+                effects={[
+                  {
+                    id: "freeze-1",
+                    type: "freeze",
+                    duration: 8,
+                    intensity: "strong",
+                  },
+                  {
+                    id: "burn-1",
+                    type: "burn",
+                    duration: 6,
+                    stacks: 3,
+                    intensity: "strong",
+                  },
+                  {
+                    id: "stun-1",
+                    type: "stun",
+                    duration: 2,
+                    intensity: "normal",
+                  },
+                ]}
+                showDuration={true}
+                showStacks={true}
+                size="md"
+                className="flex-row justify-center"
+              />
+            </div>
+
+            <div className="space-y-4">
+              <p className="text-sm text-muted-foreground text-center">All Effect Types</p>
+              <StatusEffectIndicator
+                effects={[
+                  { id: "poison-demo", type: "poison", duration: 10, intensity: "normal" },
+                  { id: "freeze-demo", type: "freeze", duration: 5, intensity: "strong" },
+                  { id: "burn-demo", type: "burn", duration: 8, stacks: 2, intensity: "normal" },
+                  { id: "stun-demo", type: "stun", duration: 3, intensity: "weak" },
+                  { id: "heal-demo", type: "heal", duration: 15, intensity: "strong" },
+                  { id: "shield-demo", type: "shield", duration: 20, intensity: "normal" },
+                  { id: "speed-demo", type: "speed", duration: 12, intensity: "strong" },
+                  { id: "slow-demo", type: "slow", duration: 6, stacks: 1, intensity: "normal" },
+                ]}
+                showDuration={true}
+                showStacks={true}
+                size="sm"
+                maxEffects={8}
+                className="flex-row justify-center"
+              />
+            </div>
           </div>
         </div>
       </div>
