@@ -110,6 +110,9 @@ importers:
       '@vercel/speed-insights':
         specifier: ^1.2.0
         version: 1.2.0(next@16.0.0(@babel/core@7.28.4)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)
+      '@wandry/analytics-sdk':
+        specifier: ^1.11.0
+        version: 1.11.0
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -1836,6 +1839,9 @@ packages:
         optional: true
       vue-router:
         optional: true
+
+  '@wandry/analytics-sdk@1.11.0':
+    resolution: {integrity: sha512-akCqPW2HDf5T0ZZli73ZH+HBChdOMS5VmsHHw3sFjzqILTd4Z9EwA8hCj7TrvZD7Jd62fO9Qv/vyCi+MBcLiIw==}
 
   accepts@2.0.0:
     resolution: {integrity: sha512-5cvg6CtKwfgdmVqY1WIiXKc3Q1bkRqGLi+2W/6ao+6Y7gu/RCwRuAhGEzh5B4KlszSuTLgZYuqFqo5bImjNKng==}
@@ -5993,6 +5999,8 @@ snapshots:
     optionalDependencies:
       next: 16.0.0(@babel/core@7.28.4)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react: 19.2.0
+
+  '@wandry/analytics-sdk@1.11.0': {}
 
   accepts@2.0.0:
     dependencies:
