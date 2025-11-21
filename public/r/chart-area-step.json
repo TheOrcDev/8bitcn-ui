@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "chart-area-step",
-  "type": "registry:component",
+  "type": "registry:block",
   "title": "8-bit Chart Area Step",
   "description": "A simple 8-bit chart area step component",
   "registryDependencies": [],

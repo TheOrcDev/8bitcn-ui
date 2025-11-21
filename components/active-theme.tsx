@@ -1,8 +1,7 @@
 "use client";
 
 import {
-  ReactNode,
-  Suspense,
+  type ReactNode,
   createContext,
   useContext,
   useEffect,
@@ -10,18 +9,46 @@ import {
   useState,
 } from "react";
 
-import { usePathname } from "next/navigation";
-
-import { parseAsStringLiteral, useQueryState } from "nuqs";
-
 import { Theme } from "@/lib/themes";
 
 const COOKIE_NAME = "active_theme";
 const DEFAULT_THEME = Theme.Default;
 
-function setThemeCookie(theme: Theme) {
-  if (typeof window === "undefined") return;
+function getThemeCookie(): Theme | null {
+  if (typeof window === "undefined") {
+    return null;
+  }
 
+  try {
+    const cookieString = document.cookie;
+    const start = cookieString.indexOf(`${COOKIE_NAME}=`);
+    if (start === -1) {
+      return null;
+    }
+
+    const valueStart = start + COOKIE_NAME.length + 1;
+    const valueEnd = cookieString.indexOf(";", valueStart);
+    const value =
+      valueEnd === -1
+        ? cookieString.slice(valueStart)
+        : cookieString.slice(valueStart, valueEnd);
+
+    // Validate that the value is a valid Theme
+    if (value && Object.values(Theme).includes(value as Theme)) {
+      return value as Theme;
+    }
+  } catch (error) {
+    console.error("Error reading theme cookie:", error);
+  }
+  return null;
+}
+
+function setThemeCookie(theme: Theme) {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  // biome-ignore lint/suspicious/noAssignInExpressions: Setting cookie requires direct assignment
   document.cookie = `${COOKIE_NAME}=${theme}; path=/; max-age=31536000; SameSite=Lax; ${
     window.location.protocol === "https:" ? "Secure;" : ""
   }`;
@@ -41,36 +68,73 @@ export function ActiveThemeProvider({
   children: ReactNode;
   initialTheme?: Theme;
 }) {
-  const pathname = usePathname();
+  const [activeTheme, setActiveTheme] = useState<Theme>(() => {
+    // First priority: initialTheme prop (from server-side cookie reading)
+    if (initialTheme) {
+      return initialTheme;
+    }
 
+    // Second priority: read from cookie on client-side initialization
+    if (typeof window !== "undefined") {
+      const cookieTheme = getThemeCookie();
+      if (cookieTheme) {
+        return cookieTheme;
+      }
+    }
+
+    // Fallback to default
+    return DEFAULT_THEME;
+  });
+
+  const isInitialMount = useRef(true);
+  const hasInitialized = useRef(false);
+
+  // On initial mount, sync with cookie - cookie takes priority
   useEffect(() => {
-    setActiveTheme(DEFAULT_THEME);
-  }, [pathname]);
+    if (hasInitialized.current) {
+      return;
+    }
+    hasInitialized.current = true;
 
-  const [activeTheme, setActiveTheme] = useState<Theme>(
-    () => initialTheme || DEFAULT_THEME
-  );
+    const cookieTheme = getThemeCookie();
 
+    if (cookieTheme) {
+      // Cookie exists - use it (even if it differs from initial state)
+      if (cookieTheme !== activeTheme) {
+        setActiveTheme(cookieTheme);
+      }
+    } else {
+      // No cookie exists - save current theme to cookie
+      setThemeCookie(activeTheme);
+    }
+
+    isInitialMount.current = false;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Save cookie and apply theme whenever activeTheme changes
   useEffect(() => {
-    setThemeCookie(activeTheme);
-
     const targets = [document.body, document.documentElement];
 
-    targets.forEach((el) => {
-      Array.from(el.classList)
-        .filter((className) => className.startsWith("theme-"))
-        .forEach((className) => {
-          el.classList.remove(className);
-        });
+    // Only save cookie after initial mount (to avoid overwriting on first render)
+    if (!isInitialMount.current) {
+      setThemeCookie(activeTheme);
+    }
+
+    // Apply theme classes
+    for (const el of targets) {
+      const themeClasses = Array.from(el.classList).filter((className) =>
+        className.startsWith("theme-")
+      );
+      for (const className of themeClasses) {
+        el.classList.remove(className);
+      }
       el.classList.add(`theme-${activeTheme}`);
-    });
+    }
   }, [activeTheme]);
 
   return (
     <ThemeContext.Provider value={{ activeTheme, setActiveTheme }}>
-      <Suspense>
-        <ActiveThemeUrlSync />
-      </Suspense>
       {children}
     </ThemeContext.Provider>
   );
@@ -84,31 +148,4 @@ export function useThemeConfig() {
     );
   }
   return context;
-}
-
-export const useUrlTheme = () =>
-  useQueryState("theme", parseAsStringLiteral(Object.values(Theme)));
-
-// Load the active theme from the URL query parameter on mount.
-export function ActiveThemeUrlSync() {
-  const [urlTheme] = useUrlTheme();
-  const synced = useRef(false);
-  const { activeTheme, setActiveTheme } = useThemeConfig();
-
-  useEffect(() => {
-    if (synced.current || !urlTheme) return;
-    if (urlTheme !== activeTheme) {
-      // Setting it directly here would be cancelled by the useEffect above
-      // that resets the theme on pathname change.
-      // Defer to the end of the microtask queue to re-apply it afterwards
-      // to follow the URL as the source of truth.
-      queueMicrotask(() => {
-        setActiveTheme(urlTheme);
-      });
-    }
-    // Avoid queuing multiple times
-    synced.current = true;
-  }, [urlTheme, activeTheme, setActiveTheme]);
-
-  return null;
 }

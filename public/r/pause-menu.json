@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "pause-menu",
-  "type": "registry:component",
+  "type": "registry:block",
   "title": "8-bit Pause Menu",
   "description": "A simple 8-bit pause menu component",
   "registryDependencies": [
@@ -12,7 +12,7 @@
     {
       "path": "components/ui/8bit/blocks/pause-menu.tsx",
       "content": "import { Pause, Power, RotateCcw } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\nimport { Button } from \"@/components/ui/8bit/button\";\nimport {\n  Card,\n  CardContent,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/8bit/card\";\n\nconst menuItems = [\n  {\n    label: \"RESUME\",\n    icon: Pause,\n    action: () => console.log(\"Resuming game...\"),\n  },\n  {\n    label: \"RESTART\",\n    icon: RotateCcw,\n    action: () => console.log(\"Restarting game...\"),\n  },\n  {\n    label: \"QUIT\",\n    icon: Power,\n    action: () => console.log(\"Quitting game...\"),\n  },\n];\n\nexport default function PauseMenu({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <Card className={cn(className)} {...props}>\n      <CardHeader className=\"flex flex-col items-center justify-center gap-2\">\n        <CardTitle>Paused</CardTitle>\n      </CardHeader>\n      <CardContent>\n        <div className=\"flex flex-col gap-8\">\n          {menuItems.map((item) => (\n            <Button key={item.label} className=\"flex items-center gap-2\">\n              <item.icon className=\"size-4\" />\n              <span>{item.label}</span>\n            </Button>\n          ))}\n        </div>\n      </CardContent>\n    </Card>\n  );\n}\n",
-      "type": "registry:component",
+      "type": "registry:block",
       "target": "components/ui/8bit/blocks/pause-menu.tsx"
     },
     {

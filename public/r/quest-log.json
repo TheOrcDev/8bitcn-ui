@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "quest-log",
-  "type": "registry:component",
+  "type": "registry:block",
   "title": "8-bit Quest Log",
   "description": "A retro-styled quest log component for tracking game missions and tasks with accordion functionality and status indicators.",
   "registryDependencies": [

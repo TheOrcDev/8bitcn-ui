@@ -1,15 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "game-progress",
-  "type": "registry:component",
+  "type": "registry:block",
   "title": "8-bit Game Progress",
   "description": "A simple 8-bit game progress component",
+  "dependencies": [
+    "@radix-ui/react-progress"
+  ],
   "registryDependencies": [],
   "files": [
     {
       "path": "components/ui/8bit/blocks/game-progress.tsx",
       "content": "import { cn } from \"@/lib/utils\";\n\nimport {\n  Card,\n  CardContent,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/8bit/card\";\nimport HealthBar from \"@/components/ui/8bit/health-bar\";\nimport ManaBar from \"@/components/ui/8bit/mana-bar\";\nimport { Progress } from \"@/components/ui/8bit/progress\";\n\nexport default function GameProgress({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <Card className={cn(className)} {...props}>\n      <CardHeader>\n        <CardTitle className=\"text-sm font-medium\">Game Progress</CardTitle>\n      </CardHeader>\n      <CardContent className=\"space-y-4\">\n        <div>\n          <div className=\"flex justify-between text-sm mb-2\">\n            <span>Health</span>\n            <span>75%</span>\n          </div>\n          <HealthBar value={75} />\n        </div>\n        <div>\n          <div className=\"flex justify-between text-sm mb-2\">\n            <span>Mana</span>\n            <span>45%</span>\n          </div>\n          <ManaBar value={45} />\n        </div>\n        <div>\n          <div className=\"flex justify-between text-sm mb-2\">\n            <span>Experience</span>\n            <span>90%</span>\n          </div>\n          <Progress value={90} />\n        </div>\n      </CardContent>\n    </Card>\n  );\n}\n",
-      "type": "registry:component",
+      "type": "registry:block",
       "target": "components/ui/8bit/blocks/game-progress.tsx"
     },
     {
