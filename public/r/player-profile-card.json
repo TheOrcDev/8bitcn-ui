@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "player-profile-card",
-  "type": "registry:component",
+  "type": "registry:block",
   "title": "8-bit Player Profile Card",
   "description": "A comprehensive player profile card component with stats, health/mana bars, and custom stats support.",
   "registryDependencies": [

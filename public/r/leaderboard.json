@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "leaderboard",
-  "type": "registry:component",
+  "type": "registry:block",
   "title": "8-bit Leaderboard",
   "description": "A retro-styled leaderboard component for displaying player rankings with avatars and scores.",
   "registryDependencies": [

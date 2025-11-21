@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sidebar",
-  "type": "registry:component",
+  "type": "registry:block",
   "title": "8-bit Sidebar",
   "description": "A simple 8-bit sidebar component",
   "registryDependencies": [

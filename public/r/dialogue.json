@@ -1,9 +1,12 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dialogue",
-  "type": "registry:component",
+  "type": "registry:block",
   "title": "8-bit Dialogue",
   "description": "A simple 8-bit dialogue component",
+  "dependencies": [
+    "@radix-ui/react-avatar"
+  ],
   "registryDependencies": [
     "alert"
   ],
@@ -11,7 +14,7 @@
     {
       "path": "components/ui/8bit/blocks/dialogue.tsx",
       "content": "import { cn } from \"@/lib/utils\";\n\nimport {\n  Alert,\n  AlertDescription,\n  AlertTitle,\n} from \"@/components/ui/8bit/alert\";\nimport {\n  Avatar,\n  AvatarFallback,\n  AvatarImage,\n} from \"@/components/ui/8bit/avatar\";\n\nexport interface DialogueProps extends React.ComponentProps<\"div\"> {\n  avatarSrc?: string;\n  avatarFallback?: string;\n  title?: string;\n  description?: string;\n  player?: boolean;\n}\n\nexport default function Dialogue({\n  className,\n  avatarSrc,\n  avatarFallback,\n  title,\n  description,\n  player = true,\n  ...props\n}: DialogueProps) {\n  return (\n    <div className={cn(\"flex gap-3\", className)} {...props}>\n      {player && (\n        <Avatar variant=\"retro\" className=\"size-16\">\n          <AvatarImage src={avatarSrc} alt={avatarFallback} />\n          <AvatarFallback>{avatarFallback}</AvatarFallback>\n        </Avatar>\n      )}\n      <Alert className={cn(!player && \"text-right\")}>\n        <AlertTitle>{title}</AlertTitle>\n        <AlertDescription>{description}</AlertDescription>\n      </Alert>\n\n      {!player && (\n        <Avatar variant=\"retro\" className=\"size-16\">\n          <AvatarImage src={avatarSrc} alt={avatarFallback} />\n          <AvatarFallback>{avatarFallback}</AvatarFallback>\n        </Avatar>\n      )}\n    </div>\n  );\n}\n",
-      "type": "registry:component",
+      "type": "registry:block",
       "target": "components/ui/8bit/blocks/dialogue.tsx"
     },
     {
