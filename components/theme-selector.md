@@ -81,6 +81,7 @@ The theme selector includes 12 different 8-bit themes:
 10. **VHS** - VHS tape aesthetic
 11. **Cassette** - Cassette tape theme
 12. **RustyByte** - Rusty, weathered look
+13. **Zelda** - Golden yellows, forest greens
 
 ## Components
 
