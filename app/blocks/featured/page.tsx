@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 import BlocksNavigation from "@/app/docs/components/blocks-navigation";
 

@@ -16,7 +16,7 @@ import {
   CommandShortcut as ShadcnCommandShortcut,
 } from "@/components/ui/command";
 import {
-  Dialog,
+  type Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,

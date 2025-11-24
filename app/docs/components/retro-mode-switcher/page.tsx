@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 import { RetroModeSwitcher } from "@/components/ui/retro-mode-switcher";
 import { Separator } from "@/components/ui/separator";

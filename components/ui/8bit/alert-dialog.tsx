@@ -1,8 +1,8 @@
 "use client";
 
-import * as React from "react";
+import type * as React from "react";
 
-import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
+import type * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 import { type VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";

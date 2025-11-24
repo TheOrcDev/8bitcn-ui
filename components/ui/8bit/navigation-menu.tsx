@@ -1,4 +1,4 @@
-import * as React from "react";
+import type * as React from "react";
 
 import { Indicator, Root, Viewport } from "@radix-ui/react-navigation-menu";
 import { type VariantProps, cva } from "class-variance-authority";
@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 import {
   NavigationMenuContent as ShadcnNavigationMenuContent,
-  NavigationMenuIndicator as ShadcnNavigationMenuIndicator,
+  type NavigationMenuIndicator as ShadcnNavigationMenuIndicator,
   NavigationMenuItem as ShadcnNavigationMenuItem,
   NavigationMenuLink as ShadcnNavigationMenuLink,
   NavigationMenuList as ShadcnNavigationMenuList,

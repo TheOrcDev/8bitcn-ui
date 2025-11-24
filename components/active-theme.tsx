@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  ReactNode,
+  type ReactNode,
   Suspense,
   createContext,
   useContext,
@@ -45,13 +45,15 @@ export function ActiveThemeProvider({
 }) {
   const pathname = usePathname();
 
-  useEffect(() => {
-    setActiveTheme(DEFAULT_THEME);
-  }, [pathname]);
-
   const [activeTheme, setActiveTheme] = useState<Theme>(
     () => initialTheme || DEFAULT_THEME
   );
+
+  useEffect(() => {
+    queueMicrotask(() => {
+      setActiveTheme(DEFAULT_THEME);
+    });
+  }, [pathname]);
 
   useEffect(() => {
     setThemeCookie(activeTheme);

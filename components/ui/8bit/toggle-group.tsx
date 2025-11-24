@@ -1,4 +1,4 @@
-import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
+import type * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
 import { type VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";

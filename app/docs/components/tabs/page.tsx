@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 import { tabsMetaData } from "@/lib/metadata";
 

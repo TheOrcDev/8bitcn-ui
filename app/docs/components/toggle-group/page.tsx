@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 import { Separator } from "@radix-ui/react-select";
 import { Bold, Italic, Underline } from "lucide-react";
