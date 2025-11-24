@@ -23,6 +23,7 @@ const themes = [
   { name: Theme.VHS, color: "#8B5CF6" },
   { name: Theme.Cassette, color: "#8B5A2B" },
   { name: Theme.RustyByte, color: "#d2691e" },
+  { name: Theme.Zelda, color: "oklch(0.75 0.2 90)" },
 ];
 
 export function SelectThemeDropdown({

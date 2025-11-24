@@ -11,6 +11,7 @@ export enum Theme {
   VHS = "vhs",
   Cassette = "cassette",
   RustyByte = "rusty-byte",
+  Zelda = "zelda",
 }
 
 const themes = [
@@ -1043,6 +1044,108 @@ const themes = [
     --sidebar-accent-foreground: oklch(0.95 0.02 95);
     --sidebar-border: oklch(0.25 0.05 40);
     --sidebar-ring: oklch(0.7 0.2 40);
+  }
+    `,
+  },
+
+  {
+    name: Theme.Zelda,
+    color: `
+   :root {
+  --radius: 0.25rem;
+
+  /* GOLDEN YELLOW PRIMARY */
+  --primary: oklch(0.75 0.2 90);
+  --primary-foreground: oklch(0.1 0.02 10);
+
+  /* BACKGROUND / FOREGROUND */
+  --background: oklch(0.95 0.02 95); /* light parchment */
+  --foreground: oklch(0.5 0.15 120); /* deep forest green */
+
+  /* CARDS */
+  --card: oklch(0.96 0.02 95);
+  --card-foreground: oklch(0.15 0.05 120);
+
+  /* POPOVER */
+  --popover: oklch(0.96 0.02 95);
+  --popover-foreground: oklch(0.15 0.05 120);
+
+  /* SECONDARY (FOREST GREEN) */
+  --secondary: oklch(0.5 0.15 120);
+  --secondary-foreground: oklch(0.95 0.02 95);
+
+  /* MUTED */
+  --muted: oklch(0.9 0.02 120);
+  --muted-foreground: oklch(0.4 0.05 120);
+
+  /* ACCENT (LIGHT GOLD) */
+  --accent: oklch(0.85 0.2 90);
+  --accent-foreground: oklch(0.1 0.02 10);
+
+  /* DESTRUCTIVE (RED HEART / DANGER) */
+  --destructive: oklch(0.55 0.25 30);
+  --border: oklch(0.6 0.05 90);
+  --input: oklch(0.6 0.05 90);
+  --ring: oklch(0.75 0.2 90);
+
+  /* CHART COLORS */
+  --chart-1: oklch(0.75 0.2 90); /* golden */
+  --chart-2: oklch(0.5 0.15 120); /* forest green */
+  --chart-3: oklch(0.85 0.2 90); /* light gold */
+  --chart-4: oklch(0.15 0.05 120); /* dark green */
+  --chart-5: oklch(0.95 0.02 95); /* parchment */
+
+  /* SIDEBAR */
+  --sidebar: oklch(0.9 0.02 95);
+  --sidebar-foreground: oklch(0.15 0.05 120);
+  --sidebar-primary: oklch(0.75 0.2 90);
+  --sidebar-primary-foreground: oklch(0.1 0.02 10);
+  --sidebar-accent: oklch(0.5 0.15 120);
+  --sidebar-accent-foreground: oklch(0.95 0.02 95);
+  --sidebar-border: oklch(0.6 0.05 90);
+  --sidebar-ring: oklch(0.75 0.2 90);
+
+  .dark {
+    --primary: oklch(0.85 0.2 90);
+    --primary-foreground: oklch(0.05 0.02 10);
+
+    --background: oklch(0.15 0.05 120);
+    --foreground: oklch(0.95 0.02 95);
+
+    --card: oklch(0.12 0.02 20);
+    --card-foreground: oklch(0.95 0.02 95);
+
+    --popover: oklch(0.12 0.02 20);
+    --popover-foreground: oklch(0.95 0.02 95);
+
+    --secondary: oklch(0.35 0.1 120);
+    --secondary-foreground: oklch(0.95 0.02 95);
+
+    --muted: oklch(0.25 0.02 120);
+    --muted-foreground: oklch(0.8 0.02 95);
+
+    --accent: oklch(0.9 0.2 90);
+    --accent-foreground: oklch(0.05 0.02 10);
+
+    --destructive: oklch(0.55 0.25 30);
+    --border: oklch(0.25 0.02 90);
+    --input: oklch(0.25 0.02 90);
+    --ring: oklch(0.35 0.1 120);
+
+    --chart-1: oklch(0.75 0.2 90);
+    --chart-2: oklch(0.5 0.15 120);
+    --chart-3: oklch(0.85 0.2 90);
+    --chart-4: oklch(0.15 0.05 120);
+    --chart-5: oklch(0.1 0.02 20);
+
+    --sidebar: oklch(0.12 0.02 20);
+    --sidebar-foreground: oklch(0.95 0.02 95);
+    --sidebar-primary: oklch(0.85 0.2 90);
+    --sidebar-primary-foreground: oklch(0.05 0.02 10);
+    --sidebar-accent: oklch(0.5 0.15 120);
+    --sidebar-accent-foreground: oklch(0.95 0.02 95);
+    --sidebar-border: oklch(0.25 0.02 90);
+    --sidebar-ring: oklch(0.85 0.2 90);
   }
     `,
   },

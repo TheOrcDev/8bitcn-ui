@@ -1,1860 +1,1860 @@
 {
-	"$schema": "https://ui.shadcn.com/schema/registry.json",
-	"name": "8bitcn",
-	"homepage": "https://8bitcn.com",
-	"items": [
-		{
-			"name": "chapter-intro",
-			"type": "registry:block",
-			"title": "8-bit Chapter Intro",
-			"description": "A cinematic chapter/level intro with pixel art background.",
-			"registryDependencies": ["card"],
-			"files": [
-				{
-					"path": "components/ui/8bit/blocks/chapter-intro.tsx",
-					"type": "registry:block",
-					"target": "components/ui/8bit/blocks/chapter-intro.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				},
-				{
-					"path": "components/ui/8bit/card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/card.tsx"
-				}
-			]
-		},
-		{
-			"name": "button",
-			"type": "registry:component",
-			"title": "8-bit Button",
-			"description": "A simple 8-bit button component",
-			"registryDependencies": ["button"],
-			"files": [
-				{
-					"path": "components/ui/8bit/button.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/button.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "input",
-			"type": "registry:component",
-			"title": "8-bit Input",
-			"description": "A simple 8-bit input component",
-			"registryDependencies": ["input"],
-			"files": [
-				{
-					"path": "components/ui/8bit/input.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/input.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "toast",
-			"type": "registry:component",
-			"title": "8-bit Toast",
-			"description": "A simple 8-bit toast component",
-			"registryDependencies": ["sonner"],
-			"files": [
-				{
-					"path": "components/ui/8bit/toast.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/toast.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "input-otp",
-			"type": "registry:component",
-			"title": "8-bit Input-OTP",
-			"description": "A simple 8-bit input-otp component",
-			"registryDependencies": ["input-otp"],
-			"files": [
-				{
-					"path": "components/ui/8bit/input-otp.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/input-otp.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "badge",
-			"type": "registry:component",
-			"title": "8-bit Badge",
-			"description": "A simple 8-bit badge component",
-			"registryDependencies": ["badge"],
-			"files": [
-				{
-					"path": "components/ui/8bit/badge.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/badge.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "textarea",
-			"type": "registry:component",
-			"title": "8-bit Textarea",
-			"description": "A simple 8-bit textarea component",
-			"registryDependencies": ["textarea"],
-			"files": [
-				{
-					"path": "components/ui/8bit/textarea.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/textarea.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "calendar",
-			"type": "registry:component",
-			"title": "8-bit Calendar",
-			"description": "A simple 8-bit calendar component",
-			"registryDependencies": ["calendar"],
-			"files": [
-				{
-					"path": "components/ui/8bit/calendar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/calendar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "card",
-			"type": "registry:component",
-			"title": "8-bit Card",
-			"description": "A simple 8-bit card component",
-			"registryDependencies": ["card"],
-			"files": [
-				{
-					"path": "components/ui/8bit/card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/card.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "carousel",
-			"type": "registry:component",
-			"title": "8-bit Card",
-			"description": "A simple 8-bit carousel component",
-			"registryDependencies": ["carousel"],
-			"files": [
-				{
-					"path": "components/ui/8bit/carousel.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/carousel.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "dialog",
-			"type": "registry:component",
-			"title": "8-bit Dialog",
-			"description": "A simple 8-bit dialog component",
-			"registryDependencies": ["dialog"],
-			"files": [
-				{
-					"path": "components/ui/8bit/dialog.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/dialog.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "dropdown-menu",
-			"type": "registry:component",
-			"title": "8-bit Dropdown Menu",
-			"description": "A simple 8-bit dropdown-menu component",
-			"registryDependencies": ["dropdown-menu"],
-			"files": [
-				{
-					"path": "components/ui/8bit/dropdown-menu.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/dropdown-menu.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "hover-card",
-			"type": "registry:component",
-			"title": "8-bit Hover Card",
-			"description": "A simple 8-bit hover card component",
-			"registryDependencies": ["hover-card"],
-			"files": [
-				{
-					"path": "components/ui/8bit/hover-card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/hover-card.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "popover",
-			"type": "registry:component",
-			"title": "8-bit Popover",
-			"description": "A simple 8-bit popover component",
-			"registryDependencies": ["popover"],
-			"files": [
-				{
-					"path": "components/ui/8bit/popover.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/popover.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "resizable",
-			"type": "registry:component",
-			"title": "8-bit Resizable Panel",
-			"description": "Accessible resizable panel groups and layouts with keyboard support.",
-			"registryDependencies": [],
-			"files": [
-				{
-					"path": "components/ui/8bit/resizable.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/resizable.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "select",
-			"type": "registry:component",
-			"title": "8-bit Select",
-			"description": "A simple 8-bit select component",
-			"registryDependencies": ["select"],
-			"files": [
-				{
-					"path": "components/ui/8bit/select.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/select.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "sheet",
-			"type": "registry:component",
-			"title": "8-bit sheet",
-			"description": "A simple 8-bit sheet component",
-			"registryDependencies": ["sheet"],
-			"files": [
-				{
-					"path": "components/ui/8bit/sheet.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/sheet.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "label",
-			"type": "registry:component",
-			"title": "8-bit Label",
-			"description": "A simple 8-bit label component",
-			"registryDependencies": ["label"],
-			"files": [
-				{
-					"path": "components/ui/8bit/label.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/label.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "checkbox",
-			"type": "registry:component",
-			"title": "8-bit Checkbox",
-			"description": "A simple 8-bit checkbox component",
-			"registryDependencies": ["checkbox"],
-			"files": [
-				{
-					"path": "components/ui/8bit/checkbox.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/checkbox.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "scroll-area",
-			"type": "registry:component",
-			"title": "8-bit Scroll Area",
-			"description": "A simple 8-bit Scroll Area component",
-			"registryDependencies": [],
-			"files": [
-				{
-					"path": "components/ui/8bit/scroll-area.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/scroll-area.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "switch",
-			"type": "registry:component",
-			"title": "8-bit Switch",
-			"description": "A simple 8-bit switch component",
-			"registryDependencies": ["switch"],
-			"files": [
-				{
-					"path": "components/ui/8bit/switch.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/switch.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "alert",
-			"type": "registry:component",
-			"title": "8-bit Alert",
-			"description": "A simple 8-bit switch component",
-			"registryDependencies": ["alert"],
-			"files": [
-				{
-					"path": "components/ui/8bit/alert.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/alert.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "alert-dialog",
-			"type": "registry:component",
-			"title": "8-bit Alert Dialog",
-			"description": "A simple 8-bit Alert Dialog component",
-			"registryDependencies": ["alert-dialog"],
-			"files": [
-				{
-					"path": "components/ui/8bit/alert-dialog.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/alert-dialog.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "tooltip",
-			"type": "registry:component",
-			"title": "8-bit Tooltip",
-			"description": "A simple 8-bit tooltip component",
-			"registryDependencies": ["tooltip"],
-			"files": [
-				{
-					"path": "components/ui/8bit/tooltip.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/tooltip.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "tooltip",
-			"type": "registry:component",
-			"title": "8-bit Tooltip",
-			"description": "A simple 8-bit tooltip component",
-			"registryDependencies": ["tooltip"],
-			"files": [
-				{
-					"path": "components/ui/8bit/tooltip.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/tooltip.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "avatar",
-			"type": "registry:component",
-			"title": "8-bit Avatar",
-			"description": "A simple 8-bit avatar component",
-			"registryDependencies": ["avatar"],
-			"files": [
-				{
-					"path": "components/ui/8bit/avatar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/avatar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "skeleton",
-			"type": "registry:component",
-			"title": "8-bit Skeleton",
-			"description": "A simple 8-bit skeleton component",
-			"registryDependencies": ["skeleton"],
-			"files": [
-				{
-					"path": "components/ui/8bit/skeleton.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/skeleton.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "breadcrumb",
-			"type": "registry:component",
-			"title": "8-bit Breadcrumb",
-			"description": "A simple 8-bit breadcrumb component",
-			"registryDependencies": ["breadcrumb"],
-			"files": [
-				{
-					"path": "components/ui/8bit/breadcrumb.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/breadcrumb.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "collapsible",
-			"type": "registry:component",
-			"title": "8-bit Collapsible",
-			"description": "A simple 8-bit collapsible component",
-			"registryDependencies": ["collapsible"],
-			"files": [
-				{
-					"path": "components/ui/8bit/collapsible.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/collapsible.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "progress",
-			"type": "registry:component",
-			"title": "8-bit Progress",
-			"description": "A simple 8-bit progress component",
-			"dependencies": ["@radix-ui/react-progress"],
-			"registryDependencies": [],
-			"files": [
-				{
-					"path": "components/ui/8bit/progress.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/progress.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "enemy-health-display",
-			"type": "registry:component",
-			"title": "8-bit Enemy Health Display",
-			"description": "A retro-styled enemy health display component with health bar, name, and level",
-			"registryDependencies": ["health-bar"],
-			"files": [
-				{
-					"path": "components/ui/8bit/enemy-health-display.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/enemy-health-display.tsx"
-				},
-				{
-					"path": "components/ui/8bit/health-bar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/health-bar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/progress.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/progress.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "health-bar",
-			"type": "registry:component",
-			"title": "8-bit Health Bar",
-			"description": "A simple 8-bit health bar component",
-			"registryDependencies": ["progress"],
-			"files": [
-				{
-					"path": "components/ui/8bit/health-bar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/health-bar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/progress.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/progress.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "mana-bar",
-			"type": "registry:component",
-			"title": "8-bit Mana Bar",
-			"description": "A simple 8-bit mana bar component",
-			"registryDependencies": [],
-			"files": [
-				{
-					"path": "components/ui/8bit/mana-bar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/mana-bar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/progress.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/progress.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "game-progress",
-			"type": "registry:block",
-			"title": "8-bit Game Progress",
-			"description": "A simple 8-bit game progress component",
-			"dependencies": ["@radix-ui/react-progress"],
-			"registryDependencies": [],
-			"files": [
-				{
-					"path": "components/ui/8bit/blocks/game-progress.tsx",
-					"type": "registry:block",
-					"target": "components/ui/8bit/blocks/game-progress.tsx"
-				},
-				{
-					"path": "components/ui/8bit/health-bar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/health-bar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/mana-bar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/mana-bar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/progress.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/progress.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "dialogue",
-			"type": "registry:block",
-			"title": "8-bit Dialogue",
-			"description": "A simple 8-bit dialogue component",
-			"dependencies": ["@radix-ui/react-avatar"],
-			"registryDependencies": ["alert"],
-			"files": [
-				{
-					"path": "components/ui/8bit/blocks/dialogue.tsx",
-					"type": "registry:block",
-					"target": "components/ui/8bit/blocks/dialogue.tsx"
-				},
-				{
-					"path": "components/ui/8bit/alert.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/alert.tsx"
-				},
-				{
-					"path": "components/ui/8bit/avatar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/avatar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "profile-card",
-			"type": "registry:component",
-			"title": "8-bit Profile Card",
-			"description": "A simple 8-bit profile card component",
-			"registryDependencies": ["card", "button", "avatar", "badge"],
-			"dependencies": ["@radix-ui/react-avatar"],
-			"files": [
-				{
-					"path": "components/ui/8bit/card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/card.tsx"
-				},
-				{
-					"path": "components/ui/8bit/button.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/button.tsx"
-				},
-				{
-					"path": "components/ui/8bit/avatar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/avatar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/badge.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/badge.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "slider",
-			"type": "registry:component",
-			"title": "8-bit Slider",
-			"description": "A simple 8-bit slider component",
-			"registryDependencies": [],
-			"files": [
-				{
-					"path": "components/ui/8bit/slider.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/slider.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "context-menu",
-			"type": "registry:component",
-			"title": "8-bit Context Menu",
-			"description": "A simple 8-bit context menu component",
-			"registryDependencies": [],
-			"files": [
-				{
-					"path": "components/ui/8bit/context-menu.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/context-menu.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "menubar",
-			"type": "registry:component",
-			"title": "8-bit Menu Bar",
-			"description": "A simple 8-bit menu bar component",
-			"registryDependencies": [],
-			"files": [
-				{
-					"path": "components/ui/8bit/menubar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/menubar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "toggle",
-			"type": "registry:component",
-			"title": "8-bit Toggle",
-			"description": "A simple 8-bit toggle component",
-			"registryDependencies": ["toggle"],
-			"files": [
-				{
-					"path": "components/ui/8bit/toggle.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/toggle.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "table",
-			"type": "registry:component",
-			"title": "8-bit Table",
-			"description": "A simple 8-bit table component",
-			"registryDependencies": ["table"],
-			"files": [
-				{
-					"path": "components/ui/8bit/table.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/table.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "tabs",
-			"type": "registry:component",
-			"title": "8-bit Tabs",
-			"description": "A simple 8-bit tabs component",
-			"registryDependencies": ["tabs"],
-			"files": [
-				{
-					"path": "components/ui/8bit/tabs.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/tabs.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "combo-box",
-			"type": "registry:component",
-			"title": "8-bit Combo Box",
-			"description": "A simple 8-bit combo box component",
-			"registryDependencies": ["command", "popover", "button"],
-			"files": [
-				{
-					"path": "components/ui/8bit/button.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/button.tsx"
-				},
-				{
-					"path": "components/ui/8bit/popover.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/popover.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "command",
-			"type": "registry:component",
-			"title": "8-bit Command",
-			"description": "A simple 8-bit command component",
-			"registryDependencies": ["command"],
-			"files": [
-				{
-					"path": "components/ui/8bit/command.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/command.tsx"
-				},
-				{
-					"path": "components/ui/8bit/separator.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/separator.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "separator",
-			"type": "registry:component",
-			"title": "8-bit Separator",
-			"description": "A simple 8-bit separator component",
-			"registryDependencies": [],
-			"files": [
-				{
-					"path": "components/ui/8bit/separator.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/separator.tsx"
-				}
-			]
-		},
-		{
-			"name": "radio-group",
-			"type": "registry:component",
-			"title": "8-bit Radio Group",
-			"description": "A simple 8-bit radio group component",
-			"registryDependencies": ["radio-group"],
-			"files": [
-				{
-					"path": "components/ui/8bit/radio-group.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/radio-group.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "pagination",
-			"type": "registry:component",
-			"title": "8-bit Pagination",
-			"description": "A simple 8-bit pagination component",
-			"registryDependencies": ["pagination"],
-			"files": [
-				{
-					"path": "components/ui/8bit/pagination.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/pagination.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "login-form",
-			"type": "registry:block",
-			"title": "8-bit Login Form",
-			"description": "A simple 8-bit login form component",
-			"registryDependencies": ["button", "card", "input", "label"],
-			"files": [
-				{
-					"path": "components/ui/8bit/blocks/login-form.tsx",
-					"type": "registry:block",
-					"target": "components/ui/8bit/blocks/login-form.tsx"
-				},
-				{
-					"path": "components/ui/8bit/button.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/button.tsx"
-				},
-				{
-					"path": "components/ui/8bit/card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/card.tsx"
-				},
-				{
-					"path": "components/ui/8bit/input.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/input.tsx"
-				},
-				{
-					"path": "components/ui/8bit/label.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/label.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "login-form-2",
-			"type": "registry:block",
-			"title": "8-bit Login Form 2",
-			"description": "A simple 8-bit login form component",
-			"registryDependencies": ["button", "card", "input", "label"],
-			"files": [
-				{
-					"path": "components/ui/8bit/blocks/login-form-2.tsx",
-					"type": "registry:block",
-					"target": "components/ui/8bit/blocks/login-form-2.tsx"
-				},
-				{
-					"path": "components/ui/8bit/button.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/button.tsx"
-				},
-				{
-					"path": "components/ui/8bit/card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/card.tsx"
-				},
-				{
-					"path": "components/ui/8bit/input.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/input.tsx"
-				},
-				{
-					"path": "components/ui/8bit/label.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/label.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "login-form-with-image",
-			"type": "registry:block",
-			"title": "8-bit Login Form with Image",
-			"description": "A simple 8-bit login form component with image",
-			"registryDependencies": ["button", "card", "input", "label"],
-			"files": [
-				{
-					"path": "components/ui/8bit/blocks/login-form-with-image.tsx",
-					"type": "registry:block",
-					"target": "components/ui/8bit/blocks/login-form-with-image.tsx"
-				},
-				{
-					"path": "components/ui/8bit/button.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/button.tsx"
-				},
-				{
-					"path": "components/ui/8bit/card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/card.tsx"
-				},
-				{
-					"path": "components/ui/8bit/input.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/input.tsx"
-				},
-				{
-					"path": "components/ui/8bit/label.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/label.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "login-page",
-			"type": "registry:page",
-			"title": "8-bit Login Page",
-			"description": "A simple 8-bit login page component",
-			"registryDependencies": ["button", "card", "input", "label"],
-			"files": [
-				{
-					"path": "app/login/page.tsx",
-					"type": "registry:component",
-					"target": "app/login/page.tsx"
-				},
-				{
-					"path": "components/ui/8bit/blocks/login-form.tsx",
-					"type": "registry:block",
-					"target": "components/ui/8bit/blocks/login-form.tsx"
-				},
-				{
-					"path": "components/ui/8bit/button.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/button.tsx"
-				},
-				{
-					"path": "components/ui/8bit/card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/card.tsx"
-				},
-				{
-					"path": "components/ui/8bit/input.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/input.tsx"
-				},
-				{
-					"path": "components/ui/8bit/label.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/label.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "chart",
-			"type": "registry:block",
-			"title": "8-bit Chart",
-			"description": "A simple 8-bit chart component",
-			"registryDependencies": [],
-			"files": [
-				{
-					"path": "components/ui/8bit/blocks/chart.tsx",
-					"type": "registry:block",
-					"target": "components/ui/8bit/blocks/chart.tsx"
-				},
-				{
-					"path": "components/ui/8bit/chart.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/chart.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "chart-bar",
-			"type": "registry:block",
-			"title": "8-bit Chart Bar",
-			"description": "A simple 8-bit chart bar component",
-			"registryDependencies": [],
-			"files": [
-				{
-					"path": "components/ui/8bit/blocks/chart-bar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/blocks/chart-bar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/chart.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/chart.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "chart-area-step",
-			"type": "registry:block",
-			"title": "8-bit Chart Area Step",
-			"description": "A simple 8-bit chart area step component",
-			"registryDependencies": [],
-			"files": [
-				{
-					"path": "components/ui/8bit/blocks/chart-area-step.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/blocks/chart-area-step.tsx"
-				},
-				{
-					"path": "components/ui/8bit/chart.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/chart.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "main-menu",
-			"type": "registry:block",
-			"title": "8-bit Main Menu",
-			"description": "A simple 8-bit main menu component",
-			"registryDependencies": ["button", "card"],
-			"files": [
-				{
-					"path": "components/ui/8bit/blocks/main-menu.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/blocks/main-menu.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				},
-				{
-					"path": "components/ui/8bit/button.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/button.tsx"
-				},
-				{
-					"path": "components/ui/8bit/card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/card.tsx"
-				}
-			]
-		},
-		{
-			"name": "pause-menu",
-			"type": "registry:block",
-			"title": "8-bit Pause Menu",
-			"description": "A simple 8-bit pause menu component",
-			"registryDependencies": ["button", "card"],
-			"files": [
-				{
-					"path": "components/ui/8bit/blocks/pause-menu.tsx",
-					"type": "registry:block",
-					"target": "components/ui/8bit/blocks/pause-menu.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				},
-				{
-					"path": "components/ui/8bit/button.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/button.tsx"
-				},
-				{
-					"path": "components/ui/8bit/card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/card.tsx"
-				}
-			]
-		},
-		{
-			"name": "game-over",
-			"type": "registry:block",
-			"title": "8-bit Game Over",
-			"description": "A simple 8-bit game over component",
-			"registryDependencies": ["button", "card"],
-			"files": [
-				{
-					"path": "components/ui/8bit/blocks/game-over.tsx",
-					"type": "registry:block",
-					"target": "components/ui/8bit/blocks/game-over.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				},
-				{
-					"path": "components/ui/8bit/button.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/button.tsx"
-				},
-				{
-					"path": "components/ui/8bit/card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/card.tsx"
-				}
-			]
-		},
-		{
-			"name": "audio-settings",
-			"type": "registry:block",
-			"title": "8-bit Audio Settings",
-			"description": "A simple 8-bit audio settings component",
-			"dependencies": ["@radix-ui/react-slider", "@radix-ui/react-switch"],
-			"registryDependencies": ["button", "card", "label"],
-			"files": [
-				{
-					"path": "components/ui/8bit/blocks/audio-settings.tsx",
-					"type": "registry:block",
-					"target": "components/ui/8bit/blocks/audio-settings.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				},
-				{
-					"path": "components/ui/8bit/switch.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/switch.tsx"
-				},
-				{
-					"path": "components/ui/8bit/card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/card.tsx"
-				},
-				{
-					"path": "components/ui/8bit/slider.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/slider.tsx"
-				},
-				{
-					"path": "components/ui/8bit/label.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/label.tsx"
-				}
-			]
-		},
-		{
-			"name": "toggle-group",
-			"type": "registry:component",
-			"title": "8-bit Toggle Group",
-			"description": "A simple 8-bit toggle group component",
-			"registryDependencies": ["toggle-group"],
-			"files": [
-				{
-					"path": "components/ui/8bit/toggle-group.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/toggle-group.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "sidebar",
-			"type": "registry:block",
-			"title": "8-bit Sidebar",
-			"description": "A simple 8-bit sidebar component",
-			"registryDependencies": ["sidebar"],
-			"files": [
-				{
-					"path": "components/ui/8bit/blocks/sidebar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/blocks/sidebar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "accordion",
-			"type": "registry:component",
-			"title": "8-bit Accordion",
-			"description": "A simple 8-bit accordion component",
-			"registryDependencies": ["accordion"],
-			"files": [
-				{
-					"path": "components/ui/8bit/accordion.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/accordion.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "drawer",
-			"type": "registry:component",
-			"title": "8-bit Drawer",
-			"description": "A simple 8-bit drawer component",
-			"registryDependencies": ["drawer"],
-			"files": [
-				{
-					"path": "components/ui/8bit/drawer.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/drawer.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "navigation-menu",
-			"type": "registry:component",
-			"title": "8-bit Navigation Menu",
-			"description": "A simple 8-bit navigation menu component",
-			"registryDependencies": ["navigation-menu"],
-			"files": [
-				{
-					"path": "components/ui/8bit/navigation-menu.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/navigation-menu.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "difficulty-select",
-			"type": "registry:block",
-			"title": "8-bit Difficulty Select",
-			"description": "A reusable 8-bit difficulty selector with Easy, Normal, Hard.",
-			"registryDependencies": ["button", "card"],
-			"files": [
-				{
-					"path": "components/ui/8bit/blocks/difficulty-select.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/blocks/difficulty-select.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				},
-				{
-					"path": "components/ui/8bit/button.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/button.tsx"
-				},
-				{
-					"path": "components/ui/8bit/card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/card.tsx"
-				}
-			]
-		},
-		{
-			"name": "leaderboard",
-			"type": "registry:block",
-			"title": "8-bit Leaderboard",
-			"description": "A retro-styled leaderboard component for displaying player rankings with avatars and scores.",
-			"registryDependencies": ["card", "avatar", "badge", "separator"],
-			"files": [
-				{
-					"path": "components/ui/8bit/leaderboard.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/leaderboard.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				},
-				{
-					"path": "components/ui/8bit/card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/card.tsx"
-				},
-				{
-					"path": "components/ui/8bit/avatar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/avatar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/badge.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/badge.tsx"
-				},
-				{
-					"path": "components/ui/8bit/separator.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/separator.tsx"
-				}
-			]
-		},
-		{
-			"name": "player-profile-card",
-			"type": "registry:block",
-			"title": "8-bit Player Profile Card",
-			"description": "A comprehensive player profile card component with stats, health/mana bars, and custom stats support.",
-			"registryDependencies": ["card", "avatar", "badge", "progress"],
-			"files": [
-				{
-					"path": "components/ui/8bit/blocks/player-profile-card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/blocks/player-profile-card.tsx"
-				},
-				{
-					"path": "components/ui/8bit/card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/card.tsx"
-				},
-				{
-					"path": "components/ui/8bit/avatar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/avatar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/badge.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/badge.tsx"
-				},
-				{
-					"path": "components/ui/8bit/health-bar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/health-bar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/mana-bar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/mana-bar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/progress.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/progress.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "quest-log",
-			"type": "registry:block",
-			"title": "8-bit Quest Log",
-			"description": "A retro-styled quest log component for tracking game missions and tasks with accordion functionality and status indicators.",
-			"registryDependencies": ["accordion", "card", "badge", "scroll-area"],
-			"files": [
-				{
-					"path": "components/ui/8bit/quest-log.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/quest-log.tsx"
-				},
-				{
-					"path": "components/ui/8bit/accordion.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/accordion.tsx"
-				},
-				{
-					"path": "components/ui/8bit/card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/card.tsx"
-				},
-				{
-					"path": "components/ui/8bit/badge.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/badge.tsx"
-				},
-				{
-					"path": "components/ui/8bit/scroll-area.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/scroll-area.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "dashboard-01",
-			"type": "registry:page",
-			"title": "8-bit Dashboard 01",
-			"description": "A complete 8-bit styled dashboard with sidebar navigation, stats cards, charts, and data table with drag-and-drop functionality.",
-			"registryDependencies": [
-				"sidebar",
-				"button",
-				"card",
-				"badge",
-				"skeleton",
-				"chart",
-				"checkbox",
-				"drawer",
-				"dropdown-menu",
-				"input",
-				"label",
-				"select",
-				"separator",
-				"table",
-				"tabs"
-			],
-			"dependencies": [
-				"@dnd-kit/core",
-				"@dnd-kit/sortable",
-				"@dnd-kit/modifiers",
-				"@dnd-kit/utilities",
-				"@tabler/icons-react",
-				"@tanstack/react-table",
-				"sonner",
-				"zod"
-			],
-			"files": [
-				{
-					"path": "app/dashboard/page.tsx",
-					"type": "registry:component",
-					"target": "app/dashboard/page.tsx"
-				},
-				{
-					"path": "app/dashboard/data.json",
-					"type": "registry:component",
-					"target": "app/dashboard/data.json"
-				},
-				{
-					"path": "components/dashboard-header.tsx",
-					"type": "registry:component",
-					"target": "components/dashboard-header.tsx"
-				},
-				{
-					"path": "components/section-cards.tsx",
-					"type": "registry:component",
-					"target": "components/section-cards.tsx"
-				},
-				{
-					"path": "components/data-table.tsx",
-					"type": "registry:component",
-					"target": "components/data-table.tsx"
-				},
-				{
-					"path": "components/ui/8bit/blocks/chart-bar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/blocks/chart-bar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/button.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/button.tsx"
-				},
-				{
-					"path": "components/ui/8bit/card.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/card.tsx"
-				},
-				{
-					"path": "components/ui/8bit/badge.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/badge.tsx"
-				},
-				{
-					"path": "components/ui/8bit/skeleton.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/skeleton.tsx"
-				},
-				{
-					"path": "components/ui/8bit/chart.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/chart.tsx"
-				},
-				{
-					"path": "components/ui/8bit/checkbox.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/checkbox.tsx"
-				},
-				{
-					"path": "components/ui/8bit/drawer.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/drawer.tsx"
-				},
-				{
-					"path": "components/ui/8bit/dropdown-menu.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/dropdown-menu.tsx"
-				},
-				{
-					"path": "components/ui/8bit/input.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/input.tsx"
-				},
-				{
-					"path": "components/ui/8bit/label.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/label.tsx"
-				},
-				{
-					"path": "components/ui/8bit/select.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/select.tsx"
-				},
-				{
-					"path": "components/ui/8bit/separator.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/separator.tsx"
-				},
-				{
-					"path": "components/ui/8bit/table.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/table.tsx"
-				},
-				{
-					"path": "components/ui/8bit/tabs.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/tabs.tsx"
-				},
-				{
-					"path": "components/ui/sidebar.tsx",
-					"type": "registry:component",
-					"target": "components/ui/sidebar.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "theme-selector",
-			"type": "registry:component",
-			"title": "8-bit Theme Selector",
-			"description": "A complete theme selector component with dropdown selection and code copy functionality. Includes theme context provider for managing active themes across the application.",
-			"registryDependencies": ["select"],
-			"files": [
-				{
-					"path": "components/select-theme-dropdown.tsx",
-					"type": "registry:component",
-					"target": "components/select-theme-dropdown.tsx"
-				},
-				{
-					"path": "components/active-theme.tsx",
-					"type": "registry:component",
-					"target": "components/active-theme.tsx"
-				},
-				{
-					"path": "lib/themes.ts",
-					"type": "registry:component",
-					"target": "lib/themes.ts"
-				},
-				{
-					"path": "components/ui/8bit/select.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/select.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				},
-				{
-					"path": "app/retro-globals.css",
-					"type": "registry:component",
-					"target": "app/retro-globals.css"
-				}
-			]
-		},
-		{
-			"name": "spinner",
-			"type": "registry:component",
-			"title": "8-bit Spinner",
-			"description": "Displays an 8-bit spinner component.",
-			"registryDependencies": [],
-			"files": [
-				{
-					"path": "components/ui/8bit/spinner.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/spinner.tsx"
-				}
-			]
-		},
-		{
-			"name": "kbd",
-			"type": "registry:component",
-			"title": "8-bit Kbd",
-			"description": "A simple 8-bit kbd component",
-			"registryDependencies": [],
-			"files": [
-				{
-					"path": "components/ui/8bit/kbd.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/kbd.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "retro-mode-switcher",
-			"type": "registry:component",
-			"title": "8-bit Retro Mode Switcher",
-			"description": "A retro-styled theme toggle component with pixel art sun and moon icons. Perfect for 8-bit themed applications that need a nostalgic theme switcher.",
-			"registryDependencies": ["button"],
-			"dependencies": ["next-themes"],
-			"files": [
-				{
-					"path": "components/ui/retro-mode-switcher.tsx",
-					"type": "registry:component",
-					"target": "components/ui/retro-mode-switcher.tsx"
-				},
-				{
-					"path": "components/ui/8bit/button.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/button.tsx"
-				},
-				{
-					"path": "components/theme-provider.tsx",
-					"type": "registry:component",
-					"target": "components/theme-provider.tsx"
-				},
-				{
-					"path": "components/ui/8bit/styles/retro.css",
-					"type": "registry:component",
-					"target": "components/ui/8bit/styles/retro.css"
-				}
-			]
-		},
-		{
-			"name": "empty",
-			"type": "registry:component",
-			"title": "8-bit Empty",
-			"description": "Displays an 8-bit empty component.",
-			"registryDependencies": [],
-			"files": [
-				{
-					"path": "components/ui/8bit/empty.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/empty.tsx"
-				}
-			]
-		},
-		{
-			"name": "item",
-			"type": "registry:component",
-			"title": "8-bit Item",
-			"description": "Displays an 8-bit item component.",
-			"registryDependencies": ["separator"],
-			"files": [
-				{
-					"path": "components/ui/8bit/item.tsx",
-					"type": "registry:component",
-					"target": "components/ui/8bit/item.tsx"
-				}
-			]
-		}
-	]
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "8bitcn",
+  "homepage": "https://8bitcn.com",
+  "items": [
+    {
+      "name": "chapter-intro",
+      "type": "registry:block",
+      "title": "8-bit Chapter Intro",
+      "description": "A cinematic chapter/level intro with pixel art background.",
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/chapter-intro.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/chapter-intro.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:component",
+      "title": "8-bit Button",
+      "description": "A simple 8-bit button component",
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:component",
+      "title": "8-bit Input",
+      "description": "A simple 8-bit input component",
+      "registryDependencies": ["input"],
+      "files": [
+        {
+          "path": "components/ui/8bit/input.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/input.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:component",
+      "title": "8-bit Toast",
+      "description": "A simple 8-bit toast component",
+      "registryDependencies": ["sonner"],
+      "files": [
+        {
+          "path": "components/ui/8bit/toast.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/toast.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:component",
+      "title": "8-bit Input-OTP",
+      "description": "A simple 8-bit input-otp component",
+      "registryDependencies": ["input-otp"],
+      "files": [
+        {
+          "path": "components/ui/8bit/input-otp.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/input-otp.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:component",
+      "title": "8-bit Badge",
+      "description": "A simple 8-bit badge component",
+      "registryDependencies": ["badge"],
+      "files": [
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/badge.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:component",
+      "title": "8-bit Textarea",
+      "description": "A simple 8-bit textarea component",
+      "registryDependencies": ["textarea"],
+      "files": [
+        {
+          "path": "components/ui/8bit/textarea.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/textarea.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:component",
+      "title": "8-bit Calendar",
+      "description": "A simple 8-bit calendar component",
+      "registryDependencies": ["calendar"],
+      "files": [
+        {
+          "path": "components/ui/8bit/calendar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/calendar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:component",
+      "title": "8-bit Card",
+      "description": "A simple 8-bit card component",
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:component",
+      "title": "8-bit Card",
+      "description": "A simple 8-bit carousel component",
+      "registryDependencies": ["carousel"],
+      "files": [
+        {
+          "path": "components/ui/8bit/carousel.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/carousel.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:component",
+      "title": "8-bit Dialog",
+      "description": "A simple 8-bit dialog component",
+      "registryDependencies": ["dialog"],
+      "files": [
+        {
+          "path": "components/ui/8bit/dialog.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/dialog.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:component",
+      "title": "8-bit Dropdown Menu",
+      "description": "A simple 8-bit dropdown-menu component",
+      "registryDependencies": ["dropdown-menu"],
+      "files": [
+        {
+          "path": "components/ui/8bit/dropdown-menu.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/dropdown-menu.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:component",
+      "title": "8-bit Hover Card",
+      "description": "A simple 8-bit hover card component",
+      "registryDependencies": ["hover-card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/hover-card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/hover-card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:component",
+      "title": "8-bit Popover",
+      "description": "A simple 8-bit popover component",
+      "registryDependencies": ["popover"],
+      "files": [
+        {
+          "path": "components/ui/8bit/popover.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/popover.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:component",
+      "title": "8-bit Resizable Panel",
+      "description": "Accessible resizable panel groups and layouts with keyboard support.",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/resizable.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/resizable.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:component",
+      "title": "8-bit Select",
+      "description": "A simple 8-bit select component",
+      "registryDependencies": ["select"],
+      "files": [
+        {
+          "path": "components/ui/8bit/select.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/select.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:component",
+      "title": "8-bit sheet",
+      "description": "A simple 8-bit sheet component",
+      "registryDependencies": ["sheet"],
+      "files": [
+        {
+          "path": "components/ui/8bit/sheet.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/sheet.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:component",
+      "title": "8-bit Label",
+      "description": "A simple 8-bit label component",
+      "registryDependencies": ["label"],
+      "files": [
+        {
+          "path": "components/ui/8bit/label.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/label.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:component",
+      "title": "8-bit Checkbox",
+      "description": "A simple 8-bit checkbox component",
+      "registryDependencies": ["checkbox"],
+      "files": [
+        {
+          "path": "components/ui/8bit/checkbox.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/checkbox.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:component",
+      "title": "8-bit Scroll Area",
+      "description": "A simple 8-bit Scroll Area component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/scroll-area.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/scroll-area.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:component",
+      "title": "8-bit Switch",
+      "description": "A simple 8-bit switch component",
+      "registryDependencies": ["switch"],
+      "files": [
+        {
+          "path": "components/ui/8bit/switch.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/switch.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:component",
+      "title": "8-bit Alert",
+      "description": "A simple 8-bit switch component",
+      "registryDependencies": ["alert"],
+      "files": [
+        {
+          "path": "components/ui/8bit/alert.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/alert.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:component",
+      "title": "8-bit Alert Dialog",
+      "description": "A simple 8-bit Alert Dialog component",
+      "registryDependencies": ["alert-dialog"],
+      "files": [
+        {
+          "path": "components/ui/8bit/alert-dialog.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/alert-dialog.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:component",
+      "title": "8-bit Tooltip",
+      "description": "A simple 8-bit tooltip component",
+      "registryDependencies": ["tooltip"],
+      "files": [
+        {
+          "path": "components/ui/8bit/tooltip.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/tooltip.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:component",
+      "title": "8-bit Tooltip",
+      "description": "A simple 8-bit tooltip component",
+      "registryDependencies": ["tooltip"],
+      "files": [
+        {
+          "path": "components/ui/8bit/tooltip.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/tooltip.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:component",
+      "title": "8-bit Avatar",
+      "description": "A simple 8-bit avatar component",
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "components/ui/8bit/avatar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/avatar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:component",
+      "title": "8-bit Skeleton",
+      "description": "A simple 8-bit skeleton component",
+      "registryDependencies": ["skeleton"],
+      "files": [
+        {
+          "path": "components/ui/8bit/skeleton.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/skeleton.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:component",
+      "title": "8-bit Breadcrumb",
+      "description": "A simple 8-bit breadcrumb component",
+      "registryDependencies": ["breadcrumb"],
+      "files": [
+        {
+          "path": "components/ui/8bit/breadcrumb.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/breadcrumb.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:component",
+      "title": "8-bit Collapsible",
+      "description": "A simple 8-bit collapsible component",
+      "registryDependencies": ["collapsible"],
+      "files": [
+        {
+          "path": "components/ui/8bit/collapsible.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/collapsible.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:component",
+      "title": "8-bit Progress",
+      "description": "A simple 8-bit progress component",
+      "dependencies": ["@radix-ui/react-progress"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/progress.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/progress.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "enemy-health-display",
+      "type": "registry:component",
+      "title": "8-bit Enemy Health Display",
+      "description": "A retro-styled enemy health display component with health bar, name, and level",
+      "registryDependencies": ["health-bar"],
+      "files": [
+        {
+          "path": "components/ui/8bit/enemy-health-display.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/enemy-health-display.tsx"
+        },
+        {
+          "path": "components/ui/8bit/health-bar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/health-bar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/progress.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/progress.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "health-bar",
+      "type": "registry:component",
+      "title": "8-bit Health Bar",
+      "description": "A simple 8-bit health bar component",
+      "registryDependencies": ["progress"],
+      "files": [
+        {
+          "path": "components/ui/8bit/health-bar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/health-bar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/progress.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/progress.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "mana-bar",
+      "type": "registry:component",
+      "title": "8-bit Mana Bar",
+      "description": "A simple 8-bit mana bar component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/mana-bar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/mana-bar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/progress.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/progress.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "game-progress",
+      "type": "registry:block",
+      "title": "8-bit Game Progress",
+      "description": "A simple 8-bit game progress component",
+      "dependencies": ["@radix-ui/react-progress"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-progress.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-progress.tsx"
+        },
+        {
+          "path": "components/ui/8bit/health-bar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/health-bar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/mana-bar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/mana-bar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/progress.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/progress.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "dialogue",
+      "type": "registry:block",
+      "title": "8-bit Dialogue",
+      "description": "A simple 8-bit dialogue component",
+      "dependencies": ["@radix-ui/react-avatar"],
+      "registryDependencies": ["alert"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/dialogue.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/dialogue.tsx"
+        },
+        {
+          "path": "components/ui/8bit/alert.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/alert.tsx"
+        },
+        {
+          "path": "components/ui/8bit/avatar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/avatar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "profile-card",
+      "type": "registry:component",
+      "title": "8-bit Profile Card",
+      "description": "A simple 8-bit profile card component",
+      "registryDependencies": ["card", "button", "avatar", "badge"],
+      "dependencies": ["@radix-ui/react-avatar"],
+      "files": [
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/avatar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/avatar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/badge.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:component",
+      "title": "8-bit Slider",
+      "description": "A simple 8-bit slider component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/slider.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/slider.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:component",
+      "title": "8-bit Context Menu",
+      "description": "A simple 8-bit context menu component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/context-menu.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/context-menu.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:component",
+      "title": "8-bit Menu Bar",
+      "description": "A simple 8-bit menu bar component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/menubar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/menubar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:component",
+      "title": "8-bit Toggle",
+      "description": "A simple 8-bit toggle component",
+      "registryDependencies": ["toggle"],
+      "files": [
+        {
+          "path": "components/ui/8bit/toggle.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/toggle.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:component",
+      "title": "8-bit Table",
+      "description": "A simple 8-bit table component",
+      "registryDependencies": ["table"],
+      "files": [
+        {
+          "path": "components/ui/8bit/table.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/table.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:component",
+      "title": "8-bit Tabs",
+      "description": "A simple 8-bit tabs component",
+      "registryDependencies": ["tabs"],
+      "files": [
+        {
+          "path": "components/ui/8bit/tabs.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/tabs.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "combo-box",
+      "type": "registry:component",
+      "title": "8-bit Combo Box",
+      "description": "A simple 8-bit combo box component",
+      "registryDependencies": ["command", "popover", "button"],
+      "files": [
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/popover.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/popover.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:component",
+      "title": "8-bit Command",
+      "description": "A simple 8-bit command component",
+      "registryDependencies": ["command"],
+      "files": [
+        {
+          "path": "components/ui/8bit/command.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/command.tsx"
+        },
+        {
+          "path": "components/ui/8bit/separator.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/separator.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:component",
+      "title": "8-bit Separator",
+      "description": "A simple 8-bit separator component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/separator.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:component",
+      "title": "8-bit Radio Group",
+      "description": "A simple 8-bit radio group component",
+      "registryDependencies": ["radio-group"],
+      "files": [
+        {
+          "path": "components/ui/8bit/radio-group.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/radio-group.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:component",
+      "title": "8-bit Pagination",
+      "description": "A simple 8-bit pagination component",
+      "registryDependencies": ["pagination"],
+      "files": [
+        {
+          "path": "components/ui/8bit/pagination.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/pagination.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "login-form",
+      "type": "registry:block",
+      "title": "8-bit Login Form",
+      "description": "A simple 8-bit login form component",
+      "registryDependencies": ["button", "card", "input", "label"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/login-form.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/login-form.tsx"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/input.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/input.tsx"
+        },
+        {
+          "path": "components/ui/8bit/label.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/label.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "login-form-2",
+      "type": "registry:block",
+      "title": "8-bit Login Form 2",
+      "description": "A simple 8-bit login form component",
+      "registryDependencies": ["button", "card", "input", "label"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/login-form-2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/login-form-2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/input.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/input.tsx"
+        },
+        {
+          "path": "components/ui/8bit/label.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/label.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "login-form-with-image",
+      "type": "registry:block",
+      "title": "8-bit Login Form with Image",
+      "description": "A simple 8-bit login form component with image",
+      "registryDependencies": ["button", "card", "input", "label"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/login-form-with-image.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/login-form-with-image.tsx"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/input.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/input.tsx"
+        },
+        {
+          "path": "components/ui/8bit/label.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/label.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "login-page",
+      "type": "registry:page",
+      "title": "8-bit Login Page",
+      "description": "A simple 8-bit login page component",
+      "registryDependencies": ["button", "card", "input", "label"],
+      "files": [
+        {
+          "path": "app/login/page.tsx",
+          "type": "registry:component",
+          "target": "app/login/page.tsx"
+        },
+        {
+          "path": "components/ui/8bit/blocks/login-form.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/login-form.tsx"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/input.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/input.tsx"
+        },
+        {
+          "path": "components/ui/8bit/label.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/label.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:block",
+      "title": "8-bit Chart",
+      "description": "A simple 8-bit chart component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/chart.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/chart.tsx"
+        },
+        {
+          "path": "components/ui/8bit/chart.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/chart.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "chart-bar",
+      "type": "registry:block",
+      "title": "8-bit Chart Bar",
+      "description": "A simple 8-bit chart bar component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/chart-bar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/chart-bar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/chart.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/chart.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "chart-area-step",
+      "type": "registry:block",
+      "title": "8-bit Chart Area Step",
+      "description": "A simple 8-bit chart area step component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/chart-area-step.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/chart-area-step.tsx"
+        },
+        {
+          "path": "components/ui/8bit/chart.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/chart.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "main-menu",
+      "type": "registry:block",
+      "title": "8-bit Main Menu",
+      "description": "A simple 8-bit main menu component",
+      "registryDependencies": ["button", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/main-menu.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/main-menu.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pause-menu",
+      "type": "registry:block",
+      "title": "8-bit Pause Menu",
+      "description": "A simple 8-bit pause menu component",
+      "registryDependencies": ["button", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/pause-menu.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/pause-menu.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "game-over",
+      "type": "registry:block",
+      "title": "8-bit Game Over",
+      "description": "A simple 8-bit game over component",
+      "registryDependencies": ["button", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-over.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-over.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "audio-settings",
+      "type": "registry:block",
+      "title": "8-bit Audio Settings",
+      "description": "A simple 8-bit audio settings component",
+      "dependencies": ["@radix-ui/react-slider", "@radix-ui/react-switch"],
+      "registryDependencies": ["button", "card", "label"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/audio-settings.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/audio-settings.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/switch.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/switch.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/slider.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/slider.tsx"
+        },
+        {
+          "path": "components/ui/8bit/label.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:component",
+      "title": "8-bit Toggle Group",
+      "description": "A simple 8-bit toggle group component",
+      "registryDependencies": ["toggle-group"],
+      "files": [
+        {
+          "path": "components/ui/8bit/toggle-group.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/toggle-group.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:block",
+      "title": "8-bit Sidebar",
+      "description": "A simple 8-bit sidebar component",
+      "registryDependencies": ["sidebar"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/sidebar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:component",
+      "title": "8-bit Accordion",
+      "description": "A simple 8-bit accordion component",
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "components/ui/8bit/accordion.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/accordion.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:component",
+      "title": "8-bit Drawer",
+      "description": "A simple 8-bit drawer component",
+      "registryDependencies": ["drawer"],
+      "files": [
+        {
+          "path": "components/ui/8bit/drawer.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/drawer.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:component",
+      "title": "8-bit Navigation Menu",
+      "description": "A simple 8-bit navigation menu component",
+      "registryDependencies": ["navigation-menu"],
+      "files": [
+        {
+          "path": "components/ui/8bit/navigation-menu.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/navigation-menu.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "difficulty-select",
+      "type": "registry:block",
+      "title": "8-bit Difficulty Select",
+      "description": "A reusable 8-bit difficulty selector with Easy, Normal, Hard.",
+      "registryDependencies": ["button", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/difficulty-select.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/difficulty-select.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "leaderboard",
+      "type": "registry:block",
+      "title": "8-bit Leaderboard",
+      "description": "A retro-styled leaderboard component for displaying player rankings with avatars and scores.",
+      "registryDependencies": ["card", "avatar", "badge", "separator"],
+      "files": [
+        {
+          "path": "components/ui/8bit/leaderboard.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/leaderboard.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/avatar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/avatar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/badge.tsx"
+        },
+        {
+          "path": "components/ui/8bit/separator.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "player-profile-card",
+      "type": "registry:block",
+      "title": "8-bit Player Profile Card",
+      "description": "A comprehensive player profile card component with stats, health/mana bars, and custom stats support.",
+      "registryDependencies": ["card", "avatar", "badge", "progress"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/player-profile-card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/player-profile-card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/avatar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/avatar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/badge.tsx"
+        },
+        {
+          "path": "components/ui/8bit/health-bar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/health-bar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/mana-bar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/mana-bar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/progress.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/progress.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "quest-log",
+      "type": "registry:block",
+      "title": "8-bit Quest Log",
+      "description": "A retro-styled quest log component for tracking game missions and tasks with accordion functionality and status indicators.",
+      "registryDependencies": ["accordion", "card", "badge", "scroll-area"],
+      "files": [
+        {
+          "path": "components/ui/8bit/quest-log.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/quest-log.tsx"
+        },
+        {
+          "path": "components/ui/8bit/accordion.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/accordion.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/badge.tsx"
+        },
+        {
+          "path": "components/ui/8bit/scroll-area.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/scroll-area.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "dashboard-01",
+      "type": "registry:page",
+      "title": "8-bit Dashboard 01",
+      "description": "A complete 8-bit styled dashboard with sidebar navigation, stats cards, charts, and data table with drag-and-drop functionality.",
+      "registryDependencies": [
+        "sidebar",
+        "button",
+        "card",
+        "badge",
+        "skeleton",
+        "chart",
+        "checkbox",
+        "drawer",
+        "dropdown-menu",
+        "input",
+        "label",
+        "select",
+        "separator",
+        "table",
+        "tabs"
+      ],
+      "dependencies": [
+        "@dnd-kit/core",
+        "@dnd-kit/sortable",
+        "@dnd-kit/modifiers",
+        "@dnd-kit/utilities",
+        "@tabler/icons-react",
+        "@tanstack/react-table",
+        "sonner",
+        "zod"
+      ],
+      "files": [
+        {
+          "path": "app/dashboard/page.tsx",
+          "type": "registry:component",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "app/dashboard/data.json",
+          "type": "registry:component",
+          "target": "app/dashboard/data.json"
+        },
+        {
+          "path": "components/dashboard-header.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard-header.tsx"
+        },
+        {
+          "path": "components/section-cards.tsx",
+          "type": "registry:component",
+          "target": "components/section-cards.tsx"
+        },
+        {
+          "path": "components/data-table.tsx",
+          "type": "registry:component",
+          "target": "components/data-table.tsx"
+        },
+        {
+          "path": "components/ui/8bit/blocks/chart-bar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/blocks/chart-bar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/badge.tsx"
+        },
+        {
+          "path": "components/ui/8bit/skeleton.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/skeleton.tsx"
+        },
+        {
+          "path": "components/ui/8bit/chart.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/chart.tsx"
+        },
+        {
+          "path": "components/ui/8bit/checkbox.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/checkbox.tsx"
+        },
+        {
+          "path": "components/ui/8bit/drawer.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/drawer.tsx"
+        },
+        {
+          "path": "components/ui/8bit/dropdown-menu.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/dropdown-menu.tsx"
+        },
+        {
+          "path": "components/ui/8bit/input.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/input.tsx"
+        },
+        {
+          "path": "components/ui/8bit/label.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/label.tsx"
+        },
+        {
+          "path": "components/ui/8bit/select.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/select.tsx"
+        },
+        {
+          "path": "components/ui/8bit/separator.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/separator.tsx"
+        },
+        {
+          "path": "components/ui/8bit/table.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/table.tsx"
+        },
+        {
+          "path": "components/ui/8bit/tabs.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/tabs.tsx"
+        },
+        {
+          "path": "components/ui/sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/sidebar.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "theme-selector",
+      "type": "registry:component",
+      "title": "8-bit Theme Selector",
+      "description": "A complete theme selector component with dropdown selection and code copy functionality. Includes theme context provider for managing active themes across the application.",
+      "registryDependencies": ["select"],
+      "files": [
+        {
+          "path": "components/select-theme-dropdown.tsx",
+          "type": "registry:component",
+          "target": "components/select-theme-dropdown.tsx"
+        },
+        {
+          "path": "components/active-theme.tsx",
+          "type": "registry:component",
+          "target": "components/active-theme.tsx"
+        },
+        {
+          "path": "lib/themes.ts",
+          "type": "registry:component",
+          "target": "lib/themes.ts"
+        },
+        {
+          "path": "components/ui/8bit/select.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/select.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "app/retro-globals.css",
+          "type": "registry:component",
+          "target": "app/retro-globals.css"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:component",
+      "title": "8-bit Spinner",
+      "description": "Displays an 8-bit spinner component.",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/spinner.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:component",
+      "title": "8-bit Kbd",
+      "description": "A simple 8-bit kbd component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/kbd.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/kbd.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "retro-mode-switcher",
+      "type": "registry:component",
+      "title": "8-bit Retro Mode Switcher",
+      "description": "A retro-styled theme toggle component with pixel art sun and moon icons. Perfect for 8-bit themed applications that need a nostalgic theme switcher.",
+      "registryDependencies": ["button"],
+      "dependencies": ["next-themes"],
+      "files": [
+        {
+          "path": "components/ui/retro-mode-switcher.tsx",
+          "type": "registry:component",
+          "target": "components/ui/retro-mode-switcher.tsx"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/theme-provider.tsx",
+          "type": "registry:component",
+          "target": "components/theme-provider.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:component",
+      "title": "8-bit Empty",
+      "description": "Displays an 8-bit empty component.",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/empty.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/empty.tsx"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:component",
+      "title": "8-bit Item",
+      "description": "Displays an 8-bit item component.",
+      "registryDependencies": ["separator"],
+      "files": [
+        {
+          "path": "components/ui/8bit/item.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/item.tsx"
+        }
+      ]
+    }
+  ]
 }
