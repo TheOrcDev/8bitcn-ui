@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 import { collapsibleMetaData } from "@/lib/metadata";
 

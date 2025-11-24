@@ -1,4 +1,4 @@
-import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
+import type * as HoverCardPrimitive from "@radix-ui/react-hover-card";
 import { type VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";

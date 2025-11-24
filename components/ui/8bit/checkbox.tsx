@@ -1,6 +1,6 @@
-import * as React from "react";
+import type * as React from "react";
 
-import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
+import type * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { type VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";

@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 import { profileCreatorMetaData } from "@/lib/metadata";
 

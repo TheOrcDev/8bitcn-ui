@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import {
   Leaderboard,
-  LeaderboardPlayer,
+  type LeaderboardPlayer,
 } from "@/components/ui/8bit/leaderboard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

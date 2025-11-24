@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/8bit/card";
 import {
-  ChartConfig,
+  type ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,

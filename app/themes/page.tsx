@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 import ComponentShowcase from "@/components/examples/component-showcase";
 import { ThemeSelector } from "@/components/theme-selector";

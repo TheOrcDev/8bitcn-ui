@@ -151,7 +151,7 @@ export default function ProfileCreator() {
               </Button>`
                 : ""
             }
-            ${hasGithub && hasX ? `<span className=\"text-muted-foreground\">•</span>` : ""}
+            ${hasGithub && hasX ? `<span className="text-muted-foreground">•</span>` : ""}
             ${
               hasX
                 ? `
@@ -232,7 +232,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 
 function getInitials(name: string) {
   if (!name) return "?";
-  const parts = name.trim().split(/\s+/);
+  const parts = name.trim().split(/s+/);
   const initials = parts.slice(0, 2).map((p) => p[0]?.toUpperCase()).join("");
   return initials || "?";
 }
