@@ -4,10 +4,10 @@ import { carouselMetaData } from "@/lib/metadata";
 
 import { Separator } from "@/components/ui/separator";
 
+import CopyCommandButton from "../../../../components/copy-command-button";
+import { OpenInV0Button } from "../../../../components/open-in-v0-button";
 import CodeSnippet from "../code-snippet";
-import CopyCommandButton from "../copy-command-button";
 import InstallationCommands from "../installation-commands";
-import { OpenInV0Button } from "../open-in-v0-button";
 import {
   CarouselDemo,
   CarouselSpacing,

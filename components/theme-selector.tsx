@@ -12,9 +12,8 @@ import {
 } from "@/components/ui/8bit/dialog";
 import { Button } from "@/components/ui/button";
 
-import CodeSnippet from "@/app/docs/components/code-snippet";
-
 import { useThemeConfig } from "./active-theme";
+import CodeSnippet from "./code-snippet";
 import { SelectThemeDropdown } from "./select-theme-dropdown";
 import { ScrollArea } from "./ui/8bit/scroll-area";
 

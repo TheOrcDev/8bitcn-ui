@@ -9,8 +9,8 @@ import { DatePicker } from "@/components/examples/date-picker";
 import { DatePickerWithPresets } from "@/components/examples/date-picker-with-presets";
 import { DatePickerWithRange } from "@/components/examples/date-range-picker";
 
+import { OpenInV0Button } from "../../../../components/open-in-v0-button";
 import CodeSnippet from "../code-snippet";
-import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Date Picker",

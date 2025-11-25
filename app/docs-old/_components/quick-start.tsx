@@ -14,7 +14,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import CopyCommandButton from "@/app/docs/components/copy-command-button";
+import CopyCommandButton from "@/components/copy-command-button";
 
 export default function QuickStart() {
   const [copied, setCopied] = useState(false);

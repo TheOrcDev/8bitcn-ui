@@ -11,10 +11,10 @@ import {
 } from "@/components/ui/8bit/context-menu";
 import { Separator } from "@/components/ui/separator";
 
+import CopyCommandButton from "../../../../components/copy-command-button";
+import { OpenInV0Button } from "../../../../components/open-in-v0-button";
 import CodeSnippet from "../code-snippet";
-import CopyCommandButton from "../copy-command-button";
 import InstallationCommands from "../installation-commands";
-import { OpenInV0Button } from "../open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Context Menu",

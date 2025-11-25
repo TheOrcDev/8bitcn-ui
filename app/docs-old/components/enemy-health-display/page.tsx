@@ -5,9 +5,9 @@ import { buttonMetaData } from "@/lib/metadata";
 import EnemyHealthDisplay from "@/components/ui/8bit/enemy-health-display";
 import { Separator } from "@/components/ui/separator";
 
-import CopyCommandButton from "../../components/copy-command-button";
+import CopyCommandButton from "../../../../components/copy-command-button";
+import { OpenInV0Button } from "../../../../components/open-in-v0-button";
 import InstallationCommands from "../../components/installation-commands";
-import { OpenInV0Button } from "../../components/open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "Enemy Health Display",

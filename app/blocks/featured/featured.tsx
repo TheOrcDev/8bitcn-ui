@@ -5,9 +5,10 @@ import {
   CardTitle,
 } from "@/components/ui/8bit/card";
 
+import CopyCommandButton from "@/components/copy-command-button";
+import { OpenInV0Button } from "@/components/open-in-v0-button";
+
 import DashboardPage from "../../dashboard/page";
-import CopyCommandButton from "../../docs/components/copy-command-button";
-import { OpenInV0Button } from "../../docs/components/open-in-v0-button";
 
 export default function FeaturedBlocks() {
   return (
