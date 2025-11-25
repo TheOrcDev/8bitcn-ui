@@ -45,7 +45,7 @@ export function DocsSidebar({
       {...props}
     >
       <SidebarContent className="no-scrollbar overflow-x-hidden px-2">
-        <ScrollArea className="h-[90svh]">
+        <ScrollArea className="h-[calc(90svh-50px)]">
           <div className="from-background via-background/80 to-background/50 sticky -top-1 z-10 h-8 shrink-0 bg-gradient-to-b blur-xs" />
           <SidebarGroup>
             <SidebarGroupLabel className="text-muted-foreground font-medium">
