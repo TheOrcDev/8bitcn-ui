@@ -46,11 +46,11 @@ export default function SpinnerPage() {
         <div className="flex gap-8 items-center justify-center min-h-[400px] relative">
           <div className="flex flex-col items-center">
             <Spinner />
-            <p className="text-sm  text-muted-foreground">Classic</p>
+            <p className="text-sm text-muted-foreground">Classic</p>
           </div>
           <div className="flex flex-col items-center mt-1">
             <Spinner variant="diamond" />
-            <p className="text-sm  text-muted-foreground">Diamond</p>
+            <p className="text-sm text-muted-foreground">Diamond</p>
           </div>
         </div>
       </div>
@@ -154,7 +154,7 @@ export default function SpinnerPage() {
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            8-bit classic spinner with different sizes
+            8-bit classic spinner with different colors
           </h2>
 
           <div className="flex items-center gap-2">
@@ -289,7 +289,7 @@ export default function SpinnerPage() {
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            8-bit spinner component in badges
+            8-bit classic spinner in badges
           </h2>
 
           <div className="flex items-center gap-2">
@@ -327,7 +327,7 @@ export default function SpinnerPage() {
       <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px]">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-muted-foreground sm:pl-3">
-            8-bit classic spinner in badges
+            8-bit diamond spinner in badges
           </h2>
 
           <div className="flex items-center gap-2">

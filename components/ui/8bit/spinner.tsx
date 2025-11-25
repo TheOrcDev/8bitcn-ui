@@ -79,6 +79,8 @@ const Spinner = React.forwardRef<SVGSVGElement, SpinnerProps>(
             viewBox="0 0 20 20"
             fill="currentColor"
             className={cn("size-4", className)}
+            role="status"
+            aria-label="Loading"
             {...(props as React.ComponentProps<"svg">)}
           >
             <style
