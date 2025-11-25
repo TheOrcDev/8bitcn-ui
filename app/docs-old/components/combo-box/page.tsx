@@ -4,12 +4,11 @@ import { comboBoxMetaData } from "@/lib/metadata";
 
 import { Separator } from "@/components/ui/separator";
 
+import CodeSnippet from "@/components/code-snippet";
+import CopyCommandButton from "@/components/copy-command-button";
 import { ComboBoxExample } from "@/components/examples/combobox";
-
-import CodeSnippet from "@/app/docs/components/code-snippet";
-import CopyCommandButton from "@/app/docs/components/copy-command-button";
-import InstallationCommands from "@/app/docs/components/installation-commands";
-import { OpenInV0Button } from "@/app/docs/components/open-in-v0-button";
+import InstallationCommands from "@/components/installation-commands";
+import { OpenInV0Button } from "@/components/open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Combo Box",

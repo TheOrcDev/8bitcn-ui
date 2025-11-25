@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import BlocksNavigation from "@/app/docs/components/blocks-navigation";
+import BlocksNavigation from "@/components/blocks-navigation";
 
 import CalendarBlocks from "./calendar";
 

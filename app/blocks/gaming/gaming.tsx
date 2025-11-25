@@ -9,11 +9,12 @@ import EnemyHealthDisplay from "@/components/ui/8bit/enemy-health-display";
 import HealthBar from "@/components/ui/8bit/health-bar";
 import ManaBar from "@/components/ui/8bit/mana-bar";
 
+import CopyCommandButton from "@/components/copy-command-button";
+import { OpenInV0Button } from "@/components/open-in-v0-button";
+
 import AudioSettings from "../../../components/ui/8bit/blocks/audio-settings";
 import Leaderboard from "../../../components/ui/8bit/leaderboard";
 import QuestLog from "../../../components/ui/8bit/quest-log";
-import CopyCommandButton from "../../docs/components/copy-command-button";
-import { OpenInV0Button } from "../../docs/components/open-in-v0-button";
 
 export default function GamingBlocks() {
   return (

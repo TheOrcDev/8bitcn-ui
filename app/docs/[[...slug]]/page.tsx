@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -16,6 +18,7 @@ import { absoluteUrl } from "@/lib/utils";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 
 import { DocsCopyPage } from "@/components/docs-copy-page";
 import { DocsTableOfContents } from "@/components/docs-toc";
@@ -72,19 +75,26 @@ export async function generateMetadata(props: {
   };
 }
 
-export default async function Page(props: {
-  params: Promise<{ slug: string[] }>;
+async function CopyPageButton({
+  pageUrl,
+  slug,
+}: {
+  pageUrl: string;
+  slug: string[];
 }) {
-  const params = await props.params;
-  const page = source.getPage(params.slug);
+  const page = source.getPage(slug);
   if (!page) {
-    notFound();
+    return null;
   }
+  const raw = await page.data.getText("raw");
+  return <DocsCopyPage page={raw} url={absoluteUrl(pageUrl)} />;
+}
 
-  const doc = page.data;
-  const MDX = doc.body;
-  const neighbours = findNeighbour(source.pageTree, page.url);
-
+async function PageLinks({ slug }: { slug: string[] }) {
+  const page = source.getPage(slug);
+  if (!page) {
+    return null;
+  }
   const raw = await page.data.getText("raw");
   const { attributes } = fm(raw);
   const { links } = z
@@ -98,6 +108,43 @@ export default async function Page(props: {
     })
     .parse(attributes);
 
+  if (!links) {
+    return null;
+  }
+
+  return (
+    <div className="flex items-center gap-2 pt-4">
+      {links?.doc && (
+        <Badge asChild variant="secondary" className="rounded-full">
+          <a href={links.doc} target="_blank" rel="noreferrer">
+            Docs <IconArrowUpRight />
+          </a>
+        </Badge>
+      )}
+      {links?.api && (
+        <Badge asChild variant="secondary" className="rounded-full">
+          <a href={links.api} target="_blank" rel="noreferrer">
+            API Reference <IconArrowUpRight />
+          </a>
+        </Badge>
+      )}
+    </div>
+  );
+}
+
+export default async function Page(props: {
+  params: Promise<{ slug: string[] }>;
+}) {
+  const params = await props.params;
+  const page = source.getPage(params.slug);
+  if (!page) {
+    notFound();
+  }
+
+  const doc = page.data;
+  const MDX = doc.body;
+  const neighbours = findNeighbour(source.pageTree, page.url);
+
   return (
     <div className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full">
       <div className="flex min-w-0 flex-1 flex-col">
@@ -110,7 +157,9 @@ export default async function Page(props: {
                   {doc.title}
                 </h1>
                 <div className="docs-nav bg-background/80 border-border/50 fixed inset-x-0 bottom-0 isolate z-50 flex items-center gap-2 border-t px-6 py-4 backdrop-blur-sm sm:static sm:z-0 sm:border-t-0 sm:bg-transparent sm:px-0 sm:pt-1.5 sm:backdrop-blur-none">
-                  <DocsCopyPage page={raw} url={absoluteUrl(page.url)} />
+                  <Suspense fallback={<Skeleton className="h-8 w-30" />}>
+                    <CopyPageButton pageUrl={page.url} slug={params.slug} />
+                  </Suspense>
                   {neighbours.previous && (
                     <Button
                       variant="secondary"
@@ -145,24 +194,9 @@ export default async function Page(props: {
                 </p>
               )}
             </div>
-            {links ? (
-              <div className="flex items-center gap-2 pt-4">
-                {links?.doc && (
-                  <Badge asChild variant="secondary" className="rounded-full">
-                    <a href={links.doc} target="_blank" rel="noreferrer">
-                      Docs <IconArrowUpRight />
-                    </a>
-                  </Badge>
-                )}
-                {links?.api && (
-                  <Badge asChild variant="secondary" className="rounded-full">
-                    <a href={links.api} target="_blank" rel="noreferrer">
-                      API Reference <IconArrowUpRight />
-                    </a>
-                  </Badge>
-                )}
-              </div>
-            ) : null}
+            <Suspense fallback={null}>
+              <PageLinks slug={params.slug} />
+            </Suspense>
           </div>
           <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
             <MDX components={getMDXComponents()} />

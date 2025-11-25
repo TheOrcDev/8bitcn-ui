@@ -1,7 +1,7 @@
 import PlayerProfileCard from "@/components/ui/8bit/blocks/player-profile-card";
 
-import CopyCommandButton from "../../docs/components/copy-command-button";
-import { OpenInV0Button } from "../../docs/components/open-in-v0-button";
+import CopyCommandButton from "@/components/copy-command-button";
+import { OpenInV0Button } from "@/components/open-in-v0-button";
 
 export default function PlayerProfilePage() {
   return (

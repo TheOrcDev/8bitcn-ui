@@ -1,5 +1,5 @@
-import CopyCommandButton from "@/app/docs/components/copy-command-button";
-import { OpenInV0Button } from "@/app/docs/components/open-in-v0-button";
+import CopyCommandButton from "@/components/copy-command-button";
+import { OpenInV0Button } from "@/components/open-in-v0-button";
 
 import LeaderboardBlock from "./leaderboard";
 

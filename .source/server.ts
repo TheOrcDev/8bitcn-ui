@@ -1,8 +1,8 @@
 // @ts-nocheck
 import { server } from "fumadocs-mdx/runtime/server";
 
-import * as __fd_glob_1 from "../content/docs/components/components.mdx?collection=docs";
-import * as __fd_glob_2 from "../content/docs/components/test.mdx?collection=docs";
+import * as __fd_glob_1 from "../content/docs/components/accordion.mdx?collection=docs";
+import * as __fd_glob_2 from "../content/docs/components/button.mdx?collection=docs";
 import * as __fd_glob_0 from "../content/docs/index.mdx?collection=docs";
 import type * as Config from "../source.config";
 
@@ -19,7 +19,7 @@ export const docs = await create.docs(
   {},
   {
     "index.mdx": __fd_glob_0,
-    "components/components.mdx": __fd_glob_1,
-    "components/test.mdx": __fd_glob_2,
+    "components/accordion.mdx": __fd_glob_1,
+    "components/button.mdx": __fd_glob_2,
   }
 );

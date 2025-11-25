@@ -2,8 +2,9 @@ import { LoginForm } from "@/components/ui/8bit/blocks/login-form";
 import { LoginForm as LoginForm2 } from "@/components/ui/8bit/blocks/login-form-2";
 import { LoginForm as LoginFormWithImage } from "@/components/ui/8bit/blocks/login-form-with-image";
 
-import CopyCommandButton from "../../docs/components/copy-command-button";
-import { OpenInV0Button } from "../../docs/components/open-in-v0-button";
+import CopyCommandButton from "@/components/copy-command-button";
+import { OpenInV0Button } from "@/components/open-in-v0-button";
+
 import LoginPage from "../../login/page";
 
 export default function AuthenticationBlocks() {

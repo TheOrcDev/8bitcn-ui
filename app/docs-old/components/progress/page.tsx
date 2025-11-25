@@ -6,9 +6,9 @@ import { Progress } from "@/components/ui/8bit/progress";
 import { Separator } from "@/components/ui/separator";
 
 import CopyCommandButton from "../../../../components/copy-command-button";
+import InstallationCommands from "../../../../components/installation-commands";
 import { OpenInV0Button } from "../../../../components/open-in-v0-button";
 import CodeSnippet from "../code-snippet";
-import InstallationCommands from "../installation-commands";
 
 export const metadata: Metadata = {
   title: "8-bit Progress",

@@ -6,12 +6,11 @@ import { calendarMetaData } from "@/lib/metadata";
 
 import { Skeleton } from "@/components/ui/8bit/skeleton";
 
+import CopyCommandButton from "@/components/copy-command-button";
 import { CalendarExample } from "@/components/examples/calendar";
 import { Calendar13 } from "@/components/examples/calendars/calendar-13";
 import { RangeCalendar } from "@/components/examples/range-calendar";
-
-import CopyCommandButton from "@/app/docs/components/copy-command-button";
-import { OpenInV0Button } from "@/app/docs/components/open-in-v0-button";
+import { OpenInV0Button } from "@/components/open-in-v0-button";
 
 export const metadata: Metadata = {
   title: "8-bit Calendar",

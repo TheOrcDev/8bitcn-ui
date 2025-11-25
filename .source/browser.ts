@@ -12,10 +12,10 @@ const create = browser<
 const browserCollections = {
   docs: create.doc("docs", {
     "index.mdx": () => import("../content/docs/index.mdx?collection=docs"),
-    "components/components.mdx": () =>
-      import("../content/docs/components/components.mdx?collection=docs"),
-    "components/test.mdx": () =>
-      import("../content/docs/components/test.mdx?collection=docs"),
+    "components/accordion.mdx": () =>
+      import("../content/docs/components/accordion.mdx?collection=docs"),
+    "components/button.mdx": () =>
+      import("../content/docs/components/button.mdx?collection=docs"),
   }),
 };
 export default browserCollections;
