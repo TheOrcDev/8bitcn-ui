@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import { useState } from "react";
 
 import { Check, Clipboard } from "lucide-react";
@@ -98,8 +99,32 @@ export default function CodeSnippet({
 }) {
   const [copied, setCopied] = useState(false);
 
+  // Extract text content from React children
+  const getTextContent = (node: React.ReactNode): string => {
+    if (typeof node === "string") {
+      return node;
+    }
+    if (typeof node === "number") {
+      return String(node);
+    }
+    if (Array.isArray(node)) {
+      return node.map(getTextContent).join("");
+    }
+    if (React.isValidElement(node)) {
+      const props = node.props as { children?: React.ReactNode };
+      if (props.children) {
+        return getTextContent(props.children);
+      }
+    }
+    return "";
+  };
+
+  const codeContent = typeof children === "string" 
+    ? children 
+    : getTextContent(children);
+
   const handleCopy = () => {
-    navigator.clipboard.writeText(children as string);
+    navigator.clipboard.writeText(codeContent);
     setCopied(true);
 
     setTimeout(() => {
@@ -123,7 +148,7 @@ export default function CodeSnippet({
         as="div"
         className="w-full text-sm [&>pre]:p-4 [&>pre]:overflow-x-auto [&>pre]:whitespace-pre-wrap [&>pre]:break-words [&>pre]:bg-background [&>pre]:text-foreground"
       >
-        {children?.toString().trim() || ""}
+        {codeContent.trim() || ""}
       </ShikiHighlighter>
 
       <Button

@@ -1,15 +1,8 @@
 // @ts-nocheck
-import { dynamic } from "fumadocs-mdx/runtime/dynamic";
+import { dynamic } from 'fumadocs-mdx/runtime/dynamic';
+import * as Config from '../source.config';
 
-import * as Config from "../source.config";
-
-const create = await dynamic<
-  typeof Config,
-  import("fumadocs-mdx/runtime/types").InternalTypeConfig & {
-    DocData: {};
+const create = await dynamic<typeof Config, import("fumadocs-mdx/runtime/types").InternalTypeConfig & {
+  DocData: {
   }
->(
-  Config,
-  { environment: "next", outDir: ".source", configPath: "source.config.ts" },
-  { doc: { passthroughs: ["extractedReferences"] } }
-);
+}>(Config, {"environment":"next","outDir":".source","configPath":"source.config.ts"}, {"doc":{"passthroughs":["extractedReferences"]}});

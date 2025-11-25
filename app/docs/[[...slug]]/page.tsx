@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { getMDXComponents } from "@/mdx-components";
+import { mdxComponents } from "@/mdx-components";
 import {
   IconArrowLeft,
   IconArrowRight,
@@ -199,7 +199,7 @@ export default async function Page(props: {
             </Suspense>
           </div>
           <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
-            <MDX components={getMDXComponents()} />
+            <MDX components={mdxComponents} />
           </div>
         </div>
         <div className="mx-auto hidden h-16 w-full max-w-2xl items-center gap-2 px-4 sm:flex md:px-0">
