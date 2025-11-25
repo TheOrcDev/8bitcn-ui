@@ -1,20 +1,27 @@
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { DocsLayout } from "fumadocs-ui/layouts/docs";
 
-import { AppSidebar } from "@/components/app-sidebar";
+import { baseOptions } from "@/lib/layout.shared";
+import { source } from "@/lib/source";
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children }: LayoutProps<"/docs">) {
   return (
-    <main className="relative flex gap-4 p-4">
-      <SidebarProvider className="w-max hidden md:block">
-        <AppSidebar className="absolute top-0 left-0 " />
-        <SidebarTrigger className="md:hidden" />
-      </SidebarProvider>
-
-      <div className="flex-1 px-4 py-4 max-w-full">{children}</div>
-    </main>
+    <DocsLayout
+      sidebar={{
+        style: {
+          backgroundColor: "transparent",
+          marginTop: "55px",
+          marginBottom: "55px",
+          marginLeft: "20px",
+          borderRight: "1px dashed var(--color-sidebar-border)",
+        },
+      }}
+      themeSwitch={{
+        enabled: false,
+      }}
+      tree={source.pageTree}
+      {...baseOptions()}
+    >
+      {children}
+    </DocsLayout>
   );
 }
