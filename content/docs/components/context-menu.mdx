@@ -1,0 +1,63 @@
+---
+title: Context Menu
+description: Displays an 8-bit context menu component.
+---
+
+import { Button } from "@/components/ui/8bit/button";
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from "@/components/ui/8bit/context-menu";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/context-menu"
+    command="pnpm dlx shadcn@latest add @8bitcn/context-menu"
+  />
+</div>
+
+<ComponentPreview title="8-bit Context Menu component" name="context-menu">
+  <ContextMenu>
+    <ContextMenuTrigger>
+      <Button>Right click me</Button>
+    </ContextMenuTrigger>
+    <ContextMenuContent>
+      <ContextMenuItem>Profile</ContextMenuItem>
+      <ContextMenuItem>Billing</ContextMenuItem>
+      <ContextMenuItem>Team</ContextMenuItem>
+      <ContextMenuItem>Subscription</ContextMenuItem>
+    </ContextMenuContent>
+  </ContextMenu>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="context-menu" />
+
+## Usage
+
+---
+
+```tsx
+import { ContextMenu } from "@/components/ui/8bit/context-menu"
+```
+
+```tsx
+<ContextMenu>
+  <ContextMenuTrigger>Right click</ContextMenuTrigger>
+  <ContextMenuContent>
+    <ContextMenuItem>Profile</ContextMenuItem>
+    <ContextMenuItem>Billing</ContextMenuItem>
+    <ContextMenuItem>Team</ContextMenuItem>
+    <ContextMenuItem>Subscription</ContextMenuItem>
+  </ContextMenuContent>
+</ContextMenu>
+```
+

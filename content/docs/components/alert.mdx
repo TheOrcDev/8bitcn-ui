@@ -1,0 +1,53 @@
+---
+title: Alert
+description: Displays an 8-bit alert component.
+---
+
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from "@/components/ui/8bit/alert";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/alert"
+    command="pnpm dlx shadcn@latest add @8bitcn/alert"
+  />
+</div>
+
+<ComponentPreview title="8-bit Alert component" name="alert">
+  <Alert>
+    <AlertTitle>Heads up!</AlertTitle>
+    <AlertDescription>
+      You can add components to your app using the cli.
+    </AlertDescription>
+  </Alert>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="alert" />
+
+## Usage
+
+---
+
+```tsx
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/8bit/alert"
+```
+
+```tsx
+<Alert>
+  <AlertTitle>Heads up!</AlertTitle>
+  <AlertDescription>
+    You can add components and dependencies to your app using the cli.
+  </AlertDescription>
+</Alert>
+```
+

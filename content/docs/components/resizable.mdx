@@ -1,0 +1,63 @@
+---
+title: Resizable
+description: Displays an 8-bit resizable panel component.
+---
+
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/8bit/resizable";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/resizable"
+    command="pnpm dlx shadcn@latest add @8bitcn/resizable"
+  />
+</div>
+
+<ComponentPreview title="8-bit Resizable component" name="resizable">
+  <ResizablePanelGroup direction="horizontal" className="max-w-md rounded-lg border">
+    <ResizablePanel defaultSize={50}>
+      <div className="flex h-[200px] items-center justify-center p-6">
+        <span className="font-semibold">One</span>
+      </div>
+    </ResizablePanel>
+    <ResizableHandle withHandle />
+    <ResizablePanel defaultSize={50}>
+      <div className="flex h-[200px] items-center justify-center p-6">
+        <span className="font-semibold">Two</span>
+      </div>
+    </ResizablePanel>
+  </ResizablePanelGroup>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="resizable" />
+
+## Usage
+
+---
+
+```tsx
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/8bit/resizable"
+```
+
+```tsx
+<ResizablePanelGroup direction="horizontal">
+  <ResizablePanel>One</ResizablePanel>
+  <ResizableHandle withHandle />
+  <ResizablePanel>Two</ResizablePanel>
+</ResizablePanelGroup>
+```
+

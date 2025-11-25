@@ -1,0 +1,59 @@
+---
+title: Collapsible
+description: Displays an 8-bit collapsible component.
+---
+
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/8bit/collapsible";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/collapsible"
+    command="pnpm dlx shadcn@latest add @8bitcn/collapsible"
+  />
+</div>
+
+<ComponentPreview title="8-bit Collapsible component" name="collapsible">
+  <Collapsible>
+    <CollapsibleTrigger>Can I use this in my project?</CollapsibleTrigger>
+    <CollapsibleContent>
+      Yes. Free to use for personal and commercial projects. No attribution
+      required.
+    </CollapsibleContent>
+  </Collapsible>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="collapsible" />
+
+## Usage
+
+---
+
+```tsx
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/8bit/collapsible"
+```
+
+```tsx
+<Collapsible>
+  <CollapsibleTrigger>Can I use this in my project?</CollapsibleTrigger>
+  <CollapsibleContent>
+    Yes. Free to use for personal and commercial projects. No attribution
+    required.
+  </CollapsibleContent>
+</Collapsible>
+```
+

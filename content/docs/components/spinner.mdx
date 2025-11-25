@@ -1,0 +1,116 @@
+---
+title: Spinner
+description: Displays an 8-bit spinner component.
+---
+
+import { Spinner } from "@/components/ui/8bit/spinner";
+import { Button } from "@/components/ui/8bit/button";
+import { Badge } from "@/components/ui/8bit/badge";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/spinner"
+    command="pnpm dlx shadcn@latest add @8bitcn/spinner"
+  />
+</div>
+
+<ComponentPreview title="8-bit Spinner component" name="spinner">
+  <div className="flex gap-8 items-center">
+    <div className="flex flex-col items-center">
+      <Spinner />
+      <p className="text-sm text-muted-foreground">Classic</p>
+    </div>
+    <div className="flex flex-col items-center mt-1">
+      <Spinner variant="diamond" />
+      <p className="text-sm text-muted-foreground">Diamond</p>
+    </div>
+  </div>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="spinner" />
+
+## Usage
+
+---
+
+```tsx
+import { Spinner } from "@/components/ui/8bit/spinner"
+```
+
+```tsx
+<Spinner />
+```
+
+## Variants
+
+---
+
+Use the variant prop to change the style of the spinner. Defaults to classic.
+
+```tsx
+<Spinner variant="classic" />
+```
+
+```tsx
+<Spinner variant="diamond" />
+```
+
+## Size
+
+---
+
+Use the size-* utility class to change the size of the spinner.
+
+```tsx
+<Spinner className="size-12" />
+<Spinner className="size-16" />
+<Spinner className="size-20" />
+```
+
+## Color
+
+---
+
+Use the text- utility class to change the color of the spinner.
+
+```tsx
+<Spinner className="text-blue-500" />
+<Spinner className="text-green-500" />
+<Spinner className="text-purple-500" />
+<Spinner className="text-red-500" />
+<Spinner className="text-yellow-500" />
+```
+
+## Button
+
+---
+
+Add a spinner to a button to indicate a loading state.
+
+```tsx
+<Button disabled size="sm">
+  <Spinner />
+  Loading...
+</Button>
+```
+
+## Badge
+
+---
+
+You can also use a spinner inside a badge.
+
+```tsx
+<Badge>
+  <Spinner />
+  Syncing
+</Badge>
+```
+

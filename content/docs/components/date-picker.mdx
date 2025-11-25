@@ -1,0 +1,79 @@
+---
+title: Date Picker
+description: Displays an 8-bit date picker component.
+---
+
+import CopyCommandButton from "@/components/copy-command-button";
+import ComponentPreview from "@/components/component-preview";
+import { DatePicker } from "@/components/examples/date-picker";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/date-picker"
+    command="pnpm dlx shadcn@latest add @8bitcn/date-picker"
+  />
+</div>
+
+<ComponentPreview title="8-bit Date Picker component" name="date-picker">
+  <DatePicker />
+</ComponentPreview>
+
+## Installation
+
+---
+
+The Date Picker is built using a composition of the `<Popover />` and the `<Calendar />` components.
+
+See installation instructions for the [Popover](/docs/components/popover) and the [Calendar](/docs/components/calendar) components.
+
+## Usage
+
+---
+
+```tsx
+"use client"
+
+import * as React from "react"
+import { format } from "date-fns"
+import { Calendar as CalendarIcon } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/8bit/button"
+import { Calendar } from "@/components/ui/8bit/calendar"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/8bit/popover"
+
+export function DatePicker() {
+  const [date, setDate] = React.useState<Date>()
+
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button
+          variant={"outline"}
+          className={cn(
+            "w-[310px] justify-start text-left font-normal",
+            !date && "text-muted-foreground"
+          )}
+        >
+          <CalendarIcon className="mr-2 size-4" />
+          {date ? format(date, "PPP") : <span>Pick a date</span>}
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-full p-0">
+        <Calendar
+          mode="single"
+          selected={date}
+          onSelect={setDate}
+          initialFocus
+          className="border-y-0"
+        />
+      </PopoverContent>
+    </Popover>
+  )
+}
+```
+

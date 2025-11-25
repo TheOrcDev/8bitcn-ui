@@ -1,0 +1,67 @@
+---
+title: Radio Group
+description: Displays an 8-bit radio group component.
+---
+
+import { Label } from "@/components/ui/8bit/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/8bit/radio-group";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/radio-group"
+    command="pnpm dlx shadcn@latest add @8bitcn/radio-group"
+  />
+</div>
+
+<ComponentPreview title="8-bit Radio Group component" name="radio-group">
+  <RadioGroup defaultValue="comfortable">
+    <div className="flex items-center space-x-2">
+      <RadioGroupItem value="default" id="r1" />
+      <Label htmlFor="r1">Default</Label>
+    </div>
+    <div className="flex items-center space-x-2">
+      <RadioGroupItem value="comfortable" id="r2" />
+      <Label htmlFor="r2">Comfortable</Label>
+    </div>
+    <div className="flex items-center space-x-2">
+      <RadioGroupItem value="compact" id="r3" />
+      <Label htmlFor="r3">Compact</Label>
+    </div>
+  </RadioGroup>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="radio-group" />
+
+## Usage
+
+---
+
+```tsx
+import { Label } from "@/components/ui/8bit/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/8bit/radio-group"
+```
+
+```tsx
+<RadioGroup defaultValue="comfortable">
+  <div className="flex items-center space-x-2">
+    <RadioGroupItem value="default" id="r1" />
+    <Label htmlFor="r1">Default</Label>
+  </div>
+  <div className="flex items-center space-x-2">
+    <RadioGroupItem value="comfortable" id="r2" />
+    <Label htmlFor="r2">Comfortable</Label>
+  </div>
+  <div className="flex items-center space-x-2">
+    <RadioGroupItem value="compact" id="r3" />
+    <Label htmlFor="r3">Compact</Label>
+  </div>
+</RadioGroup>
+```
+

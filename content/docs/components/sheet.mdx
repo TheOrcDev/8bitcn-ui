@@ -1,0 +1,90 @@
+---
+title: Sheet
+description: Displays an 8-bit sheet component.
+---
+
+import { Button } from "@/components/ui/8bit/button";
+import { Input } from "@/components/ui/8bit/input";
+import { Label } from "@/components/ui/8bit/label";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/8bit/sheet";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/sheet"
+    command="pnpm dlx shadcn@latest add @8bitcn/sheet"
+  />
+</div>
+
+<ComponentPreview title="8-bit Sheet component" name="sheet">
+  <Sheet>
+    <SheetTrigger asChild>
+      <Button variant="outline">Open</Button>
+    </SheetTrigger>
+    <SheetContent>
+      <SheetHeader>
+        <SheetTitle>Edit profile</SheetTitle>
+        <SheetDescription className="text-xs">
+          Make changes to your profile here. Click save when you&apos;re done.
+        </SheetDescription>
+      </SheetHeader>
+      <div className="p-4 flex flex-col gap-4">
+        <Label>Name</Label>
+        <Input placeholder="Project name" />
+      </div>
+      <SheetFooter className="flex-row-reverse">
+        <SheetClose asChild>
+          <Button size="sm">Save changes</Button>
+        </SheetClose>
+      </SheetFooter>
+    </SheetContent>
+  </Sheet>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="sheet" />
+
+## Usage
+
+---
+
+```tsx
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/8bit/sheet"
+```
+
+```tsx
+<Sheet>
+  <SheetTrigger>Open</SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Are you absolutely sure?</SheetTitle>
+      <SheetDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </SheetDescription>
+    </SheetHeader>
+  </SheetContent>
+</Sheet>
+```
+

@@ -1,0 +1,101 @@
+---
+title: Card
+description: Displays an 8-bit card component.
+---
+
+import { Button } from "@/components/ui/8bit/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/8bit/card";
+import { Input } from "@/components/ui/8bit/input";
+import { Label } from "@/components/ui/8bit/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/8bit/select";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/card"
+    command="pnpm dlx shadcn@latest add @8bitcn/card"
+  />
+</div>
+
+<ComponentPreview title="8-bit Card component" name="card">
+  <Card className="max-w-lg">
+    <CardHeader>
+      <CardTitle>Create project</CardTitle>
+      <CardDescription className="text-xs">
+        Deploy your new project in one-click.
+      </CardDescription>
+    </CardHeader>
+    <CardContent className="flex flex-col gap-4">
+      <Label>Name</Label>
+      <Input placeholder="Project name" className="max-w-72" />
+      <Label>Framework</Label>
+      <Select>
+        <SelectTrigger>
+          <SelectValue placeholder="Framework" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="next">Next.js</SelectItem>
+          <SelectItem value="svelte">SvelteKit</SelectItem>
+          <SelectItem value="astro">Astro</SelectItem>
+          <SelectItem value="nuxt">Nuxt.js</SelectItem>
+        </SelectContent>
+      </Select>
+    </CardContent>
+    <CardFooter className="flex justify-between">
+      <Button variant="outline">Cancel</Button>
+      <Button>Create</Button>
+    </CardFooter>
+  </Card>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="card" />
+
+## Usage
+
+---
+
+```tsx
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/8bit/card"
+```
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>Card Description</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>Card Content</p>
+  </CardContent>
+  <CardFooter>
+    <p>Card Footer</p>
+  </CardFooter>
+</Card>
+```
+

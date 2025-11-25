@@ -1,0 +1,107 @@
+---
+title: Item
+description: Displays an 8-bit item component.
+---
+
+import { Button } from "@/components/ui/8bit/button";
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemGroup,
+  ItemSeparator,
+  ItemTitle,
+} from "@/components/ui/8bit/item";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/item"
+    command="pnpm dlx shadcn@latest add @8bitcn/item"
+  />
+</div>
+
+<ComponentPreview title="8-bit Item component" name="item">
+  <ItemGroup>
+    <Item variant="outline">
+      <ItemContent>
+        <ItemTitle>Sword &bull; 300$</ItemTitle>
+        <ItemDescription>The demonic sword</ItemDescription>
+      </ItemContent>
+      <ItemActions>
+        <Button variant="outline" size="sm">Buy</Button>
+      </ItemActions>
+    </Item>
+    <ItemSeparator />
+    <Item variant="outline">
+      <ItemContent>
+        <ItemTitle>Shield &bull; 250$</ItemTitle>
+        <ItemDescription>The divine shield</ItemDescription>
+      </ItemContent>
+      <ItemActions>
+        <Button variant="outline" size="sm">Buy</Button>
+      </ItemActions>
+    </Item>
+    <ItemSeparator />
+    <Item variant="outline">
+      <ItemContent>
+        <ItemTitle>Bow &bull; 280$</ItemTitle>
+        <ItemDescription>The bow of precision</ItemDescription>
+      </ItemContent>
+      <ItemActions>
+        <Button variant="outline" size="sm">Buy</Button>
+      </ItemActions>
+    </Item>
+  </ItemGroup>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="item" />
+
+## Usage
+
+---
+
+```tsx
+import { Button } from "@/components/ui/8bit/button"
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemGroup,
+  ItemSeparator,
+  ItemTitle,
+} from "@/components/ui/8bit/item"
+```
+
+```tsx
+<ItemGroup>
+  <Item variant="outline">
+    <ItemContent>
+      <ItemTitle>Sword &bull; 300$</ItemTitle>
+      <ItemDescription>The demonic sword</ItemDescription>
+    </ItemContent>
+    <ItemActions>
+      <Button variant="outline" size="sm">Buy</Button>
+    </ItemActions>
+  </Item>
+  <ItemSeparator />
+  <Item variant="outline">
+    <ItemContent>
+      <ItemTitle>Shield &bull; 250$</ItemTitle>
+      <ItemDescription>The divine shield</ItemDescription>
+    </ItemContent>
+    <ItemActions>
+      <Button variant="outline" size="sm">Buy</Button>
+    </ItemActions>
+  </Item>
+</ItemGroup>
+```
+

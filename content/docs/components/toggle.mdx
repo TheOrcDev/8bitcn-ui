@@ -1,0 +1,63 @@
+---
+title: Toggle
+description: Displays an 8-bit toggle component.
+---
+
+import { Bold, Italic, Underline } from "lucide-react";
+import { Toggle } from "@/components/ui/8bit/toggle";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/toggle"
+    command="pnpm dlx shadcn@latest add @8bitcn/toggle"
+  />
+</div>
+
+<ComponentPreview title="8-bit Toggle component" name="toggle">
+  <div className="flex flex-wrap items-center gap-4">
+    <Toggle variant="outline" aria-label="Toggle Bold">
+      <Bold className="size-4" />
+    </Toggle>
+    <Toggle variant="outline" aria-label="Toggle Italic">
+      <Italic className="size-4" />
+      <span>Italic</span>
+    </Toggle>
+    <Toggle variant="outline" disabled aria-label="Toggle Disabled">
+      <Underline className="size-4" />
+      <span>Disabled</span>
+    </Toggle>
+  </div>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="toggle" />
+
+## Usage
+
+---
+
+```tsx
+// Basic outline toggle
+<Toggle variant="outline">
+  <Bold className="size-4" />
+</Toggle>
+
+// With text
+<Toggle variant="outline">
+  <Italic className="size-4" />
+  <span>Italic</span>
+</Toggle>
+
+// Disabled outline toggle
+<Toggle variant="outline" disabled>
+  <Underline className="size-4" />
+  <span>Disabled</span>
+</Toggle>
+```
+

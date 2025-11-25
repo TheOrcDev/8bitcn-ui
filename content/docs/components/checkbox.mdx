@@ -1,0 +1,45 @@
+---
+title: Checkbox
+description: Displays an 8-bit checkbox component.
+---
+
+import { Checkbox } from "@/components/ui/8bit/checkbox";
+import { Label } from "@/components/ui/8bit/label";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/checkbox"
+    command="pnpm dlx shadcn@latest add @8bitcn/checkbox"
+  />
+</div>
+
+<ComponentPreview title="8-bit Checkbox component" name="checkbox">
+  <div className="flex items-center gap-4">
+    <Checkbox id="terms" />
+    <Label htmlFor="terms" className="text-xs">
+      Accept terms and conditions
+    </Label>
+  </div>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="checkbox" />
+
+## Usage
+
+---
+
+```tsx
+import { Checkbox } from "@/components/ui/8bit/checkbox"
+```
+
+```tsx
+<Checkbox />
+```
+

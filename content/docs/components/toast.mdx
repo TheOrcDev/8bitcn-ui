@@ -1,0 +1,57 @@
+---
+title: Toast
+description: Displays an 8-bit toast component.
+---
+
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+import { ToastExample } from "@/components/examples/toast";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/toast"
+    command="pnpm dlx shadcn@latest add @8bitcn/toast"
+  />
+</div>
+
+<ComponentPreview title="8-bit Toast component" name="toast">
+  <ToastExample />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="toast" />
+
+8bitcn Toast is using Sonner under the hood. Add the Sonner Toaster component to your layout:
+
+```tsx
+import { Toaster } from "@/components/ui/sonner"
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <head />
+      <body>
+        <main>{children}</main>
+        <Toaster />
+      </body>
+    </html>
+  )
+}
+```
+
+## Usage
+
+---
+
+```tsx
+import { toast } from "@/components/ui/8bit/toast"
+```
+
+```tsx
+toast("8bitcn is an awesome project!")
+```
+

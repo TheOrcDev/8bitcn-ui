@@ -1,0 +1,43 @@
+---
+title: Switch
+description: Displays an 8-bit switch component.
+---
+
+import { Label } from "@/components/ui/8bit/label";
+import { Switch } from "@/components/ui/8bit/switch";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/switch"
+    command="pnpm dlx shadcn@latest add @8bitcn/switch"
+  />
+</div>
+
+<ComponentPreview title="8-bit Switch component" name="switch">
+  <div className="flex items-center space-x-3">
+    <Switch id="airplane-mode" />
+    <Label htmlFor="airplane-mode">Airplane Mode</Label>
+  </div>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="switch" />
+
+## Usage
+
+---
+
+```tsx
+import { Switch } from "@/components/ui/8bit/switch"
+```
+
+```tsx
+<Switch />
+```
+

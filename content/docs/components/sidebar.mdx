@@ -1,0 +1,48 @@
+---
+title: Sidebar
+description: Displays a simple 8-bit sidebar component.
+---
+
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/sidebar"
+    command="pnpm dlx shadcn@latest add @8bitcn/sidebar"
+  />
+</div>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="sidebar" />
+
+## Usage
+
+---
+
+8-bit sidebar is using Shadcn sidebar component. All you need to do is replace your app sidebar with 8bit sidebar.
+
+For more information, check out the [Shadcn Sidebar documentation](https://ui.shadcn.com/docs/components/sidebar).
+
+### In your layout file:
+
+```tsx
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/ui/8bit/blocks/sidebar"
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <SidebarProvider>
+      <AppSidebar />
+      <main>
+        {children}
+      </main>
+    </SidebarProvider>
+  )
+}
+```
+

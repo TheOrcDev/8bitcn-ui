@@ -1,0 +1,74 @@
+---
+title: Retro Mode Switcher
+description: A retro-styled theme toggle component with pixel art sun and moon icons.
+---
+
+import { RetroModeSwitcher } from "@/components/ui/retro-mode-switcher";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/retro-mode-switcher"
+    command="pnpm dlx shadcn@latest add @8bitcn/retro-mode-switcher"
+  />
+</div>
+
+<ComponentPreview title="8-bit Retro Mode Switcher component" name="retro-mode-switcher">
+  <div className="flex items-center gap-4">
+    <RetroModeSwitcher />
+    <span className="text-sm text-muted-foreground">
+      Click to toggle between light and dark themes
+    </span>
+  </div>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="retro-mode-switcher" />
+
+## Wrap your root layout
+
+---
+
+Add the ThemeProvider to your root layout and add the `suppressHydrationWarning` prop to the html tag.
+
+```tsx
+import { ThemeProvider } from "@/components/theme-provider"
+
+export default function RootLayout({ children }: RootLayoutProps) {
+  return (
+    <>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </>
+  )
+}
+```
+
+## Usage
+
+---
+
+```tsx
+import { RetroModeSwitcher } from "@/components/ui/retro-mode-switcher"
+```
+
+```tsx
+<RetroModeSwitcher />
+```
+
