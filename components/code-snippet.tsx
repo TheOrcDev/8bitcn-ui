@@ -119,9 +119,8 @@ export default function CodeSnippet({
     return "";
   };
 
-  const codeContent = typeof children === "string" 
-    ? children 
-    : getTextContent(children);
+  const codeContent =
+    typeof children === "string" ? children : getTextContent(children);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(codeContent);
@@ -146,7 +145,7 @@ export default function CodeSnippet({
         showLanguage={false}
         theme={customTheme}
         as="div"
-        className="w-full text-sm [&>pre]:p-4 [&>pre]:overflow-x-auto [&>pre]:whitespace-pre-wrap [&>pre]:break-words [&>pre]:bg-background [&>pre]:text-foreground"
+        className="w-full text-[13px] [&>pre]:p-4 [&>pre]:overflow-x-auto [&>pre]:whitespace-pre-wrap [&>pre]:break-words [&>pre]:bg-background [&>pre]:text-foreground"
       >
         {codeContent.trim() || ""}
       </ShikiHighlighter>
