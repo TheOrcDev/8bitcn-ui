@@ -117,8 +117,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0(next@16.0.3(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)
       '@wandry/analytics-sdk':
-        specifier: ^1.12.0
-        version: 1.12.0
+        specifier: ^1.16.0
+        version: 1.16.0
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -2092,8 +2092,8 @@ packages:
       vue-router:
         optional: true
 
-  '@wandry/analytics-sdk@1.12.0':
-    resolution: {integrity: sha512-bNwaKbFRunLyGyOwZTKMkGcQADi1I73S59X2ZAnFHVWqf5luJPb7wP4rA4niaAsZEZCsp/V9iF1AZAZ7weTpoA==}
+  '@wandry/analytics-sdk@1.16.0':
+    resolution: {integrity: sha512-YtXDA2SdG+kHfyvAuRr4UFoTOu2mZTuc1JMhGjJK2p7p3LZgvYIp8ySiSMX0ENnIs3C04K7Jg7N+C75gbmIB5Q==}
 
   accepts@2.0.0:
     resolution: {integrity: sha512-5cvg6CtKwfgdmVqY1WIiXKc3Q1bkRqGLi+2W/6ao+6Y7gu/RCwRuAhGEzh5B4KlszSuTLgZYuqFqo5bImjNKng==}
@@ -6765,7 +6765,7 @@ snapshots:
       next: 16.0.3(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react: 19.2.0
 
-  '@wandry/analytics-sdk@1.12.0': {}
+  '@wandry/analytics-sdk@1.16.0': {}
 
   accepts@2.0.0:
     dependencies:
