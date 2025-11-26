@@ -1,0 +1,39 @@
+---
+title: Pause Menu
+description: Displays an 8-bit in-game pause menu overlay.
+---
+
+import PauseMenu from "@/components/ui/8bit/blocks/pause-menu";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/pause-menu"
+    command="pnpm dlx shadcn@latest add @8bitcn/pause-menu"
+  />
+</div>
+
+<ComponentPreview title="8-bit Pause Menu block" name="pause-menu">
+  <PauseMenu className="w-full max-w-[400px]" />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="pause-menu" />
+
+## Usage
+
+---
+
+```tsx
+import PauseMenu from "@/components/ui/8bit/blocks/pause-menu"
+```
+
+```tsx
+<PauseMenu className="w-full max-w-[400px]" />
+```
+

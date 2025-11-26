@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { TOP_LEVEL_SECTIONS } from "@/config/nav-items";
+
 import type { source } from "@/lib/source";
 
 import {
@@ -18,18 +20,7 @@ import {
 
 import { ScrollArea } from "./ui/scroll-area";
 
-const TOP_LEVEL_SECTIONS = [
-  { name: "Get Started", href: "/docs" },
-  {
-    name: "Components",
-    href: "/docs/components",
-  },
-  // {
-  //   name: "Changelog",
-  //   href: "/docs/changelog",
-  // },
-];
-const EXCLUDED_SECTIONS = ["root:index.mdx"];
+const EXCLUDED_SECTIONS = ["root:index.mdx", "root:blocks"];
 const EXCLUDED_PAGES = ["/docs", "/docs/changelog"];
 
 export function DocsSidebar({
@@ -80,8 +71,6 @@ export function DocsSidebar({
             if (EXCLUDED_SECTIONS.includes(item.$id ?? "")) {
               return null;
             }
-
-            console.log(item.$id);
 
             return (
               <SidebarGroup key={item.$id}>

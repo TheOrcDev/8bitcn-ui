@@ -1,0 +1,53 @@
+---
+title: Single Date Calendar
+description: Displays an 8-bit calendar with single date selection and dropdown navigation.
+---
+
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+import { Calendar13 } from "@/components/examples/calendars/calendar-13";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/calendar"
+    command="pnpm dlx shadcn@latest add @8bitcn/calendar"
+  />
+</div>
+
+<ComponentPreview title="8-bit Single Date Calendar block" name="calendar-single">
+  <Calendar13 />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="calendar" />
+
+## Usage
+
+---
+
+```tsx
+import { Calendar } from "@/components/ui/8bit/calendar"
+```
+
+```tsx
+const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+<Calendar
+  mode="single"
+  defaultMonth={date}
+  selected={date}
+  onSelect={setDate}
+  captionLayout="dropdown"
+/>
+```
+
+## Caption Layout Options
+
+- `dropdown` - Month and Year dropdowns
+- `dropdown-months` - Month dropdown only
+- `dropdown-years` - Year dropdown only
+

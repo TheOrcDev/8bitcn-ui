@@ -1,0 +1,61 @@
+---
+title: Dialogue
+description: Displays an 8-bit RPG-style dialogue box with avatar.
+---
+
+import Dialogue from "@/components/ui/8bit/blocks/dialogue";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/dialogue"
+    command="pnpm dlx shadcn@latest add @8bitcn/dialogue"
+  />
+</div>
+
+<ComponentPreview title="8-bit Dialogue block" name="dialogue">
+  <div className="py-4 flex flex-col gap-4 w-full max-w-[500px]">
+    <Dialogue
+      avatarSrc="/images/pixelized-8bitcnorc.jpg"
+      avatarFallback="Orc"
+      title="Orc"
+      description="I bring you a gift… it's called AXE TO THE FACE! SLASH!!"
+    />
+    <div className="flex justify-end">
+      <Dialogue
+        avatarSrc="/images/goblin.png"
+        avatarFallback="Goblin"
+        title="Goblin"
+        description="`Screeches like a dying flute`"
+        player={false}
+      />
+    </div>
+  </div>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="dialogue" />
+
+## Usage
+
+---
+
+```tsx
+import Dialogue from "@/components/ui/8bit/blocks/dialogue"
+```
+
+```tsx
+<Dialogue
+  avatarSrc="/images/avatar.jpg"
+  avatarFallback="NPC"
+  title="NPC Name"
+  description="Hello adventurer! Welcome to our village."
+  player={true}
+/>
+```
+

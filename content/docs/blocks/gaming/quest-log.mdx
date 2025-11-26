@@ -1,0 +1,91 @@
+---
+title: Quest Log
+description: Displays an 8-bit mission and task tracking system.
+---
+
+import { QuestLog } from "@/components/ui/8bit/quest-log";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/quest-log"
+    command="pnpm dlx shadcn@latest add @8bitcn/quest-log"
+  />
+</div>
+
+<ComponentPreview title="8-bit Quest Log block" name="quest-log">
+  <QuestLog
+    quests={[
+      {
+        id: "quest-1",
+        title: "Defeat the Goblin King",
+        description: "The Goblin King has been terrorizing the village for weeks. Travel to the Dark Forest and defeat him to restore peace.",
+        status: "active",
+        shortDescription: "Defeat the Goblin King in the Dark Forest.",
+      },
+      {
+        id: "quest-2",
+        title: "Collect Dragon Scales",
+        description: "The local blacksmith needs dragon scales to forge the ultimate armor.",
+        status: "active",
+        shortDescription: "Collect 10 dragon scales from the Dragon's Lair.",
+      },
+      {
+        id: "quest-3",
+        title: "Deliver the Potion",
+        description: "The village healer needs this healing potion delivered to the wounded knight.",
+        status: "completed",
+        shortDescription: "Deliver healing potion to the wounded knight.",
+      },
+      {
+        id: "quest-4",
+        title: "Find the Lost Artifact",
+        description: "An ancient artifact has been stolen from the museum.",
+        status: "failed",
+        shortDescription: "Investigate the stolen artifact and find the thief.",
+      },
+      {
+        id: "quest-5",
+        title: "Escort the Merchant",
+        description: "A wealthy merchant needs protection while traveling.",
+        status: "pending",
+        shortDescription: "Protect the merchant through the mountain pass.",
+      },
+    ]}
+    maxHeight="350px"
+    className="w-full max-w-[500px]"
+  />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="quest-log" />
+
+## Usage
+
+---
+
+```tsx
+import { QuestLog } from "@/components/ui/8bit/quest-log"
+```
+
+```tsx
+<QuestLog
+  quests={[
+    {
+      id: "quest-1",
+      title: "Defeat the Goblin King",
+      description: "Full quest description here...",
+      status: "active",
+      shortDescription: "Brief description for the list.",
+    },
+  ]}
+  maxHeight="400px"
+  emptyStateMessage="No quests available."
+/>
+```
+

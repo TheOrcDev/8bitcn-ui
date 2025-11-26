@@ -1,0 +1,49 @@
+---
+title: Step Area Chart
+description: Displays an 8-bit stepped area chart for trends.
+---
+
+import ChartAreaStep from "@/components/ui/8bit/blocks/chart-area-step";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/8bit/card";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/chart-area-step"
+    command="pnpm dlx shadcn@latest add @8bitcn/chart-area-step"
+  />
+</div>
+
+<ComponentPreview title="8-bit Step Area Chart block" name="chart-area-step">
+  <Card className="w-full max-w-[600px]">
+    <CardHeader>
+      <CardTitle className="text-sm font-medium">
+        Visitor trends over time
+      </CardTitle>
+    </CardHeader>
+    <CardContent>
+      <ChartAreaStep />
+    </CardContent>
+  </Card>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="chart-area-step" />
+
+## Usage
+
+---
+
+```tsx
+import ChartAreaStep from "@/components/ui/8bit/blocks/chart-area-step"
+```
+
+```tsx
+<ChartAreaStep />
+```
+

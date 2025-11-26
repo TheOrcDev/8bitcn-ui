@@ -1,0 +1,100 @@
+---
+title: Leaderboard
+description: Displays an 8-bit high score ranking table.
+---
+
+import { Leaderboard } from "@/components/ui/8bit/leaderboard";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/leaderboard"
+    command="pnpm dlx shadcn@latest add @8bitcn/leaderboard"
+  />
+</div>
+
+<ComponentPreview title="8-bit Leaderboard block" name="leaderboard">
+  <Leaderboard
+    players={[
+      {
+        id: "1",
+        name: "OrcDev",
+        score: 125000,
+        avatar: "/avatars/orcdev.jpeg",
+        avatarFallback: "OD",
+      },
+      {
+        id: "2",
+        name: "Shadow Mage",
+        score: 98500,
+        avatarFallback: "S",
+      },
+      {
+        id: "3",
+        name: "Dragon Slayer",
+        score: 87500,
+        avatarFallback: "D",
+      },
+      {
+        id: "4",
+        name: "Fire Wizard",
+        score: 76500,
+        avatarFallback: "F",
+      },
+      {
+        id: "5",
+        name: "Retro Lover",
+        score: 68500,
+        isCurrentPlayer: true,
+        avatarFallback: "Y",
+      },
+    ]}
+    maxPlayers={5}
+    showRank={true}
+    showAvatar={true}
+    currentPlayerId="5"
+    className="w-full max-w-[500px]"
+  />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="leaderboard" />
+
+## Usage
+
+---
+
+```tsx
+import { Leaderboard } from "@/components/ui/8bit/leaderboard"
+```
+
+```tsx
+<Leaderboard
+  players={[
+    {
+      id: "1",
+      name: "OrcDev",
+      score: 125000,
+      avatar: "/avatars/orcdev.jpeg",
+      avatarFallback: "OD",
+    },
+    {
+      id: "2",
+      name: "Shadow Mage",
+      score: 98500,
+      avatarFallback: "S",
+    },
+  ]}
+  maxPlayers={10}
+  showRank={true}
+  showAvatar={true}
+  currentPlayerId="1"
+  title="HIGH SCORES"
+/>
+```
+

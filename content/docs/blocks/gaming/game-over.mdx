@@ -1,0 +1,39 @@
+---
+title: Game Over
+description: Displays an 8-bit game over screen with retry options.
+---
+
+import GameOver from "@/components/ui/8bit/blocks/game-over";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/game-over"
+    command="pnpm dlx shadcn@latest add @8bitcn/game-over"
+  />
+</div>
+
+<ComponentPreview title="8-bit Game Over block" name="game-over">
+  <GameOver className="w-full max-w-[600px]" />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="game-over" />
+
+## Usage
+
+---
+
+```tsx
+import GameOver from "@/components/ui/8bit/blocks/game-over"
+```
+
+```tsx
+<GameOver className="w-full max-w-[600px]" />
+```
+
