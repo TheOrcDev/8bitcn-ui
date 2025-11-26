@@ -239,7 +239,7 @@ export const navItems = {
     },
     {
       label: "Blocks",
-      href: "/blocks/featured",
+      href: "/docs/blocks",
     },
     {
       label: "Themes",
