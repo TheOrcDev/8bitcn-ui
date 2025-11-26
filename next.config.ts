@@ -6,6 +6,9 @@ const withMDX = createMDX();
 
 const nextConfig: NextConfig = {
   cacheComponents: true,
+  outputFileTracingIncludes: {
+    "/docs/**/*": ["./content/docs/**/*"],
+  },
 };
 
 export default withMDX(nextConfig);
