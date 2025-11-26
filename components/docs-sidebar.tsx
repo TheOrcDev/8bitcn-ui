@@ -3,8 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { ScrollArea } from "@radix-ui/react-scroll-area";
-
 import type { source } from "@/lib/source";
 
 import {
@@ -18,6 +16,8 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
+import { ScrollArea } from "./ui/scroll-area";
+
 const TOP_LEVEL_SECTIONS = [
   { name: "Get Started", href: "/docs" },
   {
@@ -29,7 +29,7 @@ const TOP_LEVEL_SECTIONS = [
   //   href: "/docs/changelog",
   // },
 ];
-const EXCLUDED_SECTIONS = ["installation", "dark-mode"];
+const EXCLUDED_SECTIONS = ["root:index.mdx"];
 const EXCLUDED_PAGES = ["/docs", "/docs/changelog"];
 
 export function DocsSidebar({
@@ -80,6 +80,8 @@ export function DocsSidebar({
             if (EXCLUDED_SECTIONS.includes(item.$id ?? "")) {
               return null;
             }
+
+            console.log(item.$id);
 
             return (
               <SidebarGroup key={item.$id}>

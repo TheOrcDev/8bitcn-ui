@@ -235,7 +235,7 @@ export const navItems = {
     },
     {
       label: "Components",
-      href: "/docs/components/accordion",
+      href: "/docs/components",
     },
     {
       label: "Blocks",
