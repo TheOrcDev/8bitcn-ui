@@ -1,0 +1,89 @@
+---
+title: Kbd
+description: Used to display textual user input from keyboard.
+---
+
+import { Button } from "@/components/ui/8bit/button";
+import { Kbd, KbdGroup } from "@/components/ui/8bit/kbd";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/kbd"
+    command="pnpm dlx shadcn@latest add @8bitcn/kbd"
+  />
+</div>
+
+<ComponentPreview title="8-bit Kbd component" name="kbd">
+  <div className="flex flex-col items-center gap-4">
+    <KbdGroup>
+      <Kbd>↑</Kbd>
+      <Kbd>↑</Kbd>
+      <Kbd>↓</Kbd>
+      <Kbd>↓</Kbd>
+      <Kbd>←</Kbd>
+      <Kbd>→</Kbd>
+      <Kbd>←</Kbd>
+      <Kbd>→</Kbd>
+    </KbdGroup>
+    <KbdGroup>
+      <Kbd>IDDQD</Kbd>
+    </KbdGroup>
+  </div>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="kbd" />
+
+## Usage
+
+---
+
+```tsx
+import { Kbd } from "@/components/ui/8bit/kbd"
+```
+
+```tsx
+<Kbd>IDDQD</Kbd>
+```
+
+## Examples
+
+---
+
+### Group
+
+Use the KbdGroup component to group keyboard keys together.
+
+```tsx
+<p className="text-muted-foreground text-sm">
+  Use{" "}
+  <KbdGroup>
+    <Kbd>↑↑↓↓←→←→</Kbd>
+    <Kbd>AB</Kbd>
+  </KbdGroup>{" "}
+  to activate the Konami Code
+</p>
+```
+
+### Button
+
+Use the Kbd component inside a Button component.
+
+```tsx
+<Button variant="outline" size="sm" className="pr-2">
+  Start Game <Kbd>Enter</Kbd>
+</Button>
+<Button variant="outline" size="sm" className="pr-2">
+  Pause <Kbd>Esc</Kbd>
+</Button>
+<Button variant="outline" size="sm" className="pr-2">
+  God Mode <Kbd>IDDQD</Kbd>
+</Button>
+```
+

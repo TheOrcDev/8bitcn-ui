@@ -1,0 +1,54 @@
+---
+title: Separator
+description: Displays an 8-bit separator component.
+---
+
+import { Separator } from "@/components/ui/8bit/separator";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/separator"
+    command="pnpm dlx shadcn@latest add @8bitcn/separator"
+  />
+</div>
+
+<ComponentPreview title="8-bit Separator component" name="separator">
+  <div>
+    <div className="space-y-1">
+      <h4 className="text-sm font-medium leading-none">8bit-separator</h4>
+      <p className="text-sm text-muted-foreground">
+        An open-source UI component library.
+      </p>
+    </div>
+    <Separator className="my-4" />
+    <div className="flex h-5 items-center space-x-4 text-sm">
+      <div>Blog</div>
+      <Separator orientation="vertical" />
+      <div>Docs</div>
+      <Separator orientation="vertical" />
+      <div>Source</div>
+    </div>
+  </div>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="separator" />
+
+## Usage
+
+---
+
+```tsx
+import { Separator } from "@/components/ui/separator"
+```
+
+```tsx
+<Separator />
+```
+

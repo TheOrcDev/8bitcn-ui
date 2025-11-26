@@ -1,0 +1,41 @@
+---
+title: Login Form with Image
+description: Displays an 8-bit compact login form with side image.
+---
+
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/login-form-with-image"
+    command="pnpm dlx shadcn@latest add @8bitcn/login-form-with-image"
+  />
+</div>
+
+<div className="border rounded-lg p-4 my-4">
+  <p className="text-sm text-muted-foreground mb-4">
+    A compact login form with a side image for visual appeal. Features email and password fields with a retro 8-bit aesthetic alongside a decorative image panel.
+  </p>
+  <a href="/login-with-image" target="_blank" className="text-primary hover:underline">
+    View Login Form with Image demo →
+  </a>
+</div>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="login-form-with-image" />
+
+## Usage
+
+---
+
+```tsx
+import { LoginForm } from "@/components/ui/8bit/blocks/login-form-with-image"
+```
+
+```tsx
+<LoginForm />
+```

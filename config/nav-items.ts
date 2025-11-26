@@ -235,11 +235,11 @@ export const navItems = {
     },
     {
       label: "Components",
-      href: "/docs/components/accordion",
+      href: "/docs/components",
     },
     {
       label: "Blocks",
-      href: "/blocks/featured",
+      href: "/docs/blocks",
     },
     {
       label: "Themes",
@@ -258,3 +258,19 @@ export const navItems = {
     },
   ],
 };
+
+export const TOP_LEVEL_SECTIONS = [
+  { name: "Get Started", href: "/docs" },
+  {
+    name: "Components",
+    href: "/docs/components",
+  },
+  {
+    name: "Blocks",
+    href: "/docs/blocks",
+  },
+  // {
+  //   name: "Changelog",
+  //   href: "/docs/changelog",
+  // },
+];

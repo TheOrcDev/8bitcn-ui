@@ -1,0 +1,42 @@
+---
+title: Slider
+description: Displays an 8-bit slider component.
+---
+
+import { Slider } from "@/components/ui/8bit/slider";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/slider"
+    command="pnpm dlx shadcn@latest add @8bitcn/slider"
+  />
+</div>
+
+<ComponentPreview title="8-bit Slider component" name="slider">
+  <div className="flex flex-col gap-5 w-96">
+    <Slider defaultValue={[33]} max={100} step={1} />
+    <Slider defaultValue={[70]} max={100} step={1} />
+  </div>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="slider" />
+
+## Usage
+
+---
+
+```tsx
+import { Slider } from "@/components/ui/8bit/slider"
+```
+
+```tsx
+<Slider defaultValue={[70]} max={100} step={1} />
+```
+

@@ -5,10 +5,9 @@ import { Theme } from "@/lib/themes";
 import { Badge } from "@/components/ui/8bit/badge";
 
 import { useThemeConfig } from "@/components/active-theme";
+import CodeSnippet from "@/components/code-snippet";
+import InstallationCommands from "@/components/installation-commands";
 import { SelectThemeDropdown } from "@/components/select-theme-dropdown";
-
-import CodeSnippet from "@/app/docs/components/code-snippet";
-import InstallationCommands from "@/app/docs/components/installation-commands";
 
 import { Button } from "../ui/8bit/button";
 import { Separator } from "../ui/8bit/separator";

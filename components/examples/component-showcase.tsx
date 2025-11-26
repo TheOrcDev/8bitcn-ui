@@ -12,8 +12,34 @@ import {
   CardTitle,
 } from "@/components/ui/8bit/card";
 import { Checkbox } from "@/components/ui/8bit/checkbox";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuTrigger,
+} from "@/components/ui/8bit/dropdown-menu";
 import { Input } from "@/components/ui/8bit/input";
 import { Label } from "@/components/ui/8bit/label";
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarTrigger,
+} from "@/components/ui/8bit/menubar";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/8bit/select";
 import {
   Tabs,
   TabsContent,
@@ -30,13 +56,45 @@ import DifficultySelect from "../ui/8bit/blocks/difficulty-select";
 import GameOver from "../ui/8bit/blocks/game-over";
 import GameProgress from "../ui/8bit/blocks/game-progress";
 import MainMenu from "../ui/8bit/blocks/main-menu";
+import { Button } from "../ui/8bit/button";
+import EnemyHealthDisplay from "../ui/8bit/enemy-health-display";
+import ManaBar from "../ui/8bit/mana-bar";
+import { Spinner } from "../ui/8bit/spinner";
+import { DatePicker } from "./date-picker";
+import { DrawerExample } from "./drawer";
 
 export default function ComponentShowcase() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
       {/* Column 1 */}
       <div className="flex flex-col gap-4">
-        <AudioSettings />
+        <div className="flex flex-col gap-6 mt-1">
+          <Button>Button</Button>
+
+          <DrawerExample />
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline">Dropdown Menu</Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                <DropdownMenuItem>
+                  Profile
+                  <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  Billing
+                  <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+
+        <AudioSettings className="mt-1" />
 
         <MainMenu />
 
@@ -174,6 +232,36 @@ export default function ComponentShowcase() {
       <div className="flex flex-col gap-4 lg:col-span-2">
         <Card>
           <CardContent className="flex flex-col gap-4">
+            <div className="flex flex-wrap gap-4">
+              <Spinner className="size-10" variant="diamond" />
+              <Spinner className="size-10" variant="classic" />
+              <Select>
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder="Theme" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="light">Light</SelectItem>
+                  <SelectItem value="dark">Dark</SelectItem>
+                  <SelectItem value="system">System</SelectItem>
+                </SelectContent>
+              </Select>
+
+              <div className="flex justify-center items-center">
+                <DatePicker />
+              </div>
+              <EnemyHealthDisplay
+                enemyName="Fire Dragon"
+                level={25}
+                currentHealth={850}
+                maxHealth={1000}
+              />
+              <ManaBar value={75} variant="retro" className="mt-5" />
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="flex flex-col gap-4">
             <Dialogue
               avatarSrc="/images/pixelized-8bitcnorc.jpg"
               avatarFallback="Orc"
@@ -242,6 +330,32 @@ export default function ComponentShowcase() {
 
       {/* Column 3 */}
       <div className="flex flex-col gap-4 w-full">
+        <Input placeholder="Enter your name" />
+
+        <Menubar>
+          <MenubarMenu>
+            <MenubarTrigger>File</MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>
+                New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+              </MenubarItem>
+              <MenubarItem>New Window</MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>Share</MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>Print</MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
+          <MenubarMenu>
+            <MenubarTrigger>Edit</MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>Undo</MenubarItem>
+              <MenubarItem>Redo</MenubarItem>
+              <MenubarSeparator />
+            </MenubarContent>
+          </MenubarMenu>
+        </Menubar>
+
         <DifficultySelect />
 
         <CommandExample />

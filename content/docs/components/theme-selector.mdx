@@ -1,0 +1,98 @@
+---
+title: Theme Selector
+description: A complete theme selector component with dropdown selection and code copy functionality.
+---
+
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+import ThemeSelectorShowcase from "@/components/examples/theme-selector-showcase";
+import ThemeSelectorExample from "@/components/examples/theme-selector";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/theme-selector"
+    command="pnpm dlx shadcn@latest add @8bitcn/theme-selector"
+  />
+</div>
+
+<ComponentPreview title="8-bit Theme Selector component" name="theme-selector">
+  <ThemeSelectorShowcase />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="theme-selector" />
+
+## Usage
+
+---
+
+### 1. Wrap your layout with ActiveThemeProvider
+
+```tsx
+import { ActiveThemeProvider } from "@/components/active-theme"
+
+// You can also overwrite your globals.css file
+import "./retro-globals.css";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html>
+      <body>
+        <ActiveThemeProvider>
+          {children}
+        </ActiveThemeProvider>
+      </body>
+    </html>
+  )
+}
+```
+
+### 2. Use the Theme Selector Dropdown
+
+```tsx
+import { SelectThemeDropdown } from "@/components/select-theme-dropdown"
+import { useThemeConfig } from "@/components/active-theme"
+
+export default function Component() {
+  const { activeTheme, setActiveTheme } = useThemeConfig()
+
+  return (
+    <SelectThemeDropdown
+      activeTheme={activeTheme}
+      setActiveTheme={setActiveTheme}
+    />
+  )
+}
+```
+
+### Custom Theme Switching with Button
+
+```tsx
+import { useThemeConfig } from "@/components/active-theme"
+import { Theme } from "@/lib/themes"
+
+function MyComponent() {
+  const { activeTheme, setActiveTheme } = useThemeConfig()
+  
+  return (
+    <div>
+      <p>Current theme: {activeTheme}</p>
+      <button onClick={() => setActiveTheme(Theme.Sega)}>
+        Switch to Sega
+      </button>
+    </div>
+  )
+}
+```
+
+## Available Themes
+
+Click on any theme below to switch to it instantly and see how your components transform:
+
+<div className="my-6">
+  <ThemeSelectorExample />
+</div>

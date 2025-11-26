@@ -1,0 +1,64 @@
+---
+title: Mana Bar
+description: Displays an 8-bit mana bar component.
+---
+
+import ManaBar from "@/components/ui/8bit/mana-bar";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/mana-bar"
+    command="pnpm dlx shadcn@latest add @8bitcn/mana-bar"
+  />
+</div>
+
+<ComponentPreview title="8-bit Mana Bar component" name="mana-bar">
+  <div className="md:min-w-[300px] min-w-[200px] flex flex-col gap-8">
+    <div>
+      <p className="text-sm text-muted-foreground mb-2">
+        Default mana bar
+      </p>
+      <div className="flex justify-between text-sm mb-2 retro">
+        <span>Mana</span>
+        <span>75%</span>
+      </div>
+      <ManaBar value={75} />
+    </div>
+    <div>
+      <p className="text-sm text-muted-foreground mb-2">
+        Retro mana bar
+      </p>
+      <div className="flex justify-between text-sm mb-2 retro">
+        <span>Mana</span>
+        <span>45%</span>
+      </div>
+      <ManaBar value={45} variant="retro" />
+    </div>
+  </div>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="mana-bar" />
+
+## Usage
+
+---
+
+```tsx
+import { ManaBar } from "@/components/ui/8bit/mana-bar"
+```
+
+```tsx
+<ManaBar value={75} />
+```
+
+```tsx
+<ManaBar value={75} variant="retro" />
+```
+

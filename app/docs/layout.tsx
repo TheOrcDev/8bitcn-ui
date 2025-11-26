@@ -1,20 +1,20 @@
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { source } from "@/lib/source";
 
-import { AppSidebar } from "@/components/app-sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
-interface LayoutProps {
+import { ConditionalSidebar } from "@/components/conditional-sidebar";
+
+export default function DocsLayout({
+  children,
+}: {
   children: React.ReactNode;
-}
-
-export default function Layout({ children }: LayoutProps) {
+}) {
   return (
-    <main className="relative flex gap-4 p-4">
-      <SidebarProvider className="w-max hidden md:block">
-        <AppSidebar className="absolute top-0 left-0 " />
-        <SidebarTrigger className="md:hidden" />
+    <div className="container-wrapper flex flex-1 flex-col px-2">
+      <SidebarProvider className="3xl:fixed:container 3xl:fixed:px-3 min-h-min flex-1 items-start px-0 [--sidebar-width:220px] [--top-spacing:0] lg:[--sidebar-width:240px] lg:[--top-spacing:calc(var(--spacing)*4)]">
+        <ConditionalSidebar tree={source.pageTree} />
+        <div className="h-full w-full lg:ml-(--sidebar-width)">{children}</div>
       </SidebarProvider>
-
-      <div className="flex-1 px-4 py-4 max-w-full">{children}</div>
-    </main>
+    </div>
   );
 }

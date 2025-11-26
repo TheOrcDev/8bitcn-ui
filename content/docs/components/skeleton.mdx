@@ -1,0 +1,51 @@
+---
+title: Skeleton
+description: Displays an 8-bit skeleton component.
+---
+
+import { Skeleton } from "@/components/ui/8bit/skeleton";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/skeleton"
+    command="pnpm dlx shadcn@latest add @8bitcn/skeleton"
+  />
+</div>
+
+<ComponentPreview title="8-bit Skeleton component" name="skeleton">
+  <div className="flex flex-col space-y-5">
+    <Skeleton className="h-[125px] w-[250px] rounded-xl" />
+    <div className="space-y-4">
+      <Skeleton className="h-5 w-[250px]" />
+      <Skeleton className="h-5 w-[200px]" />
+    </div>
+  </div>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="skeleton" />
+
+## Usage
+
+---
+
+```tsx
+import { Skeleton } from "@/components/ui/8bit/skeleton"
+```
+
+```tsx
+<div className="flex flex-col space-y-5">
+  <Skeleton className="h-[125px] w-[250px] rounded-xl" />
+  <div className="space-y-4">
+    <Skeleton className="h-5 w-[250px]" />
+    <Skeleton className="h-5 w-[200px]" />
+  </div>
+</div>
+```
+

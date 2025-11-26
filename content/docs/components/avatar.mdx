@@ -1,0 +1,94 @@
+---
+title: Avatar
+description: An 8-bit style avatar component that displays user profile images with optional pixelation and fallback.
+---
+
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/8bit/avatar";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/avatar"
+    command="pnpm dlx shadcn@latest add @8bitcn/avatar"
+  />
+</div>
+
+<ComponentPreview title="8-bit Avatar component" name="avatar">
+  <div className="flex gap-4">
+    <Avatar variant="pixel">
+      <AvatarImage
+        src="/images/pixelized-8bitcnorc.jpg"
+        alt="@8bitcn"
+      />
+      <AvatarFallback>8B</AvatarFallback>
+    </Avatar>
+    <Avatar variant="default">
+      <AvatarImage
+        src="/images/pixelized-8bitcnorc.jpg"
+        alt="@8bitcn"
+      />
+      <AvatarFallback>8B</AvatarFallback>
+    </Avatar>
+    <Avatar>
+      <AvatarFallback>8B</AvatarFallback>
+    </Avatar>
+  </div>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="avatar" />
+
+## Usage
+
+---
+
+```tsx
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/8bit/avatar"
+```
+
+```tsx
+<Avatar>
+  <AvatarImage src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@8bitcn" />
+  <AvatarFallback>CN</AvatarFallback>
+</Avatar>
+```
+
+## Examples
+
+---
+
+### Variants
+
+```tsx
+<Avatar variant="pixel">
+  <AvatarImage src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@8bitcn" />
+  <AvatarFallback>CN</AvatarFallback>
+</Avatar>
+
+<Avatar variant="default">
+  <AvatarFallback>AB</AvatarFallback>
+</Avatar>
+```
+
+### Custom Sizes
+
+```tsx
+<Avatar className="size-20">
+  <AvatarImage src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@8bitcn" />
+  <AvatarFallback>CN</AvatarFallback>
+</Avatar>
+
+<Avatar className="size-6">
+  <AvatarFallback>8B</AvatarFallback>
+</Avatar>
+```
+

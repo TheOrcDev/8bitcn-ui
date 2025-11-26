@@ -1,0 +1,51 @@
+---
+title: Range Calendar
+description: Displays an 8-bit calendar with date range selection.
+---
+
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+import { RangeCalendar } from "@/components/examples/range-calendar";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/calendar"
+    command="pnpm dlx shadcn@latest add @8bitcn/calendar"
+  />
+</div>
+
+<ComponentPreview title="8-bit Range Calendar block" name="calendar-range">
+  <RangeCalendar />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="calendar" />
+
+## Usage
+
+---
+
+```tsx
+import { Calendar } from "@/components/ui/8bit/calendar"
+import type { DateRange } from "react-day-picker"
+```
+
+```tsx
+const [date, setDate] = React.useState<DateRange | undefined>({
+  from: new Date(2025, 5, 12),
+  to: new Date(2025, 5, 18),
+})
+
+<Calendar
+  mode="range"
+  defaultMonth={date?.from}
+  numberOfMonths={2}
+  selected={date}
+  onSelect={setDate}
+/>
+```
+

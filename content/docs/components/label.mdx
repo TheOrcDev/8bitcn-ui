@@ -1,0 +1,45 @@
+---
+title: Label
+description: Displays an 8-bit label component.
+---
+
+import { Checkbox } from "@/components/ui/8bit/checkbox";
+import { Label } from "@/components/ui/8bit/label";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/label"
+    command="pnpm dlx shadcn@latest add @8bitcn/label"
+  />
+</div>
+
+<ComponentPreview title="8-bit Label component" name="label">
+  <div className="flex items-center gap-4">
+    <Checkbox id="terms" />
+    <Label htmlFor="terms" className="text-xs">
+      Accept terms and conditions
+    </Label>
+  </div>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="label" />
+
+## Usage
+
+---
+
+```tsx
+import { Label } from "@/components/ui/8bit/label"
+```
+
+```tsx
+<Label>Label</Label>
+```
+

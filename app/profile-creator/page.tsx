@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 import { profileCreatorMetaData } from "@/lib/metadata";
 
-import ProfileCreator from "@/app/docs/components/profile-creator";
+import ProfileCreator from "@/components/profile-creator";
 
 export const metadata: Metadata = {
   title: "8-bit Profile Creator",

@@ -1,0 +1,50 @@
+---
+title: Progress
+description: Displays an 8-bit progress component.
+---
+
+import { Progress } from "@/components/ui/8bit/progress";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/progress"
+    command="pnpm dlx shadcn@latest add @8bitcn/progress"
+  />
+</div>
+
+<ComponentPreview title="8-bit Progress component" name="progress">
+  <div className="flex flex-col gap-5 w-96">
+    <Progress value={70} />
+    <Progress value={70} variant="retro" />
+  </div>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="progress" />
+
+## Usage
+
+---
+
+```tsx
+import { Progress } from "@/components/ui/8bit/progress"
+```
+
+```tsx
+<Progress value={70} />
+```
+
+## Retro Variant
+
+---
+
+```tsx
+<Progress value={70} variant="retro" />
+```
+

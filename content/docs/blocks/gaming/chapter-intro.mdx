@@ -1,0 +1,54 @@
+---
+title: Chapter Intro
+description: Displays an 8-bit chapter introduction screen with background image.
+---
+
+import ChapterIntro from "@/components/ui/8bit/blocks/chapter-intro";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/chapter-intro"
+    command="pnpm dlx shadcn@latest add @8bitcn/chapter-intro"
+  />
+</div>
+
+<ComponentPreview title="8-bit Chapter Intro block" name="chapter-intro">
+  <ChapterIntro
+    className="w-full max-w-[600px] text-white"
+    title="LEVEL 1: FIERY SKELETONS"
+    subtitle="Defeat the skeletons to unlock the gate."
+    backgroundSrc="/images/fiery-skeletons.png"
+    height="md"
+    align="center"
+    darken={0.5}
+  />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="chapter-intro" />
+
+## Usage
+
+---
+
+```tsx
+import ChapterIntro from "@/components/ui/8bit/blocks/chapter-intro"
+```
+
+```tsx
+<ChapterIntro
+  title="LEVEL 1: FIERY SKELETONS"
+  subtitle="Defeat the skeletons to unlock the gate."
+  backgroundSrc="/images/fiery-skeletons.png"
+  height="md"
+  align="center"
+  darken={0.5}
+/>
+```
+

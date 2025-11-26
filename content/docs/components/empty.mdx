@@ -1,0 +1,85 @@
+---
+title: Empty
+description: Displays an 8-bit empty component.
+---
+
+import { Button } from "@/components/ui/8bit/button";
+import {
+  Empty,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+} from "@/components/ui/8bit/empty";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/empty"
+    command="pnpm dlx shadcn@latest add @8bitcn/empty"
+  />
+</div>
+
+<ComponentPreview title="8-bit Empty component" name="empty">
+  <Empty>
+    <EmptyHeader>
+      <EmptyTitle>No Characters Yet</EmptyTitle>
+      <EmptyDescription>
+        You haven&apos;t created any Characters yet. Get started by
+        creating your first character.
+      </EmptyDescription>
+    </EmptyHeader>
+    <EmptyContent>
+      <div className="flex flex-wrap justify-center gap-6">
+        <Button>Create Character</Button>
+        <Button variant="outline">Import Character</Button>
+      </div>
+    </EmptyContent>
+  </Empty>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="empty" />
+
+## Usage
+
+---
+
+```tsx
+import {
+  Empty,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+} from "@/components/ui/8bit/empty"
+```
+
+```tsx
+<Empty>
+  <EmptyHeader>
+    <EmptyMedia variant="icon">
+      <IconBrandAmongUs />
+    </EmptyMedia>
+    <EmptyTitle>No Characters Yet</EmptyTitle>
+    <EmptyDescription>
+      You haven't created any Characters yet. Get started by creating
+      your first character.
+    </EmptyDescription>
+  </EmptyHeader>
+  <EmptyContent>
+    <div className="flex flex-wrap justify-center gap-6">
+      <Button>Create Character</Button>
+      <Button variant="outline">Import Character</Button>
+    </div>
+  </EmptyContent>
+</Empty>
+```
+

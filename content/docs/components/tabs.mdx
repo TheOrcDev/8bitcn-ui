@@ -1,0 +1,114 @@
+---
+title: Tabs
+description: Displays an 8-bit tabs component.
+---
+
+import { Button } from "@/components/ui/8bit/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/8bit/card";
+import { Input } from "@/components/ui/8bit/input";
+import { Label } from "@/components/ui/8bit/label";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/8bit/tabs";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/tabs"
+    command="pnpm dlx shadcn@latest add @8bitcn/tabs"
+  />
+</div>
+
+<ComponentPreview title="8-bit Tabs component" name="tabs">
+  <Tabs defaultValue="account" className="w-[400px]">
+    <TabsList className="grid w-full grid-cols-2">
+      <TabsTrigger value="account">Account</TabsTrigger>
+      <TabsTrigger value="password">Password</TabsTrigger>
+    </TabsList>
+    <TabsContent value="account">
+      <Card>
+        <CardHeader>
+          <CardTitle>Account</CardTitle>
+          <CardDescription>
+            Make changes to your account here.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-2">
+          <div className="space-y-1">
+            <Label htmlFor="name">Name</Label>
+            <Input id="name" defaultValue="Pedro Duarte" />
+          </div>
+        </CardContent>
+        <CardFooter>
+          <Button>Save changes</Button>
+        </CardFooter>
+      </Card>
+    </TabsContent>
+    <TabsContent value="password">
+      <Card>
+        <CardHeader>
+          <CardTitle>Password</CardTitle>
+          <CardDescription>
+            Change your password here.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-2">
+          <div className="space-y-1">
+            <Label htmlFor="current">Current password</Label>
+            <Input id="current" type="password" />
+          </div>
+        </CardContent>
+        <CardFooter>
+          <Button>Save password</Button>
+        </CardFooter>
+      </Card>
+    </TabsContent>
+  </Tabs>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="tabs" />
+
+## Usage
+
+---
+
+```tsx
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/8bit/tabs"
+```
+
+```tsx
+<Tabs defaultValue="account" className="w-[400px]">
+  <TabsList className="grid w-full grid-cols-2">
+    <TabsTrigger value="account">Account</TabsTrigger>
+    <TabsTrigger value="password">Password</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">
+    Make changes to your account here.
+  </TabsContent>
+  <TabsContent value="password">
+    Change your password here.
+  </TabsContent>
+</Tabs>
+```
+

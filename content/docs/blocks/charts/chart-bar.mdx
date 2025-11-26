@@ -1,0 +1,49 @@
+---
+title: Bar Chart
+description: Displays an 8-bit simple bar chart visualization.
+---
+
+import { ChartExample } from "@/components/ui/8bit/blocks/chart";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/8bit/card";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/chart"
+    command="pnpm dlx shadcn@latest add @8bitcn/chart"
+  />
+</div>
+
+<ComponentPreview title="8-bit Bar Chart block" name="chart">
+  <Card className="w-full max-w-[600px]">
+    <CardHeader>
+      <CardTitle className="text-sm font-medium">
+        Total visitors in the last 6 months
+      </CardTitle>
+    </CardHeader>
+    <CardContent>
+      <ChartExample />
+    </CardContent>
+  </Card>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="chart" />
+
+## Usage
+
+---
+
+```tsx
+import { ChartExample } from "@/components/ui/8bit/blocks/chart"
+```
+
+```tsx
+<ChartExample />
+```
+

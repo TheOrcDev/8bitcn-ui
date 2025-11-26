@@ -1,0 +1,104 @@
+---
+title: Enemy Health Display
+description: A retro-styled enemy health display component with health bar, name, and level.
+---
+
+import EnemyHealthDisplay from "@/components/ui/8bit/enemy-health-display";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/enemy-health-display"
+    command="pnpm dlx shadcn@latest add @8bitcn/enemy-health-display"
+  />
+</div>
+
+<ComponentPreview title="8-bit Enemy Health Display component" name="enemy-health-display">
+  <div className="w-full max-w-md space-y-6">
+    <EnemyHealthDisplay
+      enemyName="Fire Dragon"
+      level={25}
+      currentHealth={850}
+      maxHealth={1000}
+      healthBarVariant="retro"
+      healthBarColor="bg-red-500"
+      enemyNameColor="text-red-500"
+    />
+    <EnemyHealthDisplay
+      enemyName="Goblin Warrior"
+      level={5}
+      currentHealth={45}
+      maxHealth={100}
+      healthBarVariant="retro"
+      healthBarColor="bg-orange-500"
+      enemyNameColor="text-green-500"
+    />
+  </div>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="enemy-health-display" />
+
+## Usage
+
+---
+
+```tsx
+import EnemyHealthDisplay from "@/components/ui/8bit/enemy-health-display"
+```
+
+```tsx
+<EnemyHealthDisplay
+  enemyName="Fire Dragon"
+  level={25}
+  currentHealth={850}
+  maxHealth={1000}
+/>
+```
+
+## Customization
+
+---
+
+```tsx
+<EnemyHealthDisplay
+  enemyName="Dark Knight"
+  level={15}
+  currentHealth={12}
+  maxHealth={200}
+  healthBarVariant="retro"
+  healthBarColor="bg-purple-500"
+  showLevel={true}
+  showHealthText={true}
+  size="lg"
+  color="purple"
+/>
+```
+
+## Props
+
+---
+
+### Required Props
+
+- `enemyName` - Enemy name to display
+- `currentHealth` - Current health value
+- `maxHealth` - Maximum health value
+
+### Optional Props
+
+- `level` - Enemy level
+- `showLevel` - Show level (default: true)
+- `showHealthText` - Show health text (default: true)
+- `healthBarVariant` - "retro" | "default"
+- `healthBarColor` - Health bar color class
+- `variant` - "retro" | "default"
+- `size` - "sm" | "md" | "lg"
+- `color` - Text color variant
+- `className` - Additional CSS classes
+

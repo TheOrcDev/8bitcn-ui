@@ -1,0 +1,105 @@
+---
+title: Table
+description: Displays an 8-bit table component.
+---
+
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/8bit/table";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/table"
+    command="pnpm dlx shadcn@latest add @8bitcn/table"
+  />
+</div>
+
+<ComponentPreview title="8-bit Table component" name="table">
+  <Table className="w-60 md:w-auto">
+    <TableCaption className="text-xs md:text-sm">
+      A list of your recent invoices.
+    </TableCaption>
+    <TableHeader>
+      <TableRow>
+        <TableHead className="w-[100px]">Invoice</TableHead>
+        <TableHead>Status</TableHead>
+        <TableHead className="hidden md:table-cell">Method</TableHead>
+        <TableHead className="text-right hidden md:table-cell">Amount</TableHead>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell className="font-medium">INV001</TableCell>
+        <TableCell>Paid</TableCell>
+        <TableCell className="hidden md:table-cell">Credit Card</TableCell>
+        <TableCell className="text-right hidden md:table-cell">$250.00</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell className="font-medium">INV002</TableCell>
+        <TableCell>Paid</TableCell>
+        <TableCell className="hidden md:table-cell">Cash</TableCell>
+        <TableCell className="text-right hidden md:table-cell">$300.00</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell className="font-medium">INV003</TableCell>
+        <TableCell>Paid</TableCell>
+        <TableCell className="hidden md:table-cell">Credit Card</TableCell>
+        <TableCell className="text-right hidden md:table-cell">$250.00</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="table" />
+
+## Usage
+
+---
+
+```tsx
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/8bit/table"
+```
+
+```tsx
+<Table>
+  <TableCaption>A list of your recent invoices.</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead className="w-[100px]">Invoice</TableHead>
+      <TableHead>Status</TableHead>
+      <TableHead>Method</TableHead>
+      <TableHead className="text-right">Amount</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell className="font-medium">INV001</TableCell>
+      <TableCell>Paid</TableCell>
+      <TableCell>Credit Card</TableCell>
+      <TableCell className="text-right">$250.00</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+

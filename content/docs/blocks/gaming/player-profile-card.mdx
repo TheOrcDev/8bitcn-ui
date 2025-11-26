@@ -1,0 +1,69 @@
+---
+title: Player Profile Card
+description: Displays an 8-bit player stats and avatar card.
+---
+
+import PlayerProfileCard from "@/components/ui/8bit/blocks/player-profile-card";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/player-profile-card"
+    command="pnpm dlx shadcn@latest add @8bitcn/player-profile-card"
+  />
+</div>
+
+<ComponentPreview title="8-bit Player Profile Card block" name="player-profile-card">
+  <PlayerProfileCard
+    playerName="OrcDev"
+    avatarSrc="/avatars/orcdev.jpeg"
+    avatarFallback="OD"
+    level={25}
+    stats={{
+      health: { current: 850, max: 1000 },
+      mana: { current: 320, max: 400 },
+      experience: { current: 7500, max: 10000 },
+    }}
+    playerClass="Web Dev Warrior"
+  />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="player-profile-card" />
+
+## Usage
+
+---
+
+```tsx
+import PlayerProfileCard from "@/components/ui/8bit/blocks/player-profile-card"
+```
+
+```tsx
+<PlayerProfileCard
+  playerName="OrcDev"
+  avatarSrc="/avatars/orcdev.jpeg"
+  avatarFallback="OD"
+  level={25}
+  stats={{
+    health: { current: 850, max: 1000 },
+    mana: { current: 320, max: 400 },
+    experience: { current: 7500, max: 10000 },
+  }}
+  playerClass="Web Dev Warrior"
+  customStats={[
+    {
+      label: "Stamina",
+      value: 72,
+      max: 100,
+      color: "bg-green-500",
+    },
+  ]}
+/>
+```
+

@@ -1,0 +1,73 @@
+---
+title: Command
+description: Displays an 8-bit command component.
+---
+
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+import { CommandExample } from "@/components/examples/command";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/command"
+    command="pnpm dlx shadcn@latest add @8bitcn/command"
+  />
+</div>
+
+<ComponentPreview title="8-bit Command component" name="command">
+  <CommandExample />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="command" />
+
+## Usage
+
+---
+
+```tsx
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "@/components/ui/command"
+```
+
+```tsx
+<Command>
+  <CommandInput placeholder="Type a command..." />
+  <CommandList>
+    <CommandEmpty>No results found.</CommandEmpty>
+    <CommandGroup heading="Suggestions">
+      <CommandItem>Calendar</CommandItem>
+      <CommandItem>Search Emoji</CommandItem>
+      <CommandItem>Calculator</CommandItem>
+    </CommandGroup>
+    <CommandSeparator />
+    <CommandGroup heading="Settings">
+      <CommandItem>
+        Profile
+        <CommandShortcut>⌘P</CommandShortcut>
+      </CommandItem>
+      <CommandItem>
+        Billing
+        <CommandShortcut>⌘B</CommandShortcut>
+      </CommandItem>
+      <CommandItem>
+        Settings
+        <CommandShortcut>⌘S</CommandShortcut>
+      </CommandItem>
+    </CommandGroup>
+  </CommandList>
+</Command>
+```
+

@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { ModeSwitcher } from "@/components/mode-switcher";
 
 import MobileNav from "./mobile-nav";
+import { SearchDocumentation } from "./search-documentation";
 import { Skeleton } from "./ui/8bit/skeleton";
 
 export function SiteHeader() {
@@ -39,6 +40,8 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="ml-auto flex items-center gap-2">
+          <SearchDocumentation />
+
           <Link href="https://github.com/TheOrcDev/8bitcn-ui" target="_blank">
             <Button
               size="sm"

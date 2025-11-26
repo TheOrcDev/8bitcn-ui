@@ -1,0 +1,39 @@
+---
+title: Difficulty Select
+description: Displays an 8-bit game difficulty selection screen.
+---
+
+import DifficultySelect from "@/components/ui/8bit/blocks/difficulty-select";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/difficulty-select"
+    command="pnpm dlx shadcn@latest add @8bitcn/difficulty-select"
+  />
+</div>
+
+<ComponentPreview title="8-bit Difficulty Select block" name="difficulty-select">
+  <DifficultySelect className="w-full max-w-[400px]" />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="difficulty-select" />
+
+## Usage
+
+---
+
+```tsx
+import DifficultySelect from "@/components/ui/8bit/blocks/difficulty-select"
+```
+
+```tsx
+<DifficultySelect className="w-full max-w-[400px]" />
+```
+
