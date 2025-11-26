@@ -4,9 +4,7 @@
   "type": "registry:component",
   "title": "8-bit Enemy Health Display",
   "description": "A retro-styled enemy health display component with health bar, name, and level",
-  "registryDependencies": [
-    "health-bar"
-  ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "components/ui/8bit/enemy-health-display.tsx",
