@@ -67,7 +67,7 @@ export default function EmptyPage() {
               </EmptyDescription>
             </EmptyHeader>
             <EmptyContent>
-              <div className="flex gap-6">
+              <div className="flex flex-wrap justify-center gap-6">
                 <Button>Create Character</Button>
                 <Button variant="outline">Import Character</Button>
               </div>
@@ -107,7 +107,7 @@ import {
     </EmptyDescription>
   </EmptyHeader>
   <EmptyContent>
-    <div className="flex gap-6">
+    <div className="flex flex-wrap justify-center gap-6">
       <Button>Create Character</Button>
       <Button variant="outline">Import Character</Button>
     </div>
