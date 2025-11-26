@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/8bit/dialog";
 
-import CodeSnippet from "../app/docs-old/components/code-snippet";
+import CodeSnippet from "./code-snippet";
 
 interface ProfileCardProps {
   code: string;

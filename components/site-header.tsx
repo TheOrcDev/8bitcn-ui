@@ -5,8 +5,6 @@ import Link from "next/link";
 
 import { navItems } from "@/config/nav-items";
 
-import { cn } from "@/lib/utils";
-
 import { Button } from "@/components/ui/button";
 
 import { ModeSwitcher } from "@/components/mode-switcher";

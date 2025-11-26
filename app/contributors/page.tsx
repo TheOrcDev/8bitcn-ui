@@ -48,11 +48,21 @@ type Contributor = {
 };
 
 export default async function ContributorsPage() {
-  const data = await fetch(
-    "https://api.github.com/repos/TheOrcDev/8bitcn-ui/contributors"
-  );
+  let contributors: Contributor[] = [];
 
-  const contributors: Contributor[] = await data.json();
+  try {
+    const data = await fetch(
+      "https://api.github.com/repos/TheOrcDev/8bitcn-ui/contributors"
+    );
+
+    if (data.ok) {
+      const json = await data.json();
+      contributors = Array.isArray(json) ? json : [];
+    }
+  } catch {
+    // Fallback to empty array if fetch fails
+    contributors = [];
+  }
 
   return (
     <div className={`container mx-auto px-4 py-8 overflow-x-hidden ${"retro"}`}>
