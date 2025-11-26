@@ -72,7 +72,7 @@ export async function StarsCount() {
 
   return (
     <span className="text-muted-foreground w-12 text-xs tabular-nums retro mt-0.5">
-      {/* {stars >= 1000 ? `${(stars / 1000).toFixed(1)}k` : stars.toLocaleString()} */}
+      {stars >= 1000 ? `${(stars / 1000).toFixed(1)}k` : stars.toLocaleString()}
     </span>
   );
 }
