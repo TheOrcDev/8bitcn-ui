@@ -19,11 +19,15 @@ export async function GET(request: NextRequest) {
      * but in the registry the element is called chapter-intro.
      * */
     blocksUrl: ((item) => {
-      const category = item?.categories?.at(0) ?? "";
+      const category = item?.categories?.at(0);
+      if (!category) {
+        console.warn(`Item ${item.name} has no category`);
+        return `docs/blocks/uncategorized/${item.name}`;
+      }
       return `docs/blocks/${category}/${item.name}`;
     }) as UrlResolverByItem,
     rss: {
-      title: "8bitncn",
+      title: "8bitcn",
       description:
         "A set of 8-bit styled components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.",
       link: "https://www.8bitcn.com/",
