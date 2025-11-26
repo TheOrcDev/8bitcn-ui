@@ -15,6 +15,13 @@ import { Checkbox } from "@/components/ui/8bit/checkbox";
 import { Input } from "@/components/ui/8bit/input";
 import { Label } from "@/components/ui/8bit/label";
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/8bit/select";
+import {
   Tabs,
   TabsContent,
   TabsList,
@@ -30,13 +37,22 @@ import DifficultySelect from "../ui/8bit/blocks/difficulty-select";
 import GameOver from "../ui/8bit/blocks/game-over";
 import GameProgress from "../ui/8bit/blocks/game-progress";
 import MainMenu from "../ui/8bit/blocks/main-menu";
+import { Button } from "../ui/8bit/button";
+import EnemyHealthDisplay from "../ui/8bit/enemy-health-display";
+import { Spinner } from "../ui/8bit/spinner";
+import { DatePicker } from "./date-picker";
+import { DrawerExample } from "./drawer";
 
 export default function ComponentShowcase() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
       {/* Column 1 */}
       <div className="flex flex-col gap-4">
-        <AudioSettings />
+        <Button className="mt-1">Button</Button>
+
+        <DrawerExample />
+
+        <AudioSettings className="mt-1" />
 
         <MainMenu />
 
@@ -174,6 +190,35 @@ export default function ComponentShowcase() {
       <div className="flex flex-col gap-4 lg:col-span-2">
         <Card>
           <CardContent className="flex flex-col gap-4">
+            <div className="flex flex-wrap gap-4">
+              <Spinner className="size-10" variant="diamond" />
+              <Spinner className="size-10" variant="classic" />
+              <Select>
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder="Theme" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="light">Light</SelectItem>
+                  <SelectItem value="dark">Dark</SelectItem>
+                  <SelectItem value="system">System</SelectItem>
+                </SelectContent>
+              </Select>
+
+              <div className="flex justify-center items-center">
+                <DatePicker />
+              </div>
+              <EnemyHealthDisplay
+                enemyName="Fire Dragon"
+                level={25}
+                currentHealth={850}
+                maxHealth={1000}
+              />
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="flex flex-col gap-4">
             <Dialogue
               avatarSrc="/images/pixelized-8bitcnorc.jpg"
               avatarFallback="Orc"
@@ -242,6 +287,8 @@ export default function ComponentShowcase() {
 
       {/* Column 3 */}
       <div className="flex flex-col gap-4 w-full">
+        <Input placeholder="Enter your name" />
+
         <DifficultySelect />
 
         <CommandExample />

@@ -19,63 +19,63 @@ import {
 
 const data = [
   {
-    goal: 400,
+    xp: 400,
   },
   {
-    goal: 300,
+    xp: 300,
   },
   {
-    goal: 200,
+    xp: 200,
   },
   {
-    goal: 300,
+    xp: 300,
   },
   {
-    goal: 200,
+    xp: 200,
   },
   {
-    goal: 278,
+    xp: 278,
   },
   {
-    goal: 189,
+    xp: 189,
   },
   {
-    goal: 239,
+    xp: 239,
   },
   {
-    goal: 300,
+    xp: 300,
   },
   {
-    goal: 200,
+    xp: 200,
   },
   {
-    goal: 278,
+    xp: 278,
   },
   {
-    goal: 189,
+    xp: 189,
   },
   {
-    goal: 349,
+    xp: 349,
   },
 ];
 
 export function DrawerExample() {
-  const [goal, setGoal] = React.useState(350);
+  const [xp, setXp] = React.useState(350);
 
   function onClick(adjustment: number) {
-    setGoal(Math.max(200, Math.min(400, goal + adjustment)));
+    setXp(Math.max(200, Math.min(400, xp + adjustment)));
   }
 
   return (
     <Drawer>
       <DrawerTrigger asChild className="border-none">
-        <Button variant="outline">Open Drawer</Button>
+        <Button variant="outline">Open Quest Log</Button>
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm">
           <DrawerHeader>
-            <DrawerTitle>Move Goal</DrawerTitle>
-            <DrawerDescription>Set your daily activity goal.</DrawerDescription>
+            <DrawerTitle>Daily Quest</DrawerTitle>
+            <DrawerDescription>Set your daily XP target.</DrawerDescription>
           </DrawerHeader>
           <div className="p-4 pb-0">
             <div className="flex items-center justify-center space-x-2">
@@ -84,17 +84,17 @@ export function DrawerExample() {
                 size="icon"
                 className="size-10 shrink-0"
                 onClick={() => onClick(-10)}
-                disabled={goal <= 200}
+                disabled={xp <= 200}
               >
                 <Minus />
                 <span className="sr-only">Decrease</span>
               </Button>
               <div className="flex-1 text-center">
                 <div className="text-3xl sm:text-7xl font-bold tracking-tighter">
-                  {goal}
+                  {xp}
                 </div>
                 <div className="text-[0.70rem] uppercase text-muted-foreground">
-                  Calories/day
+                  XP / Day
                 </div>
               </div>
               <Button
@@ -102,7 +102,7 @@ export function DrawerExample() {
                 size="icon"
                 className="size-10 shrink-0"
                 onClick={() => onClick(10)}
-                disabled={goal >= 400}
+                disabled={xp >= 400}
               >
                 <Plus />
                 <span className="sr-only">Increase</span>
@@ -112,10 +112,10 @@ export function DrawerExample() {
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={data}>
                   <Bar
-                    dataKey="goal"
+                    dataKey="xp"
                     style={
                       {
-                        fill: "white",
+                        fill: "var(--primary)",
                         opacity: 0.9,
                       } as React.CSSProperties
                     }
@@ -125,9 +125,9 @@ export function DrawerExample() {
             </div>
           </div>
           <DrawerFooter className="flex flex-col gap-5">
-            <Button>Submit</Button>
+            <Button>Accept Quest</Button>
             <DrawerClose asChild>
-              <Button variant="outline">Cancel</Button>
+              <Button variant="outline">Retreat</Button>
             </DrawerClose>
           </DrawerFooter>
         </div>
