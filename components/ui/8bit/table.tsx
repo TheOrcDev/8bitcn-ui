@@ -1,11 +1,7 @@
 "use client";
 
+import { cva, type VariantProps } from "class-variance-authority";
 import type * as React from "react";
-
-import { type VariantProps, cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-
 import {
   Table as ShadcnTable,
   TableBody as ShadcnTableBody,
@@ -16,13 +12,14 @@ import {
   TableHeader as ShadcnTableHeader,
   TableRow as ShadcnTableRow,
 } from "@/components/ui/table";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 
 export const tableVariants = cva("", {
   variants: {
     variant: {
-      default: "p-4 py-2.5 border-y-6 border-foreground dark:border-ring",
+      default: "border-foreground border-y-6 p-4 py-2.5 dark:border-ring",
       borderless: "",
     },
     font: {
@@ -48,7 +45,7 @@ function Table({
   return (
     <div
       className={cn(
-        "relative flex justify-center w-fit",
+        "relative flex w-fit justify-center",
         tableVariants({ font, variant })
       )}
     >
@@ -56,8 +53,8 @@ function Table({
 
       {variant !== "borderless" && (
         <div
-          className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
           aria-hidden="true"
+          className="-mx-1.5 pointer-events-none absolute inset-0 border-foreground border-x-6 dark:border-ring"
         />
       )}
     </div>
@@ -67,7 +64,7 @@ function Table({
 function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
   return (
     <ShadcnTableHeader
-      className={cn(className, "border-b-4 border-foreground dark:border-ring")}
+      className={cn(className, "border-foreground border-b-4 dark:border-ring")}
       {...props}
     />
   );
@@ -86,7 +83,7 @@ function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
     <ShadcnTableRow
       className={cn(
         className,
-        "border-dashed border-b-4 border-foreground dark:border-ring"
+        "border-foreground border-b-4 border-dashed dark:border-ring"
       )}
       {...props}
     />

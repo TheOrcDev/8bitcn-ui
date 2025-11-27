@@ -1,9 +1,8 @@
 "use client";
 
-import * as React from "react";
-
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
+import * as React from "react";
 
 import { Button } from "@/components/ui/button";
 
@@ -16,9 +15,9 @@ export function ModeSwitcher() {
 
   return (
     <Button
-      variant="ghost"
       className="group/toggle size-8 px-0"
       onClick={toggleTheme}
+      variant="ghost"
     >
       <SunIcon className="hidden [html.dark_&]:block" />
       <MoonIcon className="hidden [html.light_&]:block" />

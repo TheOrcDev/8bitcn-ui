@@ -35,8 +35,8 @@ function CollapsibleTrigger({
   const { className } = props;
   return (
     <ShadcnCollapsibleTrigger
-      data-slot="collapsible-trigger"
       className={cn(className, "retro")}
+      data-slot="collapsible-trigger"
       {...props}
     >
       {children}
@@ -51,8 +51,8 @@ function CollapsibleContent({
   const { className } = props;
   return (
     <ShadcnCollapsibleContent
-      data-slot="collapsible-content"
       className={cn(className, "retro")}
+      data-slot="collapsible-content"
       {...props}
     >
       {children}

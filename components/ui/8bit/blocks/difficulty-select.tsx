@@ -1,9 +1,6 @@
 "use client";
 
-import * as React from "react";
-
-import { cn } from "@/lib/utils";
-
+import React from "react";
 import { Button } from "@/components/ui/8bit/button";
 import {
   Card,
@@ -12,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/8bit/card";
+import { cn } from "@/lib/utils";
 
 export type Difficulty = "easy" | "normal" | "hard";
 
@@ -43,7 +41,9 @@ export default function DifficultySelect({
 
   const setSelected = React.useCallback(
     (next: Difficulty) => {
-      if (!isControlled) setInternalValue(next);
+      if (!isControlled) {
+        setInternalValue(next);
+      }
       onChange?.(next);
     },
     [isControlled, onChange]
@@ -61,22 +61,22 @@ export default function DifficultySelect({
         >
           <Button
             className="flex items-center justify-center"
-            variant={selected === "easy" ? "default" : "secondary"}
             onClick={() => setSelected("easy")}
+            variant={selected === "easy" ? "default" : "secondary"}
           >
             EASY
           </Button>
           <Button
             className="flex items-center justify-center"
-            variant={selected === "normal" ? "default" : "secondary"}
             onClick={() => setSelected("normal")}
+            variant={selected === "normal" ? "default" : "secondary"}
           >
             NORMAL
           </Button>
           <Button
             className="flex items-center justify-center"
-            variant={selected === "hard" ? "default" : "secondary"}
             onClick={() => setSelected("hard")}
+            variant={selected === "hard" ? "default" : "secondary"}
           >
             HARD
           </Button>

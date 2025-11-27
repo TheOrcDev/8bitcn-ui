@@ -34,37 +34,37 @@ const chartConfig = {
 export function ChartExample() {
   return (
     <ChartContainer
-      config={chartConfig}
       className={`min-h-[200px] w-full ${"retro"}`}
+      config={chartConfig}
     >
       <AreaChart accessibilityLayer data={chartData}>
         <CartesianGrid />
         <XAxis
+          axisLine={false}
           dataKey="month"
-          tickLine={false}
-          axisLine={false}
-          tickMargin={8}
           tickFormatter={(value) => value.slice(0, 3)}
-        />
-        <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
-        <YAxis
-          width={47}
           tickLine={false}
-          axisLine={false}
           tickMargin={8}
+        />
+        <ChartTooltip content={<ChartTooltipContent />} cursor={false} />
+        <YAxis
+          axisLine={false}
           tickCount={3}
+          tickLine={false}
+          tickMargin={8}
+          width={47}
         />
         <Area
           dataKey="mobile"
           fill="var(--chart-2)"
-          stroke="var(--chart-2)"
           stackId="a"
+          stroke="var(--chart-2)"
         />
         <Area
           dataKey="desktop"
           fill="var(--chart-1)"
-          stroke="var(--chart-1)"
           stackId="a"
+          stroke="var(--chart-1)"
         />
       </AreaChart>
     </ChartContainer>

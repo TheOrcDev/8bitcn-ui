@@ -1,13 +1,10 @@
 "use client";
 
-import type * as React from "react";
-
 import type * as LabelPrimitive from "@radix-ui/react-label";
-import { type VariantProps, cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-
+import { cva, type VariantProps } from "class-variance-authority";
+import type * as React from "react";
 import { Label as ShadcnLabel } from "@/components/ui/label";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 

@@ -1,8 +1,5 @@
 import * as SheetPrimitive from "@radix-ui/react-dialog";
-import { type VariantProps, cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-
+import { cva, type VariantProps } from "class-variance-authority";
 import {
   Sheet as ShadcnSheet,
   SheetClose as ShadcnSheetClose,
@@ -12,6 +9,7 @@ import {
   SheetTitle as ShadcnSheetTitle,
   SheetTrigger as ShadcnSheetTrigger,
 } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 
@@ -53,11 +51,11 @@ function SheetOverlay({
 }: React.ComponentProps<typeof SheetPrimitive.Overlay>) {
   return (
     <SheetPrimitive.Overlay
-      data-slot="sheet-overlay"
       className={cn(
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50",
+        "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50 data-[state=closed]:animate-out data-[state=open]:animate-in",
         className
       )}
+      data-slot="sheet-overlay"
       {...props}
     />
   );
@@ -81,9 +79,8 @@ function SheetContent({
     <SheetPortal>
       <SheetOverlay />
       <SheetPrimitive.Content
-        data-slot="sheet-content"
         className={cn(
-          "bg-background data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-50 flex flex-col gap-4 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
+          "fixed z-50 flex flex-col gap-4 bg-background shadow-lg transition ease-in-out data-[state=closed]:animate-out data-[state=open]:animate-in data-[state=closed]:duration-300 data-[state=open]:duration-500",
           side === "right" &&
             "data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right inset-y-0 right-0 h-full w-3/4 sm:max-w-sm",
           side === "left" &&
@@ -97,168 +94,169 @@ function SheetContent({
             className,
           })
         )}
+        data-slot="sheet-content"
         {...props}
       >
-        <div className="w-full h-full relative">
+        <div className="relative h-full w-full">
           {children}
           {/* 8 bit borders */}
           {side !== "top" && (
             <div
-              className="absolute top-0 left-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none"
               aria-hidden="true"
+              className="pointer-events-none absolute top-0 left-0 h-1.5 w-full bg-foreground dark:bg-ring"
             />
           )}
           {side !== "bottom" && (
             <div
-              className="absolute bottom-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none"
               aria-hidden="true"
+              className="pointer-events-none absolute bottom-0 h-1.5 w-full bg-foreground dark:bg-ring"
             />
           )}
           {side !== "left" && (
             <>
               <div
-                className="absolute top-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
                 aria-hidden="true"
+                className="-left-1 pointer-events-none absolute top-1 h-1/2 w-1.5 bg-foreground dark:bg-ring"
               />
               <div
-                className="absolute bottom-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
                 aria-hidden="true"
+                className="-left-1 pointer-events-none absolute bottom-1 h-1/2 w-1.5 bg-foreground dark:bg-ring"
               />
             </>
           )}
           {side !== "right" && (
             <>
               <div
-                className="absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
                 aria-hidden="true"
+                className="-right-1 pointer-events-none absolute top-1 h-1/2 w-1.5 bg-foreground dark:bg-ring"
               />
               <div
-                className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
                 aria-hidden="true"
+                className="-right-1 pointer-events-none absolute bottom-1 h-1/2 w-1.5 bg-foreground dark:bg-ring"
               />
             </>
           )}
         </div>
-        <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+        <SheetPrimitive.Close className="absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
           <svg
-            width={50}
-            height={50}
-            viewBox="0 0 256 256"
+            aria-label="x"
+            className="h-6 w-6"
+            color=""
             fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
+            height={50}
             stroke="currentColor"
             strokeWidth={0.25}
-            color=""
-            className="w-6 h-6"
-            aria-label="x"
+            viewBox="0 0 256 256"
+            width={50}
+            xmlns="http://www.w3.org/2000/svg"
           >
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 120 152)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 104 168)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 184 184)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 88 184)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 168 104)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 184 88)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 200 72)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 200 200)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 152 120)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 152 152)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 136 136)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 120 120)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 136 136)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 168 168)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 88 88)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 72 72)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 72 200)"
+              width={14}
             />
             <rect
-              width={14}
               height={14}
               rx={1}
               transform="matrix(0 -1 -1 0 104 104)"
+              width={14}
             />
           </svg>
           <span className="sr-only">Close</span>

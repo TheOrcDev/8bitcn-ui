@@ -1,13 +1,11 @@
 "use client";
 
-import { Theme } from "@/lib/themes";
-
-import { Badge } from "@/components/ui/8bit/badge";
-
 import { useThemeConfig } from "@/components/active-theme";
 import CodeSnippet from "@/components/code-snippet";
 import InstallationCommands from "@/components/installation-commands";
 import { SelectThemeDropdown } from "@/components/select-theme-dropdown";
+import { Badge } from "@/components/ui/8bit/badge";
+import { Theme } from "@/lib/themes";
 
 import { Button } from "../ui/8bit/button";
 import { Separator } from "../ui/8bit/separator";
@@ -19,8 +17,8 @@ export default function ThemeSelectorExample() {
     <div className="space-y-8">
       <div className="space-y-4">
         <div className="space-y-2">
-          <label className="text-sm font-medium">Theme Selector</label>
-          <p className="text-xs text-muted-foreground">
+          <label className="font-medium text-sm">Theme Selector</label>
+          <p className="text-muted-foreground text-xs">
             Theme selector with retro themes dropdown
           </p>
           <div className="w-64">
@@ -35,10 +33,10 @@ export default function ThemeSelectorExample() {
       {/* Current Theme Display */}
       <div className="space-y-4">
         <div className="space-y-2">
-          <label className="text-sm font-medium">Current Theme</label>
+          <label className="font-medium text-sm">Current Theme</label>
           <div className="flex items-center gap-4">
             <Badge>{activeTheme}</Badge>
-            <span className="text-xs text-muted-foreground">
+            <span className="text-muted-foreground text-xs">
               Active theme applied to this page
             </span>
           </div>
@@ -46,9 +44,9 @@ export default function ThemeSelectorExample() {
       </div>
 
       {/* Available Themes Grid */}
-      <div className="space-y-4 retro">
-        <h4 className="text-md font-medium">Available Themes</h4>
-        <p className="text-sm text-muted-foreground">
+      <div className="retro space-y-4">
+        <h4 className="font-medium text-md">Available Themes</h4>
+        <p className="text-muted-foreground text-sm">
           Click on any theme below to switch to it instantly
         </p>
         <div className="flex flex-wrap gap-5">
@@ -64,7 +62,7 @@ export default function ThemeSelectorExample() {
         </div>
       </div>
 
-      <h3 className="text-lg font-bold">Installation</h3>
+      <h3 className="font-bold text-lg">Installation</h3>
 
       <Separator />
 
@@ -72,7 +70,7 @@ export default function ThemeSelectorExample() {
 
       {/* Usage Examples */}
       <div className="space-y-4">
-        <h4 className="text-md font-medium">Put it in your layout</h4>
+        <h4 className="font-medium text-md">Put it in your layout</h4>
 
         <CodeSnippet>
           {`import { ActiveThemeProvider } from "@/components/active-theme"
@@ -91,7 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }`}
         </CodeSnippet>
 
-        <h4 className="text-md font-medium">Usage Examples</h4>
+        <h4 className="font-medium text-md">Usage Examples</h4>
         <div className="space-y-4">
           <CodeSnippet>
             {`import { SelectThemeDropdown } from "@/components/select-theme-dropdown";
@@ -108,7 +106,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }`}
           </CodeSnippet>
 
-          <h4 className="text-md font-medium">Custom With Button</h4>
+          <h4 className="font-medium text-md">Custom With Button</h4>
 
           <CodeSnippet>
             {`import { useThemeConfig } from "@/components/active-theme"

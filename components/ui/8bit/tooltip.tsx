@@ -1,17 +1,14 @@
 "use client";
 
+import { cva, type VariantProps } from "class-variance-authority";
 import type * as React from "react";
-
-import { type VariantProps, cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-
 import {
   Tooltip as ShadcnTooltip,
   TooltipContent as ShadcnTooltipContent,
   TooltipProvider as ShadcnTooltipProvider,
   TooltipTrigger as ShadcnTooltipTrigger,
 } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 
@@ -43,19 +40,19 @@ function TooltipContent({
     <div className={cn("relative inline-flex", className)}>
       <ShadcnTooltipContent
         {...props}
-        data-slot="tooltip-content"
         className={cn("rounded-none", color, className)}
+        data-slot="tooltip-content"
       >
         {children}
         <div
           className={cn(
-            "absolute top-1.5 bottom-1.5 -left-1.5 w-1.5 bg-primary",
+            "-left-1.5 absolute top-1.5 bottom-1.5 w-1.5 bg-primary",
             color
           )}
         />
         <div
           className={cn(
-            "absolute top-1.5 bottom-1.5 -right-1.5 w-1.5 bg-primary ",
+            "-right-1.5 absolute top-1.5 bottom-1.5 w-1.5 bg-primary",
             color
           )}
         />
@@ -100,8 +97,8 @@ function TooltipTrigger({
 }: React.ComponentPropsWithoutRef<typeof ShadcnTooltipTrigger>) {
   return (
     <ShadcnTooltipTrigger
-      data-slot="tooltip-trigger"
       asChild={asChild}
+      data-slot="tooltip-trigger"
       {...props}
     >
       {children}

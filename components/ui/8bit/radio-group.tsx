@@ -1,13 +1,10 @@
 "use client";
 
-import type * as React from "react";
-
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-
+import type * as React from "react";
 import { RadioGroup as ShadcnRadioGroup } from "@/components/ui/radio-group";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 
@@ -40,47 +37,47 @@ function RadioGroupItem({
   return (
     <div className={cn("relative", className)}>
       <RadioGroupPrimitive.Item
-        ref={ref}
         className={cn(
-          "flex items-center justify-center rounded-none border-none py-3 peer border-input dark:bg-input/30 focus-visible:border-ring focus-visible:ring-ring/50 size-4 shrink-0 outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50",
-          "data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-primary data-[state=checked]:border-primary",
+          "peer flex size-4 shrink-0 items-center justify-center rounded-none border-input border-none py-3 outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-input/30",
+          "data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-primary",
           className
         )}
+        ref={ref}
         {...props}
       >
         <RadioGroupPrimitive.Indicator>
           <svg
-            viewBox="0 0 256 256"
+            aria-label="square"
+            className="w-2.5"
             fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
             stroke="currentColor"
             strokeWidth="0"
-            className="w-2.5"
-            aria-label="square"
+            viewBox="0 0 256 256"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <rect x="30" y="35" width="200" height="200" rx="0" />
-            <rect x="80" y="5" width="100" height="200" rx="0" />
-            <rect x="0" y="85" width="100" height="100" rx="0" />
-            <rect x="80" y="65" width="100" height="200" rx="0" />
-            <rect x="200" y="85" width="100" height="100" rx="0" />
+            <rect height="200" rx="0" width="200" x="30" y="35" />
+            <rect height="200" rx="0" width="100" x="80" y="5" />
+            <rect height="100" rx="0" width="100" x="0" y="85" />
+            <rect height="200" rx="0" width="100" x="80" y="65" />
+            <rect height="100" rx="0" width="100" x="200" y="85" />
           </svg>
         </RadioGroupPrimitive.Indicator>
       </RadioGroupPrimitive.Item>
 
-      <div className="absolute top-[0px] w-2.5 left-1.5 h-1 bg-foreground dark:bg-ring" />
-      <div className="absolute top-[0px] w-2.5 right-1.5 h-1 bg-foreground dark:bg-ring" />
+      <div className="absolute top-[0px] left-1.5 h-1 w-2.5 bg-foreground dark:bg-ring" />
+      <div className="absolute top-[0px] right-1.5 h-1 w-2.5 bg-foreground dark:bg-ring" />
 
-      <div className="absolute bottom-[0px] w-2.5 left-1.5 h-1 bg-foreground dark:bg-ring" />
-      <div className="absolute bottom-[0px] w-2.5 right-1.5 h-1 bg-foreground dark:bg-ring" />
+      <div className="absolute bottom-[0px] left-1.5 h-1 w-2.5 bg-foreground dark:bg-ring" />
+      <div className="absolute right-1.5 bottom-[0px] h-1 w-2.5 bg-foreground dark:bg-ring" />
 
-      <div className="absolute top-[4px] -left-1 w-1 h-[15px] bg-foreground dark:bg-ring" />
-      <div className="absolute top-[4px] -right-1 w-1 h-[15px] bg-foreground dark:bg-ring" />
+      <div className="-left-1 absolute top-[4px] h-[15px] w-1 bg-foreground dark:bg-ring" />
+      <div className="-right-1 absolute top-[4px] h-[15px] w-1 bg-foreground dark:bg-ring" />
 
-      <div className="absolute top-[2px] -right-0.5 w-1 h-1 bg-foreground dark:bg-ring" />
-      <div className="absolute top-[2px] -left-0.5 w-1 h-1 bg-foreground dark:bg-ring" />
+      <div className="-right-0.5 absolute top-[2px] h-1 w-1 bg-foreground dark:bg-ring" />
+      <div className="-left-0.5 absolute top-[2px] h-1 w-1 bg-foreground dark:bg-ring" />
 
-      <div className="absolute bottom-[2px] -right-0.5 w-1 h-1 bg-foreground dark:bg-ring" />
-      <div className="absolute bottom-[2px] -left-0.5 w-1 h-1 bg-foreground dark:bg-ring" />
+      <div className="-right-0.5 absolute bottom-[2px] h-1 w-1 bg-foreground dark:bg-ring" />
+      <div className="-left-0.5 absolute bottom-[2px] h-1 w-1 bg-foreground dark:bg-ring" />
     </div>
   );
 }

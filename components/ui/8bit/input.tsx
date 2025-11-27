@@ -1,8 +1,6 @@
-import { type VariantProps, cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-
+import { cva, type VariantProps } from "class-variance-authority";
 import { Input as ShadcnInput } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 
@@ -30,22 +28,22 @@ function Input({ ...props }: BitInputProps) {
   return (
     <div
       className={cn(
-        "relative border-y-6 border-foreground dark:border-ring !p-0 flex items-center",
+        "!p-0 relative flex items-center border-foreground border-y-6 dark:border-ring",
         className
       )}
     >
       <ShadcnInput
         {...props}
         className={cn(
-          "rounded-none ring-0 !w-full",
+          "!w-full rounded-none ring-0",
           font !== "normal" && "retro",
           className
         )}
       />
 
       <div
-        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-mx-1.5 pointer-events-none absolute inset-0 border-foreground border-x-6 dark:border-ring"
       />
     </div>
   );

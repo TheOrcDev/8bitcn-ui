@@ -1,10 +1,6 @@
-import type * as React from "react";
-
 import { Indicator, Root, Viewport } from "@radix-ui/react-navigation-menu";
-import { type VariantProps, cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-
+import { cva, type VariantProps } from "class-variance-authority";
+import type * as React from "react";
 import {
   NavigationMenuContent as ShadcnNavigationMenuContent,
   type NavigationMenuIndicator as ShadcnNavigationMenuIndicator,
@@ -13,6 +9,7 @@ import {
   NavigationMenuList as ShadcnNavigationMenuList,
   NavigationMenuTrigger as ShadcnNavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 
@@ -46,13 +43,13 @@ function NavigationMenu({
 } & FontVariantProps) {
   return (
     <Root
-      data-slot="navigation-menu"
-      data-viewport={viewport}
       className={cn(
         "group/navigation-menu relative flex max-w-max flex-1 items-center justify-center",
         getFontClassName(font),
         className
       )}
+      data-slot="navigation-menu"
+      data-viewport={viewport}
       {...props}
     >
       {children}
@@ -131,14 +128,14 @@ function NavigationMenuViewport({
       )}
     >
       <Viewport
-        data-slot="navigation-menu-viewport"
         className={cn(
-          "origin-top-center bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 relative mt-3 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border shadow md:w-[var(--radix-navigation-menu-viewport-width)]",
+          "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 relative mt-3 h-[var(--radix-navigation-menu-viewport-height)] w-full origin-top-center overflow-hidden rounded-md border bg-popover text-popover-foreground shadow data-[state=closed]:animate-out data-[state=open]:animate-in md:w-[var(--radix-navigation-menu-viewport-width)]",
           getFontClassName(font),
           "shadow-[6px_0px_0px_0px_var(--foreground),-6px_0px_0px_0px_var(--foreground),0px_-6px_0px_0px_var(--foreground),0px_6px_0px_0px_var(--foreground)]",
           "dark:shadow-[6px_0px_0px_0px_var(--ring),-6px_0px_0px_0px_var(--ring),0px_-6px_0px_0px_var(--ring),0px_6px_0px_0px_var(--ring)]",
           className
         )}
+        data-slot="navigation-menu-viewport"
         {...props}
       />
     </div>
@@ -166,15 +163,15 @@ function NavigationMenuIndicator({
   FontVariantProps) {
   return (
     <Indicator
-      data-slot="navigation-menu-indicator"
       className={cn(
-        "data-[state=visible]:animate-in data-[state=hidden]:fade-out data-[state=visible]:fade-in top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden",
+        "data-[state=hidden]:fade-out data-[state=visible]:fade-in top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden data-[state=visible]:animate-in",
         getFontClassName(font),
         className
       )}
+      data-slot="navigation-menu-indicator"
       {...props}
     >
-      <div className="bg-foreground dark:bg-ring relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm shadow-md" />
+      <div className="relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-foreground shadow-md dark:bg-ring" />
     </Indicator>
   );
 }

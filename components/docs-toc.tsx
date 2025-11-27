@@ -1,11 +1,7 @@
 "use client";
 
-import * as React from "react";
-
 import { IconMenu3 } from "@tabler/icons-react";
-
-import { cn } from "@/lib/utils";
-
+import * as React from "react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -13,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 
 function useActiveItem(itemIds: string[]) {
   const [activeId, setActiveId] = React.useState<string | null>(null);
@@ -75,12 +72,12 @@ export function DocsTableOfContents({
 
   if (variant === "dropdown") {
     return (
-      <DropdownMenu open={open} onOpenChange={setOpen}>
+      <DropdownMenu onOpenChange={setOpen} open={open}>
         <DropdownMenuTrigger asChild>
           <Button
-            variant="outline"
-            size="sm"
             className={cn("h-8 md:h-7", className)}
+            size="sm"
+            variant="outline"
           >
             <IconMenu3 /> On This Page
           </Button>
@@ -91,13 +88,13 @@ export function DocsTableOfContents({
         >
           {toc.map((item) => (
             <DropdownMenuItem
-              key={item.url}
               asChild
+              className="data-[depth=3]:pl-6 data-[depth=4]:pl-8"
+              data-depth={item.depth}
+              key={item.url}
               onClick={() => {
                 setOpen(false);
               }}
-              data-depth={item.depth}
-              className="data-[depth=3]:pl-6 data-[depth=4]:pl-8"
             >
               <a href={item.url}>{item.title}</a>
             </DropdownMenuItem>
@@ -109,16 +106,16 @@ export function DocsTableOfContents({
 
   return (
     <div className={cn("flex flex-col gap-2 p-4 pt-0 text-sm", className)}>
-      <p className="text-muted-foreground bg-background sticky top-0 h-6 text-xs">
+      <p className="sticky top-0 h-6 bg-background text-muted-foreground text-xs">
         On This Page
       </p>
       {toc.map((item) => (
         <a
-          key={item.url}
-          href={item.url}
-          className="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+          className="text-[0.8rem] text-muted-foreground no-underline transition-colors hover:text-foreground data-[depth=3]:pl-4 data-[depth=4]:pl-6 data-[active=true]:text-foreground"
           data-active={item.url === `#${activeHeading}`}
           data-depth={item.depth}
+          href={item.url}
+          key={item.url}
         >
           {item.title}
         </a>

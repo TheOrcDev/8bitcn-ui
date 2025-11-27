@@ -1,7 +1,4 @@
 import type * as React from "react";
-
-import { navItems } from "@/config/nav-items";
-
 import {
   Sidebar,
   SidebarContent,
@@ -10,6 +7,7 @@ import {
   SidebarGroupLabel,
   SidebarMenu,
 } from "@/components/ui/sidebar";
+import { navItems } from "@/config/nav-items";
 
 import SidebarItem from "./sidebar-item";
 
@@ -23,7 +21,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarGroupContent>
               <SidebarMenu>
                 {nav.items.map((item) => (
-                  <SidebarItem key={item.title} item={item} />
+                  <SidebarItem item={item} key={item.title} />
                 ))}
               </SidebarMenu>
             </SidebarGroupContent>

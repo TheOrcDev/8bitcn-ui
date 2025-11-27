@@ -1,14 +1,11 @@
 "use client";
 
-import * as React from "react";
-
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
-
-import { cn } from "@/lib/utils";
-
+import React from "react";
 import { Button } from "@/components/ui/8bit/button";
+import { cn } from "@/lib/utils";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -102,7 +99,7 @@ const Carousel = React.forwardRef<
     );
 
     React.useEffect(() => {
-      if (!api || !setApi) {
+      if (!(api && setApi)) {
         return;
       }
 
@@ -127,7 +124,7 @@ const Carousel = React.forwardRef<
       <CarouselContext.Provider
         value={{
           carouselRef,
-          api: api,
+          api,
           opts,
           orientation:
             orientation || (opts?.axis === "y" ? "vertical" : "horizontal"),
@@ -138,11 +135,11 @@ const Carousel = React.forwardRef<
         }}
       >
         <div
-          ref={ref}
-          onKeyDownCapture={handleKeyDown}
-          className={cn("relative", className)}
-          role="region"
           aria-roledescription="carousel"
+          className={cn("relative", className)}
+          onKeyDownCapture={handleKeyDown}
+          ref={ref}
+          role="region"
           {...props}
         >
           {children}
@@ -160,14 +157,14 @@ const CarouselContent = React.forwardRef<
   const { carouselRef, orientation } = useCarousel();
 
   return (
-    <div ref={carouselRef} className="overflow-hidden">
+    <div className="overflow-hidden" ref={carouselRef}>
       <div
-        ref={ref}
         className={cn(
           "flex",
           orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
           className
         )}
+        ref={ref}
         {...props}
       />
     </div>
@@ -183,14 +180,14 @@ const CarouselItem = React.forwardRef<
 
   return (
     <div
-      ref={ref}
-      role="group"
       aria-roledescription="slide"
       className={cn(
         "min-w-0 shrink-0 grow-0 basis-full",
         orientation === "horizontal" ? "pl-4" : "pt-4",
         className
       )}
+      ref={ref}
+      role="group"
       {...props}
     />
   );
@@ -205,45 +202,46 @@ const CarouselPrevious = React.forwardRef<
 
   return (
     <Button
-      ref={ref}
-      variant={variant}
-      size={size}
       className={cn(
         orientation === "horizontal"
-          ? "top-1/2 -left-10 md:-left-14 -translate-y-1/2 active:-translate-y-1 w-8 h-9 md:w-9 md:h-10 "
-          : "-top-12 left-1/2 -translate-x-1/2 rotate-90 w-8 h-10 md:w-9 md:h-11",
-        "absolute rounded-none aspect-square grid place-items-center",
+          ? "-left-10 md:-left-14 -translate-y-1/2 active:-translate-y-1 top-1/2 h-9 w-8 md:h-10 md:w-9"
+          : "-top-12 -translate-x-1/2 left-1/2 h-10 w-8 rotate-90 md:h-11 md:w-9",
+        "absolute grid aspect-square place-items-center rounded-none",
         className
       )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
+      ref={ref}
+      size={size}
+      variant={variant}
       {...props}
     >
       <svg
-        width="50"
-        height="50"
-        viewBox="0 0 256 256"
+        aria-label="arrow-left"
+        color="currentColor"
         fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
+        height="50"
         stroke="currentColor"
         strokeWidth="0.25"
-        color="currentColor"
-        aria-label="arrow-left"
+        viewBox="0 0 256 256"
+        width="50"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <rect x="64" y="120" width="14" height="14" rx="1"></rect>
-        <rect x="96" y="120" width="14" height="14" rx="1"></rect>
-        <rect x="80" y="120" width="14" height="14" rx="1"></rect>
-        <rect x="112" y="120" width="14" height="14" rx="1"></rect>
-        <rect x="144" y="120" width="14" height="14" rx="1"></rect>
-        <rect x="160" y="120" width="14" height="14" rx="1"></rect>
-        <rect x="80" y="104" width="14" height="14" rx="1"></rect>
-        <rect x="96" y="88" width="14" height="14" rx="1"></rect>
-        <rect x="112" y="72" width="14" height="14" rx="1"></rect>
-        <rect x="80" y="136" width="14" height="14" rx="1"></rect>
-        <rect x="96" y="152" width="14" height="14" rx="1"></rect>
-        <rect x="112" y="168" width="14" height="14" rx="1"></rect>
-        <rect x="176" y="120" width="14" height="14" rx="1"></rect>
-        <rect x="128" y="120" width="14" height="14" rx="1"></rect>
+        <title>Previous</title>
+        <rect height="14" rx="1" width="14" x="64" y="120" />
+        <rect height="14" rx="1" width="14" x="96" y="120" />
+        <rect height="14" rx="1" width="14" x="80" y="120" />
+        <rect height="14" rx="1" width="14" x="112" y="120" />
+        <rect height="14" rx="1" width="14" x="144" y="120" />
+        <rect height="14" rx="1" width="14" x="160" y="120" />
+        <rect height="14" rx="1" width="14" x="80" y="104" />
+        <rect height="14" rx="1" width="14" x="96" y="88" />
+        <rect height="14" rx="1" width="14" x="112" y="72" />
+        <rect height="14" rx="1" width="14" x="80" y="136" />
+        <rect height="14" rx="1" width="14" x="96" y="152" />
+        <rect height="14" rx="1" width="14" x="112" y="168" />
+        <rect height="14" rx="1" width="14" x="176" y="120" />
+        <rect height="14" rx="1" width="14" x="128" y="120" />
       </svg>
       <span className="sr-only">Previous slide</span>
     </Button>
@@ -259,46 +257,47 @@ const CarouselNext = React.forwardRef<
 
   return (
     <Button
-      ref={ref}
-      variant={variant}
-      size={size}
       className={cn(
         orientation === "horizontal"
-          ? "top-1/2 -right-10 md:-right-14 -translate-y-1/2 active:-translate-y-1 aspect-square shrink-0 w-8 h-9 md:w-9 md:h-10 "
-          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90 w-8 h-10 md:w-9 md:h-11",
-        "absolute rounded-none aspect-square grid place-items-center",
+          ? "-right-10 md:-right-14 -translate-y-1/2 active:-translate-y-1 top-1/2 aspect-square h-9 w-8 shrink-0 md:h-10 md:w-9"
+          : "-bottom-12 -translate-x-1/2 left-1/2 h-10 w-8 rotate-90 md:h-11 md:w-9",
+        "absolute grid aspect-square place-items-center rounded-none",
         className
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
+      ref={ref}
+      size={size}
+      variant={variant}
       {...props}
     >
       <svg
-        width="50"
-        height="50"
-        viewBox="0 0 256 256"
-        fill="currentColor"
+        aria-label="arrow-right"
         className="block"
-        xmlns="http://www.w3.org/2000/svg"
+        color="currentColor"
+        fill="currentColor"
+        height="50"
         stroke="currentColor"
         strokeWidth="0.25"
-        color="currentColor"
-        aria-label="arrow-right"
+        viewBox="0 0 256 256"
+        width="50"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <rect x="64" y="120" width="14" height="14" rx="1"></rect>
-        <rect x="96" y="120" width="14" height="14" rx="1"></rect>
-        <rect x="80" y="120" width="14" height="14" rx="1"></rect>
-        <rect x="112" y="120" width="14" height="14" rx="1"></rect>
-        <rect x="144" y="120" width="14" height="14" rx="1"></rect>
-        <rect x="160" y="120" width="14" height="14" rx="1"></rect>
-        <rect x="160" y="136" width="14" height="14" rx="1"></rect>
-        <rect x="144" y="152" width="14" height="14" rx="1"></rect>
-        <rect x="128" y="72" width="14" height="14" rx="1"></rect>
-        <rect x="128" y="168" width="14" height="14" rx="1"></rect>
-        <rect x="176" y="120" width="14" height="14" rx="1"></rect>
-        <rect x="160" y="104" width="14" height="14" rx="1"></rect>
-        <rect x="144" y="88" width="14" height="14" rx="1"></rect>
-        <rect x="128" y="120" width="14" height="14" rx="1"></rect>
+        <title>Next</title>
+        <rect height="14" rx="1" width="14" x="64" y="120" />
+        <rect height="14" rx="1" width="14" x="96" y="120" />
+        <rect height="14" rx="1" width="14" x="80" y="120" />
+        <rect height="14" rx="1" width="14" x="112" y="120" />
+        <rect height="14" rx="1" width="14" x="144" y="120" />
+        <rect height="14" rx="1" width="14" x="160" y="120" />
+        <rect height="14" rx="1" width="14" x="160" y="136" />
+        <rect height="14" rx="1" width="14" x="144" y="152" />
+        <rect height="14" rx="1" width="14" x="128" y="72" />
+        <rect height="14" rx="1" width="14" x="128" y="168" />
+        <rect height="14" rx="1" width="14" x="176" y="120" />
+        <rect height="14" rx="1" width="14" x="160" y="104" />
+        <rect height="14" rx="1" width="14" x="144" y="88" />
+        <rect height="14" rx="1" width="14" x="128" y="120" />
       </svg>
       <span className="sr-only">Next slide</span>
     </Button>

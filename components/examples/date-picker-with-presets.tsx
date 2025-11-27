@@ -1,12 +1,8 @@
 "use client";
 
-import * as React from "react";
-
 import { addDays, format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-
+import * as React from "react";
 import { Button } from "@/components/ui/8bit/button";
 import { Calendar } from "@/components/ui/8bit/calendar";
 import {
@@ -21,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/8bit/select";
+import { cn } from "@/lib/utils";
 
 export function DatePickerWithPresets() {
   const [date, setDate] = React.useState<Date>();
@@ -29,11 +26,11 @@ export function DatePickerWithPresets() {
     <Popover>
       <PopoverTrigger asChild>
         <Button
-          variant={"outline"}
           className={cn(
             "w-[280px] justify-start text-left font-normal",
             !date && "text-muted-foreground"
           )}
+          variant={"outline"}
         >
           <CalendarIcon />
           {date ? format(date, "PPP") : <span>Pick a date</span>}
@@ -42,7 +39,7 @@ export function DatePickerWithPresets() {
       <PopoverContent className="flex w-auto flex-col space-y-2 p-2">
         <Select
           onValueChange={(value) =>
-            setDate(addDays(new Date(), parseInt(value)))
+            setDate(addDays(new Date(), Number.parseInt(value, 10)))
           }
         >
           <SelectTrigger>
@@ -56,7 +53,7 @@ export function DatePickerWithPresets() {
           </SelectContent>
         </Select>
         <div className="rounded-md border">
-          <Calendar mode="single" selected={date} onSelect={setDate} />
+          <Calendar mode="single" onSelect={setDate} selected={date} />
         </div>
       </PopoverContent>
     </Popover>

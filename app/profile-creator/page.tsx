@@ -1,10 +1,7 @@
-import { Suspense } from "react";
-
 import type { Metadata } from "next";
-
-import { profileCreatorMetaData } from "@/lib/metadata";
-
+import { Suspense } from "react";
 import ProfileCreator from "@/components/profile-creator";
+import { profileCreatorMetaData } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "8-bit Profile Creator",

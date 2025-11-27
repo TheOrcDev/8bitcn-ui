@@ -1,5 +1,3 @@
-import { cn } from "@/lib/utils";
-
 import { Button } from "@/components/ui/8bit/button";
 import {
   Card,
@@ -10,6 +8,7 @@ import {
 } from "@/components/ui/8bit/card";
 import { Input } from "@/components/ui/8bit/input";
 import { Label } from "@/components/ui/8bit/label";
+import { cn } from "@/lib/utils";
 
 export function LoginForm({
   className,
@@ -31,33 +30,33 @@ export function LoginForm({
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
-                  type="email"
                   placeholder="m@example.com"
                   required
+                  type="email"
                 />
               </div>
               <div className="grid gap-2">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+                <div className="flex flex-col justify-between gap-2 md:flex-row md:items-center">
                   <Label htmlFor="password">Password</Label>
                   <a
-                    href="#"
                     className="inline-block text-xs underline-offset-4 hover:underline"
+                    href="/"
                   >
                     Forgot password?
                   </a>
                 </div>
-                <Input id="password" type="password" required />
+                <Input id="password" required type="password" />
               </div>
-              <Button type="submit" className="w-full">
+              <Button className="w-full" type="submit">
                 Login
               </Button>
-              <Button variant="outline" className="w-full">
+              <Button className="w-full" variant="outline">
                 Login with Google
               </Button>
             </div>
             <div className="mt-4 text-center text-xs">
               Don&apos;t have an account?{" "}
-              <a href="#" className="underline underline-offset-4">
+              <a className="underline underline-offset-4" href="/">
                 Sign up
               </a>
             </div>

@@ -14,11 +14,11 @@ export function RangeCalendar() {
 
   return (
     <Calendar
-      mode="range"
       defaultMonth={date?.from}
+      mode="range"
       numberOfMonths={2}
-      selected={date}
       onSelect={setDate}
+      selected={date}
     />
   );
 }

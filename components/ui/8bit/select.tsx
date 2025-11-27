@@ -1,8 +1,5 @@
 import type * as SelectPrimitive from "@radix-ui/react-select";
-import { type VariantProps, cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-
+import { cva, type VariantProps } from "class-variance-authority";
 import {
   Select as ShadcnSelect,
   SelectContent as ShadcnSelectContent,
@@ -15,6 +12,7 @@ import {
   SelectTrigger as ShadcnSelectTrigger,
   SelectValue as ShadcnSelectValue,
 } from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 
@@ -75,21 +73,21 @@ function SelectTrigger({ children, ...props }: BitSelectTriggerProps) {
   return (
     <div
       className={cn(
-        "relative border-y-6 border-foreground dark:border-ring",
+        "relative border-foreground border-y-6 dark:border-ring",
         className,
         font !== "normal" && "retro"
       )}
     >
       <ShadcnSelectTrigger
         {...props}
-        className={cn("rounded-none ring-0 w-full border-0", className)}
+        className={cn("w-full rounded-none border-0 ring-0", className)}
       >
         {children}
       </ShadcnSelectTrigger>
 
       <div
-        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-mx-1.5 pointer-events-none absolute inset-0 border-foreground border-x-6 dark:border-ring"
       />
     </div>
   );
@@ -113,7 +111,7 @@ function SelectContent({
       className={cn(
         font !== "normal" && "retro",
         className,
-        "relative rounded-none border-4 border-foreground dark:border-ring -ml-1 mt-1"
+        "-ml-1 relative mt-1 rounded-none border-4 border-foreground dark:border-ring"
       )}
       {...props}
     >
@@ -138,7 +136,7 @@ function SelectItem({
     <ShadcnSelectItem
       className={cn(
         className,
-        "rounded-none border-y-3 border-dashed border-ring/0 hover:border-foreground dark:hover:border-ring"
+        "rounded-none border-ring/0 border-y-3 border-dashed hover:border-foreground dark:hover:border-ring"
       )}
       {...props}
     >

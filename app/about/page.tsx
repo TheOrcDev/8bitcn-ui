@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-4 max-w-[1400px] mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold">About</h1>
+    <div className="mx-auto flex max-w-[1400px] flex-col gap-4 px-4 py-8">
+      <h1 className="font-bold text-2xl">About</h1>
       <p>Coming soon...</p>
     </div>
   );

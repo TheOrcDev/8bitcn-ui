@@ -24,25 +24,25 @@ export function Calendar13() {
   return (
     <div className="flex flex-col gap-4">
       <Calendar
-        mode="single"
-        defaultMonth={date}
-        selected={date}
-        onSelect={setDate}
         captionLayout={dropdown}
+        defaultMonth={date}
+        mode="single"
+        onSelect={setDate}
+        selected={date}
       />
       <div className="flex flex-col gap-3">
-        <Label htmlFor="dropdown" className="px-1">
+        <Label className="px-1" htmlFor="dropdown">
           Dropdown
         </Label>
         <Select
-          value={dropdown}
           onValueChange={(value) =>
             setDropdown(
               value as React.ComponentProps<typeof Calendar>["captionLayout"]
             )
           }
+          value={dropdown}
         >
-          <SelectTrigger id="dropdown" className="bg-background w-full">
+          <SelectTrigger className="w-full bg-background" id="dropdown">
             <SelectValue placeholder="Dropdown" />
           </SelectTrigger>
           <SelectContent align="center">

@@ -1,7 +1,6 @@
-import { cn } from "@/lib/utils";
-
 import { Button } from "@/components/ui/8bit/button";
 import { Card, CardContent } from "@/components/ui/8bit/card";
+import { cn } from "@/lib/utils";
 
 export default function GameOver({
   className,
@@ -13,190 +12,193 @@ export default function GameOver({
         <CardContent className="grid p-0 md:grid-cols-2">
           <div className="flex flex-col gap-5 px-5 py-15">
             <div className="flex flex-col items-center text-center">
-              <h1 className="text-xl font-bold">Game Over</h1>
-              <p className="text-balance text-xs text-muted-foreground">
+              <h1 className="font-bold text-xl">Game Over</h1>
+              <p className="text-balance text-muted-foreground text-xs">
                 Continue?
               </p>
             </div>
 
             <Button className="flex items-center">
               <svg
-                width="50"
-                height="50"
-                viewBox="0 0 256 256"
+                aria-label="repeat"
+                className="size-6"
+                color=""
                 fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
+                height="50"
                 stroke="currentColor"
                 strokeWidth="0.25"
-                color=""
-                className="size-6"
-                aria-label="repeat"
+                viewBox="0 0 256 256"
+                width="50"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <rect x="184" y="48" width="14" height="14" rx="1"></rect>
-                <rect x="200" y="64" width="14" height="14" rx="1"></rect>
-                <rect x="184" y="80" width="14" height="14" rx="1"></rect>
-                <rect x="184" y="64" width="14" height="14" rx="1"></rect>
-                <rect x="168" y="32" width="14" height="14" rx="1"></rect>
-                <rect x="168" y="96" width="14" height="14" rx="1"></rect>
-                <rect x="168" y="64" width="14" height="14" rx="1"></rect>
-                <rect x="152" y="64" width="14" height="14" rx="1"></rect>
-                <rect x="136" y="64" width="14" height="14" rx="1"></rect>
-                <rect x="120" y="64" width="14" height="14" rx="1"></rect>
-                <rect x="56" y="112" width="14" height="14" rx="1"></rect>
-                <rect x="56" y="80" width="14" height="14" rx="1"></rect>
-                <rect x="88" y="64" width="14" height="14" rx="1"></rect>
-                <rect x="104" y="64" width="14" height="14" rx="1"></rect>
-                <rect x="56" y="96" width="14" height="14" rx="1"></rect>
-                <rect x="72" y="64" width="14" height="14" rx="1"></rect>
-                <rect x="56" y="176" width="14" height="14" rx="1"></rect>
-                <rect x="184" y="144" width="14" height="14" rx="1"></rect>
-                <rect x="56" y="160" width="14" height="14" rx="1"></rect>
-                <rect x="184" y="160" width="14" height="14" rx="1"></rect>
-                <rect x="72" y="144" width="14" height="14" rx="1"></rect>
-                <rect x="40" y="176" width="14" height="14" rx="1"></rect>
-                <rect x="168" y="176" width="14" height="14" rx="1"></rect>
-                <rect x="152" y="176" width="14" height="14" rx="1"></rect>
-                <rect x="136" y="176" width="14" height="14" rx="1"></rect>
-                <rect x="120" y="176" width="14" height="14" rx="1"></rect>
-                <rect x="184" y="128" width="14" height="14" rx="1"></rect>
-                <rect x="56" y="192" width="14" height="14" rx="1"></rect>
-                <rect x="88" y="176" width="14" height="14" rx="1"></rect>
-                <rect x="104" y="176" width="14" height="14" rx="1"></rect>
-                <rect x="72" y="208" width="14" height="14" rx="1"></rect>
-                <rect x="72" y="176" width="14" height="14" rx="1"></rect>
+                <title>Retry</title>
+                <rect height="14" rx="1" width="14" x="184" y="48" />
+                <rect height="14" rx="1" width="14" x="200" y="64" />
+                <rect height="14" rx="1" width="14" x="184" y="80" />
+                <rect height="14" rx="1" width="14" x="184" y="64" />
+                <rect height="14" rx="1" width="14" x="168" y="32" />
+                <rect height="14" rx="1" width="14" x="168" y="96" />
+                <rect height="14" rx="1" width="14" x="168" y="64" />
+                <rect height="14" rx="1" width="14" x="152" y="64" />
+                <rect height="14" rx="1" width="14" x="136" y="64" />
+                <rect height="14" rx="1" width="14" x="120" y="64" />
+                <rect height="14" rx="1" width="14" x="56" y="112" />
+                <rect height="14" rx="1" width="14" x="56" y="80" />
+                <rect height="14" rx="1" width="14" x="88" y="64" />
+                <rect height="14" rx="1" width="14" x="104" y="64" />
+                <rect height="14" rx="1" width="14" x="56" y="96" />
+                <rect height="14" rx="1" width="14" x="72" y="64" />
+                <rect height="14" rx="1" width="14" x="56" y="176" />
+                <rect height="14" rx="1" width="14" x="184" y="144" />
+                <rect height="14" rx="1" width="14" x="56" y="160" />
+                <rect height="14" rx="1" width="14" x="184" y="160" />
+                <rect height="14" rx="1" width="14" x="72" y="144" />
+                <rect height="14" rx="1" width="14" x="40" y="176" />
+                <rect height="14" rx="1" width="14" x="168" y="176" />
+                <rect height="14" rx="1" width="14" x="152" y="176" />
+                <rect height="14" rx="1" width="14" x="136" y="176" />
+                <rect height="14" rx="1" width="14" x="120" y="176" />
+                <rect height="14" rx="1" width="14" x="184" y="128" />
+                <rect height="14" rx="1" width="14" x="56" y="192" />
+                <rect height="14" rx="1" width="14" x="88" y="176" />
+                <rect height="14" rx="1" width="14" x="104" y="176" />
+                <rect height="14" rx="1" width="14" x="72" y="208" />
+                <rect height="14" rx="1" width="14" x="72" y="176" />
               </svg>
               <span>Retry</span>
             </Button>
             <Button className="flex items-center">
               <svg
-                width="50"
-                height="50"
-                viewBox="0 0 256 256"
+                aria-label="x"
+                className="size-6"
+                color=""
                 fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
+                height="50"
                 stroke="currentColor"
                 strokeWidth="0.25"
-                color=""
-                className="size-6"
-                aria-label="x"
+                viewBox="0 0 256 256"
+                width="50"
+                xmlns="http://www.w3.org/2000/svg"
               >
+                <title>Exit</title>
                 <rect
-                  width="14"
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 120 152)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 104 168)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 184 184)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 88 184)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 168 104)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 184 88)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 200 72)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 200 200)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 152 120)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 152 152)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 136 136)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 120 120)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 136 136)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 168 168)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 88 88)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 72 72)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 72 200)"
-                ></rect>
-                <rect
                   width="14"
+                />
+                <rect
                   height="14"
                   rx="1"
                   transform="matrix(0 -1 -1 0 104 104)"
-                ></rect>
+                  width="14"
+                />
               </svg>
               <span>Exit</span>
             </Button>
           </div>
           <div className="relative hidden bg-muted md:block">
-            <img
+            <Image
+              alt="Game over"
+              className="absolute inset-0 h-full w-full object-cover opacity-70 dark:brightness-[0.2] dark:grayscale"
+              fill
               src="/images/8-bit-skull.png"
-              alt="Image"
-              className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale opacity-70"
             />
           </div>
         </CardContent>

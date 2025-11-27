@@ -1,13 +1,11 @@
 import type * as HoverCardPrimitive from "@radix-ui/react-hover-card";
-import { type VariantProps, cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-
+import { cva, type VariantProps } from "class-variance-authority";
 import {
   HoverCard as ShadcnHoverCard,
   HoverCardContent as ShadcnHoverCardContent,
   HoverCardTrigger as ShadcnHoverCardTrigger,
 } from "@/components/ui/hover-card";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 
@@ -40,8 +38,8 @@ function HoverCardTrigger({
 }: React.ComponentProps<typeof HoverCardPrimitive.Trigger>) {
   return (
     <ShadcnHoverCardTrigger
-      className={cn(className)}
       asChild={asChild}
+      className={cn(className)}
       {...props}
     />
   );
@@ -67,12 +65,12 @@ function HoverCardContent({
       {children}
 
       <div
-        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-mx-1.5 pointer-events-none absolute inset-0 border-foreground border-x-6 dark:border-ring"
       />
       <div
-        className="absolute inset-0 border-y-6 -my-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-my-1.5 pointer-events-none absolute inset-0 border-foreground border-y-6 dark:border-ring"
       />
     </ShadcnHoverCardContent>
   );

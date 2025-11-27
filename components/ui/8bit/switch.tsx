@@ -1,8 +1,7 @@
 "use client";
 
-import type * as React from "react";
-
 import * as SwitchPrimitive from "@radix-ui/react-switch";
+import type * as React from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -12,28 +11,28 @@ function Switch({
 }: React.ComponentProps<typeof SwitchPrimitive.Root>) {
   return (
     <SwitchPrimitive.Root
-      data-slot="switch"
       className={cn(
-        "relative peer data-[state=checked]:bg-primary rounded-xs data-[state=unchecked]:bg-input focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center border border-transparent shadow-xs transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50",
+        "peer relative inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-xs border border-transparent shadow-xs outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input dark:data-[state=unchecked]:bg-input/80",
         className
       )}
+      data-slot="switch"
       {...props}
     >
       <SwitchPrimitive.Thumb
-        data-slot="switch-thumb"
         className={cn(
-          "bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 border border-foreground dark:border-ring ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"
+          "pointer-events-none block size-4 border border-foreground bg-background ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0 dark:border-ring dark:data-[state=checked]:bg-primary-foreground dark:data-[state=unchecked]:bg-foreground"
         )}
+        data-slot="switch-thumb"
       />
 
       <div
-        className="absolute inset-0 border-y-4 -my-1 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-my-1 pointer-events-none absolute inset-0 border-foreground border-y-4 dark:border-ring"
       />
 
       <div
-        className="absolute inset-0 border-x-4 -mx-1 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-mx-1 pointer-events-none absolute inset-0 border-foreground border-x-4 dark:border-ring"
       />
     </SwitchPrimitive.Root>
   );

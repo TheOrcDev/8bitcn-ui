@@ -1,18 +1,16 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+import { parseAsStringLiteral, useQueryState } from "nuqs";
 import {
+  createContext,
   type ReactNode,
   Suspense,
-  createContext,
   useContext,
   useEffect,
   useRef,
   useState,
 } from "react";
-
-import { usePathname } from "next/navigation";
-
-import { parseAsStringLiteral, useQueryState } from "nuqs";
 
 import { Theme } from "@/lib/themes";
 
@@ -43,7 +41,7 @@ export function ActiveThemeProvider({
   children: ReactNode;
   initialTheme?: Theme;
 }) {
-  const pathname = usePathname();
+  const _pathname = usePathname();
 
   const [activeTheme, setActiveTheme] = useState<Theme>(
     () => initialTheme || DEFAULT_THEME
@@ -53,7 +51,7 @@ export function ActiveThemeProvider({
     queueMicrotask(() => {
       setActiveTheme(DEFAULT_THEME);
     });
-  }, [pathname]);
+  }, []);
 
   useEffect(() => {
     setThemeCookie(activeTheme);
@@ -100,7 +98,9 @@ export function ActiveThemeUrlSync() {
   const { activeTheme, setActiveTheme } = useThemeConfig();
 
   useEffect(() => {
-    if (synced.current || !urlTheme) return;
+    if (synced.current || !urlTheme) {
+      return;
+    }
     if (urlTheme !== activeTheme) {
       // Setting it directly here would be cancelled by the useEffect above
       // that resets the theme on pathname change.

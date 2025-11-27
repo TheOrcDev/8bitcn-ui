@@ -45,7 +45,7 @@ const items = [
 export function AppSidebar() {
   return (
     <Sidebar
-      className={`${"retro"} border-r-4 border-foreground dark:border-ring`}
+      className={`${"retro"} border-foreground border-r-4 dark:border-ring`}
     >
       <SidebarContent>
         <SidebarGroup>

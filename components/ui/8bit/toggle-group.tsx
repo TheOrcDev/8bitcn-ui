@@ -1,5 +1,5 @@
 import type * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
-import { type VariantProps, cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
@@ -18,9 +18,9 @@ export const toggleGroupVariants = cva("", {
         "bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground",
     },
     size: {
-      default: "h-9 px-2 min-w-9",
-      sm: "h-4 px-1.5 min-w-4",
-      lg: "h-10 px-2.5 min-w-10",
+      default: "h-9 min-w-9 px-2",
+      sm: "h-4 min-w-4 px-1.5",
+      lg: "h-10 min-w-10 px-2.5",
     },
   },
   defaultVariants: { variant: "default", font: "retro", size: "default" },
@@ -66,12 +66,12 @@ function ToggleGroupItem({ ...props }: BitToggleGroupItemProps) {
         <>
           {" "}
           <div
-            className="absolute inset-0 -my-1.5 border-y-6 border-foreground dark:border-ring pointer-events-none"
             aria-hidden="true"
+            className="-my-1.5 pointer-events-none absolute inset-0 border-foreground border-y-6 dark:border-ring"
           />{" "}
           <div
-            className="absolute inset-0 -mx-1.5 border-x-6 border-foreground dark:border-ring pointer-events-none"
             aria-hidden="true"
+            className="-mx-1.5 pointer-events-none absolute inset-0 border-foreground border-x-6 dark:border-ring"
           />{" "}
         </>
       )}{" "}

@@ -1,9 +1,6 @@
 import { Slot } from "@radix-ui/react-slot";
-import { type VariantProps, cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 import { MoreHorizontal } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-
 import {
   Breadcrumb as ShadcnBreadcrumb,
   BreadcrumbEllipsis as ShadcnBreadcrumbEllipsis,
@@ -12,6 +9,7 @@ import {
   BreadcrumbPage as ShadcnBreadcrumbPage,
   BreadcrumbSeparator as ShadcnBreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 
@@ -24,7 +22,7 @@ export const breadcrumbVariants = cva("", {
     variant: {
       default: "text-card-foreground",
       destructive:
-        "text-destructive [&>svg]:text-current *:data-[slot=alert-description]:text-destructive/90",
+        "text-destructive *:data-[slot=alert-description]:text-destructive/90 [&>svg]:text-current",
     },
   },
   defaultVariants: {
@@ -52,30 +50,28 @@ interface BitBreadcrumbLinkProps
   extends React.ComponentProps<"a">,
     VariantProps<typeof breadcrumbVariants> {}
 
-const ChevronRight = () => {
-  return (
-    <svg
-      width="50"
-      height="50"
-      viewBox="0 0 256 256"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-      stroke="currentColor"
-      strokeWidth="0.25"
-      color=""
-      className="size-7"
-      aria-label="chevron-right"
-    >
-      <rect x="128" y="136" width="14" height="14" rx="1"></rect>
-      <rect x="112" y="152" width="14" height="14" rx="1"></rect>
-      <rect x="96" y="72" width="14" height="14" rx="1"></rect>
-      <rect x="96" y="168" width="14" height="14" rx="1"></rect>
-      <rect x="144" y="120" width="14" height="14" rx="1"></rect>
-      <rect x="128" y="104" width="14" height="14" rx="1"></rect>
-      <rect x="112" y="88" width="14" height="14" rx="1"></rect>
-    </svg>
-  );
-};
+const ChevronRight = () => (
+  <svg
+    aria-label="chevron-right"
+    className="size-7"
+    color=""
+    fill="currentColor"
+    height="50"
+    stroke="currentColor"
+    strokeWidth="0.25"
+    viewBox="0 0 256 256"
+    width="50"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect height="14" rx="1" width="14" x="128" y="136" />
+    <rect height="14" rx="1" width="14" x="112" y="152" />
+    <rect height="14" rx="1" width="14" x="96" y="72" />
+    <rect height="14" rx="1" width="14" x="96" y="168" />
+    <rect height="14" rx="1" width="14" x="144" y="120" />
+    <rect height="14" rx="1" width="14" x="128" y="104" />
+    <rect height="14" rx="1" width="14" x="112" y="88" />
+  </svg>
+);
 
 function Breadcrumb({ children, ...props }: BitBreadcrumbNavigationProps) {
   const { variant, className, font } = props;
@@ -83,7 +79,7 @@ function Breadcrumb({ children, ...props }: BitBreadcrumbNavigationProps) {
   return (
     <div
       className={cn(
-        "mb-4 flex items-center space-x-1 text-sm leading-none text-muted-foreground",
+        "mb-4 flex items-center space-x-1 text-muted-foreground text-sm leading-none",
         className
       )}
     >
@@ -136,8 +132,8 @@ function BreadcrumbLink({
 
   return (
     <Comp
-      data-slot="breadcrumb-link"
       className={cn(className, font !== "normal" && "retro")}
+      data-slot="breadcrumb-link"
       {...props}
     />
   );

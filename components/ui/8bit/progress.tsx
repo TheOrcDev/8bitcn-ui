@@ -1,5 +1,5 @@
 import * as ProgressPrimitive from "@radix-ui/react-progress";
-import { type VariantProps, cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
@@ -44,21 +44,21 @@ function Progress({
   return (
     <div className={cn("relative w-full", className)}>
       <ProgressPrimitive.Root
-        data-slot="progress"
         className={cn(
-          "bg-primary/20 relative w-full overflow-hidden",
+          "relative w-full overflow-hidden bg-primary/20",
           heightClass,
           font !== "normal" && "retro"
         )}
+        data-slot="progress"
         {...props}
       >
         <ProgressPrimitive.Indicator
-          data-slot="progress-indicator"
           className={cn(
             "h-full transition-all",
             variant === "retro" ? "flex" : "w-full flex-1",
             progressBg && variant !== "retro" ? progressBg : "bg-primary"
           )}
+          data-slot="progress-indicator"
           style={
             variant === "retro"
               ? undefined
@@ -71,11 +71,11 @@ function Progress({
                 const filledSquares = Math.round(((value || 0) / 100) * 20);
                 return (
                   <div
-                    key={i}
                     className={cn(
-                      "size-full mx-[1px]",
+                      "mx-[1px] size-full",
                       i < filledSquares ? progressBg : "bg-transparent"
                     )}
+                    key={i}
                   />
                 );
               })}
@@ -85,13 +85,13 @@ function Progress({
       </ProgressPrimitive.Root>
 
       <div
-        className="absolute inset-0 border-y-4 -my-1 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-my-1 pointer-events-none absolute inset-0 border-foreground border-y-4 dark:border-ring"
       />
 
       <div
-        className="absolute inset-0 border-x-4 -mx-1 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-mx-1 pointer-events-none absolute inset-0 border-foreground border-x-4 dark:border-ring"
       />
     </div>
   );

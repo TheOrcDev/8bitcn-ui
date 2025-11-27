@@ -16,10 +16,10 @@ export default function ManaBar({
   return (
     <Progress
       {...props}
-      value={value}
-      variant={variant}
       className={className}
       progressBg="bg-blue-500"
+      value={value}
+      variant={variant}
     />
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 
 import { Avatar, AvatarImage } from "@/components/ui/8bit/avatar";
 import { Button } from "@/components/ui/8bit/button";
@@ -17,12 +17,12 @@ import {
   CropperImage,
 } from "@/components/ui/cropper";
 
-interface Props {
+type Props = {
   toggleImageCropper: (state?: boolean) => void;
   open: boolean;
   tempImage: string | null;
   setProfileImage: (imageUrl: string) => void;
-}
+};
 
 type Area = { x: number; y: number; width: number; height: number };
 
@@ -85,10 +85,14 @@ const ProfileCropper = ({
     setCroppedAreaPixels(pixels);
   }, []);
 
-  if (!tempImage) return null;
+  if (!tempImage) {
+    return null;
+  }
 
   const handleCrop = async () => {
-    if (!croppedAreaPixels) return;
+    if (!croppedAreaPixels) {
+      return;
+    }
     setIsCropping(true);
     try {
       const croppedUrl = await getCroppedDataUrl(tempImage, croppedAreaPixels);
@@ -109,26 +113,26 @@ const ProfileCropper = ({
       <DialogContent>
         <DialogTitle>Crop Your Avatar</DialogTitle>
         {croppedImgUrl ? (
-          <div className="flex flex-col gap-4 items-center">
+          <div className="flex flex-col items-center gap-4">
             <Avatar className="size-40" variant="retro">
-              <AvatarImage src={croppedImgUrl} alt={"Avatar"} />
+              <AvatarImage alt={"Avatar"} src={croppedImgUrl} />
             </Avatar>
-            <div className="w-full flex gap-6 items-center mt-6">
+            <div className="mt-6 flex w-full items-center gap-6">
               <Button
-                variant={"outline"}
-                onClick={() => setCroppedImgUrl(null)}
                 className="flex-1"
+                onClick={() => setCroppedImgUrl(null)}
+                variant={"outline"}
               >
                 Undo
               </Button>
               <Button
-                variant={"secondary"}
+                className="flex-1"
                 onClick={() => {
                   setProfileImage(croppedImgUrl);
                   toggleImageCropper(false);
                   setCroppedImgUrl(null);
                 }}
-                className="flex-1"
+                variant={"secondary"}
               >
                 Save
               </Button>
@@ -141,8 +145,8 @@ const ProfileCropper = ({
               className="h-80"
               image={tempImage}
               onCropChange={handleCropChange}
-              zoom={zoom}
               onZoomChange={setZoom}
+              zoom={zoom}
             >
               <CropperDescription />
               <CropperImage />
@@ -150,22 +154,22 @@ const ProfileCropper = ({
             </Cropper>
             <div className="mx-auto flex w-full max-w-80 items-center gap-4 py-5">
               <Slider
-                defaultValue={[1]}
-                value={[zoom]}
-                min={1}
-                max={3}
-                step={0.1}
-                onValueChange={(value) => setZoom(value[0])}
                 aria-label="Zoom slider"
+                defaultValue={[1]}
+                max={3}
+                min={1}
+                onValueChange={(value) => setZoom(value[0])}
+                step={0.1}
+                value={[zoom]}
               />
-              <output className="block w-10 shrink-0 text-right text-sm font-medium tabular-nums">
-                {parseFloat(zoom.toFixed(1))}x
+              <output className="block w-10 shrink-0 text-right font-medium text-sm tabular-nums">
+                {Number.parseFloat(zoom.toFixed(1))}x
               </output>
             </div>
             <Button
-              variant={"outline"}
-              onClick={handleCrop}
               disabled={!croppedAreaPixels || isCropping}
+              onClick={handleCrop}
+              variant={"outline"}
             >
               {isCropping ? "Cropping..." : "Crop"}
             </Button>

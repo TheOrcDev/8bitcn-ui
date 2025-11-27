@@ -1,8 +1,5 @@
-import { type VariantProps, cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 import { MoreHorizontal } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-
 import {
   Pagination as ShadcnPagination,
   PaginationContent as ShadcnPaginationContent,
@@ -10,6 +7,7 @@ import {
   PaginationItem as ShadcnPaginationItem,
   PaginationLink as ShadcnPaginationLink,
 } from "@/components/ui/pagination";
+import { cn } from "@/lib/utils";
 
 import type { Button } from "../button";
 import "./styles/retro.css";
@@ -23,7 +21,7 @@ export const paginationVariants = cva("", {
     variant: {
       default: "text-card-foreground",
       destructive:
-        "text-destructive [&>svg]:text-current *:data-[slot=alert-description]:text-destructive/90",
+        "text-destructive *:data-[slot=alert-description]:text-destructive/90 [&>svg]:text-current",
     },
   },
   defaultVariants: {
@@ -48,90 +46,51 @@ function Pagination({ ...props }: BitPaginationProps<"nav">) {
   );
 }
 
-const ChevronLeftIcon = () => {
-  return (
-    <svg
-      width="50"
-      height="50"
-      viewBox="0 0 256 256"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-      stroke="currentColor"
-      strokeWidth="0.25"
-      color=""
-      className="size-7"
-      aria-label="chevron-left"
-    >
-      <rect
-        width="14"
-        height="14"
-        rx="1"
-        transform="matrix(-1 0 0 1 128 136)"
-      ></rect>
-      <rect
-        width="14"
-        height="14"
-        rx="1"
-        transform="matrix(-1 0 0 1 144 152)"
-      ></rect>
-      <rect
-        width="14"
-        height="14"
-        rx="1"
-        transform="matrix(-1 0 0 1 160 72)"
-      ></rect>
-      <rect
-        width="14"
-        height="14"
-        rx="1"
-        transform="matrix(-1 0 0 1 160 168)"
-      ></rect>
-      <rect
-        width="14"
-        height="14"
-        rx="1"
-        transform="matrix(-1 0 0 1 112 120)"
-      ></rect>
-      <rect
-        width="14"
-        height="14"
-        rx="1"
-        transform="matrix(-1 0 0 1 128 104)"
-      ></rect>
-      <rect
-        width="14"
-        height="14"
-        rx="1"
-        transform="matrix(-1 0 0 1 144 88)"
-      ></rect>
-    </svg>
-  );
-};
+const ChevronLeftIcon = () => (
+  <svg
+    aria-label="chevron-left"
+    className="size-7"
+    color=""
+    fill="currentColor"
+    height="50"
+    stroke="currentColor"
+    strokeWidth="0.25"
+    viewBox="0 0 256 256"
+    width="50"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect height="14" rx="1" transform="matrix(-1 0 0 1 128 136)" width="14" />
+    <rect height="14" rx="1" transform="matrix(-1 0 0 1 144 152)" width="14" />
+    <rect height="14" rx="1" transform="matrix(-1 0 0 1 160 72)" width="14" />
+    <rect height="14" rx="1" transform="matrix(-1 0 0 1 160 168)" width="14" />
+    <rect height="14" rx="1" transform="matrix(-1 0 0 1 112 120)" width="14" />
+    <rect height="14" rx="1" transform="matrix(-1 0 0 1 128 104)" width="14" />
+    <rect height="14" rx="1" transform="matrix(-1 0 0 1 144 88)" width="14" />
+  </svg>
+);
 
-const ChevronRightIcon = () => {
-  return (
-    <svg
-      width="50"
-      height="50"
-      viewBox="0 0 256 256"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-      stroke="currentColor"
-      strokeWidth="0.25"
-      color=""
-      className="raster-icon size-7"
-      aria-label="chevron-right"
-    >
-      <rect x="128" y="136" width="14" height="14" rx="1"></rect>
-      <rect x="112" y="152" width="14" height="14" rx="1"></rect>
-      <rect x="96" y="72" width="14" height="14" rx="1"></rect>
-      <rect x="96" y="168" width="14" height="14" rx="1"></rect>
-      <rect x="144" y="120" width="14" height="14" rx="1"></rect>
-      <rect x="128" y="104" width="14" height="14" rx="1"></rect>
-      <rect x="112" y="88" width="14" height="14" rx="1"></rect>
-    </svg>
-  );
-};
+const ChevronRightIcon = () => (
+  <svg
+    aria-label="chevron-right"
+    className="raster-icon size-7"
+    color=""
+    fill="currentColor"
+    height="50"
+    stroke="currentColor"
+    strokeWidth="0.25"
+    viewBox="0 0 256 256"
+    width="50"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect height="14" rx="1" width="14" x="128" y="136" />
+    <rect height="14" rx="1" width="14" x="112" y="152" />
+    <rect height="14" rx="1" width="14" x="96" y="72" />
+    <rect height="14" rx="1" width="14" x="96" y="168" />
+    <rect height="14" rx="1" width="14" x="144" y="120" />
+    <rect height="14" rx="1" width="14" x="128" y="104" />
+    <rect height="14" rx="1" width="14" x="112" y="88" />
+  </svg>
+);
 
 function PaginationContent({ ...props }: BitPaginationProps<"ul">) {
   const { className, font } = props;
@@ -165,13 +124,13 @@ function PaginationLink({ ...props }: PaginationLinkProps) {
       className={cn(
         font !== "normal" && "retro",
         className,
-        "relative group",
-        "bg-transparent hover:bg-transparent active:bg-transparent focus:bg-transparent",
-        "rounded-none border-dashed border-y-4 border-transparent",
-        "dark:hover:border-ring dark:focus:border-ring",
+        "group relative",
+        "bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent",
+        "rounded-none border-transparent border-y-4 border-dashed",
+        "dark:focus:border-ring dark:hover:border-ring",
         "hover:border-foreground focus:border-foreground",
         "active:border-transparent",
-        "data-[active=true]:border-none aria-[current=page]:border-none"
+        "aria-[current=page]:border-none data-[active=true]:border-none"
       )}
       {...props}
     >
@@ -179,32 +138,32 @@ function PaginationLink({ ...props }: PaginationLinkProps) {
 
       {isActive && (
         <div
-          className="absolute inset-0 w-full h-full pointer-events-none"
+          className="pointer-events-none absolute inset-0 h-full w-full"
           style={{ zIndex: 10 }}
         >
           <div
-            className="absolute top-0 left-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none"
             aria-hidden="true"
+            className="pointer-events-none absolute top-0 left-0 h-1.5 w-full bg-foreground dark:bg-ring"
           />
           <div
-            className="absolute left-0 bottom-0 w-full h-1.5 bg-foreground dark:bg-ring pointer-events-none"
             aria-hidden="true"
+            className="pointer-events-none absolute bottom-0 left-0 h-1.5 w-full bg-foreground dark:bg-ring"
           />
           <div
-            className="absolute top-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
             aria-hidden="true"
+            className="-left-1 pointer-events-none absolute top-1 h-1/2 w-1.5 bg-foreground dark:bg-ring"
           />
           <div
-            className="absolute bottom-1 -left-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
             aria-hidden="true"
+            className="-left-1 pointer-events-none absolute bottom-1 h-1/2 w-1.5 bg-foreground dark:bg-ring"
           />
           <div
-            className="absolute top-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
             aria-hidden="true"
+            className="-right-1 pointer-events-none absolute top-1 h-1/2 w-1.5 bg-foreground dark:bg-ring"
           />
           <div
-            className="absolute bottom-1 -right-1 w-1.5 h-1/2 bg-foreground dark:bg-ring pointer-events-none"
             aria-hidden="true"
+            className="-right-1 pointer-events-none absolute bottom-1 h-1/2 w-1.5 bg-foreground dark:bg-ring"
           />
         </div>
       )}
@@ -219,13 +178,13 @@ function PaginationPrevious({
   return (
     <PaginationLink
       className={cn(
-        "relative group",
-        "flex flex-row w-full text-sm",
-        "bg-transparent hover:bg-transparent active:bg-transparent focus:bg-transparent",
-        "rounded-none border-dashed border-y-4 border-transparent",
+        "group relative",
+        "flex w-full flex-row text-sm",
+        "bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent",
+        "rounded-none border-transparent border-y-4 border-dashed",
         "hover:border-foreground focus:border-foreground active:border-transparent",
-        "dark:hover:border-ring dark:focus:border-ring",
-        "data-[active=true]:border-none aria-[current=page]:border-none",
+        "dark:focus:border-ring dark:hover:border-ring",
+        "aria-[current=page]:border-none data-[active=true]:border-none",
         font !== "normal" && "retro",
         className
       )}
@@ -245,14 +204,14 @@ function PaginationNext({
   return (
     <PaginationLink
       className={cn(
-        "relative group",
-        "flex flex-row w-full text-sm",
-        "bg-transparent hover:bg-transparent active:bg-transparent focus:bg-transparent",
-        "rounded-none border-dashed border-y-4 border-transparent",
+        "group relative",
+        "flex w-full flex-row text-sm",
+        "bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent",
+        "rounded-none border-transparent border-y-4 border-dashed",
         "hover:border-foreground focus:border-foreground active:border-transparent",
-        "dark:hover:border-ring dark:focus:border-ring",
-        "data-[active=true]:border-none aria-[current=page]:border-none",
-        "flex flex-row text-sm w-full",
+        "dark:focus:border-ring dark:hover:border-ring",
+        "aria-[current=page]:border-none data-[active=true]:border-none",
+        "flex w-full flex-row text-sm",
         font !== "normal" && "retro",
         className
       )}

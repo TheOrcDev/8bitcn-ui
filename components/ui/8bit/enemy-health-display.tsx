@@ -1,8 +1,6 @@
-import { type VariantProps, cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-
+import { cva, type VariantProps } from "class-variance-authority";
 import HealthBar from "@/components/ui/8bit/health-bar";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 
@@ -87,23 +85,23 @@ export default function EnemyHealthDisplay({
           )}
         </div>
         {showHealthText && (
-          <span className="text-muted-foreground font-mono">{healthText}</span>
+          <span className="font-mono text-muted-foreground">{healthText}</span>
         )}
       </div>
 
       {/* Health Bar Container */}
       <div className="relative">
         <HealthBar
-          value={healthPercentage}
-          variant={healthBarVariant}
           className="w-full"
           props={{ progressBg: healthBarColor }}
+          value={healthPercentage}
+          variant={healthBarVariant}
         />
 
         {/* Health percentage overlay for retro variant */}
         {healthBarVariant === "retro" && (
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-xs font-bold text-white drop-shadow-lg bg-black/50 px-1 rounded">
+            <span className="rounded bg-black/50 px-1 font-bold text-white text-xs drop-shadow-lg">
               {Math.round(healthPercentage)}%
             </span>
           </div>

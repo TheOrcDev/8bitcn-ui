@@ -39,8 +39,8 @@ const exampleQuests: Quest[] = [
 
 export function QuestLogExample() {
   return (
-    <div className="w-full max-w-2xl mx-auto">
-      <QuestLog quests={exampleQuests} maxHeight="500px" className="w-full" />
+    <div className="mx-auto w-full max-w-2xl">
+      <QuestLog className="w-full" maxHeight="500px" quests={exampleQuests} />
     </div>
   );
 }

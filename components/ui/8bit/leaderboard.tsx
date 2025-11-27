@@ -1,9 +1,5 @@
-import * as React from "react";
-
 import { cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-
+import * as React from "react";
 import {
   Avatar,
   AvatarFallback,
@@ -17,10 +13,11 @@ import {
   CardTitle,
 } from "@/components/ui/8bit/card";
 import { Separator } from "@/components/ui/8bit/separator";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 
-export interface LeaderboardPlayer {
+export type LeaderboardPlayer = {
   id: string;
   name: string;
   score: number;
@@ -28,7 +25,7 @@ export interface LeaderboardPlayer {
   isCurrentPlayer?: boolean;
   avatar?: string;
   avatarFallback?: string;
-}
+};
 
 export interface LeaderboardProps extends React.ComponentProps<"div"> {
   players: LeaderboardPlayer[];
@@ -41,18 +38,18 @@ export interface LeaderboardProps extends React.ComponentProps<"div"> {
 }
 
 const playerItemVariants = cva(
-  "flex items-center justify-between p-3 rounded-lg transition-all duration-200",
+  "flex items-center justify-between rounded-lg p-3 transition-all duration-200",
   {
     variants: {
       rank: {
         default: "bg-muted/50 hover:bg-muted",
         first:
-          "bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 border-2 border-yellow-400 hover:from-yellow-400/30 hover:to-yellow-600/30",
+          "border-2 border-yellow-400 bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 hover:from-yellow-400/30 hover:to-yellow-600/30",
         second:
-          "bg-gradient-to-r from-gray-300/20 to-gray-500/20 border-2 border-gray-400 hover:from-gray-300/30 hover:to-gray-500/30",
+          "border-2 border-gray-400 bg-gradient-to-r from-gray-300/20 to-gray-500/20 hover:from-gray-300/30 hover:to-gray-500/30",
         third:
-          "bg-gradient-to-r from-amber-600/20 to-amber-800/20 border-2 border-amber-600 hover:from-amber-600/30 hover:to-amber-800/30",
-        current: "bg-primary/20 border-2 border-primary hover:bg-primary/30",
+          "border-2 border-amber-600 bg-gradient-to-r from-amber-600/20 to-amber-800/20 hover:from-amber-600/30 hover:to-amber-800/30",
+        current: "border-2 border-primary bg-primary/20 hover:bg-primary/30",
       },
     },
     defaultVariants: {
@@ -62,7 +59,7 @@ const playerItemVariants = cva(
 );
 
 const rankBadgeVariants = cva(
-  "flex items-center justify-center size-8 text-sm font-bold",
+  "flex size-8 items-center justify-center font-bold text-sm",
   {
     variants: {
       rank: {
@@ -86,10 +83,18 @@ function getRankVariant(
   rank: number,
   isCurrentPlayer: boolean
 ): "default" | "first" | "second" | "third" | "current" {
-  if (isCurrentPlayer) return "current";
-  if (rank === 1) return "first";
-  if (rank === 2) return "second";
-  if (rank === 3) return "third";
+  if (isCurrentPlayer) {
+    return "current";
+  }
+  if (rank === 1) {
+    return "first";
+  }
+  if (rank === 2) {
+    return "second";
+  }
+  if (rank === 3) {
+    return "third";
+  }
   return "default";
 }
 
@@ -121,23 +126,25 @@ export function Leaderboard({
   ...props
 }: LeaderboardProps) {
   // Sort players by score (descending) and assign ranks
-  const sortedPlayers = React.useMemo(() => {
-    return players
-      .sort((a, b) => b.score - a.score)
-      .slice(0, maxPlayers)
-      .map((player, index) => ({
-        ...player,
-        rank: index + 1,
-        isCurrentPlayer: currentPlayerId
-          ? player.id === currentPlayerId
-          : player.isCurrentPlayer,
-      }));
-  }, [players, maxPlayers, currentPlayerId]);
+  const sortedPlayers = React.useMemo(
+    () =>
+      players
+        .sort((a, b) => b.score - a.score)
+        .slice(0, maxPlayers)
+        .map((player, index) => ({
+          ...player,
+          rank: index + 1,
+          isCurrentPlayer: currentPlayerId
+            ? player.id === currentPlayerId
+            : player.isCurrentPlayer,
+        })),
+    [players, maxPlayers, currentPlayerId]
+  );
 
   return (
     <Card
-      data-slot="leaderboard"
       className={className}
+      data-slot="leaderboard"
       font={"retro"}
       {...props}
     >
@@ -150,7 +157,7 @@ export function Leaderboard({
       <CardContent className="space-y-5">
         <div className="space-y-2">
           {sortedPlayers.length === 0 ? (
-            <div className="text-center py-8 text-muted-foreground">
+            <div className="py-8 text-center text-muted-foreground">
               <p className="retro text-sm">No players yet</p>
             </div>
           ) : (
@@ -162,17 +169,17 @@ export function Leaderboard({
 
               return (
                 <div
-                  key={player.id}
                   className={cn(
                     playerItemVariants({ rank: rankVariant }),
                     "retro"
                   )}
+                  key={player.id}
                 >
                   <div className="flex items-center gap-3">
                     {showAvatar && (
-                      <Avatar variant="pixel" font="retro" className="size-10">
+                      <Avatar className="size-10" font="retro" variant="pixel">
                         {player.avatar && (
-                          <AvatarImage src={player.avatar} alt={player.name} />
+                          <AvatarImage alt={player.name} src={player.avatar} />
                         )}
                         <AvatarFallback className="retro text-xs">
                           {player.avatarFallback ||
@@ -191,12 +198,12 @@ export function Leaderboard({
                       </div>
                     )}
 
-                    <div className="flex-1 min-w-0">
+                    <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-4">
                         <span
                           className={cn(
-                            "font-medium truncate retro text-xs md:text-sm",
-                            player.isCurrentPlayer && "text-primary font-bold"
+                            "retro truncate font-medium text-xs md:text-sm",
+                            player.isCurrentPlayer && "font-bold text-primary"
                           )}
                         >
                           {player.name}
@@ -211,7 +218,7 @@ export function Leaderboard({
                   <div className="flex items-center gap-2">
                     <span
                       className={cn(
-                        "font-bold retro text-xs md:text-sm",
+                        "retro font-bold text-xs md:text-sm",
                         rankVariant === "first" && "text-yellow-600",
                         rankVariant === "second" && "text-gray-600",
                         rankVariant === "third" && "text-amber-700",
@@ -232,7 +239,7 @@ export function Leaderboard({
         {sortedPlayers.length > 0 && (
           <div className="mt-4 pt-4">
             <p
-              className={cn("text-xs text-muted-foreground text-center retro")}
+              className={cn("retro text-center text-muted-foreground text-xs")}
             >
               Showing top {Math.min(sortedPlayers.length, maxPlayers)} players
             </p>

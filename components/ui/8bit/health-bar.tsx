@@ -16,10 +16,10 @@ export default function HealthBar({
   return (
     <Progress
       {...props}
-      value={value}
-      variant={variant}
       className={className}
       progressBg="bg-red-500"
+      value={value}
+      variant={variant}
     />
   );
 }

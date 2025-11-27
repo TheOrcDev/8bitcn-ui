@@ -1,5 +1,3 @@
-import { cn } from "@/lib/utils";
-
 import {
   Alert,
   AlertDescription,
@@ -10,6 +8,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/components/ui/8bit/avatar";
+import { cn } from "@/lib/utils";
 
 export interface DialogueProps extends React.ComponentProps<"div"> {
   avatarSrc?: string;
@@ -31,8 +30,8 @@ export default function Dialogue({
   return (
     <div className={cn("flex gap-3", className)} {...props}>
       {player && (
-        <Avatar variant="retro" className="size-16">
-          <AvatarImage src={avatarSrc} alt={avatarFallback} />
+        <Avatar className="size-16" variant="retro">
+          <AvatarImage alt={avatarFallback} src={avatarSrc} />
           <AvatarFallback>{avatarFallback}</AvatarFallback>
         </Avatar>
       )}
@@ -42,8 +41,8 @@ export default function Dialogue({
       </Alert>
 
       {!player && (
-        <Avatar variant="retro" className="size-16">
-          <AvatarImage src={avatarSrc} alt={avatarFallback} />
+        <Avatar className="size-16" variant="retro">
+          <AvatarImage alt={avatarFallback} src={avatarSrc} />
           <AvatarFallback>{avatarFallback}</AvatarFallback>
         </Avatar>
       )}

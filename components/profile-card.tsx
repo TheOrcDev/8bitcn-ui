@@ -15,7 +15,7 @@ import {
   CardTitle,
 } from "@/components/ui/8bit/card";
 
-interface ProfileCardProps {
+type ProfileCardProps = {
   name: string;
   avatarUrl: string;
   badgeTitle: string;
@@ -23,10 +23,12 @@ interface ProfileCardProps {
   safeGithubUrl: string;
   safeXUrl: string;
   description: string;
-}
+};
 
 function getInitials(name: string) {
-  if (!name) return "?";
+  if (!name) {
+    return "?";
+  }
   const parts = name.trim().split(/\s+/);
   const initials = parts
     .slice(0, 2)
@@ -48,7 +50,7 @@ export default function ProfileCard({
     <Card className="w-full max-w-md">
       <CardHeader className="flex flex-col items-center gap-2">
         <Avatar className="size-20" variant={isRetroAvatar ? "pixel" : "retro"}>
-          <AvatarImage src={avatarUrl} alt={name || "Avatar"} />
+          <AvatarImage alt={name || "Avatar"} src={avatarUrl} />
           <AvatarFallback>{getInitials(name)}</AvatarFallback>
         </Avatar>
 
@@ -60,86 +62,87 @@ export default function ProfileCard({
       </CardHeader>
       <CardContent className="flex flex-col items-center gap-4">
         {description && (
-          <p className="text-sm text-muted-foreground text-center w-3/4 mx-auto">
+          <p className="mx-auto w-3/4 text-center text-muted-foreground text-sm">
             {description}
           </p>
         )}
 
-        <div className="flex items-center gap-4 justify-center">
+        <div className="flex items-center justify-center gap-4">
           <div className="flex items-center gap-3 text-sm">
             {safeGithubUrl && (
-              <Button size="icon" asChild>
+              <Button asChild size="icon">
                 <a href={safeGithubUrl} target="_blank">
                   <svg
-                    width="50"
-                    height="50"
-                    viewBox="0 0 256 256"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                    stroke="currentColor"
-                    strokeWidth="0.25"
                     aria-label="github"
                     className="size-7"
+                    fill="currentColor"
+                    height="50"
+                    stroke="currentColor"
+                    strokeWidth="0.25"
+                    viewBox="0 0 256 256"
+                    width="50"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <rect x="200" y="80" width="14" height="14" rx="1"></rect>
-                    <rect x="184" y="64" width="14" height="14" rx="1"></rect>
-                    <rect x="200" y="96" width="14" height="14" rx="1"></rect>
-                    <rect x="168" y="48" width="14" height="14" rx="1"></rect>
-                    <rect x="72" y="48" width="14" height="14" rx="1"></rect>
-                    <rect x="72" y="64" width="14" height="14" rx="1"></rect>
-                    <rect x="88" y="48" width="14" height="14" rx="1"></rect>
-                    <rect x="152" y="48" width="14" height="14" rx="1"></rect>
-                    <rect x="104" y="48" width="14" height="14" rx="1"></rect>
-                    <rect x="136" y="48" width="14" height="14" rx="1"></rect>
-                    <rect x="120" y="48" width="14" height="14" rx="1"></rect>
-                    <rect x="168" y="64" width="14" height="14" rx="1"></rect>
-                    <rect x="104" y="64" width="14" height="14" rx="1"></rect>
-                    <rect x="136" y="64" width="14" height="14" rx="1"></rect>
-                    <rect x="120" y="64" width="14" height="14" rx="1"></rect>
-                    <rect x="56" y="64" width="14" height="14" rx="1"></rect>
-                    <rect x="40" y="80" width="14" height="14" rx="1"></rect>
-                    <rect x="40" y="96" width="14" height="14" rx="1"></rect>
-                    <rect x="40" y="112" width="14" height="14" rx="1"></rect>
-                    <rect x="40" y="128" width="14" height="14" rx="1"></rect>
-                    <rect x="56" y="80" width="14" height="14" rx="1"></rect>
-                    <rect x="56" y="96" width="14" height="14" rx="1"></rect>
-                    <rect x="56" y="112" width="14" height="14" rx="1"></rect>
-                    <rect x="56" y="128" width="14" height="14" rx="1"></rect>
-                    <rect x="184" y="80" width="14" height="14" rx="1"></rect>
-                    <rect x="184" y="96" width="14" height="14" rx="1"></rect>
-                    <rect x="184" y="112" width="14" height="14" rx="1"></rect>
-                    <rect x="168" y="80" width="14" height="14" rx="1"></rect>
-                    <rect x="184" y="144" width="14" height="14" rx="1"></rect>
-                    <rect x="72" y="80" width="14" height="14" rx="1"></rect>
-                    <rect x="88" y="144" width="14" height="14" rx="1"></rect>
-                    <rect x="184" y="128" width="14" height="14" rx="1"></rect>
-                    <rect x="72" y="144" width="14" height="14" rx="1"></rect>
-                    <rect x="168" y="144" width="14" height="14" rx="1"></rect>
-                    <rect x="152" y="144" width="14" height="14" rx="1"></rect>
-                    <rect x="136" y="144" width="14" height="14" rx="1"></rect>
-                    <rect x="104" y="144" width="14" height="14" rx="1"></rect>
-                    <rect x="168" y="128" width="14" height="14" rx="1"></rect>
-                    <rect x="72" y="128" width="14" height="14" rx="1"></rect>
-                    <rect x="168" y="160" width="14" height="14" rx="1"></rect>
-                    <rect x="152" y="160" width="14" height="14" rx="1"></rect>
-                    <rect x="88" y="192" width="14" height="14" rx="1"></rect>
-                    <rect x="72" y="176" width="14" height="14" rx="1"></rect>
-                    <rect x="56" y="176" width="14" height="14" rx="1"></rect>
-                    <rect x="56" y="160" width="14" height="14" rx="1"></rect>
-                    <rect x="40" y="160" width="14" height="14" rx="1"></rect>
-                    <rect x="152" y="176" width="14" height="14" rx="1"></rect>
-                    <rect x="88" y="176" width="14" height="14" rx="1"></rect>
-                    <rect x="152" y="192" width="14" height="14" rx="1"></rect>
-                    <rect x="168" y="192" width="14" height="14" rx="1"></rect>
-                    <rect x="72" y="192" width="14" height="14" rx="1"></rect>
-                    <rect x="168" y="176" width="14" height="14" rx="1"></rect>
-                    <rect x="184" y="176" width="14" height="14" rx="1"></rect>
-                    <rect x="184" y="160" width="14" height="14" rx="1"></rect>
-                    <rect x="200" y="160" width="14" height="14" rx="1"></rect>
-                    <rect x="200" y="128" width="14" height="14" rx="1"></rect>
-                    <rect x="200" y="144" width="14" height="14" rx="1"></rect>
-                    <rect x="40" y="144" width="14" height="14" rx="1"></rect>
-                    <rect x="200" y="112" width="14" height="14" rx="1"></rect>
+                    <title>Github</title>
+                    <rect height="14" rx="1" width="14" x="200" y="80" />
+                    <rect height="14" rx="1" width="14" x="184" y="64" />
+                    <rect height="14" rx="1" width="14" x="200" y="96" />
+                    <rect height="14" rx="1" width="14" x="168" y="48" />
+                    <rect height="14" rx="1" width="14" x="72" y="48" />
+                    <rect height="14" rx="1" width="14" x="72" y="64" />
+                    <rect height="14" rx="1" width="14" x="88" y="48" />
+                    <rect height="14" rx="1" width="14" x="152" y="48" />
+                    <rect height="14" rx="1" width="14" x="104" y="48" />
+                    <rect height="14" rx="1" width="14" x="136" y="48" />
+                    <rect height="14" rx="1" width="14" x="120" y="48" />
+                    <rect height="14" rx="1" width="14" x="168" y="64" />
+                    <rect height="14" rx="1" width="14" x="104" y="64" />
+                    <rect height="14" rx="1" width="14" x="136" y="64" />
+                    <rect height="14" rx="1" width="14" x="120" y="64" />
+                    <rect height="14" rx="1" width="14" x="56" y="64" />
+                    <rect height="14" rx="1" width="14" x="40" y="80" />
+                    <rect height="14" rx="1" width="14" x="40" y="96" />
+                    <rect height="14" rx="1" width="14" x="40" y="112" />
+                    <rect height="14" rx="1" width="14" x="40" y="128" />
+                    <rect height="14" rx="1" width="14" x="56" y="80" />
+                    <rect height="14" rx="1" width="14" x="56" y="96" />
+                    <rect height="14" rx="1" width="14" x="56" y="112" />
+                    <rect height="14" rx="1" width="14" x="56" y="128" />
+                    <rect height="14" rx="1" width="14" x="184" y="80" />
+                    <rect height="14" rx="1" width="14" x="184" y="96" />
+                    <rect height="14" rx="1" width="14" x="184" y="112" />
+                    <rect height="14" rx="1" width="14" x="168" y="80" />
+                    <rect height="14" rx="1" width="14" x="184" y="144" />
+                    <rect height="14" rx="1" width="14" x="72" y="80" />
+                    <rect height="14" rx="1" width="14" x="88" y="144" />
+                    <rect height="14" rx="1" width="14" x="184" y="128" />
+                    <rect height="14" rx="1" width="14" x="72" y="144" />
+                    <rect height="14" rx="1" width="14" x="168" y="144" />
+                    <rect height="14" rx="1" width="14" x="152" y="144" />
+                    <rect height="14" rx="1" width="14" x="136" y="144" />
+                    <rect height="14" rx="1" width="14" x="104" y="144" />
+                    <rect height="14" rx="1" width="14" x="168" y="128" />
+                    <rect height="14" rx="1" width="14" x="72" y="128" />
+                    <rect height="14" rx="1" width="14" x="168" y="160" />
+                    <rect height="14" rx="1" width="14" x="152" y="160" />
+                    <rect height="14" rx="1" width="14" x="88" y="192" />
+                    <rect height="14" rx="1" width="14" x="72" y="176" />
+                    <rect height="14" rx="1" width="14" x="56" y="176" />
+                    <rect height="14" rx="1" width="14" x="56" y="160" />
+                    <rect height="14" rx="1" width="14" x="40" y="160" />
+                    <rect height="14" rx="1" width="14" x="152" y="176" />
+                    <rect height="14" rx="1" width="14" x="88" y="176" />
+                    <rect height="14" rx="1" width="14" x="152" y="192" />
+                    <rect height="14" rx="1" width="14" x="168" y="192" />
+                    <rect height="14" rx="1" width="14" x="72" y="192" />
+                    <rect height="14" rx="1" width="14" x="168" y="176" />
+                    <rect height="14" rx="1" width="14" x="184" y="176" />
+                    <rect height="14" rx="1" width="14" x="184" y="160" />
+                    <rect height="14" rx="1" width="14" x="200" y="160" />
+                    <rect height="14" rx="1" width="14" x="200" y="128" />
+                    <rect height="14" rx="1" width="14" x="200" y="144" />
+                    <rect height="14" rx="1" width="14" x="40" y="144" />
+                    <rect height="14" rx="1" width="14" x="200" y="112" />
                   </svg>
                 </a>
               </Button>
@@ -150,52 +153,53 @@ export default function ProfileCard({
             )}
 
             {safeXUrl && (
-              <Button size="icon" asChild>
+              <Button asChild size="icon">
                 <a href={safeXUrl} target="_blank">
                   <svg
-                    width="50"
-                    height="50"
-                    viewBox="0 0 256 256"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                    stroke="currentColor"
-                    strokeWidth="0.25"
                     aria-label="twitter"
                     className="size-6"
+                    fill="currentColor"
+                    height="50"
+                    stroke="currentColor"
+                    strokeWidth="0.25"
+                    viewBox="0 0 256 256"
+                    width="50"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <rect x="40" y="40" width="14" height="14" rx="1"></rect>
-                    <rect x="56" y="40" width="14" height="14" rx="1"></rect>
-                    <rect x="72" y="56" width="14" height="14" rx="1"></rect>
-                    <rect x="88" y="72" width="14" height="14" rx="1"></rect>
-                    <rect x="104" y="88" width="14" height="14" rx="1"></rect>
-                    <rect x="120" y="104" width="14" height="14" rx="1"></rect>
-                    <rect x="136" y="120" width="14" height="14" rx="1"></rect>
-                    <rect x="152" y="136" width="14" height="14" rx="1"></rect>
-                    <rect x="168" y="152" width="14" height="14" rx="1"></rect>
-                    <rect x="200" y="184" width="14" height="14" rx="1"></rect>
-                    <rect x="200" y="200" width="14" height="14" rx="1"></rect>
-                    <rect x="184" y="200" width="14" height="14" rx="1"></rect>
-                    <rect x="152" y="168" width="14" height="14" rx="1"></rect>
-                    <rect x="168" y="184" width="14" height="14" rx="1"></rect>
-                    <rect x="184" y="168" width="14" height="14" rx="1"></rect>
-                    <rect x="136" y="152" width="14" height="14" rx="1"></rect>
-                    <rect x="120" y="136" width="14" height="14" rx="1"></rect>
-                    <rect x="104" y="120" width="14" height="14" rx="1"></rect>
-                    <rect x="88" y="104" width="14" height="14" rx="1"></rect>
-                    <rect x="72" y="88" width="14" height="14" rx="1"></rect>
-                    <rect x="56" y="72" width="14" height="14" rx="1"></rect>
-                    <rect x="40" y="56" width="14" height="14" rx="1"></rect>
-                    <rect x="136" y="104" width="14" height="14" rx="1"></rect>
-                    <rect x="152" y="88" width="14" height="14" rx="1"></rect>
-                    <rect x="200" y="40" width="14" height="14" rx="1"></rect>
-                    <rect x="40" y="200" width="14" height="14" rx="1"></rect>
-                    <rect x="152" y="88" width="14" height="14" rx="1"></rect>
-                    <rect x="168" y="72" width="14" height="14" rx="1"></rect>
-                    <rect x="184" y="56" width="14" height="14" rx="1"></rect>
-                    <rect x="104" y="136" width="14" height="14" rx="1"></rect>
-                    <rect x="88" y="152" width="14" height="14" rx="1"></rect>
-                    <rect x="72" y="168" width="14" height="14" rx="1"></rect>
-                    <rect x="56" y="184" width="14" height="14" rx="1"></rect>
+                    <title>Twitter</title>
+                    <rect height="14" rx="1" width="14" x="40" y="40" />
+                    <rect height="14" rx="1" width="14" x="56" y="40" />
+                    <rect height="14" rx="1" width="14" x="72" y="56" />
+                    <rect height="14" rx="1" width="14" x="88" y="72" />
+                    <rect height="14" rx="1" width="14" x="104" y="88" />
+                    <rect height="14" rx="1" width="14" x="120" y="104" />
+                    <rect height="14" rx="1" width="14" x="136" y="120" />
+                    <rect height="14" rx="1" width="14" x="152" y="136" />
+                    <rect height="14" rx="1" width="14" x="168" y="152" />
+                    <rect height="14" rx="1" width="14" x="200" y="184" />
+                    <rect height="14" rx="1" width="14" x="200" y="200" />
+                    <rect height="14" rx="1" width="14" x="184" y="200" />
+                    <rect height="14" rx="1" width="14" x="152" y="168" />
+                    <rect height="14" rx="1" width="14" x="168" y="184" />
+                    <rect height="14" rx="1" width="14" x="184" y="168" />
+                    <rect height="14" rx="1" width="14" x="136" y="152" />
+                    <rect height="14" rx="1" width="14" x="120" y="136" />
+                    <rect height="14" rx="1" width="14" x="104" y="120" />
+                    <rect height="14" rx="1" width="14" x="88" y="104" />
+                    <rect height="14" rx="1" width="14" x="72" y="88" />
+                    <rect height="14" rx="1" width="14" x="56" y="72" />
+                    <rect height="14" rx="1" width="14" x="40" y="56" />
+                    <rect height="14" rx="1" width="14" x="136" y="104" />
+                    <rect height="14" rx="1" width="14" x="152" y="88" />
+                    <rect height="14" rx="1" width="14" x="200" y="40" />
+                    <rect height="14" rx="1" width="14" x="40" y="200" />
+                    <rect height="14" rx="1" width="14" x="152" y="88" />
+                    <rect height="14" rx="1" width="14" x="168" y="72" />
+                    <rect height="14" rx="1" width="14" x="184" y="56" />
+                    <rect height="14" rx="1" width="14" x="104" y="136" />
+                    <rect height="14" rx="1" width="14" x="88" y="152" />
+                    <rect height="14" rx="1" width="14" x="72" y="168" />
+                    <rect height="14" rx="1" width="14" x="56" y="184" />
                   </svg>
                 </a>
               </Button>
@@ -203,7 +207,7 @@ export default function ProfileCard({
           </div>
         </div>
       </CardContent>
-      <CardFooter className="justify-end gap-2"></CardFooter>
+      <CardFooter className="justify-end gap-2" />
     </Card>
   );
 }

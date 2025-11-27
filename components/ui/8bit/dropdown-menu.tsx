@@ -1,8 +1,5 @@
 import type * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import { type VariantProps, cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-
+import { cva, type VariantProps } from "class-variance-authority";
 import {
   DropdownMenu as ShadcnDropdownMenu,
   DropdownMenuCheckboxItem as ShadcnDropdownMenuCheckboxItem,
@@ -18,6 +15,7 @@ import {
   DropdownMenuSubTrigger as ShadcnDropdownMenuSubTrigger,
   DropdownMenuTrigger as ShadcnDropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 
@@ -47,7 +45,7 @@ function DropdownMenuSubTrigger({
   return (
     <ShadcnDropdownMenuSubTrigger
       className={cn(
-        "hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none border-dashed border-y-4 border-transparent focus:border-foreground hover:border-foreground dark:focus:border-ring bg-transparent data-[state=open]:bg-transparent data-[state=open]:border-foreground dark:data-[state=open]:border-ring",
+        "rounded-none border-transparent border-y-4 border-dashed bg-transparent hover:border-foreground hover:bg-transparent focus:border-foreground focus:bg-transparent active:bg-transparent data-[state=open]:border-foreground data-[state=open]:bg-transparent dark:data-[state=open]:border-ring dark:focus:border-ring",
         className
       )}
       {...props}
@@ -68,7 +66,7 @@ function DropdownMenuItem({
   return (
     <ShadcnDropdownMenuItem
       className={cn(
-        "hover:bg-transparent active:bg-transparent focus:bg-transparent rounded-none border-dashed border-y-3 border-transparent focus:border-foreground hover:border-foreground dark:focus:border-ring bg-transparent",
+        "rounded-none border-transparent border-y-3 border-dashed bg-transparent hover:border-foreground hover:bg-transparent focus:border-foreground focus:bg-transparent active:bg-transparent dark:focus:border-ring",
         className
       )}
       {...props}
@@ -104,12 +102,12 @@ function DropdownMenuSubContent({
       {children}
 
       <div
-        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-mx-1.5 pointer-events-none absolute inset-0 border-foreground border-x-6 dark:border-ring"
       />
       <div
-        className="absolute inset-0 border-y-6 -my-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-my-1.5 pointer-events-none absolute inset-0 border-foreground border-y-6 dark:border-ring"
       />
     </ShadcnDropdownMenuSubContent>
   );
@@ -133,12 +131,12 @@ function DropdownMenuContent({
       {children}
 
       <div
-        className="mt-2.5 absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-mx-1.5 pointer-events-none absolute inset-0 mt-2.5 border-foreground border-x-6 dark:border-ring"
       />
       <div
-        className="mt-1 absolute inset-0 border-y-6 -my-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-my-1.5 pointer-events-none absolute inset-0 mt-1 border-foreground border-y-6 dark:border-ring"
       />
     </ShadcnDropdownMenuContent>
   );

@@ -1,7 +1,4 @@
-import { type VariantProps, cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-
+import { cva, type VariantProps } from "class-variance-authority";
 import {
   Card as ShadcnCard,
   CardAction as ShadcnCardAction,
@@ -11,6 +8,7 @@ import {
   CardHeader as ShadcnCardHeader,
   CardTitle as ShadcnCardTitle,
 } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 
@@ -38,22 +36,22 @@ function Card({ ...props }: BitCardProps) {
   return (
     <div
       className={cn(
-        "relative border-y-6 border-foreground dark:border-ring !p-0",
+        "!p-0 relative border-foreground border-y-6 dark:border-ring",
         className
       )}
     >
       <ShadcnCard
         {...props}
         className={cn(
-          "rounded-none border-0 !w-full",
+          "!w-full rounded-none border-0",
           font !== "normal" && "retro",
           className
         )}
       />
 
       <div
-        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-mx-1.5 pointer-events-none absolute inset-0 border-foreground border-x-6 dark:border-ring"
       />
     </div>
   );
@@ -119,8 +117,8 @@ function CardFooter({ ...props }: BitCardProps) {
 
   return (
     <ShadcnCardFooter
-      data-slot="card-footer"
       className={cn(font !== "normal" && "retro", className)}
+      data-slot="card-footer"
       {...props}
     />
   );

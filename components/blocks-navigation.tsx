@@ -2,9 +2,9 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/8bit/button";
 
-interface BlocksNavigationProps {
+type BlocksNavigationProps = {
   active: string;
-}
+};
 
 const blocks = [
   {
@@ -38,7 +38,7 @@ export default function BlocksNavigation({ active }: BlocksNavigationProps) {
   return (
     <div className="flex flex-wrap gap-5">
       {blocks.map((block) => (
-        <Link key={block.id} href={block.href}>
+        <Link href={block.href} key={block.id}>
           <Button variant={active === block.id ? "default" : "outline"}>
             {block.title}
           </Button>

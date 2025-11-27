@@ -2,10 +2,10 @@ import React from "react";
 
 import { cn } from "@/lib/utils";
 
-interface CommonSpinnerProps {
+type CommonSpinnerProps = {
   className?: string;
   variant?: "classic" | "diamond";
-}
+};
 
 type SpinnerProps = CommonSpinnerProps &
   (
@@ -19,68 +19,68 @@ const Spinner = React.forwardRef<SVGSVGElement, SpinnerProps>(
       <>
         {variant === "classic" && (
           <svg
-            ref={ref}
-            width="50"
-            height="50"
-            viewBox="0 0 256 256"
+            aria-label="Loading"
+            className={cn("size-5 animate-spin", className)}
             fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
+            height="50"
+            ref={ref}
+            role="status"
             stroke="currentColor"
             strokeWidth="0.25"
-            className={cn("animate-spin size-5", className)}
-            role="status"
-            aria-label="Loading"
+            viewBox="0 0 256 256"
+            width="50"
+            xmlns="http://www.w3.org/2000/svg"
             {...(props as React.ComponentProps<"svg">)}
           >
-            <rect x="200" y="80" width="14" height="14" rx="1"></rect>
-            <rect x="200" y="96" width="14" height="14" rx="1"></rect>
-            <rect x="184" y="96" width="14" height="14" rx="1"></rect>
-            <rect x="184" y="80" width="14" height="14" rx="1"></rect>
-            <rect x="200" y="64" width="14" height="14" rx="1"></rect>
-            <rect x="168" y="96" width="14" height="14" rx="1"></rect>
-            <rect x="168" y="64" width="14" height="14" rx="1"></rect>
-            <rect x="152" y="48" width="14" height="14" rx="1"></rect>
-            <rect x="136" y="48" width="14" height="14" rx="1"></rect>
-            <rect x="120" y="48" width="14" height="14" rx="1"></rect>
-            <rect x="56" y="64" width="14" height="14" rx="1"></rect>
-            <rect x="72" y="64" width="14" height="14" rx="1"></rect>
-            <rect x="88" y="48" width="14" height="14" rx="1"></rect>
-            <rect x="104" y="48" width="14" height="14" rx="1"></rect>
-            <rect x="56" y="80" width="14" height="14" rx="1"></rect>
-            <rect x="40" y="80" width="14" height="14" rx="1"></rect>
-            <rect x="40" y="96" width="14" height="14" rx="1"></rect>
-            <rect x="40" y="112" width="14" height="14" rx="1"></rect>
-            <rect x="72" y="144" width="14" height="14" rx="1"></rect>
-            <rect x="40" y="160" width="14" height="14" rx="1"></rect>
-            <rect x="104" y="192" width="14" height="14" rx="1"></rect>
-            <rect x="88" y="192" width="14" height="14" rx="1"></rect>
-            <rect x="40" y="176" width="14" height="14" rx="1"></rect>
-            <rect x="56" y="160" width="14" height="14" rx="1"></rect>
-            <rect x="56" y="144" width="14" height="14" rx="1"></rect>
-            <rect x="40" y="144" width="14" height="14" rx="1"></rect>
-            <rect x="120" y="192" width="14" height="14" rx="1"></rect>
-            <rect x="136" y="192" width="14" height="14" rx="1"></rect>
-            <rect x="152" y="192" width="14" height="14" rx="1"></rect>
-            <rect x="168" y="192" width="14" height="14" rx="1"></rect>
-            <rect x="72" y="48" width="14" height="14" rx="1"></rect>
-            <rect x="72" y="176" width="14" height="14" rx="1"></rect>
-            <rect x="168" y="176" width="14" height="14" rx="1"></rect>
-            <rect x="184" y="176" width="14" height="14" rx="1"></rect>
-            <rect x="184" y="160" width="14" height="14" rx="1"></rect>
-            <rect x="200" y="160" width="14" height="14" rx="1"></rect>
-            <rect x="200" y="144" width="14" height="14" rx="1"></rect>
-            <rect x="200" y="128" width="14" height="14" rx="1"></rect>
+            <rect height="14" rx="1" width="14" x="200" y="80" />
+            <rect height="14" rx="1" width="14" x="200" y="96" />
+            <rect height="14" rx="1" width="14" x="184" y="96" />
+            <rect height="14" rx="1" width="14" x="184" y="80" />
+            <rect height="14" rx="1" width="14" x="200" y="64" />
+            <rect height="14" rx="1" width="14" x="168" y="96" />
+            <rect height="14" rx="1" width="14" x="168" y="64" />
+            <rect height="14" rx="1" width="14" x="152" y="48" />
+            <rect height="14" rx="1" width="14" x="136" y="48" />
+            <rect height="14" rx="1" width="14" x="120" y="48" />
+            <rect height="14" rx="1" width="14" x="56" y="64" />
+            <rect height="14" rx="1" width="14" x="72" y="64" />
+            <rect height="14" rx="1" width="14" x="88" y="48" />
+            <rect height="14" rx="1" width="14" x="104" y="48" />
+            <rect height="14" rx="1" width="14" x="56" y="80" />
+            <rect height="14" rx="1" width="14" x="40" y="80" />
+            <rect height="14" rx="1" width="14" x="40" y="96" />
+            <rect height="14" rx="1" width="14" x="40" y="112" />
+            <rect height="14" rx="1" width="14" x="72" y="144" />
+            <rect height="14" rx="1" width="14" x="40" y="160" />
+            <rect height="14" rx="1" width="14" x="104" y="192" />
+            <rect height="14" rx="1" width="14" x="88" y="192" />
+            <rect height="14" rx="1" width="14" x="40" y="176" />
+            <rect height="14" rx="1" width="14" x="56" y="160" />
+            <rect height="14" rx="1" width="14" x="56" y="144" />
+            <rect height="14" rx="1" width="14" x="40" y="144" />
+            <rect height="14" rx="1" width="14" x="120" y="192" />
+            <rect height="14" rx="1" width="14" x="136" y="192" />
+            <rect height="14" rx="1" width="14" x="152" y="192" />
+            <rect height="14" rx="1" width="14" x="168" y="192" />
+            <rect height="14" rx="1" width="14" x="72" y="48" />
+            <rect height="14" rx="1" width="14" x="72" y="176" />
+            <rect height="14" rx="1" width="14" x="168" y="176" />
+            <rect height="14" rx="1" width="14" x="184" y="176" />
+            <rect height="14" rx="1" width="14" x="184" y="160" />
+            <rect height="14" rx="1" width="14" x="200" y="160" />
+            <rect height="14" rx="1" width="14" x="200" y="144" />
+            <rect height="14" rx="1" width="14" x="200" y="128" />
           </svg>
         )}
 
         {variant === "diamond" && (
           <svg
-            ref={ref as React.Ref<SVGSVGElement>}
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className={cn("size-4", className)}
-            role="status"
             aria-label="Loading"
+            className={cn("size-4", className)}
+            fill="currentColor"
+            ref={ref as React.Ref<SVGSVGElement>}
+            role="status"
+            viewBox="0 0 20 20"
             {...(props as React.ComponentProps<"svg">)}
           >
             <style
@@ -103,21 +103,21 @@ const Spinner = React.forwardRef<SVGSVGElement, SpinnerProps>(
               }}
             />
             {/* Top */}
-            <rect className="pixel-1" x="8" y="0" width="4" height="4" />
+            <rect className="pixel-1" height="4" width="4" x="8" y="0" />
             {/* Top Right */}
-            <rect className="pixel-2" x="12" y="4" width="4" height="4" />
+            <rect className="pixel-2" height="4" width="4" x="12" y="4" />
             {/* Right */}
-            <rect className="pixel-3" x="16" y="8" width="4" height="4" />
+            <rect className="pixel-3" height="4" width="4" x="16" y="8" />
             {/* Bottom Right */}
-            <rect className="pixel-4" x="12" y="12" width="4" height="4" />
+            <rect className="pixel-4" height="4" width="4" x="12" y="12" />
             {/* Bottom */}
-            <rect className="pixel-5" x="8" y="16" width="4" height="4" />
+            <rect className="pixel-5" height="4" width="4" x="8" y="16" />
             {/* Bottom Left */}
-            <rect className="pixel-6" x="4" y="12" width="4" height="4" />
+            <rect className="pixel-6" height="4" width="4" x="4" y="12" />
             {/* Left */}
-            <rect className="pixel-7" x="0" y="8" width="4" height="4" />
+            <rect className="pixel-7" height="4" width="4" x="0" y="8" />
             {/* Top Left */}
-            <rect className="pixel-8" x="4" y="4" width="4" height="4" />
+            <rect className="pixel-8" height="4" width="4" x="4" y="4" />
           </svg>
         )}
       </>

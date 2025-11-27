@@ -1,14 +1,12 @@
 import type * as TabsPrimitive from "@radix-ui/react-tabs";
-import { type VariantProps, cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-
+import { cva, type VariantProps } from "class-variance-authority";
 import {
   Tabs as ShadcnTabs,
   TabsContent as ShadcnTabsContent,
   TabsList as ShadcnTabsList,
   TabsTrigger as ShadcnTabsTrigger,
 } from "@/components/ui/tabs";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 
@@ -53,16 +51,16 @@ function TabsList({
   return (
     <ShadcnTabsList
       {...props}
-      className={cn("relative bg-card rounded-none", className)}
+      className={cn("relative rounded-none bg-card", className)}
     >
       <div
-        className="absolute inset-0 border-y-6 -my-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-my-1.5 pointer-events-none absolute inset-0 border-foreground border-y-6 dark:border-ring"
       />
 
       <div
-        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-mx-1.5 pointer-events-none absolute inset-0 border-foreground border-x-6 dark:border-ring"
       />
       {children}
     </ShadcnTabsList>
@@ -77,7 +75,7 @@ function TabsTrigger({
   return (
     <ShadcnTabsTrigger
       className={cn(
-        "border-none data-[state=active]:bg-accent data-[state=active]:text-foreground text-muted-foreground rounded-none",
+        "rounded-none border-none text-muted-foreground data-[state=active]:bg-accent data-[state=active]:text-foreground",
         className
       )}
       {...props}

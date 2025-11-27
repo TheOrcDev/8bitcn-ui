@@ -37,15 +37,15 @@ export default function ChartBarMultiple() {
       <BarChart data={chartData}>
         <CartesianGrid vertical={false} />
         <XAxis
+          axisLine={false}
           dataKey="month"
+          tickFormatter={(value) => value.slice(0, 3)}
           tickLine={false}
           tickMargin={10}
-          axisLine={false}
-          tickFormatter={(value) => value.slice(0, 3)}
         />
         <ChartTooltip
-          cursor={false}
           content={<ChartTooltipContent indicator="dot" />}
+          cursor={false}
         />
         <Bar dataKey="desktop" fill="var(--color-desktop)" />
         <Bar dataKey="mobile" fill="var(--color-mobile)" />

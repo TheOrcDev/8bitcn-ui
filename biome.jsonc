@@ -1,0 +1,40 @@
+{
+  "files": {
+    "includes": [
+      "**/*",
+      "!components/ui/**/*",
+      "!lib/**/*",
+      "!hooks/**/*",
+      "!.source/**/*",
+      "!**/*.css"
+    ]
+  },
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["ultracite/core", "ultracite/next"],
+  "linter": {
+    "rules": {
+      "performance": {
+        "noNamespaceImport": "off",
+        "useTopLevelRegex": "off"
+      },
+      "complexity": {
+        "noForEach": "off",
+        "noExcessiveCognitiveComplexity": "off"
+      },
+      "suspicious": {
+        "noDocumentCookie": "off"
+      },
+      "a11y": {
+        "noSvgWithoutTitle": "off",
+        "noLabelWithoutControl": "off"
+      },
+      "style": {
+        "noNestedTernary": "off",
+        "noNonNullAssertion": "off"
+      },
+      "nursery": {
+        "noShadow": "off"
+      }
+    }
+  }
+}

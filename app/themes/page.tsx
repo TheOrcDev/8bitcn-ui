@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 export default function ThemesPage() {
   return (
     <>
-      <div className="flex flex-col p-4 gap-5 py-10">
-        <h1 className={`retro md:text-2xl font-bold`}>
+      <div className="flex flex-col gap-5 p-4 py-10">
+        <h1 className={"retro font-bold md:text-2xl"}>
           Add colors. Make it yours.
         </h1>
         <p className="max-w-2xl text-sm md:text-base">

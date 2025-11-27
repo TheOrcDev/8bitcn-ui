@@ -1,9 +1,7 @@
-import { type VariantProps, cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 import type { DayPicker } from "react-day-picker";
-
-import { cn } from "@/lib/utils";
-
 import { Calendar as ShadcnCalendar } from "@/components/ui/calendar";
+import { cn } from "@/lib/utils";
 
 import { buttonVariants } from "./button";
 import {
@@ -34,7 +32,7 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
   return (
     <div
       className={cn(
-        "bg-popover relative border-y-6 border-foreground dark:border-ring w-max",
+        "relative w-max border-foreground border-y-6 bg-popover dark:border-ring",
         className
       )}
     >
@@ -48,14 +46,14 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
         classNames={{
           nav_button: cn(
             buttonVariants({ variant: "outline" }),
-            "size-7 bg-transparent p-0 flex items-center justify-center hover:opacity-50 border-2 border-foreground dark:border-ring"
+            "flex size-7 items-center justify-center border-2 border-foreground bg-transparent p-0 hover:opacity-50 dark:border-ring"
           ),
           day_button: cn(
             buttonVariants({ variant: "ghost" }),
             "h-10 font-normal aria-selected:opacity-100"
           ),
           day: cn(
-            "relative w-full h-full p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md group/day select-none"
+            "group/day relative h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md"
           ),
           caption_label: "text-xs font-medium",
           ...classNames,
@@ -84,7 +82,7 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
             return (
               <div className={cn("flex flex-col gap-3 text-xs", className)}>
                 <Select defaultValue={currentMonthName}>
-                  <SelectTrigger id="dropdown" className="bg-background w-full">
+                  <SelectTrigger className="w-full bg-background" id="dropdown">
                     <SelectValue placeholder="Dropdown" />
                   </SelectTrigger>
                   <SelectContent align="center">
@@ -108,7 +106,7 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
             return (
               <div className={cn("flex flex-col gap-3 text-xs", className)}>
                 <Select defaultValue={currentYear?.toString()}>
-                  <SelectTrigger id="dropdown" className="bg-background w-full">
+                  <SelectTrigger className="w-full bg-background" id="dropdown">
                     <SelectValue placeholder="Dropdown" />
                   </SelectTrigger>
                   <SelectContent align="center">
@@ -126,81 +124,83 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
             if (props.orientation === "left") {
               return (
                 <svg
-                  viewBox="0 0 256 256"
+                  aria-label="chevron-left"
+                  className={cn("size-4 shrink-0", className)}
+                  color=""
                   fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
                   stroke="currentColor"
                   strokeWidth="0.25"
-                  color=""
-                  className={cn("size-4 shrink-0", className)}
-                  aria-label="chevron-left"
+                  viewBox="0 0 256 256"
+                  xmlns="http://www.w3.org/2000/svg"
                   {...props}
                 >
+                  <title>Previous month</title>
                   <rect
-                    width="14"
                     height="14"
                     rx="1"
                     transform="matrix(-1 0 0 1 128 136)"
-                  ></rect>
-                  <rect
                     width="14"
+                  />
+                  <rect
                     height="14"
                     rx="1"
                     transform="matrix(-1 0 0 1 144 152)"
-                  ></rect>
-                  <rect
                     width="14"
+                  />
+                  <rect
                     height="14"
                     rx="1"
                     transform="matrix(-1 0 0 1 160 72)"
-                  ></rect>
-                  <rect
                     width="14"
+                  />
+                  <rect
                     height="14"
                     rx="1"
                     transform="matrix(-1 0 0 1 160 168)"
-                  ></rect>
-                  <rect
                     width="14"
+                  />
+                  <rect
                     height="14"
                     rx="1"
                     transform="matrix(-1 0 0 1 112 120)"
-                  ></rect>
-                  <rect
                     width="14"
+                  />
+                  <rect
                     height="14"
                     rx="1"
                     transform="matrix(-1 0 0 1 128 104)"
-                  ></rect>
-                  <rect
                     width="14"
+                  />
+                  <rect
                     height="14"
                     rx="1"
                     transform="matrix(-1 0 0 1 144 88)"
-                  ></rect>
+                    width="14"
+                  />
                 </svg>
               );
             }
 
             return (
               <svg
-                viewBox="0 0 256 256"
+                aria-label="chevron-right"
+                className={cn("size-4 shrink-0", className)}
+                color=""
                 fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
                 stroke="currentColor"
                 strokeWidth="0.25"
-                color=""
-                className={cn("size-4 shrink-0", className)}
-                aria-label="chevron-right"
+                viewBox="0 0 256 256"
+                xmlns="http://www.w3.org/2000/svg"
                 {...props}
               >
-                <rect x="128" y="136" width="14" height="14" rx="1"></rect>
-                <rect x="112" y="152" width="14" height="14" rx="1"></rect>
-                <rect x="96" y="72" width="14" height="14" rx="1"></rect>
-                <rect x="96" y="168" width="14" height="14" rx="1"></rect>
-                <rect x="144" y="120" width="14" height="14" rx="1"></rect>
-                <rect x="128" y="104" width="14" height="14" rx="1"></rect>
-                <rect x="112" y="88" width="14" height="14" rx="1"></rect>
+                <title>Next month</title>
+                <rect height="14" rx="1" width="14" x="128" y="136" />
+                <rect height="14" rx="1" width="14" x="112" y="152" />
+                <rect height="14" rx="1" width="14" x="96" y="72" />
+                <rect height="14" rx="1" width="14" x="96" y="168" />
+                <rect height="14" rx="1" width="14" x="144" y="120" />
+                <rect height="14" rx="1" width="14" x="128" y="104" />
+                <rect height="14" rx="1" width="14" x="112" y="88" />
               </svg>
             );
           },
@@ -209,8 +209,8 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
       />
 
       <div
-        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-mx-1.5 pointer-events-none absolute inset-0 border-foreground border-x-6 dark:border-ring"
       />
     </div>
   );

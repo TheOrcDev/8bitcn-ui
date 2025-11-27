@@ -1,8 +1,7 @@
 "use client";
 
-import * as React from "react";
-
 import * as SliderPrimitive from "@radix-ui/react-slider";
+import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -12,27 +11,27 @@ const Slider = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div className={cn("relative w-full", className)}>
     <SliderPrimitive.Root
-      ref={ref}
       className={cn(
         "relative flex w-full touch-none select-none items-center",
         className
       )}
+      ref={ref}
       {...props}
     >
       <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden bg-secondary">
         <SliderPrimitive.Range className="absolute h-full bg-primary" />
       </SliderPrimitive.Track>
-      <SliderPrimitive.Thumb className="block size-5 border-2 border-foreground dark:border-ring bg-foreground dark:bg-ring ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 disabled:pointer-events-none disabled:opacity-50" />
+      <SliderPrimitive.Thumb className="block size-5 border-2 border-foreground bg-foreground ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 disabled:pointer-events-none disabled:opacity-50 dark:border-ring dark:bg-ring" />
     </SliderPrimitive.Root>
 
     <div
-      className="absolute inset-0 border-y-4 -my-1 border-foreground dark:border-ring pointer-events-none"
       aria-hidden="true"
+      className="-my-1 pointer-events-none absolute inset-0 border-foreground border-y-4 dark:border-ring"
     />
 
     <div
-      className="absolute inset-0 border-x-4 -mx-1 border-foreground dark:border-ring pointer-events-none"
       aria-hidden="true"
+      className="-mx-1 pointer-events-none absolute inset-0 border-foreground border-x-4 dark:border-ring"
     />
   </div>
 ));

@@ -1,7 +1,3 @@
-import React from "react";
-
-import { cn } from "@/lib/utils";
-
 import {
   Avatar,
   AvatarFallback,
@@ -12,9 +8,10 @@ import { Card, CardContent, CardHeader } from "@/components/ui/8bit/card";
 import HealthBar from "@/components/ui/8bit/health-bar";
 import ManaBar from "@/components/ui/8bit/mana-bar";
 import { Progress } from "@/components/ui/8bit/progress";
+import { cn } from "@/lib/utils";
 import "@/components/ui/8bit/styles/retro.css";
 
-export interface PlayerStats {
+export type PlayerStats = {
   health?: {
     current: number;
     max: number;
@@ -29,9 +26,9 @@ export interface PlayerStats {
   };
   level?: number;
   [key: string]: unknown; // Allow custom stats
-}
+};
 
-export interface PlayerProfileCardProps {
+export type PlayerProfileCardProps = {
   className?: string;
   playerName: string;
   avatarSrc?: string;
@@ -50,7 +47,7 @@ export interface PlayerProfileCardProps {
     color?: string;
     variant?: "retro" | "default";
   }>;
-}
+};
 
 export default function PlayerProfileCard({
   className,
@@ -83,17 +80,17 @@ export default function PlayerProfileCard({
     <Card className={cn("w-full max-w-md", className)} {...props}>
       <CardHeader className="pb-4">
         <div className="flex items-center gap-4">
-          <Avatar className="size-16" variant="pixel" font="retro">
-            <AvatarImage src={avatarSrc} alt={playerName} />
+          <Avatar className="size-16" font="retro" variant="pixel">
+            <AvatarImage alt={playerName} src={avatarSrc} />
             <AvatarFallback className="text-lg">
               {avatarFallback || playerName.charAt(0).toUpperCase()}
             </AvatarFallback>
           </Avatar>
 
-          <div className="flex-1 min-w-0">
+          <div className="min-w-0 flex-1">
             <div className="space-y-2">
-              <div className="flex flex-col gap-1 md:flex-row md:items-center md:gap-2 justify-between">
-                <h3 className="font-bold truncate md:text-lg">{playerName}</h3>
+              <div className="flex flex-col justify-between gap-1 md:flex-row md:items-center md:gap-2">
+                <h3 className="truncate font-bold md:text-lg">{playerName}</h3>
                 {showLevel && (
                   <span>
                     <Badge className="text-xs">Lv.{level}</Badge>
@@ -102,7 +99,7 @@ export default function PlayerProfileCard({
               </div>
               <div className="flex flex-wrap gap-1">
                 {playerClass && (
-                  <span className="text-xs text-muted-foreground">
+                  <span className="text-muted-foreground text-xs">
                     {playerClass}
                   </span>
                 )}
@@ -116,16 +113,16 @@ export default function PlayerProfileCard({
         {/* Health Bar */}
         {showHealth && stats?.health && (
           <div className="space-y-1">
-            <div className="flex justify-between items-center">
-              <span className="text-sm font-medium">Health</span>
-              <span className="text-[9px] sm:text-xs text-muted-foreground retro">
+            <div className="flex items-center justify-between">
+              <span className="font-medium text-sm">Health</span>
+              <span className="retro text-[9px] text-muted-foreground sm:text-xs">
                 {stats.health.current}/{stats.health.max}
               </span>
             </div>
             <HealthBar
+              className="h-3"
               value={healthPercentage}
               variant="retro"
-              className="h-3"
             />
           </div>
         )}
@@ -133,30 +130,30 @@ export default function PlayerProfileCard({
         {/* Mana Bar */}
         {showMana && stats?.mana && (
           <div className="space-y-1">
-            <div className="flex justify-between items-center">
-              <span className="text-sm font-medium">Mana</span>
-              <span className="text-[9px] sm:text-xs text-muted-foreground retro">
+            <div className="flex items-center justify-between">
+              <span className="font-medium text-sm">Mana</span>
+              <span className="retro text-[9px] text-muted-foreground sm:text-xs">
                 {stats.mana.current}/{stats.mana.max}
               </span>
             </div>
-            <ManaBar value={manaPercentage} variant="retro" className="h-3" />
+            <ManaBar className="h-3" value={manaPercentage} variant="retro" />
           </div>
         )}
 
         {/* Experience Bar */}
         {showExperience && stats?.experience && (
           <div className="space-y-1">
-            <div className="flex justify-between items-center">
-              <span className="text-sm font-medium">Experience</span>
-              <span className="text-[9px] sm:text-xs text-muted-foreground retro">
+            <div className="flex items-center justify-between">
+              <span className="font-medium text-sm">Experience</span>
+              <span className="retro text-[9px] text-muted-foreground sm:text-xs">
                 {stats.experience.current}/{stats.experience.max} XP
               </span>
             </div>
             <Progress
+              className="h-3"
+              progressBg="bg-yellow-500"
               value={experiencePercentage}
               variant="retro"
-              progressBg="bg-yellow-500"
-              className="h-3"
             />
           </div>
         )}
@@ -170,19 +167,19 @@ export default function PlayerProfileCard({
                 : 0;
 
               return (
-                <div key={index} className="space-y-1">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">{stat.label}</span>
-                    <span className="text-[9px] sm:text-xs text-muted-foreground retro">
+                <div className="space-y-1" key={stat.label}>
+                  <div className="flex items-center justify-between">
+                    <span className="font-medium text-sm">{stat.label}</span>
+                    <span className="retro text-[9px] text-muted-foreground sm:text-xs">
                       {stat.value}
                       {stat.max ? `/${stat.max}` : ""}
                     </span>
                   </div>
                   <Progress
+                    className="h-3"
+                    progressBg={stat.color || "bg-primary"}
                     value={percentage}
                     variant={stat.variant || "retro"}
-                    progressBg={stat.color || "bg-primary"}
-                    className="h-3"
                   />
                 </div>
               );

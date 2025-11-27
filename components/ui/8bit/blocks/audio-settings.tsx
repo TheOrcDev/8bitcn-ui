@@ -1,5 +1,3 @@
-import { cn } from "@/lib/utils";
-
 import {
   Card,
   CardContent,
@@ -9,6 +7,7 @@ import {
 import { Label } from "@/components/ui/8bit/label";
 import { Slider } from "@/components/ui/8bit/slider";
 import { Switch } from "@/components/ui/8bit/switch";
+import { cn } from "@/lib/utils";
 
 export default function AudioSettings({
   className,
@@ -18,27 +17,27 @@ export default function AudioSettings({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle className="text-sm font-medium">Audio Settings</CardTitle>
+          <CardTitle className="font-medium text-sm">Audio Settings</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-4">
             <Label htmlFor="volume">Master Volume</Label>
             <Slider
-              id="volume"
+              className="w-full"
               defaultValue={[75]}
+              id="volume"
               max={100}
               step={1}
-              className="w-full"
             />
           </div>
           <div className="space-y-4">
             <Label htmlFor="sfx">SFX Volume</Label>
             <Slider
-              id="sfx"
+              className="w-full"
               defaultValue={[60]}
+              id="sfx"
               max={100}
               step={1}
-              className="w-full"
             />
           </div>
           <div className="flex items-center justify-between">
@@ -47,7 +46,7 @@ export default function AudioSettings({
           </div>
           <div className="flex items-center justify-between">
             <Label htmlFor="vibration">Vibration</Label>
-            <Switch id="vibration" defaultChecked />
+            <Switch defaultChecked id="vibration" />
           </div>
         </CardContent>
       </Card>

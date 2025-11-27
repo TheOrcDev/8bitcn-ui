@@ -1,9 +1,8 @@
-import type { NextRequest } from "next/server";
-
 import {
-  UrlResolverByItem,
   generateRegistryRssFeed,
+  type UrlResolverByItem,
 } from "@wandry/analytics-sdk";
+import type { NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {
   const baseUrl = new URL(request.url).origin;
@@ -17,7 +16,7 @@ export async function GET(request: NextRequest) {
      *
      * because you have a category in the link to the block, for example, docs/blocks/gaming/chapter-intro,
      * but in the registry the element is called chapter-intro.
-     * */
+     */
     blocksUrl: ((item) => {
       const category = item?.categories?.at(0);
       if (!category) {

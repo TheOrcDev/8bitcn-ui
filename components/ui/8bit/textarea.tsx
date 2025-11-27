@@ -1,8 +1,6 @@
-import { type VariantProps, cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-
+import { cva, type VariantProps } from "class-variance-authority";
 import { Textarea as ShadcnTextarea } from "@/components/ui/textarea";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 
@@ -32,20 +30,20 @@ function Textarea({ ...props }: BitTextareaProps) {
       <ShadcnTextarea
         {...props}
         className={cn(
-          "rounded-none transition-transform ring-0 border-0",
+          "rounded-none border-0 ring-0 transition-transform",
           font !== "normal" && "retro",
           className
         )}
       />
 
       <div
-        className="absolute inset-0 border-y-6 -my-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-my-1.5 pointer-events-none absolute inset-0 border-foreground border-y-6 dark:border-ring"
       />
 
       <div
-        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-mx-1.5 pointer-events-none absolute inset-0 border-foreground border-x-6 dark:border-ring"
       />
     </div>
   );

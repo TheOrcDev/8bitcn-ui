@@ -1,7 +1,4 @@
 import { Pause, Power, RotateCcw } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-
 import { Button } from "@/components/ui/8bit/button";
 import {
   Card,
@@ -9,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/8bit/card";
+import { cn } from "@/lib/utils";
 
 const menuItems = [
   {
@@ -40,7 +38,7 @@ export default function PauseMenu({
       <CardContent>
         <div className="flex flex-col gap-8">
           {menuItems.map((item) => (
-            <Button key={item.label} className="flex items-center gap-2">
+            <Button className="flex items-center gap-2" key={item.label}>
               <item.icon className="size-4" />
               <span>{item.label}</span>
             </Button>

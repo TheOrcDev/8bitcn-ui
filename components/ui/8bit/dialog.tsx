@@ -1,7 +1,4 @@
-import { type VariantProps, cva } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-
+import { cva, type VariantProps } from "class-variance-authority";
 import {
   Dialog as ShadcnDialog,
   DialogClose as ShadcnDialogClose,
@@ -12,6 +9,7 @@ import {
   DialogTitle as ShadcnDialogTitle,
   DialogTrigger as ShadcnDialogTrigger,
 } from "@/components/ui/dialog";
+import { cn } from "@/lib/utils";
 
 import "./styles/retro.css";
 
@@ -62,7 +60,7 @@ function DialogContent({
   return (
     <ShadcnDialogContent
       className={cn(
-        "bg-card rounded-none border-none",
+        "rounded-none border-none bg-card",
         font !== "normal" && "retro",
         className
       )}
@@ -71,12 +69,12 @@ function DialogContent({
       {children}
 
       <div
-        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-mx-1.5 pointer-events-none absolute inset-0 border-foreground border-x-6 dark:border-ring"
       />
       <div
-        className="absolute inset-0 border-y-6 -my-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
+        className="-my-1.5 pointer-events-none absolute inset-0 border-foreground border-y-6 dark:border-ring"
       />
     </ShadcnDialogContent>
   );
