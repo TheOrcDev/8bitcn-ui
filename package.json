@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "echo all good",
+    "check": "ultracite check",
+    "fix": "ultracite fix",
     "registry:build": "shadcn build",
     "prepare": "husky"
   },
