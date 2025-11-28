@@ -108,16 +108,7 @@ export default async function ContributorsPage() {
               </Badge>
 
               <CardTitle className="text-lg">{contributor.login}</CardTitle>
-              <CardDescription className="text-muted-foreground text-sm">
-                @{contributor.login}
-              </CardDescription>
             </CardHeader>
-            <CardContent className="h-full space-y-4">
-              <p className="text-center text-muted-foreground text-sm leading-relaxed">
-                {contributor.contributions} contribution
-                {contributor.contributions === 1 ? "" : "s"}
-              </p>
-            </CardContent>
             <CardFooter className="flex justify-center">
               <Button asChild className="w-full">
                 <Link
