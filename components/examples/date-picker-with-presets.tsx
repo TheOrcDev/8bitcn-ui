@@ -2,8 +2,7 @@
 
 import { addDays, format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
-// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useState
-import * as React from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/8bit/button";
 import { Calendar } from "@/components/ui/8bit/calendar";
 import {
@@ -21,7 +20,7 @@ import {
 import { cn } from "@/lib/utils";
 
 export function DatePickerWithPresets() {
-  const [date, setDate] = React.useState<Date>();
+  const [date, setDate] = useState<Date>();
 
   return (
     <Popover>

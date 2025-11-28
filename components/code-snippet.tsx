@@ -1,9 +1,7 @@
 "use client";
 
 import { Check, Clipboard } from "lucide-react";
-// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.ReactNode and React.isValidElement
-import * as React from "react";
-import { useState } from "react";
+import { type ReactNode, isValidElement, useState } from "react";
 import ShikiHighlighter from "react-shiki";
 import { toast } from "@/components/ui/8bit/toast";
 import { Button } from "@/components/ui/button";
@@ -93,12 +91,12 @@ const createCustomTheme = () => ({
 export default function CodeSnippet({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   const [copied, setCopied] = useState(false);
 
   // Extract text content from React children
-  const getTextContent = (node: React.ReactNode): string => {
+  const getTextContent = (node: ReactNode): string => {
     if (typeof node === "string") {
       return node;
     }
@@ -108,8 +106,8 @@ export default function CodeSnippet({
     if (Array.isArray(node)) {
       return node.map(getTextContent).join("");
     }
-    if (React.isValidElement(node)) {
-      const props = node.props as { children?: React.ReactNode };
+    if (isValidElement(node)) {
+      const props = node.props as { children?: ReactNode };
       if (props.children) {
         return getTextContent(props.children);
       }

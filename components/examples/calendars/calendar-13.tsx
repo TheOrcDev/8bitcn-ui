@@ -1,7 +1,6 @@
 "use client";
 
-// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useState
-import * as React from "react";
+import { type ComponentProps, useState } from "react";
 
 import { Calendar } from "@/components/ui/8bit/calendar";
 import { Label } from "@/components/ui/8bit/label";
@@ -15,10 +14,10 @@ import {
 
 export function Calendar13() {
   const [dropdown, setDropdown] =
-    React.useState<React.ComponentProps<typeof Calendar>["captionLayout"]>(
+    useState<ComponentProps<typeof Calendar>["captionLayout"]>(
       "dropdown"
     );
-  const [date, setDate] = React.useState<Date | undefined>(
+  const [date, setDate] = useState<Date | undefined>(
     () => new Date(2025, 5, 12)
   );
 
@@ -38,7 +37,7 @@ export function Calendar13() {
         <Select
           onValueChange={(value) =>
             setDropdown(
-              value as React.ComponentProps<typeof Calendar>["captionLayout"]
+              value as ComponentProps<typeof Calendar>["captionLayout"]
             )
           }
           value={dropdown}

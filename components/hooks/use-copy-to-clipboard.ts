@@ -1,7 +1,6 @@
 "use client";
 
-// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useState and React.useEffect
-import * as React from "react";
+import { useState } from "react";
 
 export function useCopyToClipboard({
   timeout = 2000,
@@ -10,7 +9,7 @@ export function useCopyToClipboard({
   timeout?: number;
   onCopy?: () => void;
 } = {}) {
-  const [isCopied, setIsCopied] = React.useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   const copyToClipboard = (value: string) => {
     if (typeof window === "undefined" || !navigator.clipboard.writeText) {

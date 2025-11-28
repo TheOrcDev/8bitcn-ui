@@ -1,8 +1,7 @@
 "use client";
 
 import { Check, ChevronsUpDown, GalleryVerticalEnd } from "lucide-react";
-// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useState
-import * as React from "react";
+import { useState } from "react";
 
 import {
   DropdownMenu,
@@ -23,7 +22,7 @@ export function VersionSwitcher({
   versions: string[];
   defaultVersion: string;
 }) {
-  const [selectedVersion, setSelectedVersion] = React.useState(defaultVersion);
+  const [selectedVersion, setSelectedVersion] = useState(defaultVersion);
 
   return (
     <SidebarMenu>

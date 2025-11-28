@@ -1,8 +1,7 @@
 "use client";
 
 import { Minus, Plus } from "lucide-react";
-// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useState
-import * as React from "react";
+import { type CSSProperties, useState } from "react";
 import { Bar, BarChart, ResponsiveContainer } from "recharts";
 
 import { Button } from "@/components/ui/8bit/button";
@@ -60,7 +59,7 @@ const data = [
 ];
 
 export function DrawerExample() {
-  const [xp, setXp] = React.useState(350);
+  const [xp, setXp] = useState(350);
 
   function onClick(adjustment: number) {
     setXp(Math.max(200, Math.min(400, xp + adjustment)));
@@ -117,7 +116,7 @@ export function DrawerExample() {
                       {
                         fill: "var(--primary)",
                         opacity: 0.9,
-                      } as React.CSSProperties
+                      } as CSSProperties
                     }
                   />
                 </BarChart>

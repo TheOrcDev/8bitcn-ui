@@ -1,8 +1,7 @@
 "use client";
 
 import { ChevronsUpDown } from "lucide-react";
-// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useState
-import * as React from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/8bit/button";
 import {
   Command,
@@ -43,8 +42,8 @@ const frameworks = [
 ];
 
 export function ComboBoxExample() {
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("");
 
   return (
     <Popover onOpenChange={setOpen} open={open}>

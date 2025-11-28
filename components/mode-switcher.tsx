@@ -2,15 +2,14 @@
 
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
-// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useEffect
-import * as React from "react";
+import { useCallback } from "react";
 
 import { Button } from "@/components/ui/button";
 
 export function ModeSwitcher() {
   const { setTheme, resolvedTheme } = useTheme();
 
-  const toggleTheme = React.useCallback(() => {
+  const toggleTheme = useCallback(() => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   }, [resolvedTheme, setTheme]);
 

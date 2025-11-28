@@ -1,14 +1,13 @@
 "use client";
 
-// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useState
-import * as React from "react";
+import { useState } from "react";
 
 import type { DateRange } from "react-day-picker";
 
 import { Calendar } from "@/components/ui/8bit/calendar";
 
 export function RangeCalendar() {
-  const [date, setDate] = React.useState<DateRange | undefined>(() => ({
+  const [date, setDate] = useState<DateRange | undefined>(() => ({
     from: new Date(2025, 5, 12),
     to: new Date(2025, 5, 12),
   }));

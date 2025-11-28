@@ -2,8 +2,12 @@ import { icons } from "@tabler/icons-react";
 
 import Image from "next/image";
 import Link from "next/link";
-// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.ComponentProps and React.isValidElement
-import * as React from "react";
+import {
+  type ComponentProps,
+  type HTMLAttributes,
+  type ReactNode,
+  isValidElement,
+} from "react";
 import { Kbd } from "@/components/ui/8bit/kbd";
 import {
   Accordion,
@@ -20,7 +24,7 @@ import { cn } from "@/lib/utils";
 import CodeSnippet from "./components/code-snippet";
 
 export const mdxComponents = {
-  h1: ({ className, ...props }: React.ComponentProps<"h1">) => (
+  h1: ({ className, ...props }: ComponentProps<"h1">) => (
     <h1
       className={cn(
         "mt-2 scroll-m-28 font-bold font-heading text-3xl tracking-tight",
@@ -29,7 +33,7 @@ export const mdxComponents = {
       {...props}
     />
   ),
-  h2: ({ className, ...props }: React.ComponentProps<"h2">) => (
+  h2: ({ className, ...props }: ComponentProps<"h2">) => (
     <h2
       className={cn(
         "[&+.steps]:!mt-0 [&+.steps>h3]:!mt-4 [&+h3]:!mt-6 [&+p]:!mt-4 mt-10 scroll-m-28 font-heading font-medium text-xl tracking-tight first:mt-0 lg:mt-16 [&+]*:[code]:text-xl",
@@ -44,7 +48,7 @@ export const mdxComponents = {
       {...props}
     />
   ),
-  h3: ({ className, ...props }: React.ComponentProps<"h3">) => (
+  h3: ({ className, ...props }: ComponentProps<"h3">) => (
     <h3
       className={cn(
         "[&+p]:!mt-4 mt-12 scroll-m-28 font-heading font-medium text-lg tracking-tight *:[code]:text-xl",
@@ -53,7 +57,7 @@ export const mdxComponents = {
       {...props}
     />
   ),
-  h4: ({ className, ...props }: React.ComponentProps<"h4">) => (
+  h4: ({ className, ...props }: ComponentProps<"h4">) => (
     <h4
       className={cn(
         "mt-8 scroll-m-28 font-heading font-medium text-base tracking-tight",
@@ -62,7 +66,7 @@ export const mdxComponents = {
       {...props}
     />
   ),
-  h5: ({ className, ...props }: React.ComponentProps<"h5">) => (
+  h5: ({ className, ...props }: ComponentProps<"h5">) => (
     <h5
       className={cn(
         "mt-8 scroll-m-28 font-medium text-base tracking-tight",
@@ -71,7 +75,7 @@ export const mdxComponents = {
       {...props}
     />
   ),
-  h6: ({ className, ...props }: React.ComponentProps<"h6">) => (
+  h6: ({ className, ...props }: ComponentProps<"h6">) => (
     <h6
       className={cn(
         "mt-8 scroll-m-28 font-medium text-base tracking-tight",
@@ -80,45 +84,45 @@ export const mdxComponents = {
       {...props}
     />
   ),
-  a: ({ className, ...props }: React.ComponentProps<"a">) => (
+  a: ({ className, ...props }: ComponentProps<"a">) => (
     <a
       className={cn("font-medium underline underline-offset-4", className)}
       {...props}
     />
   ),
-  p: ({ className, ...props }: React.ComponentProps<"p">) => (
+  p: ({ className, ...props }: ComponentProps<"p">) => (
     <p
       className={cn("leading-relaxed [&:not(:first-child)]:mt-6", className)}
       {...props}
     />
   ),
-  strong: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
+  strong: ({ className, ...props }: HTMLAttributes<HTMLElement>) => (
     <strong className={cn("font-medium", className)} {...props} />
   ),
-  ul: ({ className, ...props }: React.ComponentProps<"ul">) => (
+  ul: ({ className, ...props }: ComponentProps<"ul">) => (
     <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
   ),
-  ol: ({ className, ...props }: React.ComponentProps<"ol">) => (
+  ol: ({ className, ...props }: ComponentProps<"ol">) => (
     <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
   ),
-  li: ({ className, ...props }: React.ComponentProps<"li">) => (
+  li: ({ className, ...props }: ComponentProps<"li">) => (
     <li className={cn("mt-2", className)} {...props} />
   ),
-  blockquote: ({ className, ...props }: React.ComponentProps<"blockquote">) => (
+  blockquote: ({ className, ...props }: ComponentProps<"blockquote">) => (
     <blockquote
       className={cn("mt-6 border-l-2 pl-6 italic", className)}
       {...props}
     />
   ),
-  img: ({ className, alt, ...props }: React.ComponentProps<"img">) => (
+  img: ({ className, alt, ...props }: ComponentProps<"img">) => (
     /* biome-ignore lint/performance/noImgElement: MDX content requires standard img elements */
     /* biome-ignore lint/correctness/useImageSize: MDX images have dynamic sizes from markdown */
     <img alt={alt} className={cn("rounded-md", className)} {...props} />
   ),
-  hr: ({ ...props }: React.ComponentProps<"hr">) => (
+  hr: ({ ...props }: ComponentProps<"hr">) => (
     <hr className="my-4 md:my-8" {...props} />
   ),
-  table: ({ className, ...props }: React.ComponentProps<"table">) => (
+  table: ({ className, ...props }: ComponentProps<"table">) => (
     <div className="no-scrollbar my-6 w-full overflow-y-auto rounded-lg border">
       <table
         className={cn(
@@ -129,10 +133,10 @@ export const mdxComponents = {
       />
     </div>
   ),
-  tr: ({ className, ...props }: React.ComponentProps<"tr">) => (
+  tr: ({ className, ...props }: ComponentProps<"tr">) => (
     <tr className={cn("m-0 border-b", className)} {...props} />
   ),
-  th: ({ className, ...props }: React.ComponentProps<"th">) => (
+  th: ({ className, ...props }: ComponentProps<"th">) => (
     <th
       className={cn(
         "px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
@@ -141,7 +145,7 @@ export const mdxComponents = {
       {...props}
     />
   ),
-  td: ({ className, ...props }: React.ComponentProps<"td">) => (
+  td: ({ className, ...props }: ComponentProps<"td">) => (
     <td
       className={cn(
         "whitespace-nowrap px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
@@ -150,7 +154,7 @@ export const mdxComponents = {
       {...props}
     />
   ),
-  pre: ({ className, children, ...props }: React.ComponentProps<"pre">) => (
+  pre: ({ className, children, ...props }: ComponentProps<"pre">) => (
     <pre
       className={cn(
         "no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-[[data-slot=tabs]]:p-0 has-[[data-highlighted-line]]:px-0 has-[[data-line-numbers]]:px-0",
@@ -161,14 +165,14 @@ export const mdxComponents = {
       {children}
     </pre>
   ),
-  figure: ({ className, ...props }: React.ComponentProps<"figure">) => (
+  figure: ({ className, ...props }: ComponentProps<"figure">) => (
     <figure className={cn(className)} {...props} />
   ),
   figcaption: ({
     className,
     children,
     ...props
-  }: React.ComponentProps<"figcaption">) => {
+  }: ComponentProps<"figcaption">) => {
     const IconComponent =
       "data-language" in props && typeof props["data-language"] === "string"
         ? icons[props["data-language"] as keyof typeof icons]
@@ -197,7 +201,7 @@ export const mdxComponents = {
     __bun__,
     children,
     ...props
-  }: React.ComponentProps<"code"> & {
+  }: ComponentProps<"code"> & {
     __raw__?: string;
     __src__?: string;
     __npm__?: string;
@@ -221,7 +225,7 @@ export const mdxComponents = {
     }
 
     // Extract text content from React children if __raw__ is not available
-    const getTextContent = (node: React.ReactNode): string => {
+    const getTextContent = (node: ReactNode): string => {
       if (typeof node === "string") {
         return node;
       }
@@ -231,8 +235,8 @@ export const mdxComponents = {
       if (Array.isArray(node)) {
         return node.map(getTextContent).join("");
       }
-      if (React.isValidElement(node)) {
-        const nodeProps = node.props as { children?: React.ReactNode };
+      if (isValidElement(node)) {
+        const nodeProps = node.props as { children?: ReactNode };
         if (nodeProps.children) {
           return getTextContent(nodeProps.children);
         }
@@ -244,7 +248,7 @@ export const mdxComponents = {
 
     return <CodeSnippet>{codeContent}</CodeSnippet>;
   },
-  Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
+  Step: ({ className, ...props }: ComponentProps<"h3">) => (
     <h3
       className={cn(
         "mt-8 scroll-m-32 font-heading font-medium text-xl tracking-tight",
@@ -266,7 +270,7 @@ export const mdxComponents = {
     height,
     alt,
     ...props
-  }: React.ComponentProps<"img">) => (
+  }: ComponentProps<"img">) => (
     <Image
       alt={alt || ""}
       className={cn("mt-6 rounded-md border", className)}
@@ -276,13 +280,13 @@ export const mdxComponents = {
       {...props}
     />
   ),
-  Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
+  Tabs: ({ className, ...props }: ComponentProps<typeof Tabs>) => (
     <Tabs className={cn("relative mt-6 w-full", className)} {...props} />
   ),
   TabsList: ({
     className,
     ...props
-  }: React.ComponentProps<typeof TabsList>) => (
+  }: ComponentProps<typeof TabsList>) => (
     <TabsList
       className={cn(
         "justify-start gap-4 rounded-none bg-transparent px-0",
@@ -294,7 +298,7 @@ export const mdxComponents = {
   TabsTrigger: ({
     className,
     ...props
-  }: React.ComponentProps<typeof TabsTrigger>) => (
+  }: ComponentProps<typeof TabsTrigger>) => (
     <TabsTrigger
       className={cn(
         "rounded-none border-0 border-transparent border-b-2 bg-transparent px-0 pb-3 text-base text-muted-foreground hover:text-primary data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none dark:data-[state=active]:border-primary dark:data-[state=active]:bg-transparent",
@@ -306,7 +310,7 @@ export const mdxComponents = {
   TabsContent: ({
     className,
     ...props
-  }: React.ComponentProps<typeof TabsContent>) => (
+  }: ComponentProps<typeof TabsContent>) => (
     <TabsContent
       className={cn(
         "relative [&>.steps]:mt-6 [&_h3.font-heading]:font-medium [&_h3.font-heading]:text-base *:[figure]:first:mt-0",
@@ -315,7 +319,7 @@ export const mdxComponents = {
       {...props}
     />
   ),
-  Tab: ({ className, ...props }: React.ComponentProps<"div">) => (
+  Tab: ({ className, ...props }: ComponentProps<"div">) => (
     <div className={cn(className)} {...props} />
   ),
   Button,
@@ -327,13 +331,13 @@ export const mdxComponents = {
   AlertTitle,
   AlertDescription,
   AspectRatio,
-  Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
+  Link: ({ className, ...props }: ComponentProps<typeof Link>) => (
     <Link
       className={cn("font-medium underline underline-offset-4", className)}
       {...props}
     />
   ),
-  LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
+  LinkedCard: ({ className, ...props }: ComponentProps<typeof Link>) => (
     <Link
       className={cn(
         "flex w-full flex-col items-center rounded-xl bg-surface p-6 text-surface-foreground transition-colors hover:bg-surface/80 sm:p-10",
