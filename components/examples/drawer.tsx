@@ -1,8 +1,7 @@
 "use client";
 
-import * as React from "react";
-
 import { Minus, Plus } from "lucide-react";
+import { type CSSProperties, useState } from "react";
 import { Bar, BarChart, ResponsiveContainer } from "recharts";
 
 import { Button } from "@/components/ui/8bit/button";
@@ -60,7 +59,7 @@ const data = [
 ];
 
 export function DrawerExample() {
-  const [xp, setXp] = React.useState(350);
+  const [xp, setXp] = useState(350);
 
   function onClick(adjustment: number) {
     setXp(Math.max(200, Math.min(400, xp + adjustment)));
@@ -80,36 +79,36 @@ export function DrawerExample() {
           <div className="p-4 pb-0">
             <div className="flex items-center justify-center space-x-2">
               <Button
-                variant="outline"
-                size="icon"
                 className="size-10 shrink-0"
-                onClick={() => onClick(-10)}
                 disabled={xp <= 200}
+                onClick={() => onClick(-10)}
+                size="icon"
+                variant="outline"
               >
                 <Minus />
                 <span className="sr-only">Decrease</span>
               </Button>
               <div className="flex-1 text-center">
-                <div className="text-3xl sm:text-7xl font-bold tracking-tighter">
+                <div className="font-bold text-3xl tracking-tighter sm:text-7xl">
                   {xp}
                 </div>
-                <div className="text-[0.70rem] uppercase text-muted-foreground">
+                <div className="text-[0.70rem] text-muted-foreground uppercase">
                   XP / Day
                 </div>
               </div>
               <Button
-                variant="outline"
-                size="icon"
                 className="size-10 shrink-0"
-                onClick={() => onClick(10)}
                 disabled={xp >= 400}
+                onClick={() => onClick(10)}
+                size="icon"
+                variant="outline"
               >
                 <Plus />
                 <span className="sr-only">Increase</span>
               </Button>
             </div>
             <div className="mt-3 h-[120px]">
-              <ResponsiveContainer width="100%" height="100%">
+              <ResponsiveContainer height="100%" width="100%">
                 <BarChart data={data}>
                   <Bar
                     dataKey="xp"
@@ -117,7 +116,7 @@ export function DrawerExample() {
                       {
                         fill: "var(--primary)",
                         opacity: 0.9,
-                      } as React.CSSProperties
+                      } as CSSProperties
                     }
                   />
                 </BarChart>

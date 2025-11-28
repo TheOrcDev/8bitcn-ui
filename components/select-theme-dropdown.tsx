@@ -1,7 +1,5 @@
 "use client";
 
-import { Theme } from "@/lib/themes";
-
 import {
   Select,
   SelectContent,
@@ -9,6 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/8bit/select";
+import { Theme } from "@/lib/themes";
 
 const themes = [
   { name: Theme.Default, color: "#000" },
@@ -35,8 +34,8 @@ export function SelectThemeDropdown({
 }) {
   return (
     <Select
-      value={activeTheme}
       onValueChange={(val) => setActiveTheme(val as Theme)}
+      value={activeTheme}
     >
       <SelectTrigger className="w-full">
         <SelectValue font="retro" placeholder="Select theme" />

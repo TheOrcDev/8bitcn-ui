@@ -1,5 +1,7 @@
 import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
-
+import { DashboardHeader } from "@/components/dashboard-header";
+import { DataTable } from "@/components/data-table";
+import { SectionCards } from "@/components/section-cards";
 import ChartBarMultiple from "@/components/ui/8bit/blocks/chart-bar";
 import {
   Card,
@@ -19,10 +21,6 @@ import {
   SidebarMenuItem,
   SidebarProvider,
 } from "@/components/ui/sidebar";
-
-import { DashboardHeader } from "@/components/dashboard-header";
-import { DataTable } from "@/components/data-table";
-import { SectionCards } from "@/components/section-cards";
 
 import data from "./data.json";
 
@@ -64,8 +62,8 @@ export default function Page() {
         } as React.CSSProperties
       }
     >
-      <div className="flex border w-full h-screen">
-        <Sidebar className="retro border-r-4 border-foreground dark:border-ring">
+      <div className="flex h-screen w-full border">
+        <Sidebar className="retro border-foreground border-r-4 dark:border-ring">
           <SidebarContent>
             <SidebarGroup>
               <SidebarGroupLabel>Application</SidebarGroupLabel>

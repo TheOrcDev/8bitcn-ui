@@ -21,7 +21,8 @@
     "paths": {
       "@/*": ["./*"],
       "fumadocs-mdx:collections/*": ["./.source/*"]
-    }
+    },
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",

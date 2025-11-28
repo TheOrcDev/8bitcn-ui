@@ -1,7 +1,5 @@
 "use client";
 
-import { getThemeCode } from "@/lib/themes";
-
 import {
   Dialog,
   DialogContent,
@@ -11,6 +9,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/8bit/dialog";
 import { Button } from "@/components/ui/button";
+import { getThemeCode } from "@/lib/themes";
 
 import { useThemeConfig } from "./active-theme";
 import CodeSnippet from "./code-snippet";

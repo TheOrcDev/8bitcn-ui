@@ -10,9 +10,9 @@ import {
 
 import CodeSnippet from "./code-snippet";
 
-interface ProfileCardProps {
+type ProfileCardProps = {
   code: string;
-}
+};
 
 export default function CopyProfileCardDialog({ code }: ProfileCardProps) {
   return (
@@ -28,7 +28,7 @@ export default function CopyProfileCardDialog({ code }: ProfileCardProps) {
           </DialogDescription>
         </DialogHeader>
 
-        <p className="text-xs text-muted-foreground">
+        <p className="text-muted-foreground text-xs">
           First add all dependencies to your project.
         </p>
 
@@ -36,7 +36,7 @@ export default function CopyProfileCardDialog({ code }: ProfileCardProps) {
           pnpm dlx shadcn@latest add @8bitcn/profile-card
         </CodeSnippet>
 
-        <p className="text-xs text-muted-foreground">
+        <p className="text-muted-foreground text-xs">
           Then use the component in your project.
         </p>
 

@@ -4,10 +4,10 @@ echo 'Get ready for battle, this may take a while...'
 # Check Orcish Code Standards
 npx lint-staged
 
-pnpm lint ||
+pnpm check ||
 (
     echo "⚔️❌ Grargh, you have encountered an issue in your code. Check the orcish runes! ⚔️❌
-          Run pnpm lint, make changes, and try the conquest again.";
+          Run pnpm check, make changes, and try the conquest again.";
     false;
 )
 
