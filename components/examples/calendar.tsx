@@ -10,8 +10,8 @@ export function CalendarExample() {
     <Calendar
       className="h-max w-full bg-card"
       mode="single"
-      selected={date}
       onSelect={setDate}
+      selected={date}
     />
   );
 }

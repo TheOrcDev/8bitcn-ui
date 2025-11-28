@@ -1,24 +1,22 @@
-import React from "react";
-
 import Link from "next/link";
 
 export default function SiteFooter() {
   return (
     <footer className="flex h-14 shrink-0 items-center gap-2 border-t border-dashed">
-      <div className="flex w-full h-full items-center gap-1 px-4 lg:gap-2 lg:px-6 max-w-[1400px] mx-auto border-dashed border-l border-r">
-        <p className="text-xs md:text-sm text-muted-foreground">
+      <div className="mx-auto flex h-full w-full max-w-[1400px] items-center gap-1 border-r border-l border-dashed px-4 lg:gap-2 lg:px-6">
+        <p className="text-muted-foreground text-xs md:text-sm">
           Built by{" "}
-          <Link href="https://orcdev.com" className="underline" target="_blank">
+          <Link className="underline" href="https://orcdev.com" target="_blank">
             OrcDev
           </Link>{" "}
           and{" "}
-          <Link href="/contributors" className="underline" target="_blank">
+          <Link className="underline" href="/contributors" target="_blank">
             Contributors
           </Link>
           . The source code is available on{" "}
           <Link
-            href="https://github.com/theorcdev/8bitcn-ui"
             className="underline"
+            href="https://github.com/theorcdev/8bitcn-ui"
             target="_blank"
           >
             GitHub

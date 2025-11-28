@@ -21,7 +21,7 @@ export default function SidebarItem({ item }: SidebarItemProps) {
   return (
     <SidebarMenuItem key={item.title}>
       <SidebarMenuButton asChild isActive={isActive}>
-        <Link href={item.url} className="flex items-center justify-between">
+        <Link className="flex items-center justify-between" href={item.url}>
           {item.title}
           {item.new && <Badge className="text-[9px]">new</Badge>}
         </Link>

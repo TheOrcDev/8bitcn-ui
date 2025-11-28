@@ -1,11 +1,9 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-
-import type { source } from "@/lib/source";
-
 import { BlocksSidebar } from "@/components/blocks-sidebar";
 import { DocsSidebar } from "@/components/docs-sidebar";
+import type { source } from "@/lib/source";
 
 export function ConditionalSidebar({ tree }: { tree: typeof source.pageTree }) {
   const pathname = usePathname();

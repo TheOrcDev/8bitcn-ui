@@ -1,8 +1,7 @@
 "use client";
 
-import type * as React from "react";
-
 import Link from "next/link";
+import type * as React from "react";
 
 import {
   NavigationMenu,
@@ -65,10 +64,10 @@ export default function NavigationMenuDemo() {
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link
-                    className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
+                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-6 no-underline outline-hidden focus:shadow-md"
                     href="/"
                   >
-                    <div className="mt-4 mb-2 text-lg font-medium">
+                    <div className="mt-4 mb-2 font-medium text-lg">
                       8bitcn/ui
                     </div>
                     <p className="text-muted-foreground text-sm leading-tight">
@@ -96,9 +95,9 @@ export default function NavigationMenuDemo() {
             <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
                 <ListItem
+                  href={component.href}
                   key={component.title}
                   title={component.title}
-                  href={component.href}
                 >
                   {component.description}
                 </ListItem>
@@ -129,8 +128,8 @@ function ListItem({
     <li {...props}>
       <NavigationMenuLink asChild>
         <Link href={href}>
-          <div className="text-sm leading-none font-medium">{title}</div>
-          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
+          <div className="font-medium text-sm leading-none">{title}</div>
+          <p className="line-clamp-2 text-muted-foreground text-sm leading-snug">
             {children}
           </p>
         </Link>

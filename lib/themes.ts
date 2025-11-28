@@ -1123,6 +1123,5 @@ const themes = [
   },
 ];
 
-export const getThemeCode = (theme: Theme) => {
-  return themes.find((t) => t.name === theme)?.color;
-};
+export const getThemeCode = (theme: Theme) =>
+  themes.find((t) => t.name === theme)?.color;

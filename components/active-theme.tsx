@@ -1,18 +1,16 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+import { parseAsStringLiteral, useQueryState } from "nuqs";
 import {
+  createContext,
   type ReactNode,
   Suspense,
-  createContext,
   useContext,
   useEffect,
   useRef,
   useState,
 } from "react";
-
-import { usePathname } from "next/navigation";
-
-import { parseAsStringLiteral, useQueryState } from "nuqs";
 
 import { Theme } from "@/lib/themes";
 

@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
-
 import { Check, Clipboard } from "lucide-react";
+import { useState } from "react";
 
 import { toast } from "@/components/ui/8bit/toast";
 import { Button } from "@/components/ui/button";
@@ -34,57 +33,57 @@ export default function InstallationCommands({
     <div className="overflow-hidden border">
       <div className="bg-background">
         <Tabs defaultValue="pnpm">
-          <TabsList className="bg-background border-b rounded-none h-12 px-2 w-full justify-between">
+          <TabsList className="h-12 w-full justify-between rounded-none border-b bg-background px-2">
             <div>
               <TabsTrigger
-                value="pnpm"
+                className="rounded-none px-2 data-[state=active]:border-x-2 data-[state=active]:border-b-2 data-[state=active]:border-b-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none"
                 onClick={() =>
                   setCommand(
                     `pnpm dlx shadcn@latest add @8bitcn/${packageName}`
                   )
                 }
-                className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-x-2 data-[state=active]:border-b-primary data-[state=active]:shadow-none rounded-none px-2"
+                value="pnpm"
               >
                 pnpm
               </TabsTrigger>
               <TabsTrigger
-                value="npm"
+                className="rounded-none px-2 data-[state=active]:border-b-2 data-[state=active]:border-b-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none"
                 onClick={() =>
                   setCommand(`npx shadcn@latest add @8bitcn/${packageName}`)
                 }
-                className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-b-primary data-[state=active]:shadow-none rounded-none px-2"
+                value="npm"
               >
                 npm
               </TabsTrigger>
               <TabsTrigger
-                value="yarn"
+                className="rounded-none px-2 data-[state=active]:border-b-2 data-[state=active]:border-b-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none"
                 onClick={() =>
                   setCommand(
                     `yarn dlx shadcn@latest add @8bitcn/${packageName}`
                   )
                 }
-                className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-b-primary data-[state=active]:shadow-none rounded-none px-2"
+                value="yarn"
               >
                 yarn
               </TabsTrigger>
               <TabsTrigger
-                value="bun"
+                className="rounded-none px-2 data-[state=active]:border-b-2 data-[state=active]:border-b-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none"
                 onClick={() =>
                   setCommand(
                     `bunx --bun shadcn@latest add @8bitcn/${packageName}`
                   )
                 }
-                className="data-[state=active]:bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-b-primary data-[state=active]:shadow-none rounded-none px-2"
+                value="bun"
               >
                 bun
               </TabsTrigger>
             </div>
 
             <Button
-              variant="ghost"
-              size="icon"
-              className="hover:bg-primary/20 rounded-md"
+              className="rounded-md hover:bg-primary/20"
               onClick={handleCopy}
+              size="icon"
+              variant="ghost"
             >
               {copied ? (
                 <Check className="size-3" />
@@ -94,25 +93,25 @@ export default function InstallationCommands({
             </Button>
           </TabsList>
 
-          <TabsContent value="pnpm" className="p-4 pt-2">
+          <TabsContent className="p-4 pt-2" value="pnpm">
             <div className="font-mono text-sm">
               pnpm dlx shadcn@latest add @8bitcn/{packageName}
             </div>
           </TabsContent>
 
-          <TabsContent value="npm" className="p-4 pt-2">
+          <TabsContent className="p-4 pt-2" value="npm">
             <div className="font-mono text-sm">
               npx shadcn@latest add @8bitcn/{packageName}
             </div>
           </TabsContent>
 
-          <TabsContent value="yarn" className="p-4 pt-2">
+          <TabsContent className="p-4 pt-2" value="yarn">
             <div className="font-mono text-sm">
               yarn dlx shadcn@latest add @8bitcn/{packageName}
             </div>
           </TabsContent>
 
-          <TabsContent value="bun" className="p-4 pt-2">
+          <TabsContent className="p-4 pt-2" value="bun">
             <div className="font-mono text-sm">
               bunx --bun shadcn@latest add @8bitcn/{packageName}
             </div>

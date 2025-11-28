@@ -23,9 +23,9 @@ export default function CopyCommandButton({
 
   return (
     <Button
-      variant="outline"
+      className="font-mono text-xs md:text-sm"
       onClick={copy}
-      className="text-xs md:text-sm font-mono"
+      variant="outline"
     >
       <Terminal className="size-3 md:size-4" />
       <span className="hidden sm:block">{command}</span>

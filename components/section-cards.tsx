@@ -9,11 +9,11 @@ import {
 
 export function SectionCards() {
   return (
-    <div className="dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 px-4 lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4">
+    <div className="grid @5xl/main:grid-cols-4 @xl/main:grid-cols-2 grid-cols-1 gap-4 px-4 lg:px-6 dark:*:data-[slot=card]:bg-card">
       <Card className="@container/card relative h-full">
         <CardHeader>
           <CardDescription>Total Revenue</CardDescription>
-          <CardTitle className="font-semibold tabular-nums @[250px]/card:text-xl">
+          <CardTitle className="font-semibold @[250px]/card:text-xl tabular-nums">
             $1,250.00
           </CardTitle>
           <div className="absolute top-0 right-3">
@@ -32,7 +32,7 @@ export function SectionCards() {
       <Card className="@container/card relative h-full">
         <CardHeader>
           <CardDescription>Customers</CardDescription>
-          <CardTitle className=" font-semibold tabular-nums @[250px]/card:text-xl">
+          <CardTitle className="font-semibold @[250px]/card:text-xl tabular-nums">
             1,234
           </CardTitle>
           <div className="absolute top-0 right-3">
@@ -51,7 +51,7 @@ export function SectionCards() {
       <Card className="@container/card relative h-full">
         <CardHeader>
           <CardDescription>Accounts</CardDescription>
-          <CardTitle className=" font-semibold tabular-nums @[250px]/card:text-xl">
+          <CardTitle className="font-semibold @[250px]/card:text-xl tabular-nums">
             45,678
           </CardTitle>
           <div className="absolute top-0 right-3">
@@ -68,7 +68,7 @@ export function SectionCards() {
       <Card className="@container/card h-full">
         <CardHeader>
           <CardDescription>Growth</CardDescription>
-          <CardTitle className=" font-semibold tabular-nums @[250px]/card:text-xl">
+          <CardTitle className="font-semibold @[250px]/card:text-xl tabular-nums">
             4.5%
           </CardTitle>
           <div className="absolute top-0 right-3">

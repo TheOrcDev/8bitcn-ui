@@ -1,10 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
-
 import * as htmlToImage from "html-to-image";
 import { parseAsBoolean, parseAsString, useQueryStates } from "nuqs";
-
+import { useMemo, useState } from "react";
+import { useThemeConfig, useUrlTheme } from "@/components/active-theme";
+import { SelectThemeDropdown } from "@/components/select-theme-dropdown";
 import { Button } from "@/components/ui/8bit/button";
 import {
   Card,
@@ -18,9 +18,6 @@ import { Separator } from "@/components/ui/8bit/separator";
 import { Switch } from "@/components/ui/8bit/switch";
 import { Textarea } from "@/components/ui/8bit/textarea";
 import { toast } from "@/components/ui/8bit/toast";
-
-import { useThemeConfig, useUrlTheme } from "@/components/active-theme";
-import { SelectThemeDropdown } from "@/components/select-theme-dropdown";
 
 import CopyProfileCardDialog from "./copy-profile-card-dialog";
 import ProfileCard from "./profile-card";
@@ -327,10 +324,10 @@ export default function ProfileCard() {
   const [, setUrlTheme] = useUrlTheme();
 
   return (
-    <div className="p-4 md:p-6 space-y-6 retro">
+    <div className="retro space-y-6 p-4 md:p-6">
       <div className="space-y-2">
         <h1 className="retro font-bold text-xl md:text-2xl">Profile Creator</h1>
-        <p className="text-sm text-muted-foreground max-w-2xl">
+        <p className="max-w-2xl text-muted-foreground text-sm">
           Fill the form to preview your retro profile card. Use full URLs or
           just usernames for GitHub and X.
         </p>
@@ -342,10 +339,10 @@ export default function ProfileCard() {
             <CardTitle>Details</CardTitle>
 
             <Button
-              variant="outline"
               onClick={() => {
                 setProfile(null);
               }}
+              variant="outline"
             >
               Reset
             </Button>
@@ -355,9 +352,9 @@ export default function ProfileCard() {
               <Label htmlFor="name">Name</Label>
               <Input
                 id="name"
+                onChange={(e) => setProfile({ name: e.currentTarget.value })}
                 placeholder="Pacman"
                 value={profile.name}
-                onChange={(e) => setProfile({ name: e.currentTarget.value })}
               />
             </div>
 
@@ -365,11 +362,11 @@ export default function ProfileCard() {
               <Label htmlFor="description">Description</Label>
               <Textarea
                 id="description"
-                value={profile.description}
                 onChange={(e) =>
                   setProfile({ description: e.currentTarget.value })
                 }
                 rows={4}
+                value={profile.description}
               />
             </div>
 
@@ -377,11 +374,11 @@ export default function ProfileCard() {
               <Label htmlFor="badge">Badge Title</Label>
               <Input
                 id="badge"
-                placeholder="Retro Hacker"
-                value={profile.badgeTitle}
                 onChange={(e) =>
                   setProfile({ badgeTitle: e.currentTarget.value })
                 }
+                placeholder="Retro Hacker"
+                value={profile.badgeTitle}
               />
             </div>
 
@@ -390,8 +387,8 @@ export default function ProfileCard() {
                 <Label htmlFor="avatar-url">Avatar</Label>
                 <div className="flex items-center gap-2">
                   <Switch
-                    id="avatar-variant"
                     checked={profile.isRetroAvatar}
+                    id="avatar-variant"
                     onCheckedChange={() =>
                       setProfile({ isRetroAvatar: !profile.isRetroAvatar })
                     }
@@ -405,20 +402,19 @@ export default function ProfileCard() {
               <div className="grid gap-2">
                 <Input
                   id="avatar-url"
-                  placeholder="https://example.com/avatar.png"
-                  value={profile.avatarUrl}
                   onChange={(e) => {
                     const next = e.currentTarget.value;
                     setProfile({ avatarUrl: next });
                   }}
+                  placeholder="https://example.com/avatar.png"
+                  value={profile.avatarUrl}
                 />
 
                 <div className="flex items-center gap-5">
                   <Input
-                    id="avatar-file"
-                    type="file"
                     accept="image/*"
                     className="pt-1.5"
+                    id="avatar-file"
                     onChange={(e) => {
                       const file = e.currentTarget.files?.[0];
                       if (!file) return;
@@ -433,14 +429,15 @@ export default function ProfileCard() {
                       };
                       reader.readAsDataURL(file);
                     }}
+                    type="file"
                   />
                   {profile.avatarUrl.startsWith("data:") ? (
                     <Button
-                      variant="outline"
-                      type="button"
                       onClick={() => {
                         setProfile({ avatarUrl: "/avatar.jpg" });
                       }}
+                      type="button"
+                      variant="outline"
                     >
                       Clear
                     </Button>
@@ -448,7 +445,7 @@ export default function ProfileCard() {
                 </div>
               </div>
 
-              <p className="text-xs text-muted-foreground">
+              <p className="text-muted-foreground text-xs">
                 Tip: Upload an image file or paste an image URL. The default
                 avatar is used if a local upload is chosen when exporting code.
               </p>
@@ -456,7 +453,7 @@ export default function ProfileCard() {
 
             <Separator />
 
-            <p className="text-xs text-muted-foreground">
+            <p className="text-muted-foreground text-xs">
               GitHub and X links will work only in the generated code, not in
               the downloaded image.
             </p>
@@ -465,9 +462,9 @@ export default function ProfileCard() {
               <Label htmlFor="github">GitHub</Label>
               <Input
                 id="github"
+                onChange={(e) => setProfile({ github: e.currentTarget.value })}
                 placeholder="pacman or https://github.com/pacman"
                 value={profile.github}
-                onChange={(e) => setProfile({ github: e.currentTarget.value })}
               />
             </div>
 
@@ -475,21 +472,21 @@ export default function ProfileCard() {
               <Label htmlFor="x">X</Label>
               <Input
                 id="x"
+                onChange={(e) => setProfile({ x: e.currentTarget.value })}
                 placeholder="pacman or https://x.com/pacman"
                 value={profile.x}
-                onChange={(e) => setProfile({ x: e.currentTarget.value })}
               />
             </div>
           </CardContent>
         </Card>
 
-        <div className="space-y-4 w-full max-w-md mx-auto">
-          <h2 className="text-center text-lg font-bold">Preview</h2>
-          <p className="text-xs text-muted-foreground">
+        <div className="mx-auto w-full max-w-md space-y-4">
+          <h2 className="text-center font-bold text-lg">Preview</h2>
+          <p className="text-muted-foreground text-xs">
             Tip: change to dark / light mode to see the card in different
             themes.
           </p>
-          <div className="max-w-xs mx-auto">
+          <div className="mx-auto max-w-xs">
             <SelectThemeDropdown
               activeTheme={activeTheme}
               setActiveTheme={(theme) => {
@@ -498,26 +495,26 @@ export default function ProfileCard() {
               }}
             />
           </div>
-          <div id="profile-card" className="flex justify-center p-5">
+          <div className="flex justify-center p-5" id="profile-card">
             <ProfileCard
-              name={profile.name}
               avatarUrl={profile.avatarUrl}
               badgeTitle={profile.badgeTitle}
+              description={profile.description}
               isRetroAvatar={profile.isRetroAvatar}
+              name={profile.name}
               safeGithubUrl={safeGithubUrl}
               safeXUrl={safeXUrl}
-              description={profile.description}
             />
           </div>
 
           <ProfileCropper
-            toggleImageCropper={toggleImageCropper}
-            setProfileImage={setProfileImage}
             open={openCropper}
+            setProfileImage={setProfileImage}
             tempImage={tempImage}
+            toggleImageCropper={toggleImageCropper}
           />
 
-          <div className="flex md:flex-row flex-col gap-5 items-center justify-center">
+          <div className="flex flex-col items-center justify-center gap-5 md:flex-row">
             <CopyProfileCardDialog code={generateProfileCardCode()} />
             <Button className="w-full md:w-auto" onClick={getImage}>
               Download PNG

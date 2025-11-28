@@ -1,3 +1,4 @@
+import { CommandExample } from "@/components/examples/command";
 import {
   Alert,
   AlertDescription,
@@ -48,8 +49,6 @@ import {
 } from "@/components/ui/8bit/tabs";
 import { Textarea } from "@/components/ui/8bit/textarea";
 
-import { CommandExample } from "@/components/examples/command";
-
 import ChapterIntro from "../ui/8bit/blocks/chapter-intro";
 import Dialogue from "../ui/8bit/blocks/dialogue";
 import DifficultySelect from "../ui/8bit/blocks/difficulty-select";
@@ -65,10 +64,10 @@ import { DrawerExample } from "./drawer";
 
 export default function ComponentShowcase() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+    <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {/* Column 1 */}
       <div className="flex flex-col gap-4">
-        <div className="flex flex-col gap-6 mt-1">
+        <div className="mt-1 flex flex-col gap-6">
           <Button>Button</Button>
 
           <DrawerExample />
@@ -114,46 +113,46 @@ export default function ComponentShowcase() {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Active Now</CardTitle>
+            <CardTitle className="font-medium text-sm">Active Now</CardTitle>
             <svg
-              width="50"
-              height="50"
-              viewBox="0 0 256 256"
+              aria-label="activity"
+              className="size-6"
               fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
+              height="50"
               stroke="currentColor"
               strokeWidth="0.25"
-              className="size-6"
-              aria-label="activity"
+              viewBox="0 0 256 256"
+              width="50"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <rect x="160" y="192" width="14" height="14" rx="1"></rect>
-              <rect x="164" y="176" width="14" height="14" rx="1"></rect>
-              <rect x="168" y="160" width="14" height="14" rx="1"></rect>
-              <rect x="172" y="144" width="14" height="14" rx="1"></rect>
-              <rect x="176" y="128" width="14" height="14" rx="1"></rect>
-              <rect x="192" y="128" width="14" height="14" rx="1"></rect>
-              <rect x="64" y="128" width="14" height="14" rx="1"></rect>
-              <rect x="152" y="208" width="14" height="14" rx="1"></rect>
-              <rect x="84" y="112" width="14" height="14" rx="1"></rect>
-              <rect x="88" y="96" width="14" height="14" rx="1"></rect>
-              <rect x="92" y="80" width="14" height="14" rx="1"></rect>
-              <rect x="96" y="64" width="14" height="14" rx="1"></rect>
-              <rect x="104" y="48" width="14" height="14" rx="1"></rect>
-              <rect x="80" y="128" width="14" height="14" rx="1"></rect>
-              <rect x="120" y="96" width="14" height="14" rx="1"></rect>
-              <rect x="116" y="80" width="14" height="14" rx="1"></rect>
-              <rect x="112" y="64" width="14" height="14" rx="1"></rect>
-              <rect x="136" y="160" width="14" height="14" rx="1"></rect>
-              <rect x="140" y="176" width="14" height="14" rx="1"></rect>
-              <rect x="124" y="112" width="14" height="14" rx="1"></rect>
-              <rect x="128" y="128" width="14" height="14" rx="1"></rect>
-              <rect x="132" y="144" width="14" height="14" rx="1"></rect>
-              <rect x="144" y="192" width="14" height="14" rx="1"></rect>
+              <rect height="14" rx="1" width="14" x="160" y="192" />
+              <rect height="14" rx="1" width="14" x="164" y="176" />
+              <rect height="14" rx="1" width="14" x="168" y="160" />
+              <rect height="14" rx="1" width="14" x="172" y="144" />
+              <rect height="14" rx="1" width="14" x="176" y="128" />
+              <rect height="14" rx="1" width="14" x="192" y="128" />
+              <rect height="14" rx="1" width="14" x="64" y="128" />
+              <rect height="14" rx="1" width="14" x="152" y="208" />
+              <rect height="14" rx="1" width="14" x="84" y="112" />
+              <rect height="14" rx="1" width="14" x="88" y="96" />
+              <rect height="14" rx="1" width="14" x="92" y="80" />
+              <rect height="14" rx="1" width="14" x="96" y="64" />
+              <rect height="14" rx="1" width="14" x="104" y="48" />
+              <rect height="14" rx="1" width="14" x="80" y="128" />
+              <rect height="14" rx="1" width="14" x="120" y="96" />
+              <rect height="14" rx="1" width="14" x="116" y="80" />
+              <rect height="14" rx="1" width="14" x="112" y="64" />
+              <rect height="14" rx="1" width="14" x="136" y="160" />
+              <rect height="14" rx="1" width="14" x="140" y="176" />
+              <rect height="14" rx="1" width="14" x="124" y="112" />
+              <rect height="14" rx="1" width="14" x="128" y="128" />
+              <rect height="14" rx="1" width="14" x="132" y="144" />
+              <rect height="14" rx="1" width="14" x="144" y="192" />
             </svg>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">+573</div>
-            <p className="text-xs text-muted-foreground">
+            <div className="font-bold text-2xl">+573</div>
+            <p className="text-muted-foreground text-xs">
               +201 since last hour
             </p>
           </CardContent>
@@ -161,54 +160,54 @@ export default function ComponentShowcase() {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Subscriptions</CardTitle>
+            <CardTitle className="font-medium text-sm">Subscriptions</CardTitle>
             <svg
-              width="50"
-              height="50"
-              viewBox="0 0 256 256"
+              aria-label="user"
+              className="size-6"
               fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
+              height="50"
               stroke="currentColor"
               strokeWidth="0.25"
-              className="size-6"
-              aria-label="user"
+              viewBox="0 0 256 256"
+              width="50"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <rect x="64" y="144" width="14" height="14" rx="1"></rect>
-              <rect x="96" y="80" width="14" height="14" rx="1"></rect>
-              <rect x="144" y="80" width="14" height="14" rx="1"></rect>
-              <rect x="192" y="192" width="14" height="14" rx="1"></rect>
-              <rect x="176" y="192" width="14" height="14" rx="1"></rect>
-              <rect x="64" y="192" width="14" height="14" rx="1"></rect>
-              <rect x="48" y="176" width="14" height="14" rx="1"></rect>
-              <rect x="48" y="192" width="14" height="14" rx="1"></rect>
-              <rect x="192" y="160" width="14" height="14" rx="1"></rect>
-              <rect x="176" y="144" width="14" height="14" rx="1"></rect>
-              <rect x="192" y="176" width="14" height="14" rx="1"></rect>
-              <rect x="48" y="160" width="14" height="14" rx="1"></rect>
-              <rect x="96" y="64" width="14" height="14" rx="1"></rect>
-              <rect x="112" y="48" width="14" height="14" rx="1"></rect>
-              <rect x="128" y="48" width="14" height="14" rx="1"></rect>
-              <rect x="144" y="64" width="14" height="14" rx="1"></rect>
-              <rect x="144" y="64" width="14" height="14" rx="1"></rect>
-              <rect x="112" y="96" width="14" height="14" rx="1"></rect>
-              <rect x="128" y="96" width="14" height="14" rx="1"></rect>
-              <rect x="80" y="144" width="14" height="14" rx="1"></rect>
-              <rect x="96" y="144" width="14" height="14" rx="1"></rect>
-              <rect x="112" y="144" width="14" height="14" rx="1"></rect>
-              <rect x="128" y="144" width="14" height="14" rx="1"></rect>
-              <rect x="144" y="144" width="14" height="14" rx="1"></rect>
-              <rect x="160" y="144" width="14" height="14" rx="1"></rect>
-              <rect x="80" y="192" width="14" height="14" rx="1"></rect>
-              <rect x="96" y="192" width="14" height="14" rx="1"></rect>
-              <rect x="112" y="192" width="14" height="14" rx="1"></rect>
-              <rect x="128" y="192" width="14" height="14" rx="1"></rect>
-              <rect x="144" y="192" width="14" height="14" rx="1"></rect>
-              <rect x="160" y="192" width="14" height="14" rx="1"></rect>
+              <rect height="14" rx="1" width="14" x="64" y="144" />
+              <rect height="14" rx="1" width="14" x="96" y="80" />
+              <rect height="14" rx="1" width="14" x="144" y="80" />
+              <rect height="14" rx="1" width="14" x="192" y="192" />
+              <rect height="14" rx="1" width="14" x="176" y="192" />
+              <rect height="14" rx="1" width="14" x="64" y="192" />
+              <rect height="14" rx="1" width="14" x="48" y="176" />
+              <rect height="14" rx="1" width="14" x="48" y="192" />
+              <rect height="14" rx="1" width="14" x="192" y="160" />
+              <rect height="14" rx="1" width="14" x="176" y="144" />
+              <rect height="14" rx="1" width="14" x="192" y="176" />
+              <rect height="14" rx="1" width="14" x="48" y="160" />
+              <rect height="14" rx="1" width="14" x="96" y="64" />
+              <rect height="14" rx="1" width="14" x="112" y="48" />
+              <rect height="14" rx="1" width="14" x="128" y="48" />
+              <rect height="14" rx="1" width="14" x="144" y="64" />
+              <rect height="14" rx="1" width="14" x="144" y="64" />
+              <rect height="14" rx="1" width="14" x="112" y="96" />
+              <rect height="14" rx="1" width="14" x="128" y="96" />
+              <rect height="14" rx="1" width="14" x="80" y="144" />
+              <rect height="14" rx="1" width="14" x="96" y="144" />
+              <rect height="14" rx="1" width="14" x="112" y="144" />
+              <rect height="14" rx="1" width="14" x="128" y="144" />
+              <rect height="14" rx="1" width="14" x="144" y="144" />
+              <rect height="14" rx="1" width="14" x="160" y="144" />
+              <rect height="14" rx="1" width="14" x="80" y="192" />
+              <rect height="14" rx="1" width="14" x="96" y="192" />
+              <rect height="14" rx="1" width="14" x="112" y="192" />
+              <rect height="14" rx="1" width="14" x="128" y="192" />
+              <rect height="14" rx="1" width="14" x="144" y="192" />
+              <rect height="14" rx="1" width="14" x="160" y="192" />
             </svg>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">+2350</div>
-            <p className="text-xs text-muted-foreground">
+            <div className="font-bold text-2xl">+2350</div>
+            <p className="text-muted-foreground text-xs">
               +180.1% from last month
             </p>
           </CardContent>
@@ -217,7 +216,7 @@ export default function ComponentShowcase() {
         {/* Badge Examples */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-sm font-medium">Player Status</CardTitle>
+            <CardTitle className="font-medium text-sm">Player Status</CardTitle>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-5">
             <Badge>Level 42</Badge>
@@ -246,16 +245,16 @@ export default function ComponentShowcase() {
                 </SelectContent>
               </Select>
 
-              <div className="flex justify-center items-center">
+              <div className="flex items-center justify-center">
                 <DatePicker />
               </div>
               <EnemyHealthDisplay
+                currentHealth={850}
                 enemyName="Fire Dragon"
                 level={25}
-                currentHealth={850}
                 maxHealth={1000}
               />
-              <ManaBar value={75} variant="retro" className="mt-5" />
+              <ManaBar className="mt-5" value={75} variant="retro" />
             </div>
           </CardContent>
         </Card>
@@ -263,19 +262,19 @@ export default function ComponentShowcase() {
         <Card>
           <CardContent className="flex flex-col gap-4">
             <Dialogue
-              avatarSrc="/images/pixelized-8bitcnorc.jpg"
               avatarFallback="Orc"
-              title="Orc"
+              avatarSrc="/images/pixelized-8bitcnorc.jpg"
               description="I bring you a gift… it's called AXE TO THE FACE! SLASH!!"
+              title="Orc"
             />
 
             <div className="flex justify-end">
               <Dialogue
-                avatarSrc="/images/goblin.png"
                 avatarFallback="Goblin"
-                title="Goblin"
+                avatarSrc="/images/goblin.png"
                 description="`Screeches like a dying flute`"
                 player={false}
+                title="Goblin"
               />
             </div>
           </CardContent>
@@ -284,13 +283,13 @@ export default function ComponentShowcase() {
         <GameOver />
 
         <ChapterIntro
-          className="w-full md:w-full mx-auto text-white"
-          title="LEVEL 2: GOBLINS"
-          subtitle="Defeat the goblins to pass through the forest."
-          backgroundSrc="/images/forest-goblins.png"
-          height="md"
           align="center"
+          backgroundSrc="/images/forest-goblins.png"
+          className="mx-auto w-full text-white md:w-full"
           darken={0.5}
+          height="md"
+          subtitle="Defeat the goblins to pass through the forest."
+          title="LEVEL 2: GOBLINS"
         />
 
         <GameProgress />
@@ -298,28 +297,28 @@ export default function ComponentShowcase() {
         {/* Tabs Example */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-sm font-medium">Game Menu</CardTitle>
+            <CardTitle className="font-medium text-sm">Game Menu</CardTitle>
           </CardHeader>
           <CardContent>
-            <Tabs defaultValue="inventory" className="w-full">
+            <Tabs className="w-full" defaultValue="inventory">
               <TabsList className="grid w-full grid-cols-3">
                 <TabsTrigger value="inventory">Items</TabsTrigger>
                 <TabsTrigger value="skills">Skills</TabsTrigger>
                 <TabsTrigger value="stats">Stats</TabsTrigger>
               </TabsList>
-              <TabsContent value="inventory" className="mt-4">
-                <p className="text-sm text-muted-foreground">
+              <TabsContent className="mt-4" value="inventory">
+                <p className="text-muted-foreground text-sm">
                   Your inventory contains 15 items including potions and
                   weapons.
                 </p>
               </TabsContent>
-              <TabsContent value="skills" className="mt-4">
-                <p className="text-sm text-muted-foreground">
+              <TabsContent className="mt-4" value="skills">
+                <p className="text-muted-foreground text-sm">
                   You have learned 8 skills. 3 skill points available.
                 </p>
               </TabsContent>
-              <TabsContent value="stats" className="mt-4">
-                <p className="text-sm text-muted-foreground">
+              <TabsContent className="mt-4" value="stats">
+                <p className="text-muted-foreground text-sm">
                   Strength: 25, Agility: 18, Intelligence: 22
                 </p>
               </TabsContent>
@@ -329,7 +328,7 @@ export default function ComponentShowcase() {
       </div>
 
       {/* Column 3 */}
-      <div className="flex flex-col gap-4 w-full">
+      <div className="flex w-full flex-col gap-4">
         <Input placeholder="Enter your name" />
 
         <Menubar>
@@ -362,7 +361,7 @@ export default function ComponentShowcase() {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">
+            <CardTitle className="font-medium text-sm">
               Product Details
             </CardTitle>
           </CardHeader>
@@ -371,18 +370,18 @@ export default function ComponentShowcase() {
               <div className="grid gap-3">
                 <Label htmlFor="name">Name</Label>
                 <Input
-                  id="name"
-                  type="text"
                   className="w-full"
                   defaultValue="Gamer Gear"
+                  id="name"
+                  type="text"
                 />
               </div>
               <div className="grid gap-3">
                 <Label htmlFor="description">Description</Label>
                 <Textarea
-                  id="description"
-                  defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl nec nunc."
                   className="min-h-32"
+                  defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl nec nunc."
+                  id="description"
                 />
               </div>
             </div>
@@ -391,11 +390,11 @@ export default function ComponentShowcase() {
 
         <Card>
           <CardHeader>
-            <CardTitle className="text-sm font-medium">Game Options</CardTitle>
+            <CardTitle className="font-medium text-sm">Game Options</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="flex items-center gap-4">
-              <Checkbox id="autosave" defaultChecked />
+              <Checkbox defaultChecked id="autosave" />
               <Label htmlFor="autosave">Auto-save enabled</Label>
             </div>
             <div className="flex items-center gap-4">
@@ -403,7 +402,7 @@ export default function ComponentShowcase() {
               <Label htmlFor="notifications">Show notifications</Label>
             </div>
             <div className="flex items-center gap-4">
-              <Checkbox id="fullscreen" defaultChecked />
+              <Checkbox defaultChecked id="fullscreen" />
               <Label htmlFor="fullscreen">Fullscreen mode</Label>
             </div>
             <div className="flex items-center gap-4">
@@ -415,11 +414,11 @@ export default function ComponentShowcase() {
 
         <Card>
           <CardHeader className="flex">
-            <CardTitle className="text-sm font-medium">Warriors</CardTitle>
+            <CardTitle className="font-medium text-sm">Warriors</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">+100</div>
-            <p className="text-xs text-muted-foreground">
+            <div className="font-bold text-2xl">+100</div>
+            <p className="text-muted-foreground text-xs">
               +42% since last month
             </p>
           </CardContent>
@@ -427,11 +426,11 @@ export default function ComponentShowcase() {
 
         <Card>
           <CardHeader className="flex">
-            <CardTitle className="text-sm font-medium">Wizards</CardTitle>
+            <CardTitle className="font-medium text-sm">Wizards</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">+1000</div>
-            <p className="text-xs text-muted-foreground">
+            <div className="font-bold text-2xl">+1000</div>
+            <p className="text-muted-foreground text-xs">
               +31% since last month
             </p>
           </CardContent>

@@ -1,9 +1,8 @@
-import type { NextRequest } from "next/server";
-
 import {
-  UrlResolverByItem,
   generateRegistryRssFeed,
+  type UrlResolverByItem,
 } from "@wandry/analytics-sdk";
+import type { NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {
   const baseUrl = new URL(request.url).origin;

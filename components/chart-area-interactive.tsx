@@ -56,24 +56,24 @@ export function ChartAreaInteractive() {
           >
             <CartesianGrid vertical={false} />
             <XAxis
-              dataKey="month"
-              tickLine={false}
               axisLine={false}
-              tickMargin={8}
+              dataKey="month"
               tickFormatter={(value) => value.slice(0, 3)}
+              tickLine={false}
+              tickMargin={8}
             />
             <ChartTooltip
-              cursor={false}
               content={<ChartTooltipContent hideLabel />}
+              cursor={false}
             />
             <Area
-              dataKey="desktop"
-              type="step"
-              fill="var(--color-desktop)"
-              stroke="var(--color-desktop)"
               activeDot={{
                 fill: "var(--chart-active-dot)",
               }}
+              dataKey="desktop"
+              fill="var(--color-desktop)"
+              stroke="var(--color-desktop)"
+              type="step"
             />
           </AreaChart>
         </ChartContainer>
