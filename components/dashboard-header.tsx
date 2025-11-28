@@ -14,7 +14,6 @@ export function DashboardHeader() {
         <Button onClick={toggleSidebar} variant="ghost">
           {open ? (
             <svg
-              aria-label="arrow-left-to-line"
               className="size-8"
               color="currentColor"
               fill="currentColor"
@@ -25,6 +24,7 @@ export function DashboardHeader() {
               width="50"
               xmlns="http://www.w3.org/2000/svg"
             >
+              <title>Close sidebar</title>
               <rect height="14" rx="1" width="14" x="80" y="120" />
               <rect height="14" rx="1" width="14" x="112" y="120" />
               <rect height="14" rx="1" width="14" x="96" y="120" />
@@ -50,7 +50,6 @@ export function DashboardHeader() {
             </svg>
           ) : (
             <svg
-              aria-label="arrow-right-to-line"
               className="size-8"
               color="currentColor"
               fill="currentColor"
@@ -61,6 +60,7 @@ export function DashboardHeader() {
               width="50"
               xmlns="http://www.w3.org/2000/svg"
             >
+              <title>Open sidebar</title>
               <rect height="14" rx="1" width="14" x="48" y="120" />
               <rect height="14" rx="1" width="14" x="80" y="120" />
               <rect height="14" rx="1" width="14" x="64" y="120" />
@@ -95,7 +95,6 @@ export function DashboardHeader() {
               variant="ghost"
             >
               <svg
-                aria-label="github"
                 className="size-8"
                 color="currentColor"
                 fill="currentColor"
@@ -106,6 +105,7 @@ export function DashboardHeader() {
                 width="50"
                 xmlns="http://www.w3.org/2000/svg"
               >
+                <title>GitHub</title>
                 <rect height="14" rx="1" width="14" x="200" y="80" />
                 <rect height="14" rx="1" width="14" x="184" y="64" />
                 <rect height="14" rx="1" width="14" x="200" y="96" />

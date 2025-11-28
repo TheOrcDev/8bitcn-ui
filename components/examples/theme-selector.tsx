@@ -17,7 +17,7 @@ export default function ThemeSelectorExample() {
     <div className="space-y-8">
       <div className="space-y-4">
         <div className="space-y-2">
-          <label className="font-medium text-sm">Theme Selector</label>
+          <div className="font-medium text-sm">Theme Selector</div>
           <p className="text-muted-foreground text-xs">
             Theme selector with retro themes dropdown
           </p>
@@ -33,7 +33,7 @@ export default function ThemeSelectorExample() {
       {/* Current Theme Display */}
       <div className="space-y-4">
         <div className="space-y-2">
-          <label className="font-medium text-sm">Current Theme</label>
+          <div className="font-medium text-sm">Current Theme</div>
           <div className="flex items-center gap-4">
             <Badge>{activeTheme}</Badge>
             <span className="text-muted-foreground text-xs">

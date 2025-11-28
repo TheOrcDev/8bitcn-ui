@@ -43,14 +43,22 @@ export default function ProfileCreator() {
   // to avoid CSP issues that can affect blob: URLs in some setups.
 
   const safeGithubUrl = useMemo(() => {
-    if (!profile.github) return "";
-    if (/^https?:\/\//i.test(profile.github)) return profile.github;
+    if (!profile.github) {
+      return "";
+    }
+    if (/^https?:\/\//i.test(profile.github)) {
+      return profile.github;
+    }
     return `https://github.com/${profile.github.replace(/^@/, "")}`;
   }, [profile.github]);
 
   const safeXUrl = useMemo(() => {
-    if (!profile.x) return "";
-    if (/^https?:\/\//i.test(profile.x)) return profile.x;
+    if (!profile.x) {
+      return "";
+    }
+    if (/^https?:\/\//i.test(profile.x)) {
+      return profile.x;
+    }
     return `https://x.com/${profile.x.replace(/^@/, "")}`;
   }, [profile.x]);
 
@@ -261,7 +269,9 @@ export default function ProfileCard() {
 
   const getImage = async () => {
     const node = document.getElementById("profile-card") as HTMLElement | null;
-    if (!node) return;
+    if (!node) {
+      return;
+    }
 
     await new Promise((r) => requestAnimationFrame(() => r(undefined)));
 
@@ -417,8 +427,12 @@ export default function ProfileCard() {
                     id="avatar-file"
                     onChange={(e) => {
                       const file = e.currentTarget.files?.[0];
-                      if (!file) return;
-                      if (!file.type.startsWith("image/")) return;
+                      if (!file) {
+                        return;
+                      }
+                      if (!file.type.startsWith("image/")) {
+                        return;
+                      }
                       const reader = new FileReader();
                       reader.onload = () => {
                         const dataUrl = String(reader.result || "");

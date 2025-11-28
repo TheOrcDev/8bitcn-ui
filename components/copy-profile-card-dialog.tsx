@@ -10,9 +10,9 @@ import {
 
 import CodeSnippet from "./code-snippet";
 
-interface ProfileCardProps {
+type ProfileCardProps = {
   code: string;
-}
+};
 
 export default function CopyProfileCardDialog({ code }: ProfileCardProps) {
   return (

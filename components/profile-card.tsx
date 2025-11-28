@@ -15,7 +15,7 @@ import {
   CardTitle,
 } from "@/components/ui/8bit/card";
 
-interface ProfileCardProps {
+type ProfileCardProps = {
   name: string;
   avatarUrl: string;
   badgeTitle: string;
@@ -23,10 +23,12 @@ interface ProfileCardProps {
   safeGithubUrl: string;
   safeXUrl: string;
   description: string;
-}
+};
 
 function getInitials(name: string) {
-  if (!name) return "?";
+  if (!name) {
+    return "?";
+  }
   const parts = name.trim().split(/\s+/);
   const initials = parts
     .slice(0, 2)
@@ -71,7 +73,6 @@ export default function ProfileCard({
               <Button asChild size="icon">
                 <a href={safeGithubUrl} target="_blank">
                   <svg
-                    aria-label="github"
                     className="size-7"
                     fill="currentColor"
                     height="50"
@@ -81,6 +82,7 @@ export default function ProfileCard({
                     width="50"
                     xmlns="http://www.w3.org/2000/svg"
                   >
+                    <title>GitHub</title>
                     <rect height="14" rx="1" width="14" x="200" y="80" />
                     <rect height="14" rx="1" width="14" x="184" y="64" />
                     <rect height="14" rx="1" width="14" x="200" y="96" />
@@ -153,7 +155,6 @@ export default function ProfileCard({
               <Button asChild size="icon">
                 <a href={safeXUrl} target="_blank">
                   <svg
-                    aria-label="twitter"
                     className="size-6"
                     fill="currentColor"
                     height="50"
@@ -163,6 +164,7 @@ export default function ProfileCard({
                     width="50"
                     xmlns="http://www.w3.org/2000/svg"
                   >
+                    <title>X (Twitter)</title>
                     <rect height="14" rx="1" width="14" x="40" y="40" />
                     <rect height="14" rx="1" width="14" x="56" y="40" />
                     <rect height="14" rx="1" width="14" x="72" y="56" />

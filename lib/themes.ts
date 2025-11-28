@@ -1,18 +1,20 @@
-export enum Theme {
-  Default = "default",
-  Sega = "sega",
-  Gameboy = "gameboy",
-  Atari = "atari",
-  Nintendo = "nintendo",
-  Arcade = "arcade",
-  NeoGeo = "neo-geo",
-  SoftPop = "soft-pop",
-  Pacman = "pacman",
-  VHS = "vhs",
-  Cassette = "cassette",
-  RustyByte = "rusty-byte",
-  Zelda = "zelda",
-}
+export const Theme = {
+  Default: "default",
+  Sega: "sega",
+  Gameboy: "gameboy",
+  Atari: "atari",
+  Nintendo: "nintendo",
+  Arcade: "arcade",
+  NeoGeo: "neo-geo",
+  SoftPop: "soft-pop",
+  Pacman: "pacman",
+  VHS: "vhs",
+  Cassette: "cassette",
+  RustyByte: "rusty-byte",
+  Zelda: "zelda",
+} as const;
+
+export type Theme = (typeof Theme)[keyof typeof Theme];
 
 const themes = [
   {

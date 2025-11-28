@@ -115,7 +115,6 @@ export default function ComponentShowcase() {
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="font-medium text-sm">Active Now</CardTitle>
             <svg
-              aria-label="activity"
               className="size-6"
               fill="currentColor"
               height="50"
@@ -125,6 +124,7 @@ export default function ComponentShowcase() {
               width="50"
               xmlns="http://www.w3.org/2000/svg"
             >
+              <title>Activity</title>
               <rect height="14" rx="1" width="14" x="160" y="192" />
               <rect height="14" rx="1" width="14" x="164" y="176" />
               <rect height="14" rx="1" width="14" x="168" y="160" />
@@ -162,7 +162,6 @@ export default function ComponentShowcase() {
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="font-medium text-sm">Subscriptions</CardTitle>
             <svg
-              aria-label="user"
               className="size-6"
               fill="currentColor"
               height="50"
@@ -172,6 +171,7 @@ export default function ComponentShowcase() {
               width="50"
               xmlns="http://www.w3.org/2000/svg"
             >
+              <title>User</title>
               <rect height="14" rx="1" width="14" x="64" y="144" />
               <rect height="14" rx="1" width="14" x="96" y="80" />
               <rect height="14" rx="1" width="14" x="144" y="80" />

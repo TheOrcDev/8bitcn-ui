@@ -47,6 +47,7 @@ export function ActiveThemeProvider({
     () => initialTheme || DEFAULT_THEME
   );
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: "We want to reset the theme on pathname change"
   useEffect(() => {
     queueMicrotask(() => {
       setActiveTheme(DEFAULT_THEME);
@@ -58,14 +59,15 @@ export function ActiveThemeProvider({
 
     const targets = [document.body, document.documentElement];
 
-    targets.forEach((el) => {
-      Array.from(el.classList)
-        .filter((className) => className.startsWith("theme-"))
-        .forEach((className) => {
-          el.classList.remove(className);
-        });
+    for (const el of targets) {
+      const themeClasses = Array.from(el.classList).filter((className) =>
+        className.startsWith("theme-")
+      );
+      for (const className of themeClasses) {
+        el.classList.remove(className);
+      }
       el.classList.add(`theme-${activeTheme}`);
-    });
+    }
   }, [activeTheme]);
 
   return (
@@ -98,7 +100,9 @@ export function ActiveThemeUrlSync() {
   const { activeTheme, setActiveTheme } = useThemeConfig();
 
   useEffect(() => {
-    if (synced.current || !urlTheme) return;
+    if (synced.current || !urlTheme) {
+      return;
+    }
     if (urlTheme !== activeTheme) {
       // Setting it directly here would be cancelled by the useEffect above
       // that resets the theme on pathname change.

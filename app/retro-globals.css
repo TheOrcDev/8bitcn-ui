@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/suspicious/noDuplicateCustomProperties: We're overriding for dark mode */
+
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -872,9 +874,9 @@
   --sidebar-accent-foreground: oklch(0.4244 0.1809 265.6377);
   --sidebar-border: oklch(0.8823 0.0571 254.1284);
   --sidebar-ring: oklch(0.6231 0.188 259.8145);
-  --font-sans: Press Start 2p;
-  --font-serif: Press Start 2p;
-  --font-mono: Press Start 2p;
+  --font-sans: "Press Start 2P";
+  --font-serif: "Press Start 2P";
+  --font-mono: "Press Start 2P";
   --radius: 0rem;
   --shadow-2xs: 0px 0px 0px 0px hsl(0 0% 0% / 0);
   --shadow-xs: 0px 0px 0px 0px hsl(0 0% 0% / 0);
@@ -924,9 +926,9 @@
     --sidebar-accent-foreground: oklch(0.9319 0.0316 255.5855);
     --sidebar-border: oklch(0.4882 0.2172 264.3763);
     --sidebar-ring: oklch(0.7137 0.1434 254.624);
-    --font-sans: Press Start 2p;
-    --font-serif: Press Start 2p;
-    --font-mono: Press Start 2p;
+    --font-sans: "Press Start 2P";
+    --font-serif: "Press Start 2P";
+    --font-mono: "Press Start 2P";
     --radius: 0rem;
     --shadow-2xs: 0px 0px 0px 0px hsl(0 0% 0% / 0);
     --shadow-xs: 0px 0px 0px 0px hsl(0 0% 0% / 0);

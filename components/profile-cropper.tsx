@@ -17,12 +17,12 @@ import {
   CropperImage,
 } from "@/components/ui/cropper";
 
-interface Props {
+type Props = {
   toggleImageCropper: (state?: boolean) => void;
   open: boolean;
   tempImage: string | null;
   setProfileImage: (imageUrl: string) => void;
-}
+};
 
 type Area = { x: number; y: number; width: number; height: number };
 
@@ -85,10 +85,14 @@ const ProfileCropper = ({
     setCroppedAreaPixels(pixels);
   }, []);
 
-  if (!tempImage) return null;
+  if (!tempImage) {
+    return null;
+  }
 
   const handleCrop = async () => {
-    if (!croppedAreaPixels) return;
+    if (!croppedAreaPixels) {
+      return;
+    }
     setIsCropping(true);
     try {
       const croppedUrl = await getCroppedDataUrl(tempImage, croppedAreaPixels);

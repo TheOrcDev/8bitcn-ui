@@ -78,7 +78,6 @@ export function ComboBoxExample() {
                   value={framework.value}
                 >
                   <svg
-                    aria-label="check"
                     className={cn(
                       "mr-2 size-6",
                       value === framework.value ? "opacity-100" : "opacity-0"
@@ -91,6 +90,7 @@ export function ComboBoxExample() {
                     width="50"
                     xmlns="http://www.w3.org/2000/svg"
                   >
+                    <title>Check</title>
                     <rect
                       height="14"
                       rx="1"
