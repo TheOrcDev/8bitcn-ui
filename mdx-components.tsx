@@ -5,8 +5,8 @@ import Link from "next/link";
 import {
   type ComponentProps,
   type HTMLAttributes,
-  type ReactNode,
   isValidElement,
+  type ReactNode,
 } from "react";
 import { Kbd } from "@/components/ui/8bit/kbd";
 import {
@@ -283,10 +283,7 @@ export const mdxComponents = {
   Tabs: ({ className, ...props }: ComponentProps<typeof Tabs>) => (
     <Tabs className={cn("relative mt-6 w-full", className)} {...props} />
   ),
-  TabsList: ({
-    className,
-    ...props
-  }: ComponentProps<typeof TabsList>) => (
+  TabsList: ({ className, ...props }: ComponentProps<typeof TabsList>) => (
     <TabsList
       className={cn(
         "justify-start gap-4 rounded-none bg-transparent px-0",

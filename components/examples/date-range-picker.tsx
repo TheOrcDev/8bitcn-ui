@@ -21,6 +21,20 @@ export function DatePickerWithRange({
     to: addDays(new Date(2022, 0, 20), 20),
   });
 
+  const getDateRangeDisplay = () => {
+    if (!date?.from) {
+      return <span>Pick a date</span>;
+    }
+    if (date.to) {
+      return (
+        <>
+          {format(date.from, "LLL dd, y")} - {format(date.to, "LLL dd, y")}
+        </>
+      );
+    }
+    return format(date.from, "LLL dd, y");
+  };
+
   return (
     <div className={cn("grid gap-2", className)}>
       <Popover>
@@ -34,19 +48,7 @@ export function DatePickerWithRange({
             variant={"outline"}
           >
             <CalendarIcon />
-            {/* biome-ignore lint/style/noNestedTernary: This is the clearest way to express the date range logic */}
-            {date?.from ? (
-              date.to ? (
-                <>
-                  {format(date.from, "LLL dd, y")} -{" "}
-                  {format(date.to, "LLL dd, y")}
-                </>
-              ) : (
-                format(date.from, "LLL dd, y")
-              )
-            ) : (
-              <span>Pick a date</span>
-            )}
+            {getDateRangeDisplay()}
           </Button>
         </PopoverTrigger>
         <PopoverContent align="start" className="w-auto p-0">

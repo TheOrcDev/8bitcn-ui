@@ -14,9 +14,7 @@ import {
 
 export function Calendar13() {
   const [dropdown, setDropdown] =
-    useState<ComponentProps<typeof Calendar>["captionLayout"]>(
-      "dropdown"
-    );
+    useState<ComponentProps<typeof Calendar>["captionLayout"]>("dropdown");
   const [date, setDate] = useState<Date | undefined>(
     () => new Date(2025, 5, 12)
   );

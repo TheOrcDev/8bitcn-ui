@@ -1,7 +1,7 @@
 "use client";
 
 import { Check, Clipboard } from "lucide-react";
-import { type ReactNode, isValidElement, useState } from "react";
+import { isValidElement, type ReactNode, useState } from "react";
 import ShikiHighlighter from "react-shiki";
 import { toast } from "@/components/ui/8bit/toast";
 import { Button } from "@/components/ui/button";
@@ -88,11 +88,7 @@ const createCustomTheme = () => ({
   ],
 });
 
-export default function CodeSnippet({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function CodeSnippet({ children }: { children: ReactNode }) {
   const [copied, setCopied] = useState(false);
 
   // Extract text content from React children
