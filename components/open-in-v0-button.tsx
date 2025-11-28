@@ -3,6 +3,10 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import registry from "@/registry.json";
 
+const PACKAGE_PREFIX_REGEX = /^@8bitcn\//;
+const COMPONENT_PREFIX_REGEX = /^8bit-/;
+const TRAILING_SLASH_REGEX = /\/$/;
+
 const registryNameMap = new Map(
   registry.items.map((item) => [normalizeName(item.name), item.name])
 );
@@ -17,10 +21,10 @@ function resolveRegistryName(rawName?: string) {
   }
 
   const baseCandidates = new Set<string>();
-  const sanitized = normalizeName(rawName.replace(/^@8bitcn\//, ""));
+  const sanitized = normalizeName(rawName.replace(PACKAGE_PREFIX_REGEX, ""));
 
   baseCandidates.add(sanitized);
-  baseCandidates.add(sanitized.replace(/^8bit-/, ""));
+  baseCandidates.add(sanitized.replace(COMPONENT_PREFIX_REGEX, ""));
 
   for (const candidate of Array.from(baseCandidates)) {
     const segments = candidate.split("-");
@@ -48,7 +52,10 @@ export function OpenInV0Button({
   ...buttonProps
 }: { name: string } & React.ComponentProps<typeof Button>) {
   const registryName = resolveRegistryName(name);
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/$/, "");
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL?.replace(
+    TRAILING_SLASH_REGEX,
+    ""
+  );
 
   if (!(registryName && baseUrl)) {
     return null;

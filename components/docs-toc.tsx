@@ -1,6 +1,7 @@
 "use client";
 
 import { IconMenu3 } from "@tabler/icons-react";
+// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useEffect and React.useState
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import {

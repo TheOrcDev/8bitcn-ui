@@ -2,6 +2,7 @@ import { icons } from "@tabler/icons-react";
 
 import Image from "next/image";
 import Link from "next/link";
+// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.ComponentProps and React.isValidElement
 import * as React from "react";
 import { Kbd } from "@/components/ui/8bit/kbd";
 import {
@@ -110,6 +111,8 @@ export const mdxComponents = {
     />
   ),
   img: ({ className, alt, ...props }: React.ComponentProps<"img">) => (
+    /* biome-ignore lint/performance/noImgElement: MDX content requires standard img elements */
+    /* biome-ignore lint/correctness/useImageSize: MDX images have dynamic sizes from markdown */
     <img alt={alt} className={cn("rounded-md", className)} {...props} />
   ),
   hr: ({ ...props }: React.ComponentProps<"hr">) => (
@@ -229,9 +232,9 @@ export const mdxComponents = {
         return node.map(getTextContent).join("");
       }
       if (React.isValidElement(node)) {
-        const props = node.props as { children?: React.ReactNode };
-        if (props.children) {
-          return getTextContent(props.children);
+        const nodeProps = node.props as { children?: React.ReactNode };
+        if (nodeProps.children) {
+          return getTextContent(nodeProps.children);
         }
       }
       return "";

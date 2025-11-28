@@ -2,6 +2,7 @@
 
 import { addDays, format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
+// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useState
 import * as React from "react";
 import type { DateRange } from "react-day-picker";
 import { Button } from "@/components/ui/8bit/button";
@@ -34,6 +35,7 @@ export function DatePickerWithRange({
             variant={"outline"}
           >
             <CalendarIcon />
+            {/* biome-ignore lint/style/noNestedTernary: This is the clearest way to express the date range logic */}
             {date?.from ? (
               date.to ? (
                 <>

@@ -15,6 +15,8 @@ import {
   CardTitle,
 } from "@/components/ui/8bit/card";
 
+const WHITESPACE_REGEX = /\s+/;
+
 type ProfileCardProps = {
   name: string;
   avatarUrl: string;
@@ -29,7 +31,7 @@ function getInitials(name: string) {
   if (!name) {
     return "?";
   }
-  const parts = name.trim().split(/\s+/);
+  const parts = name.trim().split(WHITESPACE_REGEX);
   const initials = parts
     .slice(0, 2)
     .map((p) => p[0]?.toUpperCase())

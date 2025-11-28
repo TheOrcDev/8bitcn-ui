@@ -1,6 +1,7 @@
 "use client";
 
 import { Check, ChevronsUpDown, GalleryVerticalEnd } from "lucide-react";
+// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useState
 import * as React from "react";
 
 import {

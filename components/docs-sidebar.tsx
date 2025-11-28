@@ -75,26 +75,26 @@ export function DocsSidebar({
                 <SidebarGroupContent>
                   {item.type === "folder" && (
                     <SidebarMenu className="gap-0.5">
-                      {item.children.map((item) => {
+                      {item.children.map((childItem) => {
                         if (
-                          item.type === "page" &&
-                          item.url?.includes("/mcp")
+                          childItem.type === "page" &&
+                          childItem.url?.includes("/mcp")
                         ) {
                           return null;
                         }
 
                         return (
-                          item.type === "page" &&
-                          !EXCLUDED_PAGES.includes(item.url) && (
-                            <SidebarMenuItem key={item.url}>
+                          childItem.type === "page" &&
+                          !EXCLUDED_PAGES.includes(childItem.url) && (
+                            <SidebarMenuItem key={childItem.url}>
                               <SidebarMenuButton
                                 asChild
                                 className="after:-inset-y-1 relative h-[30px] 3xl:fixed:w-full w-fit 3xl:fixed:max-w-48 overflow-visible border border-transparent font-medium text-[0.8rem] after:absolute after:inset-x-0 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent"
-                                isActive={item.url === pathname}
+                                isActive={childItem.url === pathname}
                               >
-                                <Link href={item.url}>
+                                <Link href={childItem.url}>
                                   <span className="absolute inset-0 flex w-(--sidebar-width) bg-transparent" />
-                                  {item.name}
+                                  {childItem.name}
                                 </Link>
                               </SidebarMenuButton>
                             </SidebarMenuItem>

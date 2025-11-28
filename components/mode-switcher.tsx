@@ -2,6 +2,7 @@
 
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
+// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useEffect
 import * as React from "react";
 
 import { Button } from "@/components/ui/button";

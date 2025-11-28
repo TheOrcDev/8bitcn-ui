@@ -1,5 +1,6 @@
 "use client";
 
+// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useState
 import * as React from "react";
 
 import type { DateRange } from "react-day-picker";

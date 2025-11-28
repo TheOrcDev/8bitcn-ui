@@ -1,6 +1,7 @@
 "use client";
 
 import { Check, Clipboard } from "lucide-react";
+// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.ReactNode and React.isValidElement
 import * as React from "react";
 import { useState } from "react";
 import ShikiHighlighter from "react-shiki";

@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronsUpDown } from "lucide-react";
+// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useState
 import * as React from "react";
 import { Button } from "@/components/ui/8bit/button";
 import {

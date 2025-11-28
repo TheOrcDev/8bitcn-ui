@@ -1,5 +1,6 @@
 "use client";
 
+// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useState and React.useEffect
 import * as React from "react";
 
 export function useCopyToClipboard({

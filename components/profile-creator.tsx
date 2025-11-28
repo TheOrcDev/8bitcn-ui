@@ -1,5 +1,6 @@
 "use client";
 
+// biome-ignore lint/performance/noNamespaceImport: html-to-image library exports are designed to be used as a namespace
 import * as htmlToImage from "html-to-image";
 import { parseAsBoolean, parseAsString, useQueryStates } from "nuqs";
 import { useMemo, useState } from "react";
@@ -22,6 +23,10 @@ import { toast } from "@/components/ui/8bit/toast";
 import CopyProfileCardDialog from "./copy-profile-card-dialog";
 import ProfileCard from "./profile-card";
 import ProfileCropper from "./profile-cropper";
+
+const HTTP_URL_REGEX = /^https?:\/\//i;
+const HTTP_OR_PROTOCOL_RELATIVE_REGEX = /^(https?:)?\/\//i;
+const AT_SYMBOL_REGEX = /^@/;
 
 const profileSearchParams = {
   name: parseAsString.withDefault(""),
@@ -46,26 +51,27 @@ export default function ProfileCreator() {
     if (!profile.github) {
       return "";
     }
-    if (/^https?:\/\//i.test(profile.github)) {
+    if (HTTP_URL_REGEX.test(profile.github)) {
       return profile.github;
     }
-    return `https://github.com/${profile.github.replace(/^@/, "")}`;
+    return `https://github.com/${profile.github.replace(AT_SYMBOL_REGEX, "")}`;
   }, [profile.github]);
 
   const safeXUrl = useMemo(() => {
     if (!profile.x) {
       return "";
     }
-    if (/^https?:\/\//i.test(profile.x)) {
+    if (HTTP_URL_REGEX.test(profile.x)) {
       return profile.x;
     }
-    return `https://x.com/${profile.x.replace(/^@/, "")}`;
+    return `https://x.com/${profile.x.replace(AT_SYMBOL_REGEX, "")}`;
   }, [profile.x]);
 
   const valueForAttr = (value: string) => value.replace(/"/g, "&quot;");
   const escapeText = (value: string) =>
     value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
+  // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: This function generates HTML code and is clearest as a single function
   const generateProfileCardCode = () => {
     const hasGithub = Boolean(safeGithubUrl);
     const hasX = Boolean(safeXUrl);
@@ -224,7 +230,7 @@ export default function ProfileCreator() {
       : "";
 
     // Do not emit data/blob URLs in generated code. Only keep http(s) or root-relative paths.
-    const isHttpLike = /^(https?:)?\/\//i.test(profile.avatarUrl);
+    const isHttpLike = HTTP_OR_PROTOCOL_RELATIVE_REGEX.test(profile.avatarUrl);
     const isRootRelative = profile.avatarUrl.startsWith("/");
     const avatarSrcForCode =
       isHttpLike || isRootRelative ? profile.avatarUrl : "/avatar.jpg";
@@ -307,12 +313,14 @@ export default function ProfileCard() {
       });
 
       // 5. Download PNG
-      const a = document.createElement("a");
-      a.href = dataUrl!;
-      a.download = "profile-card.png";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
+      if (dataUrl) {
+        const a = document.createElement("a");
+        a.href = dataUrl;
+        a.download = "profile-card.png";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      }
     } catch (e) {
       console.error("html-to-image failed", e);
       toast("Failed to generate profile card, try with manual upload.");

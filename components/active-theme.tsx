@@ -22,6 +22,7 @@ function setThemeCookie(theme: Theme) {
     return;
   }
 
+  // biome-ignore lint/suspicious/noDocumentCookie: Cookie Store API is not widely supported yet
   document.cookie = `${COOKIE_NAME}=${theme}; path=/; max-age=31536000; SameSite=Lax; ${
     window.location.protocol === "https:" ? "Secure;" : ""
   }`;

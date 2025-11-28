@@ -44,6 +44,7 @@ import {
   useReactTable,
   type VisibilityState,
 } from "@tanstack/react-table";
+// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useState and React.ComponentProps
 import * as React from "react";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 import { toast } from "sonner";
@@ -372,10 +373,10 @@ export function DataTable({
   function handleDragEnd(event: DragEndEvent) {
     const { active, over } = event;
     if (active && over && active.id !== over.id) {
-      setData((data) => {
+      setData((currentData) => {
         const oldIndex = dataIds.indexOf(active.id);
         const newIndex = dataIds.indexOf(over.id);
-        return arrayMove(data, oldIndex, newIndex);
+        return arrayMove(currentData, oldIndex, newIndex);
       });
     }
   }

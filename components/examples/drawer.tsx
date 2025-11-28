@@ -1,6 +1,7 @@
 "use client";
 
 import { Minus, Plus } from "lucide-react";
+// biome-ignore lint/performance/noNamespaceImport: React namespace is needed for React.useState
 import * as React from "react";
 import { Bar, BarChart, ResponsiveContainer } from "recharts";
 
