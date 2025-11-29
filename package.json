@@ -8,7 +8,6 @@
     "start": "next start",
     "check": "ultracite check",
     "fix": "ultracite fix",
-    "registry:build": "shadcn build",
     "prepare": "husky"
   },
   "dependencies": {
