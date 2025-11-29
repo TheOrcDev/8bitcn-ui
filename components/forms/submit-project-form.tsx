@@ -27,6 +27,7 @@ import {
 import { createProject } from "@/server/projects";
 
 const URL_PROTOCOL_REGEX = /^https?:\/\//i;
+const VALID_HOSTNAME_REGEX = /^.+\..+$/;
 const MIN_PROJECT_NAME_LENGTH = 3;
 const MAX_PROJECT_NAME_LENGTH = 50;
 
@@ -42,23 +43,23 @@ const formSchema = z.object({
       `Project name must be less than ${MAX_PROJECT_NAME_LENGTH} characters.`
     ),
   url: z
-    .url()
+    .string()
     .min(1, "URL is required.")
     .refine(
       (val) => {
-        // Add https:// if no protocol is present for validation
         const urlWithProtocol = URL_PROTOCOL_REGEX.test(val)
           ? val
           : `https://${val}`;
         try {
-          new URL(urlWithProtocol);
-          return true;
+          const urlObj = new URL(urlWithProtocol);
+          return VALID_HOSTNAME_REGEX.test(urlObj.hostname);
         } catch {
           return false;
         }
       },
       {
-        message: "URL must be from yourproject.com domain.",
+        message:
+          "Please enter a valid URL (e.g. example.com or https://example.com)",
       }
     ),
 });
