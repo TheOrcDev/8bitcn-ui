@@ -22,6 +22,21 @@ export default function Home() {
       <ComponentShowcase />
 
       <Sponsors />
+
+      <div className="mt-8 border-4 border-foreground/20 border-dashed p-6 text-center">
+        <h2 className={`${"retro"} mb-2 font-bold text-lg md:text-xl`}>
+          Built something with 8bitcn?
+        </h2>
+        <p className="mx-auto mb-4 max-w-md text-muted-foreground text-sm">
+          Share your project with the community! Submit it here and you could
+          get featured on the site.
+        </p>
+        <Link href="/submit-project">
+          <Button className="w-fit" size="sm">
+            Submit Your Project
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }
