@@ -92,7 +92,7 @@
     "react": "^19.2.1",
     "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3",
-    "ultracite": "6.3.8"
+    "ultracite": "6.3.7"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx,json,css,md}": "pnpm check"
