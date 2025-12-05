@@ -51,7 +51,7 @@ export default function Sponsors() {
   return (
     <div className="retro flex flex-col items-center justify-center gap-10 px-5 py-10">
       <div className="flex flex-col items-center gap-2">
-        <h1 className="font-bold text-2xl">Sponsors</h1>
+        <h2 className="font-bold text-2xl">Sponsors</h2>
         <p className="max-w-xl text-center text-muted-foreground text-xs">
           We are grateful to our sponsors who help us grow and support our
           projects.
