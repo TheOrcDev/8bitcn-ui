@@ -1,0 +1,177 @@
+---
+title: Input Group
+description: Display additional information or actions alongside an input or textarea with an 8-bit style.
+---
+
+import {
+  Search,
+  Mail,
+  CreditCard,
+  Check,
+  Star,
+  Info,
+  ArrowUp,
+  Plus,
+} from "lucide-react";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+  InputGroupText,
+  InputGroupTextarea,
+} from "@/components/ui/8bit/input-group";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/input-group"
+    command="pnpm dlx shadcn@latest add @8bitcn/input-group"
+  />
+</div>
+
+<ComponentPreview title="8-bit Input Group component" name="input-group">
+  <div className="grid w-full max-w-sm gap-6">
+    <InputGroup>
+      <InputGroupInput placeholder="Search..." />
+      <InputGroupAddon>
+        <Search className="size-4" />
+      </InputGroupAddon>
+    </InputGroup>
+    <InputGroup>
+      <InputGroupInput placeholder="example.com" />
+      <InputGroupAddon>
+        <InputGroupText>https://</InputGroupText>
+      </InputGroupAddon>
+    </InputGroup>
+  </div>
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="input-group" />
+
+## Usage
+
+---
+
+```tsx
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+  InputGroupText,
+  InputGroupTextarea,
+} from "@/components/ui/8bit/input-group";
+```
+
+```tsx
+<InputGroup>
+  <InputGroupInput placeholder="Search..." />
+  <InputGroupAddon>
+    <SearchIcon />
+  </InputGroupAddon>
+</InputGroup>
+```
+
+## Examples
+
+---
+
+### With Icon
+
+<ComponentPreview title="Input Group with Icon" name="input-group-icon">
+  <div className="grid w-full max-w-sm gap-6">
+    <InputGroup>
+      <InputGroupInput placeholder="Search..." />
+      <InputGroupAddon>
+        <Search className="size-4" />
+      </InputGroupAddon>
+    </InputGroup>
+    <InputGroup>
+      <InputGroupInput type="email" placeholder="Enter your email" />
+      <InputGroupAddon>
+        <Mail className="size-4" />
+      </InputGroupAddon>
+    </InputGroup>
+    <InputGroup>
+      <InputGroupInput placeholder="Card number" />
+      <InputGroupAddon>
+        <CreditCard className="size-4" />
+      </InputGroupAddon>
+      <InputGroupAddon align="inline-end">
+        <Check className="size-4" />
+      </InputGroupAddon>
+    </InputGroup>
+  </div>
+</ComponentPreview>
+
+### With Text
+
+<ComponentPreview title="Input Group with Text" name="input-group-text">
+  <div className="grid w-full max-w-sm gap-6">
+    <InputGroup>
+      <InputGroupAddon>
+        <InputGroupText>$</InputGroupText>
+      </InputGroupAddon>
+      <InputGroupInput placeholder="0.00" />
+      <InputGroupAddon align="inline-end">
+        <InputGroupText>USD</InputGroupText>
+      </InputGroupAddon>
+    </InputGroup>
+    <InputGroup>
+      <InputGroupAddon>
+        <InputGroupText>https://</InputGroupText>
+      </InputGroupAddon>
+      <InputGroupInput placeholder="example.com" className="flex-1" />
+      <InputGroupAddon align="inline-end">
+        <InputGroupText>.com</InputGroupText>
+      </InputGroupAddon>
+    </InputGroup>
+    <InputGroup>
+      <InputGroupInput placeholder="Enter your username" className="flex-1" />
+      <InputGroupAddon align="inline-end">
+        <InputGroupText>@company.com</InputGroupText>
+      </InputGroupAddon>
+    </InputGroup>
+  </div>
+</ComponentPreview>
+
+### With Button
+
+<ComponentPreview title="Input Group with Button" name="input-group-button">
+  <div className="grid w-full max-w-sm gap-6">
+    <InputGroup>
+      <InputGroupInput placeholder="Type to search..." />
+      <InputGroupAddon align="inline-end">
+        <InputGroupButton variant="secondary">Search</InputGroupButton>
+      </InputGroupAddon>
+    </InputGroup>
+  </div>
+</ComponentPreview>
+
+### With Textarea
+
+<ComponentPreview title="Input Group with Textarea" name="input-group-textarea">
+  <div className="grid w-full max-w-md gap-4">
+    <InputGroup>
+      <InputGroupTextarea
+        placeholder="Enter your message..."
+        className="min-h-[120px]"
+      />
+      <InputGroupAddon align="block-end">
+        <InputGroupText className="text-muted-foreground text-xs">
+          120 characters left
+        </InputGroupText>
+        <InputGroupButton variant="default">
+          Send <ArrowUp className="size-3" />
+        </InputGroupButton>
+      </InputGroupAddon>
+    </InputGroup>
+  </div>
+</ComponentPreview>
