@@ -21,12 +21,12 @@ interface InputGroupProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof inputGroupVariants> {}
 
-function InputGroup({ className, font, ...props }: InputGroupProps) {
+function InputGroup({ className, font, children, ...props }: InputGroupProps) {
   return (
     <div
       data-slot="input-group"
       className={cn(
-        "relative border-y-6 border-foreground dark:border-ring !p-0 flex flex-wrap items-center has-[textarea]:flex-col has-[input:disabled]:opacity-50 has-[textarea:disabled]:opacity-50 has-[input:disabled]:cursor-not-allowed has-[textarea:disabled]:cursor-not-allowed",
+        "relative border-y-6 border-foreground dark:border-ring !p-0 flex items-center has-[textarea]:flex-col has-[input:disabled]:opacity-50 has-[textarea:disabled]:opacity-50 has-[input:disabled]:cursor-not-allowed has-[textarea:disabled]:cursor-not-allowed",
         font !== "normal" && "retro",
         className
       )}
@@ -36,6 +36,7 @@ function InputGroup({ className, font, ...props }: InputGroupProps) {
         className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
         aria-hidden="true"
       />
+      {children}
     </div>
   )
 }
