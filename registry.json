@@ -971,6 +971,35 @@
       ]
     },
     {
+      "name": "friend-list",
+      "type": "registry:block",
+      "title": "8-bit Friend List",
+      "description": "A simple 8-bit friend list component",
+      "registryDependencies": ["scroll-area", "card", "avatar"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/friend-list.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/friend-list.tsx"
+        },
+        {
+          "path": "components/ui/8bit/scroll-area.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/scroll-area.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/avatar.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/avatar.tsx"
+        }
+      ]
+    },
+    {
       "name": "login-form",
       "type": "registry:block",
       "title": "8-bit Login Form",
