@@ -253,12 +253,12 @@ export function CharacterSheet({
                 {attributes.map((attr) => (
                   <div
                     key={attr.shortName}
-                    className="flex items-center justify-between p-2 bg-muted/30 border-2 border-border"
+                    className="flex items-center justify-between p-2 bg-muted/30 border-2"
                   >
                     <span className="text-xs font-bold">
                       {attr.shortName}
                     </span>
-                    <span className="text-sm font-bold">{attr.value}</span>
+                    <span className="text-xs font-bold">{attr.value}</span>
                   </div>
                 ))}
               </div>
@@ -313,7 +313,7 @@ export function CharacterSheet({
                 {equipment.map((item) => (
                   <div
                     key={item.slot}
-                    className="flex sm:flex-row flex-col items-center justify-between py-2 px-3 bg-muted/30 border-2 border-border"
+                    className="flex sm:flex-row flex-col items-center justify-between py-2 px-3 bg-muted/30 border-2"
                   >
                     <span className="text-xs text-muted-foreground uppercase">
                       {item.slot}
@@ -393,7 +393,7 @@ export function CharacterSheetAttributeBox({
   return (
     <div
       className={cn(
-        "flex items-center justify-between p-2 bg-muted/30 border-2 border-border",
+        "flex items-center justify-between p-2 bg-muted/30 border-2",
         className
       )}
     >
