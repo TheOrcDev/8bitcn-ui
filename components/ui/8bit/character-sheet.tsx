@@ -88,7 +88,6 @@ export interface CharacterSheetProps
   showAttributes?: boolean;
   showSecondaryStats?: boolean;
   showEquipment?: boolean;
-  compactMode?: boolean;
 }
 
 const defaultPrimaryAttributes: PrimaryAttribute[] = [
@@ -124,7 +123,6 @@ export function CharacterSheet({
   showAttributes = true,
   showSecondaryStats = true,
   showEquipment = true,
-  compactMode = false,
   ...props
 }: CharacterSheetProps) {
   const attributes = primaryAttributes || defaultPrimaryAttributes;
@@ -163,7 +161,7 @@ export function CharacterSheet({
           )}
 
           <div className="flex-1 min-w-0 space-y-2">
-            <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-wrap flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
               <h2 className="text-xl font-bold truncate">{characterName}</h2>
               {showLevel && (
                 <Badge className="text-xs w-fit">LV. {characterLevel}</Badge>
@@ -173,41 +171,8 @@ export function CharacterSheet({
             {(characterClass || characterTitle) && (
               <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
                 {characterClass && <span>{characterClass}</span>}
-                {characterClass && characterTitle && <span>•</span>}
                 {characterTitle && (
                   <span className="text-amber-500">{characterTitle}</span>
-                )}
-              </div>
-            )}
-
-            {/* Health/Mana/XP in header for compact mode */}
-            {compactMode && (showHealth || showMana || showExperience) && (
-              <div className="space-y-2 pt-2">
-                {showHealth && health && (
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs w-8 text-red-500">HP</span>
-                    <HealthBar
-                      value={healthPercentage}
-                      variant="retro"
-                      className="h-2 flex-1"
-                    />
-                    <span className="text-[10px] text-muted-foreground retro">
-                      {health.current}/{health.max}
-                    </span>
-                  </div>
-                )}
-                {showMana && mana && (
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs w-8 text-blue-500">MP</span>
-                    <ManaBar
-                      value={manaPercentage}
-                      variant="retro"
-                      className="h-2 flex-1"
-                    />
-                    <span className="text-[10px] text-muted-foreground retro">
-                      {mana.current}/{mana.max}
-                    </span>
-                  </div>
                 )}
               </div>
             )}
@@ -216,8 +181,8 @@ export function CharacterSheet({
       </CardHeader>
 
       <CardContent className="space-y-6">
-        {/* Health/Mana/XP Bars (non-compact mode) */}
-        {!compactMode && (showHealth || showMana || showExperience) && (
+        {/* Health/Mana/XP Bars */}
+        {(showHealth || showMana || showExperience) && (
           <div className="space-y-3">
             {showHealth && health && (
               <div className="space-y-1">

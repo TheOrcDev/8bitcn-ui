@@ -17,11 +17,11 @@ import ComponentPreview from "@/components/component-preview";
 
 <ComponentPreview title="8-bit Character Sheet block" name="character-sheet">
   <CharacterSheet
-    characterName="OrcDev"
-    characterClass="Web Dev Warrior"
+    characterName="Orc"
+    characterClass="Warrior"
     characterTitle="The Pixel Master"
     characterLevel={42}
-    avatarSrc="/avatars/orcdev.jpeg"
+    avatarSrc="/images/404/pixel-orc.webp"
     avatarFallback="OD"
     health={{ current: 850, max: 1000 }}
     mana={{ current: 320, max: 400 }}
@@ -83,7 +83,7 @@ import { CharacterSheet } from "@/components/ui/8bit/character-sheet";
 
 ```tsx
 <CharacterSheet
-  characterName="OrcDev"
+  characterName="Orc"
   characterClass="Web Dev Warrior"
   characterTitle="The Pixel Master"
   characterLevel={42}
@@ -121,44 +121,6 @@ import { CharacterSheet } from "@/components/ui/8bit/character-sheet";
 ## Examples
 
 ---
-
-### Compact Mode
-
-A more condensed version for smaller spaces:
-
-<ComponentPreview
-  title="Compact Character Sheet"
-  name="character-sheet-compact"
->
-  <CharacterSheet
-    characterName="PixelKnight"
-    characterClass="Tank"
-    characterLevel={25}
-    avatarFallback="PK"
-    health={{ current: 500, max: 500 }}
-    mana={{ current: 100, max: 200 }}
-    compactMode={true}
-    showAttributes={false}
-    showSecondaryStats={false}
-    showEquipment={false}
-    className="max-w-sm"
-  />
-</ComponentPreview>
-
-```tsx
-<CharacterSheet
-  characterName="PixelKnight"
-  characterClass="Tank"
-  characterLevel={25}
-  avatarFallback="PK"
-  health={{ current: 500, max: 500 }}
-  mana={{ current: 100, max: 200 }}
-  compactMode={true}
-  showAttributes={false}
-  showSecondaryStats={false}
-  showEquipment={false}
-/>
-```
 
 ### With Custom Sections
 
@@ -311,7 +273,6 @@ Show only the stats you need:
 | `showAttributes`     | `boolean`             | `true`            | Show/hide primary attributes            |
 | `showSecondaryStats` | `boolean`             | `true`            | Show/hide secondary stats               |
 | `showEquipment`      | `boolean`             | `true`            | Show/hide equipment section             |
-| `compactMode`        | `boolean`             | `false`           | Enable compact layout                   |
 | `font`               | `"normal" \| "retro"` | `"retro"`         | Font style                              |
 
 ## Type Definitions
