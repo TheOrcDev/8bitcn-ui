@@ -65,7 +65,6 @@ export interface FriendListPlayer {
   status: "online" | "ingame" | "away" | "offline";
   avatar?: string;
   avatarFallback?: string;
-
   activity?: string;
 }
 export interface FriendListProps extends React.ComponentPropsWithoutRef<"div"> {
@@ -80,7 +79,7 @@ export default function FriendList({
   showactivity = true,
   players,
   ...props
-}: FriendListProps): React.ComponentPropsWithoutRef<"div"> {
+}: FriendListProps){
   return (
     <div
       className={cn("flex flex-col gap-6 w-full h-full", className)}
