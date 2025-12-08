@@ -6,6 +6,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { ActiveThemeProvider } from "@/components/active-theme";
 import { ScreenSize } from "@/components/screen-size";
+import SearchDialog from "@/components/search";
 import SiteFooter from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -39,7 +40,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}
       >
         <NuqsAdapter>
-          <RootProvider>
+          <RootProvider
+            search={{
+              SearchDialog,
+            }}
+          >
             <ThemeProvider
               attribute="class"
               defaultTheme="system"
