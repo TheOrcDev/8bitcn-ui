@@ -6,6 +6,8 @@ Visit [8bitcn.com](https://8bitcn.com/)
 
 [![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=❤&logo=GitHub&color=#fe8e86)](https://github.com/sponsors/theorcdev)
 
+![8bitcn UI Components](./public/assets/8bitcn-readme-showcase.png)
+
 ## Contributing
 
 Please read the [contributing guide](/contributing.md).
