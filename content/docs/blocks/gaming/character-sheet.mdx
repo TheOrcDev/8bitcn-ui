@@ -1,0 +1,318 @@
+---
+title: Character Sheet
+description: Displays an 8-bit RPG character stats page with attributes, equipment, and customizable sections.
+---
+
+import { CharacterSheet } from "@/components/ui/8bit/character-sheet";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <a
+    href="/character-sheet"
+    target="_blank"
+    className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-8 rounded-md px-3 text-xs"
+  >
+    View Demo
+  </a>
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/character-sheet"
+    command="pnpm dlx shadcn@latest add @8bitcn/character-sheet"
+  />
+</div>
+
+<ComponentPreview title="8-bit Character Sheet block" name="character-sheet">
+  <CharacterSheet
+    characterName="Orc"
+    characterClass="Warrior"
+    characterTitle="The Pixel Master"
+    characterLevel={42}
+    avatarSrc="/images/404/pixel-orc.webp"
+    avatarFallback="OD"
+    health={{ current: 850, max: 1000 }}
+    mana={{ current: 320, max: 400 }}
+    experience={{ current: 7500, max: 10000 }}
+    primaryAttributes={[
+      { name: "Strength", shortName: "STR", value: 18, color: "text-red-500" },
+      {
+        name: "Dexterity",
+        shortName: "DEX",
+        value: 14,
+        color: "text-green-500",
+      },
+      {
+        name: "Intelligence",
+        shortName: "INT",
+        value: 22,
+        color: "text-blue-500",
+      },
+      {
+        name: "Vitality",
+        shortName: "VIT",
+        value: 16,
+        color: "text-amber-500",
+      },
+      { name: "Wisdom", shortName: "WIS", value: 20, color: "text-purple-500" },
+      { name: "Charisma", shortName: "CHA", value: 12, color: "text-pink-500" },
+    ]}
+    secondaryStats={[
+      { name: "Attack", value: 156 },
+      { name: "Defense", value: 98 },
+      { name: "Speed", value: 72 },
+      { name: "Crit Rate", value: 15, isPercentage: true },
+      { name: "Crit Damage", value: 150, isPercentage: true },
+      { name: "Luck", value: 8 },
+    ]}
+    equipment={[
+      { slot: "Weapon", name: "Pixel Blade +5", rarity: "epic" },
+      { slot: "Armor", name: "Retro Mail", rarity: "rare" },
+      { slot: "Helmet", name: "8-Bit Crown", rarity: "legendary" },
+      { slot: "Accessory", name: "Code Ring", rarity: "uncommon" },
+    ]}
+    className="max-w-md"
+  />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="character-sheet" />
+
+## Usage
+
+---
+
+```tsx
+import { CharacterSheet } from "@/components/ui/8bit/character-sheet";
+```
+
+```tsx
+<CharacterSheet
+  characterName="Orc"
+  characterClass="Web Dev Warrior"
+  characterTitle="The Pixel Master"
+  characterLevel={42}
+  avatarSrc="/avatars/orcdev.jpeg"
+  avatarFallback="OD"
+  health={{ current: 850, max: 1000 }}
+  mana={{ current: 320, max: 400 }}
+  experience={{ current: 7500, max: 10000 }}
+  primaryAttributes={[
+    { name: "Strength", shortName: "STR", value: 18, color: "text-red-500" },
+    { name: "Dexterity", shortName: "DEX", value: 14, color: "text-green-500" },
+    {
+      name: "Intelligence",
+      shortName: "INT",
+      value: 22,
+      color: "text-blue-500",
+    },
+    { name: "Vitality", shortName: "VIT", value: 16, color: "text-amber-500" },
+    { name: "Wisdom", shortName: "WIS", value: 20, color: "text-purple-500" },
+    { name: "Charisma", shortName: "CHA", value: 12, color: "text-pink-500" },
+  ]}
+  secondaryStats={[
+    { name: "Attack", value: 156 },
+    { name: "Defense", value: 98 },
+    { name: "Speed", value: 72 },
+    { name: "Crit Rate", value: 15, isPercentage: true },
+  ]}
+  equipment={[
+    { slot: "Weapon", name: "Pixel Blade +5", rarity: "epic" },
+    { slot: "Armor", name: "Retro Mail", rarity: "rare" },
+  ]}
+/>
+```
+
+## Examples
+
+---
+
+### With Custom Sections
+
+Add your own custom sections for skills, abilities, or any other content:
+
+<ComponentPreview
+  title="Character Sheet with Custom Sections"
+  name="character-sheet-custom"
+>
+  <CharacterSheet
+    characterName="Mage Queen"
+    characterClass="Archmage"
+    characterLevel={99}
+    avatarFallback="MQ"
+    health={{ current: 300, max: 300 }}
+    mana={{ current: 1500, max: 1500 }}
+    showAttributes={false}
+    showEquipment={false}
+    secondaryStats={[
+      { name: "Magic Power", value: 999 },
+      { name: "Spell Speed", value: 85, isPercentage: true },
+    ]}
+    customSections={[
+      {
+        title: "Spells",
+        content: (
+          <div className="grid grid-cols-2 gap-2">
+            <div className="p-2 bg-muted/30 border-2 border-border text-center">
+              <span className="text-purple-500 text-sm">Fireball</span>
+            </div>
+            <div className="p-2 bg-muted/30 border-2 border-border text-center">
+              <span className="text-blue-500 text-sm">Ice Storm</span>
+            </div>
+            <div className="p-2 bg-muted/30 border-2 border-border text-center">
+              <span className="text-yellow-500 text-sm">Thunder</span>
+            </div>
+            <div className="p-2 bg-muted/30 border-2 border-border text-center">
+              <span className="text-green-500 text-sm">Heal</span>
+            </div>
+          </div>
+        ),
+      },
+    ]}
+    className="max-w-sm"
+  />
+</ComponentPreview>
+
+```tsx
+<CharacterSheet
+  characterName="Mage Queen"
+  characterClass="Archmage"
+  characterLevel={99}
+  avatarFallback="MQ"
+  health={{ current: 300, max: 300 }}
+  mana={{ current: 1500, max: 1500 }}
+  showAttributes={false}
+  showEquipment={false}
+  secondaryStats={[
+    { name: "Magic Power", value: 999 },
+    { name: "Spell Speed", value: 85, isPercentage: true },
+  ]}
+  customSections={[
+    {
+      title: "Active Skills",
+      content: (
+        <div className="grid grid-cols-2 gap-2">
+          <div className="p-2 bg-muted/30 border-2 border-border text-center">
+            <span className="text-purple-500 text-sm">Fireball</span>
+          </div>
+          <div className="p-2 bg-muted/30 border-2 border-border text-center">
+            <span className="text-blue-500 text-sm">Ice Storm</span>
+          </div>
+        </div>
+      ),
+    },
+  ]}
+/>
+```
+
+### Minimal Stats Only
+
+Show only the stats you need:
+
+<ComponentPreview
+  title="Minimal Character Sheet"
+  name="character-sheet-minimal"
+>
+  <CharacterSheet
+    characterName="Warrior"
+    characterLevel={10}
+    avatarFallback="W"
+    showAvatar={false}
+    showHealth={false}
+    showMana={false}
+    showExperience={false}
+    showEquipment={false}
+    showSecondaryStats={false}
+    primaryAttributes={[
+      { name: "Strength", shortName: "STR", value: 25 },
+      { name: "Dexterity", shortName: "DEX", value: 12 },
+      { name: "Vitality", shortName: "VIT", value: 20 },
+    ]}
+    className="max-w-sm"
+  />
+</ComponentPreview>
+
+```tsx
+<CharacterSheet
+  characterName="Warrior"
+  characterLevel={10}
+  avatarFallback="W"
+  showAvatar={false}
+  showHealth={false}
+  showMana={false}
+  showExperience={false}
+  showEquipment={false}
+  showSecondaryStats={false}
+  primaryAttributes={[
+    { name: "Strength", shortName: "STR", value: 25 },
+    { name: "Dexterity", shortName: "DEX", value: 12 },
+    { name: "Vitality", shortName: "VIT", value: 20 },
+  ]}
+/>
+```
+
+## Props
+
+---
+
+| Prop                 | Type                  | Default           | Description                             |
+| -------------------- | --------------------- | ----------------- | --------------------------------------- |
+| `characterName`      | `string`              | -                 | Character's display name (required)     |
+| `characterClass`     | `string`              | -                 | Character's class/job                   |
+| `characterTitle`     | `string`              | -                 | Character's title or rank               |
+| `characterLevel`     | `number`              | `1`               | Character's level                       |
+| `avatarSrc`          | `string`              | -                 | Avatar image URL                        |
+| `avatarFallback`     | `string`              | -                 | Fallback text for avatar                |
+| `primaryAttributes`  | `PrimaryAttribute[]`  | Default RPG attrs | Array of primary stats (STR, DEX, etc.) |
+| `secondaryStats`     | `SecondaryStat[]`     | -                 | Array of secondary stats                |
+| `health`             | `{current, max}`      | -                 | Health values                           |
+| `mana`               | `{current, max}`      | -                 | Mana values                             |
+| `experience`         | `{current, max}`      | -                 | Experience values                       |
+| `equipment`          | `EquipmentItem[]`     | -                 | Array of equipped items                 |
+| `customSections`     | `CustomSection[]`     | -                 | Array of custom content sections        |
+| `showAvatar`         | `boolean`             | `true`            | Show/hide avatar                        |
+| `showLevel`          | `boolean`             | `true`            | Show/hide level badge                   |
+| `showHealth`         | `boolean`             | `true`            | Show/hide health bar                    |
+| `showMana`           | `boolean`             | `true`            | Show/hide mana bar                      |
+| `showExperience`     | `boolean`             | `true`            | Show/hide experience bar                |
+| `showAttributes`     | `boolean`             | `true`            | Show/hide primary attributes            |
+| `showSecondaryStats` | `boolean`             | `true`            | Show/hide secondary stats               |
+| `showEquipment`      | `boolean`             | `true`            | Show/hide equipment section             |
+| `font`               | `"normal" \| "retro"` | `"retro"`         | Font style                              |
+
+## Type Definitions
+
+---
+
+```tsx
+interface PrimaryAttribute {
+  name: string; // Full attribute name
+  shortName: string; // Abbreviated name (e.g., "STR")
+  value: number; // Current value
+  max?: number; // Optional maximum value
+  color?: string; // Optional text color class
+}
+
+interface SecondaryStat {
+  name: string; // Stat name
+  value: number; // Stat value
+  max?: number; // Optional maximum
+  isPercentage?: boolean; // Display as percentage
+  icon?: ReactNode; // Optional icon
+  color?: string; // Optional text color class
+}
+
+interface EquipmentItem {
+  slot: string; // Equipment slot name
+  name: string; // Item name
+  rarity?: "common" | "uncommon" | "rare" | "epic" | "legendary";
+  icon?: ReactNode; // Optional icon
+}
+
+interface CustomSection {
+  title: string; // Section header
+  content: ReactNode; // Any React content
+}
+```
