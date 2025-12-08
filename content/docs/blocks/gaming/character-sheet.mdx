@@ -9,6 +9,13 @@ import InstallationCommands from "@/components/installation-commands";
 import ComponentPreview from "@/components/component-preview";
 
 <div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <a
+    href="/character-sheet"
+    target="_blank"
+    className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-8 rounded-md px-3 text-xs"
+  >
+    View Demo
+  </a>
   <CopyCommandButton
     copyCommand="pnpm dlx shadcn@latest add @8bitcn/character-sheet"
     command="pnpm dlx shadcn@latest add @8bitcn/character-sheet"
