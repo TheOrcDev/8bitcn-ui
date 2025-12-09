@@ -12,7 +12,14 @@ import {
 } from "@/components/ui/8bit/avatar";
 import { cva } from "class-variance-authority";
 import { ScrollArea } from "@/components/ui/8bit/scroll-area";
-import { truncate } from "@/lib/utils";
+
+const truncate = (
+  str: string | null | undefined,
+  length: number
+): string | null => {
+  if (!str || str.length <= length) return str ?? null;
+  return `${str.slice(0, length - 3)}...`;
+};
 
 const statusVariants = cva("w-2 h-2 flex-shrink-0", {
   variants: {
