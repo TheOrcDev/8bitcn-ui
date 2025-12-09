@@ -137,10 +137,12 @@ export default function FriendList({
                         {/* Status and Activity Line */}
                         <div className="flex items-center text-xs">
                           {/* Status Indicator Dot */}
-                          <div
-                            className={`w-2 h-2 mr-1 mt-[2px] ${statusVariants({
-                              status: player.status,
-                            })}`}
+                         <div
+                            className={cn(
+                              "w-2 h-2 mr-1 mt-[2px]",
+                              statusVariants({ status: player.status })
+                            )}
+                            aria-label={`Status: ${player.status}`}
                           ></div>
 
                           {/* Status Text (e.g., ONLINE) */}
