@@ -246,8 +246,9 @@ export default function ComponentShowcase() {
               </Select>
 
               <div className="flex items-center justify-center">
-                <DatePicker />
+                <DatePicker className="w-[300px]" />
               </div>
+
               <EnemyHealthDisplay
                 currentHealth={850}
                 enemyName="Fire Dragon"
