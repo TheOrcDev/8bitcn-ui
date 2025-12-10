@@ -27,7 +27,9 @@ export function DatePicker({ className }: HTMLAttributes<HTMLDivElement>) {
           variant={"outline"}
         >
           <CalendarIcon className="mr-2 size-4" />
-          {date ? format(date, "PPP") : <span>Pick a date</span>}
+          <span className="truncate">
+            {date ? format(date, "PPP") : <span>Pick a date</span>}
+          </span>
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-full p-0">
