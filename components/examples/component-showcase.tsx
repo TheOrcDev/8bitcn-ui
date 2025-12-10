@@ -67,7 +67,7 @@ export default function ComponentShowcase() {
     <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {/* Column 1 */}
       <div className="flex flex-col gap-4">
-        <div className="mt-1 flex flex-col gap-6">
+        <div className="flex flex-col gap-6">
           <Button>Button</Button>
 
           <DrawerExample />
@@ -246,8 +246,9 @@ export default function ComponentShowcase() {
               </Select>
 
               <div className="flex items-center justify-center">
-                <DatePicker />
+                <DatePicker className="w-[300px]" />
               </div>
+
               <EnemyHealthDisplay
                 currentHealth={850}
                 enemyName="Fire Dragon"

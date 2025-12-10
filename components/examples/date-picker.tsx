@@ -2,7 +2,7 @@
 
 import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
-import { useState } from "react";
+import { type HTMLAttributes, useState } from "react";
 import { Button } from "@/components/ui/8bit/button";
 import { Calendar } from "@/components/ui/8bit/calendar";
 import {
@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/8bit/popover";
 import { cn } from "@/lib/utils";
 
-export function DatePicker() {
+export function DatePicker({ className }: HTMLAttributes<HTMLDivElement>) {
   const [date, setDate] = useState<Date>();
 
   return (
@@ -21,7 +21,8 @@ export function DatePicker() {
         <Button
           className={cn(
             "w-[310px] justify-start text-left font-normal",
-            !date && "text-muted-foreground"
+            !date && "text-muted-foreground",
+            className
           )}
           variant={"outline"}
         >
@@ -32,7 +33,6 @@ export function DatePicker() {
       <PopoverContent className="w-full p-0">
         <Calendar
           className="border-y-0"
-          initialFocus
           mode="single"
           onSelect={setDate}
           selected={date}

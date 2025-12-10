@@ -1,0 +1,142 @@
+---
+title: Friend List
+description: Displays an 8-bit simple friend list.
+---
+
+import FriendList from "@/components/ui/8bit/blocks/friend-list";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/friend-list"
+    command="pnpm dlx shadcn@latest add @8bitcn/friend-list"
+  />
+</div>
+
+<ComponentPreview title="8-bit Friend list" name="friend-list">
+  <FriendList
+
+    players = {[
+        {
+            id: 1,
+            name: "Freaky Knight",
+            status: "online",
+            avatar: "/avatars/orcdev.jpeg",
+            avatarFallback: "OD",
+        },
+        {
+            id: 2,
+            name: "Shadow Mage",
+            status: "offline",
+            avatarFallback: "SM",
+        },
+        {
+            id: 3,
+            name: "Dragon Slayer",
+            status: "ingame",
+            avatarFallback: "DS",
+            activity: "In Battle: playing dungeons & dragons",
+        },
+        {
+            id: 4,
+            name: "Fire Wizard",
+            status: "online",
+            avatarFallback: "FW",
+
+        },
+        {
+            id: 5,
+            name: "Ice Wizard jack frost",
+            status: "offline",
+            avatarFallback: "JK",
+
+        },
+        {
+            id: 6,
+            name: "HellRaiser",
+            status: "offline",
+            avatarFallback: "H",
+
+        },
+
+        {
+            id: 7,
+            name: "DarkDragon",
+            status: "offline",
+            avatarFallback: "D",
+
+        }
+
+    ]}
+
+/>
+
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="friend-list" />
+
+## Usage
+
+---
+
+```tsx
+import FriendList from "@/components/ui/8bit/blocks/friend-list";
+```
+
+```tsx
+<FriendList
+  players={[
+    {
+      id: 1,
+      name: "Freaky Knight",
+      status: "online",
+      avatar: "/avatars/orcdev.jpeg",
+      avatarFallback: "OD",
+    },
+    {
+      id: 2,
+      name: "Shadow Mage",
+      status: "offline",
+      avatarFallback: "SM",
+    },
+    {
+      id: 3,
+      name: "Dragon Slayer",
+      status: "ingame",
+      avatarFallback: "DS",
+      activity: "In Battle: playing dungeons & dragons",
+    },
+    {
+      id: 4,
+      name: "Fire Wizard",
+      status: "online",
+      avatarFallback: "FW",
+    },
+    {
+      id: 5,
+      name: "Ice Wizard jack frost",
+      status: "offline",
+      avatarFallback: "JK",
+    },
+    {
+      id: 6,
+      name: "HellRaiser",
+      status: "offline",
+      avatarFallback: "H",
+    },
+
+    {
+      id: 7,
+      name: "DarkDragon",
+      status: "offline",
+      avatarFallback: "D",
+    },
+  ]}
+/>
+```
