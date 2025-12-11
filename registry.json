@@ -167,7 +167,7 @@
       "title": "8-bit Date Picker",
       "description": "A simple 8-bit date picker component",
       "dependencies": ["date-fns"],
-      "registryDependencies": ["button", "calendar", "popover"],
+      "registryDependencies": ["button", "calendar", "popover", "select"],
       "files": [
         {
           "path": "components/examples/date-picker.tsx",
