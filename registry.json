@@ -172,7 +172,7 @@
         {
           "path": "components/examples/date-picker.tsx",
           "type": "registry:component",
-          "target": "components/examples/date-picker.tsx"
+          "target": "components/ui/8bit/date-picker.tsx"
         },
         {
           "path": "components/ui/8bit/button.tsx",
