@@ -126,9 +126,9 @@ export interface VictoryScreenStats {
 }
 export interface VictoryScreenProps
   extends React.ComponentPropsWithoutRef<"div"> {
-  itemsObtained: VictoryScreenItems[];
-  battleReport: VictoryScreenBattleReport[];
-  stats: VictoryScreenStats[];
+  itemsObtained?: VictoryScreenItems[];
+  battleReport?: VictoryScreenBattleReport[];
+  stats?: VictoryScreenStats[];
   className?: string;
   showItemIcon?: boolean;
 }
@@ -177,65 +177,68 @@ function VictoryScreen({
           ))}
         </div>
 
-        <div className="flex flex-col items-center justify-center mt-6">
-          <p className="text-lg  text-center font-bold">Items Obtained</p>
+        {itemsObtained && itemsObtained.length > 0 && (
+          <div className="flex flex-col items-center justify-center mt-6">
+            <p className="text-lg  text-center font-bold">Items Obtained</p>
 
-          <ItemGroup className="mt-2 w-[80%]">
-            {itemsObtained.map((item, index) => (
-              <div key={item.id}>
-                <Item variant="outline" className="dark:bg-blue-950/50 p-1">
-                  <ItemContent className="flex flex-col md:flex-row items-center justify-between gap-2  truncate">
-                    <div className="flex flex-row justify-center md:justify-start items-center gap-2 truncate w-full md:max-w-[65%]">
-                      {showItemIcon && (
-                        <Image
-                          src={item.icon ?? ""}
-                          alt={item.name}
-                          width={48}
-                          height={48}
-                          className="size-8 object-contain rounded-full"
-                        />
-                      )}
-                      <ItemTitle className="leading-normal retro">
-                        {item.name}{" "}
-                      </ItemTitle>
-                    </div>
-                    <ItemDescription
-                      className={cn(rarityVariants({ status: item.rarity }))}
-                    >
-                      {item.rarity}
-                    </ItemDescription>
-                  </ItemContent>
-                </Item>
-                {index < itemsObtained.length - 1 && <ItemSeparator />}
-              </div>
-            ))}
-          </ItemGroup>
-        </div>
+            <ItemGroup className="mt-2 w-[80%]">
+              {itemsObtained?.map((item, index) => (
+                <div key={item.id}>
+                  <Item variant="outline" className="dark:bg-blue-950/50 p-1">
+                    <ItemContent className="flex flex-col md:flex-row items-center justify-between gap-2  truncate">
+                      <div className="flex flex-row justify-center md:justify-start items-center gap-2 truncate w-full md:max-w-[65%]">
+                        {showItemIcon && (
+                          <Image
+                            src={item.icon ?? ""}
+                            alt={item.name}
+                            width={48}
+                            height={48}
+                            className="size-8 object-contain rounded-full"
+                          />
+                        )}
+                        <ItemTitle className="leading-normal retro">
+                          {item.name}{" "}
+                        </ItemTitle>
+                      </div>
+                      <ItemDescription
+                        className={cn(rarityVariants({ status: item.rarity }))}
+                      >
+                        {item.rarity}
+                      </ItemDescription>
+                    </ItemContent>
+                  </Item>
+                  {index < itemsObtained.length - 1 && <ItemSeparator />}
+                </div>
+              ))}
+            </ItemGroup>
+          </div>
+        )}
+        {battleReport && battleReport.length > 0 && (
+          <div className="flex flex-col items-center justify-center mt-6">
+            <p className="text-lg text-center font-bold">Battle Report</p>
 
-        <div className="flex flex-col items-center justify-center mt-6">
-          <p className="text-lg text-center font-bold">Battle Report</p>
-
-          <ItemGroup className="mt-2 w-[80%]">
-            {battleReport?.map((report, index) => (
-              <div key={report.id}>
-                <Item
-                  variant="outline"
-                  className="dark:bg-blue-950/50  p-1 truncate"
-                >
-                  <ItemContent className="flex flex-col flex-wrap  md:flex-row items-center justify-between  w-full gap-2">
-                    <div className="flex  items-center justify-center md:justify-start w-full md:max-w-[65%] ">
-                      <ItemTitle className="leading-normal text-center">
-                        {report.title}
-                      </ItemTitle>
-                    </div>
-                    <ItemDescription>{report.description}</ItemDescription>
-                  </ItemContent>
-                </Item>
-                {index < battleReport.length - 1 && <ItemSeparator />}
-              </div>
-            ))}
-          </ItemGroup>
-        </div>
+            <ItemGroup className="mt-2 w-[80%]">
+              {battleReport?.map((report, index) => (
+                <div key={report.id}>
+                  <Item
+                    variant="outline"
+                    className="dark:bg-blue-950/50  p-1 truncate"
+                  >
+                    <ItemContent className="flex flex-col flex-wrap  md:flex-row items-center justify-between  w-full gap-2">
+                      <div className="flex  items-center justify-center md:justify-start w-full md:max-w-[65%] ">
+                        <ItemTitle className="leading-normal text-center">
+                          {report.title}
+                        </ItemTitle>
+                      </div>
+                      <ItemDescription>{report.description}</ItemDescription>
+                    </ItemContent>
+                  </Item>
+                  {index < battleReport.length - 1 && <ItemSeparator />}
+                </div>
+              ))}
+            </ItemGroup>
+          </div>
+        )}
       </CardContent>
     </Card>
   );
