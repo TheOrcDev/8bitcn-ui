@@ -148,9 +148,7 @@ function VictoryScreen({
     >
       <CardContent>
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-2xl text-bold font-bold text-green-500 ">
-            VICTORY!
-          </h1>
+          <h1 className="text-2xl font-bold text-green-500">VICTORY!</h1>
         </div>
 
         <div className="relative flex flex-col md:flex-row items-center justify-around flex-wrap mt-6 gap-y-6 ">
@@ -224,8 +222,8 @@ function VictoryScreen({
                     variant="outline"
                     className="dark:bg-blue-950/50  p-1 truncate"
                   >
-                    <ItemContent className="flex flex-col flex-wrap  md:flex-row items-center justify-between  w-full gap-2">
-                      <div className="flex  items-center justify-center md:justify-start w-full md:max-w-[65%] ">
+                    <ItemContent className="flex flex-col flex-wrap  md:flex-row items-center justify-between w-full gap-2">
+                      <div className="flex items-center justify-center md:justify-start w-full md:max-w-[65%] ">
                         <ItemTitle className="leading-normal text-center">
                           {report.title}
                         </ItemTitle>
