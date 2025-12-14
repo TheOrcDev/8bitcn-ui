@@ -177,7 +177,7 @@ function VictoryScreen({
 
         {itemsObtained && itemsObtained.length > 0 && (
           <div className="flex flex-col items-center justify-center mt-6">
-            <p className="text-lg  text-center font-bold">Items Obtained</p>
+            <h2 className="text-lg text-center font-bold">Items Obtained</h2>
 
             <ItemGroup className="mt-2 w-[80%]">
               {itemsObtained?.map((item, index) => (
@@ -213,7 +213,7 @@ function VictoryScreen({
         )}
         {battleReport && battleReport.length > 0 && (
           <div className="flex flex-col items-center justify-center mt-6">
-            <p className="text-lg text-center font-bold">Battle Report</p>
+            <h2 className="text-lg text-center font-bold">Battle Report</h2>
 
             <ItemGroup className="mt-2 w-[80%]">
               {battleReport?.map((report, index) => (
