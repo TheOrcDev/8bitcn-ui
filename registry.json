@@ -2016,6 +2016,7 @@
       "type": "registry:block",
       "title": "8-bit Victory Screen",
       "description": "A simple 8-bit Victory Screen component",
+      "categories": ["gaming"],
       "registryDependencies": ["item", "card"],
       "files": [
         {

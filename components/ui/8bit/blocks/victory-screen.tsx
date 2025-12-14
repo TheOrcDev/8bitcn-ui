@@ -187,9 +187,9 @@ function VictoryScreen({
                   <Item variant="outline" className="dark:bg-blue-950/50 p-1">
                     <ItemContent className="flex flex-col md:flex-row items-center justify-between gap-2  truncate">
                       <div className="flex flex-row justify-center md:justify-start items-center gap-2 truncate w-full md:max-w-[65%]">
-                        {showItemIcon && (
+                        {showItemIcon && item.icon && (
                           <Image
-                            src={item.icon ?? ""}
+                            src={item.icon}
                             alt={item.name}
                             width={48}
                             height={48}
