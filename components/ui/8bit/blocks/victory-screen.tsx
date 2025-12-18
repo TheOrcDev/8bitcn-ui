@@ -8,75 +8,13 @@ import {
   ItemSeparator,
   ItemTitle,
 } from "@/components/ui/8bit/item";
-
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from "@/components/ui/8bit/alert";
 import Image from "next/image";
 import { cva } from "class-variance-authority";
-const BorderStructure = ({ className }: { className?: string }) => {
-  return (
-    <>
-      <div
-        className={cn(
-          "absolute -top-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-ring",
-          className
-        )}
-      />
-      <div
-        className={cn(
-          "absolute -top-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-ring",
-          className
-        )}
-      />
-      <div
-        className={cn(
-          "absolute -bottom-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-ring",
-          className
-        )}
-      />
-      <div
-        className={cn(
-          "absolute -bottom-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-ring",
-          className
-        )}
-      />
-      <div
-        className={cn(
-          "absolute top-0 left-0 size-1.5 bg-foreground dark:bg-ring",
-          className
-        )}
-      />
-      <div
-        className={cn(
-          "absolute top-0 right-0 size-1.5 bg-foreground dark:bg-ring",
-          className
-        )}
-      />
-      <div
-        className={cn(
-          "absolute bottom-0 left-0 size-1.5 bg-foreground dark:bg-ring",
-          className
-        )}
-      />
-      <div
-        className={cn(
-          "absolute bottom-0 right-0 size-1.5 bg-foreground dark:bg-ring",
-          className
-        )}
-      />
-      <div
-        className={cn(
-          "absolute top-1.5 -left-1.5 h-[calc(100%-12px)] w-1.5 bg-foreground dark:bg-ring",
-          className
-        )}
-      />
-      <div
-        className={cn(
-          "absolute top-1.5 -right-1.5 h-[calc(100%-12px)] w-1.5 bg-foreground dark:bg-ring",
-          className
-        )}
-      />
-    </>
-  );
-};
 
 const rarityVariants = cva("", {
   variants: {
@@ -90,19 +28,6 @@ const rarityVariants = cva("", {
   },
   defaultVariants: {
     status: "common",
-  },
-});
-
-const statsBorderVariants = cva("", {
-  variants: {
-    border: {
-      exp: "bg-indigo-400 dark:bg-indigo-400",
-      gold: "bg-yellow-400 dark:bg-yellow-400",
-      default: "bg-foreground",
-    },
-  },
-  defaultVariants: {
-    border: "default",
   },
 });
 
@@ -148,30 +73,22 @@ function VictoryScreen({
     >
       <CardContent>
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-2xl font-bold text-green-500">VICTORY!</h1>
+          <h1 className="text-2xl font-bold">VICTORY!</h1>
         </div>
 
         <div className="relative flex flex-col md:flex-row items-center justify-around flex-wrap mt-6 gap-y-6 ">
           {stats?.map((stat) => (
-            <div
-              className="relative flex flex-col items-center justify-center w-11/12 md:w-auto  px-5 py-3"
+            <Alert
               key={stat.id}
+              className="max-w-full min-w-3/4 md:min-w-auto p-2"
             >
-              <BorderStructure
-                className={cn(
-                  statsBorderVariants({ border: stat.variant ?? "default" })
-                )}
-              />
-
-              <div className="flex flex-col items-center justify-center w-full truncate">
-                <p className=" text-md md:text-lg font-bold truncate">
-                  {stat.title}
-                </p>
-                <p className="mt-2 text-xl md:text-2xl font-bold truncate">
-                  {stat.stats}
-                </p>
-              </div>
-            </div>
+              <AlertTitle className="text-center text-md md:text-lg font-bold">
+                {stat.title}
+              </AlertTitle>
+              <AlertDescription className="text-xl md:text-2xl font-bold flex justify-center items-center mt-2">
+                {stat.stats}
+              </AlertDescription>
+            </Alert>
           ))}
         </div>
 

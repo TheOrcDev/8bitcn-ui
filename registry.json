@@ -2017,7 +2017,7 @@
       "title": "8-bit Victory Screen",
       "description": "A simple 8-bit Victory Screen component",
       "categories": ["gaming"],
-      "registryDependencies": ["item", "card"],
+      "registryDependencies": ["item", "card", "alert"],
       "files": [
         {
           "path": "components/ui/8bit/blocks/victory-screen.tsx",
@@ -2033,6 +2033,11 @@
           "path": "components/ui/8bit/card.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/alert.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/alert.tsx"
         },
         {
           "path": "components/ui/8bit/styles/retro.css",
