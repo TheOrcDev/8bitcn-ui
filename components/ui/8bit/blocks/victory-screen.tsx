@@ -47,7 +47,6 @@ export interface VictoryScreenStats {
   id: number;
   title: string;
   stats: number | string;
-  variant?: "gold" | "exp" | "default";
 }
 export interface VictoryScreenProps
   extends React.ComponentPropsWithoutRef<"div"> {
