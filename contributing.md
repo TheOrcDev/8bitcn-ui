@@ -4,7 +4,7 @@ Thanks for your interest in contributing to 8bitcn.com. We're happy to have you 
 
 Please take a moment to review this document before submitting your first pull request. We also strongly recommend that you check for open issues and pull requests to see if someone else is working on something similar.
 
-If you need any help, feel free to reach out to [@orcdev](https://twitter.com/theorcdev), or to OrcDev <a href="https://discord.com/invite/uFB5YzH9YG">Discord Channel</a>.
+If you need any help, feel free to reach out to [@orcdev](https://x.com/theorcdev), or to OrcDev <a href="https://discord.com/invite/uFB5YzH9YG">Discord Channel</a>.
 
 ## About this repository
 
