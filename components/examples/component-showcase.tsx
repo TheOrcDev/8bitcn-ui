@@ -358,7 +358,10 @@ export default function ComponentShowcase() {
 
         <DifficultySelect />
 
-        <CommandExample />
+        {/* TODO: Command has some problem with spacing, check it out */}
+        <div className="my-1">
+          <CommandExample />
+        </div>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
