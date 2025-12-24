@@ -66,8 +66,8 @@ export default function ComponentShowcase() {
   return (
     <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {/* Column 1 */}
-      <div className="flex flex-col gap-4">
-        <div className="mt-1 flex flex-col gap-6">
+      <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1">
           <Button>Button</Button>
 
           <DrawerExample />
@@ -228,7 +228,7 @@ export default function ComponentShowcase() {
       </div>
 
       {/* Column 2 */}
-      <div className="flex flex-col gap-4 lg:col-span-2">
+      <div className="flex flex-col gap-1 lg:col-span-2">
         <Card>
           <CardContent className="flex flex-col gap-4">
             <div className="flex flex-wrap gap-4">
@@ -246,8 +246,9 @@ export default function ComponentShowcase() {
               </Select>
 
               <div className="flex items-center justify-center">
-                <DatePicker />
+                <DatePicker className="w-[300px]" />
               </div>
+
               <EnemyHealthDisplay
                 currentHealth={850}
                 enemyName="Fire Dragon"
@@ -328,7 +329,7 @@ export default function ComponentShowcase() {
       </div>
 
       {/* Column 3 */}
-      <div className="flex w-full flex-col gap-4">
+      <div className="flex w-full flex-col gap-1">
         <Input placeholder="Enter your name" />
 
         <Menubar>
@@ -357,7 +358,10 @@ export default function ComponentShowcase() {
 
         <DifficultySelect />
 
-        <CommandExample />
+        {/* TODO: Command has some problem with spacing, check it out */}
+        <div className="my-1">
+          <CommandExample />
+        </div>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

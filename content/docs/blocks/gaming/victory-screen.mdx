@@ -1,0 +1,142 @@
+---
+title: Victory Screen
+description: Displays an 8-bit simple Victory Screen.
+---
+
+import VictoryScreen from "@/components/ui/8bit/blocks/victory-screen";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/victory-screen"
+    command="pnpm dlx shadcn@latest add @8bitcn/victory-screen"
+  />
+</div>
+
+<ComponentPreview title="8-bit Victory Screen" name="victory-screen">
+  <VictoryScreen
+
+    stats = {[
+        {
+            id:1,
+            title: "Exp Gained",
+            stats: "+1000"
+        },
+        {
+            id:2,
+            title: "Gold Gained",
+            stats: "+1450"
+        }
+    ]}
+    itemsObtained = {[
+        {
+            id:1,
+            name: "Rusty Sword",
+            rarity: "common",
+            icon: "/icons/sword.png",
+        },
+        {
+            id:2,
+            name: "Steel Shield",
+            rarity: "rare",
+            icon: "/icons/shield.png",
+        },
+        {
+            id:4,
+            name: "Dragon Scale",
+            rarity: "legendary",
+            icon: "/icons/dragonscale.png",
+        }
+    ]}
+
+    battleReport= {[
+         {
+            id:1,
+            title: "Turns Taken:",
+            description: 10,
+        },
+        {
+            id:2,
+            title: "Damage Dealt:",
+            description: 4500,
+        },
+        {
+            id:3,
+            title: "MVP",
+            description: "Archer",
+        }
+    ]}
+
+/>
+
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="victory-screen" />
+
+## Usage
+
+---
+
+```tsx
+import VictoryScreen from "@/components/ui/8bit/blocks/victory-screen";
+```
+
+```tsx
+<VictoryScreen
+  stats={[
+    {
+      id: 1,
+      title: "Exp Gained",
+      stats: "+1000",
+    },
+    {
+      id: 2,
+      title: "Gold Gained",
+      stats: "+1450",
+    },
+  ]}
+  itemsObtained={[
+    {
+      id: 1,
+      name: "Rusty Sword",
+      rarity: "common",
+      icon: "/icons/sword.png",
+    },
+    {
+      id: 2,
+      name: "Steel Shield",
+      rarity: "rare",
+      icon: "/icons/shield.png",
+    },
+    {
+      id: 4,
+      name: "Dragon Scale",
+      rarity: "legendary",
+      icon: "/icons/dragonscale.png",
+    },
+  ]}
+  battleReport={[
+    {
+      id: 1,
+      title: "Turns Taken:",
+      description: 10,
+    },
+    {
+      id: 2,
+      title: "Damage Dealt:",
+      description: 4500,
+    },
+    {
+      id: 3,
+      title: "MVP",
+      description: "Archer",
+    },
+  ]}
+/>
+```

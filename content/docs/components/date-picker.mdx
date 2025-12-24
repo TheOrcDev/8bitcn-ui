@@ -5,6 +5,7 @@ description: Displays an 8-bit date picker component.
 
 import CopyCommandButton from "@/components/copy-command-button";
 import ComponentPreview from "@/components/component-preview";
+import InstallationCommands from "@/components/installation-commands";
 import { DatePicker } from "@/components/examples/date-picker";
 
 <div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
@@ -22,32 +23,30 @@ import { DatePicker } from "@/components/examples/date-picker";
 
 ---
 
-The Date Picker is built using a composition of the `<Popover />` and the `<Calendar />` components.
-
-See installation instructions for the [Popover](/docs/components/popover) and the [Calendar](/docs/components/calendar) components.
+<InstallationCommands packageName="date-picker" />
 
 ## Usage
 
 ---
 
 ```tsx
-"use client"
+"use client";
 
-import * as React from "react"
-import { format } from "date-fns"
-import { Calendar as CalendarIcon } from "lucide-react"
+import * as React from "react";
+import { format } from "date-fns";
+import { Calendar as CalendarIcon } from "lucide-react";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/8bit/button"
-import { Calendar } from "@/components/ui/8bit/calendar"
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/8bit/button";
+import { Calendar } from "@/components/ui/8bit/calendar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/8bit/popover"
+} from "@/components/ui/8bit/popover";
 
 export function DatePicker() {
-  const [date, setDate] = React.useState<Date>()
+  const [date, setDate] = React.useState<Date>();
 
   return (
     <Popover>
@@ -73,7 +72,6 @@ export function DatePicker() {
         />
       </PopoverContent>
     </Popover>
-  )
+  );
 }
 ```
-
