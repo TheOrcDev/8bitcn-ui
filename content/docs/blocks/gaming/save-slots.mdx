@@ -1,0 +1,159 @@
+---
+title: Save Slots
+description: Displays an 8-bit save/load game interface with slot previews and timestamps.
+---
+
+import { SaveSlots } from "@/components/ui/8bit/save-slots";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/save-slots"
+    command="pnpm dlx shadcn@latest add @8bitcn/save-slots"
+  />
+</div>
+
+<ComponentPreview title="8-bit Save Slots block" name="save-slots">
+  <SaveSlots
+    slots={[
+      {
+        id: "1",
+        isEmpty: false,
+        name: "Crystal Caves Adventure",
+        timestamp: "2025-12-01T14:30:00",
+        preview: "/images/save-preview-1.png",
+        description: "Level 15 - Crystal Caves, 3 hearts",
+      },
+      {
+        id: "2",
+        isEmpty: false,
+        name: "Dragon's Lair",
+        timestamp: "2025-11-28T10:15:00",
+        preview: "/images/save-preview-1.png",
+        description: "Level 42 - Final Boss Area",
+      },
+      {
+        id: "3",
+        isEmpty: true,
+      },
+      {
+        id: "4",
+        isEmpty: false,
+        name: "Tutorial Complete",
+        timestamp: "2025-11-25T16:45:00",
+        preview: "/images/save-preview-1.png",
+        description: "Level 1 - Village Square",
+      },
+      {
+        id: "5",
+        isEmpty: true,
+      },
+    ]}
+    layout="vertical"
+    className="w-full max-w-[600px]"
+  />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="save-slots" />
+
+## Usage
+
+---
+
+```tsx
+import { SaveSlots } from "@/components/ui/8bit/save-slots"
+```
+
+```tsx
+<SaveSlots
+  slots={[
+    {
+      id: "1",
+      isEmpty: false,
+      name: "My Adventure",
+      timestamp: "2025-12-01T14:30:00",
+      preview: "/path/to/preview.png",
+      description: "Level 15 - Crystal Caves",
+    },
+    {
+      id: "2",
+      isEmpty: true,
+    },
+  ]}
+  onSlotClick={(slot) => {
+    if (slot.isEmpty) {
+      console.log("Create new save");
+    } else {
+      console.log("Load save:", slot.name);
+    }
+  }}
+  layout="vertical"
+  title="SAVE FILES"
+  showTimestamp={true}
+  showPreview={true}
+/>
+```
+
+## Props
+
+The `SaveSlots` component accepts the following props:
+
+- **slots** (required): Array of `SaveSlot` objects containing save data
+- **onSlotClick**: Callback function triggered when a slot is clicked
+- **layout**: Choose between `"vertical"` or `"grid"` layout (default: `"vertical"`)
+- **maxSlots**: Maximum number of slots to display (default: `10`)
+- **title**: Custom title for the save slots card (default: `"SAVE FILES"`)
+- **showTimestamp**: Display last save timestamp (default: `true`)
+- **showPreview**: Display preview images (default: `true`)
+- **className**: Additional CSS classes for styling
+
+### SaveSlot Interface
+
+```typescript
+interface SaveSlot {
+  id: string;
+  isEmpty: boolean;
+  name?: string;
+  timestamp?: Date | string;
+  preview?: string;
+  description?: string;
+}
+```
+
+## Examples
+
+### Grid Layout
+
+```tsx
+<SaveSlots
+  slots={slots}
+  layout="grid"
+  className="w-full"
+/>
+```
+
+### Without Previews
+
+```tsx
+<SaveSlots
+  slots={slots}
+  showPreview={false}
+  className="w-full max-w-md"
+/>
+```
+
+### Custom Slot Limit
+
+```tsx
+<SaveSlots
+  slots={slots}
+  maxSlots={3}
+  title="QUICK SAVES"
+/>
+```
