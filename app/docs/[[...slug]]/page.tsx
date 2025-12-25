@@ -234,31 +234,106 @@ export default async function Page(props: {
           <div className="no-scrollbar overflow-y-auto px-8">
             <DocsTableOfContents toc={doc.toc} />
 
-            <div className="flex w-full flex-wrap items-center justify-center gap-10">
-              {mythicSponsors.map((sponsor) => (
-                <Link
-                  className="rounded-md border border-dashed p-2"
-                  href={sponsor.url}
-                  key={sponsor.name}
-                  target="_blank"
+            <div className="flex flex-col gap-2">
+              <Link
+                className="flex items-center gap-1 text-muted-foreground text-xs hover:underline"
+                href="/sponsors"
+              >
+                <svg
+                  aria-label="Sponsors"
+                  className="size-5 dark:invert"
+                  viewBox="0 0 256 256"
                 >
-                  <div className="flex items-center gap-4">
-                    <Image
-                      alt={sponsor.name}
-                      className="dark:invert"
-                      height={60}
-                      src={sponsor.image}
-                      width={60}
-                    />
-                    <div className="flex flex-col gap-1">
-                      <h3 className="font-bold text-sm">{sponsor.name}</h3>
-                      <p className="text-muted-foreground text-xs">
-                        {sponsor.description}
-                      </p>
+                  <title>Sponsors</title>
+                  <rect height="14" rx="1" width="14" x="40" y="104" />
+                  <rect height="14" rx="1" width="14" x="40" y="88" />
+                  <rect height="14" rx="1" width="14" x="184" y="72" />
+                  <rect height="14" rx="1" width="14" x="56" y="72" />
+                  <rect height="14" rx="1" width="14" x="120" y="88" />
+                  <rect height="14" rx="1" width="14" x="104" y="88" />
+                  <rect height="14" rx="1" width="14" x="136" y="88" />
+                  <rect height="14" rx="1" width="14" x="104" y="72" />
+                  <rect height="14" rx="1" width="14" x="136" y="72" />
+                  <rect height="14" rx="1" width="14" x="200" y="88" />
+                  <rect height="14" rx="1" width="14" x="200" y="104" />
+                  <rect height="14" rx="1" width="14" x="56" y="88" />
+                  <rect height="14" rx="1" width="14" x="88" y="88" />
+                  <rect height="14" rx="1" width="14" x="72" y="88" />
+                  <rect height="14" rx="1" width="14" x="184" y="88" />
+                  <rect height="14" rx="1" width="14" x="168" y="88" />
+                  <rect height="14" rx="1" width="14" x="152" y="88" />
+                  <rect height="14" rx="1" width="14" x="120" y="104" />
+                  <rect height="14" rx="1" width="14" x="104" y="104" />
+                  <rect height="14" rx="1" width="14" x="136" y="104" />
+                  <rect height="14" rx="1" width="14" x="56" y="104" />
+                  <rect height="14" rx="1" width="14" x="88" y="104" />
+                  <rect height="14" rx="1" width="14" x="72" y="104" />
+                  <rect height="14" rx="1" width="14" x="184" y="104" />
+                  <rect height="14" rx="1" width="14" x="168" y="104" />
+                  <rect height="14" rx="1" width="14" x="152" y="104" />
+                  <rect height="14" rx="1" width="14" x="104" y="120" />
+                  <rect height="14" rx="1" width="14" x="88" y="120" />
+                  <rect height="14" rx="1" width="14" x="120" y="120" />
+                  <rect height="14" rx="1" width="14" x="72" y="120" />
+                  <rect height="14" rx="1" width="14" x="56" y="120" />
+                  <rect height="14" rx="1" width="14" x="152" y="120" />
+                  <rect height="14" rx="1" width="14" x="136" y="120" />
+                  <rect height="14" rx="1" width="14" x="184" y="120" />
+                  <rect height="14" rx="1" width="14" x="168" y="120" />
+                  <rect height="14" rx="1" width="14" x="104" y="136" />
+                  <rect height="14" rx="1" width="14" x="88" y="136" />
+                  <rect height="14" rx="1" width="14" x="120" y="136" />
+                  <rect height="14" rx="1" width="14" x="72" y="136" />
+                  <rect height="14" rx="1" width="14" x="152" y="136" />
+                  <rect height="14" rx="1" width="14" x="136" y="136" />
+                  <rect height="14" rx="1" width="14" x="168" y="136" />
+                  <rect height="14" rx="1" width="14" x="104" y="152" />
+                  <rect height="14" rx="1" width="14" x="88" y="152" />
+                  <rect height="14" rx="1" width="14" x="120" y="152" />
+                  <rect height="14" rx="1" width="14" x="104" y="168" />
+                  <rect height="14" rx="1" width="14" x="152" y="152" />
+                  <rect height="14" rx="1" width="14" x="136" y="152" />
+                  <rect height="14" rx="1" width="14" x="136" y="168" />
+                  <rect height="14" rx="1" width="14" x="120" y="168" />
+                  <rect height="14" rx="1" width="14" x="120" y="184" />
+                  <rect height="14" rx="1" width="14" x="88" y="56" />
+                  <rect height="14" rx="1" width="14" x="72" y="56" />
+                  <rect height="14" rx="1" width="14" x="168" y="56" />
+                  <rect height="14" rx="1" width="14" x="152" y="56" />
+                  <rect height="14" rx="1" width="14" x="168" y="72" />
+                  <rect height="14" rx="1" width="14" x="152" y="72" />
+                  <rect height="14" rx="1" width="14" x="88" y="72" />
+                  <rect height="14" rx="1" width="14" x="72" y="72" />
+                </svg>
+                Sponsored by
+              </Link>
+
+              <div className="flex w-full flex-wrap items-center justify-center gap-10">
+                {mythicSponsors.map((sponsor) => (
+                  <Link
+                    className="rounded-md border border-dashed p-2"
+                    href={sponsor.url}
+                    key={sponsor.name}
+                    target="_blank"
+                  >
+                    <div className="flex items-center gap-4">
+                      <Image
+                        alt={sponsor.name}
+                        className="dark:invert"
+                        height={60}
+                        src={sponsor.image}
+                        width={60}
+                      />
+                      <div className="flex flex-col gap-1">
+                        <h3 className="font-bold text-sm">{sponsor.name}</h3>
+                        <p className="text-muted-foreground text-xs">
+                          {sponsor.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                ))}
+              </div>
             </div>
 
             <div className="h-12" />
