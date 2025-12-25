@@ -5,9 +5,10 @@ import { cn } from "@/lib/utils";
 import { Button } from "./ui/8bit/button";
 import { Separator } from "./ui/8bit/separator";
 
-const mythicSponsors = [
+export const mythicSponsors = [
   {
     name: "Shadcn Studio",
+    description: "Shadcn blocks & templates",
     url: "https://shadcnstudio.com/?utm_source=orcdev_8bitcn&utm_medium=banner&utm_campaign=github",
     image: "/sponsors/shadcn-studio.svg",
     invert: true,
