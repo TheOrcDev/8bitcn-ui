@@ -34,7 +34,7 @@ export function DocsSidebar({
     >
       <SidebarContent className="no-scrollbar overflow-x-hidden px-2">
         <ScrollArea className="h-[calc(90svh-50px)]">
-          <div className="-top-1 sticky z-10 h-8 shrink-0 bg-gradient-to-b from-background via-background/80 to-background/50 blur-xs" />
+          <div className="sticky -top-1 z-10 h-8 shrink-0 bg-gradient-to-b from-background via-background/80 to-background/50 blur-xs" />
           <SidebarGroup>
             <SidebarGroupLabel className="font-medium text-muted-foreground">
               Sections
@@ -45,7 +45,7 @@ export function DocsSidebar({
                   <SidebarMenuItem key={name}>
                     <SidebarMenuButton
                       asChild
-                      className="after:-inset-y-1 relative h-[30px] 3xl:fixed:w-full w-fit 3xl:fixed:max-w-48 overflow-visible border border-transparent font-medium text-[0.8rem] after:absolute after:inset-x-0 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent"
+                      className="relative h-[30px] 3xl:fixed:w-full w-fit 3xl:fixed:max-w-48 overflow-visible border border-transparent font-medium text-[0.8rem] after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent"
                       isActive={
                         href === "/docs"
                           ? pathname === href
@@ -89,7 +89,7 @@ export function DocsSidebar({
                             <SidebarMenuItem key={childItem.url}>
                               <SidebarMenuButton
                                 asChild
-                                className="after:-inset-y-1 relative h-[30px] 3xl:fixed:w-full w-fit 3xl:fixed:max-w-48 overflow-visible border border-transparent font-medium text-[0.8rem] after:absolute after:inset-x-0 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent"
+                                className="relative h-[30px] 3xl:fixed:w-full w-fit 3xl:fixed:max-w-48 overflow-visible border border-transparent font-medium text-[0.8rem] after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent"
                                 isActive={childItem.url === pathname}
                               >
                                 <Link href={childItem.url}>
@@ -107,7 +107,7 @@ export function DocsSidebar({
               </SidebarGroup>
             );
           })}
-          <div className="-bottom-1 sticky z-10 h-16 shrink-0 bg-linear-to-t from-background via-background/80 to-background/50 blur-xs" />
+          <div className="sticky -bottom-1 z-10 h-16 shrink-0 bg-linear-to-t from-background via-background/80 to-background/50 blur-xs" />
         </ScrollArea>
       </SidebarContent>
     </Sidebar>

@@ -28,10 +28,10 @@ function setThemeCookie(theme: Theme) {
   }`;
 }
 
-type ThemeContextType = {
+interface ThemeContextType {
   activeTheme: Theme;
   setActiveTheme: (theme: Theme) => void;
-};
+}
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 

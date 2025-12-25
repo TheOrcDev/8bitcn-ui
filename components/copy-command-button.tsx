@@ -5,10 +5,10 @@ import { Terminal } from "lucide-react";
 import { toast } from "@/components/ui/8bit/toast";
 import { Button } from "@/components/ui/button";
 
-type CopyCommandButtonProps = {
+interface CopyCommandButtonProps {
   command: string;
   copyCommand: string;
-};
+}
 
 export default function CopyCommandButton({
   command,

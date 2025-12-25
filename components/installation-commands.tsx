@@ -7,9 +7,9 @@ import { toast } from "@/components/ui/8bit/toast";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-type InstallationCommandsProps = {
+interface InstallationCommandsProps {
   packageName: string;
-};
+}
 
 export default function InstallationCommands({
   packageName,

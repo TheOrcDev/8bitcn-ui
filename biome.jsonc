@@ -3,7 +3,6 @@
   "extends": ["ultracite/core", "ultracite/next", "ultracite/react"],
   "files": {
     "includes": [
-      "**",
       "!public",
       "!components/ui",
       "!hooks/use-mobile.ts",

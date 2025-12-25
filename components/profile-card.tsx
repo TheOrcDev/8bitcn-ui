@@ -17,7 +17,7 @@ import {
 
 const WHITESPACE_REGEX = /\s+/;
 
-type ProfileCardProps = {
+interface ProfileCardProps {
   name: string;
   avatarUrl: string;
   badgeTitle: string;
@@ -25,7 +25,7 @@ type ProfileCardProps = {
   safeGithubUrl: string;
   safeXUrl: string;
   description: string;
-};
+}
 
 function getInitials(name: string) {
   if (!name) {

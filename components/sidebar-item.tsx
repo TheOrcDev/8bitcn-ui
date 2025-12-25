@@ -6,13 +6,13 @@ import { usePathname } from "next/navigation";
 import { Badge } from "./ui/8bit/badge";
 import { SidebarMenuButton, SidebarMenuItem } from "./ui/sidebar";
 
-type SidebarItemProps = {
+interface SidebarItemProps {
   item: {
     title: string;
     url: string;
     new?: boolean;
   };
-};
+}
 
 export default function SidebarItem({ item }: SidebarItemProps) {
   const pathname = usePathname();

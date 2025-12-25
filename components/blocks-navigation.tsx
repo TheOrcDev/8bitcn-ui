@@ -2,9 +2,9 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/8bit/button";
 
-type BlocksNavigationProps = {
+interface BlocksNavigationProps {
   active: string;
-};
+}
 
 const blocks = [
   {
