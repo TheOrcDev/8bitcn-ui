@@ -8,7 +8,7 @@ import { Separator } from "./ui/8bit/separator";
 const mythicSponsors = [
   {
     name: "Shadcn Studio",
-    url: "https://www.shadcnstudio.com/",
+    url: "https://shadcnstudio.com/?utm_source=orcdev_8bitcn&utm_medium=banner&utm_campaign=github",
     image: "/sponsors/shadcn-studio.svg",
     invert: true,
   },
