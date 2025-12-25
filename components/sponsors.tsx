@@ -5,6 +5,15 @@ import { cn } from "@/lib/utils";
 import { Button } from "./ui/8bit/button";
 import { Separator } from "./ui/8bit/separator";
 
+const mythicSponsors = [
+  {
+    name: "Shadcn Studio",
+    url: "https://www.shadcnstudio.com/",
+    image: "/sponsors/shadcn-studio.svg",
+    invert: true,
+  },
+];
+
 const legendarySponsors = [
   {
     name: "Shadcn Blocks",
@@ -59,6 +68,25 @@ export default function Sponsors() {
       </div>
 
       <Separator />
+
+      <h2 className="font-bold text-xl">MYTHIC Sponsors</h2>
+
+      <div className="flex flex-wrap items-center justify-center gap-10">
+        {mythicSponsors.map((sponsor) => (
+          <Link href={sponsor.url} key={sponsor.name} target="_blank">
+            <div className="flex flex-col items-center gap-4">
+              <Avatar className="size-60" variant="default">
+                <AvatarImage
+                  alt={sponsor.name}
+                  className={cn("p-5", sponsor.invert && "dark:invert")}
+                  src={sponsor.image}
+                />
+              </Avatar>
+              <p className="font-bold text-sm">{sponsor.name}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
 
       <h2 className="font-bold text-xl">LEGENDARY Sponsors</h2>
 
