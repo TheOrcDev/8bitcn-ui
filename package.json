@@ -68,7 +68,7 @@
     "nuqs": "^2.8.6",
     "react-day-picker": "9.13.0",
     "react-dom": "^19.2.3",
-    "react-resizable-panels": "^4.0.15",
+    "react-resizable-panels": "^3.0.6",
     "react-shiki": "^0.9.1",
     "recharts": "^2.15.4",
     "shadcn": "3.6.2",
