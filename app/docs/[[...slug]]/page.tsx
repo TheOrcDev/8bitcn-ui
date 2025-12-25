@@ -245,6 +245,7 @@ export default async function Page(props: {
                   <div className="flex items-center gap-4">
                     <Image
                       alt={sponsor.name}
+                      className="dark:invert"
                       height={60}
                       src={sponsor.image}
                       width={60}
