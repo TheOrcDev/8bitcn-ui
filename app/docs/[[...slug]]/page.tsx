@@ -237,7 +237,7 @@ export default async function Page(props: {
             <div className="flex w-full flex-wrap items-center justify-center gap-10">
               {mythicSponsors.map((sponsor) => (
                 <Link
-                  className="rounded-md border border-foreground/50 border-dashed p-2"
+                  className="rounded-md border border-dashed p-2"
                   href={sponsor.url}
                   key={sponsor.name}
                   target="_blank"
