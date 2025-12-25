@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description: "Meet the amazing people who make this project possible.",
 };
 
-type Contributor = {
+interface Contributor {
   login: string;
   id: number;
   node_id: string;
@@ -45,7 +45,7 @@ type Contributor = {
   user_view_type: "public";
   site_admin: boolean;
   contributions: number;
-};
+}
 
 export default async function ContributorsPage() {
   let contributors: Contributor[] = [];

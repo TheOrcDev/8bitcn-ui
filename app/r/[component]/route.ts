@@ -3,9 +3,9 @@ import { notFound } from "next/navigation";
 import { type NextRequest, NextResponse } from "next/server";
 import { getAllPackageNames, getPackage } from "@/lib/package";
 
-type RegistryParams = {
+interface RegistryParams {
   params: Promise<{ component: string }>;
-};
+}
 
 export const GET = async (_: NextRequest, { params }: RegistryParams) => {
   const { component } = await params;
