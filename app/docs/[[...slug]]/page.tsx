@@ -5,12 +5,14 @@ import {
 } from "@tabler/icons-react";
 import fm from "front-matter";
 import { findNeighbour } from "fumadocs-core/page-tree";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import z from "zod";
 import { DocsCopyPage } from "@/components/docs-copy-page";
 import { DocsTableOfContents } from "@/components/docs-toc";
+import { mythicSponsors } from "@/components/sponsors";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -231,6 +233,34 @@ export default async function Page(props: {
         {doc.toc?.length ? (
           <div className="no-scrollbar overflow-y-auto px-8">
             <DocsTableOfContents toc={doc.toc} />
+
+            <div className="flex w-full flex-wrap items-center justify-center gap-10">
+              {mythicSponsors.map((sponsor) => (
+                <Link
+                  className="rounded-md border border-foreground/50 border-dashed p-2"
+                  href={sponsor.url}
+                  key={sponsor.name}
+                  target="_blank"
+                >
+                  <div className="flex items-center gap-4">
+                    <Image
+                      alt={sponsor.name}
+                      className="dark:invert"
+                      height={60}
+                      src={sponsor.image}
+                      width={60}
+                    />
+                    <div className="flex flex-col gap-1">
+                      <h3 className="font-bold text-sm">{sponsor.name}</h3>
+                      <p className="text-muted-foreground text-xs">
+                        {sponsor.description}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
             <div className="h-12" />
           </div>
         ) : null}
