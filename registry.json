@@ -1675,6 +1675,45 @@
       ]
     },
     {
+      "name": "save-slots",
+      "type": "registry:block",
+      "title": "8-bit Save Slots",
+      "description": "A retro-styled save/load game interface with slot previews, timestamps, and empty slot handling.",
+      "registryDependencies": ["card", "badge", "button", "separator"],
+      "files": [
+        {
+          "path": "components/ui/8bit/save-slots.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/save-slots.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/badge.tsx"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/separator.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/separator.tsx"
+        }
+      ]
+    },
+    {
       "name": "dashboard-01",
       "type": "registry:page",
       "title": "8-bit Dashboard 01",
