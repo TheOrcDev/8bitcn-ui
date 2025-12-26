@@ -40,7 +40,7 @@ export default function MainMenu({
         <CardDescription>Retro 8-bit Quest</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-4">
           {menuItems.map((item) => (
             <Button key={item.label} className="flex items-center gap-2">
               <span>{item.label}</span>
