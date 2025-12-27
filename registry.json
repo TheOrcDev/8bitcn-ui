@@ -415,6 +415,7 @@
       "type": "registry:component",
       "title": "8-bit Scroll Area",
       "description": "A simple 8-bit Scroll Area component",
+      "dependencies": ["@radix-ui/react-scroll-area"],
       "registryDependencies": [],
       "files": [
         {
