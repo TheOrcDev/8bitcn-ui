@@ -57,7 +57,7 @@ export default function DifficultySelect({
       </CardHeader>
       <CardContent>
         <div
-          className={cn("gap-4", vertical ? "flex flex-col" : "flex flex-row")}
+          className={cn("gap-2", vertical ? "flex flex-col" : "flex flex-row")}
         >
           <Button
             className="flex items-center justify-center"
