@@ -87,7 +87,7 @@ export default function EnemyHealthDisplay({
           )}
         </div>
         {showHealthText && (
-          <span className="text-muted-foreground font-mono">{healthText}</span>
+          <span className="text-muted-foreground text-[9px]">{healthText}</span>
         )}
       </div>
 
