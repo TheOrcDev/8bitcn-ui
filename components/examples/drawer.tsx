@@ -123,7 +123,7 @@ export function DrawerExample() {
               </ResponsiveContainer>
             </div>
           </div>
-          <DrawerFooter className="flex flex-col gap-5">
+          <DrawerFooter className="flex flex-col gap-2">
             <Button>Accept Quest</Button>
             <DrawerClose asChild>
               <Button variant="outline">Retreat</Button>
