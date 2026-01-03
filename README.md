@@ -17,16 +17,21 @@ Please read the [contributing guide](/contributing.md).
 To add the `button` component to your project, run the following command:
 
 ```bash
-pnpm dlx shadcn @latest add @8bitcn/button
+pnpm dlx shadcn@latest add @8bitcn/button
 ```
 
 Once installed, you can import and use the component in your files:
 
 ```typescript
+import React from "react";
 import { Button } from "@/components/ui/8bit";
 
-<Button>Button</Button>
+export default function App() {
+  return <Button>Click me</Button>;
+}
 ```
+
+**Note:** The import path `@/components/ui/8bit` assumes your project has a path alias configured (common in Next.js and similar frameworks). Adjust the path to match your project's structure if needed.
 
 
 <p align="center">
