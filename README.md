@@ -12,6 +12,32 @@ Visit [8bitcn.com](https://8bitcn.com/)
 
 Please read the [contributing guide](/contributing.md).
 
+### Usage Example
+
+To add the `button` component to your project, run the following command:
+
+```bash
+pnpm dlx shadcn@latest add @8bitcn/button
+```
+
+Once installed, you can import and use the component in your files:
+
+```typescript
+import React from "react";
+import { Button } from "@/components/ui/8bit";
+
+export default function App() {
+  return <Button>Click me</Button>;
+}
+```
+
+**Note:** The import path `@/components/ui/8bit` assumes your project has a path alias configured (common in Next.js and similar frameworks). Adjust the path to match your project's structure if needed.
+
+
+<p align="center">
+  <img src="./public/images/readme/8bitcn-button-example.png" alt="8bitcn Button example" />
+</p>
+
 ## License
 
 Licensed under the [MIT license](/license.md).
