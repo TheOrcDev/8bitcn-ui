@@ -1,27 +1,30 @@
 import Link from "next/link";
 import { Avatar, AvatarImage } from "@/components/ui/8bit/avatar";
 import { cn } from "@/lib/utils";
-
+import MythicSponsor from "./mythic-sponsor";
 import { Button } from "./ui/8bit/button";
 import { Separator } from "./ui/8bit/separator";
 
 export const mythicSponsors = [
+  {
+    name: "Shadcn Blocks",
+    description: "Shadcn blocks & templates",
+    url: "https://www.shadcnblocks.com/",
+    image: "/sponsors/shadcn-blocks.svg",
+    invert: true,
+    foil: true,
+  },
   {
     name: "Shadcn Studio",
     description: "Shadcn blocks & templates",
     url: "https://shadcnstudio.com/?utm_source=orcdev_8bitcn&utm_medium=banner&utm_campaign=github",
     image: "/sponsors/shadcn-studio.svg",
     invert: true,
+    foil: false,
   },
 ];
 
 const legendarySponsors = [
-  {
-    name: "Shadcn Blocks",
-    url: "https://www.shadcnblocks.com/",
-    image: "/sponsors/shadcn-blocks.svg",
-    invert: true,
-  },
   {
     name: "Trigger.dev",
     url: "https://www.trigger.dev/",
@@ -76,13 +79,25 @@ export default function Sponsors() {
         {mythicSponsors.map((sponsor) => (
           <Link href={sponsor.url} key={sponsor.name} target="_blank">
             <div className="flex flex-col items-center gap-4">
-              <Avatar className="size-60" variant="default">
-                <AvatarImage
-                  alt={sponsor.name}
-                  className={cn("p-5", sponsor.invert && "dark:invert")}
-                  src={sponsor.image}
-                />
-              </Avatar>
+              {sponsor.foil ? (
+                <Avatar className="size-60" variant="default">
+                  <MythicSponsor
+                    className="p-4"
+                    height={250}
+                    src={sponsor.image}
+                    width={250}
+                  />
+                </Avatar>
+              ) : (
+                <Avatar className="size-60" variant="default">
+                  <AvatarImage
+                    alt={sponsor.name}
+                    className={cn("p-5", sponsor.invert && "dark:invert")}
+                    src={sponsor.image}
+                  />
+                </Avatar>
+              )}
+
               <p className="font-bold text-sm">{sponsor.name}</p>
             </div>
           </Link>
