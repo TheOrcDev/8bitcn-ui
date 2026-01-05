@@ -200,6 +200,9 @@ importers:
       tailwind-merge:
         specifier: ^3.4.0
         version: 3.4.0
+      three:
+        specifier: ^0.182.0
+        version: 0.182.0
       tw-animate-css:
         specifier: ^1.4.0
         version: 1.4.0
@@ -225,6 +228,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.7)
+      '@types/three':
+        specifier: ^0.182.0
+        version: 0.182.0
       drizzle-kit:
         specifier: ^0.31.8
         version: 0.31.8
@@ -454,6 +460,9 @@ packages:
 
   '@date-fns/tz@1.4.1':
     resolution: {integrity: sha512-P5LUNhtbj6YfI3iJjw5EL9eUAG6OitD0W3fWQcpQjDRc/QIsL0tRNuO1PcDvPccWL1fSTXXdE1ds+l95DV/OFA==}
+
+  '@dimforge/rapier3d-compat@0.12.0':
+    resolution: {integrity: sha512-uekIGetywIgopfD97oDL5PfeezkFpNhwlzlaEYNOA0N6ghdsOvh/HYjSMek5Q2O1PYvRSDFcqFVJl4r4ZBwOow==}
 
   '@dnd-kit/accessibility@3.1.1':
     resolution: {integrity: sha512-2P+YgaXF+gRsIihwwY1gCsQSYnu9Zyj2py8kY5fFvUM1qm2WA2u639R6YNVfU4GWr+ZM5mqEsfHZZLoRONbemw==}
@@ -2138,6 +2147,9 @@ packages:
   '@ts-morph/common@0.27.0':
     resolution: {integrity: sha512-Wf29UqxWDpc+i61k3oIOzcUfQt79PIT9y/MWfAGlrkjg6lBC1hwDECLXPVJAhWjiGbfBCxZd65F/LIZF3+jeJQ==}
 
+  '@tweenjs/tween.js@23.1.3':
+    resolution: {integrity: sha512-vJmvvwFxYuGnF2axRtPYocag6Clbb5YS7kLL+SO/TeVFzHqDIWrNKYtcsPMibjDx9O+bu+psAy9NKfWklassUA==}
+
   '@types/d3-array@3.2.2':
     resolution: {integrity: sha512-hOLWVbm7uRza0BYXpIIW5pxfrKe0W+D5lrFiAEYR+pb6w3N2SwSMaJbXdUfSEv+dT4MfHBLtn5js0LAWaO6otw==}
 
@@ -2203,14 +2215,23 @@ packages:
   '@types/react@19.2.7':
     resolution: {integrity: sha512-MWtvHrGZLFttgeEj28VXHxpmwYbor/ATPYbBfSFZEIRK0ecCFLl2Qo55z52Hss+UV9CRN7trSeq1zbgx7YDWWg==}
 
+  '@types/stats.js@0.17.4':
+    resolution: {integrity: sha512-jIBvWWShCvlBqBNIZt0KAshWpvSjhkwkEu4ZUcASoAvhmrgAUI2t1dXrjSL4xXVLB4FznPrIsX3nKXFl/Dt4vA==}
+
   '@types/statuses@2.0.6':
     resolution: {integrity: sha512-xMAgYwceFhRA2zY+XbEA7mxYbA093wdiW8Vu6gZPGWy9cmOyU9XesH1tNcEWsKFd5Vzrqx5T3D38PWx1FIIXkA==}
+
+  '@types/three@0.182.0':
+    resolution: {integrity: sha512-WByN9V3Sbwbe2OkWuSGyoqQO8Du6yhYaXtXLoA5FkKTUJorZ+yOHBZ35zUUPQXlAKABZmbYp5oAqpA4RBjtJ/Q==}
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
+
+  '@types/webxr@0.5.24':
+    resolution: {integrity: sha512-h8fgEd/DpoS9CBrjEQXR+dIDraopAEfu4wYVNY2tEPwk60stPWhvZMf4Foo5FakuQ7HFZoa8WceaWFervK2Ovg==}
 
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
@@ -2266,6 +2287,9 @@ packages:
 
   '@wandry/analytics-sdk@1.16.0':
     resolution: {integrity: sha512-YtXDA2SdG+kHfyvAuRr4UFoTOu2mZTuc1JMhGjJK2p7p3LZgvYIp8ySiSMX0ENnIs3C04K7Jg7N+C75gbmIB5Q==}
+
+  '@webgpu/types@0.1.68':
+    resolution: {integrity: sha512-3ab1B59Ojb6RwjOspYLsTpCzbNB3ZaamIAxBMmvnNkiDoLTZUOBXZ9p5nAYVEkQlDdf6qAZWi1pqj9+ypiqznA==}
 
   accepts@2.0.0:
     resolution: {integrity: sha512-5cvg6CtKwfgdmVqY1WIiXKc3Q1bkRqGLi+2W/6ao+6Y7gu/RCwRuAhGEzh5B4KlszSuTLgZYuqFqo5bImjNKng==}
@@ -2958,6 +2982,9 @@ packages:
     resolution: {integrity: sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==}
     engines: {node: ^12.20 || >= 14.13}
 
+  fflate@0.8.2:
+    resolution: {integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==}
+
   figures@6.1.0:
     resolution: {integrity: sha512-d+l3qxjSesT4V7v2fh+QnmFnUWv9lSpjarhShNTgBOfA0ttejbQUAlHLitbjkoRiDulW0OPoQPYIGhIC8ohejg==}
     engines: {node: '>=18'}
@@ -3573,6 +3600,9 @@ packages:
   merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
+
+  meshoptimizer@0.22.0:
+    resolution: {integrity: sha512-IebiK79sqIy+E4EgOr+CAw+Ke8hAspXKzBd0JdgEmPHiAwmvEj2S4h1rfvo+o/BnfEYd/jAOg5IeeIjzlzSnDg==}
 
   micromark-core-commonmark@2.0.3:
     resolution: {integrity: sha512-RDBrHEMSxVFLg6xvnXmb1Ayr2WzLAWjeSATAoxwKYJV94TeNavgoIdA0a9ytzDSVzBy2YKFK+emCPOEibLeCrg==}
@@ -4391,6 +4421,9 @@ packages:
   text-segmentation@1.0.3:
     resolution: {integrity: sha512-iOiPUo/BGnZ6+54OsWxZidGCsdU8YbE4PSpdPinp7DeMtUJNJBoJ/ouUSTJjHkh1KntHaltHl/gDs2FC4i5+Nw==}
 
+  three@0.182.0:
+    resolution: {integrity: sha512-GbHabT+Irv+ihI1/f5kIIsZ+Ef9Sl5A1Y7imvS5RQjWgtTPfPnZ43JmlYI7NtCRDK9zir20lQpfg8/9Yd02OvQ==}
+
   tiny-invariant@1.3.3:
     resolution: {integrity: sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==}
 
@@ -4908,6 +4941,8 @@ snapshots:
       sisteransi: 1.0.5
 
   '@date-fns/tz@1.4.1': {}
+
+  '@dimforge/rapier3d-compat@0.12.0': {}
 
   '@dnd-kit/accessibility@3.1.1(react@19.2.3)':
     dependencies:
@@ -6385,6 +6420,8 @@ snapshots:
       minimatch: 10.1.1
       path-browserify: 1.0.1
 
+  '@tweenjs/tween.js@23.1.3': {}
+
   '@types/d3-array@3.2.2': {}
 
   '@types/d3-color@3.1.3': {}
@@ -6453,11 +6490,25 @@ snapshots:
     dependencies:
       csstype: 3.2.3
 
+  '@types/stats.js@0.17.4': {}
+
   '@types/statuses@2.0.6': {}
+
+  '@types/three@0.182.0':
+    dependencies:
+      '@dimforge/rapier3d-compat': 0.12.0
+      '@tweenjs/tween.js': 23.1.3
+      '@types/stats.js': 0.17.4
+      '@types/webxr': 0.5.24
+      '@webgpu/types': 0.1.68
+      fflate: 0.8.2
+      meshoptimizer: 0.22.0
 
   '@types/unist@2.0.11': {}
 
   '@types/unist@3.0.3': {}
+
+  '@types/webxr@0.5.24': {}
 
   '@ungap/structured-clone@1.3.0': {}
 
@@ -6472,6 +6523,8 @@ snapshots:
       react: 19.2.3
 
   '@wandry/analytics-sdk@1.16.0': {}
+
+  '@webgpu/types@0.1.68': {}
 
   accepts@2.0.0:
     dependencies:
@@ -7119,6 +7172,8 @@ snapshots:
     dependencies:
       node-domexception: 1.0.0
       web-streams-polyfill: 3.3.3
+
+  fflate@0.8.2: {}
 
   figures@6.1.0:
     dependencies:
@@ -7825,6 +7880,8 @@ snapshots:
   merge-stream@2.0.0: {}
 
   merge2@1.4.1: {}
+
+  meshoptimizer@0.22.0: {}
 
   micromark-core-commonmark@2.0.3:
     dependencies:
@@ -8916,6 +8973,8 @@ snapshots:
   text-segmentation@1.0.3:
     dependencies:
       utrie: 1.0.2
+
+  three@0.182.0: {}
 
   tiny-invariant@1.3.3: {}
 
