@@ -2116,17 +2116,12 @@
       "title": "8-bit Loading Screen",
       "description": "A retro-styled loading screen with animated progress bar and rotating tips.",
       "categories": ["gaming"],
-      "registryDependencies": ["card", "progress"],
+      "registryDependencies": ["progress"],
       "files": [
         {
           "path": "components/ui/8bit/blocks/loading-screen.tsx",
           "type": "registry:block",
           "target": "components/ui/8bit/blocks/loading-screen.tsx"
-        },
-        {
-          "path": "components/ui/8bit/card.tsx",
-          "type": "registry:component",
-          "target": "components/ui/8bit/card.tsx"
         },
         {
           "path": "components/ui/8bit/progress.tsx",
