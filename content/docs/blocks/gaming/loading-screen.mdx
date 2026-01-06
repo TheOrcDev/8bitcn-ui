@@ -1,0 +1,91 @@
+---
+title: Loading Screen
+description: Displays a retro-styled loading screen with animated progress bar and rotating tips.
+---
+
+import LoadingScreen from "@/components/ui/8bit/blocks/loading-screen";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/loading-screen"
+    command="pnpm dlx shadcn@latest add @8bitcn/loading-screen"
+  />
+</div>
+
+<ComponentPreview title="8-bit Loading Screen block" name="loading-screen">
+  <LoadingScreen
+    className="min-w-[300px] md:min-w-[400px]"
+    autoProgress
+    autoProgressDuration={8000}
+  />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="loading-screen" />
+
+## Usage
+
+---
+
+```tsx
+import LoadingScreen from "@/components/ui/8bit/blocks/loading-screen";
+```
+
+```tsx
+<LoadingScreen progress={65} />
+```
+
+## Examples
+
+### Auto Progress
+
+Use `autoProgress` for an animated loading bar that automatically progresses from 0 to 100:
+
+```tsx
+<LoadingScreen autoProgress autoProgressDuration={5000} />
+```
+
+### Custom Tips
+
+Provide your own array of tips to display:
+
+```tsx
+<LoadingScreen
+  autoProgress
+  tips={[
+    "Gathering resources...",
+    "Building world...",
+    "Spawning creatures...",
+  ]}
+/>
+```
+
+### Without Percentage
+
+Hide the percentage display:
+
+```tsx
+<LoadingScreen progress={80} showPercentage={false} />
+```
+
+### Custom Title
+
+Change the loading title:
+
+```tsx
+<LoadingScreen title="PLEASE WAIT..." progress={50} />
+```
+
+### Fullscreen Mode
+
+Use the `fullscreen` variant for a full-page loading overlay:
+
+```tsx
+<LoadingScreen variant="fullscreen" autoProgress />
+```

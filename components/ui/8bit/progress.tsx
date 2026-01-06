@@ -50,14 +50,15 @@ function Progress({
           heightClass,
           font !== "normal" && "retro"
         )}
+        value={value}
         {...props}
       >
         <ProgressPrimitive.Indicator
           data-slot="progress-indicator"
           className={cn(
             "h-full transition-all",
-            variant === "retro" ? "flex" : "w-full flex-1",
-            progressBg && variant !== "retro" ? progressBg : "bg-primary"
+            variant === "retro" ? "flex w-full" : "w-full flex-1",
+            variant !== "retro" && (progressBg || "bg-primary")
           )}
           style={
             variant === "retro"
@@ -73,8 +74,10 @@ function Progress({
                   <div
                     key={i}
                     className={cn(
-                      "size-full mx-[1px]",
-                      i < filledSquares ? progressBg : "bg-transparent"
+                      "flex-1 h-full mx-[1px]",
+                      i < filledSquares
+                        ? progressBg || "bg-primary"
+                        : "bg-transparent"
                     )}
                   />
                 );
