@@ -308,7 +308,7 @@ export default async function Page(props: {
                 Sponsored by
               </Link>
 
-              <div className="flex w-full flex-wrap items-center justify-center gap-10">
+              <div className="flex w-full flex-wrap items-center justify-center gap-3">
                 {mythicSponsors.map((sponsor) => (
                   <Link
                     className="rounded-md border border-dashed p-2"
@@ -320,9 +320,9 @@ export default async function Page(props: {
                       <Image
                         alt={sponsor.name}
                         className="dark:invert"
-                        height={60}
+                        height={45}
                         src={sponsor.image}
-                        width={60}
+                        width={45}
                       />
                       <div className="flex flex-col gap-1">
                         <h3 className="font-bold text-sm">{sponsor.name}</h3>

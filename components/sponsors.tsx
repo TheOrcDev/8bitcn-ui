@@ -8,7 +8,7 @@ import { Separator } from "./ui/8bit/separator";
 export const mythicSponsors = [
   {
     name: "Shadcn Blocks",
-    description: "Shadcn blocks & templates",
+    description: "The ultimate block set for Shadcn",
     url: "https://www.shadcnblocks.com/",
     image: "/sponsors/shadcn-blocks.svg",
     invert: true,
