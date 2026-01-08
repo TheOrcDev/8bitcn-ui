@@ -121,15 +121,8 @@ export default function LoadingScreen({
       {/* Tips section */}
       {tips.length > 0 && (
         <div className="w-full max-w-md min-h-16 flex items-center justify-center">
-          <p className="retro text-[0.625rem] md:text-xs text-center text-muted-foreground leading-relaxed">
+          <p className="retro text-[0.625rem] md:text-xs text-center text-muted-foreground leading-relaxed animate-pulse">
             {tips[currentTipIndex]}
-            <span
-              className={cn(
-                "inline-block w-2 h-3 ml-1 bg-current align-middle",
-                showCursor ? "opacity-100" : "opacity-0"
-              )}
-              aria-hidden="true"
-            />
           </p>
         </div>
       )}
