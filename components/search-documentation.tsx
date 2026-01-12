@@ -12,7 +12,7 @@ export function SearchDocumentation() {
   return (
     <Button
       className={cn(
-        "retro relative h-8 w-full justify-start bg-muted/50 font-normal text-[7.5px] text-muted-foreground shadow-none sm:pr-12 md:w-40 lg:w-56 xl:w-64"
+        "retro relative h-8 w-full max-w-[75%] justify-start bg-muted/50 font-normal text-[7.5px] text-muted-foreground shadow-none sm:pr-12 md:w-40 lg:w-56 xl:w-64"
       )}
       onClick={() => setOpenSearch(true)}
       variant="outline"
