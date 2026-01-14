@@ -829,8 +829,7 @@
       "type": "registry:component",
       "title": "8-bit Slider",
       "description": "A simple 8-bit slider component",
-      "registryDependencies": [],
-      "dependencies": ["@radix-ui/react-slider"],
+      "registryDependencies": ["slider"],
       "files": [
         {
           "path": "components/ui/8bit/slider.tsx",
