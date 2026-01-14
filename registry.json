@@ -1559,9 +1559,9 @@
       "categories": ["gaming"],
       "files": [
         {
-          "path": "components/ui/8bit/leaderboard.tsx",
+          "path": "components/ui/8bit/blocks/leaderboard.tsx",
           "type": "registry:component",
-          "target": "components/ui/8bit/leaderboard.tsx"
+          "target": "components/ui/8bit/blocks/leaderboard.tsx"
         },
         {
           "path": "components/ui/8bit/styles/retro.css",
@@ -1649,9 +1649,9 @@
       "categories": ["gaming"],
       "files": [
         {
-          "path": "components/ui/8bit/quest-log.tsx",
+          "path": "components/ui/8bit/blocks/quest-log.tsx",
           "type": "registry:component",
-          "target": "components/ui/8bit/quest-log.tsx"
+          "target": "components/ui/8bit/blocks/quest-log.tsx"
         },
         {
           "path": "components/ui/8bit/accordion.tsx",
@@ -1685,12 +1685,13 @@
       "type": "registry:block",
       "title": "8-bit Save Slots",
       "description": "A retro-styled save/load game interface with slot previews, timestamps, and empty slot handling.",
+      "categories": ["gaming"],
       "registryDependencies": ["card", "badge", "button", "separator"],
       "files": [
         {
-          "path": "components/ui/8bit/save-slots.tsx",
+          "path": "components/ui/8bit/blocks/save-slots.tsx",
           "type": "registry:component",
-          "target": "components/ui/8bit/save-slots.tsx"
+          "target": "components/ui/8bit/blocks/save-slots.tsx"
         },
         {
           "path": "components/ui/8bit/styles/retro.css",
@@ -2010,9 +2011,9 @@
       ],
       "files": [
         {
-          "path": "components/ui/8bit/character-sheet.tsx",
+          "path": "components/ui/8bit/blocks/character-sheet.tsx",
           "type": "registry:component",
-          "target": "components/ui/8bit/character-sheet.tsx"
+          "target": "components/ui/8bit/blocks/character-sheet.tsx"
         },
         {
           "path": "components/ui/8bit/card.tsx",
