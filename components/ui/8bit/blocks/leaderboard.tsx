@@ -17,8 +17,7 @@ import {
   CardTitle,
 } from "@/components/ui/8bit/card";
 import { Separator } from "@/components/ui/8bit/separator";
-
-import "./styles/retro.css";
+import "@/components/ui/8bit/styles/retro.css";
 
 export interface LeaderboardPlayer {
   id: string;

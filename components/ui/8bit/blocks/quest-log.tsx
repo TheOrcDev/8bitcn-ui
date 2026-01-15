@@ -18,8 +18,7 @@ import {
   CardTitle,
 } from "@/components/ui/8bit/card";
 import { ScrollArea } from "@/components/ui/8bit/scroll-area";
-
-import "./styles/retro.css";
+import "@/components/ui/8bit/styles/retro.css";
 
 export type QuestStatus = "active" | "completed" | "failed" | "pending";
 

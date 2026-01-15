@@ -1,4 +1,4 @@
-import { CharacterSheet } from "@/components/ui/8bit/character-sheet";
+import { CharacterSheet } from "@/components/ui/8bit/blocks/character-sheet";
 
 export default function CharacterSheetPage() {
   return (
