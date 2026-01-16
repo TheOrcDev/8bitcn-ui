@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 import { Toggle as ShadcnToggle } from "@/components/ui/toggle";
 
-import "./styles/retro.css";
+import "@/components/ui/8bit/styles/retro.css";
 
 const toggleVariants = cva("", {
   variants: {

@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 import { Checkbox as ShadcnCheckbox } from "@/components/ui/checkbox";
 
-import "./styles/retro.css";
+import "@/components/ui/8bit/styles/retro.css";
 
 export const checkboxVariants = cva("", {
   variants: {
