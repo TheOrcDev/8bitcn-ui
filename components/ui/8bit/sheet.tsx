@@ -13,7 +13,7 @@ import {
   SheetTrigger as ShadcnSheetTrigger,
 } from "@/components/ui/sheet";
 
-import "./styles/retro.css";
+import "@/components/ui/8bit/styles/retro.css";
 
 const Sheet = ShadcnSheet;
 

@@ -17,7 +17,7 @@ import {
   TableRow as ShadcnTableRow,
 } from "@/components/ui/table";
 
-import "./styles/retro.css";
+import "@/components/ui/8bit/styles/retro.css";
 
 export const tableVariants = cva("", {
   variants: {

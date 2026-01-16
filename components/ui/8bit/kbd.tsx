@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-import "./styles/retro.css";
+import "@/components/ui/8bit/styles/retro.css";
 
 function Kbd({ className, ...props }: React.ComponentProps<"kbd">) {
   return (

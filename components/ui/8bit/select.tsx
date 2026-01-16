@@ -16,7 +16,7 @@ import {
   SelectValue as ShadcnSelectValue,
 } from "@/components/ui/select";
 
-import "./styles/retro.css";
+import "@/components/ui/8bit/styles/retro.css";
 
 export const inputVariants = cva("", {
   variants: {

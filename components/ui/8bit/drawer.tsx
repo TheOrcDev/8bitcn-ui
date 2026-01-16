@@ -15,7 +15,7 @@ import {
   DrawerTrigger as ShadcnDrawerTrigger,
 } from "@/components/ui/drawer";
 
-import "./styles/retro.css";
+import "@/components/ui/8bit/styles/retro.css";
 
 const Drawer = ShadcnDrawer;
 

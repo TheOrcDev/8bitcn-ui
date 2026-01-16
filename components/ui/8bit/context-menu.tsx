@@ -7,7 +7,7 @@ import { ChevronRight, Circle } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
-import "./styles/retro.css";
+import "@/components/ui/8bit/styles/retro.css";
 
 const ContextMenu = ContextMenuPrimitive.Root;
 

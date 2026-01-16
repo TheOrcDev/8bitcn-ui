@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/8bit/card";
 import { Input } from "@/components/ui/8bit/input";
 import { Label } from "@/components/ui/8bit/label";
 
-import "../styles/retro.css";
+import "@/components/ui/8bit/styles/retro.css";
 
 export function LoginForm({
   className,
