@@ -6,6 +6,76 @@ description: Displays a simple 8-bit sidebar component.
 import CopyCommandButton from "@/components/copy-command-button";
 import InstallationCommands from "@/components/installation-commands";
 import ComponentPreview from "@/components/component-preview";
+import {
+  SidebarProvider,
+  Sidebar,
+  SidebarContent,
+  SidebarGroupLabel,
+  SidebarGroup,
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
+  SidebarMenuSub,
+  SidebarMenuSubItem,
+  SidebarMenuSubButton,
+  SidebarInset,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { ChevronDown } from "lucide-react";
+
+export const menus = [
+  {
+    imgSrc: "/icons/sword.png",
+    title: "Weapons",
+    subMenus: ["Ironfang", "Stormcleaver", "Duskblade"],
+  },
+  {
+    imgSrc: "/icons/shield.png",
+    title: "Shields",
+    subMenus: ["Mirrorwall", "Hearthguard", "Oathkeeper"],
+  },
+  {
+    imgSrc: "/images/goblin.png",
+    title: "Monsters",
+    subMenus: ["Goblin", "Giant", "Dragon"],
+  },
+];
+
+export function CollapsibleSidebarMenu({menu}) {
+  return (
+    <Collapsible asChild>
+      <SidebarMenuItem>
+        <CollapsibleTrigger asChild>
+          <SidebarMenuButton>
+            <img src={menu.imgSrc} style={{width: "16px"}} />
+            <span>{menu.title}</span>
+            <ChevronDown className="ml-auto" />
+          </SidebarMenuButton>
+        </CollapsibleTrigger>
+        <CollapsibleContent>
+          <SidebarMenuSub>
+            { menu.subMenus.map(subMenu => <CollapsibleSidebarSubMenu key={subMenu} subMenu={subMenu} />) }
+          </SidebarMenuSub>
+        </CollapsibleContent>
+      </SidebarMenuItem>
+    </Collapsible>
+  );
+}
+
+export function CollapsibleSidebarSubMenu({subMenu}) {
+  return (
+    <SidebarMenuSubItem>
+      <SidebarMenuSubButton>
+        {subMenu}
+      </SidebarMenuSubButton>
+    </SidebarMenuSubItem>
+  );
+}
 
 <div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
   <CopyCommandButton
@@ -13,6 +83,29 @@ import ComponentPreview from "@/components/component-preview";
     command="pnpm dlx shadcn@latest add @8bitcn/sidebar"
   />
 </div>
+
+<ComponentPreview title="8-bit Sidebar component" name="sidebar">
+  <div style={{
+    border: "1px var(--border) solid",
+    width: "100%",
+  }}>
+    <SidebarProvider style={{minHeight: 350, maxHeight: 350}}>
+      <Sidebar collapsible="icon" style={{position: "relative", maxHeight: 350, overflowY: "auto"}}>
+        <SidebarContent>
+          <SidebarGroup>
+            <SidebarGroupLabel>Informations</SidebarGroupLabel>
+            <SidebarMenu>
+              { menus.map(menu => <CollapsibleSidebarMenu key={menu.title} menu={menu} />) }
+            </SidebarMenu>
+          </SidebarGroup>
+        </SidebarContent>
+      </Sidebar>
+      <SidebarInset>
+        <SidebarTrigger />
+      </SidebarInset>
+    </SidebarProvider>
+  </div>
+</ComponentPreview>
 
 ## Installation
 
