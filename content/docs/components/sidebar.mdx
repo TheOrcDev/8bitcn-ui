@@ -31,16 +31,19 @@ import { ChevronDown } from "lucide-react";
 export const menus = [
   {
     imgSrc: "/icons/sword.png",
+    imgAlt: "Sword",
     title: "Weapons",
     subMenus: ["Ironfang", "Stormcleaver", "Duskblade"],
   },
   {
     imgSrc: "/icons/shield.png",
+    imgAlt: "Shield",
     title: "Shields",
     subMenus: ["Mirrorwall", "Hearthguard", "Oathkeeper"],
   },
   {
     imgSrc: "/images/goblin.png",
+    imgAlt: "Goblin",
     title: "Monsters",
     subMenus: ["Goblin", "Giant", "Dragon"],
   },
@@ -52,7 +55,7 @@ export function CollapsibleSidebarMenu({menu}) {
       <SidebarMenuItem>
         <CollapsibleTrigger asChild>
           <SidebarMenuButton>
-            <img src={menu.imgSrc} style={{width: "16px"}} />
+            <img src={menu.imgSrc} style={{width: "16px"}} alt={menu.imgAlt} />
             <span>{menu.title}</span>
             <ChevronDown className="ml-auto" />
           </SidebarMenuButton>
