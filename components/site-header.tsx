@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
-import { ModeSwitcher } from "@/components/mode-switcher";
 
 import { Button } from "@/components/ui/button";
 import { navItems } from "@/config/nav-items";
@@ -9,6 +8,7 @@ import { navItems } from "@/config/nav-items";
 import MobileNav from "./mobile-nav";
 import { SearchDocumentation } from "./search-documentation";
 import { Skeleton } from "./ui/8bit/skeleton";
+import { RetroModeSwitcher } from "./ui/retro-mode-switcher";
 
 export function SiteHeader() {
   return (
@@ -54,7 +54,7 @@ export function SiteHeader() {
               </Suspense>
             </Button>
           </Link>
-          <ModeSwitcher />
+          <RetroModeSwitcher className="size-7" />
         </div>
       </div>
     </header>
