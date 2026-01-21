@@ -103,7 +103,7 @@ export default function EnemyHealthDisplay({
         {/* Health percentage overlay for retro variant */}
         {healthBarVariant === "retro" && (
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-xs font-bold text-white drop-shadow-lg bg-black/50 px-1 rounded">
+            <span className="text-xs font-bold text-white drop-shadow-lg bg-black/50 px-1">
               {Math.round(healthPercentage)}%
             </span>
           </div>
