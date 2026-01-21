@@ -5,8 +5,13 @@ import * as React from "react";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/8bit/button";
+import { cn } from "@/lib/utils";
 
-export function RetroModeSwitcher() {
+interface RetroModeSwitcherProps {
+  className?: string;
+}
+
+export function RetroModeSwitcher({ className }: RetroModeSwitcherProps) {
   const { setTheme, resolvedTheme } = useTheme();
 
   const toggleTheme = React.useCallback(() => {
@@ -27,7 +32,7 @@ export function RetroModeSwitcher() {
         xmlns="http://www.w3.org/2000/svg"
         stroke="currentColor"
         strokeWidth="0.25"
-        className="size-8 hidden [html.dark_&]:block"
+        className={cn("size-8 hidden [html.dark_&]:block", className)}
         aria-label="sun-dim"
       >
         <rect x="120" y="88" width="14" height="14" rx="1"></rect>
@@ -67,7 +72,7 @@ export function RetroModeSwitcher() {
         xmlns="http://www.w3.org/2000/svg"
         stroke="currentColor"
         strokeWidth="0.25"
-        className="hidden [html.light_&]:block size-8"
+        className={cn("hidden [html.light_&]:block size-8", className)}
         aria-label="moon"
       >
         <rect x="104" y="56" width="14" height="14" rx="1"></rect>
