@@ -6,6 +6,7 @@ description: Displays a simple 8-bit sidebar component.
 import CopyCommandButton from "@/components/copy-command-button";
 import InstallationCommands from "@/components/installation-commands";
 import ComponentPreview from "@/components/component-preview";
+import { SidebarExample } from "@/components/examples/sidebar"
 
 <div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
   <CopyCommandButton
@@ -13,6 +14,10 @@ import ComponentPreview from "@/components/component-preview";
     command="pnpm dlx shadcn@latest add @8bitcn/sidebar"
   />
 </div>
+
+<ComponentPreview title="8-bit Sidebar component" name="sidebar">
+  <SidebarExample />
+</ComponentPreview>
 
 ## Installation
 
