@@ -972,6 +972,7 @@
       "type": "registry:component",
       "title": "8-bit Separator",
       "description": "A simple 8-bit separator component",
+      "dependencies": ["@radix-ui/react-separator"],
       "registryDependencies": [],
       "files": [
         {
