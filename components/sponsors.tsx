@@ -32,12 +32,6 @@ const legendarySponsors = [
     invert: false,
   },
   {
-    name: "Inbox Zero",
-    url: "https://www.getinboxzero.com/",
-    image: "/sponsors/inbox-zero.jpg",
-    invert: true,
-  },
-  {
     name: "Coolify",
     url: "https://www.coolify.io/",
     image: "/sponsors/coolify-logo.png",
@@ -116,7 +110,7 @@ export default function Sponsors() {
         {legendarySponsors.map((sponsor) => (
           <Link href={sponsor.url} key={sponsor.name} target="_blank">
             <div className="flex flex-col items-center gap-4">
-              <Avatar className="size-60" variant="default">
+              <Avatar className="size-50" variant="default">
                 <AvatarImage
                   alt={sponsor.name}
                   className={cn("p-5", sponsor.invert && "dark:invert")}
