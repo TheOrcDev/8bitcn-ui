@@ -22,6 +22,14 @@ export const mythicSponsors = [
     invert: true,
     foil: false,
   },
+  {
+    name: "Shadcn UI Kit",
+    description: "Admin dashboards, blocks, components & examples",
+    url: "https://shadcnuikit.com/",
+    image: "/sponsors/shadcnuikit-logo.svg",
+    invert: true,
+    foil: false,
+  },
 ];
 
 const legendarySponsors = [
