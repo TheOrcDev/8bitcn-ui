@@ -48,4 +48,4 @@ Licensed under the [MIT license](/license.md).
 
 ## Star History
 
-[![Star History](https://starchart.cc/theorcdev/8bitcn-ui.svg?variant=adaptive&line=%237fce00)](https://starchart.cc/theorcdev/8bitcn-ui)
+[![RepoStars](https://repostars.dev/api/embed?repo=theorcdev/8bitcn-ui&theme=8bit)](https://repostars.dev/?repos=theorcdev/8bitcn-ui&theme=8bit)
