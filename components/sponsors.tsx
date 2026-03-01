@@ -59,14 +59,8 @@ const legendarySponsors = [
   },
 ];
 
-const sponsors = [
-  {
-    name: "Bounty",
-    url: "https://www.bounty.new/",
-    image: "/sponsors/bounty.jpg",
-    invert: true,
-  },
-];
+// const sponsors = [
+// ];
 
 export default function Sponsors() {
   return (
@@ -133,7 +127,7 @@ export default function Sponsors() {
 
       <h2 className="font-bold text-xl">Sponsors</h2>
 
-      <div className="flex flex-wrap items-center justify-center gap-10">
+      {/* <div className="flex flex-wrap items-center justify-center gap-10">
         {sponsors.map((sponsor) => (
           <Link href={sponsor.url} key={sponsor.name} target="_blank">
             <div className="flex flex-col items-center gap-4">
@@ -148,7 +142,7 @@ export default function Sponsors() {
             </div>
           </Link>
         ))}
-      </div>
+      </div> */}
 
       <div className="flex flex-col items-center gap-5">
         <p className="max-w-xl text-center text-muted-foreground text-sm">
