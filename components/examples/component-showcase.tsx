@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { CommandExample } from "@/components/examples/command";
 import {
   Alert,
@@ -63,6 +66,19 @@ import { DatePicker } from "./date-picker";
 import { DrawerExample } from "./drawer";
 
 export default function ComponentShowcase() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // Delay mounting interactive components until after initial paint
+    // to prevent cmdk/Tabs/Select from triggering scrollIntoView on load
+    const timer = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(timer);
+  }, []);
+
+  if (!mounted) {
+    return <div className="mt-10 min-h-[800px]" />;
+  }
+
   return (
     <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {/* Column 1 */}
