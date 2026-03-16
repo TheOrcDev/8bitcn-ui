@@ -85,7 +85,7 @@ export default function DefaultSearchDialog(props: SharedProps) {
             <Kbd>ESC</Kbd>
           </SearchDialogClose>
         </SearchDialogHeader>
-        <SearchDialogList items={query.data !== "empty" ? query.data : null} />
+        <SearchDialogList items={query.data === "empty" ? null : query.data} />
 
         {search ? null : (
           <div className="flex flex-col">
