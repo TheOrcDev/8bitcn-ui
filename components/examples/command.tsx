@@ -46,7 +46,7 @@ const settingCommands = [
 
 export function CommandExample() {
   return (
-    <Command>
+    <Command defaultValue="">
       <CommandInput placeholder="Type a command..." />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
