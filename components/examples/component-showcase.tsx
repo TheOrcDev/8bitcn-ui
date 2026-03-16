@@ -69,10 +69,23 @@ export default function ComponentShowcase() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Delay mounting interactive components until after initial paint
-    // to prevent cmdk/Tabs/Select from triggering scrollIntoView on load
-    const timer = requestAnimationFrame(() => setMounted(true));
-    return () => cancelAnimationFrame(timer);
+    // Temporarily block scrollIntoView during showcase mount.
+    // Multiple libraries (cmdk, Radix) call scrollIntoView on mount,
+    // which jumps the page to the middle on load.
+    const original = Element.prototype.scrollIntoView;
+    Element.prototype.scrollIntoView = function () {};
+
+    setMounted(true);
+
+    // Restore after a tick so interactive scrolling still works
+    const timer = requestAnimationFrame(() => {
+      Element.prototype.scrollIntoView = original;
+    });
+
+    return () => {
+      cancelAnimationFrame(timer);
+      Element.prototype.scrollIntoView = original;
+    };
   }, []);
 
   if (!mounted) {
