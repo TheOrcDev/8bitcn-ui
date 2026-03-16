@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { CommandExample } from "@/components/examples/command";
 import {
   Alert,
@@ -63,6 +66,32 @@ import { DatePicker } from "./date-picker";
 import { DrawerExample } from "./drawer";
 
 export default function ComponentShowcase() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // Temporarily block scrollIntoView during showcase mount.
+    // Multiple libraries (cmdk, Radix) call scrollIntoView on mount,
+    // which jumps the page to the middle on load.
+    const original = Element.prototype.scrollIntoView;
+    Element.prototype.scrollIntoView = function () {};
+
+    setMounted(true);
+
+    // Restore after a tick so interactive scrolling still works
+    const timer = requestAnimationFrame(() => {
+      Element.prototype.scrollIntoView = original;
+    });
+
+    return () => {
+      cancelAnimationFrame(timer);
+      Element.prototype.scrollIntoView = original;
+    };
+  }, []);
+
+  if (!mounted) {
+    return <div className="mt-10 min-h-[800px]" />;
+  }
+
   return (
     <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {/* Column 1 */}
