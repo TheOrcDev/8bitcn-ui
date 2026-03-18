@@ -53,7 +53,7 @@ export default function Advanced3({
                   placeholder={placeholder}
                   type="email"
                 />
-                <Button>{cta}</Button>
+                <Button className="text-xs">{cta}</Button>
               </div>
 
               <p className="retro mt-3 text-muted-foreground text-[10px]">
