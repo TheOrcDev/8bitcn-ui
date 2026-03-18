@@ -184,6 +184,19 @@ This project uses **Fumadocs** for documentation generation and management:
 - **MDX support**: Components documented in MDX format with custom components
 - **URL structure**: Documentation served at `/docs/*` routes
 
+## 8bitcn v2 Non-Negotiable Build Rules
+
+These rules are strict for all v2 block work.
+
+- **Use ONLY 8bitcn components** for all new blocks (`components/ui/8bit/*` and approved 8bitcn wrappers).
+- **Never import Lucide, Phosphor, Heroicons, or emoji-based icons** in 8bitcn blocks.
+- **Use only 8bit icon sources/components** (approved local 8bit icons / raster-style icon set).
+- **No emojis in UI copy, block copy, docs copy, or placeholder text** for 8bitcn blocks.
+- **All blocks should feel gamified/playful retro** (copy + structure), while staying production-usable.
+- **Descriptions and helper text must default to `text-xs`** because the project font renders larger.
+- Build blocks **one-by-one in iterations** for review, not huge all-at-once drops.
+- Hardcoded demo content is allowed for showcase blocks.
+
 ## Important Notes
 
 - Husky is configured for pre-commit hooks with lint-staged
