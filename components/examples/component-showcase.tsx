@@ -73,6 +73,7 @@ export default function ComponentShowcase() {
     // Multiple libraries (cmdk, Radix) call scrollIntoView on mount,
     // which jumps the page to the middle on load.
     const original = Element.prototype.scrollIntoView;
+    // biome-ignore lint/suspicious/noEmptyBlockStatements: Temporarily block scrollIntoView during showcase mount.
     Element.prototype.scrollIntoView = () => {};
 
     setMounted(true);
