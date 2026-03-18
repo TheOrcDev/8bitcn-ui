@@ -104,7 +104,7 @@ export default function Pricing2({
         )}
 
         {/* Toggle */}
-        <div className="mb-10 flex items-center justify-center gap-2">
+        <div className="mb-10 flex items-center justify-center gap-4">
           <Button
             onClick={() => setYearly(false)}
             size="sm"

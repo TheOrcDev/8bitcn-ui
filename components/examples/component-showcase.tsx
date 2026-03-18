@@ -97,7 +97,7 @@ export default function ComponentShowcase() {
     <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {/* Column 1 */}
       <div className="flex flex-col gap-1">
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-4">
           <Button>Button</Button>
 
           <DrawerExample />

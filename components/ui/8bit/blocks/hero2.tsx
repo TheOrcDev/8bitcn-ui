@@ -83,7 +83,7 @@ export default function Hero2({
 
           {/* Actions */}
           {actions.length > 0 && (
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-4">
               {actions.map((action) =>
                 action.href ? (
                   <Button asChild key={action.label} variant={action.variant}>
