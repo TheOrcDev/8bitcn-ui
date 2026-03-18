@@ -30,31 +30,56 @@ const defaultEvents: TimelineEvent[] = [
   {
     icon: "Q1",
     title: "Public Launch",
-    description: "50+ components available. Registry goes live. Community Discord opens.",
+    description:
+      "50+ components available. Registry goes live. Community Discord opens.",
     badge: "DONE",
   },
   {
     icon: "Q2",
     title: "Block System",
-    description: "Full-page blocks: hero, pricing, FAQ, social proof. Build landing pages in minutes.",
+    description:
+      "Full-page blocks: hero, pricing, FAQ, social proof. Build landing pages in minutes.",
     badge: "NOW",
   },
   {
     icon: "Q3",
     title: "Pro Templates",
-    description: "Complete landing page templates. One-click deploy. Premium themes.",
+    description:
+      "Complete landing page templates. One-click deploy. Premium themes.",
   },
   {
     icon: "Q4",
     title: "Animation Pack",
-    description: "Pixel transitions, sprite animations, and retro loading screens.",
+    description:
+      "Pixel transitions, sprite animations, and retro loading screens.",
   },
   {
     icon: "Q5",
     title: "Game UI Kit",
-    description: "Inventory systems, dialogue boxes, battle UIs. Full game interface toolkit.",
+    description:
+      "Inventory systems, dialogue boxes, battle UIs. Full game interface toolkit.",
   },
 ];
+
+function EventCard({ event }: { event: TimelineEvent }) {
+  return (
+    <Card>
+      <CardHeader className="pb-2">
+        <div className="flex items-center gap-2">
+          <CardTitle className="retro text-xs">{event.title}</CardTitle>
+          {event.badge && (
+            <Badge variant="secondary">{event.badge}</Badge>
+          )}
+        </div>
+      </CardHeader>
+      <CardContent>
+        <p className="text-muted-foreground text-[10px] leading-relaxed">
+          {event.description}
+        </p>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function Timeline3({
   title = "Roadmap",
@@ -78,96 +103,54 @@ export default function Timeline3({
           </div>
         )}
 
-        <div className="relative">
-          {/* Center line */}
-          <div className="absolute top-0 bottom-0 left-1/2 hidden w-0.5 -translate-x-1/2 bg-border md:block" />
+        {/* Mobile: simple vertical (icon left + card right) */}
+        <div className="flex flex-col gap-6 md:hidden">
+          <div className="relative">
+            <div className="absolute top-0 bottom-0 left-6 w-0.5 bg-border" />
+            {events.map((event) => (
+              <div className="relative flex gap-4 pb-6" key={event.title}>
+                <div className="retro relative z-10 flex size-12 shrink-0 items-center justify-center border-2 border-foreground bg-background font-bold text-sm">
+                  {event.icon}
+                </div>
+                <div className="flex-1 pt-1">
+                  <EventCard event={event} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
-          <div className="flex flex-col gap-6">
+        {/* Desktop: zigzag (alternating left/right) */}
+        <div className="relative hidden md:block">
+          <div className="absolute top-0 bottom-0 left-1/2 w-0.5 -translate-x-1/2 bg-border" />
+
+          <div className="flex flex-col gap-8">
             {events.map((event, idx) => {
               const isLeft = idx % 2 === 0;
 
               return (
                 <div
-                  className="relative flex flex-col md:flex-row md:items-center"
+                  className="relative flex items-center"
                   key={event.title}
                 >
-                  {/* Left content or spacer */}
-                  <div className={cn("flex-1", !isLeft && "hidden md:block")} >
+                  {/* Left side */}
+                  <div className="flex-1 pr-8">
                     {isLeft && (
-                      <div className="md:pr-8 md:text-right">
-                        <Card>
-                          <CardHeader className="pb-2">
-                            <div className="flex items-center gap-2 md:justify-end">
-                              <CardTitle className="retro text-xs">
-                                {event.title}
-                              </CardTitle>
-                              {event.badge && (
-                                <Badge variant="secondary">{event.badge}</Badge>
-                              )}
-                            </div>
-                          </CardHeader>
-                          <CardContent>
-                            <p className="text-muted-foreground text-[10px] leading-relaxed">
-                              {event.description}
-                            </p>
-                          </CardContent>
-                        </Card>
+                      <div className="text-right">
+                        <EventCard event={event} />
                       </div>
                     )}
                   </div>
 
                   {/* Center icon */}
-                  <div className="retro relative z-10 mb-2 flex size-12 shrink-0 items-center justify-center border-2 border-foreground bg-background font-bold text-sm md:mb-0">
+                  <div className="retro relative z-10 flex size-12 shrink-0 items-center justify-center border-2 border-foreground bg-background font-bold text-sm">
                     {event.icon}
                   </div>
 
-                  {/* Right content or spacer */}
-                  <div className={cn("flex-1", isLeft && "hidden md:block")}>
-                    {!isLeft && (
-                      <div className="md:pl-8">
-                        <Card>
-                          <CardHeader className="pb-2">
-                            <div className="flex items-center gap-2">
-                              <CardTitle className="retro text-xs">
-                                {event.title}
-                              </CardTitle>
-                              {event.badge && (
-                                <Badge variant="secondary">{event.badge}</Badge>
-                              )}
-                            </div>
-                          </CardHeader>
-                          <CardContent>
-                            <p className="text-muted-foreground text-[10px] leading-relaxed">
-                              {event.description}
-                            </p>
-                          </CardContent>
-                        </Card>
-                      </div>
-                    )}
+                  {/* Right side */}
+                  <div className="flex-1 pl-8">
+                    {!isLeft && <EventCard event={event} />}
                   </div>
-
-                  {/* Mobile fallback — show card below icon for odd items */}
-                  {!isLeft && (
-                    <div className="md:hidden">
-                      <Card>
-                        <CardHeader className="pb-2">
-                          <div className="flex items-center gap-2">
-                            <CardTitle className="retro text-xs">
-                              {event.title}
-                            </CardTitle>
-                            {event.badge && (
-                              <Badge variant="secondary">{event.badge}</Badge>
-                            )}
-                          </div>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-muted-foreground text-[10px] leading-relaxed">
-                            {event.description}
-                          </p>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  )}
                 </div>
               );
             })}
