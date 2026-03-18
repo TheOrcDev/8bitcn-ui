@@ -99,7 +99,7 @@ export default function Feature3({
           className="mx-auto w-full max-w-4xl"
           opts={{ align: "start", loop: true }}
         >
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="px-2 py-2">
             {items.map((item) => (
               <CarouselItem
                 className="pl-4 sm:basis-1/2 lg:basis-1/3"
@@ -107,7 +107,7 @@ export default function Feature3({
               >
                 <Card className="relative h-full">
                   {item.badge && (
-                    <div className="absolute -top-2 right-4 z-10">
+                    <div className="absolute top-2 right-4 z-10">
                       <Badge variant="secondary">{item.badge}</Badge>
                     </div>
                   )}
