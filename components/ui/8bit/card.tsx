@@ -50,7 +50,7 @@ function Card({ className, font, ...props }: BitCardProps) {
       />
 
       <div
-        className="absolute inset-0 border-x-6 -mx-1.5 border-foreground dark:border-ring pointer-events-none"
+        className={cn("absolute inset-0 border-x-6 -mx-1.5 border-inherit pointer-events-none")}
         aria-hidden="true"
       />
     </div>
