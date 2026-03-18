@@ -2608,6 +2608,79 @@
           "target": "components/ui/8bit/styles/retro.css"
         }
       ]
+    },
+    {
+      "name": "faq1",
+      "type": "registry:block",
+      "title": "8-bit FAQ1",
+      "description": "Simple accordion FAQ.",
+      "categories": [
+        "faq"
+      ],
+      "registryDependencies": [
+        "accordion"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/faq1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/faq1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "faq2",
+      "type": "registry:block",
+      "title": "8-bit FAQ2",
+      "description": "Two-column card grid FAQ.",
+      "categories": [
+        "faq"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/faq2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/faq2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "faq3",
+      "type": "registry:block",
+      "title": "8-bit FAQ3",
+      "description": "Searchable FAQ with categories.",
+      "categories": [
+        "faq"
+      ],
+      "registryDependencies": [
+        "accordion",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/faq3.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/faq3.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
     }
   ]
 }

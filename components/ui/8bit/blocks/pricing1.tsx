@@ -118,8 +118,8 @@ export default function Pricing1({
               key={tier.name}
             >
               {tier.badge && (
-                <div className="absolute -top-2 right-4 z-10">
-                  <Badge>{tier.badge}</Badge>
+                <div className="absolute -top-4.5 left-1/2 -translate-x-1/2 z-10">
+                  <Badge className="text-[9px]">{tier.badge}</Badge>
                 </div>
               )}
               <CardHeader className="text-center">

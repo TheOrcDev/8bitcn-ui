@@ -134,8 +134,8 @@ export default function Pricing2({
               key={plan.name}
             >
               {plan.badge && (
-                <div className="absolute -top-2 right-4 z-10">
-                  <Badge>{plan.badge}</Badge>
+                <div className="absolute -top-4.5 left-1/2 -translate-x-1/2 z-10">
+                  <Badge className="text-[9px]">{plan.badge}</Badge>
                 </div>
               )}
               <CardHeader className="text-center">
