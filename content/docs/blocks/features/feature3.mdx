@@ -1,0 +1,72 @@
+---
+title: Feature 3 — Bento Grid
+description: A bento-style grid with mixed card sizes for visual hierarchy.
+---
+
+import Feature3 from "@/components/ui/8bit/blocks/feature3";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/feature3"
+    command="pnpm dlx shadcn@latest add @8bitcn/feature3"
+  />
+</div>
+
+<ComponentPreview title="Feature 3 — Bento Grid" name="feature3">
+  <Feature3 />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="feature3" />
+
+## Usage
+
+---
+
+```tsx
+import Feature3 from "@/components/ui/8bit/blocks/feature3";
+
+<Feature3
+  title="Built Different"
+  items={[
+    { icon: ">>", title: "Lightning Fast", description: "...", size: "wide" },
+    { icon: "{}", title: "Type Safe", description: "..." },
+    { icon: "##", title: "Accessible", description: "..." },
+    { icon: "</>", title: "Copy Paste", description: "...", size: "tall" },
+    { icon: "~~", title: "Themeable", description: "...", badge: "NEW" },
+    { icon: "[]", title: "Composable", description: "...", size: "wide" },
+  ]}
+/>
+```
+
+## Card Sizes
+
+- `"default"` — 1 column, 1 row
+- `"wide"` — spans 2 columns
+- `"tall"` — spans 2 rows
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `string` | `"Built Different"` | Section heading |
+| `description` | `string` | — | Section subheading |
+| `items` | `BentoItem[]` | 6 defaults | Grid items |
+| `className` | `string` | — | Additional classes |
+
+### BentoItem
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `icon` | `ReactNode` | Icon or symbol |
+| `title` | `string` | Feature name |
+| `description` | `string` | Feature description |
+| `size` | `"default" \| "wide" \| "tall"` | Card size in grid |
+| `badge` | `string` | Optional badge text |
+| `className` | `string` | Additional classes per card |

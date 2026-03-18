@@ -2476,6 +2476,56 @@
           "target": "components/ui/8bit/styles/retro.css"
         }
       ]
+    },
+    {
+      "name": "feature2",
+      "type": "registry:block",
+      "title": "8-bit Feature 2",
+      "description": "Step-by-step feature list with numbered icons and separators.",
+      "categories": [
+        "features"
+      ],
+      "registryDependencies": [
+        "badge",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/feature2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/feature2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "feature3",
+      "type": "registry:block",
+      "title": "8-bit Feature 3",
+      "description": "Bento-style feature grid with mixed card sizes.",
+      "categories": [
+        "features"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/feature3.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/feature3.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
     }
   ]
 }
