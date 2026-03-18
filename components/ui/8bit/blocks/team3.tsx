@@ -96,9 +96,11 @@ export default function Team3({
                 </div>
 
                 {item.cta && (
-                  <Button className="w-full" size="sm" variant="outline">
-                    {item.cta}
-                  </Button>
+                  <div className="-mx-1.5">
+                    <Button className="w-full" size="sm" variant="outline">
+                      {item.cta}
+                    </Button>
+                  </div>
                 )}
               </CardContent>
             </Card>

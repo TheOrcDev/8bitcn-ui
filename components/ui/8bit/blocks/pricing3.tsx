@@ -134,7 +134,7 @@ export default function Pricing3({
             <div className="mt-6 grid grid-cols-4 gap-4">
               <div />
               {tiers.map((tier) => (
-                <div className="text-center" key={tier.name}>
+                <div className="-mx-1.5 text-center" key={tier.name}>
                   <Button
                     className="w-full"
                     size="sm"

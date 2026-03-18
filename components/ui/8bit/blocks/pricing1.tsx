@@ -157,12 +157,14 @@ export default function Pricing1({
                   ))}
                 </ul>
 
-                <Button
-                  className="w-full"
-                  variant={tier.highlighted ? "default" : "outline"}
-                >
-                  {tier.cta}
-                </Button>
+                <div className="-mx-1.5">
+                  <Button
+                    className="w-full"
+                    variant={tier.highlighted ? "default" : "outline"}
+                  >
+                    {tier.cta}
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}

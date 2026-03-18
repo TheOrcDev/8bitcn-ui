@@ -96,9 +96,11 @@ export default function CTA2({
                 <CardDescription className="mb-4 flex-1 text-xs leading-relaxed">
                   {item.description}
                 </CardDescription>
-                <Button className="w-full" size="sm" variant="outline">
-                  {item.cta}
-                </Button>
+                <div className="-mx-1.5">
+                  <Button className="w-full" size="sm" variant="outline">
+                    {item.cta}
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}

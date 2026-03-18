@@ -165,12 +165,14 @@ export default function Pricing2({
                   ))}
                 </ul>
 
-                <Button
-                  className="w-full"
-                  variant={plan.highlighted ? "default" : "outline"}
-                >
-                  {plan.cta}
-                </Button>
+                <div className="-mx-1.5">
+                  <Button
+                    className="w-full"
+                    variant={plan.highlighted ? "default" : "outline"}
+                  >
+                    {plan.cta}
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}
