@@ -2352,31 +2352,6 @@
       ]
     },
     {
-      "name": "feature-grid",
-      "type": "registry:block",
-      "title": "8-bit Feature Grid",
-      "description": "A retro feature grid with icons, titles, descriptions, and optional badges.",
-      "categories": [
-        "marketing"
-      ],
-      "registryDependencies": [
-        "badge",
-        "card"
-      ],
-      "files": [
-        {
-          "path": "components/ui/8bit/blocks/feature-grid.tsx",
-          "type": "registry:block",
-          "target": "components/ui/8bit/blocks/feature-grid.tsx"
-        },
-        {
-          "path": "components/ui/8bit/styles/retro.css",
-          "type": "registry:file",
-          "target": "components/ui/8bit/styles/retro.css"
-        }
-      ]
-    },
-    {
       "name": "hero1",
       "type": "registry:block",
       "title": "8-bit Hero 1",
@@ -2418,6 +2393,31 @@
           "path": "components/ui/8bit/blocks/hero2.tsx",
           "type": "registry:block",
           "target": "components/ui/8bit/blocks/hero2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "feature1",
+      "type": "registry:block",
+      "title": "8-bit Feature 1",
+      "description": "Feature card grid with icons, titles, descriptions, and optional badges.",
+      "categories": [
+        "features"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/feature1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/feature1.tsx"
         },
         {
           "path": "components/ui/8bit/styles/retro.css",

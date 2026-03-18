@@ -67,7 +67,7 @@ const defaultItems: FeatureItem[] = [
   },
 ];
 
-export default function FeatureGrid({
+export default function Feature1({
   title = "Game Features",
   description = "Everything you need for the ultimate retro experience",
   items = defaultItems,
