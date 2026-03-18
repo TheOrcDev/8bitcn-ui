@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
-import { Badge } from "@/components/ui/8bit/badge";
 import {
   Card,
   CardContent,
@@ -14,7 +13,6 @@ import { Progress } from "@/components/ui/8bit/progress";
 import "@/components/ui/8bit/styles/retro.css";
 
 export interface MetricCard {
-  badge?: string;
   change?: string;
   icon: ReactNode;
   progress?: number;
@@ -42,7 +40,7 @@ const defaultMetrics: MetricCard[] = [
     title: "Total XP Earned",
     value: "4.2M",
     change: "+180K today",
-    badge: "RECORD",
+
   },
   {
     icon: "GP",
@@ -84,12 +82,7 @@ export default function Advanced2({
 
         <div className="grid gap-4 sm:grid-cols-2">
           {metrics.map((metric) => (
-            <Card className="relative" key={metric.title}>
-              {metric.badge && (
-                <div className="absolute -top-2 right-4 z-10">
-                  <Badge>{metric.badge}</Badge>
-                </div>
-              )}
+            <Card key={metric.title}>
               <CardHeader className="pb-2">
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-xs text-muted-foreground">

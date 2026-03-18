@@ -35,7 +35,7 @@ export default function Advanced3({
             <div className="text-center">
               {badge && (
                 <div className="mb-4">
-                  <Badge variant="outline">{badge}</Badge>
+                  <Badge>{badge}</Badge>
                 </div>
               )}
 
