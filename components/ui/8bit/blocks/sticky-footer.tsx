@@ -57,7 +57,7 @@ export default function StickyFooter({
   title = "8bitcn",
   description = "The retro component library for modern builders.",
   columns = defaultColumns,
-  copyright = "2024 8bitcn. All rights reserved.",
+  copyright = "2026 8bitcn. All rights reserved.",
   className,
 }: StickyFooterProps) {
   return (
@@ -85,7 +85,7 @@ export default function StickyFooter({
                 {col.links.map((link) => (
                   <li key={link.label}>
                     <Link
-                      className="text-xs transition-colors hover:text-foreground text-muted-foreground"
+                      className="retro text-[10px] transition-colors hover:text-foreground text-muted-foreground"
                       href={link.href}
                     >
                       {link.label}
