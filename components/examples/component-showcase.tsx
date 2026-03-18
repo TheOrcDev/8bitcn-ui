@@ -98,13 +98,15 @@ export default function ComponentShowcase() {
       {/* Column 1 */}
       <div className="flex flex-col gap-1">
         <div className="flex flex-col gap-4">
-          <Button>Button</Button>
+          <div className="-mx-1.5">
+            <Button className="w-full">Button</Button>
+          </div>
 
           <DrawerExample />
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline">Dropdown Menu</Button>
+              <Button className="w-full" variant="outline">Dropdown Menu</Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
