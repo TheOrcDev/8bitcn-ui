@@ -2681,6 +2681,81 @@
           "target": "components/ui/8bit/styles/retro.css"
         }
       ]
+    },
+    {
+      "name": "social-proof1",
+      "type": "registry:block",
+      "title": "8-bit Social Proof 1",
+      "description": "Stats bar with numbers and optional logo cloud.",
+      "categories": [
+        "social-proof"
+      ],
+      "registryDependencies": [
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/social-proof1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/social-proof1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "social-proof2",
+      "type": "registry:block",
+      "title": "8-bit Social Proof 2",
+      "description": "Two-column testimonial cards.",
+      "categories": [
+        "social-proof"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/social-proof2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/social-proof2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "social-proof3",
+      "type": "registry:block",
+      "title": "8-bit Social Proof 3",
+      "description": "Swipeable review carousel with ratings.",
+      "categories": [
+        "social-proof"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card",
+        "carousel"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/social-proof3.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/social-proof3.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
     }
   ]
 }
