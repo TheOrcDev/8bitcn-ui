@@ -20,11 +20,7 @@ import ComponentPreview from "@/components/component-preview";
     title="BUILD YOUR RETRO EMPIRE"
     subtitle="The 8-bit component library for modern builders"
     description="Ship pixel-perfect landing pages, dashboards, and gaming UIs with components that look straight out of the golden age."
-    badges={[
-      { label: "Open Source" },
-      { label: "Pixel Perfect", variant: "secondary" },
-      { label: "No Microtx", variant: "outline" },
-    ]}
+    badges={[{ label: "Open Source" }]}
     actions={[
       { label: "START QUEST", variant: "default" },
       { label: "VIEW LORE", variant: "outline" },
@@ -57,17 +53,17 @@ import Hero1 from "@/components/ui/8bit/blocks/hero1";
     { label: "START QUEST", variant: "default" },
     { label: "VIEW LORE", variant: "outline" },
   ]}
-/>
+/>;
 ```
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `title` | `string` | required | Main headline |
-| `subtitle` | `string` | — | Smaller text below title |
-| `description` | `string` | — | Body text |
-| `badges` | `HeroBadge[]` | `[]` | Badge pills above the title |
-| `actions` | `HeroAction[]` | `[]` | CTA buttons |
-| `children` | `ReactNode` | — | Extra content below actions |
-| `className` | `string` | — | Additional classes |
+| Prop          | Type           | Default  | Description                 |
+| ------------- | -------------- | -------- | --------------------------- |
+| `title`       | `string`       | required | Main headline               |
+| `subtitle`    | `string`       | —        | Smaller text below title    |
+| `description` | `string`       | —        | Body text                   |
+| `badges`      | `HeroBadge[]`  | `[]`     | Badge pills above the title |
+| `actions`     | `HeroAction[]` | `[]`     | CTA buttons                 |
+| `children`    | `ReactNode`    | —        | Extra content below actions |
+| `className`   | `string`       | —        | Additional classes          |
