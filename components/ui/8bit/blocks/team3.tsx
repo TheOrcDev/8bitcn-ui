@@ -75,7 +75,7 @@ export default function Team3({
           </div>
         )}
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-x-4 gap-y-1 md:grid-cols-3">
           {items.map((item) => (
             <Card className="flex flex-col" key={item.title}>
               <CardHeader className="pb-2">

@@ -80,7 +80,7 @@ export default function Advanced2({
           </div>
         )}
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-x-4 gap-y-1 sm:grid-cols-2">
           {metrics.map((metric) => (
             <Card key={metric.title}>
               <CardHeader className="pb-2">

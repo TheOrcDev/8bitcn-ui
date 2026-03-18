@@ -72,7 +72,7 @@ export default function FAQ2({
           </div>
         )}
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-x-4 gap-y-1 sm:grid-cols-2">
           {items.map((item) => (
             <Card key={item.question}>
               <CardHeader className="pb-2">

@@ -98,7 +98,7 @@ export default function Feature1({
           </div>
         )}
 
-        <div className={cn("grid gap-4", gridCols[columns])}>
+        <div className={cn("grid gap-x-4 gap-y-1", gridCols[columns])}>
           {items.map((item) => (
             <Card className="relative" key={item.title}>
               {item.badge && (

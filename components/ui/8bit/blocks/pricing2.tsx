@@ -124,7 +124,7 @@ export default function Pricing2({
           )}
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-x-6 gap-y-1 md:grid-cols-3">
           {plans.map((plan) => (
             <Card
               className={cn(
