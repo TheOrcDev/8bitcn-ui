@@ -82,6 +82,15 @@ const categories = [
     ],
   },
   {
+    title: "Advanced",
+    description: "Unique blocks with special interactions.",
+    blocks: [
+      { name: "Demo Shell", slug: "advanced/advanced1" },
+      { name: "Metrics Dashboard", slug: "advanced/advanced2" },
+      { name: "Newsletter", slug: "advanced/advanced3" },
+    ],
+  },
+  {
     title: "Layout",
     description: "Structural blocks for page scaffolding.",
     blocks: [{ name: "Footer", slug: "layout/sticky-footer" }],
@@ -152,7 +161,7 @@ export default function BlocksPage() {
       {/* Bottom CTA */}
       <div className="mt-16 text-center">
         <p className="retro mb-4 text-muted-foreground text-xs">
-          More blocks coming soon. Phase 3 and 4 in progress.
+          All 4 phases complete. 27 blocks ready to ship.
         </p>
         <Link href="/docs">
           <Button variant="outline">BROWSE ALL COMPONENTS</Button>
