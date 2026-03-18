@@ -2506,13 +2506,14 @@
       "name": "feature3",
       "type": "registry:block",
       "title": "8-bit Feature 3",
-      "description": "Bento-style feature grid with mixed card sizes.",
+      "description": "Swipeable feature carousel with cards and pixel arrows.",
       "categories": [
         "features"
       ],
       "registryDependencies": [
         "badge",
-        "card"
+        "card",
+        "carousel"
       ],
       "files": [
         {

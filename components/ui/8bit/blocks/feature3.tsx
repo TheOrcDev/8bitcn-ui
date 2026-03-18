@@ -1,3 +1,5 @@
+"use client";
+
 import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
@@ -10,79 +12,68 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/8bit/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/8bit/carousel";
 
 import "@/components/ui/8bit/styles/retro.css";
 
-export interface BentoItem {
+export interface CarouselFeature {
   badge?: string;
-  className?: string;
   description: string;
   icon: ReactNode;
-  size?: "default" | "wide" | "tall";
   title: string;
 }
 
 interface Feature3Props {
   className?: string;
   description?: string;
-  items?: BentoItem[];
+  items?: CarouselFeature[];
   title?: string;
 }
 
-const defaultItems: BentoItem[] = [
+const defaultItems: CarouselFeature[] = [
   {
-    icon: ">>",
-    title: "Lightning Fast",
+    icon: "01",
+    title: "Choose Your Class",
     description:
-      "Zero runtime overhead. Components render at the speed of light — or at least 60fps.",
-    size: "wide",
+      "Warrior, Mage, or Rogue. Each with unique skill trees, gear sets, and playstyles.",
   },
   {
-    icon: "{}",
-    title: "Type Safe",
-    description: "Full TypeScript support. Every prop is typed. No guessing.",
-  },
-  {
-    icon: "##",
-    title: "Accessible",
+    icon: "02",
+    title: "Enter the Dungeon",
     description:
-      "Keyboard navigation, screen readers, focus management. All handled.",
+      "Procedurally placed loot with hand-designed encounters. Every run feels fresh.",
+    badge: "FAN FAVORITE",
   },
   {
-    icon: "</>",
-    title: "Copy Paste Ready",
+    icon: "03",
+    title: "Defeat Bosses",
     description:
-      "Not a dependency. Copy the code into your project. Own it. Modify it. Ship it.",
-    size: "tall",
+      "12 legendary bosses, each with unique attack patterns. Learn, adapt, conquer.",
   },
   {
-    icon: "~~",
-    title: "Themeable",
-    description: "Dark mode, light mode, custom palettes. CSS variables make it easy.",
-    badge: "NEW",
-  },
-  {
-    icon: "[]",
-    title: "Composable",
+    icon: "04",
+    title: "Upgrade Your Gear",
     description:
-      "Mix and match blocks. Every component works standalone or together.",
-    size: "wide",
+      "Combine drops at the forge to create legendary items. The grind is the game.",
+  },
+  {
+    icon: "05",
+    title: "Climb the Ranks",
+    description:
+      "Global leaderboards updated in real-time. Prove you are the best.",
+    badge: "COMPETITIVE",
   },
 ];
 
-function getSizeClasses(size?: "default" | "wide" | "tall"): string {
-  if (size === "wide") {
-    return "sm:col-span-2";
-  }
-  if (size === "tall") {
-    return "sm:row-span-2";
-  }
-  return "";
-}
-
 export default function Feature3({
-  title = "Built Different",
-  description = "Not just pixel art. Real engineering under the hood.",
+  title = "The Adventure Awaits",
+  description = "Swipe through to discover what makes this game legendary",
   items = defaultItems,
   className,
 }: Feature3Props) {
@@ -104,29 +95,40 @@ export default function Feature3({
           </div>
         )}
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((item) => (
-            <Card
-              className={cn("relative", getSizeClasses(item.size), item.className)}
-              key={item.title}
-            >
-              {item.badge && (
-                <div className="absolute -top-2 right-4 z-10">
-                  <Badge variant="secondary">{item.badge}</Badge>
-                </div>
-              )}
-              <CardHeader className="pb-2">
-                <div className="retro mb-2 text-2xl">{item.icon}</div>
-                <CardTitle className="retro text-sm">{item.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-xs leading-relaxed">
-                  {item.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <Carousel
+          className="mx-auto w-full max-w-4xl"
+          opts={{ align: "start", loop: true }}
+        >
+          <CarouselContent className="-ml-4">
+            {items.map((item) => (
+              <CarouselItem
+                className="pl-4 sm:basis-1/2 lg:basis-1/3"
+                key={item.title}
+              >
+                <Card className="relative h-full">
+                  {item.badge && (
+                    <div className="absolute -top-2 right-4 z-10">
+                      <Badge variant="secondary">{item.badge}</Badge>
+                    </div>
+                  )}
+                  <CardHeader className="pb-2">
+                    <div className="retro mb-2 text-2xl">{item.icon}</div>
+                    <CardTitle className="retro text-sm">
+                      {item.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-xs leading-relaxed">
+                      {item.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </section>
   );

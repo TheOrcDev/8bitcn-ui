@@ -1,6 +1,6 @@
 ---
-title: Feature 3 — Bento Grid
-description: A bento-style grid with mixed card sizes for visual hierarchy.
+title: Feature 3 — Carousel
+description: A swipeable feature carousel with 8-bit cards and pixel navigation arrows.
 ---
 
 import Feature3 from "@/components/ui/8bit/blocks/feature3";
@@ -15,7 +15,7 @@ import ComponentPreview from "@/components/component-preview";
   />
 </div>
 
-<ComponentPreview title="Feature 3 — Bento Grid" name="feature3">
+<ComponentPreview title="Feature 3 — Carousel" name="feature3">
   <Feature3 />
 </ComponentPreview>
 
@@ -33,40 +33,33 @@ import ComponentPreview from "@/components/component-preview";
 import Feature3 from "@/components/ui/8bit/blocks/feature3";
 
 <Feature3
-  title="Built Different"
+  title="The Adventure Awaits"
   items={[
-    { icon: ">>", title: "Lightning Fast", description: "...", size: "wide" },
-    { icon: "{}", title: "Type Safe", description: "..." },
-    { icon: "##", title: "Accessible", description: "..." },
-    { icon: "</>", title: "Copy Paste", description: "...", size: "tall" },
-    { icon: "~~", title: "Themeable", description: "...", badge: "NEW" },
-    { icon: "[]", title: "Composable", description: "...", size: "wide" },
+    { icon: "01", title: "Choose Your Class", description: "..." },
+    { icon: "02", title: "Enter the Dungeon", description: "...", badge: "FAN FAVORITE" },
+    { icon: "03", title: "Defeat Bosses", description: "..." },
+    { icon: "04", title: "Upgrade Your Gear", description: "..." },
+    { icon: "05", title: "Climb the Ranks", description: "...", badge: "COMPETITIVE" },
   ]}
 />
 ```
 
-## Card Sizes
-
-- `"default"` — 1 column, 1 row
-- `"wide"` — spans 2 columns
-- `"tall"` — spans 2 rows
+Carousel loops infinitely and shows 1 card on mobile, 2 on tablet, 3 on desktop.
 
 ## Props
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `title` | `string` | `"Built Different"` | Section heading |
+| `title` | `string` | `"The Adventure Awaits"` | Section heading |
 | `description` | `string` | — | Section subheading |
-| `items` | `BentoItem[]` | 6 defaults | Grid items |
+| `items` | `CarouselFeature[]` | 5 defaults | Carousel cards |
 | `className` | `string` | — | Additional classes |
 
-### BentoItem
+### CarouselFeature
 
 | Prop | Type | Description |
 |------|------|-------------|
-| `icon` | `ReactNode` | Icon or symbol |
+| `icon` | `ReactNode` | Icon or number |
 | `title` | `string` | Feature name |
 | `description` | `string` | Feature description |
-| `size` | `"default" \| "wide" \| "tall"` | Card size in grid |
 | `badge` | `string` | Optional badge text |
-| `className` | `string` | Additional classes per card |
