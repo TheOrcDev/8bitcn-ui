@@ -1,0 +1,21 @@
+---
+title: Sticky Footer
+description: Sticky CTA bar that appears when scrolling down the page.
+---
+
+import StickyFooter from "@/components/ui/8bit/blocks/sticky-footer";
+import CopyCommandButton from "@/components/copy-command-button";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/sticky-footer"
+    command="pnpm dlx shadcn@latest add @8bitcn/sticky-footer"
+  />
+</div>
+
+The sticky footer appears at the bottom of the page when you scroll past a threshold. Scroll down on this page to see it in action.
+
+<StickyFooter threshold={100} />
+
+Note: The sticky footer is `position: fixed` — it renders at the bottom of the viewport, not inline in the page content. Set `threshold` to control when it appears (default: 300px scroll).

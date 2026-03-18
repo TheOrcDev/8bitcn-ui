@@ -19,7 +19,7 @@ interface CTA3Props {
   threshold?: number;
 }
 
-export default function CTA3({
+export default function StickyFooter({
   text = "Ready to build something retro?",
   cta = "GET STARTED",
   href,

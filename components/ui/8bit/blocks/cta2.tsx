@@ -84,8 +84,8 @@ export default function CTA2({
           {items.map((item) => (
             <Card className="relative flex flex-col" key={item.title}>
               {item.badge && (
-                <div className="absolute -top-2 right-4 z-10">
-                  <Badge variant="secondary">{item.badge}</Badge>
+                <div className="absolute top-2 right-4 z-10">
+                  <Badge className="text-[9px]">{item.badge}</Badge>
                 </div>
               )}
               <CardHeader className="pb-2">
