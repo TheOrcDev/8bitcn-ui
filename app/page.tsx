@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ComponentShowcase from "@/components/examples/component-showcase";
 import Sponsors from "@/components/sponsors";
 import { Badge } from "@/components/ui/8bit/badge";
 import { Button } from "@/components/ui/8bit/button";
@@ -86,13 +87,13 @@ export default function Home() {
           </Badge>
         </Link>
 
-        <h1 className="retro mb-4 max-w-5xl font-bold text-xl tracking-tight md:text-5xl lg:text-6xl">
-          The Foundation for Retro Design Systems
+        <h1 className="retro mb-4 max-w-3xl font-bold text-lg tracking-tight md:text-2xl lg:text-5xl">
+          Rare Loot UI Library
         </h1>
 
-        <p className="mx-auto mb-8 max-w-xl text-muted-foreground text-xs leading-relaxed">
+        <p className="retro mx-auto mb-8 max-w-xl text-muted-foreground text-xs leading-relaxed">
           Beautifully crafted 8-bit components and blocks. Open source.
-          Copy-paste. Built for indie hackers who ship.
+          Copy-paste.
         </p>
 
         <div className="flex gap-4">
@@ -103,10 +104,6 @@ export default function Home() {
             <Button variant="outline">Explore Blocks</Button>
           </Link>
         </div>
-
-        <p className="retro mt-6 text-[10px] text-muted-foreground">
-          Open source / Copy-paste / Built for indie hackers
-        </p>
       </section>
 
       <Separator />
@@ -228,6 +225,16 @@ export default function Home() {
             <Button variant="outline">See v2 Blocks</Button>
           </Link>
         </div>
+      </section>
+
+      <Separator />
+
+      {/* Component Showcase */}
+      <section className="py-12">
+        <h2 className="retro mb-8 text-center font-bold text-lg md:text-xl">
+          Component Showcase
+        </h2>
+        <ComponentShowcase />
       </section>
     </div>
   );
