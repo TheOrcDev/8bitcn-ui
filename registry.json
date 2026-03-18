@@ -2375,6 +2375,56 @@
           "target": "components/ui/8bit/styles/retro.css"
         }
       ]
+    },
+    {
+      "name": "hero1",
+      "type": "registry:block",
+      "title": "8-bit Hero 1",
+      "description": "Centered hero section",
+      "categories": [
+        "marketing"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/hero1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/hero1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "hero2",
+      "type": "registry:block",
+      "title": "8-bit Hero 2",
+      "description": "Split-layout hero section",
+      "categories": [
+        "marketing"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/hero2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/hero2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
     }
   ]
 }

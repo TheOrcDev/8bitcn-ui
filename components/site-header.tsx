@@ -64,13 +64,13 @@ export function SiteHeader() {
 export async function StarsCount() {
   "use cache";
 
-  const data = await fetch("https://api.github.com/repos/TheOrcDev/8bitcn-ui");
-  const json = await data.json();
-  const stars = json.stargazers_count;
+  // const data = await fetch("https://api.github.com/repos/TheOrcDev/8bitcn-ui");
+  // const json = await data.json();
+  // const stars = json.stargazers_count;
 
   return (
     <span className="retro mt-0.5 w-12 text-muted-foreground text-xs tabular-nums">
-      {stars >= 1000 ? `${(stars / 1000).toFixed(1)}k` : stars.toLocaleString()}
+      2{" "}
     </span>
   );
 }

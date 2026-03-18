@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { cn } from "@/lib/utils";
 
 import { Badge } from "@/components/ui/8bit/badge";
@@ -7,39 +9,41 @@ import "@/components/ui/8bit/styles/retro.css";
 
 interface HeroBadge {
   label: string;
-  variant?: "default" | "secondary" | "destructive" | "outline";
+  variant?: "default" | "destructive" | "outline" | "secondary";
 }
 
 interface HeroAction {
   href?: string;
   label: string;
   onClick?: () => void;
-  variant?: "default" | "destructive" | "outline" | "secondary" | "ghost";
+  variant?: "default" | "destructive" | "ghost" | "outline" | "secondary";
 }
 
-interface HeroProps {
+interface Hero2Props {
   actions?: HeroAction[];
   badges?: HeroBadge[];
+  children?: ReactNode;
   className?: string;
   description?: string;
   subtitle?: string;
   title: string;
-  variant?: "centered" | "split";
+  visual?: ReactNode;
 }
 
-export default function Hero({
+export default function Hero2({
   title,
   subtitle,
   description,
   actions = [],
   badges = [],
-  variant = "centered",
   className,
-}: HeroProps) {
+  children,
+  visual,
+}: Hero2Props) {
   return (
     <section
       className={cn(
-        "retro relative w-full overflow-hidden px-4 py-16 md:py-24",
+        "relative w-full overflow-hidden px-4 py-16 md:py-24",
         className,
       )}
     >
@@ -53,22 +57,12 @@ export default function Hero({
         }}
       />
 
-      <div
-        className={cn(
-          "relative mx-auto max-w-4xl",
-          variant === "centered" && "text-center",
-          variant === "split" && "flex flex-col gap-8 md:flex-row md:items-center md:gap-12",
-        )}
-      >
-        <div className={cn(variant === "split" && "flex-1")}>
+      <div className="relative mx-auto flex max-w-5xl flex-col gap-8 md:flex-row md:items-center md:gap-12">
+        {/* Text side */}
+        <div className="flex-1">
           {/* Badges */}
           {badges.length > 0 && (
-            <div
-              className={cn(
-                "mb-6 flex flex-wrap gap-4",
-                variant === "centered" && "justify-center",
-              )}
-            >
+            <div className="mb-6 flex flex-wrap gap-4">
               {badges.map((badge) => (
                 <Badge key={badge.label} variant={badge.variant}>
                   {badge.label}
@@ -78,41 +72,27 @@ export default function Hero({
           )}
 
           {/* Title */}
-          <h1
-            className={cn(
-              "retro mb-4 font-bold text-3xl tracking-tight md:text-5xl lg:text-6xl",
-            )}
-          >
+          <h1 className="retro mb-4 font-bold text-3xl tracking-tight md:text-5xl">
             {title}
           </h1>
 
           {/* Subtitle */}
           {subtitle && (
-            <p className="retro mb-4 text-muted-foreground text-sm md:text-base">
+            <p className="retro mb-4 text-muted-foreground text-xs md:text-sm">
               {subtitle}
             </p>
           )}
 
           {/* Description */}
           {description && (
-            <p
-              className={cn(
-                "mb-8 text-muted-foreground text-xs leading-relaxed",
-                variant === "centered" && "mx-auto max-w-2xl",
-              )}
-            >
+            <p className="mb-8 text-muted-foreground text-xs leading-relaxed">
               {description}
             </p>
           )}
 
           {/* Actions */}
           {actions.length > 0 && (
-            <div
-              className={cn(
-                "flex flex-wrap gap-4",
-                variant === "centered" && "justify-center",
-              )}
-            >
+            <div className="flex flex-wrap gap-4">
               {actions.map((action) => (
                 <Button
                   key={action.label}
@@ -124,16 +104,18 @@ export default function Hero({
               ))}
             </div>
           )}
+
+          {children}
         </div>
 
-        {/* Split variant visual slot */}
-        {variant === "split" && (
-          <div className="flex flex-1 items-center justify-center">
-            <div className="retro flex size-48 items-center justify-center border-4 border-dashed border-muted-foreground/30 text-muted-foreground text-xs md:size-64">
+        {/* Visual side */}
+        <div className="flex flex-1 items-center justify-center">
+          {visual ?? (
+            <div className="retro flex size-48 items-center justify-center border-4 border-dashed border-muted-foreground/30 text-muted-foreground text-[10px] md:size-64">
               [ Visual Slot ]
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </section>
   );
