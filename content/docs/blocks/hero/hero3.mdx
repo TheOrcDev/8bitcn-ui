@@ -1,0 +1,86 @@
+---
+title: Hero 3 — Game Title
+description: A game-style title screen hero with stat cards and blinking "Press Start" text.
+---
+
+import Hero3 from "@/components/ui/8bit/blocks/hero3";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/hero3"
+    command="pnpm dlx shadcn@latest add @8bitcn/hero3"
+  />
+</div>
+
+<ComponentPreview title="Hero 3 — Game Title Screen" name="hero3">
+  <Hero3
+    title="8BITCN"
+    subtitle="EST. 2024"
+    description="A retro component library that brings the golden age of gaming to modern web development."
+    stats={[
+      { label: "COMPONENTS", value: "50+" },
+      { label: "GITHUB STARS", value: "1.7K" },
+      { label: "CONTRIBUTORS", value: "100+" },
+    ]}
+  />
+</ComponentPreview>
+
+## With CTA buttons
+
+<ComponentPreview title="Hero 3 — With Actions" name="hero3-actions">
+  <Hero3
+    title="DUNGEON QUEST"
+    subtitle="CHAPTER IV"
+    description="Enter the dark realm. Defeat the bosses. Claim the loot."
+    stats={[
+      { label: "LEVELS", value: "64" },
+      { label: "BOSSES", value: "12" },
+      { label: "ITEMS", value: "200+" },
+    ]}
+    actions={[
+      { label: "NEW GAME", variant: "default" },
+      { label: "CONTINUE", variant: "outline" },
+    ]}
+  />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="hero3" />
+
+## Usage
+
+---
+
+```tsx
+import Hero3 from "@/components/ui/8bit/blocks/hero3";
+
+<Hero3
+  title="8BITCN"
+  subtitle="EST. 2024"
+  description="The retro component library."
+  stats={[
+    { label: "COMPONENTS", value: "50+" },
+    { label: "STARS", value: "1.7K" },
+  ]}
+/>
+```
+
+When no `actions` are passed, a blinking "PRESS START" text appears automatically.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `string` | required | Big game-style title |
+| `subtitle` | `string` | — | Badge above title (e.g., "EST. 2024", "CHAPTER IV") |
+| `description` | `string` | — | Body text below title |
+| `stats` | `HeroStat[]` | 3 defaults | Stat cards below description |
+| `actions` | `HeroAction[]` | `[]` | CTA buttons (replaces "PRESS START" when provided) |
+| `children` | `ReactNode` | — | Extra content |
+| `className` | `string` | — | Additional classes |
