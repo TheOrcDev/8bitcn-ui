@@ -13,73 +13,79 @@ import {
 
 import "@/components/ui/8bit/styles/retro.css";
 
-export interface FeatureItem {
+export interface BentoItem {
   badge?: string;
+  className?: string;
   description: string;
   icon: ReactNode;
+  size?: "default" | "wide" | "tall";
   title: string;
 }
 
-interface FeatureGridProps {
+interface Feature3Props {
   className?: string;
-  columns?: 3 | 6 | 9;
   description?: string;
-  items?: FeatureItem[];
+  items?: BentoItem[];
   title?: string;
 }
 
-const defaultItems: FeatureItem[] = [
+const defaultItems: BentoItem[] = [
   {
-    icon: "I",
-    title: "Battle System",
+    icon: ">>",
+    title: "Lightning Fast",
     description:
-      "Turn-based combat with pixel-perfect hit detection and combo chains.",
+      "Zero runtime overhead. Components render at the speed of light — or at least 60fps.",
+    size: "wide",
   },
   {
-    icon: "II",
-    title: "Armor Crafting",
-    description:
-      "Forge legendary gear from rare drops. Each piece boosts unique stats.",
+    icon: "{}",
+    title: "Type Safe",
+    description: "Full TypeScript support. Every prop is typed. No guessing.",
   },
   {
-    icon: "III",
-    title: "World Map",
+    icon: "##",
+    title: "Accessible",
     description:
-      "Explore 16 biomes, each with hidden dungeons and boss encounters.",
+      "Keyboard navigation, screen readers, focus management. All handled.",
   },
   {
-    icon: "IV",
-    title: "Leaderboards",
-    description: "Compete globally. Daily, weekly, and all-time rankings.",
+    icon: "</>",
+    title: "Copy Paste Ready",
+    description:
+      "Not a dependency. Copy the code into your project. Own it. Modify it. Ship it.",
+    size: "tall",
+  },
+  {
+    icon: "~~",
+    title: "Themeable",
+    description: "Dark mode, light mode, custom palettes. CSS variables make it easy.",
     badge: "NEW",
   },
   {
-    icon: "V",
-    title: "Chiptune Audio",
-    description: "Original 8-bit soundtrack with dynamic battle themes.",
-  },
-  {
-    icon: "VI",
-    title: "Cloud Saves",
+    icon: "[]",
+    title: "Composable",
     description:
-      "Your progress syncs across all devices. Never lose a save again.",
-    badge: "COMING SOON",
+      "Mix and match blocks. Every component works standalone or together.",
+    size: "wide",
   },
 ];
 
-export default function Feature1({
-  title = "Game Features",
-  description = "Everything you need for the ultimate retro experience",
-  items = defaultItems,
-  columns = 3,
-  className,
-}: FeatureGridProps) {
-  const gridCols = {
-    3: "sm:grid-cols-2 lg:grid-cols-3",
-    6: "sm:grid-cols-2 lg:grid-cols-3",
-    9: "sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3",
-  };
+function getSizeClasses(size?: "default" | "wide" | "tall"): string {
+  if (size === "wide") {
+    return "sm:col-span-2";
+  }
+  if (size === "tall") {
+    return "sm:row-span-2";
+  }
+  return "";
+}
 
+export default function Feature3({
+  title = "Built Different",
+  description = "Not just pixel art. Real engineering under the hood.",
+  items = defaultItems,
+  className,
+}: Feature3Props) {
   return (
     <section className={cn("w-full px-4 py-16", className)}>
       <div className="mx-auto max-w-5xl">
@@ -98,12 +104,15 @@ export default function Feature1({
           </div>
         )}
 
-        <div className={cn("grid gap-4", gridCols[columns])}>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <Card className="relative" key={item.title}>
+            <Card
+              className={cn("relative", getSizeClasses(item.size), item.className)}
+              key={item.title}
+            >
               {item.badge && (
-                <div className="absolute top-2 right-4 z-10">
-                  <Badge className="text-[9px]">{item.badge}</Badge>
+                <div className="absolute -top-2 right-4 z-10">
+                  <Badge variant="secondary">{item.badge}</Badge>
                 </div>
               )}
               <CardHeader className="pb-2">

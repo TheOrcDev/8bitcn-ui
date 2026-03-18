@@ -87,7 +87,7 @@ export default function Hero3({
         {/* Subtitle badge */}
         {subtitle && (
           <div className="mb-6">
-            <Badge variant="outline">{subtitle}</Badge>
+            <Badge>{subtitle}</Badge>
           </div>
         )}
 
