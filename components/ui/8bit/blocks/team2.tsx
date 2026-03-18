@@ -75,8 +75,8 @@ export default function Team2({
             <div key={entry.title}>
               <Card className="relative">
                 {entry.badge && (
-                  <div className="absolute -top-2 right-4 z-10">
-                    <Badge>{entry.badge}</Badge>
+                  <div className="absolute top-2 right-4 z-10">
+                    <Badge className="text-[9px]">{entry.badge}</Badge>
                   </div>
                 )}
                 <CardHeader className="pb-2">

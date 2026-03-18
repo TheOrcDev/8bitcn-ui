@@ -65,10 +65,10 @@ function EventCard({ event }: { event: TimelineEvent }) {
   return (
     <Card>
       <CardHeader className="pb-2">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <CardTitle className="retro text-xs">{event.title}</CardTitle>
           {event.badge && (
-            <Badge variant="secondary">{event.badge}</Badge>
+            <Badge className="text-[9px]">{event.badge}</Badge>
           )}
         </div>
       </CardHeader>

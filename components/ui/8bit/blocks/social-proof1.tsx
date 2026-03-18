@@ -44,7 +44,7 @@ export default function SocialProof1({
               </h2>
             )}
             {subtitle && (
-              <p className="text-muted-foreground text-xs">{subtitle}</p>
+              <p className="retro text-muted-foreground text-[9px]">{subtitle}</p>
             )}
           </div>
         )}

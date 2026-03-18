@@ -1,7 +1,10 @@
-import type { ReactNode } from "react";
-
 import { cn } from "@/lib/utils";
 
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/8bit/avatar";
 import { Badge } from "@/components/ui/8bit/badge";
 import {
   Card,
@@ -11,6 +14,7 @@ import {
 import "@/components/ui/8bit/styles/retro.css";
 
 export interface TeamMember {
+  avatar?: string;
   badge?: string;
   initials: string;
   name: string;
@@ -64,10 +68,12 @@ export default function Team1({
                 </div>
               )}
               <CardContent className="flex items-center gap-4 pt-6">
-                {/* Pixel avatar */}
-                <div className="retro flex size-12 shrink-0 items-center justify-center border-2 border-foreground bg-muted font-bold text-sm">
-                  {member.initials}
-                </div>
+                <Avatar>
+                  {member.avatar && (
+                    <AvatarImage alt={member.name} src={member.avatar} />
+                  )}
+                  <AvatarFallback>{member.initials}</AvatarFallback>
+                </Avatar>
                 <div>
                   <p className="retro font-bold text-xs">{member.name}</p>
                   <p className="retro text-muted-foreground text-[10px]">

@@ -89,7 +89,7 @@ export default function Team3({
                 {/* KPI badges */}
                 <div className="mb-4 flex flex-wrap gap-2">
                   {item.kpis.map((kpi) => (
-                    <Badge key={kpi} variant="outline">
+                    <Badge key={kpi}>
                       {kpi}
                     </Badge>
                   ))}

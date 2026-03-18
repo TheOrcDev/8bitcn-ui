@@ -97,10 +97,7 @@ const categories = [
   },
 ];
 
-const totalBlocks = categories.reduce(
-  (sum, cat) => sum + cat.blocks.length,
-  0
-);
+const totalBlocks = categories.reduce((sum, cat) => sum + cat.blocks.length, 0);
 
 export default function BlocksPage() {
   return (
@@ -117,7 +114,7 @@ export default function BlocksPage() {
           {totalBlocks} production-ready sections you can drop into any landing
           page. Every block uses only 8bitcn components. Copy, paste, ship.
         </p>
-        <p className="retro text-muted-foreground text-[10px]">
+        <p className="retro text-[10px] text-muted-foreground">
           {categories.length} categories / {totalBlocks} blocks
         </p>
       </div>
@@ -133,12 +130,9 @@ export default function BlocksPage() {
               </p>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {category.blocks.map((block) => (
-                <Link
-                  href={`/docs/blocks/${block.slug}`}
-                  key={block.slug}
-                >
+                <Link href={`/docs/blocks/${block.slug}`} key={block.slug}>
                   <Card className="h-full transition-all hover:border-primary/30">
                     <CardHeader className="pb-2">
                       <CardTitle className="retro text-xs">
@@ -161,7 +155,7 @@ export default function BlocksPage() {
       {/* Bottom CTA */}
       <div className="mt-16 text-center">
         <p className="retro mb-4 text-muted-foreground text-xs">
-          All 4 phases complete. 27 blocks ready to ship.
+          27 new blocks ready to ship.
         </p>
         <Link href="/docs">
           <Button variant="outline">BROWSE ALL COMPONENTS</Button>

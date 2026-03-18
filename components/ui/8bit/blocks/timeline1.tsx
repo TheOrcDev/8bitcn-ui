@@ -80,10 +80,10 @@ export default function Timeline1({
 
                 {/* Content */}
                 <div className="pt-2">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-4">
                     <h3 className="retro font-bold text-sm">{step.title}</h3>
                     {step.badge && (
-                      <Badge variant="secondary">{step.badge}</Badge>
+                      <Badge className="text-[9px]">{step.badge}</Badge>
                     )}
                   </div>
                   <p className="mt-1 text-muted-foreground text-xs leading-relaxed">
