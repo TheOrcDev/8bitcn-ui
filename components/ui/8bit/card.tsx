@@ -32,9 +32,7 @@ export interface BitCardProps
   asChild?: boolean;
 }
 
-function Card({ ...props }: BitCardProps) {
-  const { className, font } = props;
-
+function Card({ className, font, ...props }: BitCardProps) {
   return (
     <div
       className={cn(
@@ -45,7 +43,7 @@ function Card({ ...props }: BitCardProps) {
       <ShadcnCard
         {...props}
         className={cn(
-          "rounded-none border-0 !w-full bg-card text-card-foreground shadow-none",
+          "rounded-none border-0 !w-full h-full flex flex-col bg-card text-card-foreground shadow-none",
           font !== "normal" && "retro",
           className
         )}
@@ -108,7 +106,7 @@ function CardContent({ ...props }: BitCardProps) {
 
   return (
     <ShadcnCardContent
-      className={cn(font !== "normal" && "retro", className)}
+      className={cn("flex-1", font !== "normal" && "retro", className)}
       {...props}
     />
   );
