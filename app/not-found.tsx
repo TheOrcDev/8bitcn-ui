@@ -15,7 +15,7 @@ export default function NotFound() {
       <Image
         alt="Pixel Orc 404"
         height={300}
-        src={"/images/404/pixel-orc.webp"}
+        src={"/images/8bit-ogre.png"}
         width={300}
       />
 

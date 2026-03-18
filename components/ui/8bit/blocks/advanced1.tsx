@@ -65,9 +65,9 @@ export default function Advanced1({
           <CardHeader className="pb-2">
             <div className="flex items-center gap-2">
               <div className="flex gap-1.5">
-                <div className="size-2.5 rounded-full bg-destructive" />
-                <div className="size-2.5 rounded-full bg-yellow-500" />
-                <div className="size-2.5 rounded-full bg-green-500" />
+                <div className="size-2.5 bg-destructive" />
+                <div className="size-2.5 bg-yellow-500" />
+                <div className="size-2.5 bg-green-500" />
               </div>
               <CardTitle className="retro text-[10px] text-muted-foreground">
                 {title}

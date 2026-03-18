@@ -64,10 +64,10 @@ export default function Team1({
             <Card className="relative" key={member.name}>
               {member.badge && (
                 <div className="absolute top-2 right-4 z-10">
-                  <Badge className="text-[9px]">{member.badge}</Badge>
+                  <Badge className="text-[7px]">{member.badge}</Badge>
                 </div>
               )}
-              <CardContent className="flex items-center gap-4 pt-6">
+              <CardContent className="flex items-center gap-4">
                 <Avatar>
                   {member.avatar && (
                     <AvatarImage alt={member.name} src={member.avatar} />
