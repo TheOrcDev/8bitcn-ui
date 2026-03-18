@@ -119,9 +119,6 @@ export default function Pricing2({
           >
             YEARLY
           </Button>
-          {yearly && (
-            <Badge variant="secondary">SAVE 30%</Badge>
-          )}
         </div>
 
         <div className="grid gap-x-6 gap-y-1 md:grid-cols-3">
