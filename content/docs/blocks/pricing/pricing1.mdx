@@ -1,0 +1,28 @@
+---
+title: Pricing 1 — Tier Cards
+description: Classic side-by-side pricing tier cards with feature lists and CTAs.
+---
+
+import Pricing1 from "@/components/ui/8bit/blocks/pricing1";
+import CopyCommandButton from "@/components/copy-command-button";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/pricing1"
+    command="pnpm dlx shadcn@latest add @8bitcn/pricing1"
+  />
+</div>
+
+<ComponentPreview title="Pricing 1 — Tier Cards" name="pricing1">
+  <Pricing1 />
+</ComponentPreview>
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `string` | `"Choose Your Tier"` | Section heading |
+| `description` | `string` | — | Subheading |
+| `tiers` | `PricingTier[]` | 3 defaults | Pricing tiers |
+| `className` | `string` | — | Additional classes |

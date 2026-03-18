@@ -1,0 +1,29 @@
+---
+title: Pricing 3 — Comparison Table
+description: Feature comparison table across tiers with boolean and text values.
+---
+
+import Pricing3 from "@/components/ui/8bit/blocks/pricing3";
+import CopyCommandButton from "@/components/copy-command-button";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/pricing3"
+    command="pnpm dlx shadcn@latest add @8bitcn/pricing3"
+  />
+</div>
+
+<ComponentPreview title="Pricing 3 — Comparison Table" name="pricing3">
+  <Pricing3 />
+</ComponentPreview>
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `string` | `"Compare Plans"` | Section heading |
+| `description` | `string` | — | Subheading |
+| `tiers` | `ComparisonTier[]` | 3 defaults | Tier columns |
+| `features` | `ComparisonFeature[]` | 7 defaults | Feature rows |
+| `className` | `string` | — | Additional classes |

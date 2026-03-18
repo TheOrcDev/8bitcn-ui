@@ -18,7 +18,7 @@ import ComponentPreview from "@/components/component-preview";
 <ComponentPreview title="Hero 3 — Game Title Screen" name="hero3">
   <Hero3
     title="8BITCN"
-    subtitle="EST. 2024"
+    subtitle="EST. 2026"
     description="A retro component library that brings the golden age of gaming to modern web development."
     stats={[
       { label: "COMPONENTS", value: "50+" },
@@ -68,19 +68,19 @@ import Hero3 from "@/components/ui/8bit/blocks/hero3";
     { label: "COMPONENTS", value: "50+" },
     { label: "STARS", value: "1.7K" },
   ]}
-/>
+/>;
 ```
 
 When no `actions` are passed, a blinking "PRESS START" text appears automatically.
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `title` | `string` | required | Big game-style title |
-| `subtitle` | `string` | — | Badge above title (e.g., "EST. 2024", "CHAPTER IV") |
-| `description` | `string` | — | Body text below title |
-| `stats` | `HeroStat[]` | 3 defaults | Stat cards below description |
-| `actions` | `HeroAction[]` | `[]` | CTA buttons (replaces "PRESS START" when provided) |
-| `children` | `ReactNode` | — | Extra content |
-| `className` | `string` | — | Additional classes |
+| Prop          | Type           | Default    | Description                                         |
+| ------------- | -------------- | ---------- | --------------------------------------------------- |
+| `title`       | `string`       | required   | Big game-style title                                |
+| `subtitle`    | `string`       | —          | Badge above title (e.g., "EST. 2024", "CHAPTER IV") |
+| `description` | `string`       | —          | Body text below title                               |
+| `stats`       | `HeroStat[]`   | 3 defaults | Stat cards below description                        |
+| `actions`     | `HeroAction[]` | `[]`       | CTA buttons (replaces "PRESS START" when provided)  |
+| `children`    | `ReactNode`    | —          | Extra content                                       |
+| `className`   | `string`       | —          | Additional classes                                  |

@@ -2527,6 +2527,87 @@
           "target": "components/ui/8bit/styles/retro.css"
         }
       ]
+    },
+    {
+      "name": "pricing1",
+      "type": "registry:block",
+      "title": "8-bit Pricing 1",
+      "description": "Classic tier cards with feature lists and CTAs.",
+      "categories": [
+        "pricing"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/pricing1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/pricing1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "pricing2",
+      "type": "registry:block",
+      "title": "8-bit Pricing 2",
+      "description": "Pricing cards with monthly/yearly toggle.",
+      "categories": [
+        "pricing"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/pricing2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/pricing2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "pricing3",
+      "type": "registry:block",
+      "title": "8-bit Pricing 3",
+      "description": "Feature comparison table across tiers.",
+      "categories": [
+        "pricing"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/pricing3.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/pricing3.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
     }
   ]
 }
