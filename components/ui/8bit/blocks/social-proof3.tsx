@@ -111,8 +111,8 @@ export default function SocialProof3({
                 <div className="h-full p-2">
                   <Card className="relative h-full">
                     {item.badge && (
-                      <div className="absolute -top-2 right-4 z-10">
-                        <Badge variant="secondary">{item.badge}</Badge>
+                      <div className="absolute top-2 right-4 z-10">
+                        <Badge className="text-[9px]">{item.badge}</Badge>
                       </div>
                     )}
                     <CardContent className="flex h-full flex-col pt-6">

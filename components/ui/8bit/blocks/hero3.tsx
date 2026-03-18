@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 
@@ -122,15 +124,21 @@ export default function Hero3({
         {/* Actions */}
         {actions.length > 0 ? (
           <div className="flex flex-wrap justify-center gap-4">
-            {actions.map((action) => (
-              <Button
-                key={action.label}
-                onClick={action.onClick}
-                variant={action.variant}
-              >
-                {action.label}
-              </Button>
-            ))}
+            {actions.map((action) =>
+              action.href ? (
+                <Button asChild key={action.label} variant={action.variant}>
+                  <Link href={action.href}>{action.label}</Link>
+                </Button>
+              ) : (
+                <Button
+                  key={action.label}
+                  onClick={action.onClick}
+                  variant={action.variant}
+                >
+                  {action.label}
+                </Button>
+              ),
+            )}
           </div>
         ) : (
           <div className="retro text-muted-foreground text-xs">

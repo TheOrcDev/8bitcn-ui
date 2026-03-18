@@ -105,8 +105,8 @@ export default function Feature3({
                 className="pl-4 sm:basis-1/2 lg:basis-1/3"
                 key={item.title}
               >
-                <div className="h-full px-2 py-2">
-                <Card className="relative h-full">
+                <div className="h-full p-2">
+                  <Card className="relative h-full">
                   {item.badge && (
                     <div className="absolute top-2 right-4 z-10">
                       <Badge variant="secondary">{item.badge}</Badge>
@@ -123,7 +123,7 @@ export default function Feature3({
                       {item.description}
                     </CardDescription>
                   </CardContent>
-                </Card>
+                  </Card>
                 </div>
               </CarouselItem>
             ))}

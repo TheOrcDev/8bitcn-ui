@@ -77,8 +77,8 @@ export default function SocialProof2({
           {items.map((item) => (
             <Card className="relative" key={item.name}>
               {item.badge && (
-                <div className="absolute -top-2 right-4 z-10">
-                  <Badge variant="secondary">{item.badge}</Badge>
+                <div className="absolute top-2 right-4 z-10">
+                  <Badge className="text-[9px]">{item.badge}</Badge>
                 </div>
               )}
               <CardContent className="pt-6">
