@@ -2450,6 +2450,32 @@
           "target": "components/ui/8bit/styles/retro.css"
         }
       ]
+    },
+    {
+      "name": "hero3",
+      "type": "registry:block",
+      "title": "8-bit Hero 3",
+      "description": "Game-style title screen hero with stat cards and blinking text.",
+      "categories": [
+        "hero"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/hero3.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/hero3.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
     }
   ]
 }
