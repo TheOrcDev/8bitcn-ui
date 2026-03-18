@@ -29,7 +29,7 @@ export function SiteHeader() {
           <MobileNav />
         </div>
 
-        <nav className="hidden items-center gap-4 text-sm md:flex">
+        <nav className="retro hidden items-center gap-4 text-[9px] md:flex">
           {navItems.header.map((item) => (
             <Link
               className="text-foreground transition-colors hover:text-foreground/80"

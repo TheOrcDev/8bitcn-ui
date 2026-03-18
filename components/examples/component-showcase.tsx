@@ -96,17 +96,15 @@ export default function ComponentShowcase() {
   return (
     <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {/* Column 1 */}
-      <div className="flex flex-col gap-1">
+      <div className="mt-1.5 flex flex-col gap-1">
         <div className="flex flex-col gap-4">
-          <div className="-mx-1.5">
-            <Button className="w-full">Button</Button>
-          </div>
+          <Button>Button</Button>
 
           <DrawerExample />
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button className="w-full" variant="outline">Dropdown Menu</Button>
+              <Button variant="outline">Dropdown Menu</Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuLabel>My Account</DropdownMenuLabel>

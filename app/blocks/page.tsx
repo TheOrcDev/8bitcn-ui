@@ -8,159 +8,281 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/8bit/card";
+import { Separator } from "@/components/ui/8bit/separator";
 
-const categories = [
+const highlights = [
+  "New pixel-art logo and visual identity",
+  "Redesigned landing page",
+  "27 production-ready page blocks",
+  "Improved docs navigation for blocks",
+  "Consistent spacing and border fixes",
+  "Registry entries for every block",
+];
+
+const featuredBlocks = [
   {
-    title: "Hero",
-    description: "Landing page headers that make a first impression.",
-    blocks: [
-      { name: "Centered", slug: "hero/hero1" },
-      { name: "Split", slug: "hero/hero2" },
-      { name: "Game Title", slug: "hero/hero3" },
-    ],
+    name: "Split Hero",
+    bestFor: "Product launches with a visual preview",
+    slug: "hero/hero2",
   },
   {
-    title: "Features",
-    description: "Showcase what your product does.",
-    blocks: [
-      { name: "Card Grid", slug: "features/feature1" },
-      { name: "List", slug: "features/feature2" },
-      { name: "Carousel", slug: "features/feature3" },
-    ],
+    name: "Feature Carousel",
+    bestFor: "Scrollable feature highlights",
+    slug: "features/feature3",
   },
   {
-    title: "Pricing",
-    description: "Plans, tiers, and comparison tables.",
-    blocks: [
-      { name: "Tier Cards", slug: "pricing/pricing1" },
-      { name: "Monthly Toggle", slug: "pricing/pricing2" },
-      { name: "Comparison Table", slug: "pricing/pricing3" },
-    ],
+    name: "Tier Cards",
+    bestFor: "SaaS pricing pages",
+    slug: "pricing/pricing1",
   },
   {
-    title: "FAQ",
-    description: "Answer questions before they're asked.",
-    blocks: [
-      { name: "Accordion", slug: "faq/faq1" },
-      { name: "Card Grid", slug: "faq/faq2" },
-      { name: "Searchable", slug: "faq/faq3" },
-    ],
+    name: "Zigzag Roadmap",
+    bestFor: "Public product roadmaps",
+    slug: "timeline/timeline3",
   },
   {
-    title: "Social Proof",
-    description: "Stats, testimonials, and reviews.",
-    blocks: [
-      { name: "Stats Bar", slug: "social-proof/social-proof1" },
-      { name: "Testimonials", slug: "social-proof/social-proof2" },
-      { name: "Review Carousel", slug: "social-proof/social-proof3" },
-    ],
+    name: "Demo Shell",
+    bestFor: "Showing install commands",
+    slug: "advanced/advanced1",
   },
   {
-    title: "Timeline",
-    description: "Steps, roadmaps, and progress flows.",
-    blocks: [
-      { name: "Vertical", slug: "timeline/timeline1" },
-      { name: "Horizontal", slug: "timeline/timeline2" },
-      { name: "Zigzag Roadmap", slug: "timeline/timeline3" },
-    ],
-  },
-  {
-    title: "CTA",
-    description: "Convert visitors into users.",
-    blocks: [
-      { name: "Comparison", slug: "cta/cta1" },
-      { name: "Use Cases", slug: "cta/cta2" },
-    ],
-  },
-  {
-    title: "Team",
-    description: "People, changelogs, and case studies.",
-    blocks: [
-      { name: "Team Grid", slug: "team/team1" },
-      { name: "Changelog", slug: "team/team2" },
-      { name: "Case Studies", slug: "team/team3" },
-    ],
-  },
-  {
-    title: "Advanced",
-    description: "Unique blocks with special interactions.",
-    blocks: [
-      { name: "Demo Shell", slug: "advanced/advanced1" },
-      { name: "Metrics Dashboard", slug: "advanced/advanced2" },
-      { name: "Newsletter", slug: "advanced/advanced3" },
-    ],
-  },
-  {
-    title: "Layout",
-    description: "Structural blocks for page scaffolding.",
-    blocks: [{ name: "Footer", slug: "layout/footer1" }],
+    name: "Review Carousel",
+    bestFor: "Social proof and testimonials",
+    slug: "social-proof/social-proof3",
   },
 ];
 
-const totalBlocks = categories.reduce((sum, cat) => sum + cat.blocks.length, 0);
+const categories = [
+  { title: "Hero", count: 3, slug: "hero" },
+  { title: "Features", count: 3, slug: "features" },
+  { title: "Pricing", count: 3, slug: "pricing" },
+  { title: "FAQ", count: 3, slug: "faq" },
+  { title: "Social Proof", count: 3, slug: "social-proof" },
+  { title: "Timeline", count: 3, slug: "timeline" },
+  { title: "CTA", count: 2, slug: "cta" },
+  { title: "Team", count: 3, slug: "team" },
+  { title: "Advanced", count: 3, slug: "advanced" },
+  { title: "Layout", count: 1, slug: "layout" },
+];
+
+const totalBlocks = categories.reduce((sum, cat) => sum + cat.count, 0);
 
 export default function BlocksPage() {
   return (
-    <div className="mx-auto max-w-5xl px-4 py-16">
-      {/* Hero */}
-      <div className="mb-16 text-center">
-        <Badge className="mb-4" variant="outline">
-          V2
+    <div className="mx-auto max-w-3xl px-4">
+      {/* Launch Hero */}
+      <section className="flex flex-col items-center py-16 text-center md:py-24">
+        <Badge className="mb-6" variant="outline">
+          v2
         </Badge>
-        <h1 className="retro mb-4 font-bold text-4xl tracking-tight md:text-6xl">
-          BLOCKS
+
+        <h1 className="retro mb-4 max-w-2xl font-bold text-3xl tracking-tight md:text-5xl">
+          27 New Blocks Just Dropped
         </h1>
-        <p className="mx-auto mb-2 max-w-xl text-muted-foreground text-xs leading-relaxed">
-          {totalBlocks} production-ready sections you can drop into any landing
-          page. Every block uses only 8bitcn components. Copy, paste, ship.
-        </p>
-        <p className="retro text-[10px] text-muted-foreground">
-          {categories.length} categories / {totalBlocks} blocks
-        </p>
-      </div>
 
-      {/* Categories */}
-      <div className="flex flex-col gap-12">
-        {categories.map((category) => (
-          <div key={category.title}>
-            <div className="mb-4">
-              <h2 className="retro font-bold text-lg">{category.title}</h2>
-              <p className="text-muted-foreground text-xs">
-                {category.description}
-              </p>
-            </div>
+        <p className="mx-auto mb-2 max-w-lg text-muted-foreground text-xs leading-relaxed">
+          A complete rebuild. New logo, new landing page, and {totalBlocks}{" "}
+          production-ready page sections — all built with 8bitcn components.
+        </p>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {category.blocks.map((block) => (
-                <Link href={`/docs/blocks/${block.slug}`} key={block.slug}>
-                  <Card className="h-full transition-all hover:border-primary/30">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="retro text-xs">
-                        {block.name}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-[10px]">
-                        {category.title} / {block.name}
-                      </CardDescription>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
+        <p className="retro mb-8 text-muted-foreground text-[10px]">
+          March 2026 / v2.0 / {totalBlocks} blocks / {categories.length}{" "}
+          categories
+        </p>
+
+        <div className="flex gap-4">
+          <Link href="/docs">
+            <Button>Open Docs</Button>
+          </Link>
+          <Link href="#blocks">
+            <Button variant="outline">Browse Blocks</Button>
+          </Link>
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* What's New */}
+      <section className="py-12">
+        <h2 className="retro mb-6 font-bold text-lg">
+          What shipped in v2
+        </h2>
+        <div className="grid gap-2 sm:grid-cols-2">
+          {highlights.map((item) => (
+            <div className="flex items-start gap-3 py-2" key={item}>
+              <span className="retro shrink-0 text-primary text-xs">+</span>
+              <span className="text-xs">{item}</span>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* Story */}
+      <section className="py-12">
+        <div className="grid gap-8 md:grid-cols-2">
+          <div>
+            <h3 className="retro mb-3 font-bold text-sm">
+              Why we rebuilt 8bitcn
+            </h3>
+            <p className="text-muted-foreground text-xs leading-relaxed">
+              The original 8bitcn was components only. Good primitives, but
+              users still had to build pages from scratch. v2 adds blocks —
+              full page sections you can combine into complete landing pages in
+              minutes. We also cleaned up spacing, fixed border consistency,
+              and gave everything a fresh coat of pixels.
+            </p>
           </div>
-        ))}
-      </div>
+          <div>
+            <h3 className="retro mb-3 font-bold text-sm">
+              How v2 improves shipping speed
+            </h3>
+            <p className="text-muted-foreground text-xs leading-relaxed">
+              Instead of building a hero section from Card + Badge + Button
+              manually, you install one block and customize the props. Every
+              block is copy-paste ready, uses only 8bitcn components, and
+              works in dark mode out of the box. Hero to deploy in under an
+              hour.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      {/* Bottom CTA */}
-      <div className="mt-16 text-center">
-        <p className="retro mb-4 text-muted-foreground text-xs">
-          27 new blocks ready to ship.
+      <Separator />
+
+      {/* Featured Blocks */}
+      <section className="py-12">
+        <div className="mb-6 flex items-center justify-between">
+          <h2 className="retro font-bold text-lg">Best of v2</h2>
+          <Link href="/docs/blocks">
+            <Button size="sm" variant="outline">
+              View all docs
+            </Button>
+          </Link>
+        </div>
+
+        <div className="grid gap-x-4 gap-y-1 sm:grid-cols-2">
+          {featuredBlocks.map((block) => (
+            <Link href={`/docs/blocks/${block.slug}`} key={block.slug}>
+              <Card className="h-full transition-all hover:border-primary/30">
+                <CardHeader className="pb-2">
+                  <CardTitle className="retro text-xs">
+                    {block.name}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-[10px]">
+                    Best for: {block.bestFor}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* Category Snapshot */}
+      <section className="py-12" id="blocks">
+        <h2 className="retro mb-6 font-bold text-lg">All categories</h2>
+
+        <div className="grid gap-x-4 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
+          {categories.map((cat) => (
+            <Link href={`/docs/blocks/${cat.slug}`} key={cat.slug}>
+              <Card className="h-full transition-all hover:border-primary/30">
+                <CardContent className="flex items-center justify-between pt-6">
+                  <span className="retro text-xs">{cat.title}</span>
+                  <Badge variant="outline">{cat.count}</Badge>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* Built to Ship */}
+      <section className="py-12">
+        <h2 className="retro mb-6 text-center font-bold text-lg">
+          Built to ship
+        </h2>
+        <div className="grid gap-x-4 gap-y-1 md:grid-cols-3">
+          {[
+            {
+              title: "Copy-paste ready",
+              description:
+                "No npm install. Components copied into your project. You own the code.",
+            },
+            {
+              title: "8bitcn only",
+              description:
+                "Every block uses only 8bitcn components. No external UI dependencies.",
+            },
+            {
+              title: "Playful but production",
+              description:
+                "Retro aesthetic, serious engineering. Accessible, responsive, dark mode.",
+            },
+          ].map((item) => (
+            <Card key={item.title}>
+              <CardHeader className="pb-2">
+                <CardTitle className="retro text-xs">{item.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-[10px] leading-relaxed">
+                  {item.description}
+                </CardDescription>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* Roadmap */}
+      <section className="py-12">
+        <h2 className="retro mb-3 font-bold text-lg">What comes next</h2>
+        <p className="mb-6 text-muted-foreground text-xs">
+          v2 is just the start. Here is what is on the roadmap.
         </p>
-        <Link href="/docs">
-          <Button variant="outline">BROWSE ALL COMPONENTS</Button>
-        </Link>
-      </div>
+        <div className="flex flex-col gap-3">
+          {[
+            { label: "8-bit icon pack", status: "PLANNED" },
+            { label: "Full landing page templates", status: "PLANNED" },
+            { label: "More gaming blocks", status: "IN PROGRESS" },
+            { label: "Animation and transition pack", status: "EXPLORING" },
+          ].map((item) => (
+            <div
+              className="flex items-center justify-between border-b border-dashed pb-3"
+              key={item.label}
+            >
+              <span className="text-xs">{item.label}</span>
+              <Badge variant="outline">{item.status}</Badge>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* Final CTA */}
+      <section className="flex flex-col items-center py-16 text-center">
+        <h2 className="retro mb-4 font-bold text-xl md:text-2xl">
+          Ready to build with 8bitcn?
+        </h2>
+        <div className="flex gap-4">
+          <Link href="/docs">
+            <Button>Go to Docs</Button>
+          </Link>
+          <Link href="/docs/blocks">
+            <Button variant="outline">Explore Blocks</Button>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
