@@ -2425,6 +2425,31 @@
           "target": "components/ui/8bit/styles/retro.css"
         }
       ]
+    },
+    {
+      "name": "feature1",
+      "type": "registry:block",
+      "title": "8-bit Feature 1",
+      "description": "Feature grid with icon cards, titles, and optional badges.",
+      "categories": [
+        "features"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/feature1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/feature1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
     }
   ]
 }
