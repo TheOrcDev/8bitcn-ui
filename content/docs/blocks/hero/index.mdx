@@ -1,10 +1,43 @@
 ---
-title: Hero Blocks
-description: Full-width hero sections for landing pages. 3 variants available.
+title: Hero
+description: Landing page hero sections.
 ---
 
-Choose a hero block:
+import Hero1 from "@/components/ui/8bit/blocks/hero1";
+import Hero2 from "@/components/ui/8bit/blocks/hero2";
+import Hero3 from "@/components/ui/8bit/blocks/hero3";
+import ComponentPreview from "@/components/component-preview";
 
-- [Hero 1 — Centered](/docs/blocks/hero/hero1) — Centered layout with headline, badges, and CTAs
-- [Hero 2 — Split](/docs/blocks/hero/hero2) — Split layout with text left, visual right
-- Hero 3 — Coming soon
+## Centered
+
+<ComponentPreview title="Centered" name="hero1">
+  <Hero1
+    title="BUILD YOUR RETRO EMPIRE"
+    subtitle="The 8-bit component library for modern builders"
+    description="Ship pixel-perfect landing pages, dashboards, and gaming UIs with components that look straight out of the golden age."
+    badges={[{ label: "Open Source" }, { label: "Pixel Perfect", variant: "secondary" }]}
+    actions={[{ label: "START QUEST", variant: "default" }, { label: "VIEW LORE", variant: "outline" }]}
+  />
+</ComponentPreview>
+
+## Split
+
+<ComponentPreview title="Split" name="hero2">
+  <Hero2
+    title="SHIP FASTER"
+    subtitle="Retro components for the modern web"
+    description="Drop-in 8-bit styled components that work with your existing stack."
+    actions={[{ label: "START BUILDING", variant: "default" }]}
+  />
+</ComponentPreview>
+
+## Game Title
+
+<ComponentPreview title="Game Title" name="hero3">
+  <Hero3
+    title="8BITCN"
+    subtitle="EST. 2024"
+    description="A retro component library that brings the golden age of gaming to modern web development."
+    stats={[{ label: "COMPONENTS", value: "50+" }, { label: "STARS", value: "1.7K" }, { label: "CONTRIBUTORS", value: "100+" }]}
+  />
+</ComponentPreview>
