@@ -26,10 +26,10 @@ interface CTA1Props {
 
 const defaultRows: ComparisonRow[] = [
   { feature: "Setup Time", yours: "2 minutes", theirs: "2 hours" },
-  { feature: "Customizable", yours: "[+] Full source", theirs: "[-] Config only" },
+  { feature: "Customizable", yours: "+ Full source", theirs: "- Config only" },
   { feature: "Dependencies", yours: "0 runtime", theirs: "5+ packages" },
-  { feature: "Dark Mode", yours: "[+] Built-in", theirs: "[-] Manual" },
-  { feature: "Pixel Borders", yours: "[+] Obviously", theirs: "[-] Nope" },
+  { feature: "Dark Mode", yours: "+ Built-in", theirs: "- Manual" },
+  { feature: "Pixel Borders", yours: "+ Obviously", theirs: "- Nope" },
   { feature: "Fun Factor", yours: "MAX", theirs: "Corporate" },
 ];
 

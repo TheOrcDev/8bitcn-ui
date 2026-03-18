@@ -159,7 +159,7 @@ export default function Pricing2({
                 <ul className="mb-6 flex-1 space-y-2">
                   {plan.features.map((feature) => (
                     <li className="flex items-center gap-2 text-xs" key={feature}>
-                      <span className="retro text-[10px]">[+]</span>
+                      <span className="retro text-[10px]">+</span>
                       {feature}
                     </li>
                   ))}

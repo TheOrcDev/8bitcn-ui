@@ -150,7 +150,7 @@ export default function Pricing1({
                       key={feature.text}
                     >
                       <span className="retro text-[10px]">
-                        {feature.included ? "[+]" : "[-]"}
+                        {feature.included ? "+" : "-"}
                       </span>
                       {feature.text}
                     </li>

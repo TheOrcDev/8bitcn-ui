@@ -52,7 +52,7 @@ function CellValue({ value }: { value: boolean | string }) {
   if (typeof value === "boolean") {
     return (
       <span className={cn("retro text-[10px]", value ? "text-foreground" : "text-muted-foreground")}>
-        {value ? "[+]" : "[-]"}
+        {value ? "+" : "-"}
       </span>
     );
   }
