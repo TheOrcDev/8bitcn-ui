@@ -2901,6 +2901,83 @@
           "target": "components/ui/8bit/styles/retro.css"
         }
       ]
+    },
+    {
+      "name": "team1",
+      "type": "registry:block",
+      "title": "8-bit Team 1",
+      "description": "Team grid with pixel avatars and roles.",
+      "categories": [
+        "team"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/team1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/team1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "team2",
+      "type": "registry:block",
+      "title": "8-bit Team 2",
+      "description": "Changelog feed with dates and badges.",
+      "categories": [
+        "team"
+      ],
+      "registryDependencies": [
+        "badge",
+        "card",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/team2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/team2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "team3",
+      "type": "registry:block",
+      "title": "8-bit Team 3",
+      "description": "Case study cards with KPI badges.",
+      "categories": [
+        "team"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/team3.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/team3.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
     }
   ]
 }

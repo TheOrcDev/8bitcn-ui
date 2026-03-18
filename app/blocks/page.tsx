@@ -73,6 +73,15 @@ const categories = [
     ],
   },
   {
+    title: "Team",
+    description: "People, changelogs, and case studies.",
+    blocks: [
+      { name: "Team Grid", slug: "team/team1" },
+      { name: "Changelog", slug: "team/team2" },
+      { name: "Case Studies", slug: "team/team3" },
+    ],
+  },
+  {
     title: "Layout",
     description: "Structural blocks for page scaffolding.",
     blocks: [{ name: "Footer", slug: "layout/sticky-footer" }],
