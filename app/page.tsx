@@ -19,66 +19,9 @@ const quickLinks = [
   { label: "Changelog", href: "/changelog", description: "What shipped" },
 ];
 
-const featuredBlocks = [
-  {
-    name: "Centered Hero",
-    category: "Hero",
-    slug: "hero/hero1",
-    description: "Big headline with badges and CTAs.",
-  },
-  {
-    name: "Split Hero",
-    category: "Hero",
-    slug: "hero/hero2",
-    description: "Text left, visual slot right.",
-  },
-  {
-    name: "Card Grid",
-    category: "Features",
-    slug: "features/feature1",
-    description: "Feature cards with icons and badges.",
-  },
-  {
-    name: "Carousel",
-    category: "Features",
-    slug: "features/feature3",
-    description: "Swipeable feature cards.",
-  },
-  {
-    name: "Tier Cards",
-    category: "Pricing",
-    slug: "pricing/pricing1",
-    description: "Side-by-side pricing tiers.",
-  },
-  {
-    name: "Accordion",
-    category: "FAQ",
-    slug: "faq/faq1",
-    description: "Collapsible Q and A.",
-  },
-];
-
-const whyReasons = [
-  {
-    title: "Retro-First Primitives",
-    description:
-      "Every component is designed pixel-by-pixel for the 8-bit aesthetic. Not a theme on top of generic UI — retro from the ground up.",
-  },
-  {
-    title: "Copy-Paste Workflow",
-    description:
-      "No runtime dependency. Components are copied into your project. Own the code. Modify anything. No lock-in.",
-  },
-  {
-    title: "Ship Fast with Blocks",
-    description:
-      "27 production-ready page sections. Hero, pricing, FAQ, social proof — combine them into full landing pages in minutes.",
-  },
-];
-
 export default function Home() {
   return (
-    <div className="mx-auto max-w-5xl px-4">
+    <div className="mx-auto px-4">
       {/* Hero */}
       <section className="flex flex-col items-center py-16 text-center md:py-24">
         <Link href="/blocks">
@@ -130,63 +73,8 @@ export default function Home() {
 
       <Separator />
 
-      {/* Featured v2 Blocks */}
-      <section className="py-12">
-        <div className="mb-8 flex items-center justify-between">
-          <h2 className="retro font-bold text-lg md:text-xl">
-            New in v2: Blocks
-          </h2>
-          <Link href="/blocks">
-            <Button size="sm" variant="outline">
-              View all
-            </Button>
-          </Link>
-        </div>
-
-        <div className="grid gap-x-4 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredBlocks.map((block) => (
-            <Link href={`/docs/blocks/${block.slug}`} key={block.slug}>
-              <Card className="h-full transition-all hover:border-primary/30">
-                <CardHeader className="pb-2">
-                  <div className="mb-1">
-                    <Badge variant="outline">{block.category}</Badge>
-                  </div>
-                  <CardTitle className="retro text-xs">{block.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-[10px]">
-                    {block.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* Why 8bitcn */}
-      <section className="py-12">
-        <h2 className="retro mb-8 text-center font-bold text-lg md:text-xl">
-          Why 8bitcn
-        </h2>
-
-        <div className="grid gap-x-4 gap-y-1 md:grid-cols-3">
-          {whyReasons.map((reason) => (
-            <Card key={reason.title}>
-              <CardHeader className="pb-2">
-                <CardTitle className="retro text-xs">{reason.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-[10px] leading-relaxed">
-                  {reason.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+      {/* Component Showcase */}
+      <ComponentShowcase />
 
       <Separator />
 
@@ -208,33 +96,6 @@ export default function Home() {
             Submit Your Project
           </Button>
         </Link>
-      </section>
-
-      <Separator />
-
-      {/* Final CTA */}
-      <section className="flex flex-col items-center py-16 text-center">
-        <h2 className="retro mb-4 font-bold text-xl md:text-2xl">
-          Ready to build with 8bitcn?
-        </h2>
-        <div className="flex gap-4">
-          <Link href="/docs">
-            <Button>Go to Docs</Button>
-          </Link>
-          <Link href="/blocks">
-            <Button variant="outline">See v2 Blocks</Button>
-          </Link>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* Component Showcase */}
-      <section className="py-12">
-        <h2 className="retro mb-8 text-center font-bold text-lg md:text-xl">
-          Component Showcase
-        </h2>
-        <ComponentShowcase />
       </section>
     </div>
   );
