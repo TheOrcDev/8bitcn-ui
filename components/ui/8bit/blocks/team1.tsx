@@ -59,8 +59,8 @@ export default function Team1({
           {members.map((member) => (
             <Card className="relative" key={member.name}>
               {member.badge && (
-                <div className="absolute -top-2 right-4 z-10">
-                  <Badge variant="secondary">{member.badge}</Badge>
+                <div className="absolute top-2 right-4 z-10">
+                  <Badge className="text-[9px]">{member.badge}</Badge>
                 </div>
               )}
               <CardContent className="flex items-center gap-4 pt-6">

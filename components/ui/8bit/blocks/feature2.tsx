@@ -84,10 +84,10 @@ export default function Feature2({
 
                 {/* Text */}
                 <div className="flex-1">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-4">
                     <h3 className="retro font-bold text-sm">{item.title}</h3>
                     {item.badge && (
-                      <Badge variant="secondary">{item.badge}</Badge>
+                      <Badge className="text-[9px]">{item.badge}</Badge>
                     )}
                   </div>
                   <p className="mt-2 text-muted-foreground text-xs leading-relaxed">
