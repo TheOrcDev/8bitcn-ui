@@ -16,7 +16,7 @@ interface FooterColumn {
   title: string;
 }
 
-interface StickyFooterProps {
+interface Footer1Props {
   className?: string;
   columns?: FooterColumn[];
   copyright?: string;
@@ -53,13 +53,13 @@ const defaultColumns: FooterColumn[] = [
   },
 ];
 
-export default function StickyFooter({
+export default function Footer1({
   title = "8bitcn",
   description = "The retro component library for modern builders.",
   columns = defaultColumns,
   copyright = "2026 8bitcn. All rights reserved.",
   className,
-}: StickyFooterProps) {
+}: Footer1Props) {
   return (
     <footer className={cn("w-full border-t px-4 py-12", className)}>
       <div className="mx-auto max-w-5xl">
@@ -70,7 +70,7 @@ export default function StickyFooter({
             <p className="mb-4 text-muted-foreground text-[10px] leading-relaxed">
               {description}
             </p>
-            <Button size="sm" variant="outline">
+            <Button className="text-xs">
               GET STARTED
             </Button>
           </div>

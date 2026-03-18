@@ -48,16 +48,6 @@ export default function Hero2({
         className,
       )}
     >
-      {/* Scanline overlay */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(0deg, transparent, transparent 2px, currentColor 2px, currentColor 3px)",
-        }}
-      />
-
       <div className="relative mx-auto flex max-w-5xl flex-col gap-8 md:flex-row md:items-center md:gap-12">
         {/* Text side */}
         <div className="flex-1">
@@ -93,7 +83,7 @@ export default function Hero2({
 
           {/* Actions */}
           {actions.length > 0 && (
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-2">
               {actions.map((action) =>
                 action.href ? (
                   <Button asChild key={action.label} variant={action.variant}>
@@ -116,13 +106,7 @@ export default function Hero2({
         </div>
 
         {/* Visual side */}
-        <div className="flex flex-1 items-center justify-center">
-          {visual ?? (
-            <div className="retro flex size-48 items-center justify-center border-4 border-dashed border-muted-foreground/30 text-muted-foreground text-[10px] md:size-64">
-              [ Visual Slot ]
-            </div>
-          )}
-        </div>
+        <img src="/images/8bit-orc.png" alt="Hero 2" className="w-full h-full object-cover" />
       </div>
     </section>
   );

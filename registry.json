@@ -2879,9 +2879,9 @@
       ]
     },
     {
-      "name": "sticky-footer",
+      "name": "footer1",
       "type": "registry:block",
-      "title": "8-bit Sticky Footer",
+      "title": "8-bit Footer 1",
       "description": "Sticky CTA bar that appears on scroll.",
       "categories": [
         "layout"
@@ -2891,9 +2891,9 @@
       ],
       "files": [
         {
-          "path": "components/ui/8bit/blocks/sticky-footer.tsx",
+          "path": "components/ui/8bit/blocks/footer1.tsx",
           "type": "registry:block",
-          "target": "components/ui/8bit/blocks/sticky-footer.tsx"
+          "target": "components/ui/8bit/blocks/footer1.tsx"
         },
         {
           "path": "components/ui/8bit/styles/retro.css",

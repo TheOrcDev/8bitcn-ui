@@ -93,7 +93,7 @@ const categories = [
   {
     title: "Layout",
     description: "Structural blocks for page scaffolding.",
-    blocks: [{ name: "Footer", slug: "layout/sticky-footer" }],
+    blocks: [{ name: "Footer", slug: "layout/footer1" }],
   },
 ];
 

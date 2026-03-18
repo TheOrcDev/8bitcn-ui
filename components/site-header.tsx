@@ -15,10 +15,14 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 flex h-14 shrink-0 items-center gap-2 border-b border-dashed bg-background/95">
       <div className="flex h-full w-full max-w-[1400px] items-center justify-start gap-2 border-r border-l border-dashed px-2 md:mx-auto md:justify-between md:gap-5 md:px-6">
         <Link className="hidden items-center gap-2 md:flex" href="/">
-          <Image alt="logo" height={32} src="/8bitcn.svg" width={32} />{" "}
-          <h2 className={`${"retro"} hidden font-bold text-xs md:inline-block`}>
-            8bitcn/ui
-          </h2>
+          <Image
+            alt="logo"
+            className="invert dark:invert-0"
+            height={32}
+            src="/8bitcn.svg"
+            width={32}
+          />{" "}
+          <h2 className={"sr-only"}>8bitcn/ui</h2>
         </Link>
 
         <div className="block md:hidden">
@@ -68,7 +72,7 @@ export async function StarsCount() {
   try {
     const data = await fetch(
       "https://api.github.com/repos/TheOrcDev/8bitcn-ui",
-      { next: { revalidate: 3600 } },
+      { next: { revalidate: 3600 } }
     );
     const json = await data.json();
     stars = json.stargazers_count ?? 0;

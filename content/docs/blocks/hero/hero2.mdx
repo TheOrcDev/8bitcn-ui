@@ -25,7 +25,7 @@ import ComponentPreview from "@/components/component-preview";
       { label: "React", variant: "secondary" },
     ]}
     actions={[
-      { label: "START BUILDING", variant: "default" },
+      { label: "BUILD", variant: "default" },
       { label: "DOCS", variant: "outline" },
     ]}
   />
@@ -48,10 +48,8 @@ import Hero2 from "@/components/ui/8bit/blocks/hero2";
   title="SHIP FASTER"
   subtitle="Retro components for the modern web"
   description="Drop-in 8-bit styled components."
-  actions={[
-    { label: "START BUILDING", variant: "default" },
-  ]}
-/>
+  actions={[{ label: "START BUILDING", variant: "default" }]}
+/>;
 ```
 
 ### With custom visual
@@ -65,13 +63,13 @@ import Hero2 from "@/components/ui/8bit/blocks/hero2";
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `title` | `string` | required | Main headline |
-| `subtitle` | `string` | — | Smaller text below title |
-| `description` | `string` | — | Body text |
-| `badges` | `HeroBadge[]` | `[]` | Badge pills above the title |
-| `actions` | `HeroAction[]` | `[]` | CTA buttons |
-| `visual` | `ReactNode` | Placeholder | Right-side visual content |
-| `children` | `ReactNode` | — | Extra content below actions |
-| `className` | `string` | — | Additional classes |
+| Prop          | Type           | Default     | Description                 |
+| ------------- | -------------- | ----------- | --------------------------- |
+| `title`       | `string`       | required    | Main headline               |
+| `subtitle`    | `string`       | —           | Smaller text below title    |
+| `description` | `string`       | —           | Body text                   |
+| `badges`      | `HeroBadge[]`  | `[]`        | Badge pills above the title |
+| `actions`     | `HeroAction[]` | `[]`        | CTA buttons                 |
+| `visual`      | `ReactNode`    | Placeholder | Right-side visual content   |
+| `children`    | `ReactNode`    | —           | Extra content below actions |
+| `className`   | `string`       | —           | Additional classes          |
