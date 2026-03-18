@@ -38,7 +38,7 @@ function Card({ ...props }: BitCardProps) {
   return (
     <div
       className={cn(
-        "relative bg-card text-card-foreground border-y-6 border-foreground dark:border-ring !p-0 overflow-hidden",
+        "relative bg-card text-card-foreground border-y-6 border-foreground dark:border-ring !p-0",
         className
       )}
     >
