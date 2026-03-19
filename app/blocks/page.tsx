@@ -144,8 +144,8 @@ export default function BlocksPage() {
             <Pricing1 />
           </div>
 
-          <div className="overflow-hidden rounded-lg border border-border/50 bg-card/30 pb-4">
-            <h3 className="retro border-b border-border/50 bg-muted/30 py-3 text-center text-muted-foreground text-xs">
+          <div className="overflow-hidden rounded-lg border border-border/50 bg-card/30 px-12 pb-4">
+            <h3 className="retro -mx-12 border-b border-border/50 bg-muted/30 py-3 text-center text-muted-foreground text-xs">
               Feature Carousel
             </h3>
             <Feature3 />
