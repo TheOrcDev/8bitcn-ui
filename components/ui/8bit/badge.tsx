@@ -64,7 +64,7 @@ function Badge({
   const containerClasses = classes.filter((c) => !isVisualClass(c));
 
   return (
-    <div className={cn("group relative inline-flex items-stretch", containerClasses)}>
+    <div className={cn("group relative inline-flex items-stretch transition-colors", containerClasses, visualClasses)}>
       <ShadcnBadge
         {...props}
         className={cn(
@@ -82,17 +82,13 @@ function Badge({
       {/* Left pixel bar */}
       <div
         className={cn(
-          "-left-1.5 absolute inset-y-[4px] w-1.5 transition-colors",
-          color,
-          sidebarVisualClasses
+          "-left-1.5 absolute inset-y-[4px] w-1.5 bg-inherit",
         )}
       />
       {/* Right pixel bar */}
       <div
         className={cn(
-          "-right-1.5 absolute inset-y-[4px] w-1.5 transition-colors",
-          color,
-          sidebarVisualClasses
+          "-right-1.5 absolute inset-y-[4px] w-1.5 bg-inherit",
         )}
       />
     </div>
