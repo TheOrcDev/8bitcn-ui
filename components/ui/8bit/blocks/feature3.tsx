@@ -88,7 +88,7 @@ export default function Feature3({
               </h2>
             )}
             {description && (
-              <p className="mx-auto max-w-xl text-muted-foreground text-xs">
+              <p className="mx-auto max-w-xl retro text-muted-foreground text-[9px]">
                 {description}
               </p>
             )}
@@ -119,7 +119,7 @@ export default function Feature3({
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-xs leading-relaxed">
+                    <CardDescription className="retro text-[9px] leading-relaxed">
                       {item.description}
                     </CardDescription>
                   </CardContent>

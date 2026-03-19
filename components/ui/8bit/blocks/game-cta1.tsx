@@ -47,7 +47,7 @@ export default function GameCTA1({
               </h2>
             )}
             {description && (
-              <p className="text-muted-foreground text-xs">{description}</p>
+              <p className="retro text-muted-foreground text-[9px]">{description}</p>
             )}
           </div>
         )}
@@ -60,7 +60,7 @@ export default function GameCTA1({
               <CardTitle className="retro mt-2 text-sm">The Boss</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-xs leading-relaxed">
+              <p className="text-muted-foreground retro text-[9px] leading-relaxed">
                 {bossDescription}
               </p>
             </CardContent>
@@ -73,7 +73,7 @@ export default function GameCTA1({
               <CardTitle className="retro mt-2 text-sm">Your Weapon</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-4 text-muted-foreground text-xs leading-relaxed">
+              <p className="mb-4 text-muted-foreground retro text-[9px] leading-relaxed">
                 {powerUpDescription}
               </p>
             </CardContent>

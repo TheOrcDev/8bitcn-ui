@@ -77,7 +77,7 @@ export default function Pricing3({
               </h2>
             )}
             {description && (
-              <p className="mx-auto max-w-xl text-muted-foreground text-xs">
+              <p className="retro mx-auto max-w-xl text-muted-foreground text-[9px]">
                 {description}
               </p>
             )}
@@ -134,7 +134,7 @@ export default function Pricing3({
             <div className="mt-6 grid grid-cols-4 gap-4">
               <div />
               {tiers.map((tier) => (
-                <div className="-mx-1.5 text-center" key={tier.name}>
+                <div className="text-center" key={tier.name}>
                   <Button
                     className="w-full"
                     size="sm"

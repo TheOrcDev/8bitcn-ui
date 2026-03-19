@@ -65,7 +65,7 @@ export default function FAQ2({
               </h2>
             )}
             {description && (
-              <p className="mx-auto max-w-xl text-muted-foreground text-xs">
+              <p className="retro mx-auto max-w-xl text-muted-foreground text-[9px]">
                 {description}
               </p>
             )}
@@ -79,7 +79,7 @@ export default function FAQ2({
                 <CardTitle className="retro text-xs">{item.question}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-xs leading-relaxed text-muted-foreground">
+                <p className="retro text-[9px] leading-relaxed text-muted-foreground">
                   {item.answer}
                 </p>
               </CardContent>

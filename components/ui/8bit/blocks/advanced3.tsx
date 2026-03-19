@@ -43,7 +43,7 @@ export default function Advanced3({
                 {title}
               </h2>
 
-              <p className="mx-auto mb-6 max-w-sm text-muted-foreground text-xs leading-relaxed">
+              <p className="mx-auto mb-6 max-w-sm text-muted-foreground retro text-[9px] leading-relaxed">
                 {description}
               </p>
 

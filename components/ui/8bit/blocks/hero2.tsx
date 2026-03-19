@@ -76,7 +76,7 @@ export default function Hero2({
 
           {/* Description */}
           {description && (
-            <p className="mb-8 text-muted-foreground text-xs leading-relaxed">
+            <p className="mb-8 text-muted-foreground retro text-[9px] leading-relaxed">
               {description}
             </p>
           )}

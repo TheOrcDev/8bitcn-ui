@@ -50,7 +50,7 @@ export default function GameHero1({
         </h1>
 
         {description && (
-          <p className="mx-auto mb-8 max-w-lg text-muted-foreground text-xs leading-relaxed">
+          <p className="mx-auto mb-8 max-w-lg text-muted-foreground retro text-[9px] leading-relaxed">
             {description}
           </p>
         )}

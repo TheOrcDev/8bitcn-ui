@@ -70,7 +70,7 @@ export default function Team3({
               </h2>
             )}
             {description && (
-              <p className="text-muted-foreground text-xs">{description}</p>
+              <p className="retro text-muted-foreground text-[9px]">{description}</p>
             )}
           </div>
         )}
@@ -82,7 +82,7 @@ export default function Team3({
                 <CardTitle className="retro text-sm">{item.title}</CardTitle>
               </CardHeader>
               <CardContent className="flex flex-1 flex-col">
-                <CardDescription className="mb-4 flex-1 text-xs leading-relaxed">
+                <CardDescription className="mb-4 flex-1 retro text-[9px] leading-relaxed">
                   {item.description}
                 </CardDescription>
 

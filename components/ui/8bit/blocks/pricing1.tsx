@@ -101,7 +101,7 @@ export default function Pricing1({
               </h2>
             )}
             {description && (
-              <p className="mx-auto max-w-xl text-muted-foreground text-xs">
+              <p className="mx-auto max-w-xl retro text-muted-foreground text-[9px]">
                 {description}
               </p>
             )}
@@ -127,7 +127,7 @@ export default function Pricing1({
                 <div className="mt-2 flex items-baseline justify-center gap-1">
                   <span className="retro font-bold text-3xl">{tier.price}</span>
                   {tier.period && (
-                    <span className="text-muted-foreground text-xs">
+                    <span className="retro text-muted-foreground text-[9px]">
                       {tier.period}
                     </span>
                   )}

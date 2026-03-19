@@ -68,7 +68,7 @@ export default function SocialProof2({
               </h2>
             )}
             {description && (
-              <p className="text-muted-foreground text-xs">{description}</p>
+              <p className="retro text-muted-foreground text-[9px]">{description}</p>
             )}
           </div>
         )}
@@ -82,7 +82,7 @@ export default function SocialProof2({
                 </div>
               )}
               <CardContent className="pt-6">
-                <p className="mb-4 text-xs leading-relaxed">
+                <p className="mb-4 retro text-[9px] leading-relaxed">
                   &quot;{item.quote}&quot;
                 </p>
                 <div>

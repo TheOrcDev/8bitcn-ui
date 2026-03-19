@@ -61,7 +61,7 @@ export default function Timeline1({
               </h2>
             )}
             {description && (
-              <p className="text-muted-foreground text-xs">{description}</p>
+              <p className="retro text-muted-foreground text-[9px]">{description}</p>
             )}
           </div>
         )}
@@ -86,7 +86,7 @@ export default function Timeline1({
                       <Badge className="text-[9px]">{step.badge}</Badge>
                     )}
                   </div>
-                  <p className="mt-1 text-muted-foreground text-xs leading-relaxed">
+                  <p className="mt-1 text-muted-foreground retro text-[9px] leading-relaxed">
                     {step.description}
                   </p>
                 </div>

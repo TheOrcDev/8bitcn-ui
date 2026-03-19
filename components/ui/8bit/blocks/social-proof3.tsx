@@ -93,7 +93,7 @@ export default function SocialProof3({
               </h2>
             )}
             {description && (
-              <p className="text-muted-foreground text-xs">{description}</p>
+              <p className="retro text-muted-foreground text-[9px]">{description}</p>
             )}
           </div>
         )}
@@ -117,7 +117,7 @@ export default function SocialProof3({
                     )}
                     <CardContent className="flex h-full flex-col pt-6">
                       <StarRating rating={item.rating} />
-                      <p className="mt-3 flex-1 text-xs leading-relaxed">
+                      <p className="mt-3 flex-1 retro text-[9px] leading-relaxed">
                         &quot;{item.quote}&quot;
                       </p>
                       <div className="mt-4">

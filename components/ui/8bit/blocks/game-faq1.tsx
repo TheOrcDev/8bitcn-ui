@@ -79,7 +79,7 @@ export default function GameFAQ1({
               </h2>
             )}
             {description && (
-              <p className="text-muted-foreground text-xs">{description}</p>
+              <p className="retro text-muted-foreground text-[9px]">{description}</p>
             )}
           </div>
         )}
@@ -104,7 +104,7 @@ export default function GameFAQ1({
                     <Badge variant={config.variant}>{config.badge}</Badge>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="text-xs leading-relaxed text-muted-foreground">
+                <AccordionContent className="retro text-[9px] leading-relaxed text-muted-foreground">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>

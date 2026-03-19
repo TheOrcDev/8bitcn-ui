@@ -95,7 +95,7 @@ export default function FAQ3({
               </h2>
             )}
             {description && (
-              <p className="mx-auto max-w-xl text-muted-foreground text-xs">
+              <p className="retro mx-auto max-w-xl text-muted-foreground text-[9px]">
                 {description}
               </p>
             )}
@@ -135,7 +135,7 @@ export default function FAQ3({
                         <AccordionTrigger className="retro text-left text-xs">
                           {item.question}
                         </AccordionTrigger>
-                        <AccordionContent className="text-xs leading-relaxed text-muted-foreground">
+                        <AccordionContent className="retro text-[9px] leading-relaxed text-muted-foreground">
                           {item.answer}
                         </AccordionContent>
                       </AccordionItem>
@@ -151,7 +151,7 @@ export default function FAQ3({
                 <AccordionTrigger className="retro text-left text-xs">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-xs leading-relaxed text-muted-foreground">
+                <AccordionContent className="retro text-[9px] leading-relaxed text-muted-foreground">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>

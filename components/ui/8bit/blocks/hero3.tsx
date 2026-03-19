@@ -100,7 +100,7 @@ export default function Hero3({
 
         {/* Description */}
         {description && (
-          <p className="mx-auto mb-8 max-w-xl text-muted-foreground text-xs leading-relaxed">
+          <p className="mx-auto mb-8 max-w-xl text-muted-foreground retro text-[9px] leading-relaxed">
             {description}
           </p>
         )}

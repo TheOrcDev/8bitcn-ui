@@ -96,7 +96,7 @@ export default function Pricing2({
               </h2>
             )}
             {description && (
-              <p className="mx-auto max-w-xl text-muted-foreground text-xs">
+              <p className="retro mx-auto max-w-xl text-muted-foreground text-[9px]">
                 {description}
               </p>
             )}
@@ -141,7 +141,7 @@ export default function Pricing2({
                   <span className="retro font-bold text-3xl">
                     {yearly ? plan.yearlyPrice : plan.monthlyPrice}
                   </span>
-                  <span className="text-muted-foreground text-xs">
+                  <span className="retro text-muted-foreground text-[9px]">
                     {yearly ? "/yr" : "/mo"}
                   </span>
                 </div>

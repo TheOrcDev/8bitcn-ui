@@ -66,7 +66,7 @@ export default function Feature2({
               </h2>
             )}
             {description && (
-              <p className="mx-auto max-w-xl text-muted-foreground text-xs">
+              <p className="mx-auto max-w-xl retro text-muted-foreground text-[9px]">
                 {description}
               </p>
             )}
@@ -90,7 +90,7 @@ export default function Feature2({
                       <Badge className="text-[9px]">{item.badge}</Badge>
                     )}
                   </div>
-                  <p className="mt-2 text-muted-foreground text-xs leading-relaxed">
+                  <p className="mt-2 text-muted-foreground retro text-[9px] leading-relaxed">
                     {item.description}
                   </p>
                 </div>

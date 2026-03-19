@@ -65,7 +65,7 @@ export default function Team2({
               </h2>
             )}
             {description && (
-              <p className="text-muted-foreground text-xs">{description}</p>
+              <p className="retro text-muted-foreground text-[9px]">{description}</p>
             )}
           </div>
         )}
@@ -86,7 +86,7 @@ export default function Team2({
                   <CardTitle className="retro text-sm">{entry.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-xs leading-relaxed">
+                  <CardDescription className="retro text-[9px] leading-relaxed">
                     {entry.description}
                   </CardDescription>
                 </CardContent>
