@@ -59,6 +59,7 @@ import { Button } from "../ui/8bit/button";
 import EnemyHealthDisplay from "../ui/8bit/enemy-health-display";
 import ManaBar from "../ui/8bit/mana-bar";
 import { Spinner } from "../ui/8bit/spinner";
+import XpBar from "../ui/8bit/xp-bar";
 import { DatePicker } from "./date-picker";
 import { DrawerExample } from "./drawer";
 
@@ -290,17 +291,23 @@ export default function ComponentShowcase() {
                   <SelectItem value="system">System</SelectItem>
                 </SelectContent>
               </Select>
-
               <div className="flex items-center justify-center">
                 <DatePicker className="w-[300px]" />
               </div>
-
               <EnemyHealthDisplay
                 currentHealth={850}
                 enemyName="Fire Dragon"
                 level={25}
                 maxHealth={1000}
               />
+
+              <div className="w-full">
+                <div className="retro mb-1 flex justify-between text-[10px]">
+                  <span>XP</span>
+                  <span>1400/1400</span>
+                </div>
+                <XpBar levelUpMessage="DING" value={100} variant={"retro"} />
+              </div>
             </div>
           </CardContent>
         </Card>

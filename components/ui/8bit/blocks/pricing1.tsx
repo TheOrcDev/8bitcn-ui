@@ -108,7 +108,7 @@ export default function Pricing1({
           </div>
         )}
 
-        <div className="grid gap-x-6 gap-y-1 md:grid-cols-3">
+        <div className="grid gap-x-6 gap-y-3 md:grid-cols-3">
           {tiers.map((tier) => (
             <Card
               className={cn(

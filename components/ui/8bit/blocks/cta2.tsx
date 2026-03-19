@@ -80,7 +80,7 @@ export default function CTA2({
           </div>
         )}
 
-        <div className="grid gap-x-6 gap-y-1 sm:grid-cols-2">
+        <div className="grid gap-x-6 gap-y-1 px-2 sm:grid-cols-2 sm:px-0">
           {items.map((item) => (
             <Card className="relative flex flex-col" key={item.title}>
               {item.badge && (

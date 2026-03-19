@@ -59,7 +59,7 @@ export default function CTA1({
 
         <Card>
           <CardHeader>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-3 gap-4">
               <CardTitle className="retro text-[10px] text-muted-foreground">
                 FEATURE
               </CardTitle>
@@ -74,7 +74,7 @@ export default function CTA1({
           <CardContent>
             <div className="flex flex-col divide-y">
               {rows.map((row) => (
-                <div className="grid grid-cols-3 gap-4 py-3" key={row.feature}>
+                <div className="grid md:grid-cols-3 gap-4 py-3" key={row.feature}>
                   <span className="text-xs font-medium">{row.feature}</span>
                   <span className="retro text-center text-[10px]">
                     {row.yours}

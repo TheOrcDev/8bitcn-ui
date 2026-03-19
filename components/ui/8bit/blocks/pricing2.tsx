@@ -136,7 +136,7 @@ export default function Pricing2({
                 </div>
               )}
               <CardHeader className="text-center">
-                <CardTitle className="retro text-sm">{plan.name}ffffff</CardTitle>
+                <CardTitle className="retro text-sm">{plan.name}</CardTitle>
                 <div className="mt-2 flex items-baseline justify-center gap-1">
                   <span className="retro font-bold text-3xl">
                     {yearly ? plan.yearlyPrice : plan.monthlyPrice}
