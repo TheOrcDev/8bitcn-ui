@@ -138,37 +138,42 @@ export default function BlocksPage() {
               Zigzag Roadmap
             </h3>
             <Timeline3
-              title="The Journey of 8bitcn"
-              description="From a single component to a full design system"
+              title="The Quest Log"
+              description="The saga of 8bitcn through the ages"
               events={[
                 {
                   icon: "I",
-                  title: "The First Pixel",
-                  description: "It started with a button. One 8-bit styled button that looked nothing like the rest of the internet.",
-                  badge: "ORIGIN",
+                  title: "The Orcish Forge",
+                  description: "The orcs hammered 50+ base components out of raw iron. Buttons, cards, inputs — crude but unbreakable.",
+                  badge: "CLEARED",
                 },
                 {
                   icon: "II",
-                  title: "The Orcish Forge",
-                  description: "50+ components hammered into shape. Cards, inputs, dialogs — the foundation of every retro UI.",
-                  badge: "DONE",
+                  title: "Goblin War Machines",
+                  description: "The goblins built health bars, leaderboards, and game over screens. Chaotic but effective.",
+                  badge: "CLEARED",
                 },
                 {
                   icon: "III",
-                  title: "The Great Expansion",
-                  description: "36 full page blocks dropped. Hero sections, pricing tables, FAQs, timelines — entire pages in minutes.",
-                  badge: "NOW",
+                  title: "Elven Architecture",
+                  description: "The elves designed 36 elegant page blocks. Hero sections, pricing halls, FAQ scrolls, and timeline tapestries.",
+                  badge: "ACTIVE",
                 },
                 {
                   icon: "IV",
-                  title: "The Game Pack",
-                  description: "8 game-themed blocks. Quest roadmaps, skill trees, party grids, boss fight CTAs. The arcade comes to the web.",
-                  badge: "NOW",
+                  title: "Dwarven Vaults",
+                  description: "The dwarves are crafting game-themed blocks deep underground. Quest logs, skill trees, and inventory grids.",
+                  badge: "ACTIVE",
                 },
                 {
                   icon: "V",
                   title: "The Dragon Hoard",
-                  description: "Full landing page templates. Pick a template, customize the props, deploy in one click.",
+                  description: "Full landing page templates guarded by a dragon. One brave click to deploy them all.",
+                },
+                {
+                  icon: "VI",
+                  title: "Ancient Runes",
+                  description: "A lost icon library carved in pixel runes. The wizards are still deciphering the glyphs.",
                 },
               ]}
             />
