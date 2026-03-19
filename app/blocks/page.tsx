@@ -1,9 +1,9 @@
 import Link from "next/link";
+import { Badge } from "@/components/ui/8bit/badge";
 import Feature3 from "@/components/ui/8bit/blocks/feature3";
 import Hero2 from "@/components/ui/8bit/blocks/hero2";
 import Pricing1 from "@/components/ui/8bit/blocks/pricing1";
 import Timeline3 from "@/components/ui/8bit/blocks/timeline3";
-import { Badge } from "@/components/ui/8bit/badge";
 import { Button } from "@/components/ui/8bit/button";
 import {
   Card,
@@ -22,7 +22,6 @@ const highlights = [
   "Consistent spacing and border fixes",
   "Upgraded to Next.js 16.2",
 ];
-
 
 const categories = [
   { title: "Hero", count: 3, slug: "hero" },
@@ -45,9 +44,7 @@ export default function BlocksPage() {
     <div className="mx-auto max-w-3xl px-4">
       {/* Launch Hero */}
       <section className="flex flex-col items-center py-16 text-center md:py-24">
-        <Badge className="mb-6" variant="outline">
-          v2
-        </Badge>
+        <Badge className="mb-6">v2</Badge>
 
         <h1 className="retro mb-4 max-w-2xl font-bold text-3xl tracking-tight md:text-5xl">
           35 New Blocks Just Dropped
@@ -59,7 +56,7 @@ export default function BlocksPage() {
         </p>
 
         <p className="retro mb-8 text-[10px] text-muted-foreground">
-          March 2026 / v2.0 / {totalBlocks} blocks / {categories.length}{" "}
+          20th March 2026 / v2.0 / {totalBlocks} blocks / {categories.length}{" "}
           categories
         </p>
 
@@ -128,22 +125,37 @@ export default function BlocksPage() {
         </h2>
 
         <div className="flex flex-col gap-12">
-          <Hero2
+          <div>
+            <h3 className="retro mb-4 text-center text-muted-foreground text-xs">Split Hero</h3>
+            <Hero2
             actions={[
               { label: "GET STARTED", variant: "default", href: "/docs" },
               { label: "VIEW BLOCKS", variant: "outline", href: "/blocks" },
             ]}
-            badges={[{ label: "Open Source" }, { label: "v2", variant: "secondary" }]}
+            badges={[
+              { label: "Open Source" },
+              { label: "v2", variant: "secondary" },
+            ]}
             description="Drop-in 8-bit styled components that work with your existing stack. No config, no headaches."
             subtitle="Retro components for the modern web"
             title="SHIP FASTER"
           />
+          </div>
 
-          <Timeline3 />
+          <div>
+            <h3 className="retro mb-4 text-center text-muted-foreground text-xs">Zigzag Roadmap</h3>
+            <Timeline3 />
+          </div>
 
-          <Pricing1 />
+          <div>
+            <h3 className="retro mb-4 text-center text-muted-foreground text-xs">Tier Cards</h3>
+            <Pricing1 />
+          </div>
 
-          <Feature3 />
+          <div>
+            <h3 className="retro mb-4 text-center text-muted-foreground text-xs">Feature Carousel</h3>
+            <Feature3 />
+          </div>
         </div>
 
         <div className="mt-8 text-center">
@@ -165,7 +177,7 @@ export default function BlocksPage() {
               <Card className="h-full transition-all hover:border-primary/30">
                 <CardContent className="flex items-center justify-between pt-6">
                   <span className="retro text-xs">{cat.title}</span>
-                  <Badge variant="outline">{cat.count}</Badge>
+                  <Badge>{cat.count}</Badge>
                 </CardContent>
               </Card>
             </Link>
@@ -212,31 +224,7 @@ export default function BlocksPage() {
         </div>
       </section>
 
-      <Separator />
-
-      {/* Roadmap */}
-      <section className="py-12">
-        <h2 className="retro mb-3 font-bold text-lg">What comes next</h2>
-        <p className="mb-6 text-muted-foreground text-xs">
-          v2 is just the start. Here is what is on the roadmap.
-        </p>
-        <div className="flex flex-col gap-3">
-          {[
-            { label: "8-bit icon pack", status: "PLANNED" },
-            { label: "Full landing page templates", status: "PLANNED" },
-            { label: "More gaming blocks", status: "IN PROGRESS" },
-            { label: "Animation and transition pack", status: "EXPLORING" },
-          ].map((item) => (
-            <div
-              className="flex items-center justify-between border-b border-dashed pb-3"
-              key={item.label}
-            >
-              <span className="text-xs">{item.label}</span>
-              <Badge variant="outline">{item.status}</Badge>
-            </div>
-          ))}
-        </div>
-      </section>
+      
 
       <Separator />
 
