@@ -56,7 +56,7 @@ function CellValue({ value }: { value: boolean | string }) {
       </span>
     );
   }
-  return <span className="text-xs">{value}</span>;
+  return <span className="retro text-[9px]">{value}</span>;
 }
 
 export default function Pricing3({
@@ -84,58 +84,34 @@ export default function Pricing3({
           </div>
         )}
 
-        <div className="overflow-x-auto">
-        <Card className="min-w-[500px]">
-          {/* Header row with tier names + prices */}
-          <CardHeader>
-            <div className="grid grid-cols-4 gap-4">
-              <div />
-              {tiers.map((tier) => (
-                <div className="text-center" key={tier.name}>
-                  <CardTitle
-                    className={cn(
-                      "retro text-xs",
-                      tier.highlighted && "text-primary",
-                    )}
-                  >
-                    {tier.name}
-                  </CardTitle>
-                  <div className="retro mt-1 font-bold text-lg">{tier.price}</div>
-                  {tier.highlighted && (
-                    <Badge className="mt-1">RECOMMENDED</Badge>
-                  )}
-                </div>
-              ))}
-            </div>
-          </CardHeader>
-
-          <Separator />
-
-          {/* Feature rows */}
-          <CardContent className="pt-4">
-            <div className="flex flex-col">
-              {features.map((feature, idx) => (
-                <div key={feature.name}>
-                  <div className="grid grid-cols-4 gap-4 py-3">
-                    <span className="text-xs font-medium">{feature.name}</span>
-                    {tiers.map((tier) => (
-                      <div className="text-center" key={tier.name}>
-                        <CellValue value={feature.tiers[tier.name] ?? false} />
-                      </div>
-                    ))}
-                  </div>
-                  {idx < features.length - 1 && (
-                    <Separator />
-                  )}
-                </div>
-              ))}
-            </div>
-
-            {/* CTA buttons */}
-            <div className="mt-6 grid grid-cols-4 gap-4">
-              <div />
-              {tiers.map((tier) => (
-                <div className="text-center" key={tier.name}>
+        {/* Mobile: stacked cards per tier */}
+        <div className="flex flex-col gap-x-4 gap-y-1 md:hidden">
+          {tiers.map((tier) => (
+            <Card
+              className={cn(tier.highlighted && "border-primary")}
+              key={tier.name}
+            >
+              <CardHeader className="text-center">
+                <CardTitle className="retro text-sm">{tier.name}</CardTitle>
+                <div className="retro mt-1 font-bold text-2xl">{tier.price}</div>
+                {tier.highlighted && (
+                  <Badge className="mx-auto mt-1">RECOMMENDED</Badge>
+                )}
+              </CardHeader>
+              <Separator />
+              <CardContent className="pt-4">
+                <ul className="mb-4 space-y-2">
+                  {features.map((feature) => {
+                    const value = feature.tiers[tier.name] ?? false;
+                    return (
+                      <li className="flex justify-between text-xs" key={feature.name}>
+                        <span>{feature.name}</span>
+                        <CellValue value={value} />
+                      </li>
+                    );
+                  })}
+                </ul>
+                <div className="-mx-1.5">
                   <Button
                     className="w-full"
                     size="sm"
@@ -144,10 +120,71 @@ export default function Pricing3({
                     {tier.cta}
                   </Button>
                 </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Desktop: comparison table */}
+        <div className="hidden md:block">
+          <Card>
+            <CardHeader>
+              <div className="grid grid-cols-4 gap-4">
+                <div />
+                {tiers.map((tier) => (
+                  <div className="text-center" key={tier.name}>
+                    <CardTitle
+                      className={cn(
+                        "retro text-xs",
+                        tier.highlighted && "text-primary",
+                      )}
+                    >
+                      {tier.name}
+                    </CardTitle>
+                    <div className="retro mt-1 font-bold text-lg">{tier.price}</div>
+                    {tier.highlighted && (
+                      <Badge className="mt-1">RECOMMENDED</Badge>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </CardHeader>
+
+            <Separator />
+
+            <CardContent className="pt-4">
+              <div className="flex flex-col">
+                {features.map((feature, idx) => (
+                  <div key={feature.name}>
+                    <div className="grid grid-cols-4 gap-4 py-3">
+                      <span className="text-xs font-medium">{feature.name}</span>
+                      {tiers.map((tier) => (
+                        <div className="text-center" key={tier.name}>
+                          <CellValue value={feature.tiers[tier.name] ?? false} />
+                        </div>
+                      ))}
+                    </div>
+                    {idx < features.length - 1 && <Separator />}
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 grid grid-cols-4 gap-4">
+                <div />
+                {tiers.map((tier) => (
+                  <div className="-mx-1.5 text-center" key={tier.name}>
+                    <Button
+                      className="w-full"
+                      size="sm"
+                      variant={tier.highlighted ? "default" : "outline"}
+                    >
+                      {tier.cta}
+                    </Button>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
