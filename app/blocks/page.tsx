@@ -41,7 +41,7 @@ const totalBlocks = categories.reduce((sum, cat) => sum + cat.count, 0);
 
 export default function BlocksPage() {
   return (
-    <div className="mx-auto max-w-5xl px-4">
+    <div className="mx-auto max-w-7xl px-4">
       {/* Launch Hero */}
       <section className="flex flex-col items-center py-16 text-center md:py-24">
         <p className="retro mb-4 text-[10px] text-muted-foreground">
@@ -112,7 +112,7 @@ export default function BlocksPage() {
 
         <div className="flex flex-col gap-12">
           <div className="overflow-hidden rounded-lg border border-border/50 bg-card/30 pb-4">
-            <h3 className="retro border-b border-border/50 bg-muted/30 py-3 text-center text-muted-foreground text-xs">
+            <h3 className="retro border-border/50 border-b bg-muted/30 py-3 text-center text-muted-foreground text-xs">
               Split Hero
             </h3>
             <Hero2
@@ -131,21 +131,21 @@ export default function BlocksPage() {
           </div>
 
           <div className="overflow-hidden rounded-lg border border-border/50 bg-card/30 pb-4">
-            <h3 className="retro border-b border-border/50 bg-muted/30 py-3 text-center text-muted-foreground text-xs">
+            <h3 className="retro border-border/50 border-b bg-muted/30 py-3 text-center text-muted-foreground text-xs">
               Zigzag Roadmap
             </h3>
             <Timeline3 />
           </div>
 
           <div className="overflow-hidden rounded-lg border border-border/50 bg-card/30 pb-4">
-            <h3 className="retro border-b border-border/50 bg-muted/30 py-3 text-center text-muted-foreground text-xs">
+            <h3 className="retro border-border/50 border-b bg-muted/30 py-3 text-center text-muted-foreground text-xs">
               Tier Cards
             </h3>
             <Pricing1 />
           </div>
 
           <div className="overflow-hidden rounded-lg border border-border/50 bg-card/30 px-12 pb-4">
-            <h3 className="retro -mx-12 border-b border-border/50 bg-muted/30 py-3 text-center text-muted-foreground text-xs">
+            <h3 className="retro -mx-12 border-border/50 border-b bg-muted/30 py-3 text-center text-muted-foreground text-xs">
               Feature Carousel
             </h3>
             <Feature3 />
