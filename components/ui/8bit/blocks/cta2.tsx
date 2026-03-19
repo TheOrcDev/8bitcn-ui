@@ -65,7 +65,7 @@ export default function CTA2({
   className,
 }: CTA2Props) {
   return (
-    <section className={cn("w-full px-4 py-16", className)}>
+    <section className={cn("flex justify-center w-full px-4 py-16", className)}>
       <div className="mx-auto max-w-4xl">
         {(title || description) && (
           <div className="mb-10 text-center">
