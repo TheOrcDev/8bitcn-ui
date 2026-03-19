@@ -85,7 +85,7 @@ export default function BlocksPage() {
           production-ready page sections — all built with 8bitcn components.
         </p>
 
-        <p className="retro mb-8 text-muted-foreground text-[10px]">
+        <p className="retro mb-8 text-[10px] text-muted-foreground">
           March 2026 / v2.0 / {totalBlocks} blocks / {categories.length}{" "}
           categories
         </p>
@@ -104,9 +104,7 @@ export default function BlocksPage() {
 
       {/* What's New */}
       <section className="py-12">
-        <h2 className="retro mb-6 font-bold text-lg">
-          What shipped in v2
-        </h2>
+        <h2 className="retro mb-6 font-bold text-lg">What shipped in v2</h2>
         <div className="grid gap-2 sm:grid-cols-2">
           {highlights.map((item) => (
             <div className="flex items-start gap-3 py-2" key={item}>
@@ -128,10 +126,10 @@ export default function BlocksPage() {
             </h3>
             <p className="text-muted-foreground text-xs leading-relaxed">
               The original 8bitcn was components only. Good primitives, but
-              users still had to build pages from scratch. v2 adds blocks —
-              full page sections you can combine into complete landing pages in
-              minutes. We also cleaned up spacing, fixed border consistency,
-              and gave everything a fresh coat of pixels.
+              users still had to build pages from scratch. v2 adds blocks — full
+              page sections you can combine into complete landing pages in
+              minutes. We also cleaned up spacing, fixed border consistency, and
+              gave everything a fresh coat of pixels.
             </p>
           </div>
           <div>
@@ -141,9 +139,8 @@ export default function BlocksPage() {
             <p className="text-muted-foreground text-xs leading-relaxed">
               Instead of building a hero section from Card + Badge + Button
               manually, you install one block and customize the props. Every
-              block is copy-paste ready, uses only 8bitcn components, and
-              works in dark mode out of the box. Hero to deploy in under an
-              hour.
+              block is copy-paste ready, uses only 8bitcn components, and works
+              in dark mode out of the box. Hero to deploy in under an hour.
             </p>
           </div>
         </div>
@@ -167,9 +164,7 @@ export default function BlocksPage() {
             <Link href={`/docs/blocks/${block.slug}`} key={block.slug}>
               <Card className="h-full transition-all hover:border-primary/30">
                 <CardHeader className="pb-2">
-                  <CardTitle className="retro text-xs">
-                    {block.name}
-                  </CardTitle>
+                  <CardTitle className="retro text-xs">{block.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-[10px]">
