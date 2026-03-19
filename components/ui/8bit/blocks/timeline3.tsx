@@ -61,11 +61,11 @@ const defaultEvents: TimelineEvent[] = [
   },
 ];
 
-function EventCard({ event }: { event: TimelineEvent }) {
+function EventCard({ event, align = "left" }: { event: TimelineEvent; align?: "left" | "right" }) {
   return (
     <Card>
       <CardHeader className="pb-2">
-        <div className="flex items-center gap-4">
+        <div className={cn("flex items-center gap-4", align === "right" && "flex-row-reverse")}>
           <CardTitle className="retro text-xs">{event.title}</CardTitle>
           {event.badge && (
             <Badge className="text-[9px]">{event.badge}</Badge>
@@ -73,7 +73,7 @@ function EventCard({ event }: { event: TimelineEvent }) {
         </div>
       </CardHeader>
       <CardContent>
-        <p className="text-muted-foreground text-[10px] leading-relaxed">
+        <p className={cn("text-muted-foreground text-[10px] leading-relaxed", align === "right" && "text-right")}>
           {event.description}
         </p>
       </CardContent>
@@ -136,8 +136,8 @@ export default function Timeline3({
                   {/* Left side */}
                   <div className="flex-1 pr-8">
                     {isLeft && (
-                      <div className="text-right">
-                        <EventCard event={event} />
+                      <div>
+                        <EventCard align="right" event={event} />
                       </div>
                     )}
                   </div>
