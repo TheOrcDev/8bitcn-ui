@@ -125,7 +125,7 @@ export function QuestLog({
         <CardTitle className="flex items-center gap-2 text-base justify-between">
           Quest Log
           {activeQuests.length > 0 && (
-            <Badge variant="default" className="ml-2">
+            <Badge className="ml-2">
               {activeQuests.length} Active
             </Badge>
           )}

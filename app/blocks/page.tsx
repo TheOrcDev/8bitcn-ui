@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/8bit/badge";
 import Feature3 from "@/components/ui/8bit/blocks/feature3";
+import GameRoadmap1 from "@/components/ui/8bit/blocks/game-roadmap1";
 import Hero2 from "@/components/ui/8bit/blocks/hero2";
 import Pricing1 from "@/components/ui/8bit/blocks/pricing1";
-import GameRoadmap1 from "@/components/ui/8bit/blocks/game-roadmap1";
 import Timeline3 from "@/components/ui/8bit/blocks/timeline3";
 import { Button } from "@/components/ui/8bit/button";
 import {
@@ -138,44 +138,50 @@ export default function BlocksPage() {
               Zigzag Roadmap
             </h3>
             <Timeline3
-              title="The Quest Log"
               description="The saga of 8bitcn through the ages"
               events={[
                 {
                   icon: "I",
                   title: "The Orcish Forge",
-                  description: "The orcs hammered 50+ base components out of raw iron. Buttons, cards, inputs — crude but unbreakable.",
+                  description:
+                    "The orcs hammered 50+ base components out of raw iron. Buttons, cards, inputs — crude but unbreakable.",
                   badge: "CLEARED",
                 },
                 {
                   icon: "II",
                   title: "Goblin War Machines",
-                  description: "The goblins built health bars, leaderboards, and game over screens. Chaotic but effective.",
+                  description:
+                    "The goblins built health bars, leaderboards, and game over screens. Chaotic but effective.",
                   badge: "CLEARED",
                 },
                 {
                   icon: "III",
                   title: "Elven Architecture",
-                  description: "The elves designed 36 elegant page blocks. Hero sections, pricing halls, FAQ scrolls, and timeline tapestries.",
+                  description:
+                    "The elves designed 36 elegant page blocks. Hero sections, pricing halls, FAQ scrolls, and timeline tapestries.",
                   badge: "ACTIVE",
                 },
                 {
                   icon: "IV",
                   title: "Dwarven Vaults",
-                  description: "The dwarves are crafting game-themed blocks deep underground. Quest logs, skill trees, and inventory grids.",
+                  description:
+                    "The dwarves are crafting game-themed blocks deep underground. Quest logs, skill trees, and inventory grids.",
                   badge: "ACTIVE",
                 },
                 {
                   icon: "V",
                   title: "The Dragon Hoard",
-                  description: "Full landing page templates guarded by a dragon. One brave click to deploy them all.",
+                  description:
+                    "Full landing page templates guarded by a dragon. One brave click to deploy them all.",
                 },
                 {
                   icon: "VI",
                   title: "Ancient Runes",
-                  description: "A lost icon library carved in pixel runes. The wizards are still deciphering the glyphs.",
+                  description:
+                    "A lost icon library carved in pixel runes. The wizards are still deciphering the glyphs.",
                 },
               ]}
+              title="The Quest Log"
             />
           </div>
 
@@ -194,7 +200,7 @@ export default function BlocksPage() {
           </div>
 
           <div className="overflow-hidden rounded-lg border border-border/50 bg-card/30 pb-4">
-            <h3 className="retro border-b border-border/50 bg-muted/30 py-3 text-center text-muted-foreground text-xs">
+            <h3 className="retro border-border/50 border-b bg-muted/30 py-3 text-center text-muted-foreground text-xs">
               Quest Roadmap
             </h3>
             <GameRoadmap1 />

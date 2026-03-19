@@ -31,33 +31,33 @@ const statusConfig = {
 
 const defaultQuests: Quest[] = [
   {
-    title: "Chapter 1: The Orcish Forge",
-    description: "The orcs hammered 50+ base components out of raw iron. Buttons, cards, inputs — crude but unbreakable.",
+    title: "Gather the Party",
+    description: "Recruit your team. A warrior, a mage, and a rogue walk into a tavern. Nobody leaves until the quest is accepted.",
     status: "completed",
   },
   {
-    title: "Chapter 2: Goblin War Machines",
-    description: "The goblins built health bars, leaderboards, and game over screens. Chaotic but effective.",
+    title: "Cross the Marshlands",
+    description: "Navigate the fog. Avoid the swamp trolls. Find the hidden path to the Ember Citadel before nightfall.",
     status: "completed",
   },
   {
-    title: "Chapter 3: Elven Architecture",
-    description: "The elves designed 36 elegant page blocks. Hero sections, pricing halls, FAQ scrolls, and timeline tapestries.",
+    title: "Siege of Ember Citadel",
+    description: "Break through the outer wall. Defeat the skeletal guards. Secure the courtyard for base camp.",
     status: "in-progress",
   },
   {
-    title: "Chapter 4: Dwarven Vaults",
-    description: "The dwarves are crafting game-themed blocks deep underground. Quest logs, skill trees, and inventory grids.",
+    title: "The Underforge",
+    description: "Descend into the volcanic tunnels beneath the citadel. The dwarven king awaits — friend or foe, unknown.",
     status: "in-progress",
   },
   {
-    title: "Chapter 5: The Dragon Hoard",
-    description: "Full landing page templates guarded by a dragon. One brave click to deploy them all.",
+    title: "Face the Lich King",
+    description: "The final boss awaits in the throne room. Bring fire resistance potions. You will need them.",
     status: "locked",
   },
   {
-    title: "Chapter 6: Ancient Runes",
-    description: "A lost icon library carved in pixel runes. The wizards are still deciphering the glyphs.",
+    title: "Claim the Crown",
+    description: "If you survive, the kingdom is yours. New game plus unlocked. The real adventure begins.",
     status: "locked",
   },
 ];
@@ -116,11 +116,11 @@ export default function GameRoadmap1({
                     )}
                   >
                     <CardHeader className="pb-2">
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-4">
                         <CardTitle className="retro text-xs">
                           {quest.title}
                         </CardTitle>
-                        <Badge variant={config.variant}>{config.badge}</Badge>
+                        <Badge variant={config.variant} className="text-[9px]">{config.badge}</Badge>
                       </div>
                     </CardHeader>
                     <CardContent>
