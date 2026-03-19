@@ -127,13 +127,19 @@ export default function ComponentShowcase() {
 
         <Card>
           <CardContent className="flex flex-col items-center gap-2 pt-4">
-            <ManaBar className="w-full" value={65} />
+            <div className="w-full">
+              <div className="retro mb-1 flex justify-between text-[10px]">
+                <span>Mana</span>
+                <span>65%</span>
+              </div>
+              <ManaBar className="w-full" value={65} variant="retro" />
+            </div>
             <Image
               alt="Wizard"
               className="pixelated"
-              height={100}
+              height={300}
               src="/images/8bit-wizard.png"
-              width={100}
+              width={300}
             />
           </CardContent>
         </Card>
@@ -379,13 +385,19 @@ export default function ComponentShowcase() {
 
         <Card>
           <CardContent className="flex flex-col items-center gap-2 pt-4">
-            <HealthBar value={45} />
+            <div className="w-full">
+              <div className="retro mb-1 flex justify-between text-[10px]">
+                <span>HP</span>
+                <span>45%</span>
+              </div>
+              <HealthBar value={45} variant="retro" />
+            </div>
             <Image
               alt="Troll"
               className="pixelated"
-              height={100}
+              height={300}
               src="/images/8bit-troll.png"
-              width={100}
+              width={300}
             />
           </CardContent>
         </Card>
