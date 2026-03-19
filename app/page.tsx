@@ -11,7 +11,7 @@ export default function Home() {
       {/* Hero */}
       <section className="flex flex-col items-center py-8 text-center md:py-10">
         <Link href="/blocks">
-          <Badge className="mb-6 hover:bg-primary/10">
+          <Badge className="mb-6 hover:bg-primary/90">
             v2 — 35 new blocks
             <svg
               aria-label="arrow-right"

@@ -55,11 +55,16 @@ function Badge({
   // visual classes for badge and sidebars
   const visualClasses = classes.filter(isVisualClass);
 
+  // Convert hover: classes to group-hover: for pixel bar sidebars
+  const sidebarVisualClasses = visualClasses.map((c) =>
+    c.startsWith("hover:") ? c.replace("hover:", "group-hover:") : c
+  );
+
   // Container should accept all non-visual utility classes (e.g., size, spacing, layout)
   const containerClasses = classes.filter((c) => !isVisualClass(c));
 
   return (
-    <div className={cn("relative inline-flex items-stretch", containerClasses)}>
+    <div className={cn("group relative inline-flex items-stretch", containerClasses)}>
       <ShadcnBadge
         {...props}
         className={cn(
@@ -77,17 +82,17 @@ function Badge({
       {/* Left pixel bar */}
       <div
         className={cn(
-          "-left-1.5 absolute inset-y-[4px] w-1.5",
+          "-left-1.5 absolute inset-y-[4px] w-1.5 transition-colors",
           color,
-          visualClasses
+          sidebarVisualClasses
         )}
       />
       {/* Right pixel bar */}
       <div
         className={cn(
-          "-right-1.5 absolute inset-y-[4px] w-1.5",
+          "-right-1.5 absolute inset-y-[4px] w-1.5 transition-colors",
           color,
-          visualClasses
+          sidebarVisualClasses
         )}
       />
     </div>
