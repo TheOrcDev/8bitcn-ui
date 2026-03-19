@@ -45,12 +45,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/8bit/select";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/8bit/tabs";
+
 import { Textarea } from "@/components/ui/8bit/textarea";
 
 import ChapterIntro from "../ui/8bit/blocks/chapter-intro";
@@ -61,6 +56,7 @@ import GameProgress from "../ui/8bit/blocks/game-progress";
 import MainMenu from "../ui/8bit/blocks/main-menu";
 import { Button } from "../ui/8bit/button";
 import EnemyHealthDisplay from "../ui/8bit/enemy-health-display";
+import NotFound1 from "../ui/8bit/blocks/not-found1";
 import HealthBar from "../ui/8bit/health-bar";
 import ManaBar from "../ui/8bit/mana-bar";
 import { Spinner } from "../ui/8bit/spinner";
@@ -99,7 +95,7 @@ export default function ComponentShowcase() {
     <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {/* Column 1 */}
       <div className="mt-1.5 flex flex-col gap-1">
-        <div className="flex flex-col gap-4">
+        <div className="mb-2 flex flex-col gap-4">
           <Button>Button</Button>
 
           <DrawerExample />
@@ -346,35 +342,9 @@ export default function ComponentShowcase() {
 
         <GameProgress />
 
-        {/* Tabs Example */}
         <Card>
-          <CardHeader>
-            <CardTitle className="font-medium text-sm">Game Menu</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Tabs className="w-full" defaultValue="inventory">
-              <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="inventory">Items</TabsTrigger>
-                <TabsTrigger value="skills">Skills</TabsTrigger>
-                <TabsTrigger value="stats">Stats</TabsTrigger>
-              </TabsList>
-              <TabsContent className="mt-4" value="inventory">
-                <p className="text-muted-foreground text-sm">
-                  Your inventory contains 15 items including potions and
-                  weapons.
-                </p>
-              </TabsContent>
-              <TabsContent className="mt-4" value="skills">
-                <p className="text-muted-foreground text-sm">
-                  You have learned 8 skills. 3 skill points available.
-                </p>
-              </TabsContent>
-              <TabsContent className="mt-4" value="stats">
-                <p className="text-muted-foreground text-sm">
-                  Strength: 25, Agility: 18, Intelligence: 22
-                </p>
-              </TabsContent>
-            </Tabs>
+          <CardContent className="pt-4">
+            <NotFound1 className="py-8" />
           </CardContent>
         </Card>
       </div>
