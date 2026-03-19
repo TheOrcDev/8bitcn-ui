@@ -65,9 +65,12 @@ function EventCard({ event, align = "left" }: { event: TimelineEvent; align?: "l
   return (
     <Card>
       <CardHeader className="pb-2">
-        <div className={cn("flex items-center gap-4", align === "right" && "flex-row-reverse justify-end")}>
+        <div className={cn("flex items-center gap-4", align === "right" && "justify-end")}>
+          {align === "right" && event.badge && (
+            <Badge className="text-[9px]">{event.badge}</Badge>
+          )}
           <CardTitle className={cn("retro text-xs", align === "right" && "text-right")}>{event.title}</CardTitle>
-          {event.badge && (
+          {align !== "right" && event.badge && (
             <Badge className="text-[9px]">{event.badge}</Badge>
           )}
         </div>

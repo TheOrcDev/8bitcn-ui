@@ -67,7 +67,7 @@ export default function Footer1({
           {/* Brand column */}
           <div>
             <h3 className="retro mb-2 font-bold text-sm">{title}</h3>
-            <p className="mb-4 text-muted-foreground text-[10px] leading-relaxed">
+            <p className="retro mb-4 text-muted-foreground text-[8px] leading-relaxed">
               {description}
             </p>
             <Button className="text-xs">
