@@ -121,7 +121,7 @@ export default function Pricing2({
           </Button>
         </div>
 
-        <div className="grid gap-x-6 gap-y-1 md:grid-cols-3">
+        <div className="grid gap-x-6 gap-y-3 md:grid-cols-3">
           {plans.map((plan) => (
             <Card
               className={cn(
@@ -136,7 +136,7 @@ export default function Pricing2({
                 </div>
               )}
               <CardHeader className="text-center">
-                <CardTitle className="retro text-sm">{plan.name}</CardTitle>
+                <CardTitle className="retro text-sm">{plan.name}ffffff</CardTitle>
                 <div className="mt-2 flex items-baseline justify-center gap-1">
                   <span className="retro font-bold text-3xl">
                     {yearly ? plan.yearlyPrice : plan.monthlyPrice}
