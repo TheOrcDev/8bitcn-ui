@@ -69,40 +69,42 @@ export default function BlocksPage() {
         </div>
       </section>
 
-      <Separator />
+      <div className="mx-auto max-w-3xl">
+        <Separator />
 
-      {/* What's New */}
-      <section className="mx-auto max-w-3xl py-12">
-        <h2 className="retro mb-6 font-bold text-lg">What shipped in v2</h2>
-        <div className="grid gap-2 sm:grid-cols-2">
-          {highlights.map((item) => (
-            <div className="flex items-start gap-3 py-2" key={item}>
-              <span className="retro shrink-0 text-primary text-xs">+</span>
-              <span className="text-xs">{item}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+        {/* What's New */}
+        <section className="py-12">
+          <h2 className="retro mb-6 font-bold text-lg">What shipped in v2</h2>
+          <div className="grid gap-2 sm:grid-cols-2">
+            {highlights.map((item) => (
+              <div className="flex items-start gap-3 py-2" key={item}>
+                <span className="retro shrink-0 text-primary text-xs">+</span>
+                <span className="text-xs">{item}</span>
+              </div>
+            ))}
+          </div>
+        </section>
 
-      <Separator />
+        <Separator />
 
-      {/* Story */}
-      <section className="mx-auto max-w-3xl py-12">
-        <div className="grid gap-8">
-          <h3 className="retro mb-3 font-bold text-sm">
-            Why we rebuilt 8bitcn
-          </h3>
-          <p className="text-muted-foreground text-xs leading-relaxed">
-            The original 8bitcn was components only. Good primitives, but users
-            still had to build pages from scratch. v2 adds blocks — full page
-            sections you can combine into complete landing pages in minutes. We
-            also cleaned up spacing, fixed border consistency, and gave
-            everything a fresh coat of pixels.
-          </p>
-        </div>
-      </section>
+        {/* Story */}
+        <section className="py-12">
+          <div className="grid gap-8">
+            <h3 className="retro mb-3 font-bold text-sm">
+              Why we rebuilt 8bitcn
+            </h3>
+            <p className="text-muted-foreground text-xs leading-relaxed">
+              The original 8bitcn was components only. Good primitives, but
+              users still had to build pages from scratch. v2 adds blocks — full
+              page sections you can combine into complete landing pages in
+              minutes. We also cleaned up spacing, fixed border consistency, and
+              gave everything a fresh coat of pixels.
+            </p>
+          </div>
+        </section>
 
-      <Separator />
+        <Separator />
+      </div>
 
       {/* Live Block Showcase */}
       <section className="py-12">
@@ -186,7 +188,7 @@ export default function BlocksPage() {
         <h2 className="retro mb-6 text-center font-bold text-lg">
           Built to ship
         </h2>
-        <div className="grid gap-x-4 gap-y-1 md:grid-cols-3">
+        <div className="grid gap-x-4 md:grid-cols-3">
           {[
             {
               title: "Copy-paste ready",
@@ -205,7 +207,7 @@ export default function BlocksPage() {
             },
           ].map((item) => (
             <Card key={item.title}>
-              <CardHeader className="pb-2">
+              <CardHeader>
                 <CardTitle className="retro text-xs">{item.title}</CardTitle>
               </CardHeader>
               <CardContent>
