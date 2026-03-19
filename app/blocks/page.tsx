@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/8bit/badge";
 import Feature3 from "@/components/ui/8bit/blocks/feature3";
 import Hero2 from "@/components/ui/8bit/blocks/hero2";
 import Pricing1 from "@/components/ui/8bit/blocks/pricing1";
+import GameRoadmap1 from "@/components/ui/8bit/blocks/game-roadmap1";
 import Timeline3 from "@/components/ui/8bit/blocks/timeline3";
 import { Button } from "@/components/ui/8bit/button";
 import {
@@ -151,6 +152,13 @@ export default function BlocksPage() {
               Feature Carousel
             </h3>
             <Feature3 />
+          </div>
+
+          <div className="overflow-hidden rounded-lg border border-border/50 bg-card/30 pb-4">
+            <h3 className="retro border-b border-border/50 bg-muted/30 py-3 text-center text-muted-foreground text-xs">
+              Quest Roadmap
+            </h3>
+            <GameRoadmap1 />
           </div>
         </div>
 
