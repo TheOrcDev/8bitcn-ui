@@ -72,7 +72,7 @@ export default function BlocksPage() {
       <Separator />
 
       {/* What's New */}
-      <section className="py-12">
+      <section className="mx-auto max-w-3xl py-12">
         <h2 className="retro mb-6 font-bold text-lg">What shipped in v2</h2>
         <div className="grid gap-2 sm:grid-cols-2">
           {highlights.map((item) => (
@@ -87,7 +87,7 @@ export default function BlocksPage() {
       <Separator />
 
       {/* Story */}
-      <section className="py-12">
+      <section className="mx-auto max-w-3xl py-12">
         <div className="grid gap-8">
           <h3 className="retro mb-3 font-bold text-sm">
             Why we rebuilt 8bitcn
