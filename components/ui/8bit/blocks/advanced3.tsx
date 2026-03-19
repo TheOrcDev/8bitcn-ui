@@ -47,7 +47,7 @@ export default function Advanced3({
                 {description}
               </p>
 
-              <div className="flex gap-4">
+              <div className="flex items-center gap-4">
                 <Input
                   className="retro flex-1 text-xs"
                   placeholder={placeholder}

@@ -3,21 +3,40 @@ title: Timeline
 description: Steps, roadmaps, and progress flows.
 ---
 
+import CopyCommandButton from "@/components/copy-command-button";
+import ComponentPreview from "@/components/component-preview";
 import Timeline1 from "@/components/ui/8bit/blocks/timeline1";
 import Timeline2 from "@/components/ui/8bit/blocks/timeline2";
 import Timeline3 from "@/components/ui/8bit/blocks/timeline3";
-import ComponentPreview from "@/components/component-preview";
 
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/timeline1"
+    command="pnpm dlx shadcn@latest add @8bitcn/timeline1"
+  />
+</div>
 
 <ComponentPreview title="Vertical" name="timeline1">
   <Timeline1 />
 </ComponentPreview>
 
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/timeline2"
+    command="pnpm dlx shadcn@latest add @8bitcn/timeline2"
+  />
+</div>
 
 <ComponentPreview title="Horizontal" name="timeline2">
   <Timeline2 />
 </ComponentPreview>
 
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/timeline3"
+    command="pnpm dlx shadcn@latest add @8bitcn/timeline3"
+  />
+</div>
 
 <ComponentPreview title="Zigzag Roadmap" name="timeline3">
   <Timeline3 />

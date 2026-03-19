@@ -3,21 +3,40 @@ title: Advanced
 description: Unique blocks with special interactions.
 ---
 
+import CopyCommandButton from "@/components/copy-command-button";
+import ComponentPreview from "@/components/component-preview";
 import Advanced1 from "@/components/ui/8bit/blocks/advanced1";
 import Advanced2 from "@/components/ui/8bit/blocks/advanced2";
 import Advanced3 from "@/components/ui/8bit/blocks/advanced3";
-import ComponentPreview from "@/components/component-preview";
 
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/advanced1"
+    command="pnpm dlx shadcn@latest add @8bitcn/advanced1"
+  />
+</div>
 
 <ComponentPreview title="Demo Shell" name="advanced1">
   <Advanced1 />
 </ComponentPreview>
 
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/advanced2"
+    command="pnpm dlx shadcn@latest add @8bitcn/advanced2"
+  />
+</div>
 
 <ComponentPreview title="Metrics Dashboard" name="advanced2">
   <Advanced2 />
 </ComponentPreview>
 
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/advanced3"
+    command="pnpm dlx shadcn@latest add @8bitcn/advanced3"
+  />
+</div>
 
 <ComponentPreview title="Newsletter" name="advanced3">
   <Advanced3 />

@@ -3,21 +3,40 @@ title: Social Proof
 description: Stats, testimonials, and reviews.
 ---
 
+import CopyCommandButton from "@/components/copy-command-button";
+import ComponentPreview from "@/components/component-preview";
 import SocialProof1 from "@/components/ui/8bit/blocks/social-proof1";
 import SocialProof2 from "@/components/ui/8bit/blocks/social-proof2";
 import SocialProof3 from "@/components/ui/8bit/blocks/social-proof3";
-import ComponentPreview from "@/components/component-preview";
 
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/social-proof1"
+    command="pnpm dlx shadcn@latest add @8bitcn/social-proof1"
+  />
+</div>
 
 <ComponentPreview title="Stats Bar" name="social-proof1">
   <SocialProof1 />
 </ComponentPreview>
 
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/social-proof2"
+    command="pnpm dlx shadcn@latest add @8bitcn/social-proof2"
+  />
+</div>
 
 <ComponentPreview title="Testimonials" name="social-proof2">
   <SocialProof2 />
 </ComponentPreview>
 
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/social-proof3"
+    command="pnpm dlx shadcn@latest add @8bitcn/social-proof3"
+  />
+</div>
 
 <ComponentPreview title="Review Carousel" name="social-proof3">
   <SocialProof3 />
