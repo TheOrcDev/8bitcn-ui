@@ -93,10 +93,10 @@ export default function PlayerProfileCard({
           <div className="flex-1 min-w-0">
             <div className="space-y-2">
               <div className="flex flex-col gap-1 md:flex-row md:items-center md:gap-2 justify-between">
-                <h3 className="font-bold truncate md:text-lg">{playerName}</h3>
+                <h3 className="font-bold truncate">{playerName}</h3>
                 {showLevel && (
                   <span>
-                    <Badge className="text-xs">Lv.{level}</Badge>
+                    <Badge className="text-[9px]">Lv.{level}</Badge>
                   </span>
                 )}
               </div>

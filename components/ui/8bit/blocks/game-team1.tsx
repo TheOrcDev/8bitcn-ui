@@ -22,10 +22,10 @@ interface GameTeam1Props {
 }
 
 const defaultMembers: PartyMember[] = [
-  { initials: "OD", name: "OrcDev", level: 42, hp: 95, mana: 80, xp: 72 },
-  { initials: "PK", name: "PixelKnight", level: 38, hp: 72, mana: 60, xp: 45 },
-  { initials: "CM", name: "CodeMage", level: 35, hp: 88, mana: 95, xp: 30 },
-  { initials: "RR", name: "RetroRogue", level: 31, hp: 60, mana: 40, xp: 85 },
+  { initials: "OR", name: "Orc", level: 42, hp: 95, mana: 80, xp: 72 },
+  { initials: "GO", name: "Goblin", level: 38, hp: 72, mana: 60, xp: 45 },
+  { initials: "OG", name: "Ogre", level: 35, hp: 88, mana: 95, xp: 30 },
+  { initials: "TR", name: "Troll", level: 31, hp: 60, mana: 40, xp: 85 },
 ];
 
 export default function GameTeam1({

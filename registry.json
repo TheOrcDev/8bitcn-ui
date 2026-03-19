@@ -2779,26 +2779,6 @@
       ]
     },
     {
-      "name": "game-integrations1",
-      "type": "registry:block",
-      "title": "8-bit game-integrations1",
-      "description": "Inventory grid with rarity-styled slots.",
-      "categories": ["game"],
-      "registryDependencies": ["badge"],
-      "files": [
-        {
-          "path": "components/ui/8bit/blocks/game-integrations1.tsx",
-          "type": "registry:block",
-          "target": "components/ui/8bit/blocks/game-integrations1.tsx"
-        },
-        {
-          "path": "components/ui/8bit/styles/retro.css",
-          "type": "registry:file",
-          "target": "components/ui/8bit/styles/retro.css"
-        }
-      ]
-    },
-    {
       "name": "game-faq1",
       "type": "registry:block",
       "title": "8-bit game-faq1",

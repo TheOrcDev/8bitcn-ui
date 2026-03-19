@@ -18,7 +18,7 @@ import { Separator } from "@/components/ui/8bit/separator";
 const highlights = [
   "New pixel-art logo and visual identity",
   "Redesigned landing page",
-  "36 production-ready page blocks",
+  "35 production-ready page blocks",
   "Improved docs navigation for blocks",
   "Consistent spacing and border fixes",
   "Upgraded to Next.js 16.2",
@@ -34,7 +34,7 @@ const categories = [
   { title: "CTA", count: 2, slug: "cta" },
   { title: "Team", count: 3, slug: "team" },
   { title: "Advanced", count: 3, slug: "advanced" },
-  { title: "Game", count: 8, slug: "game" },
+  { title: "Game", count: 7, slug: "game" },
   { title: "Layout", count: 2, slug: "layout" },
 ];
 
@@ -52,7 +52,7 @@ export default function BlocksPage() {
         <Badge className="mb-6">v2</Badge>
 
         <h1 className="retro mb-4 max-w-2xl font-bold text-3xl tracking-tight md:text-5xl">
-          36 New Blocks Just Dropped
+          35 New Blocks Just Dropped
         </h1>
 
         <p className="mx-auto mb-6 max-w-lg text-muted-foreground text-xs leading-relaxed">
@@ -209,7 +209,7 @@ export default function BlocksPage() {
 
         <div className="mt-8 text-center">
           <Link href="/docs/blocks">
-            <Button variant="outline">See all 36 blocks</Button>
+            <Button variant="outline">See all 35 blocks</Button>
           </Link>
         </div>
       </section>

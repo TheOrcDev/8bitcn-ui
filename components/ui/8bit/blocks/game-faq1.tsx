@@ -96,12 +96,12 @@ export default function GameFAQ1({
                 value={`checkpoint-${idx}`}
               >
                 <AccordionTrigger className="retro text-left text-xs">
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-4">
                     <span className="retro shrink-0 font-bold text-[10px]">
                       {config.icon}
                     </span>
                     <span className="flex-1">{item.question}</span>
-                    <Badge variant={config.variant}>{config.badge}</Badge>
+                    <Badge variant={config.variant} className="text-[9px]">{config.badge}</Badge>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="retro text-[9px] leading-relaxed text-muted-foreground">
