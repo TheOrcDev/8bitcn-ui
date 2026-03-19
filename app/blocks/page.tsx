@@ -170,8 +170,8 @@ export default function BlocksPage() {
         <div className="grid gap-x-4 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((cat) => (
             <Link href={`/docs/blocks/${cat.slug}`} key={cat.slug}>
-              <Card className="h-full transition-all hover:border-primary/30">
-                <CardContent className="flex items-center justify-between pt-6">
+              <Card className="h-full transition-all hover:bg-primary/10">
+                <CardContent className="flex items-center justify-between">
                   <span className="retro text-xs">{cat.title}</span>
                   <Badge>{cat.count}</Badge>
                 </CardContent>

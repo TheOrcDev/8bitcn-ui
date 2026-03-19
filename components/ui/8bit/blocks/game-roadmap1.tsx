@@ -31,33 +31,33 @@ const statusConfig = {
 
 const defaultQuests: Quest[] = [
   {
-    title: "Chapter 1: Core Components",
-    description: "50+ base components. Buttons, cards, inputs, dialogs. The foundation.",
+    title: "Chapter 1: The Orcish Forge",
+    description: "The orcs hammered 50+ base components out of raw iron. Buttons, cards, inputs — crude but unbreakable.",
     status: "completed",
   },
   {
-    title: "Chapter 2: Gaming Blocks",
-    description: "Health bars, leaderboards, game over screens, victory animations.",
+    title: "Chapter 2: Goblin War Machines",
+    description: "The goblins built health bars, leaderboards, and game over screens. Chaotic but effective.",
     status: "completed",
   },
   {
-    title: "Chapter 3: Page Blocks",
-    description: "27 full page sections. Hero, pricing, FAQ, social proof, timelines.",
+    title: "Chapter 3: Elven Architecture",
+    description: "The elves designed 36 elegant page blocks. Hero sections, pricing halls, FAQ scrolls, and timeline tapestries.",
     status: "in-progress",
   },
   {
-    title: "Chapter 4: Game UI Pack",
-    description: "Game-themed blocks. Quest roadmaps, loot pricing, skill trees.",
+    title: "Chapter 4: Dwarven Vaults",
+    description: "The dwarves are crafting game-themed blocks deep underground. Quest logs, skill trees, and inventory grids.",
     status: "in-progress",
   },
   {
-    title: "Chapter 5: Templates",
-    description: "Full landing page templates. One-click deploy to Vercel.",
+    title: "Chapter 5: The Dragon Hoard",
+    description: "Full landing page templates guarded by a dragon. One brave click to deploy them all.",
     status: "locked",
   },
   {
-    title: "Chapter 6: Icon Pack",
-    description: "Native 8-bit pixel icon library. No external dependencies.",
+    title: "Chapter 6: Ancient Runes",
+    description: "A lost icon library carved in pixel runes. The wizards are still deciphering the glyphs.",
     status: "locked",
   },
 ];
