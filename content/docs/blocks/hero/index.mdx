@@ -17,7 +17,13 @@ import Hero3 from "@/components/ui/8bit/blocks/hero3";
 </div>
 
 <ComponentPreview title="Centered" name="hero1">
-  <Hero1 />
+  <Hero1
+    title="BUILD YOUR RETRO EMPIRE"
+    subtitle="The 8-bit component library for modern builders"
+    description="Ship pixel-perfect landing pages, dashboards, and gaming UIs with components that look straight out of the golden age."
+    badges={[{ label: "Open Source" }, { label: "Pixel Perfect", variant: "secondary" }]}
+    actions={[{ label: "START QUEST", variant: "default" }, { label: "VIEW LORE", variant: "outline" }]}
+  />
 </ComponentPreview>
 
 <div className="mt-10 flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
@@ -28,7 +34,13 @@ import Hero3 from "@/components/ui/8bit/blocks/hero3";
 </div>
 
 <ComponentPreview title="Split" name="hero2">
-  <Hero2 />
+  <Hero2
+    title="SHIP FASTER"
+    subtitle="Retro components for the modern web"
+    description="Drop-in 8-bit styled components that work with your existing stack. No config, no headaches."
+    badges={[{ label: "Open Source" }, { label: "React", variant: "secondary" }]}
+    actions={[{ label: "START BUILDING", variant: "default" }, { label: "DOCS", variant: "outline" }]}
+  />
 </ComponentPreview>
 
 <div className="mt-10 flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
@@ -39,5 +51,10 @@ import Hero3 from "@/components/ui/8bit/blocks/hero3";
 </div>
 
 <ComponentPreview title="Game Title" name="hero3">
-  <Hero3 />
+  <Hero3
+    title="8BITCN"
+    subtitle="EST. 2024"
+    description="A retro component library that brings the golden age of gaming to modern web development."
+    stats={[{ label: "COMPONENTS", value: "50+" }, { label: "STARS", value: "1.7K" }, { label: "CONTRIBUTORS", value: "100+" }]}
+  />
 </ComponentPreview>

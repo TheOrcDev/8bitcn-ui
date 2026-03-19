@@ -57,7 +57,6 @@ import MainMenu from "../ui/8bit/blocks/main-menu";
 import NotFound1 from "../ui/8bit/blocks/not-found1";
 import { Button } from "../ui/8bit/button";
 import EnemyHealthDisplay from "../ui/8bit/enemy-health-display";
-import HealthBar from "../ui/8bit/health-bar";
 import ManaBar from "../ui/8bit/mana-bar";
 import { Spinner } from "../ui/8bit/spinner";
 import { DatePicker } from "./date-picker";
@@ -125,8 +124,8 @@ export default function ComponentShowcase() {
           <CardContent className="flex flex-col items-center gap-2 pt-4">
             <div className="w-full">
               <div className="retro mb-1 flex justify-between text-[10px]">
-                <span>Mana</span>
-                <span>65%</span>
+                <span>Wizard</span>
+                <span>140/180</span>
               </div>
               <ManaBar className="w-full" value={65} variant="retro" />
             </div>
@@ -302,7 +301,6 @@ export default function ComponentShowcase() {
                 level={25}
                 maxHealth={1000}
               />
-              <ManaBar className="mt-5" value={75} variant="retro" />
             </div>
           </CardContent>
         </Card>
@@ -356,11 +354,12 @@ export default function ComponentShowcase() {
         <Card>
           <CardContent className="flex flex-col items-center gap-2 pt-4">
             <div className="w-full">
-              <div className="retro mb-1 flex justify-between text-[10px]">
-                <span>HP</span>
-                <span>45%</span>
-              </div>
-              <HealthBar value={45} variant="retro" />
+              <EnemyHealthDisplay
+                currentHealth={320}
+                enemyName="Troll"
+                level={9}
+                maxHealth={450}
+              />{" "}
             </div>
             <Image
               alt="Troll"
