@@ -39,25 +39,24 @@ function Badge({
 
   const classes = className.split(" ");
 
+  // Strip pseudo-prefixes (hover:, dark:, focus:, etc.) to check the base utility
+  const getBaseClass = (c: string) => c.replace(/^[a-z-]+:/g, "");
+
+  const isVisualClass = (c: string) => {
+    const base = getBaseClass(c);
+    return (
+      base.startsWith("bg-") ||
+      base.startsWith("border-") ||
+      base.startsWith("text-") ||
+      base.startsWith("rounded-")
+    );
+  };
+
   // visual classes for badge and sidebars
-  const visualClasses = classes.filter(
-    (c) =>
-      c.startsWith("bg-") ||
-      c.startsWith("border-") ||
-      c.startsWith("text-") ||
-      c.startsWith("rounded-")
-  );
+  const visualClasses = classes.filter(isVisualClass);
 
   // Container should accept all non-visual utility classes (e.g., size, spacing, layout)
-  const containerClasses = classes.filter(
-    (c) =>
-      !(
-        c.startsWith("bg-") ||
-        c.startsWith("border-") ||
-        c.startsWith("text-") ||
-        c.startsWith("rounded-")
-      )
-  );
+  const containerClasses = classes.filter((c) => !isVisualClass(c));
 
   return (
     <div className={cn("relative inline-flex items-stretch", containerClasses)}>
