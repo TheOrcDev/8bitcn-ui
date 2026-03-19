@@ -1,16 +1,6 @@
 import { cn } from "@/lib/utils";
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/8bit/avatar";
-import { Badge } from "@/components/ui/8bit/badge";
-import {
-  Card,
-  CardContent,
-} from "@/components/ui/8bit/card";
-import { Progress } from "@/components/ui/8bit/progress";
+import PlayerProfileCard from "@/components/ui/8bit/blocks/player-profile-card";
 
 import "@/components/ui/8bit/styles/retro.css";
 
@@ -19,8 +9,9 @@ export interface PartyMember {
   hp: number;
   initials: string;
   level: number;
+  mana?: number;
   name: string;
-  role: string;
+  xp?: number;
 }
 
 interface GameTeam1Props {
@@ -31,10 +22,10 @@ interface GameTeam1Props {
 }
 
 const defaultMembers: PartyMember[] = [
-  { initials: "OD", name: "OrcDev", role: "Tank", level: 42, hp: 95 },
-  { initials: "PK", name: "PixelKnight", role: "DPS", level: 38, hp: 72 },
-  { initials: "CM", name: "CodeMage", role: "Healer", level: 35, hp: 88 },
-  { initials: "RR", name: "RetroRogue", role: "Scout", level: 31, hp: 60 },
+  { initials: "OD", name: "OrcDev", level: 42, hp: 95, mana: 80, xp: 72 },
+  { initials: "PK", name: "PixelKnight", level: 38, hp: 72, mana: 60, xp: 45 },
+  { initials: "CM", name: "CodeMage", level: 35, hp: 88, mana: 95, xp: 30 },
+  { initials: "RR", name: "RetroRogue", level: 31, hp: 60, mana: 40, xp: 85 },
 ];
 
 export default function GameTeam1({
@@ -61,35 +52,23 @@ export default function GameTeam1({
 
         <div className="grid gap-x-4 gap-y-1 sm:grid-cols-2">
           {members.map((member) => (
-            <Card key={member.name}>
-              <CardContent className="flex items-center gap-4 pt-6">
-                <Avatar>
-                  {member.avatar && (
-                    <AvatarImage alt={member.name} src={member.avatar} />
-                  )}
-                  <AvatarFallback>{member.initials}</AvatarFallback>
-                </Avatar>
-
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center gap-2">
-                    <span className="retro truncate font-bold text-xs">
-                      {member.name}
-                    </span>
-                    <Badge>Lv {member.level}</Badge>
-                  </div>
-                  <span className="retro text-muted-foreground text-[10px]">
-                    {member.role}
-                  </span>
-                  <div className="mt-2">
-                    <div className="retro mb-1 flex justify-between text-[10px]">
-                      <span>HP</span>
-                      <span>{member.hp}%</span>
-                    </div>
-                    <Progress className="h-1.5" value={member.hp} />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <PlayerProfileCard
+              avatarFallback={member.initials}
+              avatarSrc={member.avatar}
+              key={member.name}
+              level={member.level}
+              playerName={member.name}
+              stats={{
+                health: { current: member.hp, max: 100 },
+                mana: member.mana
+                  ? { current: member.mana, max: 100 }
+                  : undefined,
+                experience: member.xp
+                  ? { current: member.xp, max: 100 }
+                  : undefined,
+                level: member.level,
+              }}
+            />
           ))}
         </div>
       </div>

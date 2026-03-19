@@ -13,7 +13,7 @@ import { Separator } from "@/components/ui/8bit/separator";
 const highlights = [
   "New pixel-art logo and visual identity",
   "Redesigned landing page",
-  "27 production-ready page blocks",
+  "35 production-ready page blocks",
   "Improved docs navigation for blocks",
   "Consistent spacing and border fixes",
   "Registry entries for every block",
@@ -88,7 +88,7 @@ export default function BlocksPage() {
         </Badge>
 
         <h1 className="retro mb-4 max-w-2xl font-bold text-3xl tracking-tight md:text-5xl">
-          27 New Blocks Just Dropped
+          35 New Blocks Just Dropped
         </h1>
 
         <p className="mx-auto mb-2 max-w-lg text-muted-foreground text-xs leading-relaxed">
