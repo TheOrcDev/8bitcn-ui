@@ -39,32 +39,28 @@ function Badge({
 
   const classes = className.split(" ");
 
-  // Strip pseudo-prefixes (hover:, dark:, focus:, etc.) to check the base utility
-  const getBaseClass = (c: string) => c.replace(/^[a-z-]+:/g, "");
-
-  const isVisualClass = (c: string) => {
-    const base = getBaseClass(c);
-    return (
-      base.startsWith("bg-") ||
-      base.startsWith("border-") ||
-      base.startsWith("text-") ||
-      base.startsWith("rounded-")
-    );
-  };
-
   // visual classes for badge and sidebars
-  const visualClasses = classes.filter(isVisualClass);
-
-  // Convert hover: classes to group-hover: for pixel bar sidebars
-  const sidebarVisualClasses = visualClasses.map((c) =>
-    c.startsWith("hover:") ? c.replace("hover:", "group-hover:") : c
+  const visualClasses = classes.filter(
+    (c) =>
+      c.startsWith("bg-") ||
+      c.startsWith("border-") ||
+      c.startsWith("text-") ||
+      c.startsWith("rounded-")
   );
 
   // Container should accept all non-visual utility classes (e.g., size, spacing, layout)
-  const containerClasses = classes.filter((c) => !isVisualClass(c));
+  const containerClasses = classes.filter(
+    (c) =>
+      !(
+        c.startsWith("bg-") ||
+        c.startsWith("border-") ||
+        c.startsWith("text-") ||
+        c.startsWith("rounded-")
+      )
+  );
 
   return (
-    <div className={cn("group relative inline-flex items-stretch transition-colors", color, containerClasses, visualClasses)}>
+    <div className={cn("relative inline-flex items-stretch", containerClasses)}>
       <ShadcnBadge
         {...props}
         className={cn(
@@ -82,13 +78,17 @@ function Badge({
       {/* Left pixel bar */}
       <div
         className={cn(
-          "-left-1.5 absolute inset-y-[4px] w-1.5 bg-inherit",
+          "-left-1.5 absolute inset-y-[4px] w-1.5",
+          color,
+          visualClasses
         )}
       />
       {/* Right pixel bar */}
       <div
         className={cn(
-          "-right-1.5 absolute inset-y-[4px] w-1.5 bg-inherit",
+          "-right-1.5 absolute inset-y-[4px] w-1.5",
+          color,
+          visualClasses
         )}
       />
     </div>
