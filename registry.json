@@ -2697,6 +2697,86 @@
           "target": "components/ui/8bit/styles/retro.css"
         }
       ]
+    },
+    {
+      "name": "game-hero2",
+      "type": "registry:block",
+      "title": "8-bit game-hero2",
+      "description": "XP milestone hero with level badges.",
+      "categories": ["game"],
+      "registryDependencies": ["badge", "button", "progress"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-hero2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-hero2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "game-cta1",
+      "type": "registry:block",
+      "title": "8-bit game-cta1",
+      "description": "Boss fight CTA with problem vs solution.",
+      "categories": ["game"],
+      "registryDependencies": ["badge", "button", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-cta1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-cta1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "game-features1",
+      "type": "registry:block",
+      "title": "8-bit game-features1",
+      "description": "Skill tree feature grid with progress.",
+      "categories": ["game"],
+      "registryDependencies": ["badge", "card", "progress"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-features1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-features1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "game-team1",
+      "type": "registry:block",
+      "title": "8-bit game-team1",
+      "description": "Party grid with avatars and HP bars.",
+      "categories": ["game"],
+      "registryDependencies": ["avatar", "badge", "card", "progress"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-team1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-team1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
     }
   ]
 }
