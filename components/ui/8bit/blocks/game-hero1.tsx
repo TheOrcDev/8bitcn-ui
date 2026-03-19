@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 import { Badge } from "@/components/ui/8bit/badge";
 import { Button } from "@/components/ui/8bit/button";
-import HealthBar from "@/components/ui/8bit/health-bar";
+import { Progress } from "@/components/ui/8bit/progress";
 
 import "@/components/ui/8bit/styles/retro.css";
 
@@ -16,8 +16,8 @@ interface GameHero1Props {
   }>;
   className?: string;
   description?: string;
-  healthLabel?: string;
-  healthValue?: number;
+  xpLabel?: string;
+  xpValue?: number;
   subtitle?: string;
   title: string;
 }
@@ -30,8 +30,8 @@ export default function GameHero1({
     { label: "DEPLOY NOW", variant: "default", href: "/docs" },
     { label: "VIEW ARSENAL", variant: "outline", href: "/blocks" },
   ],
-  healthLabel = "Launch Progress",
-  healthValue = 87,
+  xpLabel = "XP to Next Level",
+  xpValue = 72,
   className,
 }: GameHero1Props) {
   return (
@@ -41,7 +41,7 @@ export default function GameHero1({
       <div className="mx-auto max-w-2xl text-center">
         {subtitle && (
           <div className="mb-6">
-            <Badge variant="outline">{subtitle}</Badge>
+            <Badge >{subtitle}</Badge>
           </div>
         )}
 
@@ -74,10 +74,10 @@ export default function GameHero1({
         {/* Health bar */}
         <div className="mx-auto max-w-sm">
           <div className="retro mb-2 flex justify-between text-[10px]">
-            <span>{healthLabel}</span>
-            <span>{healthValue}%</span>
+            <span>{xpLabel}</span>
+            <span>{xpValue}%</span>
           </div>
-          <HealthBar value={healthValue} />
+          <Progress className="h-3" value={xpValue} />
         </div>
       </div>
     </section>

@@ -41,7 +41,7 @@ export default function Home() {
           </Badge>
         </Link>
 
-        <h1 className="retro mb-4 max-w-3xl font-bold text-lg tracking-tight md:text-2xl lg:text-5xl">
+        <h1 className="retro mb-4 max-w-5xl font-bold text-lg tracking-tight md:text-2xl lg:text-5xl">
           Rare Loot UI Library
         </h1>
 

@@ -72,7 +72,7 @@ const categories = [
   { title: "CTA", count: 2, slug: "cta" },
   { title: "Team", count: 3, slug: "team" },
   { title: "Advanced", count: 3, slug: "advanced" },
-  { title: "Game", count: 4, slug: "game" },
+  { title: "Game", count: 2, slug: "game" },
   { title: "Layout", count: 1, slug: "layout" },
 ];
 

@@ -26,7 +26,7 @@ interface GameRoadmap1Props {
 const statusConfig = {
   completed: { badge: "CLEARED", variant: "default" as const },
   "in-progress": { badge: "ACTIVE", variant: "secondary" as const },
-  locked: { badge: "LOCKED", variant: "outline" as const },
+  locked: { badge: "LOCKED", variant: "secondary" as const },
 };
 
 const defaultQuests: Quest[] = [
