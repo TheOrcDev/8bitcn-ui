@@ -125,16 +125,18 @@ export default function ComponentShowcase() {
           </DropdownMenu>
         </div>
 
-        <div className="flex flex-col items-center gap-2">
-          <ManaBar className="w-full" value={65} />
-          <Image
-            alt="Wizard"
-            className="pixelated"
-            height={100}
-            src="/images/8bit-wizard.png"
-            width={100}
-          />
-        </div>
+        <Card>
+          <CardContent className="flex flex-col items-center gap-2 pt-4">
+            <ManaBar className="w-full" value={65} />
+            <Image
+              alt="Wizard"
+              className="pixelated"
+              height={100}
+              src="/images/8bit-wizard.png"
+              width={100}
+            />
+          </CardContent>
+        </Card>
 
         <AudioSettings className="mt-1" />
 
@@ -375,16 +377,18 @@ export default function ComponentShowcase() {
       <div className="flex w-full flex-col gap-1">
         <Input placeholder="Enter your name" />
 
-        <div className="flex flex-col items-center gap-2">
-          <HealthBar value={45} />
-          <Image
-            alt="Troll"
-            className="pixelated"
-            height={100}
-            src="/images/8bit-troll.png"
-            width={100}
-          />
-        </div>
+        <Card>
+          <CardContent className="flex flex-col items-center gap-2 pt-4">
+            <HealthBar value={45} />
+            <Image
+              alt="Troll"
+              className="pixelated"
+              height={100}
+              src="/images/8bit-troll.png"
+              width={100}
+            />
+          </CardContent>
+        </Card>
 
         <Menubar>
           <MenubarMenu>
