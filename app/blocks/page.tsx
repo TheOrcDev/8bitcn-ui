@@ -20,7 +20,7 @@ const highlights = [
   "35 production-ready page blocks",
   "Improved docs navigation for blocks",
   "Consistent spacing and border fixes",
-  "Registry entries for every block",
+  "Upgraded to Next.js 16.2",
 ];
 
 

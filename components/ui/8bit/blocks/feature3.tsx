@@ -109,7 +109,7 @@ export default function Feature3({
                   <Card className="relative h-full">
                   {item.badge && (
                     <div className="absolute top-2 right-4 z-10">
-                      <Badge className="text-[9px]">{item.badge}</Badge>
+                      <Badge className="text-[7px]">{item.badge}</Badge>
                     </div>
                   )}
                   <CardHeader className="pb-2">
