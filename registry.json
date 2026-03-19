@@ -2657,6 +2657,86 @@
           "target": "components/ui/8bit/styles/retro.css"
         }
       ]
+    },
+    {
+      "name": "game-hero1",
+      "type": "registry:block",
+      "title": "8-bit game-hero1",
+      "description": "Health bar hero with progress indicator.",
+      "categories": ["game"],
+      "registryDependencies": ["badge", "button", "health-bar"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-hero1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-hero1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "game-roadmap1",
+      "type": "registry:block",
+      "title": "8-bit game-roadmap1",
+      "description": "Quest log roadmap with status states.",
+      "categories": ["game"],
+      "registryDependencies": ["badge", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-roadmap1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-roadmap1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "game-pricing1",
+      "type": "registry:block",
+      "title": "8-bit game-pricing1",
+      "description": "Loot tier pricing with rarity classes.",
+      "categories": ["game"],
+      "registryDependencies": ["badge", "button", "card", "separator"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-pricing1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-pricing1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "game-stats1",
+      "type": "registry:block",
+      "title": "8-bit game-stats1",
+      "description": "Match-end stats strip.",
+      "categories": ["game"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-stats1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-stats1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
     }
   ]
 }

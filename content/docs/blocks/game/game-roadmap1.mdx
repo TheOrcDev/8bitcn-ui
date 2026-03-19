@@ -1,0 +1,19 @@
+---
+title: Quest Roadmap
+description: Roadmap as quest log with completed/active/locked states.
+---
+
+import UgameUroadmap1 from "@/components/ui/8bit/blocks/game-roadmap1";
+import CopyCommandButton from "@/components/copy-command-button";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/game-roadmap1"
+    command="pnpm dlx shadcn@latest add @8bitcn/game-roadmap1"
+  />
+</div>
+
+<ComponentPreview title="Quest Roadmap" name="game-roadmap1">
+  <UgameUroadmap1 />
+</ComponentPreview>

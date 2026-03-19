@@ -52,10 +52,12 @@ export default function Home() {
 
         <div className="flex gap-4">
           <Link href="/docs">
-            <Button>Open Docs</Button>
+            <Button className="text-xs md:text-sm">Open Docs</Button>
           </Link>
           <Link href="/blocks">
-            <Button variant="outline">Explore Blocks</Button>
+            <Button className="text-xs md:text-sm" variant="outline">
+              Explore Blocks
+            </Button>
           </Link>
         </div>
       </section>

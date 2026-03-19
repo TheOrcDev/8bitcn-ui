@@ -50,6 +50,16 @@ const featuredBlocks = [
     bestFor: "Social proof and testimonials",
     slug: "social-proof/social-proof3",
   },
+  {
+    name: "Quest Roadmap",
+    bestFor: "Game-style product roadmaps",
+    slug: "game/game-roadmap1",
+  },
+  {
+    name: "Health Bar Hero",
+    bestFor: "Launch pages with progress indicators",
+    slug: "game/game-hero1",
+  },
 ];
 
 const categories = [
@@ -62,6 +72,7 @@ const categories = [
   { title: "CTA", count: 2, slug: "cta" },
   { title: "Team", count: 3, slug: "team" },
   { title: "Advanced", count: 3, slug: "advanced" },
+  { title: "Game", count: 4, slug: "game" },
   { title: "Layout", count: 1, slug: "layout" },
 ];
 
