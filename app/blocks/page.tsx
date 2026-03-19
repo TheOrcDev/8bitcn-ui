@@ -1,4 +1,8 @@
 import Link from "next/link";
+import Feature3 from "@/components/ui/8bit/blocks/feature3";
+import Hero2 from "@/components/ui/8bit/blocks/hero2";
+import Pricing1 from "@/components/ui/8bit/blocks/pricing1";
+import Timeline3 from "@/components/ui/8bit/blocks/timeline3";
 import { Badge } from "@/components/ui/8bit/badge";
 import { Button } from "@/components/ui/8bit/button";
 import {
@@ -19,48 +23,6 @@ const highlights = [
   "Registry entries for every block",
 ];
 
-const featuredBlocks = [
-  {
-    name: "Split Hero",
-    bestFor: "Product launches with a visual preview",
-    slug: "hero/hero2",
-  },
-  {
-    name: "Feature Carousel",
-    bestFor: "Scrollable feature highlights",
-    slug: "features/feature3",
-  },
-  {
-    name: "Tier Cards",
-    bestFor: "SaaS pricing pages",
-    slug: "pricing/pricing1",
-  },
-  {
-    name: "Zigzag Roadmap",
-    bestFor: "Public product roadmaps",
-    slug: "timeline/timeline3",
-  },
-  {
-    name: "Demo Shell",
-    bestFor: "Showing install commands",
-    slug: "advanced/advanced1",
-  },
-  {
-    name: "Review Carousel",
-    bestFor: "Social proof and testimonials",
-    slug: "social-proof/social-proof3",
-  },
-  {
-    name: "Quest Roadmap",
-    bestFor: "Game-style product roadmaps",
-    slug: "game/game-roadmap1",
-  },
-  {
-    name: "Health Bar Hero",
-    bestFor: "Launch pages with progress indicators",
-    slug: "game/game-hero1",
-  },
-];
 
 const categories = [
   { title: "Hero", count: 3, slug: "hero" },
@@ -159,32 +121,35 @@ export default function BlocksPage() {
 
       <Separator />
 
-      {/* Featured Blocks */}
+      {/* Live Block Showcase */}
       <section className="py-12">
-        <div className="mb-6 flex items-center justify-between">
-          <h2 className="retro font-bold text-lg">Best of v2</h2>
-          <Link href="/docs/blocks">
-            <Button size="sm" variant="outline">
-              View all docs
-            </Button>
-          </Link>
+        <h2 className="retro mb-8 text-center font-bold text-lg">
+          See it in action
+        </h2>
+
+        <div className="flex flex-col gap-12">
+          <Hero2
+            actions={[
+              { label: "GET STARTED", variant: "default", href: "/docs" },
+              { label: "VIEW BLOCKS", variant: "outline", href: "/blocks" },
+            ]}
+            badges={[{ label: "Open Source" }, { label: "v2", variant: "secondary" }]}
+            description="Drop-in 8-bit styled components that work with your existing stack. No config, no headaches."
+            subtitle="Retro components for the modern web"
+            title="SHIP FASTER"
+          />
+
+          <Timeline3 />
+
+          <Pricing1 />
+
+          <Feature3 />
         </div>
 
-        <div className="grid gap-x-4 gap-y-1 sm:grid-cols-2">
-          {featuredBlocks.map((block) => (
-            <Link href={`/docs/blocks/${block.slug}`} key={block.slug}>
-              <Card className="h-full transition-all hover:border-primary/30">
-                <CardHeader className="pb-2">
-                  <CardTitle className="retro text-xs">{block.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-[10px]">
-                    Best for: {block.bestFor}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
+        <div className="mt-8 text-center">
+          <Link href="/docs/blocks">
+            <Button variant="outline">See all 35 blocks</Button>
+          </Link>
         </div>
       </section>
 
