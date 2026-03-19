@@ -137,7 +137,41 @@ export default function BlocksPage() {
             <h3 className="retro border-border/50 border-b bg-muted/30 py-3 text-center text-muted-foreground text-xs">
               Zigzag Roadmap
             </h3>
-            <Timeline3 />
+            <Timeline3
+              title="The Journey of 8bitcn"
+              description="From a single component to a full design system"
+              events={[
+                {
+                  icon: "I",
+                  title: "The First Pixel",
+                  description: "It started with a button. One 8-bit styled button that looked nothing like the rest of the internet.",
+                  badge: "ORIGIN",
+                },
+                {
+                  icon: "II",
+                  title: "The Orcish Forge",
+                  description: "50+ components hammered into shape. Cards, inputs, dialogs — the foundation of every retro UI.",
+                  badge: "DONE",
+                },
+                {
+                  icon: "III",
+                  title: "The Great Expansion",
+                  description: "36 full page blocks dropped. Hero sections, pricing tables, FAQs, timelines — entire pages in minutes.",
+                  badge: "NOW",
+                },
+                {
+                  icon: "IV",
+                  title: "The Game Pack",
+                  description: "8 game-themed blocks. Quest roadmaps, skill trees, party grids, boss fight CTAs. The arcade comes to the web.",
+                  badge: "NOW",
+                },
+                {
+                  icon: "V",
+                  title: "The Dragon Hoard",
+                  description: "Full landing page templates. Pick a template, customize the props, deploy in one click.",
+                },
+              ]}
+            />
           </div>
 
           <div className="overflow-hidden rounded-lg border border-border/50 bg-card/30 pb-4">
