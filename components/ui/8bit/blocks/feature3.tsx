@@ -88,9 +88,9 @@ export default function Feature3({
               </h2>
             )}
             {description && (
-              <p className="mx-auto max-w-xl retro text-muted-foreground text-[9px]">
+              <span className="mx-auto block max-w-xl retro text-muted-foreground text-[9px]">
                 {description}
-              </p>
+              </span>
             )}
           </div>
         )}
