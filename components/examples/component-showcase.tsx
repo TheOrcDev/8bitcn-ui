@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { CommandExample } from "@/components/examples/command";
 import {
@@ -60,6 +61,7 @@ import GameProgress from "../ui/8bit/blocks/game-progress";
 import MainMenu from "../ui/8bit/blocks/main-menu";
 import { Button } from "../ui/8bit/button";
 import EnemyHealthDisplay from "../ui/8bit/enemy-health-display";
+import HealthBar from "../ui/8bit/health-bar";
 import ManaBar from "../ui/8bit/mana-bar";
 import { Spinner } from "../ui/8bit/spinner";
 import { DatePicker } from "./date-picker";
@@ -121,6 +123,17 @@ export default function ComponentShowcase() {
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
+        </div>
+
+        <div className="flex flex-col items-center gap-2">
+          <ManaBar className="w-full" value={65} />
+          <Image
+            alt="Wizard"
+            className="pixelated"
+            height={100}
+            src="/images/8bit-wizard.png"
+            width={100}
+          />
         </div>
 
         <AudioSettings className="mt-1" />
@@ -361,6 +374,17 @@ export default function ComponentShowcase() {
       {/* Column 3 */}
       <div className="flex w-full flex-col gap-1">
         <Input placeholder="Enter your name" />
+
+        <div className="flex flex-col items-center gap-2">
+          <HealthBar value={45} />
+          <Image
+            alt="Troll"
+            className="pixelated"
+            height={100}
+            src="/images/8bit-troll.png"
+            width={100}
+          />
+        </div>
 
         <Menubar>
           <MenubarMenu>
