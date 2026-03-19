@@ -54,9 +54,9 @@ import DifficultySelect from "../ui/8bit/blocks/difficulty-select";
 import GameOver from "../ui/8bit/blocks/game-over";
 import GameProgress from "../ui/8bit/blocks/game-progress";
 import MainMenu from "../ui/8bit/blocks/main-menu";
+import NotFound1 from "../ui/8bit/blocks/not-found1";
 import { Button } from "../ui/8bit/button";
 import EnemyHealthDisplay from "../ui/8bit/enemy-health-display";
-import NotFound1 from "../ui/8bit/blocks/not-found1";
 import HealthBar from "../ui/8bit/health-bar";
 import ManaBar from "../ui/8bit/mana-bar";
 import { Spinner } from "../ui/8bit/spinner";
@@ -343,8 +343,8 @@ export default function ComponentShowcase() {
         <GameProgress />
 
         <Card>
-          <CardContent className="pt-4">
-            <NotFound1 className="py-8" />
+          <CardContent>
+            <NotFound1 />
           </CardContent>
         </Card>
       </div>
