@@ -41,23 +41,22 @@ const totalBlocks = categories.reduce((sum, cat) => sum + cat.count, 0);
 
 export default function BlocksPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4">
+    <div className="mx-auto max-w-5xl px-4">
       {/* Launch Hero */}
       <section className="flex flex-col items-center py-16 text-center md:py-24">
+        <p className="retro mb-4 text-[10px] text-muted-foreground">
+          20th March 2026
+        </p>
+
         <Badge className="mb-6">v2</Badge>
 
         <h1 className="retro mb-4 max-w-2xl font-bold text-3xl tracking-tight md:text-5xl">
           35 New Blocks Just Dropped
         </h1>
 
-        <p className="mx-auto mb-2 max-w-lg text-muted-foreground text-xs leading-relaxed">
+        <p className="mx-auto mb-6 max-w-lg text-muted-foreground text-xs leading-relaxed">
           A complete rebuild. New logo, new landing page, and {totalBlocks}{" "}
-          production-ready page sections — all built with 8bitcn components.
-        </p>
-
-        <p className="retro mb-8 text-[10px] text-muted-foreground">
-          20th March 2026 / v2.0 / {totalBlocks} blocks / {categories.length}{" "}
-          categories
+          production-ready page sections all built with 8bitcn components.
         </p>
 
         <div className="flex gap-4">
@@ -89,30 +88,17 @@ export default function BlocksPage() {
 
       {/* Story */}
       <section className="py-12">
-        <div className="grid gap-8 md:grid-cols-2">
-          <div>
-            <h3 className="retro mb-3 font-bold text-sm">
-              Why we rebuilt 8bitcn
-            </h3>
-            <p className="text-muted-foreground text-xs leading-relaxed">
-              The original 8bitcn was components only. Good primitives, but
-              users still had to build pages from scratch. v2 adds blocks — full
-              page sections you can combine into complete landing pages in
-              minutes. We also cleaned up spacing, fixed border consistency, and
-              gave everything a fresh coat of pixels.
-            </p>
-          </div>
-          <div>
-            <h3 className="retro mb-3 font-bold text-sm">
-              How v2 improves shipping speed
-            </h3>
-            <p className="text-muted-foreground text-xs leading-relaxed">
-              Instead of building a hero section from Card + Badge + Button
-              manually, you install one block and customize the props. Every
-              block is copy-paste ready, uses only 8bitcn components, and works
-              in dark mode out of the box. Hero to deploy in under an hour.
-            </p>
-          </div>
+        <div className="grid gap-8">
+          <h3 className="retro mb-3 font-bold text-sm">
+            Why we rebuilt 8bitcn
+          </h3>
+          <p className="text-muted-foreground text-xs leading-relaxed">
+            The original 8bitcn was components only. Good primitives, but users
+            still had to build pages from scratch. v2 adds blocks — full page
+            sections you can combine into complete landing pages in minutes. We
+            also cleaned up spacing, fixed border consistency, and gave
+            everything a fresh coat of pixels.
+          </p>
         </div>
       </section>
 
@@ -125,35 +111,43 @@ export default function BlocksPage() {
         </h2>
 
         <div className="flex flex-col gap-12">
-          <div>
-            <h3 className="retro mb-4 text-center text-muted-foreground text-xs">Split Hero</h3>
+          <div className="overflow-hidden rounded-lg border border-border/50 bg-card/30 pb-4">
+            <h3 className="retro border-b border-border/50 bg-muted/30 py-3 text-center text-muted-foreground text-xs">
+              Split Hero
+            </h3>
             <Hero2
-            actions={[
-              { label: "GET STARTED", variant: "default", href: "/docs" },
-              { label: "VIEW BLOCKS", variant: "outline", href: "/blocks" },
-            ]}
-            badges={[
-              { label: "Open Source" },
-              { label: "v2", variant: "secondary" },
-            ]}
-            description="Drop-in 8-bit styled components that work with your existing stack. No config, no headaches."
-            subtitle="Retro components for the modern web"
-            title="SHIP FASTER"
-          />
+              actions={[
+                { label: "GET STARTED", variant: "default", href: "/docs" },
+                { label: "VIEW BLOCKS", variant: "outline", href: "/blocks" },
+              ]}
+              badges={[
+                { label: "Open Source" },
+                { label: "v2", variant: "secondary" },
+              ]}
+              description="Drop-in 8-bit styled components that work with your existing stack. No config, no headaches."
+              subtitle="Retro components for the modern web"
+              title="SHIP FASTER"
+            />
           </div>
 
-          <div>
-            <h3 className="retro mb-4 text-center text-muted-foreground text-xs">Zigzag Roadmap</h3>
+          <div className="overflow-hidden rounded-lg border border-border/50 bg-card/30 pb-4">
+            <h3 className="retro border-b border-border/50 bg-muted/30 py-3 text-center text-muted-foreground text-xs">
+              Zigzag Roadmap
+            </h3>
             <Timeline3 />
           </div>
 
-          <div>
-            <h3 className="retro mb-4 text-center text-muted-foreground text-xs">Tier Cards</h3>
+          <div className="overflow-hidden rounded-lg border border-border/50 bg-card/30 pb-4">
+            <h3 className="retro border-b border-border/50 bg-muted/30 py-3 text-center text-muted-foreground text-xs">
+              Tier Cards
+            </h3>
             <Pricing1 />
           </div>
 
-          <div>
-            <h3 className="retro mb-4 text-center text-muted-foreground text-xs">Feature Carousel</h3>
+          <div className="overflow-hidden rounded-lg border border-border/50 bg-card/30 pb-4">
+            <h3 className="retro border-b border-border/50 bg-muted/30 py-3 text-center text-muted-foreground text-xs">
+              Feature Carousel
+            </h3>
             <Feature3 />
           </div>
         </div>
@@ -223,8 +217,6 @@ export default function BlocksPage() {
           ))}
         </div>
       </section>
-
-      
 
       <Separator />
 
