@@ -84,7 +84,8 @@ export default function Pricing3({
           </div>
         )}
 
-        <Card>
+        <div className="overflow-x-auto">
+        <Card className="min-w-[500px]">
           {/* Header row with tier names + prices */}
           <CardHeader>
             <div className="grid grid-cols-4 gap-4">
@@ -147,6 +148,7 @@ export default function Pricing3({
             </div>
           </CardContent>
         </Card>
+        </div>
       </div>
     </section>
   );
