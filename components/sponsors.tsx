@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Avatar, AvatarImage } from "@/components/ui/8bit/avatar";
 import { cn } from "@/lib/utils";
 import MythicSponsor from "./mythic-sponsor";
+import SponsorClaim from "./sponsor-claim";
 import { Button } from "./ui/8bit/button";
 import { Separator } from "./ui/8bit/separator";
 
@@ -115,18 +116,16 @@ export default function Sponsors() {
             </div>
           </Link>
         ))}
-        <Link
-          className="flex flex-col items-center gap-4"
-          href="https://github.com/sponsors/theorcdev"
-          target="_blank"
-        >
-          <div className="flex size-60 items-center justify-center border-4 border-muted-foreground/20 border-dashed">
-            <span className="retro text-muted-foreground/40 text-xs">
-              Your logo here
-            </span>
-          </div>
+        <div className="flex flex-col items-center gap-4">
+          <SponsorClaim
+            className="cursor-pointer"
+            labelClassName="flex size-60 items-center justify-center border-4 border-dashed border-muted-foreground/20"
+            text="Be here"
+            textClassName="retro text-muted-foreground/40 text-xs"
+            tier="mythic"
+          />
           <p className="font-bold text-muted-foreground/40 text-sm">?</p>
-        </Link>
+        </div>
       </div>
 
       <h2 className="font-bold text-xl">LEGENDARY Sponsors</h2>
@@ -147,19 +146,19 @@ export default function Sponsors() {
           </Link>
         ))}
         {[1, 2, 3, 4].map((i) => (
-          <Link
+          <div
             className="flex flex-col items-center gap-4"
-            href="https://github.com/sponsors/theorcdev"
             key={`legendary-empty-${i}`}
-            target="_blank"
           >
-            <div className="flex size-50 items-center justify-center border-4 border-dashed border-muted-foreground/20">
-              <span className="retro text-[9px] text-muted-foreground/40">
-                Be here
-              </span>
-            </div>
+            <SponsorClaim
+              className="cursor-pointer"
+              labelClassName="flex size-50 items-center justify-center border-4 border-dashed border-muted-foreground/20"
+              text="Be here"
+              textClassName="retro text-[9px] text-muted-foreground/40"
+              tier="legendary"
+            />
             <p className="font-bold text-muted-foreground/40 text-sm">?</p>
-          </Link>
+          </div>
         ))}
       </div>
 
@@ -167,19 +166,19 @@ export default function Sponsors() {
 
       <div className="flex flex-wrap items-center justify-center gap-6">
         {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-          <Link
+          <div
             className="flex flex-col items-center gap-3"
-            href="https://github.com/sponsors/theorcdev"
             key={`sponsor-empty-${i}`}
-            target="_blank"
           >
-            <div className="flex size-30 items-center justify-center border-4 border-dashed border-muted-foreground/20">
-              <span className="retro text-[8px] text-muted-foreground/40">
-                Be here
-              </span>
-            </div>
+            <SponsorClaim
+              className="cursor-pointer"
+              labelClassName="flex size-30 items-center justify-center border-4 border-dashed border-muted-foreground/20"
+              text="Be here"
+              textClassName="retro text-[8px] text-muted-foreground/40"
+              tier="regular"
+            />
             <p className="font-bold text-muted-foreground/40 text-xs">?</p>
-          </Link>
+          </div>
         ))}
       </div>
 

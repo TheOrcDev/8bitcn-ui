@@ -58,7 +58,12 @@ export function SelectThemeDropdown({
                 className="inline-block h-3 w-3 border border-foreground"
                 style={{ backgroundColor: theme.color }}
               />
-              <span>{theme.name.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}</span>
+              <span>
+                {theme.name
+                  .split("-")
+                  .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+                  .join(" ")}
+              </span>
             </div>
           </SelectItem>
         ))}
