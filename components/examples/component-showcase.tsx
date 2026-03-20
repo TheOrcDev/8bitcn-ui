@@ -24,7 +24,6 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/8bit/dropdown-menu";
 import { Input } from "@/components/ui/8bit/input";
@@ -67,22 +66,27 @@ export default function ComponentShowcase() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Temporarily block scrollIntoView during showcase mount.
-    // Multiple libraries (cmdk, Radix) call scrollIntoView on mount,
-    // which jumps the page to the middle on load.
+    // Block scrollIntoView during showcase mount for 600ms.
+    // Multiple libraries (cmdk, Radix, health bars) call scrollIntoView
+    // on mount or after delayed effects, jumping the page to middle content.
     const original = Element.prototype.scrollIntoView;
     // biome-ignore lint/suspicious/noEmptyBlockStatements: Temporarily block scrollIntoView during showcase mount.
     Element.prototype.scrollIntoView = () => {};
 
     setMounted(true);
 
-    // Restore after a tick so interactive scrolling still works
-    const timer = requestAnimationFrame(() => {
+    // Force scroll to top if page jumped during mount
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+
+    // Restore after 600ms — long enough for all delayed mount effects
+    const timer = setTimeout(() => {
       Element.prototype.scrollIntoView = original;
-    });
+    }, 600);
 
     return () => {
-      cancelAnimationFrame(timer);
+      clearTimeout(timer);
       Element.prototype.scrollIntoView = original;
     };
   }, []);
@@ -108,14 +112,8 @@ export default function ComponentShowcase() {
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                <DropdownMenuItem>
-                  Profile
-                  <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  Billing
-                  <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-                </DropdownMenuItem>
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Billing</DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
