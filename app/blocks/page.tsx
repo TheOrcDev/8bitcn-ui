@@ -55,7 +55,7 @@ export default function BlocksPage() {
           34 New Blocks Just Dropped
         </h1>
 
-        <p className="mx-auto mb-6 max-w-lg text-muted-foreground text-xs leading-relaxed">
+        <p className="retro mx-auto mb-6 max-w-lg text-[9px] text-muted-foreground leading-relaxed">
           A complete rebuild. New logo, new landing page, and {totalBlocks}{" "}
           production-ready page sections all built with 8bitcn components.
         </p>
