@@ -1,7 +1,7 @@
 import Link from "next/link";
 import ComponentShowcase from "@/components/examples/component-showcase";
 import Sponsors from "@/components/sponsors";
-import { BouncingBadge } from "@/components/bouncing-badge";
+import { Badge } from "@/components/ui/8bit/badge";
 import { Button } from "@/components/ui/8bit/button";
 import { Separator } from "@/components/ui/8bit/separator";
 
@@ -11,7 +11,7 @@ export default function Home() {
       {/* Hero */}
       <section className="flex flex-col items-center py-8 text-center md:py-10">
         <Link href="/blocks">
-          <BouncingBadge>
+          <Badge className="mb-6">
             v2 — 34 new blocks
             <svg
               aria-label="arrow-right"
@@ -38,7 +38,7 @@ export default function Home() {
               <rect height="14" rx="1" width="14" x="144" y="88" />
               <rect height="14" rx="1" width="14" x="128" y="120" />
             </svg>
-          </BouncingBadge>
+          </Badge>
         </Link>
 
         <h1 className="retro mb-4 max-w-5xl font-bold text-lg tracking-tight md:text-2xl lg:text-5xl">
