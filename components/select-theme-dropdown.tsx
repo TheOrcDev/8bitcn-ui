@@ -23,6 +23,15 @@ const themes = [
   { name: Theme.Cassette, color: "#8B5A2B" },
   { name: Theme.RustyByte, color: "#d2691e" },
   { name: Theme.Zelda, color: "oklch(0.75 0.2 90)" },
+  { name: Theme.DungeonTorch, color: "#c87533" },
+  { name: Theme.SpaceStation, color: "#2196f3" },
+  { name: Theme.PixelForest, color: "#4caf50" },
+  { name: Theme.IceCavern, color: "#81d4fa" },
+  { name: Theme.LavaCore, color: "#e64a19" },
+  { name: Theme.GlitchMode, color: "#00ffcc" },
+  { name: Theme.DwarvenVault, color: "#c8a600" },
+  { name: Theme.DragonHoard, color: "#c62828" },
+  { name: Theme.AncientRunes, color: "#009688" },
 ];
 
 export function SelectThemeDropdown({
