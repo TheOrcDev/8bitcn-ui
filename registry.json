@@ -710,7 +710,7 @@
       "description": "A simple 8-bit game progress component",
       "dependencies": ["@radix-ui/react-progress"],
       "categories": ["gaming"],
-      "registryDependencies": ["card", "health-bar", "mana-bar", "progress"],
+      "registryDependencies": ["card", "progress"],
       "files": [
         {
           "path": "components/ui/8bit/blocks/game-progress.tsx",
@@ -1604,14 +1604,7 @@
       "type": "registry:block",
       "title": "8-bit Player Profile Card",
       "description": "A comprehensive player profile card component with stats, health/mana bars, and custom stats support.",
-      "registryDependencies": [
-        "avatar",
-        "badge",
-        "card",
-        "health-bar",
-        "mana-bar",
-        "progress"
-      ],
+      "registryDependencies": ["avatar", "badge", "card", "progress"],
       "categories": ["gaming"],
       "files": [
         {
@@ -2022,8 +2015,6 @@
         "avatar",
         "badge",
         "card",
-        "health-bar",
-        "mana-bar",
         "progress",
         "separator"
       ],
