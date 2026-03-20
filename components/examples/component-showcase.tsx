@@ -385,8 +385,8 @@ export default function ComponentShowcase() {
                   <SelectItem value="system">System</SelectItem>
                 </SelectContent>
               </Select>
-              <div className="flex items-center justify-center">
-                <DatePicker className="w-[300px]" />
+              <div className="flex w-full items-center justify-center">
+                <DatePicker className="w-full max-w-[300px]" />
               </div>
               <EnemyHealthDisplay
                 currentHealth={850}
