@@ -37,19 +37,27 @@ import {
   MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/8bit/menubar";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/8bit/select";
 import { Textarea } from "@/components/ui/8bit/textarea";
-import ChapterIntro from "../ui/8bit/blocks/chapter-intro";
 import CharacterSheet from "../ui/8bit/blocks/character-sheet";
 import Dialogue from "../ui/8bit/blocks/dialogue";
 import DifficultySelect from "../ui/8bit/blocks/difficulty-select";
 import GameOver from "../ui/8bit/blocks/game-over";
-import GameProgress from "../ui/8bit/blocks/game-progress";
 import MainMenu from "../ui/8bit/blocks/main-menu";
 import NotFound1 from "../ui/8bit/blocks/not-found1";
 import { Button } from "../ui/8bit/button";
+import EnemyHealthDisplay from "../ui/8bit/enemy-health-display";
 import HealthBar from "../ui/8bit/health-bar";
 import ManaBar from "../ui/8bit/mana-bar";
+import { Spinner } from "../ui/8bit/spinner";
 import XpBar from "../ui/8bit/xp-bar";
+import { DatePicker } from "./date-picker";
 import { DrawerExample } from "./drawer";
 import ThemeSelectorShowcase from "./theme-selector-showcase";
 
@@ -364,6 +372,42 @@ export default function ComponentShowcase() {
 
         <Card>
           <CardContent className="flex flex-col gap-4">
+            <div className="flex flex-wrap gap-4">
+              <Spinner className="size-10" variant="diamond" />
+              <Spinner className="size-10" variant="classic" />
+              <Select>
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder="Theme" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="light">Light</SelectItem>
+                  <SelectItem value="dark">Dark</SelectItem>
+                  <SelectItem value="system">System</SelectItem>
+                </SelectContent>
+              </Select>
+              <div className="flex items-center justify-center">
+                <DatePicker className="w-[300px]" />
+              </div>
+              <EnemyHealthDisplay
+                currentHealth={850}
+                enemyName="Fire Dragon"
+                level={25}
+                maxHealth={1000}
+              />
+
+              <div className="w-full">
+                <div className="retro mb-1 flex justify-between text-[10px]">
+                  <span>XP</span>
+                  <span>1400/1400</span>
+                </div>
+                <XpBar levelUpMessage="DING" value={100} variant="retro" />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="flex flex-col gap-4">
             <Dialogue
               avatarFallback="Orc"
               avatarSrc="/images/pixelized-8bitcnorc.jpg"
@@ -384,18 +428,6 @@ export default function ComponentShowcase() {
         </Card>
 
         <GameOver />
-
-        <ChapterIntro
-          align="center"
-          backgroundSrc="/images/forest-goblins.png"
-          className="mx-auto w-full text-white md:w-full"
-          darken={0.5}
-          height="md"
-          subtitle="Defeat the goblins to pass through the forest."
-          title="LEVEL 2: GOBLINS"
-        />
-
-        <GameProgress />
 
         <Card>
           <CardContent>

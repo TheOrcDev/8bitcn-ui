@@ -70,7 +70,7 @@ export default function Footer1({
             <p className="retro mb-4 text-muted-foreground text-[8px] leading-relaxed">
               {description}
             </p>
-            <Button className="text-xs">
+            <Button className="text-[9px]">
               GET STARTED
             </Button>
           </div>

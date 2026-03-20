@@ -12,7 +12,7 @@ export default function Home() {
       <section className="flex flex-col items-center py-8 text-center md:py-10">
         <Link href="/v2">
           <Badge className="mb-6">
-            v2 — 34 new blocks
+            v2 — 35 new blocks
             <svg
               aria-label="arrow-right"
               className="pixel-nudge-right size-7!"

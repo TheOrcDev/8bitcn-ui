@@ -53,7 +53,7 @@ export default function BlocksPage() {
         <Badge className="mb-6">v2</Badge>
 
         <h1 className="retro mb-4 max-w-2xl font-bold text-3xl tracking-tight md:text-5xl">
-          34 New Blocks Just Dropped
+          35 New Blocks Just Dropped
         </h1>
 
         <p className="retro mx-auto mb-6 max-w-lg text-[9px] text-muted-foreground leading-relaxed">
@@ -217,7 +217,7 @@ export default function BlocksPage() {
 
         <div className="mt-8 text-center">
           <Link href="/docs/blocks">
-            <Button variant="outline">See all 34 blocks</Button>
+            <Button variant="outline">See all 35 blocks</Button>
           </Link>
         </div>
       </section>

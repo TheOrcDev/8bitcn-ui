@@ -6,5 +6,5 @@ export const metadata: Metadata = {
 };
 
 export default function NotFound() {
-  return <NotFound1 className="h-screen" />;
+  return <NotFound1 />;
 }
