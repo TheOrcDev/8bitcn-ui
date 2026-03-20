@@ -40,7 +40,7 @@ A compact highlight section with 4–6 launch bullets:
 - refreshed landing page
 - 27 new blocks
 - improved docs/navigation
-- quality pass / consistency
+- 9 new themes (Dungeon Torch, Space Station, Pixel Forest, Ice Cavern, Lava Core, Glitch Mode, Dwarven Vault, Dragon Hoard, Ancient Runes)
 
 Use simple row/list cards, not huge blocks.
 
@@ -91,14 +91,26 @@ This replaces the giant raw grid and improves scannability.
 
 ---
 
-## 6) “Built to Ship” Principles
+## 6) Theme Expansion Spotlight
 
-3 short principle cards:
-- copy-paste ready
-- 8bitcn-only components
-- playful retro, production usable
+Replace the old “Consistent spacing and border fixes” messaging with a dedicated theme section.
 
-Keep this practical and concise.
+### Content
+- Section title: `New Theme Expansion`
+- Intro paragraph: `v2 now includes nine handcrafted fantasy/sci-fi inspired themes, so your UI can shift mood instantly without changing structure.`
+- Theme chips/cards for:
+  - Dungeon Torch
+  - Space Station
+  - Pixel Forest
+  - Ice Cavern
+  - Lava Core
+  - Glitch Mode
+  - Dwarven Vault
+  - Dragon Hoard
+  - Ancient Runes
+- CTA: `Explore Themes` -> `/themes`
+
+Keep this section visual and concise (chips + short copy).
 
 ---
 
@@ -141,7 +153,7 @@ Create section-level building blocks:
 - `V2StorySection`
 - `FeaturedBlocksShowcase`
 - `BlocksCategorySnapshot`
-- `BuiltToShipSection`
+- `ThemeExpansionSection`
 - `RoadmapSpotlight`
 - `BlocksFinalCta`
 
@@ -162,7 +174,7 @@ Then compose them in `app/blocks/page.tsx`.
 - Add category snapshot with counts/links
 
 ## Phase BL3 — Trust + Future
-- Add Built to Ship principles
+- Add Theme Expansion section
 - Add Roadmap spotlight
 - Final spacing/typography polish
 

@@ -46,7 +46,6 @@ import {
 } from "@/components/ui/8bit/select";
 
 import { Textarea } from "@/components/ui/8bit/textarea";
-
 import ChapterIntro from "../ui/8bit/blocks/chapter-intro";
 import Dialogue from "../ui/8bit/blocks/dialogue";
 import DifficultySelect from "../ui/8bit/blocks/difficulty-select";
@@ -61,6 +60,7 @@ import { Spinner } from "../ui/8bit/spinner";
 import XpBar from "../ui/8bit/xp-bar";
 import { DatePicker } from "./date-picker";
 import { DrawerExample } from "./drawer";
+import ThemeSelectorShowcase from "./theme-selector-showcase";
 
 export default function ComponentShowcase() {
   const [mounted, setMounted] = useState(false);
@@ -100,8 +100,10 @@ export default function ComponentShowcase() {
   return (
     <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {/* Column 1 */}
-      <div className="mt-1.5 flex flex-col gap-1">
-        <div className="mb-2 flex flex-col gap-4">
+      <div className="flex flex-col gap-1">
+        <ThemeSelectorShowcase />
+
+        <div className="mt-1.5 mb-2 flex flex-col gap-4">
           <Button>Button</Button>
 
           <DrawerExample />
