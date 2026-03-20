@@ -136,19 +136,23 @@ export default function ComponentShowcase() {
 
         <MainMenu />
 
-        <Alert>
-          <AlertTitle>Info</AlertTitle>
-          <AlertDescription>
-            Your game progress has been saved successfully.
-          </AlertDescription>
-        </Alert>
+        <div className="my-1.5">
+          <Alert>
+            <AlertTitle>Info</AlertTitle>
+            <AlertDescription>
+              Your game progress has been saved successfully.
+            </AlertDescription>
+          </Alert>
+        </div>
 
-        <Alert variant="destructive">
-          <AlertTitle>Warning</AlertTitle>
-          <AlertDescription>
-            Low health! Find a health potion quickly.
-          </AlertDescription>
-        </Alert>
+        <div className="my-1.5">
+          <Alert variant="destructive">
+            <AlertTitle>Warning</AlertTitle>
+            <AlertDescription>
+              Low health! Find a health potion quickly.
+            </AlertDescription>
+          </Alert>
+        </div>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

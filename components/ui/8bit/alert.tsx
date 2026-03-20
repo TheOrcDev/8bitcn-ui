@@ -29,11 +29,9 @@ export interface BitAlertProps
   extends React.ComponentProps<"div">,
     VariantProps<typeof alertVariants> {}
 
-function Alert({ children, ...props }: BitAlertProps) {
-  const { variant, className, font } = props;
-
+function Alert({ children, className, font, variant, ...props }: BitAlertProps) {
   return (
-    <div className={cn("relative m-1.5", className)}>
+    <div className="relative">
       <ShadcnAlert
         {...props}
         variant={variant}

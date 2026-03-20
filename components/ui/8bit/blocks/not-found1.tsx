@@ -17,8 +17,8 @@ interface NotFound1Props {
 }
 
 export default function NotFound1({
-  title = "Uh-oh!",
-  description = "You are lost. This dungeon does not exist.",
+  title = "You made the Ogre angry!",
+  description = "This room doesn't exist. Turn back before it's too late.",
   cta = "Return to Home Page",
   href = "/",
   imageSrc = "/images/8bit-ogre.png",
