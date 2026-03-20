@@ -1730,3 +1730,18 @@
   --ring: oklch(0.6 0.12 185);
   --ring: oklch(0.35 0.06 188);
 }
+
+@keyframes pixel-nudge-right {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(3px);
+  }
+}
+
+.pixel-nudge-right {
+  animation: pixel-nudge-right 900ms steps(2, end) infinite;
+}

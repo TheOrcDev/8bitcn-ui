@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { CommandExample } from "@/components/examples/command";
 import {
@@ -36,14 +37,6 @@ import {
   MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/8bit/menubar";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/8bit/select";
-
 import { Textarea } from "@/components/ui/8bit/textarea";
 import ChapterIntro from "../ui/8bit/blocks/chapter-intro";
 import CharacterSheet from "../ui/8bit/blocks/character-sheet";
@@ -54,11 +47,9 @@ import GameProgress from "../ui/8bit/blocks/game-progress";
 import MainMenu from "../ui/8bit/blocks/main-menu";
 import NotFound1 from "../ui/8bit/blocks/not-found1";
 import { Button } from "../ui/8bit/button";
-import EnemyHealthDisplay from "../ui/8bit/enemy-health-display";
+import HealthBar from "../ui/8bit/health-bar";
 import ManaBar from "../ui/8bit/mana-bar";
-import { Spinner } from "../ui/8bit/spinner";
 import XpBar from "../ui/8bit/xp-bar";
-import { DatePicker } from "./date-picker";
 import { DrawerExample } from "./drawer";
 import ThemeSelectorShowcase from "./theme-selector-showcase";
 
@@ -103,6 +94,26 @@ export default function ComponentShowcase() {
       <div className="flex flex-col gap-1">
         <ThemeSelectorShowcase />
 
+        <Link href="/sponsors">
+          <Card>
+            <CardContent className="flex items-center gap-3 p-3">
+              <Image
+                alt="Treasure"
+                className="pixelated"
+                height={150}
+                src="/images/8bit-treasure.png"
+                width={150}
+              />
+              <div className="space-y-1">
+                <p className="font-bold text-sm">Become a Sponsor</p>
+                <p className="text-[10px] text-muted-foreground">
+                  Help 8bitcn to grow
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
         <div className="mt-1.5 mb-2 flex flex-col gap-4 md:hidden">
           <Button>Button</Button>
 
@@ -122,25 +133,6 @@ export default function ComponentShowcase() {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-
-        <Card>
-          <CardContent className="flex flex-col items-center gap-2 pt-4">
-            <div className="w-full">
-              <div className="retro mb-1 flex justify-between text-[10px]">
-                <span>Wizard</span>
-                <span>140/180</span>
-              </div>
-              <ManaBar className="w-full" value={65} variant="retro" />
-            </div>
-            <Image
-              alt="Wizard"
-              className="pixelated"
-              height={300}
-              src="/images/8bit-wizard.png"
-              width={300}
-            />
-          </CardContent>
-        </Card>
 
         <MainMenu />
 
@@ -307,36 +299,60 @@ export default function ComponentShowcase() {
       {/* Column 2 */}
       <div className="flex flex-col gap-1 lg:col-span-2">
         <Card>
-          <CardContent className="flex flex-col gap-4">
-            <div className="flex flex-wrap gap-4">
-              <Spinner className="size-10" variant="diamond" />
-              <Spinner className="size-10" variant="classic" />
-              <Select>
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Theme" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="light">Light</SelectItem>
-                  <SelectItem value="dark">Dark</SelectItem>
-                  <SelectItem value="system">System</SelectItem>
-                </SelectContent>
-              </Select>
-              <div className="flex items-center justify-center">
-                <DatePicker className="w-[300px]" />
-              </div>
-              <EnemyHealthDisplay
-                currentHealth={850}
-                enemyName="Fire Dragon"
-                level={25}
-                maxHealth={1000}
-              />
-
-              <div className="w-full">
-                <div className="retro mb-1 flex justify-between text-[10px]">
-                  <span>XP</span>
-                  <span>1400/1400</span>
+          <CardHeader>
+            <CardTitle className="font-medium text-sm">Party (3/5)</CardTitle>
+          </CardHeader>
+          <CardContent className="pt-0">
+            <div className="grid gap-3 md:grid-cols-3">
+              <div className="p-2">
+                <div className="w-full">
+                  <div className="retro mb-1 flex justify-between text-[10px]">
+                    <span>Wizard MP</span>
+                    <span>140/180</span>
+                  </div>
+                  <ManaBar className="w-full" value={65} variant="retro" />
                 </div>
-                <XpBar levelUpMessage="DING" value={100} variant={"retro"} />
+                <Image
+                  alt="Wizard"
+                  className="pixelated mx-auto mt-2"
+                  height={140}
+                  src="/images/8bit-wizard.png"
+                  width={140}
+                />
+              </div>
+
+              <div className="p-2">
+                <div className="w-full">
+                  <div className="retro mb-1 flex justify-between text-[10px]">
+                    <span>Troll HP</span>
+                    <span>320/450</span>
+                  </div>
+                  <HealthBar className="w-full" value={71} variant="retro" />
+                </div>
+                <Image
+                  alt="Troll"
+                  className="pixelated mx-auto mt-2"
+                  height={140}
+                  src="/images/8bit-troll.png"
+                  width={140}
+                />
+              </div>
+
+              <div className="p-2">
+                <div className="w-full">
+                  <div className="retro mb-1 flex justify-between text-[10px]">
+                    <span>Orc XP</span>
+                    <span>980/1200</span>
+                  </div>
+                  <XpBar levelUpMessage="DING" value={82} variant="retro" />
+                </div>
+                <Image
+                  alt="Orc Warrior"
+                  className="pixelated mx-auto mt-2"
+                  height={140}
+                  src="/images/8bit-orc-warrior.png"
+                  width={140}
+                />
               </div>
             </div>
           </CardContent>
@@ -407,26 +423,6 @@ export default function ComponentShowcase() {
         </div>
 
         <Input placeholder="Enter your name" />
-
-        <Card>
-          <CardContent className="flex flex-col items-center gap-2 pt-4">
-            <div className="w-full">
-              <EnemyHealthDisplay
-                currentHealth={320}
-                enemyName="Troll"
-                level={9}
-                maxHealth={450}
-              />{" "}
-            </div>
-            <Image
-              alt="Troll"
-              className="pixelated"
-              height={300}
-              src="/images/8bit-troll.png"
-              width={300}
-            />
-          </CardContent>
-        </Card>
 
         <Menubar>
           <MenubarMenu>

@@ -15,7 +15,7 @@ export default function Home() {
             v2 — 34 new blocks
             <svg
               aria-label="arrow-right"
-              className="size-7!"
+              className="pixel-nudge-right size-7!"
               fill="currentColor"
               stroke="currentColor"
               strokeWidth="0.25"
