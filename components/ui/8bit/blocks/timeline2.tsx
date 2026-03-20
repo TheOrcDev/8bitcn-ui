@@ -73,7 +73,7 @@ export default function Timeline2({
               key={step.title}
             >
               {/* Checkpoint */}
-              <div className="retro relative z-10 mb-4 flex size-14 items-center justify-center border-2 border-foreground bg-background font-bold">
+              <div className="retro relative z-10 mb-4 flex size-14 items-center justify-center border-2 border-primary bg-background font-bold">
                 {step.icon}
               </div>
 

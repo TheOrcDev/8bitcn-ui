@@ -85,7 +85,7 @@ export default function GameRoadmap1({
         )}
 
         <div className="relative">
-          <div className="absolute top-0 bottom-0 left-6 w-0.5 bg-border" />
+          <div className="absolute top-0 bottom-0 left-6 w-0 border-l-2 border-dashed border-primary/30" />
 
           <div className="flex flex-col gap-4">
             {quests.map((quest) => {
@@ -98,8 +98,8 @@ export default function GameRoadmap1({
                     className={cn(
                       "retro relative z-10 flex size-12 shrink-0 items-center justify-center border-2 bg-background text-[10px] font-bold",
                       isLocked
-                        ? "border-muted-foreground/30 text-muted-foreground/30"
-                        : "border-foreground",
+                        ? "border-muted text-muted-foreground"
+                        : "border-primary",
                     )}
                   >
                     {quest.status === "completed"

@@ -74,7 +74,7 @@ export default function Timeline1({
             {steps.map((step, idx) => (
               <div className="relative flex gap-6" key={step.title}>
                 {/* Step number */}
-                <div className="retro relative z-10 flex size-14 shrink-0 items-center justify-center border-2 border-foreground bg-background text-xl font-bold">
+                <div className="retro relative z-10 flex size-14 shrink-0 items-center justify-center border-2 border-primary bg-background text-xl font-bold">
                   {step.icon}
                 </div>
 

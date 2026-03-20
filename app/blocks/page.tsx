@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Badge } from "@/components/ui/8bit/badge";
 import { ThemeGrid } from "@/components/theme-grid";
+import { Badge } from "@/components/ui/8bit/badge";
 import Feature3 from "@/components/ui/8bit/blocks/feature3";
 import GameRoadmap1 from "@/components/ui/8bit/blocks/game-roadmap1";
 import Hero2 from "@/components/ui/8bit/blocks/hero2";
@@ -57,8 +57,9 @@ export default function BlocksPage() {
         </h1>
 
         <p className="retro mx-auto mb-6 max-w-lg text-[9px] text-muted-foreground leading-relaxed">
-          A complete rebuild. New logo, new landing page, and {totalBlocks}{" "}
-          production-ready page sections all built with 8bitcn components.
+          A complete rebuild. New logo, new landing page, new themes, and{" "}
+          {totalBlocks} production-ready page sections all built with 8bitcn
+          components.
         </p>
 
         <div className="flex gap-4">

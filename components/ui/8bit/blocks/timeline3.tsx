@@ -112,7 +112,7 @@ export default function Timeline3({
             <div className="absolute top-0 bottom-0 left-6 w-0 border-l-2 border-dashed border-border" />
             {events.map((event) => (
               <div className="relative flex gap-4 pb-6" key={event.title}>
-                <div className="retro relative z-10 flex size-12 shrink-0 items-center justify-center border-2 border-foreground bg-background font-bold text-sm">
+                <div className="retro relative z-10 flex size-12 shrink-0 items-center justify-center border-2 border-primary bg-background font-bold text-sm">
                   {event.icon}
                 </div>
                 <div className="flex-1 pt-1">
@@ -146,7 +146,7 @@ export default function Timeline3({
                   </div>
 
                   {/* Center icon */}
-                  <div className="retro relative z-10 flex size-12 shrink-0 items-center justify-center border-2 border-foreground bg-background font-bold text-sm">
+                  <div className="retro relative z-10 flex size-12 shrink-0 items-center justify-center border-2 border-primary bg-background font-bold text-sm">
                     {event.icon}
                   </div>
 

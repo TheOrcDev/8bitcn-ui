@@ -78,7 +78,7 @@ export default function Feature2({
             <div key={item.title}>
               <div className="flex gap-6 py-6">
                 {/* Icon / number */}
-                <div className="retro flex size-14 shrink-0 items-center justify-center border-2 border-foreground text-xl font-bold">
+                <div className="retro flex size-14 shrink-0 items-center justify-center border-2 border-primary text-xl font-bold">
                   {item.icon}
                 </div>
 
