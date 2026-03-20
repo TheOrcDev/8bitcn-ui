@@ -65,7 +65,7 @@ export default function Timeline2({
         {/* Horizontal on desktop, vertical on mobile */}
         <div className="relative flex flex-col gap-8 md:flex-row md:gap-0">
           {/* Horizontal line (desktop) */}
-          <div className="absolute top-7 right-0 left-0 hidden h-0.5 bg-border md:block" />
+          <div className="absolute top-7 right-0 left-0 hidden h-0 border-t-2 border-dashed border-border md:block" />
 
           {steps.map((step, idx) => (
             <div

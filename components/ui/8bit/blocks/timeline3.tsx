@@ -109,7 +109,7 @@ export default function Timeline3({
         {/* Mobile: simple vertical (icon left + card right) */}
         <div className="flex flex-col gap-6 md:hidden">
           <div className="relative">
-            <div className="absolute top-0 bottom-0 left-6 w-0.5 bg-border" />
+            <div className="absolute top-0 bottom-0 left-6 w-0 border-l-2 border-dashed border-border" />
             {events.map((event) => (
               <div className="relative flex gap-4 pb-6" key={event.title}>
                 <div className="retro relative z-10 flex size-12 shrink-0 items-center justify-center border-2 border-foreground bg-background font-bold text-sm">
@@ -125,7 +125,7 @@ export default function Timeline3({
 
         {/* Desktop: zigzag (alternating left/right) */}
         <div className="relative hidden md:block">
-          <div className="absolute top-0 bottom-0 left-1/2 w-0.5 -translate-x-1/2 bg-border" />
+          <div className="absolute top-0 bottom-0 left-1/2 w-0 -translate-x-1/2 border-l-2 border-dashed border-border" />
 
           <div className="flex flex-col gap-8">
             {events.map((event, idx) => {

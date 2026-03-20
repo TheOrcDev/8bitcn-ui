@@ -68,7 +68,7 @@ export default function Timeline1({
 
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute top-0 bottom-0 left-7 w-0.5 bg-border" />
+          <div className="absolute top-0 bottom-0 left-7 w-0 border-l-2 border-dashed border-border" />
 
           <div className="flex flex-col gap-8">
             {steps.map((step, idx) => (
