@@ -75,10 +75,12 @@ export default function ComponentShowcase() {
 
     setMounted(true);
 
-    // Force scroll to top if page jumped during mount
-    if (!window.location.hash) {
-      window.scrollTo(0, 0);
-    }
+    // Only force top if something jumped us down during mount (not user scroll)
+    requestAnimationFrame(() => {
+      if (window.scrollY > 0 && !window.location.hash) {
+        window.scrollTo(0, 0);
+      }
+    });
 
     // Restore after 600ms — long enough for all delayed mount effects
     const timer = setTimeout(() => {
