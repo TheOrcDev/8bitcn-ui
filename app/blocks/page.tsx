@@ -20,7 +20,7 @@ const highlights = [
   "Redesigned landing page",
   "34 production-ready page blocks",
   "Improved docs navigation for blocks",
-  "9 new themes: Dungeon Torch, Space Station, Pixel Forest, Ice Cavern, Lava Core, Glitch Mode, Dwarven Vault, Dragon Hoard, Ancient Runes",
+  "9 new themes with light and dark mode",
   "Upgraded to Next.js 16.2",
 ];
 
