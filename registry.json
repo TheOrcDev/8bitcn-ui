@@ -2797,6 +2797,26 @@
           "target": "components/ui/8bit/styles/retro.css"
         }
       ]
+    },
+    {
+      "name": "not-found2",
+      "type": "registry:block",
+      "title": "8-bit 404 Dwarf",
+      "description": "Retro 404 page with pixel dwarf character.",
+      "categories": ["layout"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/not-found2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/not-found2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
     }
   ]
 }

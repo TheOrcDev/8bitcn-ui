@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/8bit/button";
 
 import "@/components/ui/8bit/styles/retro.css";
 
-interface NotFound1Props {
+interface NotFound2Props {
   className?: string;
   cta?: string;
   description?: string;
@@ -16,14 +16,14 @@ interface NotFound1Props {
   title?: string;
 }
 
-export default function NotFound1({
-  title = "You made the Ogre angry!",
-  description = "This room doesn't exist. Turn back before it's too late.",
-  cta = "Return to Home Page",
+export default function NotFound2({
+  title = "The Dwarf says NO!",
+  description = "This tunnel has collapsed. The path you seek no longer exists.",
+  cta = "Retreat to Safety",
   href = "/",
-  imageSrc = "/images/8bit-ogre.png",
+  imageSrc = "/images/8bit-dwarf.png",
   className,
-}: NotFound1Props) {
+}: NotFound2Props) {
   return (
     <div
       className={cn(
@@ -51,7 +51,7 @@ export default function NotFound1({
         {title}
       </h1>
 
-      <p className="retro text-muted-foreground text-xs">{description}</p>
+      <p className="retro text-muted-foreground text-[9px]">{description}</p>
 
       <div className="flex justify-center">
         <Link href={href}>

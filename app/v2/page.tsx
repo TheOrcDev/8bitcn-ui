@@ -36,7 +36,7 @@ const categories = [
   { title: "Team", count: 3, slug: "team" },
   { title: "Advanced", count: 3, slug: "advanced" },
   { title: "Game", count: 7, slug: "game" },
-  { title: "Layout", count: 2, slug: "layout" },
+  { title: "Layout", count: 3, slug: "layout" },
 ];
 
 const totalBlocks = categories.reduce((sum, cat) => sum + cat.count, 0);
