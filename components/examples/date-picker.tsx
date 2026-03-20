@@ -20,7 +20,7 @@ export function DatePicker({ className }: HTMLAttributes<HTMLDivElement>) {
       <PopoverTrigger asChild>
         <Button
           className={cn(
-            "w-[310px] justify-start text-left font-normal",
+            "w-full max-w-[310px] justify-start text-left font-normal",
             !date && "text-muted-foreground",
             className
           )}
