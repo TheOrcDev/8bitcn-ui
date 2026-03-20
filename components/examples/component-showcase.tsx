@@ -104,7 +104,7 @@ export default function ComponentShowcase() {
 
         <Link href="/sponsors">
           <Card>
-            <CardContent className="flex items-center gap-3 p-3">
+            <CardContent className="flex flex-col items-center p-3 md:flex-row">
               <Image
                 alt="Treasure"
                 className="pixelated"
