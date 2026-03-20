@@ -9,7 +9,6 @@ import {
   AlertTitle,
 } from "@/components/ui/8bit/alert";
 import { Badge } from "@/components/ui/8bit/badge";
-import AudioSettings from "@/components/ui/8bit/blocks/audio-settings";
 import {
   Card,
   CardContent,
@@ -103,7 +102,7 @@ export default function ComponentShowcase() {
       <div className="flex flex-col gap-1">
         <ThemeSelectorShowcase />
 
-        <div className="mt-1.5 mb-2 flex flex-col gap-4">
+        <div className="mt-1.5 mb-2 flex flex-col gap-4 md:hidden">
           <Button>Button</Button>
 
           <DrawerExample />
@@ -141,8 +140,6 @@ export default function ComponentShowcase() {
             />
           </CardContent>
         </Card>
-
-        <AudioSettings className="mt-1" />
 
         <MainMenu />
 
@@ -358,6 +355,26 @@ export default function ComponentShowcase() {
 
       {/* Column 3 */}
       <div className="flex w-full flex-col gap-1">
+        <div className="mt-1.5 mb-2 hidden flex-col gap-4 md:flex">
+          <Button>Button</Button>
+
+          <DrawerExample />
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline">Dropdown Menu</Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Billing</DropdownMenuItem>
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+
         <Input placeholder="Enter your name" />
 
         <Card>

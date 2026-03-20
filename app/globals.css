@@ -1195,6 +1195,19 @@
   }
 }
 
+
+.dark .theme-sega {
+  --ring: oklch(0.3 0.1 260);
+}
+
+.dark .theme-soft-pop {
+  --ring: oklch(0.35 0.06 275);
+}
+
+.dark .theme-cassette {
+  --ring: oklch(0.35 0.1 47);
+}
+
 /* V2 Themes */
 
 .theme-dungeon-torch {
@@ -1252,6 +1265,7 @@
   --border: oklch(0.3 0.03 45);
   --input: oklch(0.3 0.03 45);
   --ring: oklch(0.7 0.15 55);
+  --ring: oklch(0.4 0.08 50);
 }
 
 .theme-space-station {
@@ -1309,6 +1323,7 @@
   --border: oklch(0.28 0.03 235);
   --input: oklch(0.28 0.03 235);
   --ring: oklch(0.65 0.15 220);
+  --ring: oklch(0.35 0.08 230);
 }
 
 .theme-pixel-forest {
@@ -1366,6 +1381,7 @@
   --border: oklch(0.28 0.04 140);
   --input: oklch(0.28 0.04 140);
   --ring: oklch(0.6 0.15 145);
+  --ring: oklch(0.35 0.08 142);
 }
 
 .theme-ice-cavern {
@@ -1423,6 +1439,7 @@
   --border: oklch(0.25 0.03 248);
   --input: oklch(0.25 0.03 248);
   --ring: oklch(0.65 0.12 230);
+  --ring: oklch(0.35 0.06 240);
 }
 
 .theme-lava-core {
@@ -1480,6 +1497,7 @@
   --border: oklch(0.25 0.03 28);
   --input: oklch(0.25 0.03 28);
   --ring: oklch(0.65 0.2 30);
+  --ring: oklch(0.35 0.1 28);
 }
 
 .theme-glitch-mode {
@@ -1537,6 +1555,7 @@
   --border: oklch(0.2 0.02 195);
   --input: oklch(0.2 0.02 195);
   --ring: oklch(0.7 0.2 195);
+  --ring: oklch(0.3 0.1 195);
 }
 
 .theme-dwarven-vault {
@@ -1594,6 +1613,7 @@
   --border: oklch(0.28 0.02 72);
   --input: oklch(0.28 0.02 72);
   --ring: oklch(0.7 0.12 80);
+  --ring: oklch(0.38 0.06 75);
 }
 
 .theme-dragon-hoard {
@@ -1651,6 +1671,7 @@
   --border: oklch(0.22 0.02 35);
   --input: oklch(0.22 0.02 35);
   --ring: oklch(0.6 0.2 20);
+  --ring: oklch(0.3 0.08 35);
 }
 
 .theme-ancient-runes {
@@ -1708,4 +1729,5 @@
   --border: oklch(0.28 0.02 187);
   --input: oklch(0.28 0.02 187);
   --ring: oklch(0.6 0.12 185);
+  --ring: oklch(0.35 0.06 188);
 }
