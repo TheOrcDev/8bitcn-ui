@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Avatar, AvatarImage } from "@/components/ui/8bit/avatar";
 import { cn } from "@/lib/utils";
@@ -65,12 +66,22 @@ const legendarySponsors = [
 export default function Sponsors() {
   return (
     <div className="retro flex flex-col items-center justify-center gap-10 px-5 py-10">
-      <div className="flex flex-col items-center gap-2">
-        <h2 className="font-bold text-2xl">Sponsors</h2>
-        <p className="max-w-xl text-center text-muted-foreground text-xs">
-          We are grateful to our sponsors who help us grow and support our
-          projects.
-        </p>
+      <div className="flex items-center gap-5">
+        <div className="flex flex-col gap-2">
+          <h2 className="font-bold text-2xl">Sponsors</h2>
+          <p className="max-w-xl text-muted-foreground text-xs">
+            We are grateful to our sponsors who help us grow and support our
+            projects.
+          </p>
+        </div>
+
+        <Image
+          alt="Wizard"
+          className="pixelated"
+          height={200}
+          src="/images/8bit-treasure.png"
+          width={200}
+        />
       </div>
 
       <Separator />
@@ -104,6 +115,13 @@ export default function Sponsors() {
             </div>
           </Link>
         ))}
+        <Link
+          className="flex size-60 flex-col items-center justify-center gap-2 border-4 border-dashed border-muted-foreground/20"
+          href="https://github.com/sponsors/theorcdev"
+          target="_blank"
+        >
+          <span className="retro text-muted-foreground/40 text-xs">Your logo here</span>
+        </Link>
       </div>
 
       <h2 className="font-bold text-xl">LEGENDARY Sponsors</h2>
@@ -123,26 +141,32 @@ export default function Sponsors() {
             </div>
           </Link>
         ))}
+        {[1, 2, 3, 4].map((i) => (
+          <Link
+            className="flex size-50 flex-col items-center justify-center border-4 border-dashed border-muted-foreground/20"
+            href="https://github.com/sponsors/theorcdev"
+            key={`legendary-empty-${i}`}
+            target="_blank"
+          >
+            <span className="retro text-muted-foreground/40 text-[9px]">Be here</span>
+          </Link>
+        ))}
       </div>
 
       <h2 className="font-bold text-xl">Sponsors</h2>
 
-      {/* <div className="flex flex-wrap items-center justify-center gap-10">
-        {sponsors.map((sponsor) => (
-          <Link href={sponsor.url} key={sponsor.name} target="_blank">
-            <div className="flex flex-col items-center gap-4">
-              <Avatar className="size-30" variant="default">
-                <AvatarImage
-                  alt={sponsor.name}
-                  className={cn("p-5", sponsor.invert && "dark:invert")}
-                  src={sponsor.image}
-                />
-              </Avatar>
-              <p className="font-bold text-sm">{sponsor.name}</p>
-            </div>
+      <div className="flex flex-wrap items-center justify-center gap-6">
+        {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+          <Link
+            className="flex size-30 flex-col items-center justify-center border-4 border-dashed border-muted-foreground/20"
+            href="https://github.com/sponsors/theorcdev"
+            key={`sponsor-empty-${i}`}
+            target="_blank"
+          >
+            <span className="retro text-muted-foreground/40 text-[8px]">Be here</span>
           </Link>
         ))}
-      </div> */}
+      </div>
 
       <div className="flex flex-col items-center gap-5">
         <p className="max-w-xl text-center text-muted-foreground text-sm">
