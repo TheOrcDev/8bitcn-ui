@@ -55,10 +55,10 @@ export function SelectThemeDropdown({
             <div className="flex items-center gap-2">
               <span
                 aria-hidden
-                className="inline-block h-3 w-3 rounded-sm border border-foreground"
+                className="inline-block h-3 w-3 border border-foreground"
                 style={{ backgroundColor: theme.color }}
               />
-              <span className="capitalize">{theme.name}</span>
+              <span>{theme.name.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}</span>
             </div>
           </SelectItem>
         ))}
