@@ -4,7 +4,6 @@ import { Avatar, AvatarImage } from "@/components/ui/8bit/avatar";
 import { cn } from "@/lib/utils";
 import MythicSponsor from "./mythic-sponsor";
 import SponsorClaim from "./sponsor-claim";
-import { Button } from "./ui/8bit/button";
 import { Separator } from "./ui/8bit/separator";
 
 export const mythicSponsors = [
@@ -187,9 +186,6 @@ export default function Sponsors() {
           You can help us grow by becoming a sponsor, and join this awesome list
           of supporters!
         </p>
-        <Link href="https://github.com/sponsors/theorcdev" target="_blank">
-          <Button>Become a Sponsor</Button>
-        </Link>
       </div>
     </div>
   );

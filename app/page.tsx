@@ -10,7 +10,7 @@ export default function Home() {
     <div className="mx-auto px-4">
       {/* Hero */}
       <section className="flex flex-col items-center py-8 text-center md:py-10">
-        <Link href="/blocks">
+        <Link href="/v2">
           <Badge className="mb-6">
             v2 — 34 new blocks
             <svg
@@ -54,7 +54,7 @@ export default function Home() {
           <Link href="/docs">
             <Button className="text-xs md:text-sm">Open Docs</Button>
           </Link>
-          <Link href="/blocks">
+          <Link href="/v2">
             <Button className="text-xs md:text-sm" variant="outline">
               Explore Blocks
             </Button>

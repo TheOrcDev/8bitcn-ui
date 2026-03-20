@@ -28,7 +28,7 @@ export default function GameHero1({
   description = "Your product is ready for battle. Ship it before the competition respawns.",
   actions = [
     { label: "DEPLOY NOW", variant: "default", href: "/docs" },
-    { label: "VIEW ARSENAL", variant: "outline", href: "/blocks" },
+    { label: "VIEW ARSENAL", variant: "outline", href: "/v2" },
   ],
   xpLabel = "XP to Next Level",
   xpValue = 72,

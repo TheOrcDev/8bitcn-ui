@@ -20,8 +20,6 @@ const themes = [
   { name: Theme.SoftPop, color: "#4B3F99" },
   { name: Theme.Pacman, color: "#ffcc00" },
   { name: Theme.VHS, color: "#8B5CF6" },
-  { name: Theme.Cassette, color: "#8B5A2B" },
-  { name: Theme.RustyByte, color: "#d2691e" },
   { name: Theme.Zelda, color: "oklch(0.75 0.2 90)" },
   { name: Theme.DungeonTorch, color: "#c87533" },
   { name: Theme.SpaceStation, color: "#2196f3" },

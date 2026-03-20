@@ -143,6 +143,48 @@ export default async function Page(props: {
   const neighbours = findNeighbour(source.pageTree, page.url);
   const isBlockPage = params.slug?.[0] === "blocks";
 
+  const noTocBlockLeafSlugs = new Set([
+    "hero1",
+    "hero2",
+    "hero3",
+    "feature1",
+    "feature2",
+    "feature3",
+    "pricing1",
+    "pricing2",
+    "faq1",
+    "faq2",
+    "faq3",
+    "social-proof1",
+    "social-proof2",
+    "social-proof3",
+    "timeline1",
+    "timeline2",
+    "timeline3",
+    "team1",
+    "team2",
+    "team3",
+    "advanced1",
+    "advanced2",
+    "advanced3",
+    "cta1",
+    "cta2",
+    "game-hero1",
+    "game-hero2",
+    "game-cta1",
+    "game-features1",
+    "game-roadmap1",
+    "game-team1",
+    "game-faq1",
+    "login-form-with-image",
+  ]);
+
+  const currentLeafSlug = params.slug?.[params.slug.length - 1];
+  const hideRightSidebar =
+    isBlockPage &&
+    (params.slug?.[1] === "v2" ||
+      (currentLeafSlug ? noTocBlockLeafSlugs.has(currentLeafSlug) : false));
+
   return (
     <div className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full">
       <div className="flex min-w-0 flex-1 flex-col">
@@ -234,7 +276,7 @@ export default async function Page(props: {
         </div>
       </div>
       <div
-        className={`sticky top-[calc(var(--header-height)+1px)] z-30 ml-auto h-[calc(100svh-var(--footer-height)+2rem)] w-72 flex-col gap-4 overflow-hidden overscroll-none pb-8 ${isBlockPage ? "hidden" : "hidden xl:flex"}`}
+        className={`sticky top-[calc(var(--header-height)+1px)] z-30 ml-auto h-[calc(100svh-var(--footer-height)+2rem)] w-72 flex-col gap-4 overflow-hidden overscroll-none pb-8 ${hideRightSidebar ? "hidden" : "hidden xl:flex"}`}
       >
         <div className="h-(--top-spacing) shrink-0" />
         {doc.toc?.length ? (

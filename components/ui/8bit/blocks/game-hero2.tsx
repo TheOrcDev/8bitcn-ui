@@ -43,7 +43,7 @@ export default function GameHero2({
   milestones = defaultMilestones,
   actions = [
     { label: "KEEP BUILDING", variant: "default", href: "/docs" },
-    { label: "VIEW SKILLS", variant: "outline", href: "/blocks" },
+    { label: "VIEW SKILLS", variant: "outline", href: "/v2" },
   ],
   className,
 }: GameHero2Props) {
