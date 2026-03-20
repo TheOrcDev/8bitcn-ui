@@ -19,7 +19,7 @@ export function SearchDocumentation() {
     >
       <span className="hidden lg:inline-flex">Search documentation...</span>
       <span className="inline-flex lg:hidden">Search...</span>
-      <kbd className="retro pointer-events-none absolute top-[0.3rem] right-[0.3rem] hidden h-5 select-none items-center gap-1 border bg-primary px-1.5 font-medium font-mono text-[6px] text-foreground opacity-100 sm:flex">
+      <kbd className="retro pointer-events-none absolute top-[0.3rem] right-[0.3rem] hidden h-5 select-none items-center gap-1 border bg-primary px-1.5 font-medium font-mono text-[6px] text-primary-foreground opacity-100 sm:flex">
         <span className="text-[6px]">cmd+</span>K
       </kbd>
     </Button>

@@ -46,6 +46,7 @@ import {
 
 import { Textarea } from "@/components/ui/8bit/textarea";
 import ChapterIntro from "../ui/8bit/blocks/chapter-intro";
+import CharacterSheet from "../ui/8bit/blocks/character-sheet";
 import Dialogue from "../ui/8bit/blocks/dialogue";
 import DifficultySelect from "../ui/8bit/blocks/difficulty-select";
 import GameOver from "../ui/8bit/blocks/game-over";
@@ -271,6 +272,36 @@ export default function ComponentShowcase() {
             <Badge>Online</Badge>
           </CardContent>
         </Card>
+
+        <CharacterSheet
+          avatarFallback="MQ"
+          characterClass="Archmage"
+          characterLevel={99}
+          characterName="Orc Mage"
+          customSections={[
+            {
+              title: "Active Skills",
+              content: (
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="border-2 border-border bg-muted/30 p-2 text-center">
+                    <span className="text-purple-500 text-sm">Fireball</span>
+                  </div>
+                  <div className="border-2 border-border bg-muted/30 p-2 text-center">
+                    <span className="text-blue-500 text-sm">Ice Storm</span>
+                  </div>
+                </div>
+              ),
+            },
+          ]}
+          health={{ current: 300, max: 300 }}
+          mana={{ current: 1500, max: 1500 }}
+          secondaryStats={[
+            { name: "Magic Power", value: 999 },
+            { name: "Spell Speed", value: 85, isPercentage: true },
+          ]}
+          showAttributes={false}
+          showEquipment={false}
+        />
       </div>
 
       {/* Column 2 */}
