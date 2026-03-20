@@ -141,12 +141,57 @@ export default async function Page(props: {
   const doc = page.data;
   const MDX = doc.body;
   const neighbours = findNeighbour(source.pageTree, page.url);
+  const isBlockPage = params.slug?.[0] === "blocks";
+
+  const noTocBlockLeafSlugs = new Set([
+    "hero1",
+    "hero2",
+    "hero3",
+    "feature1",
+    "feature2",
+    "feature3",
+    "pricing1",
+    "pricing2",
+    "faq1",
+    "faq2",
+    "faq3",
+    "social-proof1",
+    "social-proof2",
+    "social-proof3",
+    "timeline1",
+    "timeline2",
+    "timeline3",
+    "team1",
+    "team2",
+    "team3",
+    "advanced1",
+    "advanced2",
+    "advanced3",
+    "cta1",
+    "cta2",
+    "game-hero1",
+    "game-hero2",
+    "game-cta1",
+    "game-features1",
+    "game-roadmap1",
+    "game-team1",
+    "game-faq1",
+    "login-form-with-image",
+  ]);
+
+  const currentLeafSlug = params.slug?.[params.slug.length - 1];
+  const hideRightSidebar =
+    isBlockPage &&
+    (params.slug?.[1] === "v2" ||
+      (currentLeafSlug ? noTocBlockLeafSlugs.has(currentLeafSlug) : false));
 
   return (
     <div className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full">
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="h-(--top-spacing) shrink-0" />
-        <div className="mx-auto flex w-full min-w-0 max-w-2xl flex-1 flex-col gap-8 px-4 py-6 text-neutral-800 md:px-0 lg:py-8 dark:text-neutral-300">
+        <div
+          className={`mx-auto flex w-full min-w-0 flex-1 flex-col gap-8 px-4 py-6 text-neutral-800 md:px-0 lg:py-8 dark:text-neutral-300 ${isBlockPage ? "max-w-5xl" : "max-w-2xl"}`}
+        >
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-2">
               <div className="flex items-start justify-between">
@@ -201,7 +246,9 @@ export default async function Page(props: {
             </Suspense>
           </div>
         </div>
-        <div className="mx-auto hidden h-16 w-full max-w-2xl items-center gap-2 px-4 sm:flex md:px-0">
+        <div
+          className={`mx-auto hidden h-16 w-full items-center gap-2 px-4 sm:flex md:px-0 ${isBlockPage ? "max-w-5xl" : "max-w-2xl"}`}
+        >
           {neighbours.previous && (
             <Button
               asChild
@@ -228,7 +275,9 @@ export default async function Page(props: {
           )}
         </div>
       </div>
-      <div className="sticky top-[calc(var(--header-height)+1px)] z-30 ml-auto hidden h-[calc(100svh-var(--footer-height)+2rem)] w-72 flex-col gap-4 overflow-hidden overscroll-none pb-8 xl:flex">
+      <div
+        className={`sticky top-[calc(var(--header-height)+1px)] z-30 ml-auto h-[calc(100svh-var(--footer-height)+2rem)] w-72 flex-col gap-4 overflow-hidden overscroll-none pb-8 ${hideRightSidebar ? "hidden" : "hidden xl:flex"}`}
+      >
         <div className="h-(--top-spacing) shrink-0" />
         {doc.toc?.length ? (
           <div className="no-scrollbar overflow-y-auto px-8">

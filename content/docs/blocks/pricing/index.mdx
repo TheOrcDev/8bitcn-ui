@@ -1,0 +1,21 @@
+---
+title: Pricing
+description: Plans, tiers, and comparison tables.
+---
+
+import CopyCommandButton from "@/components/copy-command-button";
+import ComponentPreview from "@/components/component-preview";
+import Pricing1 from "@/components/ui/8bit/blocks/pricing1";
+import Pricing2 from "@/components/ui/8bit/blocks/pricing2";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/pricing1"
+    command="pnpm dlx shadcn@latest add @8bitcn/pricing1"
+  />
+</div>
+
+<ComponentPreview title="Tier Cards" name="pricing1">
+  <Pricing1 />
+</ComponentPreview>
+

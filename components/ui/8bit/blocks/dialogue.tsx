@@ -29,14 +29,14 @@ export default function Dialogue({
   ...props
 }: DialogueProps) {
   return (
-    <div className={cn("flex gap-3", className)} {...props}>
+    <div className={cn("flex gap-4 items-center", className)} {...props}>
       {player && (
         <Avatar variant="retro" className="size-16">
           <AvatarImage src={avatarSrc} alt={avatarFallback} />
           <AvatarFallback>{avatarFallback}</AvatarFallback>
         </Avatar>
       )}
-      <Alert className={cn(!player && "text-right")}>
+      <Alert className={cn("mx-0", !player && "text-right")}>
         <AlertTitle>{title}</AlertTitle>
         <AlertDescription>{description}</AlertDescription>
       </Alert>

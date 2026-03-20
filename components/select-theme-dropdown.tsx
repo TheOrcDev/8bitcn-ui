@@ -20,9 +20,17 @@ const themes = [
   { name: Theme.SoftPop, color: "#4B3F99" },
   { name: Theme.Pacman, color: "#ffcc00" },
   { name: Theme.VHS, color: "#8B5CF6" },
-  { name: Theme.Cassette, color: "#8B5A2B" },
   { name: Theme.RustyByte, color: "#d2691e" },
   { name: Theme.Zelda, color: "oklch(0.75 0.2 90)" },
+  { name: Theme.DungeonTorch, color: "#c87533" },
+  { name: Theme.SpaceStation, color: "#2196f3" },
+  { name: Theme.PixelForest, color: "#4caf50" },
+  { name: Theme.IceCavern, color: "#81d4fa" },
+  { name: Theme.LavaCore, color: "#e64a19" },
+  { name: Theme.GlitchMode, color: "#00ffcc" },
+  { name: Theme.DwarvenVault, color: "#c8a600" },
+  { name: Theme.DragonHoard, color: "#c62828" },
+  { name: Theme.AncientRunes, color: "#009688" },
 ];
 
 export function SelectThemeDropdown({
@@ -46,10 +54,15 @@ export function SelectThemeDropdown({
             <div className="flex items-center gap-2">
               <span
                 aria-hidden
-                className="inline-block h-3 w-3 rounded-sm border border-foreground"
+                className="inline-block h-3 w-3 border border-foreground"
                 style={{ backgroundColor: theme.color }}
               />
-              <span className="capitalize">{theme.name}</span>
+              <span>
+                {theme.name
+                  .split("-")
+                  .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+                  .join(" ")}
+              </span>
             </div>
           </SelectItem>
         ))}

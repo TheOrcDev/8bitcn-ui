@@ -1,0 +1,19 @@
+---
+title: Party Grid
+description: Team cards as party members with HP bars.
+---
+
+import UgameUteam1 from "@/components/ui/8bit/blocks/game-team1";
+import CopyCommandButton from "@/components/copy-command-button";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/game-team1"
+    command="pnpm dlx shadcn@latest add @8bitcn/game-team1"
+  />
+</div>
+
+<ComponentPreview title="Party Grid" name="game-team1">
+  <UgameUteam1 />
+</ComponentPreview>

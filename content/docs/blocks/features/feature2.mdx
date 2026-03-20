@@ -1,0 +1,63 @@
+---
+title: List
+description: A step-by-step feature list with numbered icons and separators.
+---
+
+import Feature2 from "@/components/ui/8bit/blocks/feature2";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/feature2"
+    command="pnpm dlx shadcn@latest add @8bitcn/feature2"
+  />
+</div>
+
+<ComponentPreview title="Feature 2 — List Style" name="feature2">
+  <Feature2 />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="feature2" />
+
+## Usage
+
+---
+
+```tsx
+import Feature2 from "@/components/ui/8bit/blocks/feature2";
+
+<Feature2
+  title="How It Works"
+  description="Four steps to retro glory"
+  items={[
+    { icon: "01", title: "Create Your Character", description: "..." },
+    { icon: "02", title: "Explore the World", description: "..." },
+    { icon: "03", title: "Battle Enemies", description: "...", badge: "ENHANCED" },
+    { icon: "04", title: "Collect Loot", description: "..." },
+  ]}
+/>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `string` | `"How It Works"` | Section heading |
+| `description` | `string` | — | Section subheading |
+| `items` | `FeatureRow[]` | 4 defaults | List items |
+| `className` | `string` | — | Additional classes |
+
+### FeatureRow
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `icon` | `ReactNode` | Left-side icon or number |
+| `title` | `string` | Feature name |
+| `description` | `string` | Feature description |
+| `badge` | `string` | Optional badge text |

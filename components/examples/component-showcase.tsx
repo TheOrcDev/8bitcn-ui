@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { CommandExample } from "@/components/examples/command";
 import {
@@ -8,7 +10,6 @@ import {
   AlertTitle,
 } from "@/components/ui/8bit/alert";
 import { Badge } from "@/components/ui/8bit/badge";
-import AudioSettings from "@/components/ui/8bit/blocks/audio-settings";
 import {
   Card,
   CardContent,
@@ -23,7 +24,6 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/8bit/dropdown-menu";
 import { Input } from "@/components/ui/8bit/input";
@@ -44,47 +44,50 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/8bit/select";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/8bit/tabs";
 import { Textarea } from "@/components/ui/8bit/textarea";
-
-import ChapterIntro from "../ui/8bit/blocks/chapter-intro";
+import CharacterSheet from "../ui/8bit/blocks/character-sheet";
 import Dialogue from "../ui/8bit/blocks/dialogue";
 import DifficultySelect from "../ui/8bit/blocks/difficulty-select";
 import GameOver from "../ui/8bit/blocks/game-over";
-import GameProgress from "../ui/8bit/blocks/game-progress";
 import MainMenu from "../ui/8bit/blocks/main-menu";
+import NotFound1 from "../ui/8bit/blocks/not-found1";
 import { Button } from "../ui/8bit/button";
 import EnemyHealthDisplay from "../ui/8bit/enemy-health-display";
+import HealthBar from "../ui/8bit/health-bar";
 import ManaBar from "../ui/8bit/mana-bar";
 import { Spinner } from "../ui/8bit/spinner";
+import XpBar from "../ui/8bit/xp-bar";
 import { DatePicker } from "./date-picker";
 import { DrawerExample } from "./drawer";
+import ThemeSelectorShowcase from "./theme-selector-showcase";
 
 export default function ComponentShowcase() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Temporarily block scrollIntoView during showcase mount.
-    // Multiple libraries (cmdk, Radix) call scrollIntoView on mount,
-    // which jumps the page to the middle on load.
+    // Block scrollIntoView during showcase mount for 600ms.
+    // Multiple libraries (cmdk, Radix, health bars) call scrollIntoView
+    // on mount or after delayed effects, jumping the page to middle content.
     const original = Element.prototype.scrollIntoView;
     // biome-ignore lint/suspicious/noEmptyBlockStatements: Temporarily block scrollIntoView during showcase mount.
     Element.prototype.scrollIntoView = () => {};
 
     setMounted(true);
 
-    // Restore after a tick so interactive scrolling still works
-    const timer = requestAnimationFrame(() => {
-      Element.prototype.scrollIntoView = original;
+    // Only force top if something jumped us down during mount (not user scroll)
+    requestAnimationFrame(() => {
+      if (window.scrollY > 0 && !window.location.hash) {
+        window.scrollTo(0, 0);
+      }
     });
 
+    // Restore after 600ms — long enough for all delayed mount effects
+    const timer = setTimeout(() => {
+      Element.prototype.scrollIntoView = original;
+    }, 600);
+
     return () => {
-      cancelAnimationFrame(timer);
+      clearTimeout(timer);
       Element.prototype.scrollIntoView = original;
     };
   }, []);
@@ -97,7 +100,29 @@ export default function ComponentShowcase() {
     <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {/* Column 1 */}
       <div className="flex flex-col gap-1">
-        <div className="flex flex-col gap-1">
+        <ThemeSelectorShowcase />
+
+        <Link href="/sponsors">
+          <Card>
+            <CardContent className="flex items-center gap-3 p-3">
+              <Image
+                alt="Treasure"
+                className="pixelated"
+                height={150}
+                src="/images/8bit-treasure.png"
+                width={150}
+              />
+              <div className="space-y-1">
+                <p className="font-bold text-sm">Become a Sponsor</p>
+                <p className="text-[10px] text-muted-foreground">
+                  Help 8bitcn to grow
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <div className="mt-1.5 mb-2 flex flex-col gap-4 md:hidden">
           <Button>Button</Button>
 
           <DrawerExample />
@@ -110,36 +135,32 @@ export default function ComponentShowcase() {
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                <DropdownMenuItem>
-                  Profile
-                  <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  Billing
-                  <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-                </DropdownMenuItem>
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Billing</DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
 
-        <AudioSettings className="mt-1" />
-
         <MainMenu />
 
-        <Alert>
-          <AlertTitle>Info</AlertTitle>
-          <AlertDescription>
-            Your game progress has been saved successfully.
-          </AlertDescription>
-        </Alert>
+        <div className="my-1.5">
+          <Alert>
+            <AlertTitle>Info</AlertTitle>
+            <AlertDescription>
+              Your game progress has been saved successfully.
+            </AlertDescription>
+          </Alert>
+        </div>
 
-        <Alert variant="destructive">
-          <AlertTitle>Warning</AlertTitle>
-          <AlertDescription>
-            Low health! Find a health potion quickly.
-          </AlertDescription>
-        </Alert>
+        <div className="my-1.5">
+          <Alert variant="destructive">
+            <AlertTitle>Warning</AlertTitle>
+            <AlertDescription>
+              Low health! Find a health potion quickly.
+            </AlertDescription>
+          </Alert>
+        </div>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -255,10 +276,100 @@ export default function ComponentShowcase() {
             <Badge>Online</Badge>
           </CardContent>
         </Card>
+
+        <CharacterSheet
+          avatarFallback="MQ"
+          characterClass="Archmage"
+          characterLevel={99}
+          characterName="Orc Mage"
+          customSections={[
+            {
+              title: "Active Skills",
+              content: (
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="border-2 border-border bg-muted/30 p-2 text-center">
+                    <span className="text-purple-500 text-sm">Fireball</span>
+                  </div>
+                  <div className="border-2 border-border bg-muted/30 p-2 text-center">
+                    <span className="text-blue-500 text-sm">Ice Storm</span>
+                  </div>
+                </div>
+              ),
+            },
+          ]}
+          health={{ current: 300, max: 300 }}
+          mana={{ current: 1500, max: 1500 }}
+          secondaryStats={[
+            { name: "Magic Power", value: 999 },
+            { name: "Spell Speed", value: 85, isPercentage: true },
+          ]}
+          showAttributes={false}
+          showEquipment={false}
+        />
       </div>
 
       {/* Column 2 */}
       <div className="flex flex-col gap-1 lg:col-span-2">
+        <Card>
+          <CardHeader>
+            <CardTitle className="font-medium text-sm">Party (3/5)</CardTitle>
+          </CardHeader>
+          <CardContent className="pt-0">
+            <div className="grid gap-3 md:grid-cols-3">
+              <div className="p-2">
+                <div className="w-full">
+                  <div className="retro mb-1 flex justify-between text-[10px]">
+                    <span>Wizard MP</span>
+                    <span>140/180</span>
+                  </div>
+                  <ManaBar className="w-full" value={65} variant="retro" />
+                </div>
+                <Image
+                  alt="Wizard"
+                  className="pixelated mx-auto mt-2"
+                  height={140}
+                  src="/images/8bit-wizard.png"
+                  width={140}
+                />
+              </div>
+
+              <div className="p-2">
+                <div className="w-full">
+                  <div className="retro mb-1 flex justify-between text-[10px]">
+                    <span>Troll HP</span>
+                    <span>320/450</span>
+                  </div>
+                  <HealthBar className="w-full" value={71} variant="retro" />
+                </div>
+                <Image
+                  alt="Troll"
+                  className="pixelated mx-auto mt-2"
+                  height={140}
+                  src="/images/8bit-troll.png"
+                  width={140}
+                />
+              </div>
+
+              <div className="p-2">
+                <div className="w-full">
+                  <div className="retro mb-1 flex justify-between text-[10px]">
+                    <span>Orc XP</span>
+                    <span>980/1200</span>
+                  </div>
+                  <XpBar levelUpMessage="DING" value={82} variant="retro" />
+                </div>
+                <Image
+                  alt="Orc Warrior"
+                  className="pixelated mx-auto mt-2"
+                  height={140}
+                  src="/images/8bit-orc-warrior.png"
+                  width={140}
+                />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         <Card>
           <CardContent className="flex flex-col gap-4">
             <div className="flex flex-wrap gap-4">
@@ -274,18 +385,23 @@ export default function ComponentShowcase() {
                   <SelectItem value="system">System</SelectItem>
                 </SelectContent>
               </Select>
-
               <div className="flex items-center justify-center">
                 <DatePicker className="w-[300px]" />
               </div>
-
               <EnemyHealthDisplay
                 currentHealth={850}
                 enemyName="Fire Dragon"
                 level={25}
                 maxHealth={1000}
               />
-              <ManaBar className="mt-5" value={75} variant="retro" />
+
+              <div className="w-full">
+                <div className="retro mb-1 flex justify-between text-[10px]">
+                  <span>XP</span>
+                  <span>1400/1400</span>
+                </div>
+                <XpBar levelUpMessage="DING" value={100} variant="retro" />
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -313,53 +429,35 @@ export default function ComponentShowcase() {
 
         <GameOver />
 
-        <ChapterIntro
-          align="center"
-          backgroundSrc="/images/forest-goblins.png"
-          className="mx-auto w-full text-white md:w-full"
-          darken={0.5}
-          height="md"
-          subtitle="Defeat the goblins to pass through the forest."
-          title="LEVEL 2: GOBLINS"
-        />
-
-        <GameProgress />
-
-        {/* Tabs Example */}
         <Card>
-          <CardHeader>
-            <CardTitle className="font-medium text-sm">Game Menu</CardTitle>
-          </CardHeader>
           <CardContent>
-            <Tabs className="w-full" defaultValue="inventory">
-              <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="inventory">Items</TabsTrigger>
-                <TabsTrigger value="skills">Skills</TabsTrigger>
-                <TabsTrigger value="stats">Stats</TabsTrigger>
-              </TabsList>
-              <TabsContent className="mt-4" value="inventory">
-                <p className="text-muted-foreground text-sm">
-                  Your inventory contains 15 items including potions and
-                  weapons.
-                </p>
-              </TabsContent>
-              <TabsContent className="mt-4" value="skills">
-                <p className="text-muted-foreground text-sm">
-                  You have learned 8 skills. 3 skill points available.
-                </p>
-              </TabsContent>
-              <TabsContent className="mt-4" value="stats">
-                <p className="text-muted-foreground text-sm">
-                  Strength: 25, Agility: 18, Intelligence: 22
-                </p>
-              </TabsContent>
-            </Tabs>
+            <NotFound1 />
           </CardContent>
         </Card>
       </div>
 
       {/* Column 3 */}
       <div className="flex w-full flex-col gap-1">
+        <div className="mt-1.5 mb-2 hidden flex-col gap-4 md:flex">
+          <Button>Button</Button>
+
+          <DrawerExample />
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline">Dropdown Menu</Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Billing</DropdownMenuItem>
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+
         <Input placeholder="Enter your name" />
 
         <Menubar>

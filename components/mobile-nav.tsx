@@ -23,12 +23,12 @@ export default function MobileNav() {
           ☰
         </Button>
       </DrawerTrigger>
-      <DrawerContent className="h-3/4">
+      <DrawerContent className="retro h-3/4">
         <DrawerHeader className="overflow-y-auto">
           <div className="flex flex-col gap-2">
             {navItems.header.map((item) => (
               <Link
-                className="font-extralight text-2xl"
+                className="font-extralight text-sm"
                 href={item.href}
                 key={item.href}
                 onClick={() => setOpen(false)}
@@ -43,7 +43,7 @@ export default function MobileNav() {
               <DrawerTitle className="text-xl">{navItem.title}</DrawerTitle>
               {navItem.items.map((item) => (
                 <Link
-                  className="flex items-center gap-5 font-extralight text-muted-foreground text-xl"
+                  className="flex items-center gap-5 font-extralight text-muted-foreground text-sm"
                   href={item.url}
                   key={item.title}
                   onClick={() => setOpen(false)}

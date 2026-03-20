@@ -1,0 +1,84 @@
+---
+title: Card Grid
+description: A retro 8-bit feature grid showcasing capabilities with icons, titles, and optional badges.
+---
+
+import Feature1 from "@/components/ui/8bit/blocks/feature1";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/feature1"
+    command="pnpm dlx shadcn@latest add @8bitcn/feature1"
+  />
+</div>
+
+<ComponentPreview title="8-bit Feature 1 (default 3 columns)" name="feature1">
+  <Feature1 />
+</ComponentPreview>
+
+## Installation
+
+---
+
+<InstallationCommands packageName="feature1" />
+
+## Usage
+
+---
+
+```tsx
+import Feature1 from "@/components/ui/8bit/blocks/feature1";
+
+<Feature1
+  title="Game Features"
+  description="Everything you need for the ultimate retro experience"
+  items={[
+    {
+      icon: "⚔️",
+      title: "Battle System",
+      description: "Turn-based combat with pixel-perfect hit detection.",
+    },
+    {
+      icon: "🛡️",
+      title: "Armor Crafting",
+      description: "Forge legendary gear from rare drops.",
+      badge: "NEW",
+    },
+    // ...more items
+  ]}
+/>
+```
+
+## Variants
+
+### With "Coming Soon" badges
+
+```tsx
+<Feature1
+  items={[
+    { icon: "💾", title: "Cloud Saves", description: "...", badge: "COMING SOON" },
+  ]}
+/>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `string` | `"Game Features"` | Section heading |
+| `description` | `string` | `"Everything you need..."` | Section subheading |
+| `items` | `FeatureItem[]` | 6 default items | Grid items |
+| `columns` | `3 \| 6 \| 9` | `3` | Grid column count |
+| `className` | `string` | — | Additional classes |
+
+### FeatureItem
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `icon` | `string` | Emoji or text icon |
+| `title` | `string` | Feature name |
+| `description` | `string` | Feature description |
+| `badge` | `string` | Optional badge text (e.g., "NEW", "COMING SOON") |

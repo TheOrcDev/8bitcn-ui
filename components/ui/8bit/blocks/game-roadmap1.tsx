@@ -1,0 +1,140 @@
+import { cn } from "@/lib/utils";
+
+import { Badge } from "@/components/ui/8bit/badge";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/8bit/card";
+
+import "@/components/ui/8bit/styles/retro.css";
+
+export interface Quest {
+  description: string;
+  status: "completed" | "in-progress" | "locked";
+  title: string;
+}
+
+interface GameRoadmap1Props {
+  className?: string;
+  description?: string;
+  quests?: Quest[];
+  title?: string;
+}
+
+const statusConfig = {
+  completed: { badge: "CLEARED", variant: "default" as const },
+  "in-progress": { badge: "ACTIVE", variant: "secondary" as const },
+  locked: { badge: "LOCKED", variant: "secondary" as const },
+};
+
+const defaultQuests: Quest[] = [
+  {
+    title: "Gather the Party",
+    description: "Recruit your team. A warrior, a mage, and a rogue walk into a tavern. Nobody leaves until the quest is accepted.",
+    status: "completed",
+  },
+  {
+    title: "Cross the Marshlands",
+    description: "Navigate the fog. Avoid the swamp trolls. Find the hidden path to the Ember Citadel before nightfall.",
+    status: "completed",
+  },
+  {
+    title: "Siege of Ember Citadel",
+    description: "Break through the outer wall. Defeat the skeletal guards. Secure the courtyard for base camp.",
+    status: "in-progress",
+  },
+  {
+    title: "The Underforge",
+    description: "Descend into the volcanic tunnels beneath the citadel. The dwarven king awaits — friend or foe, unknown.",
+    status: "in-progress",
+  },
+  {
+    title: "Face the Lich King",
+    description: "The final boss awaits in the throne room. Bring fire resistance potions. You will need them.",
+    status: "locked",
+  },
+  {
+    title: "Claim the Crown",
+    description: "If you survive, the kingdom is yours. New game plus unlocked. The real adventure begins.",
+    status: "locked",
+  },
+];
+
+export default function GameRoadmap1({
+  title = "Quest Log",
+  description = "Your journey through the 8bitcn universe",
+  quests = defaultQuests,
+  className,
+}: GameRoadmap1Props) {
+  return (
+    <section className={cn("w-full px-4 py-16", className)}>
+      <div className="mx-auto max-w-2xl">
+        {(title || description) && (
+          <div className="mb-10 text-center">
+            {title && (
+              <h2 className="retro mb-3 font-bold text-2xl tracking-tight md:text-3xl">
+                {title}
+              </h2>
+            )}
+            {description && (
+              <p className="retro text-muted-foreground text-[9px]">{description}</p>
+            )}
+          </div>
+        )}
+
+        <div className="relative">
+          <div className="absolute top-0 bottom-0 left-6 w-0 border-l-2 border-dashed border-primary/30" />
+
+          <div className="flex flex-col gap-4">
+            {quests.map((quest) => {
+              const config = statusConfig[quest.status];
+              const isLocked = quest.status === "locked";
+
+              return (
+                <div className="relative flex gap-4" key={quest.title}>
+                  <div
+                    className={cn(
+                      "retro relative z-10 flex size-12 shrink-0 items-center justify-center border-2 bg-background text-[10px] font-bold",
+                      isLocked
+                        ? "border-muted text-muted-foreground"
+                        : "border-primary",
+                    )}
+                  >
+                    {quest.status === "completed"
+                      ? "+"
+                      : quest.status === "in-progress"
+                        ? ">>"
+                        : "--"}
+                  </div>
+
+                  <Card
+                    className={cn(
+                      "flex-1",
+                      isLocked && "opacity-50",
+                    )}
+                  >
+                    <CardHeader className="pb-2">
+                      <div className="flex items-center gap-4">
+                        <CardTitle className="retro text-xs">
+                          {quest.title}
+                        </CardTitle>
+                        <Badge variant={config.variant} className="text-[9px]">{config.badge}</Badge>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground text-[10px] leading-relaxed">
+                        {quest.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

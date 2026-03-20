@@ -45,12 +45,9 @@ const playerItemVariants = cva(
     variants: {
       rank: {
         default: "bg-muted/50 hover:bg-muted",
-        first:
-          "bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 border-2 border-yellow-400 hover:from-yellow-400/30 hover:to-yellow-600/30",
-        second:
-          "bg-gradient-to-r from-gray-300/20 to-gray-500/20 border-2 border-gray-400 hover:from-gray-300/30 hover:to-gray-500/30",
-        third:
-          "bg-gradient-to-r from-amber-600/20 to-amber-800/20 border-2 border-amber-600 hover:from-amber-600/30 hover:to-amber-800/30",
+        first: "bg-primary/20 border-2 border-primary hover:bg-primary/30",
+        second: "bg-secondary/20 border-2 border-secondary hover:bg-secondary/30",
+        third: "bg-accent/20 border-2 border-accent hover:bg-accent/30",
         current: "bg-primary/20 border-2 border-primary hover:bg-primary/30",
       },
     },
@@ -66,12 +63,9 @@ const rankBadgeVariants = cva(
     variants: {
       rank: {
         default: "bg-muted text-muted-foreground",
-        first:
-          "bg-gradient-to-br from-yellow-400 to-yellow-600 text-yellow-900 shadow-lg",
-        second:
-          "bg-gradient-to-br from-gray-300 to-gray-500 text-gray-900 shadow-lg",
-        third:
-          "bg-gradient-to-br from-amber-600 to-amber-800 text-amber-100 shadow-lg",
+        first: "bg-primary text-primary-foreground",
+        second: "bg-secondary text-secondary-foreground",
+        third: "bg-accent text-accent-foreground",
         current: "bg-primary text-primary-foreground",
       },
     },

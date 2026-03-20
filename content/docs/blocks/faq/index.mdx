@@ -1,0 +1,43 @@
+---
+title: FAQ
+description: Answer questions before they are asked.
+---
+
+import CopyCommandButton from "@/components/copy-command-button";
+import ComponentPreview from "@/components/component-preview";
+import FAQ1 from "@/components/ui/8bit/blocks/faq1";
+import FAQ2 from "@/components/ui/8bit/blocks/faq2";
+import FAQ3 from "@/components/ui/8bit/blocks/faq3";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/faq1"
+    command="pnpm dlx shadcn@latest add @8bitcn/faq1"
+  />
+</div>
+
+<ComponentPreview title="Accordion" name="faq1">
+  <FAQ1 />
+</ComponentPreview>
+
+<div className="mt-10 flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/faq2"
+    command="pnpm dlx shadcn@latest add @8bitcn/faq2"
+  />
+</div>
+
+<ComponentPreview title="Card Grid" name="faq2">
+  <FAQ2 />
+</ComponentPreview>
+
+<div className="mt-10 flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/faq3"
+    command="pnpm dlx shadcn@latest add @8bitcn/faq3"
+  />
+</div>
+
+<ComponentPreview title="Searchable" name="faq3">
+  <FAQ3 />
+</ComponentPreview>

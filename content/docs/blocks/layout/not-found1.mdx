@@ -1,0 +1,19 @@
+---
+title: 404 Page
+description: A retro 8-bit 404 page with pixel art character.
+---
+
+import NotFound1 from "@/components/ui/8bit/blocks/not-found1";
+import CopyCommandButton from "@/components/copy-command-button";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/not-found1"
+    command="pnpm dlx shadcn@latest add @8bitcn/not-found1"
+  />
+</div>
+
+<ComponentPreview title="404 Page" name="not-found1">
+  <NotFound1 />
+</ComponentPreview>

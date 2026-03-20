@@ -710,7 +710,7 @@
       "description": "A simple 8-bit game progress component",
       "dependencies": ["@radix-ui/react-progress"],
       "categories": ["gaming"],
-      "registryDependencies": [],
+      "registryDependencies": ["card", "health-bar", "mana-bar", "progress"],
       "files": [
         {
           "path": "components/ui/8bit/blocks/game-progress.tsx",
@@ -736,6 +736,10 @@
           "path": "components/ui/8bit/styles/retro.css",
           "type": "registry:component",
           "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
         }
       ]
     },
@@ -745,7 +749,7 @@
       "title": "8-bit Dialogue",
       "description": "A simple 8-bit dialogue component",
       "dependencies": ["@radix-ui/react-avatar"],
-      "registryDependencies": ["alert"],
+      "registryDependencies": ["alert", "avatar"],
       "categories": ["gaming"],
       "files": [
         {
@@ -1025,7 +1029,7 @@
       "type": "registry:block",
       "title": "8-bit Friend List",
       "description": "A simple 8-bit friend list component",
-      "registryDependencies": ["scroll-area", "card", "avatar"],
+      "registryDependencies": ["avatar", "card", "scroll-area"],
       "files": [
         {
           "path": "components/ui/8bit/blocks/friend-list.tsx",
@@ -1224,7 +1228,7 @@
       "type": "registry:block",
       "title": "8-bit Chart",
       "description": "A simple 8-bit chart component",
-      "registryDependencies": [],
+      "registryDependencies": ["chart"],
       "categories": ["charts"],
       "files": [
         {
@@ -1249,7 +1253,7 @@
       "type": "registry:block",
       "title": "8-bit Chart Bar",
       "description": "A simple 8-bit chart bar component",
-      "registryDependencies": [],
+      "registryDependencies": ["chart"],
       "categories": ["charts"],
       "files": [
         {
@@ -1274,7 +1278,7 @@
       "type": "registry:block",
       "title": "8-bit Chart Area Step",
       "description": "A simple 8-bit chart area step component",
-      "registryDependencies": [],
+      "registryDependencies": ["chart"],
       "categories": ["charts"],
       "files": [
         {
@@ -1390,7 +1394,7 @@
       "title": "8-bit Audio Settings",
       "description": "A simple 8-bit audio settings component",
       "dependencies": ["@radix-ui/react-slider", "@radix-ui/react-switch"],
-      "registryDependencies": ["button", "card", "label"],
+      "registryDependencies": ["button", "card", "label", "slider", "switch"],
       "categories": ["gaming"],
       "files": [
         {
@@ -1422,6 +1426,10 @@
           "path": "components/ui/8bit/label.tsx",
           "type": "registry:component",
           "target": "components/ui/8bit/label.tsx"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component"
         }
       ]
     },
@@ -1556,7 +1564,7 @@
       "type": "registry:block",
       "title": "8-bit Leaderboard",
       "description": "A retro-styled leaderboard component for displaying player rankings with avatars and scores.",
-      "registryDependencies": ["card", "avatar", "badge", "separator"],
+      "registryDependencies": ["avatar", "badge", "card", "separator"],
       "categories": ["gaming"],
       "files": [
         {
@@ -1596,7 +1604,14 @@
       "type": "registry:block",
       "title": "8-bit Player Profile Card",
       "description": "A comprehensive player profile card component with stats, health/mana bars, and custom stats support.",
-      "registryDependencies": ["card", "avatar", "badge", "progress"],
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "card",
+        "health-bar",
+        "mana-bar",
+        "progress"
+      ],
       "categories": ["gaming"],
       "files": [
         {
@@ -1646,7 +1661,7 @@
       "type": "registry:block",
       "title": "8-bit Quest Log",
       "description": "A retro-styled quest log component for tracking game missions and tasks with accordion functionality and status indicators.",
-      "registryDependencies": ["accordion", "card", "badge", "scroll-area"],
+      "registryDependencies": ["accordion", "badge", "card", "scroll-area"],
       "categories": ["gaming"],
       "files": [
         {
@@ -1687,7 +1702,7 @@
       "title": "8-bit Save Slots",
       "description": "A retro-styled save/load game interface with slot previews, timestamps, and empty slot handling.",
       "categories": ["gaming"],
-      "registryDependencies": ["card", "badge", "button", "separator"],
+      "registryDependencies": ["badge", "button", "card", "separator"],
       "files": [
         {
           "path": "components/ui/8bit/blocks/save-slots.tsx",
@@ -2004,9 +2019,11 @@
       "description": "A comprehensive RPG character stats page with attributes, equipment, and customizable sections.",
       "categories": ["gaming"],
       "registryDependencies": [
-        "card",
         "avatar",
         "badge",
+        "card",
+        "health-bar",
+        "mana-bar",
         "progress",
         "separator"
       ],
@@ -2064,7 +2081,7 @@
       "title": "8-bit Victory Screen",
       "description": "A simple 8-bit Victory Screen component",
       "categories": ["gaming"],
-      "registryDependencies": ["item", "card", "alert"],
+      "registryDependencies": ["alert", "card", "item"],
       "files": [
         {
           "path": "components/ui/8bit/blocks/victory-screen.tsx",
@@ -2115,6 +2132,1022 @@
           "path": "components/ui/8bit/styles/retro.css",
           "type": "registry:component",
           "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "hero1",
+      "type": "registry:block",
+      "title": "8-bit Hero 1",
+      "description": "Centered hero section",
+      "categories": ["marketing"],
+      "registryDependencies": ["badge", "button"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/hero1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/hero1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hero2",
+      "type": "registry:block",
+      "title": "8-bit Hero 2",
+      "description": "Split-layout hero section",
+      "categories": ["marketing"],
+      "registryDependencies": ["badge", "button"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/hero2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/hero2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "feature1",
+      "type": "registry:block",
+      "title": "8-bit Feature 1",
+      "description": "Feature card grid with icons, titles, descriptions, and optional badges.",
+      "categories": ["features"],
+      "registryDependencies": ["badge", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/feature1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/feature1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hero3",
+      "type": "registry:block",
+      "title": "8-bit Hero 3",
+      "description": "Game-style title screen hero with stat cards and blinking text.",
+      "categories": ["hero"],
+      "registryDependencies": ["badge", "button", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/hero3.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/hero3.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "feature2",
+      "type": "registry:block",
+      "title": "8-bit Feature 2",
+      "description": "Step-by-step feature list with numbered icons and separators.",
+      "categories": ["features"],
+      "registryDependencies": ["badge", "separator"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/feature2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/feature2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/separator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "feature3",
+      "type": "registry:block",
+      "title": "8-bit Feature 3",
+      "description": "Swipeable feature carousel with cards and pixel arrows.",
+      "categories": ["features"],
+      "registryDependencies": ["badge", "card", "carousel"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/feature3.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/feature3.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/carousel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "pricing1",
+      "type": "registry:block",
+      "title": "8-bit Pricing 1",
+      "description": "Classic tier cards with feature lists and CTAs.",
+      "categories": ["pricing"],
+      "registryDependencies": ["badge", "button", "card", "separator"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/pricing1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/pricing1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/separator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "pricing2",
+      "type": "registry:block",
+      "title": "8-bit Pricing 2",
+      "description": "Pricing cards with monthly/yearly toggle.",
+      "categories": ["pricing"],
+      "registryDependencies": ["badge", "button", "card", "separator"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/pricing2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/pricing2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/separator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "faq1",
+      "type": "registry:block",
+      "title": "8-bit FAQ1",
+      "description": "Simple accordion FAQ.",
+      "categories": ["faq"],
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/faq1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/faq1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/accordion.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "faq2",
+      "type": "registry:block",
+      "title": "8-bit FAQ2",
+      "description": "Two-column card grid FAQ.",
+      "categories": ["faq"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/faq2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/faq2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "faq3",
+      "type": "registry:block",
+      "title": "8-bit FAQ3",
+      "description": "Searchable FAQ with categories.",
+      "categories": ["faq"],
+      "registryDependencies": ["accordion", "input"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/faq3.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/faq3.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/accordion.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "social-proof1",
+      "type": "registry:block",
+      "title": "8-bit Social Proof 1",
+      "description": "Stats bar with numbers and optional logo cloud.",
+      "categories": ["social-proof"],
+      "registryDependencies": ["separator"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/social-proof1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/social-proof1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/separator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "social-proof2",
+      "type": "registry:block",
+      "title": "8-bit Social Proof 2",
+      "description": "Two-column testimonial cards.",
+      "categories": ["social-proof"],
+      "registryDependencies": ["badge", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/social-proof2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/social-proof2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "social-proof3",
+      "type": "registry:block",
+      "title": "8-bit Social Proof 3",
+      "description": "Swipeable review carousel with ratings.",
+      "categories": ["social-proof"],
+      "registryDependencies": ["badge", "card", "carousel"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/social-proof3.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/social-proof3.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/carousel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "timeline1",
+      "type": "registry:block",
+      "title": "8-bit Timeline 1",
+      "description": "Vertical timeline with connecting line.",
+      "categories": ["timeline"],
+      "registryDependencies": ["badge"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/timeline1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/timeline1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "timeline2",
+      "type": "registry:block",
+      "title": "8-bit Timeline 2",
+      "description": "Horizontal progress steps with checkpoints.",
+      "categories": ["timeline"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/timeline2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/timeline2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
+    },
+    {
+      "name": "timeline3",
+      "type": "registry:block",
+      "title": "8-bit Timeline 3",
+      "description": "Zigzag roadmap with alternating cards.",
+      "categories": ["timeline"],
+      "registryDependencies": ["badge", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/timeline3.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/timeline3.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cta1",
+      "type": "registry:block",
+      "title": "8-bit CTA1",
+      "description": "Us vs them comparison table.",
+      "categories": ["cta"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/cta1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/cta1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cta2",
+      "type": "registry:block",
+      "title": "8-bit CTA2",
+      "description": "Persona use case cards with CTAs.",
+      "categories": ["cta"],
+      "registryDependencies": ["badge", "button", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/cta2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/cta2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "footer1",
+      "type": "registry:block",
+      "title": "8-bit Footer 1",
+      "description": "Sticky CTA bar that appears on scroll.",
+      "categories": ["layout"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/footer1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/footer1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "team1",
+      "type": "registry:block",
+      "title": "8-bit Team 1",
+      "description": "Team grid with pixel avatars and roles.",
+      "categories": ["team"],
+      "registryDependencies": ["avatar", "badge", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/team1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/team1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/avatar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "team2",
+      "type": "registry:block",
+      "title": "8-bit Team 2",
+      "description": "Changelog feed with dates and badges.",
+      "categories": ["team"],
+      "registryDependencies": ["badge", "card", "separator"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/team2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/team2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/separator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "team3",
+      "type": "registry:block",
+      "title": "8-bit Team 3",
+      "description": "Case study cards with KPI badges.",
+      "categories": ["team"],
+      "registryDependencies": ["badge", "button", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/team3.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/team3.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "advanced1",
+      "type": "registry:block",
+      "title": "8-bit Advanced 1",
+      "description": "Fake terminal demo shell with command output.",
+      "categories": ["advanced"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/advanced1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/advanced1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "advanced2",
+      "type": "registry:block",
+      "title": "8-bit Advanced 2",
+      "description": "KPI metrics dashboard with progress bars.",
+      "categories": ["advanced"],
+      "registryDependencies": ["badge", "card", "progress"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/advanced2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/advanced2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/progress.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "advanced3",
+      "type": "registry:block",
+      "title": "8-bit Advanced 3",
+      "description": "Newsletter signup card with input and CTA.",
+      "categories": ["advanced"],
+      "registryDependencies": ["badge", "button", "card", "input"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/advanced3.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/advanced3.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "game-hero1",
+      "type": "registry:block",
+      "title": "8-bit game-hero1",
+      "description": "Health bar hero with progress indicator.",
+      "categories": ["game"],
+      "registryDependencies": ["badge", "button", "progress"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-hero1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-hero1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/progress.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "game-roadmap1",
+      "type": "registry:block",
+      "title": "8-bit game-roadmap1",
+      "description": "Quest log roadmap with status states.",
+      "categories": ["game"],
+      "registryDependencies": ["badge", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-roadmap1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-roadmap1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "game-hero2",
+      "type": "registry:block",
+      "title": "8-bit game-hero2",
+      "description": "XP milestone hero with level badges.",
+      "categories": ["game"],
+      "registryDependencies": ["badge", "button", "progress"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-hero2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-hero2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/progress.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "game-cta1",
+      "type": "registry:block",
+      "title": "8-bit game-cta1",
+      "description": "Boss fight CTA with problem vs solution.",
+      "categories": ["game"],
+      "registryDependencies": ["badge", "button", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-cta1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-cta1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "game-features1",
+      "type": "registry:block",
+      "title": "8-bit game-features1",
+      "description": "Skill tree feature grid with progress.",
+      "categories": ["game"],
+      "registryDependencies": ["badge", "card", "progress"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-features1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-features1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/progress.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "game-team1",
+      "type": "registry:block",
+      "title": "8-bit game-team1",
+      "description": "Party grid with avatars and HP bars.",
+      "categories": ["game"],
+      "registryDependencies": ["avatar", "badge", "card", "progress"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-team1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-team1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/avatar.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/progress.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "game-faq1",
+      "type": "registry:block",
+      "title": "8-bit game-faq1",
+      "description": "Checkpoint FAQ with progression states.",
+      "categories": ["game"],
+      "registryDependencies": ["accordion", "badge"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/game-faq1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/game-faq1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/accordion.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "not-found1",
+      "type": "registry:block",
+      "title": "8-bit 404 Page",
+      "description": "Retro 404 page with pixel art character.",
+      "categories": ["layout"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/not-found1.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/not-found1.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "not-found2",
+      "type": "registry:block",
+      "title": "8-bit 404 Dwarf",
+      "description": "Retro 404 page with pixel dwarf character.",
+      "categories": ["layout"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/not-found2.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/not-found2.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component"
         }
       ]
     }
