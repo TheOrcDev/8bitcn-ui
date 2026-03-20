@@ -19,7 +19,7 @@ import { Separator } from "@/components/ui/8bit/separator";
 const highlights = [
   "New pixel-art logo and visual identity",
   "Redesigned landing page",
-  "34 production-ready page blocks",
+  "35 production-ready page blocks",
   "Improved docs navigation for blocks",
   "9 new themes with light and dark mode",
   "Upgraded to Next.js 16.2",
