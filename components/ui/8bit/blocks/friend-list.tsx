@@ -24,30 +24,11 @@ const truncate = (
 const statusVariants = cva("w-2 h-2 flex-shrink-0", {
   variants: {
     status: {
-      // IN-GAME (Red Glow)
-      ingame: `
-                bg-[#ff0055] border-[#ff0055] 
-                shadow-[0_0_6px_#ff0055]
-            `,
-      // ONLINE (Neon Green Glow)
-      online: `
-                bg-[#00ff00] border-[#00ff00] 
-                shadow-[0_0_6px_#00ff00]
-            `,
-      // AWAY (Yellow Glow)
-      away: `
-                bg-[#ffea00] border-[#ffea00] 
-                shadow-[0_0_6px_#ffea00]
-            `,
-      // OFFLINE (No Glow/Subtle Dark Shadow)
-      offline: `
-                bg-[#5d6063] border-[#33363a] 
-                shadow-[0_0_2px_#5d6063]
-            `,
-      default: `
-                bg-[#5d6063] border-[#33363a] 
-                shadow-[0_0_2px_#5d6063]
-            `,
+      ingame: "bg-destructive border-destructive",
+      online: "bg-primary border-primary",
+      away: "bg-accent border-accent",
+      offline: "bg-muted border-muted",
+      default: "bg-muted border-muted",
     },
   },
   defaultVariants: {
