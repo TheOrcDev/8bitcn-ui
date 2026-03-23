@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 import { Badge } from "@/components/ui/8bit/badge";
 import { Button } from "@/components/ui/8bit/button";
-import { Progress } from "@/components/ui/8bit/progress";
+import HealthBar from "@/components/ui/8bit/health-bar";
 
 import "@/components/ui/8bit/styles/retro.css";
 
@@ -111,16 +111,6 @@ export default function DuelBlock({
         <div className="flex items-center gap-2 sm:gap-4">
           {/* Left fighter */}
           <div className="flex flex-1 flex-col items-center gap-2">
-            <Image
-              alt={left.name}
-              className={cn(
-                "pixelated transition-transform duration-200",
-                lastHit === "left" && "scale-90",
-              )}
-              height={120}
-              src={left.image}
-              width={120}
-            />
             <p className="retro font-bold text-xs">{left.name}</p>
             <p className="retro text-muted-foreground text-[8px]">
               {left.subtitle}
@@ -132,11 +122,18 @@ export default function DuelBlock({
                   {left.hp}/{left.maxHp}
                 </span>
               </div>
-              <Progress
-                className="h-2"
-                value={(left.hp / left.maxHp) * 100}
-              />
+              <HealthBar value={(left.hp / left.maxHp) * 100} variant="retro" />
             </div>
+            <Image
+              alt={left.name}
+              className={cn(
+                "pixelated transition-transform duration-200",
+                lastHit === "left" && "scale-90",
+              )}
+              height={120}
+              src={left.image}
+              width={120}
+            />
           </div>
 
           {/* Center */}
@@ -161,16 +158,6 @@ export default function DuelBlock({
 
           {/* Right fighter */}
           <div className="flex flex-1 flex-col items-center gap-2">
-            <Image
-              alt={right.name}
-              className={cn(
-                "pixelated transition-transform duration-200",
-                lastHit === "right" && "scale-90",
-              )}
-              height={120}
-              src={right.image}
-              width={120}
-            />
             <p className="retro font-bold text-xs">{right.name}</p>
             <p className="retro text-muted-foreground text-[8px]">
               {right.subtitle}
@@ -182,11 +169,18 @@ export default function DuelBlock({
                   {right.hp}/{right.maxHp}
                 </span>
               </div>
-              <Progress
-                className="h-2"
-                value={(right.hp / right.maxHp) * 100}
-              />
+              <HealthBar value={(right.hp / right.maxHp) * 100} variant="retro" />
             </div>
+            <Image
+              alt={right.name}
+              className={cn(
+                "pixelated transition-transform duration-200",
+                lastHit === "right" && "scale-90",
+              )}
+              height={120}
+              src={right.image}
+              width={120}
+            />
           </div>
         </div>
       </div>

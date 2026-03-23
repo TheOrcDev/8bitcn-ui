@@ -3188,7 +3188,7 @@
       "title": "8-bit Duel Block",
       "description": "Interactive arena duel with two fighters, HP bars, and hit mechanics.",
       "categories": ["game"],
-      "registryDependencies": ["badge", "button", "progress"],
+      "registryDependencies": ["badge", "button", "health-bar"],
       "files": [
         {
           "path": "components/ui/8bit/blocks/duel-block.tsx",
