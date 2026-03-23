@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/8bit/button";
 
 import "@/components/ui/8bit/styles/retro.css";
 
-interface PortalTransition1Props {
+interface PortalTransitionProps {
   badge?: string;
   className?: string;
   description?: string;
@@ -25,7 +25,7 @@ interface PortalTransition1Props {
   travelingText?: string;
 }
 
-export default function PortalTransition1({
+export default function PortalTransition({
   title = "Click to go through the portal",
   description = "The gateway is open. One step and you're in the next realm.",
   badge = "FAST TRAVEL",
@@ -37,7 +37,7 @@ export default function PortalTransition1({
   imageSrc = "/images/8bit-portal.png",
   onEnter,
   className,
-}: PortalTransition1Props) {
+}: PortalTransitionProps) {
   const [traveling, setTraveling] = useState(false);
 
   const handleEnter = useCallback(() => {
