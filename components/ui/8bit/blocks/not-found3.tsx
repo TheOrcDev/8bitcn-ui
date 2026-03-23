@@ -3,27 +3,34 @@ import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 
+import { Badge } from "@/components/ui/8bit/badge";
 import { Button } from "@/components/ui/8bit/button";
 
 import "@/components/ui/8bit/styles/retro.css";
 
-interface NotFound1Props {
+interface NotFound3Props {
+  badge?: string;
   className?: string;
   cta?: string;
+  ctaSecondary?: string;
   description?: string;
   href?: string;
+  hrefSecondary?: string;
   imageSrc?: string;
   title?: string;
 }
 
-export default function NotFound1({
-  title = "You made the Ogre angry!",
-  description = "This room doesn't exist. Turn back before it's too late.",
-  cta = "Return to Home Page",
+export default function NotFound3({
+  title = "This page should have stayed buried",
+  description = "Looks like this route crawled out of the crypt and disappeared again.",
+  badge = "CURSED ROUTE",
+  cta = "Return Home",
+  ctaSecondary = "Browse Blocks",
   href = "/",
-  imageSrc = "/images/8bit-ogre.png",
+  hrefSecondary = "/docs/blocks",
+  imageSrc = "/images/8bit-undead.png",
   className,
-}: NotFound1Props) {
+}: NotFound3Props) {
   return (
     <div
       className={cn(
@@ -31,6 +38,12 @@ export default function NotFound1({
         className,
       )}
     >
+      {badge && (
+        <div className="flex justify-center">
+          <Badge variant="secondary">{badge}</Badge>
+        </div>
+      )}
+
       <div className="retro font-bold text-6xl tracking-tight sm:text-8xl">
         404
       </div>
@@ -47,16 +60,21 @@ export default function NotFound1({
         </div>
       )}
 
-      <h1 className="retro font-bold text-2xl tracking-tight sm:text-4xl">
+      <h1 className="retro font-bold text-xl tracking-tight sm:text-2xl">
         {title}
       </h1>
 
-      <p className="retro text-muted-foreground text-xs">{description}</p>
+      <p className="retro text-muted-foreground text-[9px]">{description}</p>
 
-      <div className="flex justify-center">
+      <div className="flex flex-wrap justify-center gap-4">
         <Link href={href}>
           <Button>{cta}</Button>
         </Link>
+        {ctaSecondary && hrefSecondary && (
+          <Link href={hrefSecondary}>
+            <Button variant="outline">{ctaSecondary}</Button>
+          </Link>
+        )}
       </div>
     </div>
   );
