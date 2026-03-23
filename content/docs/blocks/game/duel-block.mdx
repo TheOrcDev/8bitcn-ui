@@ -1,0 +1,19 @@
+---
+title: Duel Block
+description: Interactive arena duel between two fighters with HP bars and hit mechanics.
+---
+
+import DuelBlock from "@/components/ui/8bit/blocks/duel-block";
+import CopyCommandButton from "@/components/copy-command-button";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/duel-block"
+    command="pnpm dlx shadcn@latest add @8bitcn/duel-block"
+  />
+</div>
+
+<ComponentPreview title="Duel Block" name="duel-block">
+  <DuelBlock />
+</ComponentPreview>
