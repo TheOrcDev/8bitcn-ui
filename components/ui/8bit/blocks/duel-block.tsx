@@ -58,7 +58,7 @@ export default function DuelBlock({
   const [left, setLeft] = useState(leftFighter);
   const [right, setRight] = useState(rightFighter);
   const [round, setRound] = useState(1);
-  const [log, setLog] = useState<string[]>(["Round 1 — Fight!"]);
+  const [lastMessage, setLastMessage] = useState("Round 1 — Fight!");
   const [lastHit, setLastHit] = useState<"left" | "right" | null>(null);
 
   const winner =
@@ -75,12 +75,12 @@ export default function DuelBlock({
     if (round % 2 === 1) {
       // Paladin attacks orc
       setRight((f) => ({ ...f, hp: Math.max(0, f.hp - damage) }));
-      setLog((l) => [...l, `${left.name}: ${msg} -${damage} HP`]);
+      setLastMessage(`${left.name}: ${msg} -${damage} HP`);
       setLastHit("right");
     } else {
       // Orc attacks paladin
       setLeft((f) => ({ ...f, hp: Math.max(0, f.hp - damage) }));
-      setLog((l) => [...l, `${right.name}: ${msg} -${damage} HP`]);
+      setLastMessage(`${right.name}: ${msg} -${damage} HP`);
       setLastHit("left");
     }
 
@@ -91,7 +91,7 @@ export default function DuelBlock({
     setLeft(leftFighter);
     setRight(rightFighter);
     setRound(1);
-    setLog(["Round 1 — Fight!"]);
+    setLastMessage("Round 1 — Fight!");
     setLastHit(null);
   }, [leftFighter, rightFighter]);
 
@@ -183,15 +183,13 @@ export default function DuelBlock({
           </div>
         </div>
 
-        {/* Battle Log */}
-        <div className="mt-6 max-h-[160px] space-y-2 overflow-y-auto">
-          {[...log].reverse().map((entry, i) => (
-            <Alert key={`log-${i}-${entry}`} variant={i === 0 ? "default" : undefined}>
-              <AlertDescription className="retro text-[9px]">
-                {entry}
-              </AlertDescription>
-            </Alert>
-          ))}
+        {/* Battle Message */}
+        <div className="mt-6">
+          <Alert>
+            <AlertDescription className="retro text-center text-[9px]">
+              {lastMessage}
+            </AlertDescription>
+          </Alert>
         </div>
       </div>
     </div>
