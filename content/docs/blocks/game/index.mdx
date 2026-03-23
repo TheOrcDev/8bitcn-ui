@@ -11,6 +11,7 @@ import GameCta1 from "@/components/ui/8bit/blocks/game-cta1";
 import GameFeatures1 from "@/components/ui/8bit/blocks/game-features1";
 import GameRoadmap1 from "@/components/ui/8bit/blocks/game-roadmap1";
 import GameTeam1 from "@/components/ui/8bit/blocks/game-team1";
+import DuelBlock from "@/components/ui/8bit/blocks/duel-block";
 import PortalTransition from "@/components/ui/8bit/blocks/portal-transition";
 import GameFaq1 from "@/components/ui/8bit/blocks/game-faq1";
 
@@ -100,4 +101,15 @@ import GameFaq1 from "@/components/ui/8bit/blocks/game-faq1";
 
 <ComponentPreview title="Portal Transition" name="portal-transition">
   <PortalTransition />
+</ComponentPreview>
+
+<div className="mt-10 flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/duel-block"
+    command="pnpm dlx shadcn@latest add @8bitcn/duel-block"
+  />
+</div>
+
+<ComponentPreview title="Duel Block" name="duel-block">
+  <DuelBlock />
 </ComponentPreview>
