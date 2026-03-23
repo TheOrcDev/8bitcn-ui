@@ -36,7 +36,7 @@ export default function NotFound2({
       </div>
 
       {imageSrc && (
-        <div className="flex justify-center">
+        <div className="flex justify-center -mt-10">
           <Image
             alt="404"
             className="pixelated"
