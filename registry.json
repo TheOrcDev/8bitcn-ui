@@ -3141,6 +3141,26 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "not-found3",
+      "type": "registry:block",
+      "title": "8-bit 404 Undead",
+      "description": "Cursed 404 page with pixel undead character.",
+      "categories": ["layout"],
+      "registryDependencies": ["badge", "button"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/not-found3.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/not-found3.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
     }
   ]
 }

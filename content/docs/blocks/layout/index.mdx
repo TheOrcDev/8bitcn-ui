@@ -8,6 +8,7 @@ import ComponentPreview from "@/components/component-preview";
 import Footer1 from "@/components/ui/8bit/blocks/footer1";
 import NotFound1 from "@/components/ui/8bit/blocks/not-found1";
 import NotFound2 from "@/components/ui/8bit/blocks/not-found2";
+import NotFound3 from "@/components/ui/8bit/blocks/not-found3";
 
 <div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
   <CopyCommandButton
@@ -40,4 +41,15 @@ import NotFound2 from "@/components/ui/8bit/blocks/not-found2";
 
 <ComponentPreview title="404 Dwarf" name="not-found2">
   <NotFound2 />
+</ComponentPreview>
+
+<div className="mt-10 flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/not-found3"
+    command="pnpm dlx shadcn@latest add @8bitcn/not-found3"
+  />
+</div>
+
+<ComponentPreview title="404 Undead" name="not-found3">
+  <NotFound3 />
 </ComponentPreview>
