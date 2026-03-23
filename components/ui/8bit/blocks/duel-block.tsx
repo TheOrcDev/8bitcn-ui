@@ -5,6 +5,7 @@ import { useCallback, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
+import { Alert, AlertDescription } from "@/components/ui/8bit/alert";
 import { Badge } from "@/components/ui/8bit/badge";
 import { Button } from "@/components/ui/8bit/button";
 import HealthBar from "@/components/ui/8bit/health-bar";
@@ -57,7 +58,7 @@ export default function DuelBlock({
   const [left, setLeft] = useState(leftFighter);
   const [right, setRight] = useState(rightFighter);
   const [round, setRound] = useState(1);
-  const [status, setStatus] = useState("Round 1");
+  const [log, setLog] = useState<string[]>(["Round 1 — Fight!"]);
   const [lastHit, setLastHit] = useState<"left" | "right" | null>(null);
 
   const winner =
@@ -74,12 +75,12 @@ export default function DuelBlock({
     if (round % 2 === 1) {
       // Paladin attacks orc
       setRight((f) => ({ ...f, hp: Math.max(0, f.hp - damage) }));
-      setStatus(`${left.name}: ${msg} -${damage} HP`);
+      setLog((l) => [...l, `${left.name}: ${msg} -${damage} HP`]);
       setLastHit("right");
     } else {
       // Orc attacks paladin
       setLeft((f) => ({ ...f, hp: Math.max(0, f.hp - damage) }));
-      setStatus(`${right.name}: ${msg} -${damage} HP`);
+      setLog((l) => [...l, `${right.name}: ${msg} -${damage} HP`]);
       setLastHit("left");
     }
 
@@ -90,7 +91,7 @@ export default function DuelBlock({
     setLeft(leftFighter);
     setRight(rightFighter);
     setRound(1);
-    setStatus("Round 1");
+    setLog(["Round 1 — Fight!"]);
     setLastHit(null);
   }, [leftFighter, rightFighter]);
 
@@ -151,9 +152,7 @@ export default function DuelBlock({
                 Hit
               </Button>
             )}
-            <p className="retro min-h-[1.5rem] w-[100px] truncate text-center text-muted-foreground text-[8px] sm:w-[140px]">
-              {status}
-            </p>
+
           </div>
 
           {/* Right fighter */}
@@ -182,6 +181,17 @@ export default function DuelBlock({
               {right.subtitle}
             </p>
           </div>
+        </div>
+
+        {/* Battle Log */}
+        <div className="mt-6 max-h-[160px] space-y-2 overflow-y-auto">
+          {[...log].reverse().map((entry, i) => (
+            <Alert key={`log-${i}-${entry}`} variant={i === 0 ? "default" : undefined}>
+              <AlertDescription className="retro text-[9px]">
+                {entry}
+              </AlertDescription>
+            </Alert>
+          ))}
         </div>
       </div>
     </div>
