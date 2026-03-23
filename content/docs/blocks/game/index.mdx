@@ -11,6 +11,7 @@ import GameCta1 from "@/components/ui/8bit/blocks/game-cta1";
 import GameFeatures1 from "@/components/ui/8bit/blocks/game-features1";
 import GameRoadmap1 from "@/components/ui/8bit/blocks/game-roadmap1";
 import GameTeam1 from "@/components/ui/8bit/blocks/game-team1";
+import PortalTransition from "@/components/ui/8bit/blocks/portal-transition";
 import GameFaq1 from "@/components/ui/8bit/blocks/game-faq1";
 
 <div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
@@ -88,4 +89,15 @@ import GameFaq1 from "@/components/ui/8bit/blocks/game-faq1";
 
 <ComponentPreview title="Checkpoint FAQ" name="game-faq1">
   <GameFaq1 />
+</ComponentPreview>
+
+<div className="mt-10 flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/portal-transition"
+    command="pnpm dlx shadcn@latest add @8bitcn/portal-transition"
+  />
+</div>
+
+<ComponentPreview title="Portal Transition" name="portal-transition">
+  <PortalTransition />
 </ComponentPreview>

@@ -3161,6 +3161,26 @@
           "target": "components/ui/8bit/styles/retro.css"
         }
       ]
+    },
+    {
+      "name": "portal-transition",
+      "type": "registry:block",
+      "title": "8-bit Portal Transition",
+      "description": "Interactive CTA with clickable portal and traveling state.",
+      "categories": ["game"],
+      "registryDependencies": ["badge", "button"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/portal-transition.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/portal-transition.tsx"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:file",
+          "target": "components/ui/8bit/styles/retro.css"
+        }
+      ]
     }
   ]
 }
