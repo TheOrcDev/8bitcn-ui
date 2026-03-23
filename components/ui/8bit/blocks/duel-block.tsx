@@ -111,10 +111,6 @@ export default function DuelBlock({
         <div className="flex items-center gap-2 sm:gap-4">
           {/* Left fighter */}
           <div className="flex flex-1 flex-col items-center gap-2">
-            <p className="retro font-bold text-xs">{left.name}</p>
-            <p className="retro text-muted-foreground text-[8px]">
-              {left.subtitle}
-            </p>
             <div className="w-full max-w-[120px]">
               <div className="retro mb-1 flex justify-between text-[8px]">
                 <span>HP</span>
@@ -134,6 +130,10 @@ export default function DuelBlock({
               src={left.image}
               width={120}
             />
+            <p className="retro font-bold text-xs">{left.name}</p>
+            <p className="retro text-muted-foreground text-[8px]">
+              {left.subtitle}
+            </p>
           </div>
 
           {/* Center */}
@@ -151,17 +151,13 @@ export default function DuelBlock({
                 Hit
               </Button>
             )}
-            <p className="retro min-h-[1.5rem] text-center text-muted-foreground text-[8px]">
+            <p className="retro min-h-[1.5rem] w-[100px] truncate text-center text-muted-foreground text-[8px] sm:w-[140px]">
               {status}
             </p>
           </div>
 
           {/* Right fighter */}
           <div className="flex flex-1 flex-col items-center gap-2">
-            <p className="retro font-bold text-xs">{right.name}</p>
-            <p className="retro text-muted-foreground text-[8px]">
-              {right.subtitle}
-            </p>
             <div className="w-full max-w-[120px]">
               <div className="retro mb-1 flex justify-between text-[8px]">
                 <span>HP</span>
@@ -181,6 +177,10 @@ export default function DuelBlock({
               src={right.image}
               width={120}
             />
+            <p className="retro font-bold text-xs">{right.name}</p>
+            <p className="retro text-muted-foreground text-[8px]">
+              {right.subtitle}
+            </p>
           </div>
         </div>
       </div>
