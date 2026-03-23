@@ -5,7 +5,7 @@ import { useCallback, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
-import { Alert, AlertDescription } from "@/components/ui/8bit/alert";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/8bit/alert";
 import { Badge } from "@/components/ui/8bit/badge";
 import { Button } from "@/components/ui/8bit/button";
 import HealthBar from "@/components/ui/8bit/health-bar";
@@ -58,7 +58,7 @@ export default function DuelBlock({
   const [left, setLeft] = useState(leftFighter);
   const [right, setRight] = useState(rightFighter);
   const [round, setRound] = useState(1);
-  const [lastMessage, setLastMessage] = useState("Round 1 — Fight!");
+  const [lastMessage, setLastMessage] = useState("Fight!");
   const [lastHit, setLastHit] = useState<"left" | "right" | null>(null);
 
   const winner =
@@ -105,7 +105,7 @@ export default function DuelBlock({
       <div className="mx-auto max-w-2xl">
         {/* Badge */}
         <div className="mb-6 text-center">
-          <Badge variant="secondary">ARENA MODE</Badge>
+          <Badge>DUEL</Badge>
         </div>
 
         {/* Fighters row */}
@@ -185,11 +185,12 @@ export default function DuelBlock({
 
         {/* Battle Message */}
         <div className="mt-6">
-          <Alert>
-            <AlertDescription className="retro text-center text-[9px]">
-              {lastMessage}
-            </AlertDescription>
-          </Alert>
+         <Alert>
+          <AlertTitle>Round {round}</AlertTitle>
+          <AlertDescription>
+            {lastMessage}
+          </AlertDescription>
+        </Alert>
         </div>
       </div>
     </div>
