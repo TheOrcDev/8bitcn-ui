@@ -108,9 +108,79 @@ export default function DuelBlock({
           <Badge>DUEL</Badge>
         </div>
 
-        {/* Fighters row */}
-        <div className="flex items-center gap-2 sm:gap-4">
-          {/* Left fighter */}
+        {/* Mobile: stacked arena / Desktop: side-by-side duel */}
+        <div className="flex flex-col gap-4 md:hidden">
+          <div className="flex flex-col items-center gap-2">
+            <div className="w-full max-w-[180px]">
+              <div className="retro mb-1 flex justify-between text-[8px]">
+                <span>HP</span>
+                <span>
+                  {left.hp}/{left.maxHp}
+                </span>
+              </div>
+              <HealthBar value={(left.hp / left.maxHp) * 100} variant="retro" />
+            </div>
+            <Image
+              alt={left.name}
+              className={cn(
+                "pixelated transition-transform duration-200",
+                lastHit === "left" && "scale-90",
+              )}
+              height={132}
+              src={left.image}
+              width={132}
+            />
+            <p className="retro font-bold text-xs">{left.name}</p>
+            <p className="retro text-muted-foreground text-[8px]">
+              {left.subtitle}
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center gap-3 rounded-lg border border-border/60 bg-muted/20 px-3 py-4">
+            <p className="retro font-bold text-2xl">VS</p>
+            {winner ? (
+              <div className="flex w-full flex-col items-center gap-2">
+                <Badge>{winner} wins!</Badge>
+                <Button className="w-full max-w-[180px]" onClick={handleReset} size="sm" variant="outline">
+                  Rematch
+                </Button>
+              </div>
+            ) : (
+              <Button className="w-full max-w-[180px] text-[9px]" onClick={handleHit} size="sm">
+                Hit
+              </Button>
+            )}
+            <p className="retro text-muted-foreground text-[8px]">Round {round}</p>
+          </div>
+
+          <div className="flex flex-col items-center gap-2">
+            <div className="w-full max-w-[180px]">
+              <div className="retro mb-1 flex justify-between text-[8px]">
+                <span>HP</span>
+                <span>
+                  {right.hp}/{right.maxHp}
+                </span>
+              </div>
+              <HealthBar value={(right.hp / right.maxHp) * 100} variant="retro" />
+            </div>
+            <Image
+              alt={right.name}
+              className={cn(
+                "pixelated transition-transform duration-200",
+                lastHit === "right" && "scale-90",
+              )}
+              height={132}
+              src={right.image}
+              width={132}
+            />
+            <p className="retro font-bold text-xs">{right.name}</p>
+            <p className="retro text-muted-foreground text-[8px]">
+              {right.subtitle}
+            </p>
+          </div>
+        </div>
+
+        <div className="hidden items-center gap-4 md:flex">
           <div className="flex flex-1 flex-col items-center gap-2">
             <div className="w-full max-w-[120px]">
               <div className="retro mb-1 flex justify-between text-[8px]">
@@ -137,9 +207,8 @@ export default function DuelBlock({
             </p>
           </div>
 
-          {/* Center */}
           <div className="flex flex-col items-center gap-3">
-            <p className="retro font-bold text-2xl sm:text-3xl">VS</p>
+            <p className="retro font-bold text-3xl">VS</p>
             {winner ? (
               <div className="flex flex-col items-center gap-2">
                 <Badge>{winner} wins!</Badge>
@@ -148,14 +217,12 @@ export default function DuelBlock({
                 </Button>
               </div>
             ) : (
-              <Button onClick={handleHit} size="sm">
+              <Button className="text-[9px]" onClick={handleHit} size="sm">
                 Hit
               </Button>
             )}
-
           </div>
 
-          {/* Right fighter */}
           <div className="flex flex-1 flex-col items-center gap-2">
             <div className="w-full max-w-[120px]">
               <div className="retro mb-1 flex justify-between text-[8px]">
@@ -184,13 +251,11 @@ export default function DuelBlock({
         </div>
 
         {/* Battle Message */}
-        <div className="mt-6">
-         <Alert>
-          <AlertTitle>Round {round}</AlertTitle>
-          <AlertDescription>
-            {lastMessage}
-          </AlertDescription>
-        </Alert>
+        <div className="mt-6 min-h-[84px]">
+          <Alert>
+            <AlertTitle>Round {round}</AlertTitle>
+            <AlertDescription>{lastMessage}</AlertDescription>
+          </Alert>
         </div>
       </div>
     </div>
