@@ -1,9 +1,9 @@
 import { OpenInV0Button } from "@/components/open-in-v0-button";
 
 interface ComponentPreviewProps {
-  title: string;
-  name: string;
   children: React.ReactNode;
+  name: string;
+  title: string;
 }
 
 export default function ComponentPreview({

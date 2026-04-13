@@ -18,13 +18,13 @@ import {
 const WHITESPACE_REGEX = /\s+/;
 
 interface ProfileCardProps {
-  name: string;
   avatarUrl: string;
   badgeTitle: string;
+  description: string;
   isRetroAvatar: boolean;
+  name: string;
   safeGithubUrl: string;
   safeXUrl: string;
-  description: string;
 }
 
 function getInitials(name: string) {

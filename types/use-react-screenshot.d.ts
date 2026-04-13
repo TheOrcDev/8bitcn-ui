@@ -1,7 +1,7 @@
 declare module "use-react-screenshot" {
   export interface UseScreenshotOptions {
-    type?: "image/png" | "image/jpeg" | "image/webp";
     quality?: number;
+    type?: "image/png" | "image/jpeg" | "image/webp";
   }
   export function useScreenshot(
     options?: UseScreenshotOptions

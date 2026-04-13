@@ -18,17 +18,17 @@ import {
 } from "@/components/ui/cropper";
 
 interface Props {
-  toggleImageCropper: (state?: boolean) => void;
   open: boolean;
-  tempImage: string | null;
   setProfileImage: (imageUrl: string) => void;
+  tempImage: string | null;
+  toggleImageCropper: (state?: boolean) => void;
 }
 
 interface Area {
+  height: number;
+  width: number;
   x: number;
   y: number;
-  width: number;
-  height: number;
 }
 
 // Converts an image URL (or DataURL) and crop area into a cropped DataURL
