@@ -5,12 +5,12 @@ import { useEffect, useId, useRef, useState } from "react";
 import * as THREE from "three";
 
 interface MythicSponsorProps {
+  className?: string;
+  height?: number;
+  pixelSize?: number;
+  scale?: number;
   src: string;
   width?: number;
-  height?: number;
-  scale?: number;
-  pixelSize?: number;
-  className?: string;
 }
 
 const MythicSponsor = ({

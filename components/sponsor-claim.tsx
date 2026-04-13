@@ -4,11 +4,11 @@ import { CreemCheckout } from "@creem_io/nextjs";
 import { getSponsorProductId, type SponsorTier } from "@/lib/creem";
 
 interface SponsorClaimProps {
-  tier: SponsorTier;
   className?: string;
   labelClassName?: string;
-  textClassName?: string;
   text: string;
+  textClassName?: string;
+  tier: SponsorTier;
 }
 
 export default function SponsorClaim({

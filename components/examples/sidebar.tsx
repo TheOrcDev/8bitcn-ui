@@ -24,10 +24,10 @@ import {
 } from "@/components/ui/sidebar";
 
 interface SidebarExampleMenu {
-  imgSrc: string;
   imgAlt: string;
-  title: string;
+  imgSrc: string;
   subMenus: string[];
+  title: string;
 }
 
 export function SidebarExample() {
