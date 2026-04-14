@@ -52,12 +52,6 @@ const legendarySponsors = [
     image: "/sponsors/inbound.svg",
     invert: false,
   },
-  {
-    name: "shadcnspace",
-    url: "https://shadcnspace.com/",
-    image: "/sponsors/shadcnspace.png",
-    invert: false,
-  },
 ];
 
 // const sponsors = [
