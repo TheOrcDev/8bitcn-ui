@@ -46,7 +46,11 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
           })
         )}
         classNames={{
-          nav_button: cn(
+          button_previous: cn(
+            buttonVariants({ variant: "outline" }),
+            "size-7 bg-transparent p-0 flex items-center justify-center hover:opacity-50 border-2 border-foreground dark:border-ring"
+          ),
+          button_next: cn(
             buttonVariants({ variant: "outline" }),
             "size-7 bg-transparent p-0 flex items-center justify-center hover:opacity-50 border-2 border-foreground dark:border-ring"
           ),
