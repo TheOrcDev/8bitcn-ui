@@ -64,10 +64,10 @@ export function DatePicker() {
       </PopoverTrigger>
       <PopoverContent className="w-full p-0">
         <Calendar
+          autoFocus
           mode="single"
           selected={date}
           onSelect={setDate}
-          initialFocus
           className="border-y-0"
         />
       </PopoverContent>
