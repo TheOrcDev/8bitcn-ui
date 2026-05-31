@@ -1,13 +1,52 @@
+import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site";
+
 export const sharedMetaData = {
   title: {
-    default: "Build your retro library - 8bitcn/ui",
+    default: siteConfig.title,
     template: "%s - 8bitcn/ui",
   },
-  description: "A collection of 8-bit styled components for your next project.",
-  openGraph: {
-    images: "/assets/og-image.png",
+  description: siteConfig.description,
+  metadataBase: new URL(siteConfig.url),
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.creator, url: "https://orcdev.com" }],
+  creator: siteConfig.creator,
+  publisher: siteConfig.creator,
+  keywords: [
+    "8bitcn",
+    "retro UI library",
+    "8-bit components",
+    "shadcn/ui",
+    "React components",
+    "Next.js components",
+    "game UI",
+  ],
+  alternates: {
+    canonical: "/",
   },
-};
+  openGraph: {
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: "/",
+    siteName: siteConfig.name,
+    type: "website",
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 2404,
+        height: 1260,
+        alt: "8bitcn/ui retro UI library preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    creator: "@theorcdev",
+  },
+} satisfies Metadata;
 
 export const buttonMetaData = "/assets/8bitcn-button-light.png";
 export const alertMetaData = "/assets/8bitcn-alert-light.png";

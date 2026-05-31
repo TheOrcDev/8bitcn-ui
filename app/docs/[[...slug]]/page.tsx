@@ -16,6 +16,7 @@ import { mythicSponsors } from "@/components/sponsors";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { siteConfig } from "@/lib/site";
 import { source } from "@/lib/source";
 import { absoluteUrl } from "@/lib/utils";
 import { mdxComponents } from "@/mdx-components";
@@ -40,6 +41,10 @@ export async function generateMetadata(props: {
     notFound();
   }
 
+  const ogImageUrl = `/og?title=${encodeURIComponent(
+    doc.title
+  )}&description=${encodeURIComponent(doc.description)}`;
+
   return {
     title: doc.title,
     description: doc.description,
@@ -50,9 +55,10 @@ export async function generateMetadata(props: {
       url: absoluteUrl(page.url),
       images: [
         {
-          url: `/og?title=${encodeURIComponent(
-            doc.title
-          )}&description=${encodeURIComponent(doc.description)}`,
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${doc.title} - ${siteConfig.name}`,
         },
       ],
     },
@@ -62,12 +68,13 @@ export async function generateMetadata(props: {
       description: doc.description,
       images: [
         {
-          url: `/og?title=${encodeURIComponent(
-            doc.title
-          )}&description=${encodeURIComponent(doc.description)}`,
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${doc.title} - ${siteConfig.name}`,
         },
       ],
-      creator: "@shadcn",
+      creator: "@theorcdev",
     },
   };
 }
