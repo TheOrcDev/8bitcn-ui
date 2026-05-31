@@ -41,16 +41,18 @@ export async function generateMetadata(props: {
     notFound();
   }
 
-  const ogImageUrl = `/og?title=${encodeURIComponent(
-    doc.title
-  )}&description=${encodeURIComponent(doc.description)}`;
+  const ogImageUrl = absoluteUrl(siteConfig.ogImage);
 
   return {
     title: doc.title,
     description: doc.description,
+    alternates: {
+      canonical: page.url,
+    },
     openGraph: {
       title: doc.title,
       description: doc.description,
+      siteName: siteConfig.name,
       type: "article",
       url: absoluteUrl(page.url),
       images: [
