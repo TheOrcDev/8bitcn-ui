@@ -48,4 +48,4 @@ Licensed under the [MIT license](/license.md).
 
 ## Star History
 
-[![RepoStars](https://repostars.dev/api/embed?repo=theorcdev/8bitcn-ui&theme=8bit)](https://repostars.dev/?repos=theorcdev/8bitcn-ui&theme=8bit)
+[![RepoStars](https://repostars.dev/api/embed?repo=TheOrcDev%2F8bitcn-ui&theme=terminal)](https://repostars.dev/?repos=TheOrcDev%2F8bitcn-ui&theme=terminal)
