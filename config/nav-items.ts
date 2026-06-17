@@ -28,6 +28,10 @@ const components = [
     url: "/docs/components/button",
   },
   {
+    title: "Button Group",
+    url: "/docs/components/button-group",
+  },
+  {
     title: "Calendar",
     url: "/docs/components/calendar",
   },
