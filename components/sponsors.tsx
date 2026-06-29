@@ -35,6 +35,12 @@ export const mythicSponsors = [
 
 const legendarySponsors = [
   {
+    name: "LYNX SEO",
+    url: "https://www.lynxseo.com/",
+    image: "/sponsors/lynx-seo.png",
+    invert: false,
+  },
+  {
     name: "Trigger.dev",
     url: "https://www.trigger.dev/",
     image: "/sponsors/trigger-dev.png",

@@ -106,7 +106,15 @@ export default function Hero2({
         </div>
 
         {/* Visual side */}
-        <img src="/images/8bit-orc.png" alt="Hero 2" className="w-full h-full object-cover" />
+        {visual ? (
+          <div className="w-full h-full">{visual}</div>
+        ) : (
+          <img
+            src="/images/8bit-orc.png"
+            alt="Hero 2"
+            className="w-full h-full object-cover"
+          />
+        )}
       </div>
     </section>
   );
