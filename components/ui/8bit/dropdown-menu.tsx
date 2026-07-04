@@ -95,7 +95,7 @@ function DropdownMenuSubContent({
   className,
   font,
   ...props
-}: BitDropownMenuContentProps) {
+}: BitDropownMenuSubContentProps) {
   return (
     <ShadcnDropdownMenuSubContent
       {...props}
@@ -114,6 +114,10 @@ function DropdownMenuSubContent({
     </ShadcnDropdownMenuSubContent>
   );
 }
+
+export interface BitDropownMenuSubContentProps
+  extends React.ComponentProps<typeof ShadcnDropdownMenuSubContent>,
+    VariantProps<typeof dropDownVariants> {}
 
 export interface BitDropownMenuContentProps
   extends React.ComponentProps<typeof DropdownMenuPrimitive.Content>,
