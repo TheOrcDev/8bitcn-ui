@@ -60,8 +60,14 @@ const legendarySponsors = [
   },
 ];
 
-// const sponsors = [
-// ];
+const sponsors = [
+  {
+    name: "TeknikGeek",
+    url: "https://www.teknikgeek.se/",
+    image: "/sponsors/teknikgeek.png",
+    invert: false,
+  },
+];
 
 export default function Sponsors() {
   return (
@@ -164,7 +170,21 @@ export default function Sponsors() {
       <h2 className="font-bold text-xl">Sponsors</h2>
 
       <div className="flex flex-wrap items-center justify-center gap-6">
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+        {sponsors.map((sponsor) => (
+          <Link href={sponsor.url} key={sponsor.name} target="_blank">
+            <div className="flex flex-col items-center gap-3">
+              <Avatar className="size-30" variant="default">
+                <AvatarImage
+                  alt={sponsor.name}
+                  className={cn("p-2", sponsor.invert && "dark:invert")}
+                  src={sponsor.image}
+                />
+              </Avatar>
+              <p className="font-bold text-xs">{sponsor.name}</p>
+            </div>
+          </Link>
+        ))}
+        {[1, 2, 3, 4, 5, 6, 7].map((i) => (
           <div
             className="flex flex-col items-center gap-3"
             key={`sponsor-empty-${i}`}
