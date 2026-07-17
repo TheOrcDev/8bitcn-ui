@@ -31,6 +31,14 @@ export const mythicSponsors = [
     invert: true,
     foil: false,
   },
+  {
+    name: "ReUI",
+    description: "Free Shadcn UI components, blocks, icons & templates",
+    url: "https://reui.io/",
+    image: "/sponsors/reui.svg",
+    invert: true,
+    foil: false,
+  },
 ];
 
 const legendarySponsors = [
