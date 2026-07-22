@@ -79,7 +79,7 @@ export function DocsTableOfContents({
             size="sm"
             variant="outline"
           >
-            <IconMenu3 /> On This Page
+            <IconMenu3 data-icon="inline-start" /> On This Page
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent

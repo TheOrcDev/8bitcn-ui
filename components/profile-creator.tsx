@@ -369,6 +369,7 @@ export default function ProfileCard() {
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
               <Input
+                autoComplete="name"
                 id="name"
                 onChange={(e) => setProfile({ name: e.currentTarget.value })}
                 placeholder="Pacman"
@@ -431,6 +432,7 @@ export default function ProfileCard() {
                 <div className="flex items-center gap-5">
                   <Input
                     accept="image/*"
+                    aria-label="Upload avatar image"
                     className="pt-1.5"
                     id="avatar-file"
                     onChange={(e) => {

@@ -99,6 +99,7 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
 
   const trigger = (
     <Button
+      aria-label="More copy options"
       className="peer -ml-0.5 size-8 shadow-none md:size-7 md:text-[0.8rem]"
       size="sm"
       variant="secondary"

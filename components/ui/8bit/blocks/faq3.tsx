@@ -105,6 +105,7 @@ export default function FAQ3({
         {/* Search */}
         <div className="mb-8">
           <Input
+            aria-label="Search frequently asked questions"
             className="retro text-xs"
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search questions..."

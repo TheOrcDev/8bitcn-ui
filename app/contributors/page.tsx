@@ -118,7 +118,7 @@ export default async function ContributorsPage() {
                   target="_blank"
                 >
                   <svg
-                    className="size-4 fill-current transition duration-300 hover:scale-110"
+                    className="size-4 fill-current transition duration-300 hover:scale-110 motion-reduce:transform-none motion-reduce:transition-none"
                     viewBox="0 0 24 24"
                   >
                     <title>GitHub</title>
@@ -151,7 +151,7 @@ export default async function ContributorsPage() {
                   target="_blank"
                 >
                   <svg
-                    className="size-4 fill-current transition duration-300 hover:scale-110"
+                    className="size-4 fill-current transition duration-300 hover:scale-110 motion-reduce:transform-none motion-reduce:transition-none"
                     viewBox="0 0 24 24"
                   >
                     <title>GitHub</title>

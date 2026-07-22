@@ -88,11 +88,16 @@ export function DashboardHeader() {
         </Button>
 
         <div className="ml-auto flex items-center gap-2">
-          <Link href="https://github.com/TheOrcDev/8bitcn-ui" target="_blank">
-            <Button
-              className="retro flex items-center gap-2"
-              size="sm"
-              variant="ghost"
+          <Button
+            asChild
+            className="retro flex items-center gap-2"
+            size="sm"
+            variant="ghost"
+          >
+            <Link
+              href="https://github.com/TheOrcDev/8bitcn-ui"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <svg
                 className="size-8"
@@ -166,8 +171,8 @@ export function DashboardHeader() {
                 <rect height="14" rx="1" width="14" x="40" y="144" />
                 <rect height="14" rx="1" width="14" x="200" y="112" />
               </svg>
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
       </div>
     </header>

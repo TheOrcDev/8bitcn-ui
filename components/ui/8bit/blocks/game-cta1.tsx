@@ -81,9 +81,9 @@ export default function GameCTA1({
         </div>
 
         <div className="mt-8 text-center">
-          <Link href={ctaHref}>
-            <Button>{ctaLabel}</Button>
-          </Link>
+          <Button asChild>
+            <Link href={ctaHref}>{ctaLabel}</Link>
+          </Button>
         </div>
       </div>
     </section>

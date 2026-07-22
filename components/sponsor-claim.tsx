@@ -2,6 +2,7 @@
 
 import { CreemCheckout } from "@creem_io/nextjs";
 import { getSponsorProductId, type SponsorTier } from "@/lib/creem";
+import { cn } from "@/lib/utils";
 
 interface SponsorClaimProps {
   className?: string;
@@ -24,11 +25,9 @@ export default function SponsorClaim({
       productId={getSponsorProductId(tier)}
       successUrl="/sponsors?checkout=success"
     >
-      <button className={className} type="button">
-        <div className={labelClassName}>
-          <span className={textClassName}>{text}</span>
-        </div>
-      </button>
+      <span className={cn("block", className, labelClassName)}>
+        <span className={textClassName}>{text}</span>
+      </span>
     </CreemCheckout>
   );
 }

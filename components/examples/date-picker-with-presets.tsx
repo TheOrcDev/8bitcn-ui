@@ -27,7 +27,7 @@ export function DatePickerWithPresets() {
       <PopoverTrigger asChild>
         <Button
           className={cn(
-            "w-[280px] justify-start text-left font-normal",
+            "w-full max-w-[280px] justify-start text-left font-normal",
             !date && "text-muted-foreground"
           )}
           variant={"outline"}
@@ -42,7 +42,7 @@ export function DatePickerWithPresets() {
             setDate(addDays(new Date(), Number.parseInt(value, 10)))
           }
         >
-          <SelectTrigger>
+          <SelectTrigger aria-label="Date preset">
             <SelectValue placeholder="Select" />
           </SelectTrigger>
           <SelectContent position="popper">

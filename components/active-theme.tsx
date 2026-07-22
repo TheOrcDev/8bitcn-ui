@@ -73,7 +73,9 @@ export function ActiveThemeProvider({
 
   return (
     <ThemeContext.Provider value={{ activeTheme, setActiveTheme }}>
-      <Suspense>
+      <Suspense
+        fallback={<span className="sr-only">Loading theme preference</span>}
+      >
         <ActiveThemeUrlSync />
       </Suspense>
       {children}
