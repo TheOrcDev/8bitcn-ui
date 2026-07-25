@@ -4,7 +4,9 @@ import { RootProvider } from "fumadocs-ui/provider/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { Suspense } from "react";
 import { ActiveThemeProvider } from "@/components/active-theme";
+import { ModeUrlSync } from "@/components/mode-url-sync";
 import { ScreenSize } from "@/components/screen-size";
 import SearchDialog from "@/components/search";
 import SiteFooter from "@/components/site-footer";
@@ -52,6 +54,9 @@ export default function RootLayout({
               enableSystem
             >
               <ActiveThemeProvider>
+                <Suspense fallback={null}>
+                  <ModeUrlSync />
+                </Suspense>
                 <SiteHeader />
                 <div className="mx-auto w-full max-w-[1400px] flex-1 border-r border-l border-dashed">
                   {children}

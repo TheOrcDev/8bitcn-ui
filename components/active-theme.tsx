@@ -6,6 +6,7 @@ import {
   createContext,
   type ReactNode,
   Suspense,
+  useCallback,
   useContext,
   useEffect,
   useRef,
@@ -44,14 +45,24 @@ export function ActiveThemeProvider({
 }) {
   const pathname = usePathname();
 
-  const [activeTheme, setActiveTheme] = useState<Theme>(
+  const [activeTheme, setActiveThemeState] = useState<Theme>(
     () => initialTheme || DEFAULT_THEME
   );
+
+  // Only themes the visitor picked belong in the URL, so that a link can be
+  // copied and shared. Resets on navigation deliberately leave it alone.
+  const [selectedTheme, setSelectedTheme] = useState<Theme | null>(null);
+
+  const setActiveTheme = useCallback((theme: Theme) => {
+    setActiveThemeState(theme);
+    setSelectedTheme(theme);
+  }, []);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: "We want to reset the theme on pathname change"
   useEffect(() => {
     queueMicrotask(() => {
-      setActiveTheme(DEFAULT_THEME);
+      setActiveThemeState(DEFAULT_THEME);
+      setSelectedTheme(null);
     });
   }, [pathname]);
 
@@ -73,8 +84,13 @@ export function ActiveThemeProvider({
 
   return (
     <ThemeContext.Provider value={{ activeTheme, setActiveTheme }}>
-      <Suspense>
-        <ActiveThemeUrlSync />
+      <Suspense
+        fallback={<span className="sr-only">Loading theme preference</span>}
+      >
+        <ActiveThemeUrlSync
+          onUrlTheme={setActiveThemeState}
+          selectedTheme={selectedTheme}
+        />
       </Suspense>
       {children}
     </ThemeContext.Provider>
@@ -94,28 +110,45 @@ export function useThemeConfig() {
 export const useUrlTheme = () =>
   useQueryState("theme", parseAsStringLiteral(Object.values(Theme)));
 
-// Load the active theme from the URL query parameter on mount.
-export function ActiveThemeUrlSync() {
-  const [urlTheme] = useUrlTheme();
+// Keeps the active theme and the `theme` query parameter in step, so a theme
+// can be shared by copying the URL. Kept in its own component because reading
+// the query string suspends, and the provider itself wraps the whole app.
+function ActiveThemeUrlSync({
+  onUrlTheme,
+  selectedTheme,
+}: {
+  onUrlTheme: (theme: Theme) => void;
+  selectedTheme: Theme | null;
+}) {
+  const [urlTheme, setUrlTheme] = useUrlTheme();
   const synced = useRef(false);
-  const { activeTheme, setActiveTheme } = useThemeConfig();
 
+  // URL -> state, once on mount, so a shared link opens on the right theme.
   useEffect(() => {
-    if (synced.current || !urlTheme) {
+    if (synced.current) {
       return;
-    }
-    if (urlTheme !== activeTheme) {
-      // Setting it directly here would be cancelled by the useEffect above
-      // that resets the theme on pathname change.
-      // Defer to the end of the microtask queue to re-apply it afterwards
-      // to follow the URL as the source of truth.
-      queueMicrotask(() => {
-        setActiveTheme(urlTheme);
-      });
     }
     // Avoid queuing multiple times
     synced.current = true;
-  }, [urlTheme, activeTheme, setActiveTheme]);
+
+    if (!urlTheme) {
+      return;
+    }
+    // Setting it directly here would be cancelled by the useEffect above
+    // that resets the theme on pathname change.
+    // Defer to the end of the microtask queue to re-apply it afterwards
+    // to follow the URL as the source of truth.
+    queueMicrotask(() => {
+      onUrlTheme(urlTheme);
+    });
+  }, [urlTheme, onUrlTheme]);
+
+  // State -> URL, so picking a theme anywhere produces a shareable link.
+  useEffect(() => {
+    if (selectedTheme) {
+      setUrlTheme(selectedTheme);
+    }
+  }, [selectedTheme, setUrlTheme]);
 
   return null;
 }

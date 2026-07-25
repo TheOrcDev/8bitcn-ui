@@ -54,9 +54,9 @@ export default function NotFound1({
       <p className="retro text-muted-foreground text-xs">{description}</p>
 
       <div className="flex justify-center">
-        <Link href={href}>
-          <Button>{cta}</Button>
-        </Link>
+        <Button asChild>
+          <Link href={href}>{cta}</Link>
+        </Button>
       </div>
     </div>
   );

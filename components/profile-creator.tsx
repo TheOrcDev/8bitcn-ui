@@ -4,7 +4,7 @@
 import * as htmlToImage from "html-to-image";
 import { parseAsBoolean, parseAsString, useQueryStates } from "nuqs";
 import { useMemo, useState } from "react";
-import { useThemeConfig, useUrlTheme } from "@/components/active-theme";
+import { useThemeConfig } from "@/components/active-theme";
 import { SelectThemeDropdown } from "@/components/select-theme-dropdown";
 import { Button } from "@/components/ui/8bit/button";
 import {
@@ -339,7 +339,6 @@ export default function ProfileCard() {
   };
 
   const { activeTheme, setActiveTheme } = useThemeConfig();
-  const [, setUrlTheme] = useUrlTheme();
 
   return (
     <div className="retro space-y-6 p-4 md:p-6">
@@ -369,6 +368,7 @@ export default function ProfileCard() {
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
               <Input
+                autoComplete="name"
                 id="name"
                 onChange={(e) => setProfile({ name: e.currentTarget.value })}
                 placeholder="Pacman"
@@ -431,6 +431,7 @@ export default function ProfileCard() {
                 <div className="flex items-center gap-5">
                   <Input
                     accept="image/*"
+                    aria-label="Upload avatar image"
                     className="pt-1.5"
                     id="avatar-file"
                     onChange={(e) => {
@@ -511,10 +512,7 @@ export default function ProfileCard() {
           <div className="mx-auto max-w-xs">
             <SelectThemeDropdown
               activeTheme={activeTheme}
-              setActiveTheme={(theme) => {
-                setActiveTheme(theme);
-                setUrlTheme(theme);
-              }}
+              setActiveTheme={setActiveTheme}
             />
           </div>
           <div className="flex justify-center p-5" id="profile-card">

@@ -376,7 +376,7 @@ export default function ComponentShowcase() {
               <Spinner className="size-10" variant="diamond" />
               <Spinner className="size-10" variant="classic" />
               <Select>
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger aria-label="Theme" className="w-[180px]">
                   <SelectValue placeholder="Theme" />
                 </SelectTrigger>
                 <SelectContent>
@@ -458,7 +458,11 @@ export default function ComponentShowcase() {
           </DropdownMenu>
         </div>
 
-        <Input placeholder="Enter your name" />
+        <Input
+          aria-label="Name"
+          autoComplete="name"
+          placeholder="Enter your name"
+        />
 
         <Menubar>
           <MenubarMenu>

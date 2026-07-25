@@ -76,18 +76,20 @@ export default function PortalTransition({
       {/* Portal image */}
       {imageSrc && (
         <button
+          aria-label={primaryLabel}
           className={cn(
-            "group relative cursor-pointer border-0 bg-transparent p-0 transition-transform duration-300",
+            "group relative cursor-pointer border-0 bg-transparent p-0 transition-transform duration-300 motion-reduce:transform-none motion-reduce:transition-none",
             traveling ? "scale-110" : "hover:scale-105",
           )}
+          disabled={traveling}
           onClick={handleEnter}
           type="button"
         >
           <Image
             alt="Portal"
             className={cn(
-              "pixelated transition-opacity duration-300",
-              traveling && "animate-pulse",
+              "pixelated transition-opacity duration-300 motion-reduce:transition-none",
+              traveling && "animate-pulse motion-reduce:animate-none",
             )}
             height={220}
             src={imageSrc}
@@ -98,22 +100,20 @@ export default function PortalTransition({
 
       {/* CTAs */}
       <div className="flex flex-wrap justify-center gap-4">
-        {href ? (
-          <Link href={href}>
-            <Button disabled={traveling}>
-              {traveling ? travelingText : primaryLabel}
-            </Button>
-          </Link>
+        {href && !traveling ? (
+          <Button asChild>
+            <Link href={href}>{primaryLabel}</Link>
+          </Button>
         ) : (
-          <Button disabled={traveling} onClick={handleEnter}>
+          <Button disabled={traveling} onClick={href ? undefined : handleEnter}>
             {traveling ? travelingText : primaryLabel}
           </Button>
         )}
 
         {secondaryLabel && hrefSecondary && (
-          <Link href={hrefSecondary}>
-            <Button variant="outline">{secondaryLabel}</Button>
-          </Link>
+          <Button asChild variant="outline">
+            <Link href={hrefSecondary}>{secondaryLabel}</Link>
+          </Button>
         )}
       </div>
 

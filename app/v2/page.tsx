@@ -62,13 +62,13 @@ export default function BlocksPage() {
           components.
         </p>
 
-        <div className="flex gap-4">
-          <Link href="/docs">
-            <Button>Open Docs</Button>
-          </Link>
-          <Link href="#blocks">
-            <Button variant="outline">Browse Blocks</Button>
-          </Link>
+        <div className="flex w-full max-w-xs flex-col gap-4 sm:w-auto sm:max-w-none sm:flex-row">
+          <Button asChild className="w-full sm:w-auto">
+            <Link href="/docs">Open Docs</Link>
+          </Button>
+          <Button asChild className="w-full sm:w-auto" variant="outline">
+            <Link href="#blocks">Browse Blocks</Link>
+          </Button>
         </div>
       </section>
 
@@ -216,9 +216,9 @@ export default function BlocksPage() {
         </div>
 
         <div className="mt-8 text-center">
-          <Link href="/docs/blocks">
-            <Button variant="outline">See all 35 blocks</Button>
-          </Link>
+          <Button asChild variant="outline">
+            <Link href="/docs/blocks">See all 35 blocks</Link>
+          </Button>
         </div>
       </section>
 
@@ -288,13 +288,13 @@ export default function BlocksPage() {
         <h2 className="retro mb-4 font-bold text-xl md:text-2xl">
           Ready to build with 8bitcn?
         </h2>
-        <div className="flex gap-4">
-          <Link href="/docs">
-            <Button>Go to Docs</Button>
-          </Link>
-          <Link href="/docs/blocks">
-            <Button variant="outline">Explore Blocks</Button>
-          </Link>
+        <div className="flex w-full max-w-xs flex-col gap-4 sm:w-auto sm:max-w-none sm:flex-row">
+          <Button asChild className="w-full sm:w-auto">
+            <Link href="/docs">Go to Docs</Link>
+          </Button>
+          <Button asChild className="w-full sm:w-auto" variant="outline">
+            <Link href="/docs/blocks">Explore Blocks</Link>
+          </Button>
         </div>
       </section>
     </div>

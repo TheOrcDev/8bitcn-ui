@@ -65,36 +65,39 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
           ...classNames,
         }}
         components={{
-          MonthsDropdown: ({ className, ...props }) => {
-            const currentMonth = props.value as number;
-
-            const months = [
-              "January",
-              "February",
-              "March",
-              "April",
-              "May",
-              "June",
-              "July",
-              "August",
-              "September",
-              "October",
-              "November",
-              "December",
-            ];
-
-            const currentMonthName = months[currentMonth];
-
+          MonthsDropdown: ({
+            "aria-label": ariaLabel,
+            className,
+            disabled,
+            onChange,
+            options,
+            value,
+          }) => {
             return (
               <div className={cn("flex flex-col gap-3 text-xs", className)}>
-                <Select defaultValue={currentMonthName}>
-                  <SelectTrigger id="dropdown" className="bg-background w-full">
+                <Select
+                  disabled={disabled}
+                  onValueChange={(nextValue) => {
+                    onChange?.({
+                      target: { value: nextValue },
+                    } as React.ChangeEvent<HTMLSelectElement>);
+                  }}
+                  value={value?.toString()}
+                >
+                  <SelectTrigger
+                    aria-label={ariaLabel ?? "Month"}
+                    className="bg-background w-full"
+                  >
                     <SelectValue placeholder="Dropdown" />
                   </SelectTrigger>
                   <SelectContent align="center">
-                    {months.map((month) => (
-                      <SelectItem key={month} value={month}>
-                        {month}
+                    {options?.map((option) => (
+                      <SelectItem
+                        disabled={option.disabled}
+                        key={option.value}
+                        value={option.value.toString()}
+                      >
+                        {option.label}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -102,23 +105,39 @@ function Calendar({ className, classNames, font, ...props }: CalendarProps) {
               </div>
             );
           },
-          YearsDropdown: ({ className }) => {
-            const currentYear = new Date().getFullYear();
-            const years = Array.from(
-              { length: currentYear - 1925 + 1 },
-              (_, i) => 1925 + i
-            );
-
+          YearsDropdown: ({
+            "aria-label": ariaLabel,
+            className,
+            disabled,
+            onChange,
+            options,
+            value,
+          }) => {
             return (
               <div className={cn("flex flex-col gap-3 text-xs", className)}>
-                <Select defaultValue={currentYear?.toString()}>
-                  <SelectTrigger id="dropdown" className="bg-background w-full">
+                <Select
+                  disabled={disabled}
+                  onValueChange={(nextValue) => {
+                    onChange?.({
+                      target: { value: nextValue },
+                    } as React.ChangeEvent<HTMLSelectElement>);
+                  }}
+                  value={value?.toString()}
+                >
+                  <SelectTrigger
+                    aria-label={ariaLabel ?? "Year"}
+                    className="bg-background w-full"
+                  >
                     <SelectValue placeholder="Dropdown" />
                   </SelectTrigger>
                   <SelectContent align="center">
-                    {years.map((year) => (
-                      <SelectItem key={year} value={year.toString()}>
-                        {year}
+                    {options?.map((option) => (
+                      <SelectItem
+                        disabled={option.disabled}
+                        key={option.value}
+                        value={option.value.toString()}
+                      >
+                        {option.label}
                       </SelectItem>
                     ))}
                   </SelectContent>

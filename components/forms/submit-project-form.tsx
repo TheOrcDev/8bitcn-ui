@@ -30,6 +30,11 @@ const URL_PROTOCOL_REGEX = /^https?:\/\//i;
 const VALID_HOSTNAME_REGEX = /^.+\..+$/;
 const MIN_PROJECT_NAME_LENGTH = 3;
 const MAX_PROJECT_NAME_LENGTH = 50;
+const PROJECT_NAME_INPUT_ID = "form-tanstack-input-project-name";
+const PROJECT_NAME_ERROR_ID = "form-tanstack-error-project-name";
+const PROJECT_URL_INPUT_ID = "form-tanstack-input-url";
+const PROJECT_URL_DESCRIPTION_ID = "form-tanstack-description-url";
+const PROJECT_URL_ERROR_ID = "form-tanstack-error-url";
 
 const formSchema = z.object({
   projectName: z
@@ -126,23 +131,30 @@ export function SubmitProjectForm() {
 
                 return (
                   <Field data-invalid={isInvalid}>
-                    <FieldLabel htmlFor="form-tanstack-input-project-name">
+                    <FieldLabel htmlFor={PROJECT_NAME_INPUT_ID}>
                       Project Name
                     </FieldLabel>
                     <Input
+                      aria-describedby={
+                        isInvalid ? PROJECT_NAME_ERROR_ID : undefined
+                      }
                       aria-invalid={isInvalid}
-                      autoComplete="project-name"
-                      id="form-tanstack-input-project-name"
+                      autoComplete="off"
+                      id={PROJECT_NAME_INPUT_ID}
+                      maxLength={MAX_PROJECT_NAME_LENGTH}
+                      minLength={MIN_PROJECT_NAME_LENGTH}
                       name={field.name}
                       onBlur={field.handleBlur}
                       onChange={(e) => field.handleChange(e.target.value)}
                       placeholder="project name"
+                      required
                       value={field.state.value}
                     />
                     {isInvalid && (
                       <FieldError
                         className="text-xs"
                         errors={field.state.meta.errors}
+                        id={PROJECT_NAME_ERROR_ID}
                       />
                     )}
                   </Field>
@@ -156,27 +168,37 @@ export function SubmitProjectForm() {
                   field.state.meta.isTouched && !field.state.meta.isValid;
                 return (
                   <Field data-invalid={isInvalid}>
-                    <FieldLabel htmlFor="form-tanstack-input-url">
+                    <FieldLabel htmlFor={PROJECT_URL_INPUT_ID}>
                       Project URL
                     </FieldLabel>
                     <Input
+                      aria-describedby={
+                        isInvalid
+                          ? `${PROJECT_URL_DESCRIPTION_ID} ${PROJECT_URL_ERROR_ID}`
+                          : PROJECT_URL_DESCRIPTION_ID
+                      }
                       aria-invalid={isInvalid}
                       autoComplete="url"
-                      id="form-tanstack-input-url"
+                      id={PROJECT_URL_INPUT_ID}
                       name={field.name}
                       onBlur={field.handleBlur}
                       onChange={(e) => field.handleChange(e.target.value)}
                       placeholder="https://yourproject.com"
+                      required
                       type="text"
                       value={field.state.value}
                     />
-                    <FieldDescription className="text-xs">
+                    <FieldDescription
+                      className="text-xs"
+                      id={PROJECT_URL_DESCRIPTION_ID}
+                    >
                       Must be a public project.
                     </FieldDescription>
                     {isInvalid && (
                       <FieldError
                         className="text-xs"
                         errors={field.state.meta.errors}
+                        id={PROJECT_URL_ERROR_ID}
                       />
                     )}
                   </Field>

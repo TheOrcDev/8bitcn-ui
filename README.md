@@ -1,12 +1,34 @@
-## 8bitcn/ui
+<div align="center">
 
-Accessible retro components that you can copy and paste into your apps. Free. Open Source.
+# 8bitcn/ui
 
-Visit [8bitcn.com](https://8bitcn.com/)
+<p><strong>Accessible retro components that you can copy and paste into your apps.<br>Free. Open Source. Built on shadcn/ui.</strong></p>
 
-[![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=❤&logo=GitHub&color=#fe8e86)](https://github.com/sponsors/theorcdev)
+<a href="https://8bitcn.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./public/assets/8bitcn-showcase-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="./public/assets/8bitcn-showcase-light.png">
+    <img alt="8bitcn/ui components" src="./public/assets/8bitcn-showcase-light.png">
+  </picture>
+</a>
 
-![8bitcn UI Components](./public/assets/8bitcn-readme-showcase.png)
+<p>
+  <a href="https://github.com/TheOrcDev/8bitcn-ui/stargazers"><img alt="Stars" src="https://shieldcn.dev/github/stars/TheOrcDev/8bitcn-ui.svg"></a>
+  <a href="https://github.com/TheOrcDev/8bitcn-ui/forks"><img alt="Forks" src="https://shieldcn.dev/github/forks/TheOrcDev/8bitcn-ui.svg"></a>
+  <a href="/license.md"><img alt="License" src="https://shieldcn.dev/github/license/TheOrcDev/8bitcn-ui.svg"></a>
+  <a href="https://ui.shadcn.com"><img alt="Built with shadcn/ui" src="https://shieldcn.dev/badge/built_with-shadcn%2Fui.svg?logo=shadcnui"></a>
+  <a href="https://github.com/sponsors/theorcdev"><img alt="Sponsor" src="https://shieldcn.dev/badge/sponsor-%E2%9D%A4.svg?logo=githubsponsors&logoColor=18181b"></a>
+</p>
+
+<p>
+  <a href="https://8bitcn.com/docs"><strong>Documentation</strong></a> ·
+  <a href="https://8bitcn.com/docs/components"><strong>Components</strong></a> ·
+  <a href="https://8bitcn.com/docs/blocks"><strong>Blocks</strong></a> ·
+  <a href="https://8bitcn.com/themes"><strong>Themes</strong></a> ·
+  <a href="https://discord.com/invite/uFB5YzH9YG"><strong>Discord</strong></a>
+</p>
+
+</div>
 
 ## Contributing
 

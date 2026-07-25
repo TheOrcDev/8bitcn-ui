@@ -1630,3 +1630,9 @@
 .pixel-nudge-right {
   animation: pixel-nudge-right 900ms steps(2, end) infinite;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-nudge-right {
+    animation: none;
+  }
+}

@@ -49,7 +49,10 @@ export default function Advanced3({
 
               <div className="flex flex-col md:flex-row items-center gap-4">
                 <Input
+                  aria-label="Email address"
+                  autoComplete="email"
                   className="retro flex-1 text-xs"
+                  name="email"
                   placeholder={placeholder}
                   type="email"
                 />

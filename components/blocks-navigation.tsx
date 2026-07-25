@@ -38,11 +38,13 @@ export default function BlocksNavigation({ active }: BlocksNavigationProps) {
   return (
     <div className="flex flex-wrap gap-5">
       {blocks.map((block) => (
-        <Link href={block.href} key={block.id}>
-          <Button variant={active === block.id ? "default" : "outline"}>
-            {block.title}
-          </Button>
-        </Link>
+        <Button
+          asChild
+          key={block.id}
+          variant={active === block.id ? "default" : "outline"}
+        >
+          <Link href={block.href}>{block.title}</Link>
+        </Button>
       ))}
     </div>
   );

@@ -41,7 +41,7 @@ export function DatePickerWithRange({
         <PopoverTrigger asChild>
           <Button
             className={cn(
-              "w-[440px] justify-start text-left font-normal",
+              "w-full max-w-[440px] justify-start text-left font-normal",
               !date && "text-muted-foreground"
             )}
             id="date"

@@ -50,15 +50,17 @@ export default function Home() {
           source. Copy-paste.
         </p>
 
-        <div className="flex gap-4">
-          <Link href="/docs">
-            <Button className="text-xs md:text-sm">Open Docs</Button>
-          </Link>
-          <Link href="/v2">
-            <Button className="text-xs md:text-sm" variant="outline">
-              Explore Blocks
-            </Button>
-          </Link>
+        <div className="flex w-full max-w-xs flex-col gap-4 sm:w-auto sm:max-w-none sm:flex-row">
+          <Button asChild className="w-full text-xs sm:w-auto md:text-sm">
+            <Link href="/docs">Open Docs</Link>
+          </Button>
+          <Button
+            asChild
+            className="w-full text-xs sm:w-auto md:text-sm"
+            variant="outline"
+          >
+            <Link href="/v2">Explore Blocks</Link>
+          </Button>
         </div>
       </section>
 
@@ -80,11 +82,9 @@ export default function Home() {
         <p className="mx-auto mb-6 max-w-md text-muted-foreground text-xs">
           Share your project with the community. Get featured on the site.
         </p>
-        <Link href="/submit-project">
-          <Button size="sm" variant="outline">
-            Submit Your Project
-          </Button>
-        </Link>
+        <Button asChild className="text-xs" size="sm" variant="outline">
+          <Link href="/submit-project">Submit Your Project</Link>
+        </Button>
       </section>
     </div>
   );

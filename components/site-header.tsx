@@ -29,7 +29,10 @@ export function SiteHeader() {
           <MobileNav />
         </div>
 
-        <nav className="retro hidden items-center gap-4 text-[9px] md:flex">
+        <nav
+          aria-label="Primary"
+          className="retro hidden items-center gap-4 text-[9px] md:flex"
+        >
           {navItems.header.map((item) => (
             <Link
               className="text-foreground transition-colors hover:text-foreground/80"
@@ -43,11 +46,16 @@ export function SiteHeader() {
         <div className="ml-auto flex min-w-0 items-center gap-2 md:ml-auto">
           <SearchDocumentation />
 
-          <Link href="https://github.com/TheOrcDev/8bitcn-ui" target="_blank">
-            <Button
-              className="flex items-center gap-2"
-              size="sm"
-              variant="ghost"
+          <Button
+            asChild
+            className="flex items-center gap-2"
+            size="sm"
+            variant="ghost"
+          >
+            <Link
+              href="https://github.com/TheOrcDev/8bitcn-ui"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <svg className="size-4 fill-current" viewBox="0 0 24 24">
                 <title>GitHub</title>
@@ -56,8 +64,8 @@ export function SiteHeader() {
               <Suspense fallback={<Skeleton className="h-4 w-12" />}>
                 <StarsCount />
               </Suspense>
-            </Button>
-          </Link>
+            </Link>
+          </Button>
           <RetroModeSwitcher className="size-7" />
         </div>
       </div>

@@ -67,13 +67,13 @@ export default function NotFound3({
       <p className="retro text-muted-foreground text-[9px]">{description}</p>
 
       <div className="flex flex-wrap justify-center gap-4">
-        <Link href={href}>
-          <Button>{cta}</Button>
-        </Link>
+        <Button asChild>
+          <Link href={href}>{cta}</Link>
+        </Button>
         {ctaSecondary && hrefSecondary && (
-          <Link href={hrefSecondary}>
-            <Button variant="outline">{ctaSecondary}</Button>
-          </Link>
+          <Button asChild variant="outline">
+            <Link href={hrefSecondary}>{ctaSecondary}</Link>
+          </Button>
         )}
       </div>
     </div>

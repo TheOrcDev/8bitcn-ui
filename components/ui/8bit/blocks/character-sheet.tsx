@@ -172,7 +172,9 @@ export function CharacterSheet({
               <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
                 {characterClass && <span>{characterClass}</span>}
                 {characterTitle && (
-                  <span className="text-amber-500">{characterTitle}</span>
+                  <span className="text-amber-800 dark:text-amber-300">
+                    {characterTitle}
+                  </span>
                 )}
               </div>
             )}
@@ -187,7 +189,7 @@ export function CharacterSheet({
             {showHealth && health && (
               <div className="space-y-1">
                 <div className="flex sm:flex-row flex-col justify-between items-center">
-                  <span className="text-sm font-medium text-red-500">
+                  <span className="font-medium text-red-700 text-sm dark:text-red-300">
                     Health
                   </span>
                   <span className="text-xs text-muted-foreground retro">
@@ -205,7 +207,7 @@ export function CharacterSheet({
             {showMana && mana && (
               <div className="space-y-1">
                 <div className="flex sm:flex-row flex-col justify-between items-center">
-                  <span className="text-sm font-medium text-blue-500">
+                  <span className="font-medium text-blue-700 text-sm dark:text-blue-300">
                     Mana
                   </span>
                   <span className="text-xs text-muted-foreground retro">
@@ -223,7 +225,7 @@ export function CharacterSheet({
             {showExperience && experience && (
               <div className="space-y-1">
                 <div className="flex sm:flex-row flex-col justify-between items-center">
-                  <span className="text-sm font-medium text-yellow-500">
+                  <span className="font-medium text-sm text-yellow-800 dark:text-yellow-300">
                     Experience
                   </span>
                   <span className="text-xs text-muted-foreground retro">

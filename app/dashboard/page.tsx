@@ -1,4 +1,5 @@
 import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+import { Suspense } from "react";
 import { DashboardHeader } from "@/components/dashboard-header";
 import { DataTable } from "@/components/data-table";
 import { SectionCards } from "@/components/section-cards";
@@ -101,7 +102,18 @@ export default function Page() {
                   </Card>
                 </div>
 
-                <DataTable data={data} />
+                <Suspense
+                  fallback={
+                    <div
+                      className="px-4 text-muted-foreground text-xs lg:px-6"
+                      role="status"
+                    >
+                      Loading project table...
+                    </div>
+                  }
+                >
+                  <DataTable data={data} />
+                </Suspense>
               </div>
             </div>
           </div>

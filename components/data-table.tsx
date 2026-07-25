@@ -44,7 +44,7 @@ import {
   useReactTable,
   type VisibilityState,
 } from "@tanstack/react-table";
-import { useId, useMemo, useState } from "react";
+import { useCallback, useId, useMemo, useState } from "react";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -101,15 +101,48 @@ import {
 } from "@/components/ui/8bit/tabs";
 import { useIsMobile } from "@/hooks/use-mobile";
 
+const SAVE_DELAY_MS = 600;
+
+const nonNegativeIntegerStringSchema = z
+  .string()
+  .trim()
+  .min(1, "This value is required.")
+  .regex(/^\d+$/, "Enter a whole number of 0 or greater.");
+
 export const schema = z.object({
   id: z.number(),
-  header: z.string(),
+  header: z.string().trim().min(1, "Header is required."),
   type: z.string(),
   status: z.string(),
-  target: z.string(),
-  limit: z.string(),
+  target: nonNegativeIntegerStringSchema,
+  limit: nonNegativeIntegerStringSchema,
   reviewer: z.string(),
 });
+
+type DataTableItem = z.infer<typeof schema>;
+type EditableNumberField = "limit" | "target";
+type UpdateItem = (id: number, changes: Partial<DataTableItem>) => void;
+
+const itemEditSchema = schema.omit({ id: true });
+type ItemEditValues = z.infer<typeof itemEditSchema>;
+type ItemEditErrors = Partial<Record<keyof ItemEditValues, string>>;
+
+function waitForSave(): Promise<void> {
+  return new Promise((resolve) => {
+    setTimeout(resolve, SAVE_DELAY_MS);
+  });
+}
+
+function getItemEditValues(item: DataTableItem): ItemEditValues {
+  return {
+    header: item.header,
+    limit: item.limit,
+    reviewer: item.reviewer,
+    status: item.status,
+    target: item.target,
+    type: item.type,
+  };
+}
 
 // Create a separate component for the drag handle
 function DragHandle({ id }: { id: number }) {
@@ -122,6 +155,7 @@ function DragHandle({ id }: { id: number }) {
       {...attributes}
       {...listeners}
       className="size-7 text-muted-foreground hover:bg-transparent"
+      type="button"
       variant="ghost"
     >
       <IconGripVertical className="size-3 text-muted-foreground" />
@@ -130,166 +164,241 @@ function DragHandle({ id }: { id: number }) {
   );
 }
 
-const columns: ColumnDef<z.infer<typeof schema>>[] = [
-  {
-    id: "drag",
-    header: () => null,
-    cell: ({ row }) => <DragHandle id={row.original.id} />,
-  },
-  {
-    id: "select",
-    header: ({ table }) => (
-      <div className="flex items-center">
-        <Checkbox
-          aria-label="Select all"
-          checked={
-            table.getIsAllPageRowsSelected() ||
-            (table.getIsSomePageRowsSelected() && "indeterminate")
-          }
-          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        />
-      </div>
-    ),
-    cell: ({ row }) => (
-      <div className="flex items-center justify-center pr-2">
-        <Checkbox
-          aria-label="Select row"
-          checked={row.getIsSelected()}
-          onCheckedChange={(value) => row.toggleSelected(!!value)}
-        />
-      </div>
-    ),
-    enableSorting: false,
-    enableHiding: false,
-  },
-  {
-    accessorKey: "header",
-    header: "Header",
-    cell: ({ row }) => <TableCellViewer item={row.original} />,
-    enableHiding: false,
-  },
-  {
-    accessorKey: "type",
-    header: "Section Type",
-    cell: ({ row }) => (
-      <div className="min-w-32">
-        <Badge>{row.original.type}</Badge>
-      </div>
-    ),
-  },
-  {
-    accessorKey: "status",
-    header: "Status",
-    cell: ({ row }) => <Badge>{row.original.status}</Badge>,
-  },
-  {
-    accessorKey: "target",
-    header: () => <div className="w-full text-right">Target</div>,
-    cell: ({ row }) => (
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
-            loading: `Saving ${row.original.header}`,
-            success: "Done",
-            error: "Error",
-          });
-        }}
-      >
-        <Label className="sr-only" htmlFor={`${row.original.id}-target`}>
-          Target
-        </Label>
-        <Input
-          defaultValue={row.original.target}
-          id={`${row.original.id}-target`}
-        />
-      </form>
-    ),
-  },
-  {
-    accessorKey: "limit",
-    header: () => <div className="w-full text-right">Limit</div>,
-    cell: ({ row }) => (
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
-            loading: `Saving ${row.original.header}`,
-            success: "Done",
-            error: "Error",
-          });
-        }}
-      >
-        <Label className="sr-only" htmlFor={`${row.original.id}-limit`}>
-          Limit
-        </Label>
-        <Input
-          defaultValue={row.original.limit}
-          id={`${row.original.id}-limit`}
-        />
-      </form>
-    ),
-  },
-  {
-    accessorKey: "reviewer",
-    header: "Reviewer",
-    cell: ({ row }) => {
-      const isAssigned = row.original.reviewer !== "Assign reviewer";
+function InlineNumberForm({
+  field,
+  item,
+  onUpdate,
+}: {
+  field: EditableNumberField;
+  item: DataTableItem;
+  onUpdate: UpdateItem;
+}) {
+  const [value, setValue] = useState(item[field]);
+  const [error, setError] = useState<string>();
+  const [isPending, setIsPending] = useState(false);
+  const errorId = useId();
+  const inputId = `${item.id}-${field}`;
+  const label = field === "target" ? "Target" : "Limit";
 
-      if (isAssigned) {
-        return row.original.reviewer;
-      }
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
 
-      return (
-        <>
-          <Label className="sr-only" htmlFor={`${row.original.id}-reviewer`}>
-            Reviewer
-          </Label>
-          <Select>
-            <SelectTrigger
-              className="w-38 **:data-[slot=select-value]:block **:data-[slot=select-value]:truncate"
-              id={`${row.original.id}-reviewer`}
-            >
-              <SelectValue placeholder="Assign reviewer" />
-            </SelectTrigger>
-            <SelectContent align="end">
-              <SelectItem value="Eddie Lake">Eddie Lake</SelectItem>
-              <SelectItem value="Jamik Tashpulatov">
-                Jamik Tashpulatov
-              </SelectItem>
-            </SelectContent>
-          </Select>
-        </>
-      );
+    if (isPending) {
+      return;
+    }
+
+    const result = nonNegativeIntegerStringSchema.safeParse(value);
+
+    if (!result.success) {
+      setError(result.error.issues[0]?.message ?? `Enter a valid ${label}.`);
+      return;
+    }
+
+    setError(undefined);
+    setIsPending(true);
+
+    try {
+      await waitForSave();
+      const changes =
+        field === "target" ? { target: result.data } : { limit: result.data };
+      onUpdate(item.id, changes);
+      setValue(result.data);
+      toast.success(`${label} saved`);
+    } catch {
+      setError(`Could not save ${label.toLowerCase()}. Try again.`);
+      toast.error(`Could not save ${label.toLowerCase()}`);
+    } finally {
+      setIsPending(false);
+    }
+  }
+
+  return (
+    <form
+      aria-busy={isPending}
+      className="grid min-w-44 gap-1"
+      noValidate
+      onSubmit={handleSubmit}
+    >
+      <Label className="sr-only" htmlFor={inputId}>
+        {label}
+      </Label>
+      <div className="flex items-start gap-2">
+        <Input
+          aria-describedby={error ? errorId : undefined}
+          aria-invalid={Boolean(error)}
+          className="w-24"
+          disabled={isPending}
+          id={inputId}
+          inputMode="numeric"
+          name={field}
+          onChange={(event) => {
+            setValue(event.target.value);
+            setError(undefined);
+          }}
+          pattern="[0-9]+"
+          required
+          value={value}
+        />
+        <Button disabled={isPending} size="sm" type="submit" variant="outline">
+          {isPending ? "Saving..." : "Save"}
+        </Button>
+      </div>
+      {error ? (
+        <p className="text-destructive text-xs" id={errorId} role="alert">
+          {error}
+        </p>
+      ) : null}
+    </form>
+  );
+}
+
+function createColumns(onUpdate: UpdateItem): ColumnDef<DataTableItem>[] {
+  return [
+    {
+      id: "drag",
+      header: () => null,
+      cell: ({ row }) => <DragHandle id={row.original.id} />,
     },
-  },
-  {
-    id: "actions",
-    cell: () => (
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button
-            className="flex size-8 text-muted-foreground data-[state=open]:bg-muted"
-            size="icon"
-            variant="ghost"
-          >
-            <IconDotsVertical />
-            <span className="sr-only">Open menu</span>
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="w-32">
-          <DropdownMenuItem>Edit</DropdownMenuItem>
-          <DropdownMenuItem>Make a copy</DropdownMenuItem>
-          <DropdownMenuItem>Favorite</DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>Delete</DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    ),
-  },
-];
+    {
+      id: "select",
+      header: ({ table }) => (
+        <div className="flex items-center">
+          <Checkbox
+            aria-label="Select all"
+            checked={
+              table.getIsAllPageRowsSelected() ||
+              (table.getIsSomePageRowsSelected() && "indeterminate")
+            }
+            onCheckedChange={(value) =>
+              table.toggleAllPageRowsSelected(!!value)
+            }
+          />
+        </div>
+      ),
+      cell: ({ row }) => (
+        <div className="flex items-center justify-center pr-2">
+          <Checkbox
+            aria-label="Select row"
+            checked={row.getIsSelected()}
+            onCheckedChange={(value) => row.toggleSelected(!!value)}
+          />
+        </div>
+      ),
+      enableSorting: false,
+      enableHiding: false,
+    },
+    {
+      accessorKey: "header",
+      header: "Header",
+      cell: ({ row }) => (
+        <TableCellViewer item={row.original} onUpdate={onUpdate} />
+      ),
+      enableHiding: false,
+    },
+    {
+      accessorKey: "type",
+      header: "Section Type",
+      cell: ({ row }) => (
+        <div className="min-w-32">
+          <Badge>{row.original.type}</Badge>
+        </div>
+      ),
+    },
+    {
+      accessorKey: "status",
+      header: "Status",
+      cell: ({ row }) => <Badge>{row.original.status}</Badge>,
+    },
+    {
+      accessorKey: "target",
+      header: () => <div className="w-full text-right">Target</div>,
+      cell: ({ row }) => (
+        <InlineNumberForm
+          field="target"
+          item={row.original}
+          key={`${row.original.id}-target-${row.original.target}`}
+          onUpdate={onUpdate}
+        />
+      ),
+    },
+    {
+      accessorKey: "limit",
+      header: () => <div className="w-full text-right">Limit</div>,
+      cell: ({ row }) => (
+        <InlineNumberForm
+          field="limit"
+          item={row.original}
+          key={`${row.original.id}-limit-${row.original.limit}`}
+          onUpdate={onUpdate}
+        />
+      ),
+    },
+    {
+      accessorKey: "reviewer",
+      header: "Reviewer",
+      cell: ({ row }) => {
+        const isAssigned = row.original.reviewer !== "Assign reviewer";
 
-function DraggableRow({ row }: { row: Row<z.infer<typeof schema>> }) {
+        if (isAssigned) {
+          return row.original.reviewer;
+        }
+
+        return (
+          <>
+            <Label className="sr-only" htmlFor={`${row.original.id}-reviewer`}>
+              Reviewer
+            </Label>
+            <Select
+              onValueChange={(reviewer) => {
+                onUpdate(row.original.id, { reviewer });
+              }}
+            >
+              <SelectTrigger
+                className="w-38 **:data-[slot=select-value]:block **:data-[slot=select-value]:truncate"
+                id={`${row.original.id}-reviewer`}
+              >
+                <SelectValue placeholder="Assign reviewer" />
+              </SelectTrigger>
+              <SelectContent align="end">
+                <SelectItem value="Eddie Lake">Eddie Lake</SelectItem>
+                <SelectItem value="Jamik Tashpulatov">
+                  Jamik Tashpulatov
+                </SelectItem>
+              </SelectContent>
+            </Select>
+          </>
+        );
+      },
+    },
+    {
+      id: "actions",
+      cell: () => (
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button
+              className="flex size-8 text-muted-foreground data-[state=open]:bg-muted"
+              size="icon"
+              type="button"
+              variant="ghost"
+            >
+              <IconDotsVertical />
+              <span className="sr-only">Open menu</span>
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-32">
+            <DropdownMenuItem>Edit</DropdownMenuItem>
+            <DropdownMenuItem>Make a copy</DropdownMenuItem>
+            <DropdownMenuItem>Favorite</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Delete</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      ),
+    },
+  ];
+}
+
+function DraggableRow({ row }: { row: Row<DataTableItem> }) {
   const { transform, transition, setNodeRef, isDragging } = useSortable({
     id: row.original.id,
   });
@@ -314,11 +423,7 @@ function DraggableRow({ row }: { row: Row<z.infer<typeof schema>> }) {
   );
 }
 
-export function DataTable({
-  data: initialData,
-}: {
-  data: z.infer<typeof schema>[];
-}) {
+export function DataTable({ data: initialData }: { data: DataTableItem[] }) {
   const [data, setData] = useState(() => initialData);
   const [rowSelection, setRowSelection] = useState({});
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
@@ -328,6 +433,7 @@ export function DataTable({
     pageIndex: 0,
     pageSize: 10,
   });
+  const [activeView, setActiveView] = useState("outline");
   const sortableId = useId();
   const sensors = useSensors(
     useSensor(MouseSensor, {}),
@@ -339,6 +445,14 @@ export function DataTable({
     () => data?.map(({ id }) => id) || [],
     [data]
   );
+  const updateItem = useCallback<UpdateItem>((id, changes) => {
+    setData((currentData) =>
+      currentData.map((item) =>
+        item.id === id ? { ...item, ...changes } : item
+      )
+    );
+  }, []);
+  const columns = useMemo(() => createColumns(updateItem), [updateItem]);
 
   // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
@@ -380,13 +494,14 @@ export function DataTable({
   return (
     <Tabs
       className="w-full flex-col justify-start gap-6"
-      defaultValue="outline"
+      onValueChange={setActiveView}
+      value={activeView}
     >
       <div className="flex flex-col gap-6 px-4 lg:px-6">
         <Label className="sr-only" htmlFor="view-selector">
           View
         </Label>
-        <Select defaultValue="outline">
+        <Select onValueChange={setActiveView} value={activeView}>
           <SelectTrigger
             className="flex @4xl/main:hidden w-fit"
             id="view-selector"
@@ -447,7 +562,7 @@ export function DataTable({
                 ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          <Button size="sm" variant="outline">
+          <Button aria-label="Add section" size="sm" variant="outline">
             <span className="hidden lg:inline">Add Section</span>
           </Button>
         </div>
@@ -624,13 +739,90 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
+function TableCellViewer({
+  item,
+  onUpdate,
+}: {
+  item: DataTableItem;
+  onUpdate: UpdateItem;
+}) {
   const isMobile = useIsMobile();
+  const formId = useId();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isPending, setIsPending] = useState(false);
+  const [values, setValues] = useState(() => getItemEditValues(item));
+  const [errors, setErrors] = useState<ItemEditErrors>({});
+  const [formError, setFormError] = useState<string>();
+
+  function handleOpenChange(open: boolean) {
+    setIsOpen(open);
+
+    if (open) {
+      setValues(getItemEditValues(item));
+      setErrors({});
+      setFormError(undefined);
+    }
+  }
+
+  function updateValue(field: keyof ItemEditValues, value: string) {
+    setValues((currentValues) => ({
+      ...currentValues,
+      [field]: value,
+    }));
+    setErrors((currentErrors) => ({
+      ...currentErrors,
+      [field]: undefined,
+    }));
+  }
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    if (isPending) {
+      return;
+    }
+
+    const result = itemEditSchema.safeParse(values);
+
+    if (!result.success) {
+      const fieldErrors = result.error.flatten().fieldErrors;
+      setErrors({
+        header: fieldErrors.header?.[0],
+        limit: fieldErrors.limit?.[0],
+        target: fieldErrors.target?.[0],
+      });
+      return;
+    }
+
+    setErrors({});
+    setFormError(undefined);
+    setIsPending(true);
+
+    try {
+      await waitForSave();
+      onUpdate(item.id, result.data);
+      setValues(result.data);
+      toast.success("Section saved");
+    } catch {
+      toast.error("Could not save section");
+      setFormError("Could not save changes. Try again.");
+    } finally {
+      setIsPending(false);
+    }
+  }
 
   return (
-    <Drawer direction={isMobile ? "bottom" : "right"}>
+    <Drawer
+      direction={isMobile ? "bottom" : "right"}
+      onOpenChange={handleOpenChange}
+      open={isOpen}
+    >
       <DrawerTrigger asChild>
-        <Button className="w-fit px-0 text-left text-foreground" variant="link">
+        <Button
+          className="w-fit px-0 text-left text-foreground"
+          type="button"
+          variant="link"
+        >
           {item.header}
         </Button>
       </DrawerTrigger>
@@ -711,16 +903,55 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
               <Separator />
             </>
           )}
-          <form className="flex flex-col gap-4">
+          <form
+            aria-busy={isPending}
+            className="flex flex-col gap-4"
+            id={`${formId}-form`}
+            noValidate
+            onSubmit={handleSubmit}
+          >
+            {formError ? (
+              <p className="text-destructive text-xs" role="alert">
+                {formError}
+              </p>
+            ) : null}
             <div className="flex flex-col gap-3">
-              <Label htmlFor="header">Header</Label>
-              <Input defaultValue={item.header} id="header" />
+              <Label htmlFor={`${formId}-header`}>Header</Label>
+              <Input
+                aria-describedby={
+                  errors.header ? `${formId}-header-error` : undefined
+                }
+                aria-invalid={Boolean(errors.header)}
+                disabled={isPending}
+                id={`${formId}-header`}
+                name="header"
+                onChange={(event) => {
+                  updateValue("header", event.target.value);
+                }}
+                required
+                value={values.header}
+              />
+              {errors.header ? (
+                <p
+                  className="text-destructive text-xs"
+                  id={`${formId}-header-error`}
+                  role="alert"
+                >
+                  {errors.header}
+                </p>
+              ) : null}
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col gap-3">
-                <Label htmlFor="type">Type</Label>
-                <Select defaultValue={item.type}>
-                  <SelectTrigger className="w-full" id="type">
+                <Label htmlFor={`${formId}-type`}>Type</Label>
+                <Select
+                  disabled={isPending}
+                  onValueChange={(value) => {
+                    updateValue("type", value);
+                  }}
+                  value={values.type}
+                >
+                  <SelectTrigger className="w-full" id={`${formId}-type`}>
                     <SelectValue placeholder="Select a type" />
                   </SelectTrigger>
                   <SelectContent>
@@ -744,9 +975,15 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
                 </Select>
               </div>
               <div className="flex flex-col gap-3">
-                <Label htmlFor="status">Status</Label>
-                <Select defaultValue={item.status}>
-                  <SelectTrigger className="w-full" id="status">
+                <Label htmlFor={`${formId}-status`}>Status</Label>
+                <Select
+                  disabled={isPending}
+                  onValueChange={(value) => {
+                    updateValue("status", value);
+                  }}
+                  value={values.status}
+                >
+                  <SelectTrigger className="w-full" id={`${formId}-status`}>
                     <SelectValue placeholder="Select a status" />
                   </SelectTrigger>
                   <SelectContent>
@@ -759,18 +996,72 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col gap-3">
-                <Label htmlFor="target">Target</Label>
-                <Input defaultValue={item.target} id="target" />
+                <Label htmlFor={`${formId}-target`}>Target</Label>
+                <Input
+                  aria-describedby={
+                    errors.target ? `${formId}-target-error` : undefined
+                  }
+                  aria-invalid={Boolean(errors.target)}
+                  disabled={isPending}
+                  id={`${formId}-target`}
+                  inputMode="numeric"
+                  name="target"
+                  onChange={(event) => {
+                    updateValue("target", event.target.value);
+                  }}
+                  pattern="[0-9]+"
+                  required
+                  value={values.target}
+                />
+                {errors.target ? (
+                  <p
+                    className="text-destructive text-xs"
+                    id={`${formId}-target-error`}
+                    role="alert"
+                  >
+                    {errors.target}
+                  </p>
+                ) : null}
               </div>
               <div className="flex flex-col gap-3">
-                <Label htmlFor="limit">Limit</Label>
-                <Input defaultValue={item.limit} id="limit" />
+                <Label htmlFor={`${formId}-limit`}>Limit</Label>
+                <Input
+                  aria-describedby={
+                    errors.limit ? `${formId}-limit-error` : undefined
+                  }
+                  aria-invalid={Boolean(errors.limit)}
+                  disabled={isPending}
+                  id={`${formId}-limit`}
+                  inputMode="numeric"
+                  name="limit"
+                  onChange={(event) => {
+                    updateValue("limit", event.target.value);
+                  }}
+                  pattern="[0-9]+"
+                  required
+                  value={values.limit}
+                />
+                {errors.limit ? (
+                  <p
+                    className="text-destructive text-xs"
+                    id={`${formId}-limit-error`}
+                    role="alert"
+                  >
+                    {errors.limit}
+                  </p>
+                ) : null}
               </div>
             </div>
             <div className="flex flex-col gap-3">
-              <Label htmlFor="reviewer">Reviewer</Label>
-              <Select defaultValue={item.reviewer}>
-                <SelectTrigger className="w-full" id="reviewer">
+              <Label htmlFor={`${formId}-reviewer`}>Reviewer</Label>
+              <Select
+                disabled={isPending}
+                onValueChange={(value) => {
+                  updateValue("reviewer", value);
+                }}
+                value={values.reviewer}
+              >
+                <SelectTrigger className="w-full" id={`${formId}-reviewer`}>
                   <SelectValue placeholder="Select a reviewer" />
                 </SelectTrigger>
                 <SelectContent>
@@ -779,15 +1070,22 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
                     Jamik Tashpulatov
                   </SelectItem>
                   <SelectItem value="Emily Whalen">Emily Whalen</SelectItem>
+                  <SelectItem value="Assign reviewer">
+                    Assign reviewer
+                  </SelectItem>
                 </SelectContent>
               </Select>
             </div>
           </form>
         </div>
         <DrawerFooter>
-          <Button>Submit</Button>
+          <Button disabled={isPending} form={`${formId}-form`} type="submit">
+            {isPending ? "Saving..." : "Save changes"}
+          </Button>
           <DrawerClose asChild>
-            <Button variant="outline">Done</Button>
+            <Button disabled={isPending} type="button" variant="outline">
+              Done
+            </Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
