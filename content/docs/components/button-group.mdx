@@ -1,0 +1,178 @@
+---
+title: Button Group
+description: A container that groups related 8-bit buttons together with a shared retro pixelated border.
+---
+
+import { Button } from "@/components/ui/8bit/button";
+import { ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from "@/components/ui/8bit/button-group";
+import CopyCommandButton from "@/components/copy-command-button";
+import InstallationCommands from "@/components/installation-commands";
+import ComponentPreview from "@/components/component-preview";
+
+<div className="flex flex-col md:flex-row items-center justify-end gap-2 mb-2">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/button-group"
+    command="pnpm dlx shadcn@latest add @8bitcn/button-group"
+  />
+</div>
+
+<ComponentPreview title="8-bit Button Group component" name="button-group">
+  <ButtonGroup aria-label="Action group">
+    <Button>Left</Button>
+    <ButtonGroupSeparator />
+    <Button>Center</Button>
+    <ButtonGroupSeparator />
+    <Button>Right</Button>
+  </ButtonGroup>
+</ComponentPreview>
+
+## Examples
+
+---
+
+### Horizontal (default)
+
+<ComponentPreview title="Button Group horizontal" name="button-group">
+  <ButtonGroup aria-label="Game actions">
+    <Button>Save</Button>
+    <ButtonGroupSeparator />
+    <Button>Load</Button>
+    <ButtonGroupSeparator />
+    <Button>Quit</Button>
+  </ButtonGroup>
+</ComponentPreview>
+
+```tsx
+<ButtonGroup aria-label="Game actions">
+  <Button>Save</Button>
+  <ButtonGroupSeparator />
+  <Button>Load</Button>
+  <ButtonGroupSeparator />
+  <Button>Quit</Button>
+</ButtonGroup>
+```
+
+### Vertical
+
+<ComponentPreview title="Button Group vertical" name="button-group">
+  <ButtonGroup orientation="vertical" aria-label="Battle actions">
+    <Button>Attack</Button>
+    <ButtonGroupSeparator orientation="horizontal" />
+    <Button>Defend</Button>
+    <ButtonGroupSeparator orientation="horizontal" />
+    <Button>Run</Button>
+  </ButtonGroup>
+</ComponentPreview>
+
+```tsx
+<ButtonGroup orientation="vertical" aria-label="Battle actions">
+  <Button>Attack</Button>
+  <ButtonGroupSeparator orientation="horizontal" />
+  <Button>Defend</Button>
+  <ButtonGroupSeparator orientation="horizontal" />
+  <Button>Run</Button>
+</ButtonGroup>
+```
+
+### With Outline Variant
+
+<ComponentPreview title="Button Group outline variant" name="button-group">
+  <ButtonGroup aria-label="Player slots">
+    <Button variant="outline">P1</Button>
+    <ButtonGroupSeparator />
+    <Button variant="outline">P2</Button>
+    <ButtonGroupSeparator />
+    <Button variant="outline">P3</Button>
+  </ButtonGroup>
+</ComponentPreview>
+
+```tsx
+<ButtonGroup aria-label="Player slots">
+  <Button variant="outline">P1</Button>
+  <ButtonGroupSeparator />
+  <Button variant="outline">P2</Button>
+  <ButtonGroupSeparator />
+  <Button variant="outline">P3</Button>
+</ButtonGroup>
+```
+
+### With Text Label
+
+<ComponentPreview title="Button Group with text label" name="button-group">
+  <ButtonGroup aria-label="Difficulty select">
+    <ButtonGroupText>Mode</ButtonGroupText>
+    <ButtonGroupSeparator />
+    <Button>Easy</Button>
+    <ButtonGroupSeparator />
+    <Button>Hard</Button>
+  </ButtonGroup>
+</ComponentPreview>
+
+```tsx
+<ButtonGroup aria-label="Difficulty select">
+  <ButtonGroupText>Mode</ButtonGroupText>
+  <ButtonGroupSeparator />
+  <Button>Easy</Button>
+  <ButtonGroupSeparator />
+  <Button>Hard</Button>
+</ButtonGroup>
+```
+
+## Installation
+
+---
+
+<InstallationCommands packageName="button-group" />
+
+## Usage
+
+---
+
+```tsx
+import { Button } from "@/components/ui/8bit/button";
+import {
+  ButtonGroup,
+  ButtonGroupSeparator,
+  ButtonGroupText,
+} from "@/components/ui/8bit/button-group";
+```
+
+```tsx
+<ButtonGroup aria-label="Actions">
+  <Button>Left</Button>
+  <ButtonGroupSeparator />
+  <Button>Center</Button>
+  <ButtonGroupSeparator />
+  <Button>Right</Button>
+</ButtonGroup>
+```
+
+## Props
+
+---
+
+### ButtonGroup
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` |
+| `aria-label` | `string` | — |
+| `className` | `string` | — |
+
+### ButtonGroupSeparator
+
+Renders a pixel-art dashed divider. Wraps the 8-bit `Separator` component — defaults to `orientation="vertical"` for horizontal groups.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `orientation` | `"horizontal" \| "vertical"` | `"vertical"` |
+| `className` | `string` | — |
+
+### ButtonGroupText
+
+Renders a retro-styled text label inside the group — useful for split-button patterns like a mode prefix.
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `asChild` | `boolean` | `false` |
+| `className` | `string` | — |
