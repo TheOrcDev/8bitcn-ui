@@ -1881,6 +1881,7 @@
       "title": "8-bit Theme Selector",
       "description": "A complete theme selector component with dropdown selection and code copy functionality. Includes theme context provider for managing active themes across the application.",
       "registryDependencies": ["select"],
+      "dependencies": ["nuqs"],
       "files": [
         {
           "path": "components/select-theme-dropdown.tsx",
