@@ -1,0 +1,147 @@
+---
+title: 404 Crate Pusher
+description: A randomized crate-pushing 404 page with 20 curated, solver-verified puzzles.
+---
+
+import CopyCommandButton from "@/components/copy-command-button";
+import ComponentPreview from "@/components/component-preview";
+import NotFoundCratePusher from "@/components/ui/8bit/blocks/not-found-crate-pusher";
+
+<div className="mb-2 flex flex-col items-center justify-end gap-2 md:flex-row">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/not-found-crate-pusher"
+    command="pnpm dlx shadcn@latest add @8bitcn/not-found-crate-pusher"
+  />
+</div>
+
+<ComponentPreview
+  fullPageHref="/blocks/not-found-crate-pusher"
+  title="404 Crate Pusher: 20 Random Puzzles"
+  name="not-found-crate-pusher"
+>
+  <NotFoundCratePusher className="min-h-[640px]" />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import NotFoundCratePusher from "@/components/ui/8bit/blocks/not-found-crate-pusher";
+
+export default function MissingRoute() {
+  return <NotFoundCratePusher />;
+}
+```
+
+Pass a serializable `seed` when you want the same shuffled puzzle order across
+sessions or deployments:
+
+```tsx
+<NotFoundCratePusher seed={404} />
+```
+
+## Use As Your 404 Page
+
+Keep metadata in the Server Component and render the interactive block as its
+client child:
+
+```tsx title="app/not-found.tsx"
+import type { Metadata } from "next";
+
+import NotFoundCratePusher from "@/components/ui/8bit/blocks/not-found-crate-pusher";
+
+export const metadata: Metadata = {
+  title: "404",
+};
+
+export default function NotFound() {
+  return <NotFoundCratePusher className="min-h-svh" />;
+}
+```
+
+The component provides the interface. Next.js supplies the HTTP 404 behavior
+when it is rendered from `app/not-found.tsx`.
+
+## Controls
+
+| Input | Action |
+| --- | --- |
+| Start Shift | Draw and start the next puzzle in the randomized catalog |
+| Arrow keys or W A S D | Move the courier |
+| U | Undo the last accepted move |
+| R or Restart | Restart the current puzzle without drawing another one |
+| Skip Puzzle | Draw a different queued puzzle and start it immediately |
+| Next Random Puzzle | After a win, draw a different queued puzzle and start it immediately |
+| Play Again | Restart the completed puzzle without drawing another one |
+| On-screen direction buttons | Touch movement |
+
+The board responds only while its game region has focus, so arrow keys elsewhere
+on the page keep their normal behavior.
+
+## Puzzle Library
+
+Default mode contains exactly 20 curated, original, solver-verified puzzles:
+4 intermediate, 11 advanced, and 5 expert routes. The layouts are not generated
+procedurally.
+
+Selecting **Start Shift** performs the first draw from a seeded shuffle bag. The
+bag serves every puzzle once before reshuffling, and consecutive cycles avoid
+repeating the same puzzle at their boundary. **Restart** and **Play Again** keep
+the current puzzle. **Skip Puzzle** and **Next Random Puzzle** draw a different
+queued puzzle, reset the board and counters, and start play immediately.
+
+If `seed` is omitted, the component creates a runtime seed when Start Shift is
+selected. Supplying `seed` makes the complete order reproducible without doing
+random work during server rendering.
+
+### Custom Puzzle
+
+Pass `level` to replace the built-in catalog with one fixed puzzle. Custom mode
+disables catalog randomization and does not show Skip Puzzle or Next Random
+Puzzle; `seed` has no effect when `level` is provided. Invalid moves do not
+change the move or push counters, and Undo remains available after completing
+the puzzle.
+
+| Tile | Meaning |
+| --- | --- |
+| `#` | Wall |
+| A space | Floor |
+| `.` | Route portal |
+| `$` | Crate |
+| `@` | Courier |
+| `*` | Crate already on a portal |
+| `+` | Courier standing on a portal |
+
+```tsx
+const level = [
+  "#######",
+  "#  .  #",
+  "#  $  #",
+  "#  @  #",
+  "#######",
+] as const;
+
+<NotFoundCratePusher level={level} />
+```
+
+## Props
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `badge` | `string` | `ROUTE LOST` |
+| `title` | `string` | `404: CRATE RESCUE` |
+| `description` | `string` | Built-in route-recovery copy |
+| `cta` | `string` | `RETURN HOME` |
+| `href` | `string` | `/` |
+| `level` | `readonly string[]` | `undefined` (use the randomized 20-puzzle catalog) |
+| `seed` | `number` | `undefined` (create a runtime seed on Start Shift) |
+| `className` | `string` | None |
+
+## Accessibility
+
+The 404 heading, counters, instructions, state, controls, and Home link are DOM
+content. The decorative tile board is hidden from assistive technology and a
+polite live region reports puzzle name, catalog position, difficulty, accepted
+moves, blocked moves, undo, the new starting position after Restart, and
+completion. Random puzzle changes happen only after an explicit Start, Skip, or
+Next action, focus returns to the game region, and no game input is installed
+globally.

@@ -1,0 +1,89 @@
+---
+title: 404 Brick Breaker
+description: A playable brick-breaker 404 page with keyboard, pointer, and touch controls.
+---
+
+import CopyCommandButton from "@/components/copy-command-button";
+import ComponentPreview from "@/components/component-preview";
+import NotFoundBrickBreaker from "@/components/ui/8bit/blocks/not-found-brick-breaker";
+
+<div className="mb-2 flex flex-col items-center justify-end gap-2 md:flex-row">
+  <CopyCommandButton
+    copyCommand="pnpm dlx shadcn@latest add @8bitcn/not-found-brick-breaker"
+    command="pnpm dlx shadcn@latest add @8bitcn/not-found-brick-breaker"
+  />
+</div>
+
+<ComponentPreview
+  fullPageHref="/blocks/not-found-brick-breaker"
+  title="404 Brick Breaker"
+  name="not-found-brick-breaker"
+>
+  <NotFoundBrickBreaker className="min-h-[640px]" />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import NotFoundBrickBreaker from "@/components/ui/8bit/blocks/not-found-brick-breaker";
+
+export default function MissingRoute() {
+  return <NotFoundBrickBreaker />;
+}
+```
+
+## Use As Your 404 Page
+
+```tsx title="app/not-found.tsx"
+import type { Metadata } from "next";
+
+import NotFoundBrickBreaker from "@/components/ui/8bit/blocks/not-found-brick-breaker";
+
+export const metadata: Metadata = {
+  title: "404",
+};
+
+export default function NotFound() {
+  return <NotFoundBrickBreaker className="min-h-svh" />;
+}
+```
+
+The component does not set an HTTP status on an ordinary route. Next.js supplies
+the 404 response when it is used from `app/not-found.tsx`.
+
+## Controls
+
+| Input | Action |
+| --- | --- |
+| Left/Right Arrow or A/D | Move the paddle |
+| Space | Start or launch |
+| P or Escape | Pause or resume |
+| R | Restart after winning or losing |
+| Pointer move or drag | Position the paddle |
+| LEFT, center action, RIGHT buttons | Touch controls; the center action follows the current phase |
+
+Keyboard handling is scoped to the focused playfield. Pointer capture and
+`touch-action` are limited to the playfield rather than the whole page.
+
+## Scoring
+
+The 30 bricks form a pixel `404`. Each brick scores 10 points and clearing the
+wall adds a 104-point route bonus, so a successful run ends at exactly 404.
+
+## Props
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `badge` | `string` | `LOST ROUTE` |
+| `title` | `string` | `BREAK OUT OF HERE` |
+| `description` | `string` | Built-in route-recovery copy |
+| `cta` | `string` | `RETURN HOME` |
+| `href` | `string` | `/` |
+| `className` | `string` | None |
+
+## Accessibility
+
+The canvas is supplementary. The 404 heading, score, lives, phase, instructions,
+buttons, announcements, and permanent Home link remain ordinary DOM content.
+The game starts only after an explicit action, pauses when the page becomes
+hidden, and removes decorative effects when reduced motion is requested.
