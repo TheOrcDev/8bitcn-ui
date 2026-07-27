@@ -3193,6 +3193,101 @@
       ]
     },
     {
+      "name": "not-found-crate-pusher",
+      "type": "registry:block",
+      "title": "8-bit Crate Pusher 404",
+      "description": "A randomized crate-pushing 404 page with 20 curated, solver-verified puzzles.",
+      "categories": ["layout", "gaming"],
+      "registryDependencies": ["badge", "button", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/not-found-crate-pusher.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/not-found-crate-pusher.tsx"
+        },
+        {
+          "path": "lib/games/crate-pusher.ts",
+          "type": "registry:lib",
+          "target": "lib/games/crate-pusher.ts"
+        },
+        {
+          "path": "lib/games/crate-pusher-levels.ts",
+          "type": "registry:lib",
+          "target": "lib/games/crate-pusher-levels.ts"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/badge.tsx"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/kbd.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/kbd.tsx"
+        }
+      ]
+    },
+    {
+      "name": "not-found-brick-breaker",
+      "type": "registry:block",
+      "title": "8-bit Brick Breaker 404",
+      "description": "A playable brick-breaker 404 page with keyboard, pointer, and touch controls.",
+      "categories": ["layout", "gaming"],
+      "registryDependencies": ["badge", "button", "card"],
+      "files": [
+        {
+          "path": "components/ui/8bit/blocks/not-found-brick-breaker.tsx",
+          "type": "registry:block",
+          "target": "components/ui/8bit/blocks/not-found-brick-breaker.tsx"
+        },
+        {
+          "path": "lib/games/brick-breaker.ts",
+          "type": "registry:lib",
+          "target": "lib/games/brick-breaker.ts"
+        },
+        {
+          "path": "components/ui/8bit/styles/retro.css",
+          "type": "registry:component",
+          "target": "components/ui/8bit/styles/retro.css"
+        },
+        {
+          "path": "components/ui/8bit/badge.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/badge.tsx"
+        },
+        {
+          "path": "components/ui/8bit/button.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/button.tsx"
+        },
+        {
+          "path": "components/ui/8bit/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/card.tsx"
+        },
+        {
+          "path": "components/ui/8bit/kbd.tsx",
+          "type": "registry:component",
+          "target": "components/ui/8bit/kbd.tsx"
+        }
+      ]
+    },
+    {
       "name": "portal-transition",
       "type": "registry:block",
       "title": "8-bit Portal Transition",
