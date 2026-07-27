@@ -7,7 +7,6 @@ import {
   ButtonGroupText as ShadcnButtonGroupText,
   buttonGroupVariants,
 } from "@/components/ui/button-group";
-import { Separator } from "@/components/ui/8bit/separator";
 
 import "@/components/ui/8bit/styles/retro.css";
 
@@ -56,7 +55,13 @@ function ButtonGroup({
       <div className="absolute bottom-0 right-0 size-1.5 bg-foreground dark:bg-ring pointer-events-none z-10" />
 
       <ShadcnButtonGroup
-        className={cn(className)}
+        className={cn(
+          // The group draws one shared border, so the per-button pixel borders
+          // would double it up on the outer edges and paint across every
+          // junction.
+          "[&_[data-slot=button-decorations]]:hidden",
+          className
+        )}
         orientation={orientation}
         {...props}
       >
@@ -68,14 +73,18 @@ function ButtonGroup({
 
 // ─── ButtonGroupSeparator ────────────────────────────────────────────────────
 
-export type BitButtonGroupSeparatorProps = React.ComponentProps<
-  typeof Separator
->;
+export type BitButtonGroupSeparatorProps = React.ComponentProps<"div"> & {
+  orientation?: "horizontal" | "vertical";
+};
 
 /**
- * 8-bit ButtonGroupSeparator renders a pixel-art dashed divider between items.
- * Wraps the 8-bit Separator component (which uses a pixel-dash background pattern).
+ * 8-bit ButtonGroupSeparator renders a solid pixel divider between items.
  * Defaults to `orientation="vertical"` for use inside a horizontal ButtonGroup.
+ *
+ * This deliberately does not reuse the 8-bit Separator: that one paints a
+ * dashed pattern whose transparent segments would expose the page background
+ * through the group, reading as gaps between the buttons. It is also sized to
+ * the same 6px grid as the group's border rather than the Separator's 2px.
  */
 function ButtonGroupSeparator({
   className,
@@ -83,10 +92,16 @@ function ButtonGroupSeparator({
   ...props
 }: BitButtonGroupSeparatorProps) {
   return (
-    <Separator
+    <div
+      aria-orientation={orientation}
+      className={cn(
+        "shrink-0 self-stretch bg-foreground dark:bg-ring",
+        orientation === "vertical" ? "w-1.5" : "h-1.5",
+        className
+      )}
+      data-orientation={orientation}
       data-slot="button-group-separator"
-      orientation={orientation}
-      className={cn("relative m-0! self-stretch", className)}
+      role="separator"
       {...props}
     />
   );

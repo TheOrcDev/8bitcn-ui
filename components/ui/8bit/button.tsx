@@ -48,7 +48,11 @@ interface ButtonDecorationsProps {
 
 function ButtonDecorations({ size, variant }: ButtonDecorationsProps) {
   return (
-    <span aria-hidden="true" className="pointer-events-none contents">
+    <span
+      aria-hidden="true"
+      className="pointer-events-none contents"
+      data-slot="button-decorations"
+    >
       {variant !== "ghost" && variant !== "link" && size !== "icon" && (
         <>
           {/* Pixelated border */}
