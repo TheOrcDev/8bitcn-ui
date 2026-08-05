@@ -91,7 +91,7 @@ import "./styles/retro.css"
 - Use Next.js `<Image>` component for all images (never `<img>` tags)
 - Use App Router metadata API for head elements
 - Use Server Components for async data fetching
-- `"use cache"` directive for cached async data (see StarsCount component)
+- `"use cache"` directive for cached async data (see `getGithubStars` in `lib/github-stars.ts`)
 
 ### Code Organization
 - Keep functions focused with reasonable cognitive complexity
