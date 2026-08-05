@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ComponentShowcase from "@/components/examples/component-showcase";
+import HomeComponentShowcase from "@/components/examples/home-component-showcase";
 import Sponsors from "@/components/sponsors";
 import { Badge } from "@/components/ui/8bit/badge";
 import { Button } from "@/components/ui/8bit/button";
@@ -67,7 +67,7 @@ export default function Home() {
       <Separator />
 
       {/* Component Showcase */}
-      <ComponentShowcase />
+      <HomeComponentShowcase />
 
       {/* Sponsors */}
       <Sponsors />
