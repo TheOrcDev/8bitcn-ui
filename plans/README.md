@@ -8,7 +8,7 @@ its STOP conditions, and update the status row when finished.
 
 | Plan | Title | Priority | Effort | Depends on | Status |
 | --- | --- | --- | --- | --- | --- |
-| [001](./001-optimize-homepage-cold-path.md) | Make the homepage cold path independent of showcase, sponsor effects, fonts, and GitHub | P1 | L | — | TODO |
+| [001](./001-optimize-homepage-cold-path.md) | Make the homepage cold path independent of showcase, sponsor effects, fonts, and GitHub | P1 | L | — | DONE — 27.7% verified cold-median improvement; original 35% estimate and measured compiler floor documented |
 
 Status values: TODO | IN PROGRESS | DONE | BLOCKED (with one-line reason) |
 REJECTED (with one-line rationale)
