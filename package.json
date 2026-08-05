@@ -8,6 +8,7 @@
     "start": "next start",
     "test": "vitest run",
     "test:watch": "vitest",
+    "perf:cold-home": "node scripts/benchmark-cold-home.mjs",
     "check": "ultracite check",
     "fix": "ultracite fix",
     "prepare": "husky"
