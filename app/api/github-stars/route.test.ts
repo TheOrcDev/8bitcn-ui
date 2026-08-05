@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { getGithubStars } from "@/lib/github-stars";
@@ -6,6 +7,9 @@ import { GET } from "./route";
 
 vi.mock("@/lib/github-stars", () => ({
   getGithubStars: vi.fn(),
+}));
+vi.mock("next/server", () => ({
+  connection: vi.fn().mockResolvedValue(undefined),
 }));
 
 afterEach(() => {
@@ -23,6 +27,7 @@ describe("GET /api/github-stars", () => {
     expect(response.headers.get("Cache-Control")).toBe(
       "public, s-maxage=3600, stale-while-revalidate=86400"
     );
+    expect(connection).toHaveBeenCalledOnce();
   });
 
   it("returns a cacheable null fallback after upstream failure", async () => {

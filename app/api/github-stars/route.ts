@@ -1,3 +1,5 @@
+import { connection } from "next/server";
+
 import { getGithubStars } from "@/lib/github-stars";
 
 const GithubStarsCacheControl =
@@ -16,6 +18,8 @@ function githubStarsResponse(stars: number | null): Response {
 }
 
 export async function GET(): Promise<Response> {
+  await connection();
+
   try {
     return githubStarsResponse(await getGithubStars());
   } catch {
