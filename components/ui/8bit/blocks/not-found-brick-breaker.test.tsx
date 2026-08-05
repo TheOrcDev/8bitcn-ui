@@ -83,6 +83,47 @@ afterEach(() => {
 });
 
 describe("NotFoundBrickBreaker", () => {
+  it("paints from the playfield palette instead of document-level colors", () => {
+    const rootPalette: Readonly<Record<string, string>> = {
+      "--accent": "root-accent",
+      "--background": "root-background",
+      "--border": "root-border",
+      "--foreground": "root-foreground",
+      "--muted": "root-muted",
+      "--primary": "root-primary",
+      "--secondary": "root-secondary",
+    };
+    const playfieldPalette: Readonly<Record<string, string>> = {
+      "--accent": "playfield-accent",
+      "--background": "playfield-background",
+      "--border": "playfield-border",
+      "--foreground": "playfield-foreground",
+      "--muted": "playfield-muted",
+      "--primary": "playfield-primary",
+      "--secondary": "playfield-secondary",
+    };
+    const paintedRects: Array<{ fillStyle: string }> = [];
+
+    vi.spyOn(window, "getComputedStyle").mockImplementation((element) => {
+      const palette =
+        element instanceof HTMLCanvasElement ? playfieldPalette : rootPalette;
+
+      return {
+        getPropertyValue: (token: string) => palette[token] ?? "",
+      } as CSSStyleDeclaration;
+    });
+    vi.mocked(canvasContext.fillRect).mockImplementation(() => {
+      paintedRects.push({ fillStyle: String(canvasContext.fillStyle) });
+    });
+
+    render(<NotFoundBrickBreaker />);
+
+    expect(paintedRects[0]?.fillStyle).toBe("playfield-background");
+    expect(
+      paintedRects.some(({ fillStyle }) => fillStyle === "root-background")
+    ).toBe(false);
+  });
+
   it("renders the complete non-canvas 404 experience before play", () => {
     const view = render(<NotFoundBrickBreaker />);
     const playfield = screen.getByTestId("brick-breaker-playfield");

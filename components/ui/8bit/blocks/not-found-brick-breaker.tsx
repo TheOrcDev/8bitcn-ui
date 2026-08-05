@@ -123,8 +123,8 @@ function getCssColor(
   return styles.getPropertyValue(token).trim() || fallback;
 }
 
-function readCanvasColors(): CanvasColors {
-  const styles = getComputedStyle(document.documentElement);
+function readCanvasColors(source: Element): CanvasColors {
+  const styles = getComputedStyle(source);
   return {
     accent: getCssColor(styles, "--accent", "Highlight"),
     background: getCssColor(styles, "--background", "Canvas"),
@@ -520,7 +520,7 @@ export function NotFoundBrickBreaker({
       if (!canvasRef.current) {
         return;
       }
-      colorsRef.current = readCanvasColors();
+      colorsRef.current = readCanvasColors(canvasRef.current);
       configureCanvas(canvasRef.current);
       renderCanvas();
     };

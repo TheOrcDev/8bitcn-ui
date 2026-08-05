@@ -83,6 +83,12 @@ wall adds a 104-point route bonus, so a successful run ends at exactly 404.
 | `href` | `string` | `/` |
 | `className` | `string` | None |
 
+## Theme Behavior
+
+The playfield samples color tokens from its own themed surface, so light and
+dark modes invert the canvas together with the surrounding block. Scoped color
+themes are supported; the canvas refreshes when the root theme or mode changes.
+
 ## Accessibility
 
 The canvas is supplementary. The 404 heading, score, lives, phase, instructions,
