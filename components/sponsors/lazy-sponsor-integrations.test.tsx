@@ -22,6 +22,7 @@ import { LazyMythicSponsor } from "./lazy-mythic-sponsor";
 import { LazySponsorClaim } from "./lazy-sponsor-claim";
 
 const observerCallbacks: IntersectionObserverCallback[] = [];
+const observedElements: Element[] = [];
 const disconnectMock = vi.fn();
 
 function activateAllObservers() {
@@ -39,7 +40,7 @@ beforeEach(() => {
       observerCallbacks.push(callback);
     }
     disconnect = disconnectMock;
-    observe = vi.fn();
+    observe = vi.fn((element: Element) => observedElements.push(element));
     takeRecords = vi.fn();
     unobserve = vi.fn();
   }
@@ -52,6 +53,7 @@ afterEach(() => {
   disconnectMock.mockReset();
   mythicRenderMock.mockReset();
   observerCallbacks.length = 0;
+  observedElements.length = 0;
   vi.unstubAllGlobals();
 });
 
@@ -118,6 +120,9 @@ describe("lazy sponsor integrations", () => {
 
     expect(screen.getAllByText("Be here")).toHaveLength(3);
     expect(claimRenderMock).not.toHaveBeenCalled();
+    for (const placeholder of screen.getAllByText("Be here")) {
+      expect(observedElements).toContain(placeholder.parentElement);
+    }
     await act(async () => activateAllObservers());
 
     await waitFor(() => expect(claimRenderMock).toHaveBeenCalledTimes(3));

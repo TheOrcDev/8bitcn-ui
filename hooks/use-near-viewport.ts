@@ -2,8 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export function useNearViewport(rootMargin: string) {
-  const ref = useRef<HTMLDivElement>(null);
+export function useNearViewport<T extends Element = HTMLDivElement>(
+  rootMargin: string
+) {
+  const ref = useRef<T>(null);
   const [isNearViewport, setIsNearViewport] = useState(false);
 
   useEffect(() => {

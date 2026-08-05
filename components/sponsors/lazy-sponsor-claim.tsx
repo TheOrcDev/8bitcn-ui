@@ -25,27 +25,28 @@ export function LazySponsorClaim({
   textClassName,
   tier,
 }: LazySponsorClaimProps) {
-  const { isNearViewport, ref } = useNearViewport("600px 0px");
+  const { isNearViewport, ref } = useNearViewport<HTMLSpanElement>("600px 0px");
+
+  if (isNearViewport) {
+    return (
+      <SponsorClaim
+        className={className}
+        labelClassName={labelClassName}
+        text={text}
+        textClassName={textClassName}
+        tier={tier}
+      />
+    );
+  }
 
   return (
-    <div className="contents" ref={ref}>
-      {isNearViewport ? (
-        <SponsorClaim
-          className={className}
-          labelClassName={labelClassName}
-          text={text}
-          textClassName={textClassName}
-          tier={tier}
-        />
-      ) : (
-        <span
-          aria-disabled="true"
-          className={cn("block", className, labelClassName)}
-          data-sponsor-claim-placeholder={tier}
-        >
-          <span className={textClassName}>{text}</span>
-        </span>
-      )}
-    </div>
+    <span
+      aria-disabled="true"
+      className={cn("block", className, labelClassName)}
+      data-sponsor-claim-placeholder={tier}
+      ref={ref}
+    >
+      <span className={textClassName}>{text}</span>
+    </span>
   );
 }
