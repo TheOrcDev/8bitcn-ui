@@ -596,6 +596,10 @@ export function NotFoundBrickBreaker({
     event.currentTarget.setPointerCapture?.(event.pointerId);
     updatePointerPosition(event);
 
+    if (engineRef.current.phase === "idle" && event.pointerType !== "mouse") {
+      startGame();
+      updatePointerPosition(event);
+    }
     if (engineRef.current.phase === "ready") {
       launchGame();
     }
@@ -678,26 +682,7 @@ export function NotFoundBrickBreaker({
     }
   };
 
-  const setDirection = (
-    direction: "left" | "right",
-    pressed: boolean
-  ): void => {
-    const canMove =
-      engineRef.current.phase === "ready" ||
-      engineRef.current.phase === "playing";
-    if (pressed) {
-      inputRef.current.pointerX = null;
-    }
-    inputRef.current[direction] = pressed && canMove;
-
-    if (pressed && engineRef.current.phase === "ready") {
-      advanceBrickBreaker(engineRef.current, inputRef.current, 1 / 30);
-      renderCanvas();
-    }
-  };
-
   const actionLabel = ACTION_LABELS[hud.phase];
-  const canMove = hud.phase === "ready" || hud.phase === "playing";
 
   return (
     <section
@@ -769,7 +754,8 @@ export function NotFoundBrickBreaker({
               id={instructionsId}
             >
               <p className="text-muted-foreground text-xs">
-                Move the paddle, launch the ball, and clear all 30 bricks.
+                Touch and drag on the playfield to move the paddle. Your first
+                touch starts and launches the ball.
               </p>
               <KbdGroup className="hidden flex-wrap justify-center sm:inline-flex">
                 <Kbd>LEFT</Kbd>
@@ -786,61 +772,17 @@ export function NotFoundBrickBreaker({
             </div>
           </CardContent>
 
-          <CardFooter className="flex flex-wrap justify-center gap-4 px-4 pb-5">
+          <CardFooter className="grid grid-cols-2 gap-3 px-4 pb-5 sm:flex sm:justify-center sm:gap-4">
             <Button
-              aria-label="Move paddle left"
-              className="min-h-11 min-w-24 motion-reduce:transition-none"
-              disabled={!canMove}
-              onKeyDown={(event) => {
-                if (event.key === " " || event.key === "Enter") {
-                  setDirection("left", true);
-                }
-              }}
-              onKeyUp={() => setDirection("left", false)}
-              onPointerCancel={() => setDirection("left", false)}
-              onPointerDown={(event) => {
-                event.preventDefault();
-                setDirection("left", true);
-              }}
-              onPointerLeave={() => setDirection("left", false)}
-              onPointerUp={() => setDirection("left", false)}
-              type="button"
-              variant="outline"
-            >
-              LEFT
-            </Button>
-            <Button
-              className="min-h-11 min-w-32 motion-reduce:transition-none"
+              className="min-h-11 w-full motion-reduce:transition-none sm:w-auto sm:min-w-32"
               onClick={primaryAction}
               type="button"
             >
               {actionLabel}
             </Button>
             <Button
-              aria-label="Move paddle right"
-              className="min-h-11 min-w-24 motion-reduce:transition-none"
-              disabled={!canMove}
-              onKeyDown={(event) => {
-                if (event.key === " " || event.key === "Enter") {
-                  setDirection("right", true);
-                }
-              }}
-              onKeyUp={() => setDirection("right", false)}
-              onPointerCancel={() => setDirection("right", false)}
-              onPointerDown={(event) => {
-                event.preventDefault();
-                setDirection("right", true);
-              }}
-              onPointerLeave={() => setDirection("right", false)}
-              onPointerUp={() => setDirection("right", false)}
-              type="button"
-              variant="outline"
-            >
-              RIGHT
-            </Button>
-            <Button
               asChild
-              className="min-h-11 motion-reduce:transition-none"
+              className="min-h-11 w-full motion-reduce:transition-none sm:w-auto"
               variant="secondary"
             >
               <Link href={href}>{cta}</Link>

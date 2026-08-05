@@ -312,7 +312,7 @@ describe("NotFoundBrickBreaker", () => {
     expect(paddleCalls.at(-1)?.[0]).toBe(204);
   });
 
-  it("keeps captured drag control across pointer leave and releases it", () => {
+  it("starts, launches, and keeps captured thumb drag control", () => {
     render(<NotFoundBrickBreaker />);
     const playfield = screen.getByTestId("brick-breaker-playfield");
     const capturedPointers = new Set<number>();
@@ -350,14 +350,16 @@ describe("NotFoundBrickBreaker", () => {
         value: setPointerCapture,
       },
     });
-    fireEvent.click(screen.getByRole("button", { name: "START GAME" }));
-
     fireEvent.pointerDown(playfield, {
       button: 0,
       clientX: 0,
       pointerId: 7,
       pointerType: "touch",
     });
+    expect(screen.getByText("PLAYING")).toBeTruthy();
+    expect(screen.getByRole("button", { name: "PAUSE" })).toBeTruthy();
+    expect(frameCallbacks.size).toBe(1);
+
     fireEvent.pointerLeave(playfield, {
       pointerId: 7,
       pointerType: "touch",
@@ -417,49 +419,20 @@ describe("NotFoundBrickBreaker", () => {
     expect(paddleCalls.at(-1)?.[0]).toBeGreaterThan(204);
   });
 
-  it("hands control from pointer hover to an explicit direction button", () => {
+  it("does not render explicit direction buttons", () => {
     render(<NotFoundBrickBreaker />);
-    const playfield = screen.getByTestId("brick-breaker-playfield");
-    fireEvent.click(screen.getByRole("button", { name: "START GAME" }));
-    fireEvent.click(screen.getByRole("button", { name: "LAUNCH" }));
-    Object.defineProperty(playfield, "getBoundingClientRect", {
-      configurable: true,
-      value: () =>
-        ({
-          bottom: 320,
-          height: 320,
-          left: 0,
-          right: 480,
-          top: 0,
-          width: 480,
-          x: 0,
-          y: 0,
-        }) as DOMRect,
-    });
-    fireEvent.pointerMove(playfield, {
-      clientX: 0,
-      pointerId: 1,
-      pointerType: "mouse",
-    });
-    vi.mocked(canvasContext.fillRect).mockClear();
 
-    const rightButton = screen.getByRole("button", {
-      name: "Move paddle right",
-    });
-    fireEvent.pointerDown(rightButton, { button: 0, pointerId: 9 });
-    runNextFrame(0);
-    runNextFrame(50);
-    fireEvent.pointerUp(rightButton, { button: 0, pointerId: 9 });
-
-    const paddleCalls = vi
-      .mocked(canvasContext.fillRect)
-      .mock.calls.filter((call) => call[2] === 72 && call[3] === 8);
-    expect(paddleCalls.at(-1)?.[0]).toBeGreaterThan(204);
+    expect(
+      screen.queryByRole("button", { name: "Move paddle left" })
+    ).toBeNull();
+    expect(
+      screen.queryByRole("button", { name: "Move paddle right" })
+    ).toBeNull();
   });
 
-  it("uses the same held movement for keyboard and explicit controls", () => {
+  it("keeps held keyboard movement after removing direction buttons", () => {
     render(<NotFoundBrickBreaker />);
-    let playfield = screen.getByTestId("brick-breaker-playfield");
+    const playfield = screen.getByTestId("brick-breaker-playfield");
     fireEvent.click(screen.getByRole("button", { name: "START GAME" }));
     fireEvent.click(screen.getByRole("button", { name: "LAUNCH" }));
     vi.mocked(canvasContext.fillRect).mockClear();
@@ -468,36 +441,12 @@ describe("NotFoundBrickBreaker", () => {
     runNextFrame(0);
     runNextFrame(50);
     fireEvent.keyUp(playfield, { key: "ArrowLeft" });
-    let paddleCalls = vi
+    const paddleCalls = vi
       .mocked(canvasContext.fillRect)
       .mock.calls.filter((call) => call[2] === 72 && call[3] === 8);
     const keyboardPaddleX = paddleCalls.at(-1)?.[0];
 
-    cleanup();
-    frameCallbacks.clear();
-    canvasContext = createCanvasContext();
-    render(<NotFoundBrickBreaker />);
-    playfield = screen.getByTestId("brick-breaker-playfield");
-    fireEvent.click(screen.getByRole("button", { name: "START GAME" }));
-    fireEvent.click(screen.getByRole("button", { name: "LAUNCH" }));
-    vi.mocked(canvasContext.fillRect).mockClear();
-
-    const leftButton = screen.getByRole("button", {
-      name: "Move paddle left",
-    });
-    expect(fireEvent.pointerDown(leftButton, { button: 0, pointerId: 9 })).toBe(
-      false
-    );
-    runNextFrame(0);
-    runNextFrame(50);
-    fireEvent.pointerUp(leftButton, { button: 0, pointerId: 9 });
-    paddleCalls = vi
-      .mocked(canvasContext.fillRect)
-      .mock.calls.filter((call) => call[2] === 72 && call[3] === 8);
-    const explicitControlPaddleX = paddleCalls.at(-1)?.[0];
-
     expect(keyboardPaddleX).toBeLessThan(204);
-    expect(explicitControlPaddleX).toBe(keyboardPaddleX);
     expect(document.activeElement).toBe(playfield);
   });
 

@@ -60,10 +60,12 @@ the 404 response when it is used from `app/not-found.tsx`.
 | P or Escape | Pause or resume |
 | R | Restart after winning or losing |
 | Pointer move or drag | Position the paddle |
-| LEFT, center action, RIGHT buttons | Touch controls; the center action follows the current phase |
+| Touch and drag on the playfield | Start and launch with the first touch, then position the paddle |
+| Center action button | Start, launch, pause, resume, or restart for the current phase |
 
 Keyboard handling is scoped to the focused playfield. Pointer capture and
-`touch-action` are limited to the playfield rather than the whole page.
+`touch-action` are limited to the playfield rather than the whole page, so the
+game can be played directly with one thumb without separate direction buttons.
 
 ## Scoring
 
