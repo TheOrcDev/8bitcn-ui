@@ -10,7 +10,7 @@ This compares the 8bitcn repository on Next.js 16.2.10 and 16.3.0. All values ar
 | --- | ---: | ---: | ---: |
 | Cache-reuse production build | 22.25 s | 12.58 s | 43.4% faster |
 | Cache-reuse build peak RSS | 5.25 GB | 3.71 GB | 29.3% lower |
-| Development first page response | 6.62 s | 5.12 s | 22.7% faster |
+| Cold development first compile | 6.62 s | 5.12 s | 22.7% faster |
 | Warm development request | 122.4 ms | 69.9 ms | 42.9% faster |
 | Warm development request p95 | 225.8 ms | 107.0 ms | 52.6% faster |
 | Development peak RSS | 4.99 GB | 4.17 GB | 16.4% lower |

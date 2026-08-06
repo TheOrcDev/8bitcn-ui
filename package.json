@@ -8,6 +8,7 @@
     "start": "next start",
     "test": "vitest run",
     "test:watch": "vitest",
+    "perf:cold-home": "node scripts/benchmark-cold-home.mjs",
     "check": "ultracite check",
     "fix": "ultracite fix",
     "prepare": "husky"
@@ -63,6 +64,7 @@
     "fumadocs-core": "^16.10.7",
     "fumadocs-mdx": "^15.0.13",
     "fumadocs-ui": "^16.10.7",
+    "geist": "^1.7.2",
     "html-to-image": "^1.11.13",
     "input-otp": "^1.4.2",
     "lucide-react": "^1.23.0",

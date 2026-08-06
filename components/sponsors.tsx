@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Avatar, AvatarImage } from "@/components/ui/8bit/avatar";
 import { cn } from "@/lib/utils";
-import MythicSponsor from "./mythic-sponsor";
-import SponsorClaim from "./sponsor-claim";
+import { LazyMythicSponsor } from "./sponsors/lazy-mythic-sponsor";
+import { LazySponsorClaim } from "./sponsors/lazy-sponsor-claim";
 import { Separator } from "./ui/8bit/separator";
 
 export const mythicSponsors = [
@@ -102,7 +102,8 @@ export default function Sponsors() {
             <div className="flex flex-col items-center gap-4">
               {sponsor.foil ? (
                 <Avatar className="size-60" variant="default">
-                  <MythicSponsor
+                  <LazyMythicSponsor
+                    alt={sponsor.name}
                     className="p-4"
                     height={250}
                     src={sponsor.image}
@@ -124,7 +125,7 @@ export default function Sponsors() {
           </Link>
         ))}
         <div className="flex flex-col items-center gap-4">
-          <SponsorClaim
+          <LazySponsorClaim
             className="cursor-pointer"
             labelClassName="flex size-60 items-center justify-center border-4 border-dashed border-muted-foreground/20"
             text="Be here"
@@ -157,7 +158,7 @@ export default function Sponsors() {
             className="flex flex-col items-center gap-4"
             key={`legendary-empty-${i}`}
           >
-            <SponsorClaim
+            <LazySponsorClaim
               className="cursor-pointer"
               labelClassName="flex size-50 items-center justify-center border-4 border-dashed border-muted-foreground/20"
               text="Be here"
@@ -191,7 +192,7 @@ export default function Sponsors() {
             className="flex flex-col items-center gap-3"
             key={`sponsor-empty-${i}`}
           >
-            <SponsorClaim
+            <LazySponsorClaim
               className="cursor-pointer"
               labelClassName="flex size-30 items-center justify-center border-4 border-dashed border-muted-foreground/20"
               text="Be here"
