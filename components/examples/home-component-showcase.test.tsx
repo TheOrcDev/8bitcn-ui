@@ -47,9 +47,12 @@ afterEach(() => {
 });
 
 describe("HomeComponentShowcase", () => {
-  it("keeps a stable placeholder until all three columns are activated", async () => {
+  it("keeps an 8bit skeleton visible until all three columns are activated", async () => {
     const view = render(<HomeComponentShowcase />);
-    expect(view.container.querySelector(".min-h-\\[800px\\]")).toBeTruthy();
+    expect(screen.getByTestId("home-showcase-skeleton")).toBeTruthy();
+    expect(
+      view.container.querySelectorAll('[data-slot="skeleton"]').length
+    ).toBeGreaterThan(0);
     expect(view.container.firstElementChild?.hasAttribute("aria-busy")).toBe(
       false
     );
@@ -63,6 +66,7 @@ describe("HomeComponentShowcase", () => {
     expect(screen.getByText("Column one")).toBeTruthy();
     expect(screen.getByText("Feature column")).toBeTruthy();
     expect(screen.getByText("Interactive column")).toBeTruthy();
+    expect(screen.queryByTestId("home-showcase-skeleton")).toBeNull();
     expect(view.container.querySelector(".lg\\:grid-cols-4")).toBeTruthy();
     expect(view.container.firstElementChild?.hasAttribute("aria-busy")).toBe(
       false
