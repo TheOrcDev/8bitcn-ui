@@ -245,15 +245,7 @@ export default async function Page(props: {
                 </p>
               )}
             </div>
-            <Suspense
-              fallback={
-                <div className="flex items-center gap-2 pt-4">
-                  <Skeleton className="h-5 w-16 rounded-full" />
-                  <Skeleton className="h-5 w-16 rounded-full" />
-                  <span className="sr-only">Loading related links</span>
-                </div>
-              }
-            >
+            <Suspense fallback={null}>
               <PageLinks slug={params.slug} />
             </Suspense>
           </div>
