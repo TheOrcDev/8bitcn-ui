@@ -13,6 +13,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { TOP_LEVEL_SECTIONS } from "@/config/nav-items";
+import { useCenterActiveSidebarItem } from "@/hooks/use-center-active-sidebar-item";
 import type { source } from "@/lib/source";
 
 import { ScrollArea } from "./ui/scroll-area";
@@ -42,6 +43,7 @@ export function BlocksSidebar({
   ...props
 }: React.ComponentProps<typeof Sidebar> & { tree: typeof source.pageTree }) {
   const pathname = usePathname();
+  const { activeItemRef, viewportRef } = useCenterActiveSidebarItem(pathname);
 
   // Find the blocks folder in the tree
   const blocksFolder = tree.children.find(
@@ -58,7 +60,7 @@ export function BlocksSidebar({
       {...props}
     >
       <SidebarContent className="no-scrollbar overflow-x-hidden px-2">
-        <ScrollArea className="h-[calc(90svh-50px)]">
+        <ScrollArea className="h-[calc(90svh-50px)]" viewportRef={viewportRef}>
           <div className="sticky -top-1 z-10 h-8 shrink-0 bg-linear-to-b from-background via-background/80 to-background/50 blur-xs" />
           <SidebarGroup>
             <SidebarGroupLabel className="font-medium text-muted-foreground">
@@ -66,24 +68,32 @@ export function BlocksSidebar({
             </SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-                {TOP_LEVEL_SECTIONS.map(({ name, href }) => (
-                  <SidebarMenuItem key={name}>
-                    <SidebarMenuButton
-                      asChild
-                      className="relative h-[30px] 3xl:fixed:w-full w-fit 3xl:fixed:max-w-48 overflow-visible border border-transparent font-medium text-[0.8rem] after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent"
-                      isActive={
-                        href === "/docs"
-                          ? pathname === href
-                          : pathname.startsWith(href)
-                      }
-                    >
-                      <Link href={href}>
-                        <span className="absolute inset-0 flex w-(--sidebar-width) bg-transparent" />
-                        {name}
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
+                {TOP_LEVEL_SECTIONS.map(({ name, href }) => {
+                  const isCurrentPage = pathname === href;
+                  const isSectionActive =
+                    href === "/docs"
+                      ? isCurrentPage
+                      : pathname.startsWith(href);
+
+                  return (
+                    <SidebarMenuItem key={name}>
+                      <SidebarMenuButton
+                        asChild
+                        className="relative h-[30px] 3xl:fixed:w-full w-fit 3xl:fixed:max-w-48 overflow-visible border border-transparent font-medium text-[0.8rem] after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent"
+                        isActive={isSectionActive}
+                      >
+                        <Link
+                          aria-current={isCurrentPage ? "page" : undefined}
+                          href={href}
+                          ref={isCurrentPage ? activeItemRef : undefined}
+                        >
+                          <span className="absolute inset-0 flex w-(--sidebar-width) bg-transparent" />
+                          {name}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  );
+                })}
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
@@ -137,14 +147,20 @@ export function BlocksSidebar({
                             return null;
                           }
 
+                          const isActive = blockItem.url === pathname;
+
                           return (
                             <SidebarMenuItem key={blockItem.url}>
                               <SidebarMenuButton
                                 asChild
                                 className="relative h-[30px] 3xl:fixed:w-full w-fit 3xl:fixed:max-w-48 overflow-visible border border-transparent font-medium text-[0.8rem] after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent"
-                                isActive={blockItem.url === pathname}
+                                isActive={isActive}
                               >
-                                <Link href={blockItem.url}>
+                                <Link
+                                  aria-current={isActive ? "page" : undefined}
+                                  href={blockItem.url}
+                                  ref={isActive ? activeItemRef : undefined}
+                                >
                                   <span className="absolute inset-0 flex w-(--sidebar-width) bg-transparent" />
                                   {blockItem.name}
                                 </Link>
