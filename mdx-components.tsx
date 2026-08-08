@@ -1,13 +1,9 @@
 import { icons } from "@tabler/icons-react";
+import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock";
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  type ComponentProps,
-  type HTMLAttributes,
-  isValidElement,
-  type ReactNode,
-} from "react";
+import type { ComponentProps, HTMLAttributes } from "react";
 import { Kbd } from "@/components/ui/8bit/kbd";
 import {
   Accordion,
@@ -20,8 +16,6 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
-
-import CodeSnippet from "./components/code-snippet";
 
 export const mdxComponents = {
   h1: ({ className, ...props }: ComponentProps<"h1">) => (
@@ -155,15 +149,13 @@ export const mdxComponents = {
     />
   ),
   pre: ({ className, children, ...props }: ComponentProps<"pre">) => (
-    <pre
-      className={cn(
-        "no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-[[data-slot=tabs]]:p-0 has-[[data-highlighted-line]]:px-0 has-[[data-line-numbers]]:px-0",
-        className
-      )}
+    <CodeBlock
       {...props}
+      className={cn("my-4 rounded-none", className)}
+      viewportProps={{ className: "no-scrollbar" }}
     >
-      {children}
-    </pre>
+      <Pre>{children}</Pre>
+    </CodeBlock>
   ),
   figure: ({ className, ...props }: ComponentProps<"figure">) => (
     <figure className={cn(className)} {...props} />
@@ -191,24 +183,7 @@ export const mdxComponents = {
       </figcaption>
     );
   },
-  code: ({
-    className,
-    __raw__,
-    __src__,
-    __npm__,
-    __yarn__,
-    __pnpm__,
-    __bun__,
-    children,
-    ...props
-  }: ComponentProps<"code"> & {
-    __raw__?: string;
-    __src__?: string;
-    __npm__?: string;
-    __yarn__?: string;
-    __pnpm__?: string;
-    __bun__?: string;
-  }) => {
+  code: ({ className, children, ...props }: ComponentProps<"code">) => {
     // Inline Code.
     if (typeof children === "string") {
       return (
@@ -224,29 +199,11 @@ export const mdxComponents = {
       );
     }
 
-    // Extract text content from React children if __raw__ is not available
-    const getTextContent = (node: ReactNode): string => {
-      if (typeof node === "string") {
-        return node;
-      }
-      if (typeof node === "number") {
-        return String(node);
-      }
-      if (Array.isArray(node)) {
-        return node.map(getTextContent).join("");
-      }
-      if (isValidElement(node)) {
-        const nodeProps = node.props as { children?: ReactNode };
-        if (nodeProps.children) {
-          return getTextContent(nodeProps.children);
-        }
-      }
-      return "";
-    };
-
-    const codeContent = __raw__ || getTextContent(children);
-
-    return <CodeSnippet>{codeContent}</CodeSnippet>;
+    return (
+      <code className={className} {...props}>
+        {children}
+      </code>
+    );
   },
   Step: ({ className, ...props }: ComponentProps<"h3">) => (
     <h3
