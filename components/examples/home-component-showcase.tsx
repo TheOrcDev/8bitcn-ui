@@ -3,6 +3,12 @@
 import dynamic from "next/dynamic";
 import { useCallback, useRef, useState } from "react";
 
+import {
+  ColumnOneSkeleton,
+  FeatureColumnSkeleton,
+  HomeComponentShowcaseSkeleton,
+  InteractiveColumnSkeleton,
+} from "@/components/examples/home-component-showcase-skeleton";
 import { useNearViewport } from "@/hooks/use-near-viewport";
 import { useShowcaseScrollGuard } from "@/hooks/use-showcase-scroll-guard";
 
@@ -11,21 +17,21 @@ const ColumnOne = dynamic(
     import("./component-showcase/column-one").then(
       (module) => module.ColumnOne
     ),
-  { ssr: false }
+  { loading: ColumnOneSkeleton, ssr: false }
 );
 const FeatureColumn = dynamic(
   () =>
     import("./component-showcase/feature-column").then(
       (module) => module.FeatureColumn
     ),
-  { ssr: false }
+  { loading: FeatureColumnSkeleton, ssr: false }
 );
 const InteractiveColumn = dynamic(
   () =>
     import("./component-showcase/interactive-column").then(
       (module) => module.InteractiveColumn
     ),
-  { ssr: false }
+  { loading: InteractiveColumnSkeleton, ssr: false }
 );
 
 export default function HomeComponentShowcase() {
@@ -64,7 +70,7 @@ export default function HomeComponentShowcase() {
           <InteractiveColumn onReady={markInteractiveColumnReady} />
         </div>
       ) : (
-        <div className="mt-10 min-h-[800px]" />
+        <HomeComponentShowcaseSkeleton />
       )}
     </div>
   );
