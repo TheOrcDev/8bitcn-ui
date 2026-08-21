@@ -19,6 +19,53 @@ import { Separator } from "@/components/ui/separator";
 
 import { useCopyToClipboard } from "./hooks/use-copy-to-clipboard";
 
+const copyButtonClassName = "h-8 shadow-none md:h-7 md:text-[0.8rem]";
+const copyOptionsButtonClassName =
+  "peer -ml-0.5 size-8 shadow-none md:size-7 md:text-[0.8rem]";
+const copyPageGroupClassName =
+  "group/buttons relative flex rounded-lg bg-secondary *:[[data-slot=button]]:focus-visible:relative *:[[data-slot=button]]:focus-visible:z-10";
+
+export function DocsCopyPageFallback() {
+  return (
+    <div aria-hidden="true" className={copyPageGroupClassName} inert>
+      <Button
+        className={copyButtonClassName}
+        data-copy-page-control-part="primary"
+        size="sm"
+        tabIndex={-1}
+        variant="secondary"
+      >
+        <IconCopy data-icon="inline-start" />
+        Copy Page
+      </Button>
+      <Button
+        aria-label="More copy options"
+        className={`hidden sm:flex ${copyOptionsButtonClassName}`}
+        data-copy-page-control-part="options"
+        size="sm"
+        tabIndex={-1}
+        variant="secondary"
+      >
+        <IconChevronDown className="rotate-180 sm:rotate-0" />
+      </Button>
+      <Button
+        aria-label="More copy options"
+        className={`flex sm:hidden ${copyOptionsButtonClassName}`}
+        data-copy-page-control-part="options"
+        size="sm"
+        tabIndex={-1}
+        variant="secondary"
+      >
+        <IconChevronDown className="rotate-180 sm:rotate-0" />
+      </Button>
+      <Separator
+        className="!bg-foreground/10 !h-8 sm:!h-7 absolute top-0 right-8 z-0 sm:right-7"
+        orientation="vertical"
+      />
+    </div>
+  );
+}
+
 function getPromptUrl(baseURL: string, url: string) {
   return `${baseURL}?q=${encodeURIComponent(
     `I’m looking at this 8bitcn/ui documentation: ${url}.
@@ -100,7 +147,8 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
   const trigger = (
     <Button
       aria-label="More copy options"
-      className="peer -ml-0.5 size-8 shadow-none md:size-7 md:text-[0.8rem]"
+      className={copyOptionsButtonClassName}
+      data-copy-page-control-part="options"
       size="sm"
       variant="secondary"
     >
@@ -110,15 +158,20 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
 
   return (
     <Popover>
-      <div className="group/buttons relative flex rounded-lg bg-secondary *:[[data-slot=button]]:focus-visible:relative *:[[data-slot=button]]:focus-visible:z-10">
+      <div className={copyPageGroupClassName}>
         <PopoverAnchor />
         <Button
-          className="h-8 shadow-none md:h-7 md:text-[0.8rem]"
+          className={copyButtonClassName}
+          data-copy-page-control-part="primary"
           onClick={() => copyToClipboard(page)}
           size="sm"
           variant="secondary"
         >
-          {isCopied ? <IconCheck /> : <IconCopy />}
+          {isCopied ? (
+            <IconCheck data-icon="inline-start" />
+          ) : (
+            <IconCopy data-icon="inline-start" />
+          )}
           Copy Page
         </Button>
         <DropdownMenu>
