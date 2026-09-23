@@ -16,14 +16,6 @@ export const mythicSponsors = [
     foil: true,
   },
   {
-    name: "Shadcn Studio",
-    description: "Shadcn blocks & templates",
-    url: "https://shadcnstudio.com/?utm_source=orcdev_8bitcn&utm_medium=banner&utm_campaign=github",
-    image: "/sponsors/shadcn-studio.svg",
-    invert: true,
-    foil: false,
-  },
-  {
     name: "Shadcn UI Kit",
     description: "Admin dashboards, blocks, components & examples",
     url: "https://shadcnuikit.com/",
