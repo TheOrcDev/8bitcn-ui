@@ -12,7 +12,7 @@ import { RetroModeSwitcher } from "./ui/retro-mode-switcher";
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 flex h-14 shrink-0 items-center gap-2 border-b border-dashed bg-background/95">
-      <div className="flex h-full w-full max-w-[1400px] items-center justify-start gap-2 border-r border-l border-dashed px-2 md:mx-auto md:justify-between md:gap-5 md:px-6">
+      <div className="flex h-full w-full max-w-[1400px] items-center justify-start gap-2 border-r border-l border-dashed px-2 md:mx-auto md:justify-between md:gap-3 md:px-6 lg:gap-5">
         <Link className="hidden items-center gap-2 md:flex" href="/">
           <Image
             alt="logo"
@@ -30,7 +30,7 @@ export function SiteHeader() {
 
         <nav
           aria-label="Primary"
-          className="retro hidden items-center gap-4 text-[9px] md:flex"
+          className="retro hidden items-center gap-3 text-[9px] md:flex lg:gap-4"
         >
           {navItems.header.map((item) => (
             <Link
