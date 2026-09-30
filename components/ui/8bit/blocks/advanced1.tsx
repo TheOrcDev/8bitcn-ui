@@ -75,7 +75,7 @@ export default function Advanced1({
             </div>
           </CardHeader>
           <CardContent>
-            <div className="space-y-0.5">
+            <div className="space-y-0.5 [overflow-wrap:anywhere]">
               {lines.map((line, idx) => (
                 <p
                   className={cn("retro text-[10px] leading-relaxed", lineClass(line.type))}
