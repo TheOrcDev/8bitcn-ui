@@ -250,9 +250,7 @@ export default async function Page(props: {
             </Suspense>
           </div>
           <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
-            <Suspense fallback={<Skeleton className="size-full" />}>
-              <MDX components={mdxComponents} />
-            </Suspense>
+            <MDX components={mdxComponents} />
           </div>
         </div>
         <div
