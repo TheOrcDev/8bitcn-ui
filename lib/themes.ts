@@ -133,6 +133,7 @@ const themes = [
     --sidebar-accent-foreground: oklch(1 0 0);
     --sidebar-border: oklch(0.5 0.2 260);
     --sidebar-ring: oklch(0.5 0.2 260);
+  }
 
   .dark {
     --primary: oklch(0.5 0.2 260);
@@ -347,6 +348,7 @@ const themes = [
     --sidebar-accent-foreground: oklch(1 0 0);
     --sidebar-border: oklch(0.7 0 0);
     --sidebar-ring: oklch(0.5 0.2 280);
+  }
 
   .dark {
     --primary: oklch(0.5 0.2 280);
@@ -704,6 +706,7 @@ const themes = [
   --shadow-2xl: 0px 0px 8px 1px hsl(198.6301 88.664% 48.4314% / 0.25);
   --tracking-normal: 0.05rem;
   --spacing: 0.25rem;
+}
 
   .dark {
     --background: oklch(0.166 0.0254 298.9423);
@@ -817,6 +820,7 @@ const themes = [
   --shadow-2xl: 0px 0px 0px 0px hsl(0 0% 0% / 0);
   --tracking-normal: 0.05rem;
   --spacing: 0.25rem;
+}
 
   .dark {
     --background: oklch(0 0 0);
@@ -908,6 +912,7 @@ const themes = [
   --sidebar-accent-foreground: oklch(0.2 0.05 40);
   --sidebar-border: oklch(0.82 0.05 60);
   --sidebar-ring: oklch(0.65 0.18 40);
+}
 
   .dark {
     --primary: oklch(0.7 0.2 40);
@@ -982,6 +987,7 @@ const themes = [
   --sidebar-accent-foreground: oklch(0.95 0.02 95);
   --sidebar-border: oklch(0.6 0.05 90);
   --sidebar-ring: oklch(0.75 0.2 90);
+}
 
   .dark {
     --primary: oklch(0.85 0.2 90);
