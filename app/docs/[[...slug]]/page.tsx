@@ -208,7 +208,7 @@ export default async function Page(props: {
                   {doc.title}
                 </h1>
                 <div className="docs-nav fixed inset-x-0 bottom-0 isolate z-50 flex items-center gap-2 border-border/50 border-t bg-background/80 px-6 py-4 backdrop-blur-sm sm:static sm:z-0 sm:border-t-0 sm:bg-transparent sm:px-0 sm:pt-1.5 sm:backdrop-blur-none">
-                  <Suspense fallback={<Skeleton className="h-8 w-30" />}>
+                  <Suspense fallback={<Skeleton className="h-7 w-32" />}>
                     <CopyPageButton pageUrl={page.url} slug={params.slug} />
                   </Suspense>
                   {neighbours.previous && (
