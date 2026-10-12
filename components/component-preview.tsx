@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { type ReactNode, Suspense } from "react";
 
 import { OpenInV0Button } from "@/components/open-in-v0-button";
+import { Skeleton } from "@/components/ui/8bit/skeleton";
 import { Button } from "@/components/ui/button";
 
 interface ComponentPreviewProps {
-  children: React.ReactNode;
+  children: ReactNode;
   fullPageHref?: string;
   name: string;
   title: string;
@@ -31,7 +33,9 @@ export default function ComponentPreview({
         </div>
       </div>
       <div className="relative flex min-h-[400px] items-center justify-center p-10">
-        {children}
+        <Suspense fallback={<Skeleton className="min-h-[400px] w-full" />}>
+          {children}
+        </Suspense>
       </div>
     </div>
   );
