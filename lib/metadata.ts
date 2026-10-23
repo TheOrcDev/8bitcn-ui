@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
 
+const defaultOgImage = {
+  url: siteConfig.ogImage,
+  width: 2404,
+  height: 1260,
+  alt: "8bitcn/ui retro UI library preview",
+} as const;
+
 export const sharedMetaData = {
   title: {
     default: siteConfig.title,
@@ -21,23 +28,12 @@ export const sharedMetaData = {
     "Next.js components",
     "game UI",
   ],
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
-    url: "/",
     siteName: siteConfig.name,
     type: "website",
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 2404,
-        height: 1260,
-        alt: "8bitcn/ui retro UI library preview",
-      },
-    ],
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
@@ -47,6 +43,51 @@ export const sharedMetaData = {
     creator: "@theorcdev",
   },
 } satisfies Metadata;
+
+type PageMetadataInput = {
+  path: string;
+  title: NonNullable<Metadata["title"]>;
+  description: string;
+  openGraph?: Metadata["openGraph"];
+  twitter?: Metadata["twitter"];
+} & Omit<
+  Metadata,
+  "title" | "description" | "alternates" | "openGraph" | "twitter"
+>;
+
+export function createPageMetadata({
+  path,
+  title,
+  description,
+  openGraph,
+  twitter,
+  ...rest
+}: PageMetadataInput): Metadata {
+  const stringTitle = typeof title === "string" ? title : undefined;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: path,
+    },
+    openGraph: {
+      ...(stringTitle ? { title: stringTitle } : {}),
+      description,
+      url: path,
+      images: [defaultOgImage],
+      ...openGraph,
+    },
+    twitter: {
+      card: "summary_large_image",
+      ...(stringTitle ? { title: stringTitle } : {}),
+      description,
+      images: [siteConfig.ogImage],
+      ...twitter,
+    },
+    ...rest,
+  };
+}
 
 export const buttonMetaData = "/assets/8bitcn-button-light.png";
 export const alertMetaData = "/assets/8bitcn-alert-light.png";

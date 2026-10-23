@@ -6,7 +6,6 @@ import { source } from "@/lib/source";
 const publicRoutes = [
   "",
   "/about",
-  "/blocks",
   "/character-sheet",
   "/contributors",
   "/profile-creator",

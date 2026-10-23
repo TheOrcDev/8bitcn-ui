@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { SubmitProjectForm } from "@/components/forms/submit-project-form";
 import { Skeleton } from "@/components/ui/8bit/skeleton";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = createPageMetadata({
+  path: "/submit-project",
+  title: "Submit your 8bitcn project for a feature",
+  description:
+    "Built something with 8bitcn/ui? Submit your project to be considered for a feature on the site. Share retro React apps, games, and 8-bit interfaces.",
+});
 
 export default function Home() {
   return (

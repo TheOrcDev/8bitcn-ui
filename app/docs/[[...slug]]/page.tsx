@@ -12,10 +12,12 @@ import { Suspense } from "react";
 import z from "zod";
 import { DocsCopyPage } from "@/components/docs-copy-page";
 import { DocsTableOfContents } from "@/components/docs-toc";
+import { JsonLd } from "@/components/json-ld";
 import { mythicSponsors } from "@/components/sponsors";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { techArticleJsonLd } from "@/lib/json-ld";
 import { siteConfig } from "@/lib/site";
 import { source } from "@/lib/source";
 import { absoluteUrl } from "@/lib/utils";
@@ -196,6 +198,13 @@ export default async function Page(props: {
 
   return (
     <div className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full">
+      <JsonLd
+        data={techArticleJsonLd({
+          title: doc.title,
+          description: doc.description ?? doc.title,
+          url: absoluteUrl(page.url),
+        })}
+      />
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="h-(--top-spacing) shrink-0" />
         <div

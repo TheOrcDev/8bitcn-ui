@@ -1,13 +1,29 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import HomeComponentShowcase from "@/components/examples/home-component-showcase";
 import { HomeSponsors } from "@/components/home-sponsors";
+import { JsonLd } from "@/components/json-ld";
 import { Badge } from "@/components/ui/8bit/badge";
 import { Button } from "@/components/ui/8bit/button";
 import { Separator } from "@/components/ui/8bit/separator";
+import { softwareSourceCodeJsonLd, websiteJsonLd } from "@/lib/json-ld";
+import { createPageMetadata } from "@/lib/metadata";
+import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = createPageMetadata({
+  path: "/",
+  title: { absolute: siteConfig.title },
+  description: siteConfig.description,
+});
+
+const websiteStructuredData = websiteJsonLd();
+const softwareStructuredData = softwareSourceCodeJsonLd();
 
 export default function Home() {
   return (
     <div className="mx-auto px-4">
+      <JsonLd data={websiteStructuredData} />
+      <JsonLd data={softwareStructuredData} />
       {/* Hero */}
       <section className="flex flex-col items-center py-8 text-center md:py-10">
         <Link href="/v2">
