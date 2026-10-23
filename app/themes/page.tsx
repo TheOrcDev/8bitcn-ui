@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 
 import ComponentShowcase from "@/components/examples/component-showcase";
 import { ThemeSelector } from "@/components/theme-selector";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
+  path: "/themes",
   title: "Themes",
   description:
     "8-bit retro themes to give your designs that nostalgic edge. 👾 Paired with 8-bit components, they're the perfect combo.",
-};
+});
 
 export default function ThemesPage() {
   return (

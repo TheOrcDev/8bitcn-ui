@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ThemeGrid } from "@/components/theme-grid";
 import { Badge } from "@/components/ui/8bit/badge";
@@ -15,6 +16,14 @@ import {
   CardTitle,
 } from "@/components/ui/8bit/card";
 import { Separator } from "@/components/ui/8bit/separator";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = createPageMetadata({
+  path: "/v2",
+  title: "35 production-ready 8-bit page blocks",
+  description:
+    "Browse 35 production-ready 8-bit page sections for heroes, pricing, FAQs, game UI, and more. Copy-paste blocks built only with 8bitcn components.",
+});
 
 const highlights = [
   "New pixel-art logo and visual identity",

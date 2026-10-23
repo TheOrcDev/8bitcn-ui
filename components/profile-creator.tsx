@@ -341,15 +341,7 @@ export default function ProfileCard() {
   const { activeTheme, setActiveTheme } = useThemeConfig();
 
   return (
-    <div className="retro space-y-6 p-4 md:p-6">
-      <div className="space-y-2">
-        <h1 className="retro font-bold text-xl md:text-2xl">Profile Creator</h1>
-        <p className="max-w-2xl text-muted-foreground text-sm">
-          Fill the form to preview your retro profile card. Use full URLs or
-          just usernames for GitHub and X.
-        </p>
-      </div>
-
+    <div className="space-y-6">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <Card>
           <CardHeader className="flex items-center justify-between">

@@ -18,11 +18,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/8bit/card";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
+  path: "/contributors",
   title: "Contributors",
   description: "Meet the amazing people who make this project possible.",
-};
+});
 
 interface Contributor {
   avatar_url: string;

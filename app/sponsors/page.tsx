@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 
 import Sponsors from "@/components/sponsors";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "8bitcn/ui Sponsors",
+export const metadata: Metadata = createPageMetadata({
+  path: "/sponsors",
+  title: "Sponsors supporting the 8-bit library",
   description:
-    "Sponsors of 8bitcn/ui who help us grow and support our projects.",
-};
+    "Meet the sponsors who help 8bitcn/ui grow. Mythic, legendary, and community supporters who fund the open-source 8-bit component library.",
+});
 
 export default function SponsorsPage() {
   return (

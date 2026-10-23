@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import { CharacterSheet } from "@/components/ui/8bit/blocks/character-sheet";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = createPageMetadata({
+  path: "/character-sheet",
+  title: "Interactive 8-bit RPG character sheet",
+  description:
+    "Preview the 8-bit RPG character sheet block with attributes, equipment, health, mana, and XP. A full-page demo of the retro game UI component.",
+});
 
 export default function CharacterSheetPage() {
   return (
