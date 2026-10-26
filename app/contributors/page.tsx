@@ -2,7 +2,7 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-
+import { JsonLd } from "@/components/json-ld";
 import {
   Avatar,
   AvatarFallback,
@@ -18,12 +18,26 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/8bit/card";
+import { webPageJsonLd } from "@/lib/json-ld";
 import { createPageMetadata } from "@/lib/metadata";
+import { absoluteUrl } from "@/lib/utils";
+
+const contributorsPath = "/contributors";
+const contributorsTitle = "Contributors";
+const contributorsDescription =
+  "Meet the amazing people who make this project possible.";
 
 export const metadata: Metadata = createPageMetadata({
-  path: "/contributors",
-  title: "Contributors",
-  description: "Meet the amazing people who make this project possible.",
+  path: contributorsPath,
+  title: contributorsTitle,
+  description: contributorsDescription,
+});
+
+const contributorsStructuredData = webPageJsonLd({
+  type: "CollectionPage",
+  name: contributorsTitle,
+  description: contributorsDescription,
+  url: absoluteUrl(contributorsPath),
 });
 
 interface Contributor {
@@ -68,6 +82,7 @@ export default async function ContributorsPage() {
 
   return (
     <div className={`container mx-auto overflow-x-hidden px-4 py-8 ${"retro"}`}>
+      <JsonLd data={contributorsStructuredData} />
       <div className="mb-12 text-center">
         <h1 className="mb-4 font-bold text-2xl sm:text-3xl md:text-4xl">
           Our Contributors

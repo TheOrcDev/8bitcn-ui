@@ -1,17 +1,31 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
 import { CharacterSheet } from "@/components/ui/8bit/blocks/character-sheet";
+import { webPageJsonLd } from "@/lib/json-ld";
 import { createPageMetadata } from "@/lib/metadata";
+import { absoluteUrl } from "@/lib/utils";
+
+const characterSheetPath = "/character-sheet";
+const characterSheetTitle = "Interactive 8-bit RPG character sheet";
+const characterSheetDescription =
+  "Preview the 8-bit RPG character sheet block with attributes, equipment, health, mana, and XP. A full-page demo of the retro game UI component.";
 
 export const metadata: Metadata = createPageMetadata({
-  path: "/character-sheet",
-  title: "Interactive 8-bit RPG character sheet",
-  description:
-    "Preview the 8-bit RPG character sheet block with attributes, equipment, health, mana, and XP. A full-page demo of the retro game UI component.",
+  path: characterSheetPath,
+  title: characterSheetTitle,
+  description: characterSheetDescription,
+});
+
+const characterSheetStructuredData = webPageJsonLd({
+  name: characterSheetTitle,
+  description: characterSheetDescription,
+  url: absoluteUrl(characterSheetPath),
 });
 
 export default function CharacterSheetPage() {
   return (
     <div className="min-h-svh bg-background p-4 md:p-8 lg:p-12">
+      <JsonLd data={characterSheetStructuredData} />
       <div className="mx-auto max-w-4xl">
         <div className="mb-8 text-center">
           <h1 className="retro mb-2 font-bold text-3xl">

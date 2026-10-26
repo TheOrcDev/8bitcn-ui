@@ -56,3 +56,23 @@ export function techArticleJsonLd({
     },
   } as const;
 }
+
+export function webPageJsonLd({
+  name,
+  description,
+  url,
+  type = "WebPage",
+}: {
+  name: string;
+  description: string;
+  url: string;
+  type?: "WebPage" | "AboutPage" | "CollectionPage";
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": type,
+    name,
+    description,
+    url,
+  } as const;
+}

@@ -17,6 +17,7 @@ import { mythicSponsors } from "@/components/sponsors";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { docsMetaDescription } from "@/lib/docs-meta-description";
 import { techArticleJsonLd } from "@/lib/json-ld";
 import { siteConfig } from "@/lib/site";
 import { source } from "@/lib/source";
@@ -43,17 +44,22 @@ export async function generateMetadata(props: {
     notFound();
   }
 
+  const description = docsMetaDescription({
+    title: doc.title,
+    description: doc.description,
+    slug: params.slug,
+  });
   const ogImageUrl = absoluteUrl(siteConfig.ogImage);
 
   return {
     title: doc.title,
-    description: doc.description,
+    description,
     alternates: {
       canonical: page.url,
     },
     openGraph: {
       title: doc.title,
-      description: doc.description,
+      description,
       siteName: siteConfig.name,
       type: "article",
       url: absoluteUrl(page.url),
@@ -69,7 +75,7 @@ export async function generateMetadata(props: {
     twitter: {
       card: "summary_large_image",
       title: doc.title,
-      description: doc.description,
+      description,
       images: [
         {
           url: ogImageUrl,
@@ -153,6 +159,11 @@ export default async function Page(props: {
   const MDX = doc.body;
   const neighbours = findNeighbour(source.pageTree, page.url);
   const isBlockPage = params.slug?.[0] === "blocks";
+  const structuredDescription = docsMetaDescription({
+    title: doc.title,
+    description: doc.description ?? doc.title,
+    slug: params.slug,
+  });
 
   const noTocBlockLeafSlugs = new Set([
     "hero1",
@@ -201,7 +212,7 @@ export default async function Page(props: {
       <JsonLd
         data={techArticleJsonLd({
           title: doc.title,
-          description: doc.description ?? doc.title,
+          description: structuredDescription,
           url: absoluteUrl(page.url),
         })}
       />
