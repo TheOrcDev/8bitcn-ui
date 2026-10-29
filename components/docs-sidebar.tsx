@@ -18,8 +18,18 @@ import type { source } from "@/lib/source";
 
 import { ScrollArea } from "./ui/scroll-area";
 
-const EXCLUDED_SECTIONS = ["root:index.mdx", "root:blocks"];
 const EXCLUDED_PAGES = ["/docs", "/docs/changelog"];
+
+type DocsTreeNode = (typeof source.pageTree)["children"][number];
+type DocsTreePage = Extract<DocsTreeNode, { type: "page" }>;
+
+function isVisiblePage(node: DocsTreeNode): node is DocsTreePage {
+  if (node.type !== "page") {
+    return false;
+  }
+
+  return !(node.url.includes("/mcp") || EXCLUDED_PAGES.includes(node.url));
+}
 
 export function DocsSidebar({
   tree,
@@ -73,7 +83,13 @@ export function DocsSidebar({
             </SidebarGroupContent>
           </SidebarGroup>
           {tree.children.map((item) => {
-            if (EXCLUDED_SECTIONS.includes(item.$id ?? "")) {
+            if (item.type !== "folder") {
+              return null;
+            }
+
+            const pages = item.children.filter(isVisiblePage);
+
+            if (pages.length === 0) {
               return null;
             }
 
@@ -83,43 +99,30 @@ export function DocsSidebar({
                   {item.name}
                 </SidebarGroupLabel>
                 <SidebarGroupContent>
-                  {item.type === "folder" && (
-                    <SidebarMenu className="gap-0.5">
-                      {item.children.map((childItem) => {
-                        if (childItem.type !== "page") {
-                          return null;
-                        }
+                  <SidebarMenu className="gap-0.5">
+                    {pages.map((childItem) => {
+                      const isActive = childItem.url === pathname;
 
-                        if (
-                          childItem.url.includes("/mcp") ||
-                          EXCLUDED_PAGES.includes(childItem.url)
-                        ) {
-                          return null;
-                        }
-
-                        const isActive = childItem.url === pathname;
-
-                        return (
-                          <SidebarMenuItem key={childItem.url}>
-                            <SidebarMenuButton
-                              asChild
-                              className="relative h-[30px] 3xl:fixed:w-full w-fit 3xl:fixed:max-w-48 overflow-visible border border-transparent font-medium text-[0.8rem] after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent"
-                              isActive={isActive}
+                      return (
+                        <SidebarMenuItem key={childItem.url}>
+                          <SidebarMenuButton
+                            asChild
+                            className="relative h-[30px] 3xl:fixed:w-full w-fit 3xl:fixed:max-w-48 overflow-visible border border-transparent font-medium text-[0.8rem] after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent"
+                            isActive={isActive}
+                          >
+                            <Link
+                              aria-current={isActive ? "page" : undefined}
+                              href={childItem.url}
+                              ref={isActive ? activeItemRef : undefined}
                             >
-                              <Link
-                                aria-current={isActive ? "page" : undefined}
-                                href={childItem.url}
-                                ref={isActive ? activeItemRef : undefined}
-                              >
-                                <span className="absolute inset-0 flex w-(--sidebar-width) bg-transparent" />
-                                {childItem.name}
-                              </Link>
-                            </SidebarMenuButton>
-                          </SidebarMenuItem>
-                        );
-                      })}
-                    </SidebarMenu>
-                  )}
+                              <span className="absolute inset-0 flex w-(--sidebar-width) bg-transparent" />
+                              {childItem.name}
+                            </Link>
+                          </SidebarMenuButton>
+                        </SidebarMenuItem>
+                      );
+                    })}
+                  </SidebarMenu>
                 </SidebarGroupContent>
               </SidebarGroup>
             );
