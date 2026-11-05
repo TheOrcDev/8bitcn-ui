@@ -33,6 +33,7 @@ interface Hero3Props {
   children?: ReactNode;
   className?: string;
   description?: string;
+  headingAs?: "h1" | "h2" | "h3";
   stats?: HeroStat[];
   subtitle?: string;
   title: string;
@@ -61,6 +62,7 @@ export default function Hero3({
   stats = [],
   className,
   children,
+  headingAs: Heading = "h1",
 }: Hero3Props) {
   const defaultStats: HeroStat[] = stats.length > 0 ? stats : [
     { label: "COMPONENTS", value: "50+" },
@@ -94,9 +96,9 @@ export default function Hero3({
         )}
 
         {/* Title — large game-style */}
-        <h1 className="retro mb-6 font-bold text-4xl tracking-tight md:text-6xl lg:text-7xl">
+        <Heading className="retro mb-6 font-bold text-4xl tracking-tight md:text-6xl lg:text-7xl">
           {title}
-        </h1>
+        </Heading>
 
         {/* Description */}
         {description && (

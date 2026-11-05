@@ -130,6 +130,7 @@ describe("NotFoundBrickBreaker", () => {
 
     expect(
       screen.getByRole("heading", {
+        level: 1,
         name: ERROR_HEADING_PATTERN,
       })
     ).toBeTruthy();

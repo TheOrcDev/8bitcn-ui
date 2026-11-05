@@ -54,6 +54,7 @@ export interface VictoryScreenProps
   battleReport?: VictoryScreenBattleReport[];
   stats?: VictoryScreenStats[];
   className?: string;
+  headingAs?: "h1" | "h2" | "h3";
   showItemIcon?: boolean;
 }
 function VictoryScreen({
@@ -62,6 +63,7 @@ function VictoryScreen({
   stats,
   battleReport,
   showItemIcon = true,
+  headingAs: Heading = "h1",
   ...props
 }: VictoryScreenProps) {
   return (
@@ -72,7 +74,7 @@ function VictoryScreen({
     >
       <CardContent>
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-2xl font-bold">VICTORY!</h1>
+          <Heading className="text-2xl font-bold">VICTORY!</Heading>
         </div>
 
         <div className="relative flex flex-col md:flex-row items-center justify-around flex-wrap mt-6 gap-y-6 ">

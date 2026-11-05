@@ -14,6 +14,7 @@ interface NotFound3Props {
   cta?: string;
   ctaSecondary?: string;
   description?: string;
+  headingAs?: "h1" | "h2" | "h3";
   href?: string;
   hrefSecondary?: string;
   imageSrc?: string;
@@ -30,6 +31,7 @@ export default function NotFound3({
   hrefSecondary = "/docs/blocks",
   imageSrc = "/images/8bit-undead.png",
   className,
+  headingAs: Heading = "h1",
 }: NotFound3Props) {
   return (
     <div
@@ -60,9 +62,9 @@ export default function NotFound3({
         </div>
       )}
 
-      <h1 className="retro font-bold text-xl tracking-tight sm:text-2xl">
+      <Heading className="retro font-bold text-xl tracking-tight sm:text-2xl">
         {title}
-      </h1>
+      </Heading>
 
       <p className="retro text-muted-foreground text-[9px]">{description}</p>
 

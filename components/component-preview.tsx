@@ -2,6 +2,10 @@ import Link from "next/link";
 
 import { OpenInV0Button } from "@/components/open-in-v0-button";
 import { Button } from "@/components/ui/button";
+import {
+  applyPreviewDemoHeading,
+  previewShouldDemoteHeadings,
+} from "@/lib/preview-demo-heading";
 
 interface ComponentPreviewProps {
   children: React.ReactNode;
@@ -16,6 +20,10 @@ export default function ComponentPreview({
   name,
   title,
 }: ComponentPreviewProps) {
+  const preview = previewShouldDemoteHeadings(name)
+    ? applyPreviewDemoHeading(children)
+    : children;
+
   return (
     <div className="relative flex min-h-[450px] flex-col gap-4 rounded-lg border p-4">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
@@ -31,7 +39,7 @@ export default function ComponentPreview({
         </div>
       </div>
       <div className="relative flex min-h-[400px] items-center justify-center p-10">
-        {children}
+        {preview}
       </div>
     </div>
   );

@@ -16,6 +16,7 @@ interface GameHero1Props {
   }>;
   className?: string;
   description?: string;
+  headingAs?: "h1" | "h2" | "h3";
   xpLabel?: string;
   xpValue?: number;
   subtitle?: string;
@@ -33,6 +34,7 @@ export default function GameHero1({
   xpLabel = "XP to Next Level",
   xpValue = 72,
   className,
+  headingAs: Heading = "h1",
 }: GameHero1Props) {
   return (
     <section
@@ -45,9 +47,9 @@ export default function GameHero1({
           </div>
         )}
 
-        <h1 className="retro mb-4 font-bold text-3xl tracking-tight md:text-5xl">
+        <Heading className="retro mb-4 font-bold text-3xl tracking-tight md:text-5xl">
           {title}
-        </h1>
+        </Heading>
 
         {description && (
           <p className="mx-auto mb-8 max-w-lg text-muted-foreground retro text-[9px] leading-relaxed">

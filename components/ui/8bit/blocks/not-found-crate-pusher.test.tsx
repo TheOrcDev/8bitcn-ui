@@ -95,7 +95,7 @@ describe("NotFoundCratePusher", () => {
 
     expect(screen.getAllByText("404").length).toBeGreaterThan(0);
     expect(
-      screen.getByRole("heading", { name: "404: CRATE RESCUE" })
+      screen.getByRole("heading", { level: 1, name: "404: CRATE RESCUE" })
     ).toBeTruthy();
     expect(
       screen.getByText(
