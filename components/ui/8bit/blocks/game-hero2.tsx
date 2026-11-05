@@ -21,6 +21,7 @@ interface GameHero2Props {
   }>;
   className?: string;
   description?: string;
+  headingAs?: "h1" | "h2" | "h3";
   level?: number;
   milestones?: Milestone[];
   title: string;
@@ -46,6 +47,7 @@ export default function GameHero2({
     { label: "VIEW SKILLS", variant: "outline", href: "/v2" },
   ],
   className,
+  headingAs: Heading = "h1",
 }: GameHero2Props) {
   return (
     <section className={cn("relative w-full px-4 py-16 md:py-24", className)}>
@@ -54,9 +56,9 @@ export default function GameHero2({
           <Badge>LEVEL {level}</Badge>
         </div>
 
-        <h1 className="retro mb-4 font-bold text-3xl tracking-tight md:text-5xl">
+        <Heading className="retro mb-4 font-bold text-3xl tracking-tight md:text-5xl">
           {title}
-        </h1>
+        </Heading>
 
         {description && (
           <p className="mx-auto mb-8 max-w-lg text-muted-foreground retro text-[9px] leading-relaxed">

@@ -9,6 +9,7 @@ export interface ChapterIntroProps extends React.ComponentProps<"div"> {
   align?: "left" | "center" | "right";
   height?: "sm" | "md" | "lg";
   darken?: number;
+  headingAs?: "h1" | "h2" | "h3";
 }
 
 export default function ChapterIntro({
@@ -19,6 +20,7 @@ export default function ChapterIntro({
   align = "center",
   height = "md",
   darken = 0.5,
+  headingAs: Heading = "h1",
   ...props
 }: ChapterIntroProps) {
   const heightClass =
@@ -72,9 +74,9 @@ export default function ChapterIntro({
             )}
           >
             <div className="mx-auto max-w-3xl">
-              <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight drop-shadow-[0_3px_0_rgba(0,0,0,0.8)]">
+              <Heading className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight drop-shadow-[0_3px_0_rgba(0,0,0,0.8)]">
                 {title}
-              </h1>
+              </Heading>
               {subtitle && (
                 <p className="mt-4 text-xs md:text-base text-secondary/90 dark:text-muted-foreground/90 drop-shadow-[0_2px_0_rgba(0,0,0,0.8)]">
                   {subtitle}

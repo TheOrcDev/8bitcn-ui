@@ -11,6 +11,7 @@ interface NotFound2Props {
   className?: string;
   cta?: string;
   description?: string;
+  headingAs?: "h1" | "h2" | "h3";
   href?: string;
   imageSrc?: string;
   title?: string;
@@ -23,6 +24,7 @@ export default function NotFound2({
   href = "/",
   imageSrc = "/images/8bit-dwarf.png",
   className,
+  headingAs: Heading = "h1",
 }: NotFound2Props) {
   return (
     <div
@@ -47,9 +49,9 @@ export default function NotFound2({
         </div>
       )}
 
-      <h1 className="retro font-bold text-2xl tracking-tight sm:text-4xl">
+      <Heading className="retro font-bold text-2xl tracking-tight sm:text-4xl">
         {title}
-      </h1>
+      </Heading>
 
       <p className="retro text-muted-foreground text-[9px]">{description}</p>
 

@@ -26,7 +26,7 @@ interface Hero2Props {
   children?: ReactNode;
   className?: string;
   description?: string;
-  headingAs?: "h1" | "h2";
+  headingAs?: "h1" | "h2" | "h3";
   subtitle?: string;
   title: string;
   visual?: ReactNode;

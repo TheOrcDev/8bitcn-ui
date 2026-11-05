@@ -26,6 +26,7 @@ interface Hero1Props {
   children?: ReactNode;
   className?: string;
   description?: string;
+  headingAs?: "h1" | "h2" | "h3";
   subtitle?: string;
   title: string;
 }
@@ -38,6 +39,7 @@ export default function Hero1({
   badges = [],
   className,
   children,
+  headingAs: Heading = "h1",
 }: Hero1Props) {
   return (
     <section
@@ -69,9 +71,9 @@ export default function Hero1({
         )}
 
         {/* Title */}
-        <h1 className="retro mb-4 font-bold text-3xl tracking-tight md:text-5xl lg:text-6xl">
+        <Heading className="retro mb-4 font-bold text-3xl tracking-tight md:text-5xl lg:text-6xl">
           {title}
-        </h1>
+        </Heading>
 
         {/* Subtitle */}
         {subtitle && (

@@ -5,15 +5,16 @@ import { Card, CardContent } from "@/components/ui/8bit/card";
 
 export default function GameOver({
   className,
+  headingAs: Heading = "h1",
   ...props
-}: React.ComponentProps<"div">) {
+}: React.ComponentProps<"div"> & { headingAs?: "h1" | "h2" | "h3" }) {
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card className="p-5">
         <CardContent className="grid p-0 md:grid-cols-2">
           <div className="flex flex-col gap-5 px-5 py-15">
             <div className="flex flex-col items-center text-center">
-              <h1 className="text-xl font-bold">Game Over</h1>
+              <Heading className="text-xl font-bold">Game Over</Heading>
               <p className="text-balance text-xs text-muted-foreground">
                 Continue?
               </p>

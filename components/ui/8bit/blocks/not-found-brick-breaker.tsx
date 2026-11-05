@@ -95,6 +95,7 @@ export interface NotFoundBrickBreakerProps
   badge?: string;
   cta?: string;
   description?: string;
+  headingAs?: "h1" | "h2" | "h3";
   href?: string;
   title?: string;
 }
@@ -299,6 +300,7 @@ export function NotFoundBrickBreaker({
   className,
   cta = "RETURN HOME",
   description = "The route is gone. Clear the 404 wall or return home.",
+  headingAs: Heading = "h1",
   href = "/",
   title = "BREAK OUT OF HERE",
   ...sectionProps
@@ -696,10 +698,10 @@ export function NotFoundBrickBreaker({
       <div className="mx-auto grid w-full max-w-3xl gap-5">
         <header className="grid justify-items-center gap-3 text-center">
           <Badge variant="secondary">{badge}</Badge>
-          <h1 className="grid gap-3 font-bold" id={headingId}>
+          <Heading className="grid gap-3 font-bold" id={headingId}>
             <span className="text-sm tracking-[0.2em]">ERROR 404</span>
             <span className="text-2xl tracking-tight sm:text-4xl">{title}</span>
-          </h1>
+          </Heading>
           <p className="max-w-xl text-muted-foreground text-xs">
             {description}
           </p>

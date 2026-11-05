@@ -50,6 +50,7 @@ export interface NotFoundCratePusherProps
   badge?: string;
   cta?: string;
   description?: string;
+  headingAs?: "h1" | "h2" | "h3";
   href?: string;
   level?: readonly string[];
   seed?: number;
@@ -366,6 +367,7 @@ function CratePusherGame({
   className,
   cta = "RETURN HOME",
   description,
+  headingAs: Heading = "h1",
   href = "/",
   initialLevel,
   seed,
@@ -498,9 +500,9 @@ function CratePusherGame({
             <p aria-hidden="true" className="font-bold text-6xl sm:text-8xl">
               404
             </p>
-            <h1 className="font-bold text-2xl sm:text-4xl" id={headingId}>
+            <Heading className="font-bold text-2xl sm:text-4xl" id={headingId}>
               {title}
-            </h1>
+            </Heading>
             <p className="max-w-2xl text-muted-foreground text-xs">
               {resolvedDescription}
             </p>
