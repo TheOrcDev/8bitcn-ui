@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 import { ThemeGrid } from "@/components/theme-grid";
 import { Badge } from "@/components/ui/8bit/badge";
 import Feature3 from "@/components/ui/8bit/blocks/feature3";
@@ -16,13 +17,25 @@ import {
   CardTitle,
 } from "@/components/ui/8bit/card";
 import { Separator } from "@/components/ui/8bit/separator";
+import { webPageJsonLd } from "@/lib/json-ld";
 import { createPageMetadata } from "@/lib/metadata";
+import { absoluteUrl } from "@/lib/utils";
+
+const v2Path = "/v2";
+const v2Title = "35 production-ready 8-bit page blocks";
+const v2Description =
+  "Browse 35 production-ready 8-bit page sections for heroes, pricing, FAQs, game UI, and more. Copy-paste blocks built only with 8bitcn components.";
 
 export const metadata: Metadata = createPageMetadata({
-  path: "/v2",
-  title: "35 production-ready 8-bit page blocks",
-  description:
-    "Browse 35 production-ready 8-bit page sections for heroes, pricing, FAQs, game UI, and more. Copy-paste blocks built only with 8bitcn components.",
+  path: v2Path,
+  title: v2Title,
+  description: v2Description,
+});
+
+const v2StructuredData = webPageJsonLd({
+  name: v2Title,
+  description: v2Description,
+  url: absoluteUrl(v2Path),
 });
 
 const highlights = [
@@ -53,6 +66,7 @@ const totalBlocks = categories.reduce((sum, cat) => sum + cat.count, 0);
 export default function BlocksPage() {
   return (
     <div className="mx-auto max-w-7xl px-4">
+      <JsonLd data={v2StructuredData} />
       {/* Launch Hero */}
       <section className="flex flex-col items-center py-16 text-center md:py-24">
         <p className="retro mb-4 text-[10px] text-muted-foreground">
@@ -138,13 +152,18 @@ export default function BlocksPage() {
             <Hero2
               actions={[
                 { label: "GET STARTED", variant: "default", href: "/docs" },
-                { label: "VIEW BLOCKS", variant: "outline", href: "/blocks" },
+                {
+                  label: "VIEW BLOCKS",
+                  variant: "outline",
+                  href: "/docs/blocks",
+                },
               ]}
               badges={[
                 { label: "Open Source" },
                 { label: "v2", variant: "secondary" },
               ]}
               description="Drop-in 8-bit styled components that work with your existing stack. No config, no headaches."
+              headingAs="h2"
               subtitle="Retro components for the modern web"
               title="SHIP FASTER"
             />

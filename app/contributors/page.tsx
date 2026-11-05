@@ -25,7 +25,7 @@ import { absoluteUrl } from "@/lib/utils";
 const contributorsPath = "/contributors";
 const contributorsTitle = "Contributors";
 const contributorsDescription =
-  "Meet the amazing people who make this project possible.";
+  "Meet the open-source contributors who build and maintain 8bitcn/ui, the retro 8-bit React component library and shadcn registry.";
 
 export const metadata: Metadata = createPageMetadata({
   path: contributorsPath,

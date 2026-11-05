@@ -252,7 +252,7 @@
     {
       "name": "carousel",
       "type": "registry:component",
-      "title": "8-bit Card",
+      "title": "8-bit Carousel",
       "description": "A simple 8-bit carousel component",
       "registryDependencies": ["carousel"],
       "files": [
@@ -482,7 +482,7 @@
       "name": "alert",
       "type": "registry:component",
       "title": "8-bit Alert",
-      "description": "A simple 8-bit switch component",
+      "description": "A simple 8-bit alert component",
       "registryDependencies": ["alert"],
       "files": [
         {

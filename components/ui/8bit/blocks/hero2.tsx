@@ -26,6 +26,7 @@ interface Hero2Props {
   children?: ReactNode;
   className?: string;
   description?: string;
+  headingAs?: "h1" | "h2";
   subtitle?: string;
   title: string;
   visual?: ReactNode;
@@ -39,6 +40,7 @@ export default function Hero2({
   badges = [],
   className,
   children,
+  headingAs: Heading = "h1",
   visual,
 }: Hero2Props) {
   return (
@@ -63,9 +65,9 @@ export default function Hero2({
           )}
 
           {/* Title */}
-          <h1 className="retro mb-4 font-bold text-3xl tracking-tight md:text-5xl">
+          <Heading className="retro mb-4 font-bold text-3xl tracking-tight md:text-5xl">
             {title}
-          </h1>
+          </Heading>
 
           {/* Subtitle */}
           {subtitle && (
